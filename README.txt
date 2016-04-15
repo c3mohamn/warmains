@@ -15,3 +15,9 @@ TODO:
 4. Store all level 80 items.
 	- Store items in JSON most likely, since static data.
 	- Store item thumbnails somewhere.
+	
+5. Create Schema for buffs - where buffs for a character will be stored.
+
+
+TODO BONUS:
+1. Talents.
