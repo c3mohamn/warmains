@@ -12,10 +12,7 @@ var LocalStrategy = require('passport-local').Strategy;
 var mongo = require('mongodb');
 var mongoose = require('mongoose');
 //mongoose.connect('mongodb://localhost/warmains');
-mongoose.connect(process.env.MONGOLAB_URI, function(error) {
-    if (error) console.error(error);
-    else console.log('mongo connected');
-});
+mongoose.connect('mongodb://admin:password@ds129600.mlab.com:29600/warmains');
 var db = mongoose.connection;
 
 var routes = require('./routes/index');
