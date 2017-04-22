@@ -1,9 +1,60 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto);
+
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  color: red;
+    text-align: center;
+    font-family: roboto;
+    color: #2E2E2E;
 }
 
-a {
-  color: mediumvioletred;
+#page-title {
+    margin: 0 auto;
+    font-family: roboto;
+    font-weight: bold;
+}
+.logo {
+    a {
+        text-decoration: none;
+        color: black;
+        font-size: 20px;
+        font-weight: bold;
+        margin-top: 12px;
+        #logo-brown {
+            color:brown;
+        }
+    }
+}
+.banner-container {
+    width: 85%;
+    max-width: 1600px;
+    min-width: 800px;
+    margin: 0 auto;
+    border-style: solid;
+    img {
+        width: 100%;
+        display: block;
+        opacity: 1;
+    }
+}
+
+.login-container {
+    margin: 0 auto;
+    width: 500px;
+    height: 400px;
+    background-color: darkgrey;
+    filter: drop-shadow(0px 0px 10px black);
+}
+
+.footerdiv {
+    margin-top: 100px;
+    ul {
+        li {
+            a {
+                text-decoration: none;
+                color: black;
+            }
+            a:hover {
+                color: brown;
+            }
+        }
+    }
 }

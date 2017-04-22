@@ -1,5 +1,5 @@
 {
-  "name": "chardev",
+  "name": "warmains",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -12,6 +12,16 @@
     "express": "~4.13.1",
     "jade": "~1.11.0",
     "morgan": "~1.6.1",
-    "serve-favicon": "~2.3.0"
+    "serve-favicon": "~2.3.0",
+    "bcryptjs": "*",
+    "connect-flash": "*",
+    "express-messages": "*",
+    "express-session": "*",
+    "express-validator": "*",
+    "mongodb": "*",
+    "mongoose": "*",
+    "passport": "*",
+    "passport-http": "*",
+    "passport-local": "*"
   }
 }

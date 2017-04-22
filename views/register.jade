@@ -1,0 +1,25 @@
+doctype html
+html
+    include partials/head.jade
+    body
+        include partials/navbar.jade
+
+        div(class="loginmodal-container" id="register-container")
+            h1 CREATE ACCOUNT
+            form(action="/register" method="post")
+                input(type="text" name="userfield" placeholder="Username")
+                span(id="no-username-1")
+                input(type="password" name="pass1field" placeholder="Password")
+                span(id="no-password-2")
+                input(type="password" name="pass2field" placeholder="Confirm Password")
+                span(id="no-password-3")
+                input(type="text" name="emailfield" placeholder="Email")
+                span(id="no-email")
+                input(type="submit" name="createaccount"
+                class="create loginmodal-submit"
+                value="Create Account"
+                disabled="disabled")
+
+        include partials/login.jade
+        include partials/footer.jade
+        script(src="/js/createacc.js")

@@ -1,15 +1,8 @@
 doctype html
-
 html
-  include head.jade
-  body
-    h1 test
-    hr
-    a(href="/users" target="blank")
-      button.btn.btn-warning STUFFS
-
-
-    +test
-    +test3
-
-    include footer.jade
+    include partials/head.jade
+    body
+        include partials/navbar.jade
+        include partials/banner.jade
+        include partials/login.jade
+        include partials/footer.jade

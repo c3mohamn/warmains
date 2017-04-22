@@ -1,0 +1,44 @@
+div(class="container")
+    nav(class="navbar navbar-default")
+        div(class="container-fluid")
+            div(class="navbar-header")
+                // collapsible dropdown for when window too small
+                button(type="button" class="navbar-toggle collapsed"
+                data-toggle="collapse"
+                data-target="#bs-example-navbar-collapse-1"
+                aria-expanded="false")
+                    span(class="sr-only")
+                    span(class="icon-bar")
+                    span(class="icon-bar")
+                    span(class="icon-bar")
+                // Home logo/icon
+                div(class="logo")
+                    a(class="pull-left" href="/")
+                        span(id="logo-brown") WAR
+                        span(id="logo-black") MAINS
+
+            div(class="collapse navbar-collapse"
+            id="bs-example-navbar-collapse-1")
+                ul(class="nav navbar-nav" class="pull-right")
+                    li: a(href="/") HOME
+                        span(class="sr-only") (current)
+                    li: a(href="#" data-toggle="modal"
+                    data-target="#login-modal") LOGIN
+                    li: a(href="/register") REGISTER
+                    // THIS WILL ONLY SHOW WHEN LOGGED IN.
+                    li(class="dropdown")
+                        a(href="#" class="dropdown-toggle"
+                        data-toggle="dropdown" role="button"
+                        aria-haspopup="true" aria-expanded="false") ACCOUNT
+                            span(class="caret")
+                        ul(class="dropdown-menu")
+                            li: a(href="/profile") PROFILE
+                            li(role="separator" class="divider")
+                            li: a(href="/settings") SETTINGS
+
+// Code for search in navbar
+//-form(class="navbar-form navbar-right" role="search")
+    div(class="form-group")
+        input(type="text" class="form-control"
+        placeholder="Search")
+    button(type="submit" class="btn btn-default") Submit//

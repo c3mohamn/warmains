@@ -1,0 +1,2790 @@
+{
+	"items": [
+		{
+			"ItemLevel": "200",
+			"DisplayId": "0",
+			"DisplaySlot": "0",
+			"IconPath": "inv_weapon_shortblade_88",
+			"Stats": {
+				"Stamina": "39",
+				"AttackPower": "78",
+				"HasteRating": "50"
+			},
+			"Quality": "Epic",
+			"Type": "Dagger",
+			"Faction": "Neutral",
+			"MinDamage": "170",
+			"MaxDamage": "317",
+			"Speed": "1.7",
+			"Bind": "BoP",
+			"SocketBonus": "none",
+			"Name": "Rolfsen's Ripper",
+			"Id": "40702",
+			"Slot": "OffHand"
+		},
+		{
+			"ItemLevel": "264",
+			"DisplayId": "0",
+			"DisplaySlot": "0",
+			"IconPath": "inv_weapon_shortblade_106",
+			"Stats": {
+				"Stamina": "104",
+				"AttackPower": "123",
+				"CritRating": "38",
+				"Resilience": "46"
+			},
+			"Quality": "Epic",
+			"Type": "Dagger",
+			"Faction": "Neutral",
+			"MinDamage": "285",
+			"MaxDamage": "531",
+			"Speed": "1.8",
+			"Bind": "BoP",
+			"SocketColor1": "Blue",
+			"SocketBonus": {
+				"AttackPower": "8"
+			},
+			"Name": "Wrathful Gladiator's Mutilator",
+			"Id": "51527",
+			"Slot": "OffHand"
+		},
+		{
+			"ItemLevel": "264",
+			"DisplayId": "0",
+			"DisplaySlot": "0",
+			"IconPath": "inv_weapon_shortblade_106",
+			"Stats": {
+				"Stamina": "104",
+				"AttackPower": "123",
+				"CritRating": "38",
+				"Resilience": "46"
+			},
+			"Quality": "Epic",
+			"Type": "Dagger",
+			"Faction": "Neutral",
+			"MinDamage": "222",
+			"MaxDamage": "413",
+			"Speed": "1.4",
+			"Bind": "BoP",
+			"SocketColor1": "Blue",
+			"SocketBonus": {
+				"AttackPower": "8"
+			},
+			"Name": "Wrathful Gladiator's Shiv",
+			"Id": "51441",
+			"Slot": "OffHand"
+		},
+		{
+			"ItemLevel": "277",
+			"DisplayId": "0",
+			"DisplaySlot": "0",
+			"IconPath": "inv_weapon_shortblade_106",
+			"Stats": {
+				"Stamina": "118",
+				"AttackPower": "141",
+				"CritRating": "44",
+				"Resilience": "52"
+			},
+			"Quality": "Epic",
+			"Type": "Dagger",
+			"Faction": "Neutral",
+			"MinDamage": "245",
+			"MaxDamage": "456",
+			"Speed": "1.4",
+			"Bind": "BoP",
+			"SocketColor1": "Blue",
+			"SocketBonus": {
+				"AttackPower": "8"
+			},
+			"Name": "Wrathful Gladiator's Dirk",
+			"Id": "51442",
+			"Slot": "OffHand"
+		},
+		{
+			"ItemLevel": "277",
+			"DisplayId": "0",
+			"DisplaySlot": "0",
+			"IconPath": "inv_weapon_shortblade_106",
+			"Stats": {
+				"Stamina": "118",
+				"AttackPower": "141",
+				"CritRating": "44",
+				"Resilience": "52"
+			},
+			"Quality": "Epic",
+			"Type": "Dagger",
+			"Faction": "Neutral",
+			"MinDamage": "315",
+			"MaxDamage": "586",
+			"Speed": "1.8",
+			"Bind": "BoP",
+			"SocketColor1": "Blue",
+			"SocketBonus": {
+				"AttackPower": "8"
+			},
+			"Name": "Wrathful Gladiator's Eviscerator",
+			"Id": "51528",
+			"Slot": "OffHand"
+		},
+		{
+			"ItemLevel": "200",
+			"DisplayId": "0",
+			"DisplaySlot": "0",
+			"IconPath": "inv_weapon_hand_06",
+			"Stats": {
+				"Stamina": "39",
+				"AttackPower": "76",
+				"HitRating": "50"
+			},
+			"Quality": "Epic",
+			"Type": "FistWeapon",
+			"Faction": "Neutral",
+			"MinDamage": "251",
+			"MaxDamage": "467",
+			"Speed": "2.5",
+			"Bind": "BoP",
+			"SocketBonus": "none",
+			"Name": "Pride",
+			"Id": "40704",
+			"Slot": "OffHand"
+		},
+		{
+			"ItemLevel": "200",
+			"DisplayId": "0",
+			"DisplaySlot": "0",
+			"IconPath": "inv_weapon_hand_03",
+			"Stats": {
+				"Agility": "22",
+				"Stamina": "39",
+				"AttackPower": "76",
+				"HitRating": "27",
+				"HasteRating": "26"
+			},
+			"Quality": "Epic",
+			"Type": "FistWeapon",
+			"Faction": "Neutral",
+			"MinDamage": "261",
+			"MaxDamage": "485",
+			"Speed": "2.6",
+			"Bind": "BoP",
+			"SocketBonus": "none",
+			"Name": "The Stray",
+			"Id": "39468",
+			"Slot": "OffHand"
+		},
+		{
+			"ItemLevel": "213",
+			"DisplayId": "56658",
+			"DisplaySlot": "22",
+			"IconPath": "inv_weapon_hand_05",
+			"Stats": {
+				"Agility": "33",
+				"Stamina": "42",
+				"AttackPower": "86",
+				"CritRating": "29",
+				"HitRating": "21"
+			},
+			"Quality": "Epic",
+			"Type": "FistWeapon",
+			"Faction": "Neutral",
+			"MinDamage": "175",
+			"MaxDamage": "326",
+			"Speed": "1.6",
+			"Bind": "BoP",
+			"SocketBonus": "none",
+			"Name": "The Hand of Nerub",
+			"Id": "40239",
+			"Slot": "OffHand"
+		},
+		{
+			"ItemLevel": "219",
+			"DisplayId": "59378",
+			"DisplaySlot": "22",
+			"IconPath": "inv_weapon_hand_22",
+			"Stats": {
+				"Agility": "46",
+				"Stamina": "38",
+				"AttackPower": "70",
+				"HitRating": "22",
+				"HasteRating": "34"
+			},
+			"Quality": "Epic",
+			"Type": "FistWeapon",
+			"Faction": "Neutral",
+			"MinDamage": "171",
+			"MaxDamage": "318",
+			"Speed": "1.5",
+			"Bind": "BoP",
+			"SocketBonus": "none",
+			"Name": "Kinetic Ripper",
+			"Id": "45284",
+			"Slot": "OffHand"
+		},
+		{
+			"ItemLevel": "239",
+			"DisplayId": "59379",
+			"DisplaySlot": "22",
+			"IconPath": "inv_weapon_hand_23",
+			"Stats": {
+				"Agility": "35",
+				"Stamina": "54",
+				"AttackPower": "94",
+				"ArmorPenetrationRating": "37",
+				"CritRating": "27"
+			},
+			"Quality": "Epic",
+			"Type": "FistWeapon",
+			"Faction": "Neutral",
+			"MinDamage": "197",
+			"MaxDamage": "367",
+			"Speed": "1.5",
+			"Bind": "BoP",
+			"SocketColor1": "Yellow",
+			"SocketBonus": {
+				"CritRating": "4"
+			},
+			"Name": "Delirium's Touch",
+			"Id": "45494",
+			"Slot": "OffHand"
+		},
+		{
+			"ItemLevel": "251",
+			"DisplayId": "64468",
+			"DisplaySlot": "22",
+			"IconPath": "inv_weapon_hand_34",
+			"Stats": {
+				"Agility": "62",
+				"Stamina": "62",
+				"AttackPower": "82",
+				"ArmorPenetrationRating": "41",
+				"HasteRating": "41"
+			},
+			"Quality": "Epic",
+			"Type": "FistWeapon",
+			"Faction": "Neutral",
+			"MinDamage": "215",
+			"MaxDamage": "401",
+			"Speed": "1.5",
+			"Bind": "BoP",
+			"SocketBonus": "none",
+			"Name": "Splintershard",
+			"Id": "51784",
+			"Slot": "OffHand"
+		},
+		{
+			"ItemLevel": "264",
+			"DisplayId": "64463",
+			"DisplaySlot": "22",
+			"IconPath": "inv_weapon_hand_33",
+			"Stats": {
+				"Agility": "69",
+				"Stamina": "69",
+				"AttackPower": "93",
+				"HitRating": "46",
+				"HasteRating": "46"
+			},
+			"Quality": "Epic",
+			"Type": "FistWeapon",
+			"Faction": "Neutral",
+			"MinDamage": "412",
+			"MaxDamage": "766",
+			"Speed": "2.6",
+			"Bind": "BoP",
+			"SocketBonus": "none",
+			"Name": "Keleseth's Seducer",
+			"Id": "50184",
+			"Slot": "OffHand"
+		},
+		{
+			"ItemLevel": "264",
+			"DisplayId": "64468",
+			"DisplaySlot": "22",
+			"IconPath": "inv_weapon_hand_34",
+			"Stats": {
+				"Agility": "61",
+				"Stamina": "69",
+				"AttackPower": "93",
+				"ArmorPenetrationRating": "46",
+				"HasteRating": "38"
+			},
+			"Quality": "Epic",
+			"Type": "FistWeapon",
+			"Faction": "Neutral",
+			"MinDamage": "238",
+			"MaxDamage": "442",
+			"Speed": "1.5",
+			"Bind": "BoP",
+			"SocketColor1": "Red",
+			"SocketBonus": {
+				"Agility": "4"
+			},
+			"Name": "Splintershard",
+			"Id": "51819",
+			"Slot": "OffHand"
+		},
+		{
+			"ItemLevel": "264",
+			"DisplayId": "0",
+			"DisplaySlot": "0",
+			"IconPath": "inv_weapon_hand_34",
+			"Stats": {
+				"Stamina": "104",
+				"AttackPower": "123",
+				"CritRating": "38",
+				"Resilience": "46"
+			},
+			"Quality": "Epic",
+			"Type": "FistWeapon",
+			"Faction": "Neutral",
+			"MinDamage": "412",
+			"MaxDamage": "766",
+			"Speed": "2.6",
+			"Bind": "BoP",
+			"SocketColor1": "Blue",
+			"SocketBonus": {
+				"AttackPower": "8"
+			},
+			"Name": "Wrathful Gladiator's Left Render",
+			"Id": "51530",
+			"Slot": "OffHand"
+		},
+		{
+			"ItemLevel": "264",
+			"DisplayId": "0",
+			"DisplaySlot": "0",
+			"IconPath": "inv_weapon_hand_34",
+			"Stats": {
+				"Stamina": "104",
+				"AttackPower": "123",
+				"CritRating": "38",
+				"Resilience": "46"
+			},
+			"Quality": "Epic",
+			"Type": "FistWeapon",
+			"Faction": "Neutral",
+			"MinDamage": "238",
+			"MaxDamage": "442",
+			"Speed": "1.5",
+			"Bind": "BoP",
+			"SocketColor1": "Blue",
+			"SocketBonus": {
+				"AttackPower": "8"
+			},
+			"Name": "Wrathful Gladiator's Left Ripper",
+			"Id": "51443",
+			"Slot": "OffHand"
+		},
+		{
+			"ItemLevel": "277",
+			"DisplayId": "64464",
+			"DisplaySlot": "22",
+			"IconPath": "inv_weapon_hand_33",
+			"Stats": {
+				"Agility": "78",
+				"Stamina": "78",
+				"AttackPower": "88",
+				"HitRating": "44",
+				"HasteRating": "52"
+			},
+			"Quality": "Epic",
+			"Type": "FistWeapon",
+			"Faction": "Neutral",
+			"MinDamage": "456",
+			"MaxDamage": "847",
+			"Speed": "2.6",
+			"Bind": "BoP",
+			"SocketColor1": "Blue",
+			"SocketBonus": {
+				"Agility": "4"
+			},
+			"Name": "Keleseth's Seducer",
+			"Id": "50710",
+			"Slot": "OffHand"
+		},
+		{
+			"ItemLevel": "277",
+			"DisplayId": "0",
+			"DisplaySlot": "0",
+			"IconPath": "inv_weapon_hand_34",
+			"Stats": {
+				"Stamina": "118",
+				"AttackPower": "141",
+				"CritRating": "44",
+				"Resilience": "52"
+			},
+			"Quality": "Epic",
+			"Type": "FistWeapon",
+			"Faction": "Neutral",
+			"MinDamage": "456",
+			"MaxDamage": "847",
+			"Speed": "2.6",
+			"Bind": "BoP",
+			"SocketColor1": "Blue",
+			"SocketBonus": {
+				"AttackPower": "8"
+			},
+			"Name": "Wrathful Gladiator's Left Claw",
+			"Id": "51529",
+			"Slot": "OffHand"
+		},
+		{
+			"ItemLevel": "277",
+			"DisplayId": "0",
+			"DisplaySlot": "0",
+			"IconPath": "inv_weapon_hand_34",
+			"Stats": {
+				"Stamina": "118",
+				"AttackPower": "141",
+				"CritRating": "44",
+				"Resilience": "52"
+			},
+			"Quality": "Epic",
+			"Type": "FistWeapon",
+			"Faction": "Neutral",
+			"MinDamage": "263",
+			"MaxDamage": "489",
+			"Speed": "1.5",
+			"Bind": "BoP",
+			"SocketColor1": "Blue",
+			"SocketBonus": {
+				"AttackPower": "8"
+			},
+			"Name": "Wrathful Gladiator's Left Razor",
+			"Id": "51444",
+			"Slot": "OffHand"
+		},
+		{
+			"ItemLevel": "200",
+			"DisplayId": "23171",
+			"DisplaySlot": "23",
+			"IconPath": "inv_misc_book_09",
+			"Stats": {
+				"Intellect": "42",
+				"Spirit": "42",
+				"SpellPower": "49",
+				"CritRating": "42"
+			},
+			"Quality": "Epic",
+			"Type": "None",
+			"Faction": "Neutral",
+			"Speed": "2",
+			"Bind": "BoE",
+			"SocketBonus": "none",
+			"Name": "Faces of Doom",
+			"Id": "44210",
+			"Slot": "OffHand"
+		},
+		{
+			"ItemLevel": "200",
+			"DisplayId": "0",
+			"DisplaySlot": "0",
+			"IconPath": "inv_misc_orb_02",
+			"Stats": {
+				"Stamina": "31",
+				"Intellect": "33",
+				"SpellPower": "50",
+				"Mp5": "21"
+			},
+			"Quality": "Rare",
+			"Type": "None",
+			"Faction": "Neutral",
+			"Bind": "BoE",
+			"SocketBonus": "none",
+			"Name": "Frostbridge Orb",
+			"Id": "37364",
+			"Slot": "OffHand"
+		},
+		{
+			"ItemLevel": "200",
+			"DisplayId": "0",
+			"DisplaySlot": "0",
+			"IconPath": "inv_misc_book_06",
+			"Stats": {
+				"Stamina": "43",
+				"Intellect": "36",
+				"Spirit": "38",
+				"SpellPower": "59",
+				"HasteRating": "25"
+			},
+			"Quality": "Epic",
+			"Type": "None",
+			"Faction": "Neutral",
+			"Bind": "BoP",
+			"SocketBonus": "none",
+			"Name": "Handbook of Obscure Remedies",
+			"Id": "40699",
+			"Slot": "OffHand"
+		},
+		{
+			"ItemLevel": "200",
+			"DisplayId": "23171",
+			"DisplaySlot": "23",
+			"IconPath": "inv_misc_book_09",
+			"Stats": {
+				"BonusArmor": "495",
+				"Stamina": "49",
+				"SpellPower": "74",
+				"CritRating": "33"
+			},
+			"Quality": "Epic",
+			"Type": "None",
+			"Faction": "Neutral",
+			"Speed": "2",
+			"Bind": "BoE",
+			"SocketBonus": "none",
+			"Name": "Iron-bound Tome",
+			"Id": "38322",
+			"Slot": "OffHand"
+		},
+		{
+			"ItemLevel": "200",
+			"DisplayId": "54985",
+			"DisplaySlot": "23",
+			"IconPath": "inv_misc_book_08",
+			"Stats": {
+				"Stamina": "33",
+				"Intellect": "42",
+				"Spirit": "34",
+				"SpellPower": "51"
+			},
+			"Quality": "Rare",
+			"Type": "None",
+			"Faction": "Neutral",
+			"Bind": "BoE",
+			"SocketBonus": "none",
+			"Name": "Prison Manifest",
+			"Id": "37889",
+			"Slot": "OffHand"
+		},
+		{
+			"ItemLevel": "200",
+			"DisplayId": "53931",
+			"DisplaySlot": "23",
+			"IconPath": "inv_offhand_naxxramas_02",
+			"Stats": {
+				"Stamina": "36",
+				"Intellect": "34",
+				"SpellPower": "59",
+				"CritRating": "38",
+				"Mp5": "16"
+			},
+			"Quality": "Epic",
+			"Type": "None",
+			"Faction": "Neutral",
+			"Bind": "BoP",
+			"SocketBonus": "none",
+			"Name": "Scepter of Murmuring Spirits",
+			"Id": "39311",
+			"Slot": "OffHand"
+		},
+		{
+			"ItemLevel": "200",
+			"DisplayId": "50990",
+			"DisplaySlot": "23",
+			"IconPath": "inv_misc_book_06",
+			"Stats": {
+				"Stamina": "24",
+				"Intellect": "43",
+				"SpellPower": "50",
+				"HitRating": "39"
+			},
+			"Quality": "Rare",
+			"Type": "None",
+			"Faction": "Neutral",
+			"Bind": "BoP",
+			"SocketBonus": "none",
+			"Name": "Telestra's Journal",
+			"Id": "37134",
+			"Slot": "OffHand"
+		},
+		{
+			"ItemLevel": "200",
+			"DisplayId": "52569",
+			"DisplaySlot": "23",
+			"IconPath": "inv_datacrystal01",
+			"Stats": {
+				"Stamina": "37",
+				"Intellect": "31",
+				"SpellPower": "51",
+				"HasteRating": "42"
+			},
+			"Quality": "Rare",
+			"Type": "None",
+			"Faction": "Neutral",
+			"Bind": "BoP",
+			"SocketBonus": "none",
+			"Name": "Temple Crystal Fragment",
+			"Id": "37718",
+			"Slot": "OffHand"
+		},
+		{
+			"ItemLevel": "200",
+			"DisplayId": "0",
+			"DisplaySlot": "0",
+			"IconPath": "inv_offhand_dalaran_d_01",
+			"Stats": {
+				"Stamina": "49",
+				"Intellect": "34",
+				"SpellPower": "59",
+				"CritRating": "25",
+				"HitRating": "38"
+			},
+			"Quality": "Epic",
+			"Type": "None",
+			"Faction": "Neutral",
+			"Bind": "BoP",
+			"SocketBonus": "none",
+			"Name": "Ward of the Violet Citadel",
+			"Id": "40698",
+			"Slot": "OffHand"
+		},
+		{
+			"ItemLevel": "200",
+			"DisplayId": "53843",
+			"DisplaySlot": "23",
+			"IconPath": "inv_offhand_naxxramas_03",
+			"Stats": {
+				"Stamina": "37",
+				"Intellect": "38",
+				"Spirit": "36",
+				"SpellPower": "59",
+				"HitRating": "28"
+			},
+			"Quality": "Epic",
+			"Type": "None",
+			"Faction": "Neutral",
+			"Bind": "BoP",
+			"SocketBonus": "none",
+			"Name": "Watchful Eye",
+			"Id": "39199",
+			"Slot": "OffHand"
+		},
+		{
+			"ItemLevel": "213",
+			"DisplayId": "52465",
+			"DisplaySlot": "23",
+			"IconPath": "inv_offhand_utgarde_d_01",
+			"Stats": {
+				"Stamina": "42",
+				"Intellect": "41",
+				"Spirit": "32",
+				"SpellPower": "65",
+				"CritRating": "43"
+			},
+			"Quality": "Epic",
+			"Type": "None",
+			"Faction": "Neutral",
+			"Bind": "BoP",
+			"SocketBonus": "none",
+			"Name": "Accursed Spine",
+			"Id": "40192",
+			"Slot": "OffHand"
+		},
+		{
+			"ItemLevel": "213",
+			"DisplayId": "54740",
+			"DisplaySlot": "23",
+			"IconPath": "inv_offhand_naxxramas_d_01",
+			"Stats": {
+				"Stamina": "42",
+				"Intellect": "41",
+				"Spirit": "43",
+				"SpellPower": "66",
+				"HasteRating": "32"
+			},
+			"Quality": "Epic",
+			"Type": "None",
+			"Faction": "Neutral",
+			"Bind": "BoP",
+			"SocketBonus": "none",
+			"Name": "Matriarch's Spawn",
+			"Id": "39766",
+			"Slot": "OffHand"
+		},
+		{
+			"ItemLevel": "213",
+			"DisplayId": "54844",
+			"DisplaySlot": "23",
+			"IconPath": "inv_offhand_stratholme_a_02",
+			"Stats": {
+				"Stamina": "55",
+				"Intellect": "38",
+				"SpellPower": "65",
+				"HitRating": "32",
+				"HasteRating": "41"
+			},
+			"Quality": "Epic",
+			"Type": "None",
+			"Faction": "Neutral",
+			"Bind": "BoP",
+			"SocketBonus": "none",
+			"Name": "Surplus Limb",
+			"Id": "40273",
+			"Slot": "OffHand"
+		},
+		{
+			"ItemLevel": "213",
+			"DisplayId": "54614",
+			"DisplaySlot": "23",
+			"IconPath": "inv_offhand_naxxramas_04",
+			"Stats": {
+				"Stamina": "42",
+				"Intellect": "32",
+				"SpellPower": "66",
+				"CritRating": "41",
+				"Mp5": "21"
+			},
+			"Quality": "Epic",
+			"Type": "None",
+			"Faction": "Neutral",
+			"Bind": "BoP",
+			"SocketBonus": "none",
+			"Name": "Urn of Lost Memories",
+			"Id": "40350",
+			"Slot": "OffHand"
+		},
+		{
+			"ItemLevel": "219",
+			"DisplayId": "58973",
+			"DisplaySlot": "23",
+			"IconPath": "inv_offhand_ulduarraid_d_03",
+			"Stats": {
+				"Stamina": "44",
+				"Intellect": "45",
+				"Spirit": "36",
+				"SpellPower": "64",
+				"CritRating": "47"
+			},
+			"Quality": "Epic",
+			"Type": "None",
+			"Faction": "Neutral",
+			"Bind": "BoP",
+			"SocketBonus": "none",
+			"Name": "Igniter Rod",
+			"Id": "45314",
+			"Slot": "OffHand"
+		},
+		{
+			"ItemLevel": "226",
+			"DisplayId": "61877",
+			"DisplaySlot": "23",
+			"IconPath": "inv_offhand_ulduarraid_d_02",
+			"Stats": {
+				"Stamina": "54",
+				"Intellect": "47",
+				"Spirit": "45",
+				"SpellPower": "74",
+				"HasteRating": "36"
+			},
+			"Quality": "Epic",
+			"Type": "None",
+			"Faction": "Neutral",
+			"Bind": "BoP",
+			"SocketBonus": "none",
+			"Name": "Ironmender",
+			"Id": "45271",
+			"Slot": "OffHand"
+		},
+		{
+			"ItemLevel": "226",
+			"DisplayId": "61864",
+			"DisplaySlot": "23",
+			"IconPath": "inv_offhand_ulduarraid_d_02",
+			"Stats": {
+				"Stamina": "49",
+				"Intellect": "46",
+				"Spirit": "42",
+				"SpellPower": "75",
+				"HitRating": "41"
+			},
+			"Quality": "Epic",
+			"Type": "None",
+			"Faction": "Neutral",
+			"Bind": "BoP",
+			"SocketBonus": "none",
+			"Name": "Leviathan Fueling Manual",
+			"Id": "45115",
+			"Slot": "OffHand"
+		},
+		{
+			"ItemLevel": "232",
+			"DisplayId": "29717",
+			"DisplaySlot": "23",
+			"IconPath": "inv_misc_book_07",
+			"Stats": {
+				"Stamina": "44",
+				"Intellect": "57",
+				"Spirit": "40",
+				"SpellPower": "64"
+			},
+			"Quality": "Epic",
+			"Type": "None",
+			"Faction": "Neutral",
+			"Bind": "BoP",
+			"SocketBonus": "none",
+			"Name": "Antique Cornerstone Grimoire",
+			"Id": "49308",
+			"Slot": "OffHand"
+		},
+		{
+			"ItemLevel": "232",
+			"DisplayId": "60705",
+			"DisplaySlot": "23",
+			"IconPath": "inv_offhand_pvealliance_d_01",
+			"Stats": {
+				"Stamina": "51",
+				"Intellect": "48",
+				"SpellPower": "69",
+				"HitRating": "37",
+				"HasteRating": "45"
+			},
+			"Quality": "Epic",
+			"Type": "None",
+			"Faction": "Alliance",
+			"Bind": "BoP",
+			"SocketColor1": "Yellow",
+			"SocketBonus": {
+				"SpellPower": "5"
+			},
+			"Name": "Chalice of Benedictus",
+			"Id": "47742",
+			"Slot": "OffHand"
+		},
+		{
+			"ItemLevel": "232",
+			"DisplayId": "60704",
+			"DisplaySlot": "23",
+			"IconPath": "inv_offhand_stratholme_a_02",
+			"Stats": {
+				"Stamina": "51",
+				"Intellect": "48",
+				"SpellPower": "69",
+				"HitRating": "37",
+				"HasteRating": "45"
+			},
+			"Quality": "Epic",
+			"Type": "None",
+			"Faction": "Horde",
+			"Bind": "BoP",
+			"SocketColor1": "Yellow",
+			"SocketBonus": {
+				"SpellPower": "5"
+			},
+			"Name": "Lightbane Focus",
+			"Id": "47913",
+			"Slot": "OffHand"
+		},
+		{
+			"ItemLevel": "232",
+			"DisplayId": "64447",
+			"DisplaySlot": "23",
+			"IconPath": "inv_ore_feliron_01",
+			"Stats": {
+				"Stamina": "54",
+				"Intellect": "34",
+				"SpellPower": "78",
+				"CritRating": "51",
+				"HasteRating": "50"
+			},
+			"Quality": "Epic",
+			"Type": "None",
+			"Faction": "Neutral",
+			"Bind": "BoP",
+			"SocketBonus": "none",
+			"Name": "Shriveled Heart",
+			"Id": "50309",
+			"Slot": "OffHand"
+		},
+		{
+			"ItemLevel": "239",
+			"DisplayId": "58971",
+			"DisplaySlot": "23",
+			"IconPath": "inv_offhand_ulduarraid_d_03",
+			"Stats": {
+				"Stamina": "52",
+				"Intellect": "55",
+				"SpellPower": "84",
+				"CritRating": "41",
+				"HitRating": "51"
+			},
+			"Quality": "Epic",
+			"Type": "None",
+			"Faction": "Neutral",
+			"Bind": "BoP",
+			"SocketBonus": "none",
+			"Name": "Cosmos",
+			"Id": "45617",
+			"Slot": "OffHand"
+		},
+		{
+			"ItemLevel": "245",
+			"DisplayId": "29717",
+			"DisplaySlot": "23",
+			"IconPath": "inv_misc_book_07",
+			"Stats": {
+				"Stamina": "51",
+				"Intellect": "66",
+				"Spirit": "46",
+				"SpellPower": "75"
+			},
+			"Quality": "Epic",
+			"Type": "None",
+			"Faction": "Neutral",
+			"Bind": "BoP",
+			"SocketBonus": "none",
+			"Name": "Antediluvian Cornerstone Grimoire",
+			"Id": "49490",
+			"Slot": "OffHand"
+		},
+		{
+			"ItemLevel": "245",
+			"DisplayId": "60705",
+			"DisplaySlot": "23",
+			"IconPath": "inv_offhand_pvealliance_d_01",
+			"Stats": {
+				"Stamina": "58",
+				"Intellect": "55",
+				"SpellPower": "80",
+				"HitRating": "43",
+				"HasteRating": "51"
+			},
+			"Quality": "Epic",
+			"Type": "None",
+			"Faction": "Alliance",
+			"Bind": "BoP",
+			"SocketColor1": "Yellow",
+			"SocketBonus": {
+				"SpellPower": "5"
+			},
+			"Name": "Chalice of Benedictus",
+			"Id": "47958",
+			"Slot": "OffHand"
+		},
+		{
+			"ItemLevel": "245",
+			"DisplayId": "61377",
+			"DisplaySlot": "23",
+			"IconPath": "inv_offhand_pvealliance_d_01",
+			"Stats": {
+				"Stamina": "58",
+				"Intellect": "58",
+				"Spirit": "50",
+				"SpellPower": "89",
+				"CritRating": "50"
+			},
+			"Quality": "Epic",
+			"Type": "None",
+			"Faction": "Alliance",
+			"Bind": "BoP",
+			"SocketBonus": "none",
+			"Name": "Chalice of Searing Light",
+			"Id": "47138",
+			"Slot": "OffHand"
+		},
+		{
+			"ItemLevel": "245",
+			"DisplayId": "60704",
+			"DisplaySlot": "23",
+			"IconPath": "inv_offhand_stratholme_a_02",
+			"Stats": {
+				"Stamina": "58",
+				"Intellect": "55",
+				"SpellPower": "80",
+				"HitRating": "43",
+				"HasteRating": "51"
+			},
+			"Quality": "Epic",
+			"Type": "None",
+			"Faction": "Horde",
+			"Bind": "BoP",
+			"SocketColor1": "Yellow",
+			"SocketBonus": {
+				"SpellPower": "5"
+			},
+			"Name": "Lightbane Focus",
+			"Id": "48032",
+			"Slot": "OffHand"
+		},
+		{
+			"ItemLevel": "245",
+			"DisplayId": "61791",
+			"DisplaySlot": "23",
+			"IconPath": "inv_offhand_stratholme_a_02",
+			"Stats": {
+				"Stamina": "58",
+				"Intellect": "58",
+				"Spirit": "50",
+				"SpellPower": "89",
+				"CritRating": "50"
+			},
+			"Quality": "Epic",
+			"Type": "None",
+			"Faction": "Horde",
+			"Bind": "BoP",
+			"SocketBonus": "none",
+			"Name": "Mystifying Charm",
+			"Id": "47309",
+			"Slot": "OffHand"
+		},
+		{
+			"ItemLevel": "245",
+			"DisplayId": "61788",
+			"DisplaySlot": "23",
+			"IconPath": "inv_offhand_pvealliance_d_01",
+			"Stats": {
+				"Stamina": "58",
+				"Intellect": "58",
+				"SpellPower": "89",
+				"CritRating": "50",
+				"HitRating": "50"
+			},
+			"Quality": "Epic",
+			"Type": "None",
+			"Faction": "Alliance",
+			"Bind": "BoP",
+			"SocketBonus": "none",
+			"Name": "Symbol of Transgression",
+			"Id": "47053",
+			"Slot": "OffHand"
+		},
+		{
+			"ItemLevel": "245",
+			"DisplayId": "61790",
+			"DisplaySlot": "23",
+			"IconPath": "inv_offhand_stratholme_a_02",
+			"Stats": {
+				"Stamina": "58",
+				"Intellect": "58",
+				"SpellPower": "89",
+				"CritRating": "50",
+				"HitRating": "50"
+			},
+			"Quality": "Epic",
+			"Type": "None",
+			"Faction": "Horde",
+			"Bind": "BoP",
+			"SocketBonus": "none",
+			"Name": "Talisman of Heedless Sins",
+			"Id": "47276",
+			"Slot": "OffHand"
+		},
+		{
+			"ItemLevel": "251",
+			"DisplayId": "64433",
+			"DisplaySlot": "23",
+			"IconPath": "inv_misc_bone_elfskull_01",
+			"Stats": {
+				"Stamina": "61",
+				"Intellect": "61",
+				"SpellPower": "94",
+				"CritRating": "47",
+				"HitRating": "57"
+			},
+			"Quality": "Epic",
+			"Type": "None",
+			"Faction": "Neutral",
+			"Bind": "BoP",
+			"SocketBonus": "none",
+			"Name": "Scourgelord's Baton",
+			"Id": "50781",
+			"Slot": "OffHand"
+		},
+		{
+			"ItemLevel": "258",
+			"DisplayId": "61377",
+			"DisplaySlot": "23",
+			"IconPath": "inv_offhand_pvealliance_d_01",
+			"Stats": {
+				"Stamina": "65",
+				"Intellect": "65",
+				"Spirit": "57",
+				"SpellPower": "100",
+				"CritRating": "57"
+			},
+			"Quality": "Epic",
+			"Type": "None",
+			"Faction": "Alliance",
+			"Bind": "BoP",
+			"SocketBonus": "none",
+			"Name": "Chalice of Searing Light",
+			"Id": "47146",
+			"Slot": "OffHand"
+		},
+		{
+			"ItemLevel": "258",
+			"DisplayId": "61791",
+			"DisplaySlot": "23",
+			"IconPath": "inv_offhand_stratholme_a_02",
+			"Stats": {
+				"Stamina": "65",
+				"Intellect": "65",
+				"Spirit": "57",
+				"SpellPower": "100",
+				"CritRating": "57"
+			},
+			"Quality": "Epic",
+			"Type": "None",
+			"Faction": "Horde",
+			"Bind": "BoP",
+			"SocketBonus": "none",
+			"Name": "Mystifying Charm",
+			"Id": "47470",
+			"Slot": "OffHand"
+		},
+		{
+			"ItemLevel": "258",
+			"DisplayId": "61788",
+			"DisplaySlot": "23",
+			"IconPath": "inv_offhand_pvealliance_d_01",
+			"Stats": {
+				"Stamina": "65",
+				"Intellect": "65",
+				"SpellPower": "100",
+				"CritRating": "57",
+				"HitRating": "57"
+			},
+			"Quality": "Epic",
+			"Type": "None",
+			"Faction": "Alliance",
+			"Bind": "BoP",
+			"SocketBonus": "none",
+			"Name": "Symbol of Transgression",
+			"Id": "47064",
+			"Slot": "OffHand"
+		},
+		{
+			"ItemLevel": "258",
+			"DisplayId": "61790",
+			"DisplaySlot": "23",
+			"IconPath": "inv_offhand_stratholme_a_02",
+			"Stats": {
+				"Stamina": "65",
+				"Intellect": "65",
+				"SpellPower": "100",
+				"CritRating": "57",
+				"HitRating": "57"
+			},
+			"Quality": "Epic",
+			"Type": "None",
+			"Faction": "Horde",
+			"Bind": "BoP",
+			"SocketBonus": "none",
+			"Name": "Talisman of Heedless Sins",
+			"Id": "47437",
+			"Slot": "OffHand"
+		},
+		{
+			"ItemLevel": "264",
+			"DisplayId": "40786",
+			"DisplaySlot": "23",
+			"IconPath": "inv_misc_bone_elfskull_01",
+			"Stats": {
+				"Stamina": "69",
+				"Intellect": "69",
+				"SpellPower": "97",
+				"CritRating": "45",
+				"HitRating": "65"
+			},
+			"Quality": "Epic",
+			"Type": "None",
+			"Faction": "Neutral",
+			"Bind": "BoP",
+			"SocketColor1": "Red",
+			"SocketBonus": {
+				"SpellPower": "5"
+			},
+			"Name": "Scourgelord's Baton",
+			"Id": "51922",
+			"Slot": "OffHand"
+		},
+		{
+			"ItemLevel": "264",
+			"DisplayId": "64440",
+			"DisplaySlot": "23",
+			"IconPath": "inv_misc_thread_01",
+			"Stats": {
+				"Stamina": "69",
+				"Intellect": "69",
+				"SpellPower": "106",
+				"CritRating": "60",
+				"HasteRating": "60"
+			},
+			"Quality": "Epic",
+			"Type": "None",
+			"Faction": "Neutral",
+			"Bind": "BoP",
+			"SocketBonus": "none",
+			"Name": "Shadow Silk Spindle",
+			"Id": "50173",
+			"Slot": "OffHand"
+		},
+		{
+			"ItemLevel": "264",
+			"DisplayId": "64441",
+			"DisplaySlot": "23",
+			"IconPath": "inv_offhand_zulaman_d_02",
+			"Stats": {
+				"Stamina": "69",
+				"Intellect": "69",
+				"Spirit": "60",
+				"SpellPower": "106",
+				"HasteRating": "60"
+			},
+			"Quality": "Epic",
+			"Type": "None",
+			"Faction": "Neutral",
+			"Bind": "BoP",
+			"SocketBonus": "none",
+			"Name": "Sundial of Eternal Dusk",
+			"Id": "50423",
+			"Slot": "OffHand"
+		},
+		{
+			"ItemLevel": "270",
+			"DisplayId": "0",
+			"DisplaySlot": "0",
+			"IconPath": "inv_misc_book_06",
+			"Stats": {
+				"Stamina": "109",
+				"Intellect": "48",
+				"SpellPower": "111",
+				"Resilience": "63",
+				"HasteRating": "63"
+			},
+			"Quality": "Epic",
+			"Type": "None",
+			"Faction": "Neutral",
+			"Bind": "BoP",
+			"SocketBonus": "none",
+			"Name": "Wrathful Gladiator's Compendium",
+			"Id": "51407",
+			"Slot": "OffHand"
+		},
+		{
+			"ItemLevel": "270",
+			"DisplayId": "0",
+			"DisplaySlot": "0",
+			"IconPath": "inv_misc_book_06",
+			"Stats": {
+				"Stamina": "109",
+				"Intellect": "48",
+				"SpellPower": "111",
+				"CritRating": "63",
+				"Resilience": "63"
+			},
+			"Quality": "Epic",
+			"Type": "None",
+			"Faction": "Neutral",
+			"Bind": "BoP",
+			"SocketBonus": "none",
+			"Name": "Wrathful Gladiator's Endgame",
+			"Id": "51396",
+			"Slot": "OffHand"
+		},
+		{
+			"ItemLevel": "270",
+			"DisplayId": "0",
+			"DisplaySlot": "0",
+			"IconPath": "inv_misc_book_06",
+			"Stats": {
+				"Stamina": "109",
+				"Intellect": "48",
+				"SpellPower": "111",
+				"SpellPenetration": "79",
+				"Resilience": "63"
+			},
+			"Quality": "Epic",
+			"Type": "None",
+			"Faction": "Neutral",
+			"Bind": "BoP",
+			"SocketBonus": "none",
+			"Name": "Wrathful Gladiator's Grimoire",
+			"Id": "51408",
+			"Slot": "OffHand"
+		},
+		{
+			"ItemLevel": "270",
+			"DisplayId": "0",
+			"DisplaySlot": "0",
+			"IconPath": "inv_misc_book_06",
+			"Stats": {
+				"Stamina": "109",
+				"Intellect": "48",
+				"Spirit": "63",
+				"SpellPower": "111",
+				"Resilience": "63"
+			},
+			"Quality": "Epic",
+			"Type": "None",
+			"Faction": "Neutral",
+			"Bind": "BoP",
+			"SocketBonus": "none",
+			"Name": "Wrathful Gladiator's Reprieve",
+			"Id": "51409",
+			"Slot": "OffHand"
+		},
+		{
+			"ItemLevel": "277",
+			"DisplayId": "64440",
+			"DisplaySlot": "23",
+			"IconPath": "inv_misc_thread_01",
+			"Stats": {
+				"Stamina": "78",
+				"Intellect": "78",
+				"SpellPower": "119",
+				"CritRating": "68",
+				"HasteRating": "68"
+			},
+			"Quality": "Epic",
+			"Type": "None",
+			"Faction": "Neutral",
+			"Bind": "BoP",
+			"SocketBonus": "none",
+			"Name": "Shadow Silk Spindle",
+			"Id": "50719",
+			"Slot": "OffHand"
+		},
+		{
+			"ItemLevel": "277",
+			"DisplayId": "64441",
+			"DisplaySlot": "23",
+			"IconPath": "inv_offhand_zulaman_d_02",
+			"Stats": {
+				"Stamina": "78",
+				"Intellect": "78",
+				"Spirit": "68",
+				"SpellPower": "119",
+				"HasteRating": "68"
+			},
+			"Quality": "Epic",
+			"Type": "None",
+			"Faction": "Neutral",
+			"Bind": "BoP",
+			"SocketBonus": "none",
+			"Name": "Sundial of Eternal Dusk",
+			"Id": "50635",
+			"Slot": "OffHand"
+		},
+		{
+			"ItemLevel": "264",
+			"DisplayId": "0",
+			"DisplaySlot": "0",
+			"IconPath": "inv_axe_116",
+			"Stats": {
+				"Stamina": "104",
+				"AttackPower": "123",
+				"CritRating": "38",
+				"Resilience": "46"
+			},
+			"Quality": "Epic",
+			"Type": "OneHandAxe",
+			"Faction": "Neutral",
+			"MinDamage": "412",
+			"MaxDamage": "766",
+			"Speed": "2.6",
+			"Bind": "BoP",
+			"SocketColor1": "Blue",
+			"SocketBonus": {
+				"AttackPower": "8"
+			},
+			"Name": "Wrathful Gladiator's Chopper",
+			"Id": "51525",
+			"Slot": "OffHand"
+		},
+		{
+			"ItemLevel": "264",
+			"DisplayId": "0",
+			"DisplaySlot": "0",
+			"IconPath": "inv_axe_116",
+			"Stats": {
+				"Stamina": "104",
+				"AttackPower": "123",
+				"CritRating": "38",
+				"Resilience": "46"
+			},
+			"Quality": "Epic",
+			"Type": "OneHandAxe",
+			"Faction": "Neutral",
+			"MinDamage": "238",
+			"MaxDamage": "442",
+			"Speed": "1.5",
+			"Bind": "BoP",
+			"SocketColor1": "Blue",
+			"SocketBonus": {
+				"AttackPower": "8"
+			},
+			"Name": "Wrathful Gladiator's Hacker",
+			"Id": "51439",
+			"Slot": "OffHand"
+		},
+		{
+			"ItemLevel": "277",
+			"DisplayId": "0",
+			"DisplaySlot": "0",
+			"IconPath": "inv_axe_116",
+			"Stats": {
+				"Stamina": "118",
+				"AttackPower": "141",
+				"CritRating": "44",
+				"Resilience": "52"
+			},
+			"Quality": "Epic",
+			"Type": "OneHandAxe",
+			"Faction": "Neutral",
+			"MinDamage": "263",
+			"MaxDamage": "489",
+			"Speed": "1.5",
+			"Bind": "BoP",
+			"SocketColor1": "Blue",
+			"SocketBonus": {
+				"AttackPower": "8"
+			},
+			"Name": "Wrathful Gladiator's Dicer",
+			"Id": "51440",
+			"Slot": "OffHand"
+		},
+		{
+			"ItemLevel": "277",
+			"DisplayId": "0",
+			"DisplaySlot": "0",
+			"IconPath": "inv_axe_116",
+			"Stats": {
+				"Stamina": "118",
+				"AttackPower": "141",
+				"CritRating": "44",
+				"Resilience": "52"
+			},
+			"Quality": "Epic",
+			"Type": "OneHandAxe",
+			"Faction": "Neutral",
+			"MinDamage": "456",
+			"MaxDamage": "847",
+			"Speed": "2.6",
+			"Bind": "BoP",
+			"SocketColor1": "Blue",
+			"SocketBonus": {
+				"AttackPower": "8"
+			},
+			"Name": "Wrathful Gladiator's Splitter",
+			"Id": "51526",
+			"Slot": "OffHand"
+		},
+		{
+			"ItemLevel": "264",
+			"DisplayId": "0",
+			"DisplaySlot": "0",
+			"IconPath": "inv_mace_120",
+			"Stats": {
+				"Stamina": "104",
+				"AttackPower": "123",
+				"CritRating": "38",
+				"Resilience": "46"
+			},
+			"Quality": "Epic",
+			"Type": "OneHandMace",
+			"Faction": "Neutral",
+			"MinDamage": "238",
+			"MaxDamage": "442",
+			"Speed": "1.5",
+			"Bind": "BoP",
+			"SocketColor1": "Blue",
+			"SocketBonus": {
+				"AttackPower": "8"
+			},
+			"Name": "Wrathful Gladiator's Bonecracker",
+			"Id": "51445",
+			"Slot": "OffHand"
+		},
+		{
+			"ItemLevel": "277",
+			"DisplayId": "0",
+			"DisplaySlot": "0",
+			"IconPath": "inv_mace_120",
+			"Stats": {
+				"Stamina": "118",
+				"AttackPower": "141",
+				"CritRating": "44",
+				"Resilience": "52"
+			},
+			"Quality": "Epic",
+			"Type": "OneHandMace",
+			"Faction": "Neutral",
+			"MinDamage": "263",
+			"MaxDamage": "489",
+			"Speed": "1.5",
+			"Bind": "BoP",
+			"SocketColor1": "Blue",
+			"SocketBonus": {
+				"AttackPower": "8"
+			},
+			"Name": "Wrathful Gladiator's Punisher",
+			"Id": "51446",
+			"Slot": "OffHand"
+		},
+		{
+			"ItemLevel": "200",
+			"DisplayId": "0",
+			"DisplaySlot": "0",
+			"IconPath": "inv_sword_123",
+			"Stats": {
+				"Agility": "25",
+				"Stamina": "39",
+				"AttackPower": "76",
+				"CritRating": "38"
+			},
+			"Quality": "Epic",
+			"Type": "OneHandSword",
+			"Faction": "Neutral",
+			"MinDamage": "160",
+			"MaxDamage": "299",
+			"Speed": "1.6",
+			"Bind": "BoP",
+			"SocketBonus": "none",
+			"Name": "Grasscutter",
+			"Id": "40703",
+			"Slot": "OffHand"
+		},
+		{
+			"ItemLevel": "264",
+			"DisplayId": "0",
+			"DisplaySlot": "0",
+			"IconPath": "inv_sword_156",
+			"Stats": {
+				"Stamina": "104",
+				"AttackPower": "123",
+				"CritRating": "38",
+				"Resilience": "46"
+			},
+			"Quality": "Epic",
+			"Type": "OneHandSword",
+			"Faction": "Neutral",
+			"MinDamage": "238",
+			"MaxDamage": "442",
+			"Speed": "1.5",
+			"Bind": "BoP",
+			"SocketColor1": "Blue",
+			"SocketBonus": {
+				"AttackPower": "8"
+			},
+			"Name": "Wrathful Gladiator's Quickblade",
+			"Id": "51447",
+			"Slot": "OffHand"
+		},
+		{
+			"ItemLevel": "277",
+			"DisplayId": "0",
+			"DisplaySlot": "0",
+			"IconPath": "inv_sword_156",
+			"Stats": {
+				"Stamina": "118",
+				"AttackPower": "141",
+				"CritRating": "44",
+				"Resilience": "52"
+			},
+			"Quality": "Epic",
+			"Type": "OneHandSword",
+			"Faction": "Neutral",
+			"MinDamage": "263",
+			"MaxDamage": "489",
+			"Speed": "1.5",
+			"Bind": "BoP",
+			"SocketColor1": "Blue",
+			"SocketBonus": {
+				"AttackPower": "8"
+			},
+			"Name": "Wrathful Gladiator's Swiftblade",
+			"Id": "51448",
+			"Slot": "OffHand"
+		},
+		{
+			"ItemLevel": "200",
+			"DisplayId": "35573",
+			"DisplaySlot": "14",
+			"IconPath": "inv_shield_28",
+			"Stats": {
+				"Armor": "7530",
+				"Stamina": "31",
+				"Intellect": "39",
+				"SpellPower": "60",
+				"CritRating": "36",
+				"BlockValue": "211",
+				"HasteRating": "28"
+			},
+			"Quality": "Epic",
+			"Type": "Shield",
+			"Faction": "Neutral",
+			"Bind": "BoP",
+			"SocketBonus": "none",
+			"Name": "Aegis of Damnation",
+			"Id": "39233",
+			"Slot": "OffHand"
+		},
+		{
+			"ItemLevel": "200",
+			"DisplayId": "50911",
+			"DisplaySlot": "14",
+			"IconPath": "inv_shield_50",
+			"Stats": {
+				"Armor": "7278",
+				"Stamina": "64",
+				"Strength": "43",
+				"BlockRating": "25",
+				"BlockValue": "204",
+				"DefenseRating": "31"
+			},
+			"Quality": "Rare",
+			"Type": "Shield",
+			"Faction": "Neutral",
+			"Bind": "BoP",
+			"SocketBonus": "none",
+			"Name": "Bulwark of the Noble Protector",
+			"Id": "37162",
+			"Slot": "OffHand"
+		},
+		{
+			"ItemLevel": "200",
+			"DisplayId": "0",
+			"DisplaySlot": "0",
+			"IconPath": "inv_shield_41",
+			"Stats": {
+				"Armor": "7530",
+				"Stamina": "75",
+				"Strength": "38",
+				"HitRating": "25",
+				"DodgeRating": "33",
+				"BlockValue": "211",
+				"DefenseRating": "34"
+			},
+			"Quality": "Epic",
+			"Type": "Shield",
+			"Faction": "Neutral",
+			"Bind": "BoP",
+			"SocketBonus": "none",
+			"Name": "Crygil's Discarded Plate Panel",
+			"Id": "40701",
+			"Slot": "OffHand"
+		},
+		{
+			"ItemLevel": "200",
+			"DisplayId": "51721",
+			"DisplaySlot": "14",
+			"IconPath": "inv_shield_51",
+			"Stats": {
+				"Armor": "7278",
+				"Stamina": "40",
+				"Intellect": "30",
+				"SpellPower": "50",
+				"BlockValue": "204",
+				"Mp5": "21"
+			},
+			"Quality": "Rare",
+			"Type": "Shield",
+			"Faction": "Neutral",
+			"Bind": "BoP",
+			"SocketBonus": "none",
+			"Name": "Facade Shield of Glyphs",
+			"Id": "37216",
+			"Slot": "OffHand"
+		},
+		{
+			"ItemLevel": "200",
+			"DisplayId": "0",
+			"DisplaySlot": "0",
+			"IconPath": "inv_shield_60",
+			"Stats": {
+				"Armor": "7530",
+				"Stamina": "49",
+				"Intellect": "34",
+				"SpellPower": "59",
+				"CritRating": "25",
+				"BlockValue": "211",
+				"Mp5": "19"
+			},
+			"Quality": "Epic",
+			"Type": "Shield",
+			"Faction": "Neutral",
+			"Bind": "BoP",
+			"SocketBonus": "none",
+			"Name": "Protective Barricade of the Light",
+			"Id": "40700",
+			"Slot": "OffHand"
+		},
+		{
+			"ItemLevel": "200",
+			"DisplayId": "54064",
+			"DisplaySlot": "14",
+			"IconPath": "inv_shield_58",
+			"Stats": {
+				"Armor": "7530",
+				"Stamina": "75",
+				"Strength": "38",
+				"HitRating": "25",
+				"BlockValue": "211",
+				"DefenseRating": "49"
+			},
+			"Quality": "Epic",
+			"Type": "Shield",
+			"Faction": "Neutral",
+			"Bind": "BoP",
+			"SocketBonus": "none",
+			"Name": "Royal Crest of Lordaeron",
+			"Id": "43085",
+			"Slot": "OffHand"
+		},
+		{
+			"ItemLevel": "200",
+			"DisplayId": "53908",
+			"DisplaySlot": "14",
+			"IconPath": "inv_shield_26",
+			"Stats": {
+				"Armor": "7530",
+				"Stamina": "75",
+				"Strength": "50",
+				"BlockRating": "25",
+				"BlockValue": "286",
+				"DefenseRating": "27"
+			},
+			"Quality": "Epic",
+			"Type": "Shield",
+			"Faction": "Neutral",
+			"Bind": "BoP",
+			"SocketBonus": "none",
+			"Name": "The Skull of Ruin",
+			"Id": "39276",
+			"Slot": "OffHand"
+		},
+		{
+			"ItemLevel": "200",
+			"DisplayId": "53532",
+			"DisplaySlot": "14",
+			"IconPath": "inv_shield_60",
+			"Stats": {
+				"Armor": "7530",
+				"Stamina": "69",
+				"Strength": "36",
+				"BlockValue": "211",
+				"DefenseRating": "64"
+			},
+			"Quality": "Epic",
+			"Type": "Shield",
+			"Faction": "Neutral",
+			"Bind": "BoE",
+			"SocketBonus": "none",
+			"Name": "Titansteel Shield Wall",
+			"Id": "42508",
+			"Slot": "OffHand"
+		},
+		{
+			"ItemLevel": "200",
+			"DisplayId": "42409",
+			"DisplaySlot": "14",
+			"IconPath": "inv_shield_34",
+			"Stats": {
+				"Armor": "7530",
+				"Stamina": "44",
+				"Intellect": "36",
+				"SpellPower": "58",
+				"BlockValue": "211",
+				"Mp5": "25"
+			},
+			"Quality": "Epic",
+			"Type": "Shield",
+			"Faction": "Neutral",
+			"Bind": "BoE",
+			"SocketBonus": "none",
+			"Name": "Zom's Crackling Bulwark",
+			"Id": "44313",
+			"Slot": "OffHand"
+		},
+		{
+			"ItemLevel": "213",
+			"DisplayId": "53562",
+			"DisplaySlot": "14",
+			"IconPath": "inv_shield_60",
+			"Stats": {
+				"Armor": "7722",
+				"Stamina": "84",
+				"Strength": "43",
+				"ParryRating": "32",
+				"BlockValue": "216",
+				"DefenseRating": "41",
+				"ExpertiseRating": "28"
+			},
+			"Quality": "Epic",
+			"Type": "Shield",
+			"Faction": "Neutral",
+			"Bind": "BoP",
+			"SocketBonus": "none",
+			"Name": "Barricade of Eternity",
+			"Id": "40475",
+			"Slot": "OffHand"
+		},
+		{
+			"ItemLevel": "213",
+			"DisplayId": "54755",
+			"DisplaySlot": "14",
+			"IconPath": "inv_shield_56",
+			"Stats": {
+				"Armor": "7722",
+				"Stamina": "84",
+				"Strength": "56",
+				"DodgeRating": "30",
+				"ParryRating": "30",
+				"BlockValue": "216",
+				"DefenseRating": "29"
+			},
+			"Quality": "Epic",
+			"Type": "Shield",
+			"Faction": "Neutral",
+			"Bind": "BoP",
+			"SocketBonus": "none",
+			"Name": "Hero's Surrender",
+			"Id": "40266",
+			"Slot": "OffHand"
+		},
+		{
+			"ItemLevel": "213",
+			"DisplayId": "56656",
+			"DisplaySlot": "14",
+			"IconPath": "inv_shield_55",
+			"Stats": {
+				"Armor": "7722",
+				"Stamina": "42",
+				"Intellect": "43",
+				"SpellPower": "66",
+				"BlockValue": "216",
+				"HasteRating": "38",
+				"Mp5": "19"
+			},
+			"Quality": "Epic",
+			"Type": "Shield",
+			"Faction": "Neutral",
+			"Bind": "BoP",
+			"SocketBonus": "none",
+			"Name": "Shield of Assimilation",
+			"Id": "39716",
+			"Slot": "OffHand"
+		},
+		{
+			"ItemLevel": "219",
+			"DisplayId": "64881",
+			"DisplaySlot": "14",
+			"IconPath": "inv_shield_55",
+			"Stats": {
+				"Armor": "7802",
+				"Stamina": "48",
+				"Intellect": "44",
+				"SpellPower": "70",
+				"CritRating": "35",
+				"BlockValue": "218",
+				"Mp5": "21"
+			},
+			"Quality": "Epic",
+			"Type": "Shield",
+			"Faction": "Neutral",
+			"Bind": "BoP",
+			"SocketBonus": "none",
+			"Name": "Protector of Frigid Souls",
+			"Id": "49821",
+			"Slot": "OffHand"
+		},
+		{
+			"ItemLevel": "219",
+			"DisplayId": "59289",
+			"DisplaySlot": "14",
+			"IconPath": "inv_shield_64",
+			"Stats": {
+				"Armor": "7802",
+				"Stamina": "45",
+				"Intellect": "45",
+				"SpellPower": "69",
+				"CritRating": "42",
+				"BlockValue": "218",
+				"HasteRating": "34"
+			},
+			"Quality": "Epic",
+			"Type": "Shield",
+			"Faction": "Neutral",
+			"Bind": "BoP",
+			"SocketBonus": "none",
+			"Name": "Pulsing Spellshield",
+			"Id": "45682",
+			"Slot": "OffHand"
+		},
+		{
+			"ItemLevel": "219",
+			"DisplayId": "59288",
+			"DisplaySlot": "14",
+			"IconPath": "inv_shield_67",
+			"Stats": {
+				"Armor": "7802",
+				"Stamina": "66",
+				"Strength": "40",
+				"ParryRating": "32",
+				"BlockValue": "218",
+				"DefenseRating": "44",
+				"ExpertiseRating": "32"
+			},
+			"Quality": "Epic",
+			"Type": "Shield",
+			"Faction": "Neutral",
+			"Bind": "BoP",
+			"SocketColor1": "Blue",
+			"SocketBonus": {
+				"Stamina": "6"
+			},
+			"Name": "Shieldwall of the Breaker",
+			"Id": "45707",
+			"Slot": "OffHand"
+		},
+		{
+			"ItemLevel": "219",
+			"DisplayId": "64882",
+			"DisplaySlot": "14",
+			"IconPath": "inv_shield_63",
+			"Stats": {
+				"Armor": "7802",
+				"Stamina": "89",
+				"Strength": "59",
+				"ParryRating": "28",
+				"BlockRating": "31",
+				"BlockValue": "218",
+				"DefenseRating": "34"
+			},
+			"Quality": "Epic",
+			"Type": "Shield",
+			"Faction": "Neutral",
+			"Bind": "BoP",
+			"SocketBonus": "none",
+			"Name": "Splintered Door of the Citadel",
+			"Id": "49835",
+			"Slot": "OffHand"
+		},
+		{
+			"ItemLevel": "226",
+			"DisplayId": "61884",
+			"DisplaySlot": "14",
+			"IconPath": "inv_shield_66",
+			"Stats": {
+				"Armor": "7890",
+				"Stamina": "94",
+				"Strength": "42",
+				"HitRating": "28",
+				"BlockValue": "221",
+				"DefenseRating": "63",
+				"ExpertiseRating": "28"
+			},
+			"Quality": "Epic",
+			"Type": "Shield",
+			"Faction": "Neutral",
+			"Bind": "BoE",
+			"SocketBonus": "none",
+			"Name": "Northern Barrier",
+			"Id": "45450",
+			"Slot": "OffHand"
+		},
+		{
+			"ItemLevel": "226",
+			"DisplayId": "57263",
+			"DisplaySlot": "14",
+			"IconPath": "inv_shield_63",
+			"Stats": {
+				"Armor": "7890",
+				"Stamina": "49",
+				"Intellect": "49",
+				"SpellPower": "74",
+				"CritRating": "46",
+				"BlockValue": "221",
+				"HasteRating": "31"
+			},
+			"Quality": "Epic",
+			"Type": "Shield",
+			"Faction": "Neutral",
+			"Bind": "BoP",
+			"SocketBonus": "none",
+			"Name": "Voice of Reason",
+			"Id": "40401",
+			"Slot": "OffHand"
+		},
+		{
+			"ItemLevel": "226",
+			"DisplayId": "57003",
+			"DisplaySlot": "14",
+			"IconPath": "inv_shield_32",
+			"Stats": {
+				"Armor": "7890",
+				"Stamina": "94",
+				"Strength": "63",
+				"DodgeRating": "24",
+				"BlockRating": "31",
+				"BlockValue": "221",
+				"DefenseRating": "42"
+			},
+			"Quality": "Epic",
+			"Type": "Shield",
+			"Faction": "Neutral",
+			"Bind": "BoP",
+			"SocketBonus": "none",
+			"Name": "Wall of Terror",
+			"Id": "40400",
+			"Slot": "OffHand"
+		},
+		{
+			"ItemLevel": "232",
+			"DisplayId": "61783",
+			"DisplaySlot": "14",
+			"IconPath": "inv_shield_71",
+			"Stats": {
+				"Armor": "7960",
+				"Stamina": "100",
+				"Strength": "51",
+				"ParryRating": "39",
+				"BlockValue": "324",
+				"DefenseRating": "32"
+			},
+			"Quality": "Epic",
+			"Type": "Shield",
+			"Faction": "Horde",
+			"Bind": "BoP",
+			"SocketColor1": "Blue",
+			"SocketBonus": {
+				"Stamina": "6"
+			},
+			"Name": "Aegis of the Coliseum",
+			"Id": "47910",
+			"Slot": "OffHand"
+		},
+		{
+			"ItemLevel": "232",
+			"DisplayId": "61776",
+			"DisplaySlot": "14",
+			"IconPath": "inv_shield_68",
+			"Stats": {
+				"Armor": "7960",
+				"Stamina": "100",
+				"Strength": "51",
+				"ParryRating": "39",
+				"BlockValue": "324",
+				"DefenseRating": "32"
+			},
+			"Quality": "Epic",
+			"Type": "Shield",
+			"Faction": "Alliance",
+			"Bind": "BoP",
+			"SocketColor1": "Blue",
+			"SocketBonus": {
+				"Stamina": "6"
+			},
+			"Name": "Bulwark of the Royal Guard",
+			"Id": "47835",
+			"Slot": "OffHand"
+		},
+		{
+			"ItemLevel": "232",
+			"DisplayId": "61838",
+			"DisplaySlot": "14",
+			"IconPath": "inv_shield_65",
+			"Stats": {
+				"Armor": "7960",
+				"Stamina": "50",
+				"Intellect": "52",
+				"SpellPower": "78",
+				"BlockValue": "223",
+				"HasteRating": "48",
+				"Mp5": "20"
+			},
+			"Quality": "Epic",
+			"Type": "Shield",
+			"Faction": "Neutral",
+			"Bind": "BoP",
+			"SocketBonus": "none",
+			"Name": "Ice Layered Barrier",
+			"Id": "45887",
+			"Slot": "OffHand"
+		},
+		{
+			"ItemLevel": "232",
+			"DisplayId": "62145",
+			"DisplaySlot": "14",
+			"IconPath": "inv_shield_70",
+			"Stats": {
+				"Armor": "7960",
+				"Stamina": "48",
+				"Intellect": "44",
+				"SpellPower": "69",
+				"CritRating": "39",
+				"BlockValue": "223",
+				"Mp5": "24"
+			},
+			"Quality": "Epic",
+			"Type": "Shield",
+			"Faction": "Horde",
+			"Bind": "BoP",
+			"SocketColor1": "Yellow",
+			"SocketBonus": {
+				"Mp5": "2"
+			},
+			"Name": "Pride of the Kor'kron",
+			"Id": "47895",
+			"Slot": "OffHand"
+		},
+		{
+			"ItemLevel": "232",
+			"DisplayId": "59287",
+			"DisplaySlot": "14",
+			"IconPath": "inv_shield_66",
+			"Stats": {
+				"Armor": "7960",
+				"Stamina": "92",
+				"Strength": "39",
+				"ParryRating": "37",
+				"BlockRating": "33",
+				"BlockValue": "223",
+				"DefenseRating": "35"
+			},
+			"Quality": "Epic",
+			"Type": "Shield",
+			"Faction": "Neutral",
+			"Bind": "BoP",
+			"SocketColor1": "Blue",
+			"SocketColor2": "Red",
+			"SocketBonus": {
+				"DodgeRating": "6"
+			},
+			"Name": "The Boreal Guard",
+			"Id": "45877",
+			"Slot": "OffHand"
+		},
+		{
+			"ItemLevel": "232",
+			"DisplayId": "61777",
+			"DisplaySlot": "14",
+			"IconPath": "inv_shield_69",
+			"Stats": {
+				"Armor": "7960",
+				"Stamina": "48",
+				"Intellect": "44",
+				"SpellPower": "69",
+				"CritRating": "39",
+				"BlockValue": "223",
+				"Mp5": "24"
+			},
+			"Quality": "Epic",
+			"Type": "Shield",
+			"Faction": "Alliance",
+			"Bind": "BoP",
+			"SocketColor1": "Yellow",
+			"SocketBonus": {
+				"Mp5": "2"
+			},
+			"Name": "Vigilant Ward",
+			"Id": "47812",
+			"Slot": "OffHand"
+		},
+		{
+			"ItemLevel": "239",
+			"DisplayId": "59295",
+			"DisplaySlot": "14",
+			"IconPath": "inv_shield_67",
+			"Stats": {
+				"Armor": "8130",
+				"Stamina": "96",
+				"Strength": "71",
+				"DodgeRating": "29",
+				"BlockRating": "37",
+				"BlockValue": "227",
+				"DefenseRating": "38"
+			},
+			"Quality": "Epic",
+			"Type": "Shield",
+			"Faction": "Neutral",
+			"Bind": "BoP",
+			"SocketColor1": "Blue",
+			"SocketBonus": {
+				"DefenseRating": "4"
+			},
+			"Name": "Bulwark of Algalon",
+			"Id": "45587",
+			"Slot": "OffHand"
+		},
+		{
+			"ItemLevel": "239",
+			"DisplayId": "65031",
+			"DisplaySlot": "14",
+			"IconPath": "inv_shield_65",
+			"Stats": {
+				"Armor": "8130",
+				"Stamina": "70",
+				"Intellect": "48",
+				"SpellPower": "75",
+				"CritRating": "40",
+				"BlockValue": "227",
+				"HasteRating": "47"
+			},
+			"Quality": "Epic",
+			"Type": "Shield",
+			"Faction": "Neutral",
+			"Bind": "BoP",
+			"SocketColor1": "Blue",
+			"SocketBonus": {
+				"SpellPower": "5"
+			},
+			"Name": "Wisdom's Hold",
+			"Id": "45470",
+			"Slot": "OffHand"
+		},
+		{
+			"ItemLevel": "245",
+			"DisplayId": "61783",
+			"DisplaySlot": "14",
+			"IconPath": "inv_shield_71",
+			"Stats": {
+				"Armor": "8309",
+				"Stamina": "114",
+				"Strength": "58",
+				"ParryRating": "44",
+				"BlockValue": "347",
+				"DefenseRating": "38"
+			},
+			"Quality": "Epic",
+			"Type": "Shield",
+			"Faction": "Horde",
+			"Bind": "BoP",
+			"SocketColor1": "Blue",
+			"SocketBonus": {
+				"Stamina": "6"
+			},
+			"Name": "Aegis of the Coliseum",
+			"Id": "48055",
+			"Slot": "OffHand"
+		},
+		{
+			"ItemLevel": "245",
+			"DisplayId": "61781",
+			"DisplaySlot": "14",
+			"IconPath": "inv_shield_69",
+			"Stats": {
+				"Armor": "8309",
+				"Stamina": "58",
+				"Intellect": "58",
+				"SpellPower": "89",
+				"CritRating": "50",
+				"BlockValue": "232",
+				"HasteRating": "50"
+			},
+			"Quality": "Epic",
+			"Type": "Shield",
+			"Faction": "Alliance",
+			"Bind": "BoP",
+			"SocketBonus": "none",
+			"Name": "Bastion of Purity",
+			"Id": "47079",
+			"Slot": "OffHand"
+		},
+		{
+			"ItemLevel": "245",
+			"DisplayId": "62299",
+			"DisplaySlot": "14",
+			"IconPath": "inv_shield_70",
+			"Stats": {
+				"Armor": "8309",
+				"Stamina": "58",
+				"Intellect": "58",
+				"SpellPower": "89",
+				"CritRating": "50",
+				"BlockValue": "232",
+				"HasteRating": "50"
+			},
+			"Quality": "Epic",
+			"Type": "Shield",
+			"Faction": "Horde",
+			"Bind": "BoP",
+			"SocketBonus": "none",
+			"Name": "Bastion of Resolve",
+			"Id": "47287",
+			"Slot": "OffHand"
+		},
+		{
+			"ItemLevel": "245",
+			"DisplayId": "61776",
+			"DisplaySlot": "14",
+			"IconPath": "inv_shield_68",
+			"Stats": {
+				"Armor": "8309",
+				"Stamina": "114",
+				"Strength": "58",
+				"ParryRating": "44",
+				"BlockValue": "347",
+				"DefenseRating": "38"
+			},
+			"Quality": "Epic",
+			"Type": "Shield",
+			"Faction": "Alliance",
+			"Bind": "BoP",
+			"SocketColor1": "Blue",
+			"SocketBonus": {
+				"Stamina": "6"
+			},
+			"Name": "Bulwark of the Royal Guard",
+			"Id": "47978",
+			"Slot": "OffHand"
+		},
+		{
+			"ItemLevel": "245",
+			"DisplayId": "61780",
+			"DisplaySlot": "14",
+			"IconPath": "inv_shield_68",
+			"Stats": {
+				"Armor": "8309",
+				"Stamina": "108",
+				"Strength": "71",
+				"DodgeRating": "37",
+				"BlockValue": "349",
+				"DefenseRating": "36"
+			},
+			"Quality": "Epic",
+			"Type": "Shield",
+			"Faction": "Alliance",
+			"Bind": "BoP",
+			"SocketBonus": "none",
+			"Name": "Crystal Plated Vanguard",
+			"Id": "46963",
+			"Slot": "OffHand"
+		},
+		{
+			"ItemLevel": "245",
+			"DisplayId": "61785",
+			"DisplaySlot": "14",
+			"IconPath": "inv_shield_71",
+			"Stats": {
+				"Armor": "8309",
+				"Stamina": "108",
+				"Strength": "71",
+				"DodgeRating": "37",
+				"BlockValue": "349",
+				"DefenseRating": "36"
+			},
+			"Quality": "Epic",
+			"Type": "Shield",
+			"Faction": "Horde",
+			"Bind": "BoP",
+			"SocketBonus": "none",
+			"Name": "Forlorn Barrier",
+			"Id": "47260",
+			"Slot": "OffHand"
+		},
+		{
+			"ItemLevel": "245",
+			"DisplayId": "62145",
+			"DisplaySlot": "14",
+			"IconPath": "inv_shield_70",
+			"Stats": {
+				"Armor": "8309",
+				"Stamina": "54",
+				"Intellect": "51",
+				"SpellPower": "80",
+				"CritRating": "44",
+				"BlockValue": "232",
+				"Mp5": "27"
+			},
+			"Quality": "Epic",
+			"Type": "Shield",
+			"Faction": "Horde",
+			"Bind": "BoP",
+			"SocketColor1": "Yellow",
+			"SocketBonus": {
+				"Mp5": "2"
+			},
+			"Name": "Pride of the Kor'kron",
+			"Id": "48040",
+			"Slot": "OffHand"
+		},
+		{
+			"ItemLevel": "245",
+			"DisplayId": "61777",
+			"DisplaySlot": "14",
+			"IconPath": "inv_shield_69",
+			"Stats": {
+				"Armor": "8309",
+				"Stamina": "54",
+				"Intellect": "51",
+				"SpellPower": "80",
+				"CritRating": "44",
+				"BlockValue": "232",
+				"Mp5": "27"
+			},
+			"Quality": "Epic",
+			"Type": "Shield",
+			"Faction": "Alliance",
+			"Bind": "BoP",
+			"SocketColor1": "Yellow",
+			"SocketBonus": {
+				"Mp5": "2"
+			},
+			"Name": "Vigilant Ward",
+			"Id": "47963",
+			"Slot": "OffHand"
+		},
+		{
+			"ItemLevel": "251",
+			"DisplayId": "64415",
+			"DisplaySlot": "14",
+			"IconPath": "inv_shield_74",
+			"Stats": {
+				"Armor": "8487",
+				"Stamina": "61",
+				"Intellect": "61",
+				"SpellPower": "94",
+				"BlockValue": "237",
+				"HasteRating": "53",
+				"Mp5": "27"
+			},
+			"Quality": "Epic",
+			"Type": "Shield",
+			"Faction": "Neutral",
+			"Bind": "BoP",
+			"SocketBonus": "none",
+			"Name": "Lost Pavise of the Blue Flight",
+			"Id": "51791",
+			"Slot": "OffHand"
+		},
+		{
+			"ItemLevel": "251",
+			"DisplayId": "64409",
+			"DisplaySlot": "14",
+			"IconPath": "inv_shield_73",
+			"Stats": {
+				"Armor": "8487",
+				"Stamina": "120",
+				"Strength": "80",
+				"ParryRating": "45",
+				"BlockRating": "37",
+				"BlockValue": "237",
+				"DefenseRating": "42"
+			},
+			"Quality": "Epic",
+			"Type": "Shield",
+			"Faction": "Neutral",
+			"Bind": "BoP",
+			"SocketBonus": "none",
+			"Name": "Neverending Winter",
+			"Id": "50794",
+			"Slot": "OffHand"
+		},
+		{
+			"ItemLevel": "258",
+			"DisplayId": "61781",
+			"DisplaySlot": "14",
+			"IconPath": "inv_shield_69",
+			"Stats": {
+				"Armor": "8695",
+				"Stamina": "65",
+				"Intellect": "65",
+				"SpellPower": "100",
+				"CritRating": "57",
+				"BlockValue": "243",
+				"HasteRating": "57"
+			},
+			"Quality": "Epic",
+			"Type": "Shield",
+			"Faction": "Alliance",
+			"Bind": "BoP",
+			"SocketColor1": "Yellow",
+			"SocketBonus": {
+				"SpellPower": "5"
+			},
+			"Name": "Bastion of Purity",
+			"Id": "47085",
+			"Slot": "OffHand"
+		},
+		{
+			"ItemLevel": "258",
+			"DisplayId": "62299",
+			"DisplaySlot": "14",
+			"IconPath": "inv_shield_70",
+			"Stats": {
+				"Armor": "8695",
+				"Stamina": "65",
+				"Intellect": "65",
+				"SpellPower": "100",
+				"CritRating": "57",
+				"BlockValue": "243",
+				"HasteRating": "57"
+			},
+			"Quality": "Epic",
+			"Type": "Shield",
+			"Faction": "Horde",
+			"Bind": "BoP",
+			"SocketColor1": "Yellow",
+			"SocketBonus": {
+				"SpellPower": "5"
+			},
+			"Name": "Bastion of Resolve",
+			"Id": "47448",
+			"Slot": "OffHand"
+		},
+		{
+			"ItemLevel": "258",
+			"DisplayId": "61780",
+			"DisplaySlot": "14",
+			"IconPath": "inv_shield_68",
+			"Stats": {
+				"Armor": "8695",
+				"Stamina": "108",
+				"Strength": "80",
+				"DodgeRating": "34",
+				"BlockValue": "369",
+				"DefenseRating": "42"
+			},
+			"Quality": "Epic",
+			"Type": "Shield",
+			"Faction": "Alliance",
+			"Bind": "BoP",
+			"SocketColor1": "Yellow",
+			"SocketBonus": {
+				"Stamina": "6"
+			},
+			"Name": "Crystal Plated Vanguard",
+			"Id": "46964",
+			"Slot": "OffHand"
+		},
+		{
+			"ItemLevel": "258",
+			"DisplayId": "61785",
+			"DisplaySlot": "14",
+			"IconPath": "inv_shield_71",
+			"Stats": {
+				"Armor": "8695",
+				"Stamina": "108",
+				"Strength": "80",
+				"DodgeRating": "34",
+				"BlockValue": "369",
+				"DefenseRating": "42"
+			},
+			"Quality": "Epic",
+			"Type": "Shield",
+			"Faction": "Horde",
+			"Bind": "BoP",
+			"SocketColor1": "Yellow",
+			"SocketBonus": {
+				"Stamina": "6"
+			},
+			"Name": "Forlorn Barrier",
+			"Id": "47421",
+			"Slot": "OffHand"
+		},
+		{
+			"ItemLevel": "264",
+			"DisplayId": "65030",
+			"DisplaySlot": "14",
+			"IconPath": "inv_shield_72",
+			"Stats": {
+				"Armor": "8873",
+				"Stamina": "69",
+				"Intellect": "69",
+				"SpellPower": "106",
+				"CritRating": "60",
+				"BlockValue": "248",
+				"HasteRating": "60"
+			},
+			"Quality": "Epic",
+			"Type": "Shield",
+			"Faction": "Neutral",
+			"Bind": "BoP",
+			"SocketBonus": "none",
+			"Name": "Bulwark of Smouldering Steel",
+			"Id": "49976",
+			"Slot": "OffHand"
+		},
+		{
+			"ItemLevel": "264",
+			"DisplayId": "65056",
+			"DisplaySlot": "14",
+			"IconPath": "inv_shield_75",
+			"Stats": {
+				"Armor": "8873",
+				"Stamina": "136",
+				"Strength": "90",
+				"ParryRating": "48",
+				"BlockValue": "395",
+				"DefenseRating": "48"
+			},
+			"Quality": "Epic",
+			"Type": "Shield",
+			"Faction": "Neutral",
+			"Bind": "BoP",
+			"SocketBonus": "none",
+			"Name": "Icecrown Glacial Wall",
+			"Id": "50065",
+			"Slot": "OffHand"
+		},
+		{
+			"ItemLevel": "264",
+			"DisplayId": "64417",
+			"DisplaySlot": "14",
+			"IconPath": "inv_shield_74",
+			"Stats": {
+				"Armor": "8873",
+				"Stamina": "69",
+				"Intellect": "69",
+				"SpellPower": "97",
+				"BlockValue": "248",
+				"HasteRating": "52",
+				"Mp5": "30"
+			},
+			"Quality": "Epic",
+			"Type": "Shield",
+			"Faction": "Neutral",
+			"Bind": "BoP",
+			"SocketColor1": "Red",
+			"SocketBonus": {
+				"SpellPower": "5"
+			},
+			"Name": "Lost Pavise of the Blue Flight",
+			"Id": "51812",
+			"Slot": "OffHand"
+		},
+		{
+			"ItemLevel": "264",
+			"DisplayId": "64410",
+			"DisplaySlot": "14",
+			"IconPath": "inv_shield_73",
+			"Stats": {
+				"Armor": "8873",
+				"Stamina": "124",
+				"Strength": "82",
+				"ParryRating": "51",
+				"BlockRating": "42",
+				"BlockValue": "248",
+				"DefenseRating": "48"
+			},
+			"Quality": "Epic",
+			"Type": "Shield",
+			"Faction": "Neutral",
+			"Bind": "BoP",
+			"SocketColor1": "Blue",
+			"SocketBonus": {
+				"Stamina": "6"
+			},
+			"Name": "Neverending Winter",
+			"Id": "51909",
+			"Slot": "OffHand"
+		},
+		{
+			"ItemLevel": "270",
+			"DisplayId": "0",
+			"DisplaySlot": "0",
+			"IconPath": "inv_shield_71",
+			"Stats": {
+				"Armor": "9051",
+				"Stamina": "109",
+				"Intellect": "48",
+				"SpellPower": "111",
+				"CritRating": "63",
+				"BlockValue": "253",
+				"Resilience": "63"
+			},
+			"Quality": "Epic",
+			"Type": "Shield",
+			"Faction": "Neutral",
+			"Bind": "BoP",
+			"SocketBonus": "none",
+			"Name": "Wrathful Gladiator's Barrier",
+			"Id": "51452",
+			"Slot": "OffHand"
+		},
+		{
+			"ItemLevel": "270",
+			"DisplayId": "0",
+			"DisplaySlot": "0",
+			"IconPath": "inv_shield_71",
+			"Stats": {
+				"Armor": "9051",
+				"Stamina": "109",
+				"Intellect": "48",
+				"SpellPower": "111",
+				"BlockValue": "253",
+				"Resilience": "63",
+				"Mp5": "32"
+			},
+			"Quality": "Epic",
+			"Type": "Shield",
+			"Faction": "Neutral",
+			"Bind": "BoP",
+			"SocketBonus": "none",
+			"Name": "Wrathful Gladiator's Redoubt",
+			"Id": "51455",
+			"Slot": "OffHand"
+		},
+		{
+			"ItemLevel": "270",
+			"DisplayId": "0",
+			"DisplaySlot": "0",
+			"IconPath": "inv_shield_71",
+			"Stats": {
+				"Armor": "9051",
+				"Stamina": "181",
+				"BlockValue": "253",
+				"Resilience": "121"
+			},
+			"Quality": "Epic",
+			"Type": "Shield",
+			"Faction": "Neutral",
+			"Bind": "BoP",
+			"SocketBonus": "none",
+			"Name": "Wrathful Gladiator's Shield Wall",
+			"Id": "51533",
+			"Slot": "OffHand"
+		},
+		{
+			"ItemLevel": "277",
+			"DisplayId": "65029",
+			"DisplaySlot": "14",
+			"IconPath": "inv_shield_72",
+			"Stats": {
+				"Armor": "9262",
+				"Stamina": "78",
+				"Intellect": "78",
+				"SpellPower": "110",
+				"CritRating": "68",
+				"BlockValue": "259",
+				"HasteRating": "60"
+			},
+			"Quality": "Epic",
+			"Type": "Shield",
+			"Faction": "Neutral",
+			"Bind": "BoP",
+			"SocketColor1": "Yellow",
+			"SocketBonus": {
+				"SpellPower": "5"
+			},
+			"Name": "Bulwark of Smouldering Steel",
+			"Id": "50616",
+			"Slot": "OffHand"
+		},
+		{
+			"ItemLevel": "277",
+			"DisplayId": "65055",
+			"DisplaySlot": "14",
+			"IconPath": "inv_shield_75",
+			"Stats": {
+				"Armor": "9262",
+				"Stamina": "141",
+				"Strength": "102",
+				"ParryRating": "46",
+				"BlockValue": "427",
+				"DefenseRating": "54"
+			},
+			"Quality": "Epic",
+			"Type": "Shield",
+			"Faction": "Neutral",
+			"Bind": "BoP",
+			"SocketColor1": "Red",
+			"SocketBonus": {
+				"Stamina": "6"
+			},
+			"Name": "Icecrown Glacial Wall",
+			"Id": "50729",
+			"Slot": "OffHand"
+		}
+]}

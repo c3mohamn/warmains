@@ -1,0 +1,1662 @@
+{
+	"items": [
+		{
+			"ItemLevel": "80",
+			"DisplayId": "0",
+			"DisplaySlot": "0",
+			"IconPath": "inv_jewelcrafting_dragonseye04",
+			"Stats": {
+				"Stamina": "51"
+			},
+			"Quality": "Epic",
+			"Type": "None",
+			"Faction": "Neutral",
+			"Unique": "true",
+			"Bind": "BoP",
+			"SocketBonus": "none",
+			"Name": "Solid Dragon's Eye",
+			"Id": "36767",
+			"Slot": "Blue"
+		},
+		{
+			"ItemLevel": "80",
+			"DisplayId": "0",
+			"DisplaySlot": "0",
+			"IconPath": "inv_jewelcrafting_gem_42",
+			"Stats": {
+				"Stamina": "30"
+			},
+			"Quality": "Epic",
+			"Type": "None",
+			"Faction": "Neutral",
+			"SocketBonus": "none",
+			"Name": "Solid Majestic Zircon",
+			"Id": "40119",
+			"Slot": "Blue"
+		},
+		{
+			"ItemLevel": "80",
+			"DisplayId": "0",
+			"DisplaySlot": "0",
+			"IconPath": "inv_jewelcrafting_gem_42",
+			"Stats": {
+				"Spirit": "20"
+			},
+			"Quality": "Epic",
+			"Type": "None",
+			"Faction": "Neutral",
+			"SocketBonus": "none",
+			"Name": "Sparkling Majestic Zircon",
+			"Id": "40120",
+			"Slot": "Blue"
+		},
+		{
+			"ItemLevel": "80",
+			"DisplayId": "0",
+			"DisplaySlot": "0",
+			"IconPath": "inv_jewelcrafting_gem_42",
+			"Stats": {
+				"Mp5": "10"
+			},
+			"Quality": "Epic",
+			"Type": "None",
+			"Faction": "Neutral",
+			"SocketBonus": "none",
+			"Name": "Lustrous Majestic Zircon",
+			"Id": "40121",
+			"Slot": "Blue"
+		},
+		{
+			"ItemLevel": "80",
+			"DisplayId": "0",
+			"DisplaySlot": "0",
+			"IconPath": "inv_jewelcrafting_gem_42",
+			"Stats": {
+				"SpellPenetration": "25"
+			},
+			"Quality": "Epic",
+			"Type": "None",
+			"Faction": "Neutral",
+			"SocketBonus": "none",
+			"Name": "Stormy Majestic Zircon",
+			"Id": "40122",
+			"Slot": "Blue"
+		},
+		{
+			"ItemLevel": "80",
+			"DisplayId": "0",
+			"DisplaySlot": "0",
+			"IconPath": "inv_jewelcrafting_dragonseye04",
+			"Stats": {
+				"Spirit": "34"
+			},
+			"Quality": "Epic",
+			"Type": "None",
+			"Faction": "Neutral",
+			"Unique": "true",
+			"Bind": "BoP",
+			"SocketBonus": "none",
+			"Name": "Sparkling Dragon's Eye",
+			"Id": "42145",
+			"Slot": "Blue"
+		},
+		{
+			"ItemLevel": "80",
+			"DisplayId": "0",
+			"DisplaySlot": "0",
+			"IconPath": "inv_jewelcrafting_dragonseye04",
+			"Stats": {
+				"Mp5": "17"
+			},
+			"Quality": "Epic",
+			"Type": "None",
+			"Faction": "Neutral",
+			"Unique": "true",
+			"Bind": "BoP",
+			"SocketBonus": "none",
+			"Name": "Lustrous Dragon's Eye",
+			"Id": "42146",
+			"Slot": "Blue"
+		},
+		{
+			"ItemLevel": "80",
+			"DisplayId": "0",
+			"DisplaySlot": "0",
+			"IconPath": "inv_jewelcrafting_dragonseye04",
+			"Stats": {
+				"SpellPenetration": "43"
+			},
+			"Quality": "Epic",
+			"Type": "None",
+			"Faction": "Neutral",
+			"Unique": "true",
+			"Bind": "BoP",
+			"SocketBonus": "none",
+			"Name": "Stormy Dragon's Eye",
+			"Id": "42155",
+			"Slot": "Blue"
+		},
+		{
+			"ItemLevel": "80",
+			"DisplayId": "0",
+			"DisplaySlot": "0",
+			"IconPath": "inv_jewelcrafting_gem_42",
+			"Stats": {
+				"Stamina": "30"
+			},
+			"Quality": "Epic",
+			"Type": "None",
+			"Faction": "Neutral",
+			"SocketBonus": "none",
+			"Name": "Solid Stormjewel",
+			"Id": "45880",
+			"Slot": "Blue"
+		},
+		{
+			"ItemLevel": "80",
+			"DisplayId": "0",
+			"DisplaySlot": "0",
+			"IconPath": "inv_jewelcrafting_gem_42",
+			"Stats": {
+				"Spirit": "20"
+			},
+			"Quality": "Epic",
+			"Type": "None",
+			"Faction": "Neutral",
+			"SocketBonus": "none",
+			"Name": "Sparkling Stormjewel",
+			"Id": "45881",
+			"Slot": "Blue"
+		},
+		{
+			"ItemLevel": "80",
+			"DisplayId": "0",
+			"DisplaySlot": "0",
+			"IconPath": "inv_jewelcrafting_gem_41",
+			"Stats": {
+				"Stamina": "15",
+				"Intellect": "10"
+			},
+			"Quality": "Epic",
+			"Type": "None",
+			"Faction": "Neutral",
+			"SocketBonus": "none",
+			"Name": "Timeless Eye of Zul",
+			"Id": "40164",
+			"Slot": "Green"
+		},
+		{
+			"ItemLevel": "80",
+			"DisplayId": "0",
+			"DisplaySlot": "0",
+			"IconPath": "inv_jewelcrafting_gem_41",
+			"Stats": {
+				"Stamina": "15",
+				"CritRating": "10"
+			},
+			"Quality": "Epic",
+			"Type": "None",
+			"Faction": "Neutral",
+			"SocketBonus": "none",
+			"Name": "Jagged Eye of Zul",
+			"Id": "40165",
+			"Slot": "Green"
+		},
+		{
+			"ItemLevel": "80",
+			"DisplayId": "0",
+			"DisplaySlot": "0",
+			"IconPath": "inv_jewelcrafting_gem_41",
+			"Stats": {
+				"Stamina": "15",
+				"HitRating": "10"
+			},
+			"Quality": "Epic",
+			"Type": "None",
+			"Faction": "Neutral",
+			"SocketBonus": "none",
+			"Name": "Vivid Eye of Zul",
+			"Id": "40166",
+			"Slot": "Green"
+		},
+		{
+			"ItemLevel": "80",
+			"DisplayId": "0",
+			"DisplaySlot": "0",
+			"IconPath": "inv_jewelcrafting_gem_41",
+			"Stats": {
+				"Stamina": "15",
+				"DefenseRating": "10"
+			},
+			"Quality": "Epic",
+			"Type": "None",
+			"Faction": "Neutral",
+			"SocketBonus": "none",
+			"Name": "Enduring Eye of Zul",
+			"Id": "40167",
+			"Slot": "Green"
+		},
+		{
+			"ItemLevel": "80",
+			"DisplayId": "0",
+			"DisplaySlot": "0",
+			"IconPath": "inv_jewelcrafting_gem_41",
+			"Stats": {
+				"Stamina": "15",
+				"Resilience": "10"
+			},
+			"Quality": "Epic",
+			"Type": "None",
+			"Faction": "Neutral",
+			"SocketBonus": "none",
+			"Name": "Steady Eye of Zul",
+			"Id": "40168",
+			"Slot": "Green"
+		},
+		{
+			"ItemLevel": "80",
+			"DisplayId": "0",
+			"DisplaySlot": "0",
+			"IconPath": "inv_jewelcrafting_gem_41",
+			"Stats": {
+				"Stamina": "15",
+				"HasteRating": "10"
+			},
+			"Quality": "Epic",
+			"Type": "None",
+			"Faction": "Neutral",
+			"SocketBonus": "none",
+			"Name": "Forceful Eye of Zul",
+			"Id": "40169",
+			"Slot": "Green"
+		},
+		{
+			"ItemLevel": "80",
+			"DisplayId": "0",
+			"DisplaySlot": "0",
+			"IconPath": "inv_jewelcrafting_gem_41",
+			"Stats": {
+				"Intellect": "10",
+				"Spirit": "10"
+			},
+			"Quality": "Epic",
+			"Type": "None",
+			"Faction": "Neutral",
+			"SocketBonus": "none",
+			"Name": "Seer's Eye of Zul",
+			"Id": "40170",
+			"Slot": "Green"
+		},
+		{
+			"ItemLevel": "80",
+			"DisplayId": "0",
+			"DisplaySlot": "0",
+			"IconPath": "inv_jewelcrafting_gem_41",
+			"Stats": {
+				"Spirit": "10",
+				"CritRating": "10"
+			},
+			"Quality": "Epic",
+			"Type": "None",
+			"Faction": "Neutral",
+			"SocketBonus": "none",
+			"Name": "Misty Eye of Zul",
+			"Id": "40171",
+			"Slot": "Green"
+		},
+		{
+			"ItemLevel": "80",
+			"DisplayId": "0",
+			"DisplaySlot": "0",
+			"IconPath": "inv_jewelcrafting_gem_41",
+			"Stats": {
+				"Spirit": "10",
+				"HitRating": "10"
+			},
+			"Quality": "Epic",
+			"Type": "None",
+			"Faction": "Neutral",
+			"SocketBonus": "none",
+			"Name": "Shining Eye of Zul",
+			"Id": "40172",
+			"Slot": "Green"
+		},
+		{
+			"ItemLevel": "80",
+			"DisplayId": "0",
+			"DisplaySlot": "0",
+			"IconPath": "inv_jewelcrafting_gem_41",
+			"Stats": {
+				"Spirit": "10",
+				"Resilience": "10"
+			},
+			"Quality": "Epic",
+			"Type": "None",
+			"Faction": "Neutral",
+			"SocketBonus": "none",
+			"Name": "Turbid Eye of Zul",
+			"Id": "40173",
+			"Slot": "Green"
+		},
+		{
+			"ItemLevel": "80",
+			"DisplayId": "0",
+			"DisplaySlot": "0",
+			"IconPath": "inv_jewelcrafting_gem_41",
+			"Stats": {
+				"Spirit": "10",
+				"HasteRating": "10"
+			},
+			"Quality": "Epic",
+			"Type": "None",
+			"Faction": "Neutral",
+			"SocketBonus": "none",
+			"Name": "Intricate Eye of Zul",
+			"Id": "40174",
+			"Slot": "Green"
+		},
+		{
+			"ItemLevel": "80",
+			"DisplayId": "0",
+			"DisplaySlot": "0",
+			"IconPath": "inv_jewelcrafting_gem_41",
+			"Stats": {
+				"Intellect": "10",
+				"Mp5": "5"
+			},
+			"Quality": "Epic",
+			"Type": "None",
+			"Faction": "Neutral",
+			"SocketBonus": "none",
+			"Name": "Dazzling Eye of Zul",
+			"Id": "40175",
+			"Slot": "Green"
+		},
+		{
+			"ItemLevel": "80",
+			"DisplayId": "0",
+			"DisplaySlot": "0",
+			"IconPath": "inv_jewelcrafting_gem_41",
+			"Stats": {
+				"CritRating": "10",
+				"Mp5": "5"
+			},
+			"Quality": "Epic",
+			"Type": "None",
+			"Faction": "Neutral",
+			"SocketBonus": "none",
+			"Name": "Sundered Eye of Zul",
+			"Id": "40176",
+			"Slot": "Green"
+		},
+		{
+			"ItemLevel": "80",
+			"DisplayId": "0",
+			"DisplaySlot": "0",
+			"IconPath": "inv_jewelcrafting_gem_41",
+			"Stats": {
+				"HitRating": "10",
+				"Mp5": "5"
+			},
+			"Quality": "Epic",
+			"Type": "None",
+			"Faction": "Neutral",
+			"SocketBonus": "none",
+			"Name": "Lambent Eye of Zul",
+			"Id": "40177",
+			"Slot": "Green"
+		},
+		{
+			"ItemLevel": "80",
+			"DisplayId": "0",
+			"DisplaySlot": "0",
+			"IconPath": "inv_jewelcrafting_gem_41",
+			"Stats": {
+				"Resilience": "10",
+				"Mp5": "5"
+			},
+			"Quality": "Epic",
+			"Type": "None",
+			"Faction": "Neutral",
+			"SocketBonus": "none",
+			"Name": "Opaque Eye of Zul",
+			"Id": "40178",
+			"Slot": "Green"
+		},
+		{
+			"ItemLevel": "80",
+			"DisplayId": "0",
+			"DisplaySlot": "0",
+			"IconPath": "inv_jewelcrafting_gem_41",
+			"Stats": {
+				"HasteRating": "10",
+				"Mp5": "5"
+			},
+			"Quality": "Epic",
+			"Type": "None",
+			"Faction": "Neutral",
+			"SocketBonus": "none",
+			"Name": "Energized Eye of Zul",
+			"Id": "40179",
+			"Slot": "Green"
+		},
+		{
+			"ItemLevel": "80",
+			"DisplayId": "0",
+			"DisplaySlot": "0",
+			"IconPath": "inv_jewelcrafting_gem_41",
+			"Stats": {
+				"SpellPenetration": "13",
+				"CritRating": "10"
+			},
+			"Quality": "Epic",
+			"Type": "None",
+			"Faction": "Neutral",
+			"SocketBonus": "none",
+			"Name": "Radiant Eye of Zul",
+			"Id": "40180",
+			"Slot": "Green"
+		},
+		{
+			"ItemLevel": "80",
+			"DisplayId": "0",
+			"DisplaySlot": "0",
+			"IconPath": "inv_jewelcrafting_gem_41",
+			"Stats": {
+				"SpellPenetration": "13",
+				"HitRating": "10"
+			},
+			"Quality": "Epic",
+			"Type": "None",
+			"Faction": "Neutral",
+			"SocketBonus": "none",
+			"Name": "Tense Eye of Zul",
+			"Id": "40181",
+			"Slot": "Green"
+		},
+		{
+			"ItemLevel": "80",
+			"DisplayId": "0",
+			"DisplaySlot": "0",
+			"IconPath": "inv_jewelcrafting_gem_41",
+			"Stats": {
+				"SpellPenetration": "13",
+				"HasteRating": "10"
+			},
+			"Quality": "Epic",
+			"Type": "None",
+			"Faction": "Neutral",
+			"SocketBonus": "none",
+			"Name": "Shattered Eye of Zul",
+			"Id": "40182",
+			"Slot": "Green"
+		},
+		{
+			"ItemLevel": "80",
+			"DisplayId": "0",
+			"DisplaySlot": "0",
+			"IconPath": "inv_jewelcrafting_gem_39",
+			"Stats": {
+				"Strength": "10",
+				"CritRating": "10"
+			},
+			"Quality": "Epic",
+			"Type": "None",
+			"Faction": "Neutral",
+			"SocketBonus": "none",
+			"Name": "Inscribed Ametrine",
+			"Id": "40142",
+			"Slot": "Orange"
+		},
+		{
+			"ItemLevel": "80",
+			"DisplayId": "0",
+			"DisplaySlot": "0",
+			"IconPath": "inv_jewelcrafting_gem_39",
+			"Stats": {
+				"Strength": "10",
+				"HitRating": "10"
+			},
+			"Quality": "Epic",
+			"Type": "None",
+			"Faction": "Neutral",
+			"SocketBonus": "none",
+			"Name": "Etched Ametrine",
+			"Id": "40143",
+			"Slot": "Orange"
+		},
+		{
+			"ItemLevel": "80",
+			"DisplayId": "0",
+			"DisplaySlot": "0",
+			"IconPath": "inv_jewelcrafting_gem_39",
+			"Stats": {
+				"Strength": "10",
+				"DefenseRating": "10"
+			},
+			"Quality": "Epic",
+			"Type": "None",
+			"Faction": "Neutral",
+			"SocketBonus": "none",
+			"Name": "Champion's Ametrine",
+			"Id": "40144",
+			"Slot": "Orange"
+		},
+		{
+			"ItemLevel": "80",
+			"DisplayId": "0",
+			"DisplaySlot": "0",
+			"IconPath": "inv_jewelcrafting_gem_39",
+			"Stats": {
+				"Strength": "10",
+				"Resilience": "10"
+			},
+			"Quality": "Epic",
+			"Type": "None",
+			"Faction": "Neutral",
+			"SocketBonus": "none",
+			"Name": "Resplendent Ametrine",
+			"Id": "40145",
+			"Slot": "Orange"
+		},
+		{
+			"ItemLevel": "80",
+			"DisplayId": "0",
+			"DisplaySlot": "0",
+			"IconPath": "inv_jewelcrafting_gem_39",
+			"Stats": {
+				"Strength": "10",
+				"HasteRating": "10"
+			},
+			"Quality": "Epic",
+			"Type": "None",
+			"Faction": "Neutral",
+			"SocketBonus": "none",
+			"Name": "Fierce Ametrine",
+			"Id": "40146",
+			"Slot": "Orange"
+		},
+		{
+			"ItemLevel": "80",
+			"DisplayId": "0",
+			"DisplaySlot": "0",
+			"IconPath": "inv_jewelcrafting_gem_39",
+			"Stats": {
+				"Agility": "10",
+				"CritRating": "10"
+			},
+			"Quality": "Epic",
+			"Type": "None",
+			"Faction": "Neutral",
+			"SocketBonus": "none",
+			"Name": "Deadly Ametrine",
+			"Id": "40147",
+			"Slot": "Orange"
+		},
+		{
+			"ItemLevel": "80",
+			"DisplayId": "0",
+			"DisplaySlot": "0",
+			"IconPath": "inv_jewelcrafting_gem_39",
+			"Stats": {
+				"Agility": "10",
+				"HitRating": "10"
+			},
+			"Quality": "Epic",
+			"Type": "None",
+			"Faction": "Neutral",
+			"SocketBonus": "none",
+			"Name": "Glinting Ametrine",
+			"Id": "40148",
+			"Slot": "Orange"
+		},
+		{
+			"ItemLevel": "80",
+			"DisplayId": "0",
+			"DisplaySlot": "0",
+			"IconPath": "inv_jewelcrafting_gem_39",
+			"Stats": {
+				"Agility": "10",
+				"Resilience": "10"
+			},
+			"Quality": "Epic",
+			"Type": "None",
+			"Faction": "Neutral",
+			"SocketBonus": "none",
+			"Name": "Lucent Ametrine",
+			"Id": "40149",
+			"Slot": "Orange"
+		},
+		{
+			"ItemLevel": "80",
+			"DisplayId": "0",
+			"DisplaySlot": "0",
+			"IconPath": "inv_jewelcrafting_gem_39",
+			"Stats": {
+				"Agility": "10",
+				"HasteRating": "10"
+			},
+			"Quality": "Epic",
+			"Type": "None",
+			"Faction": "Neutral",
+			"SocketBonus": "none",
+			"Name": "Deft Ametrine",
+			"Id": "40150",
+			"Slot": "Orange"
+		},
+		{
+			"ItemLevel": "80",
+			"DisplayId": "0",
+			"DisplaySlot": "0",
+			"IconPath": "inv_jewelcrafting_gem_39",
+			"Stats": {
+				"Intellect": "10",
+				"SpellPower": "12"
+			},
+			"Quality": "Epic",
+			"Type": "None",
+			"Faction": "Neutral",
+			"SocketBonus": "none",
+			"Name": "Luminous Ametrine",
+			"Id": "40151",
+			"Slot": "Orange"
+		},
+		{
+			"ItemLevel": "80",
+			"DisplayId": "0",
+			"DisplaySlot": "0",
+			"IconPath": "inv_jewelcrafting_gem_39",
+			"Stats": {
+				"SpellPower": "12",
+				"CritRating": "10"
+			},
+			"Quality": "Epic",
+			"Type": "None",
+			"Faction": "Neutral",
+			"SocketBonus": "none",
+			"Name": "Potent Ametrine",
+			"Id": "40152",
+			"Slot": "Orange"
+		},
+		{
+			"ItemLevel": "80",
+			"DisplayId": "0",
+			"DisplaySlot": "0",
+			"IconPath": "inv_jewelcrafting_gem_39",
+			"Stats": {
+				"SpellPower": "12",
+				"HitRating": "10"
+			},
+			"Quality": "Epic",
+			"Type": "None",
+			"Faction": "Neutral",
+			"SocketBonus": "none",
+			"Name": "Veiled Ametrine",
+			"Id": "40153",
+			"Slot": "Orange"
+		},
+		{
+			"ItemLevel": "80",
+			"DisplayId": "0",
+			"DisplaySlot": "0",
+			"IconPath": "inv_jewelcrafting_gem_39",
+			"Stats": {
+				"SpellPower": "12",
+				"Resilience": "10"
+			},
+			"Quality": "Epic",
+			"Type": "None",
+			"Faction": "Neutral",
+			"SocketBonus": "none",
+			"Name": "Durable Ametrine",
+			"Id": "40154",
+			"Slot": "Orange"
+		},
+		{
+			"ItemLevel": "80",
+			"DisplayId": "0",
+			"DisplaySlot": "0",
+			"IconPath": "inv_jewelcrafting_gem_39",
+			"Stats": {
+				"SpellPower": "12",
+				"HasteRating": "10"
+			},
+			"Quality": "Epic",
+			"Type": "None",
+			"Faction": "Neutral",
+			"SocketBonus": "none",
+			"Name": "Reckless Ametrine",
+			"Id": "40155",
+			"Slot": "Orange"
+		},
+		{
+			"ItemLevel": "80",
+			"DisplayId": "0",
+			"DisplaySlot": "0",
+			"IconPath": "inv_jewelcrafting_gem_39",
+			"Stats": {
+				"AttackPower": "20",
+				"CritRating": "10"
+			},
+			"Quality": "Epic",
+			"Type": "None",
+			"Faction": "Neutral",
+			"SocketBonus": "none",
+			"Name": "Wicked Ametrine",
+			"Id": "40156",
+			"Slot": "Orange"
+		},
+		{
+			"ItemLevel": "80",
+			"DisplayId": "0",
+			"DisplaySlot": "0",
+			"IconPath": "inv_jewelcrafting_gem_39",
+			"Stats": {
+				"AttackPower": "20",
+				"HitRating": "10"
+			},
+			"Quality": "Epic",
+			"Type": "None",
+			"Faction": "Neutral",
+			"SocketBonus": "none",
+			"Name": "Pristine Ametrine",
+			"Id": "40157",
+			"Slot": "Orange"
+		},
+		{
+			"ItemLevel": "80",
+			"DisplayId": "0",
+			"DisplaySlot": "0",
+			"IconPath": "inv_jewelcrafting_gem_39",
+			"Stats": {
+				"AttackPower": "20",
+				"Resilience": "10"
+			},
+			"Quality": "Epic",
+			"Type": "None",
+			"Faction": "Neutral",
+			"SocketBonus": "none",
+			"Name": "Empowered Ametrine",
+			"Id": "40158",
+			"Slot": "Orange"
+		},
+		{
+			"ItemLevel": "80",
+			"DisplayId": "0",
+			"DisplaySlot": "0",
+			"IconPath": "inv_jewelcrafting_gem_39",
+			"Stats": {
+				"AttackPower": "20",
+				"HasteRating": "10"
+			},
+			"Quality": "Epic",
+			"Type": "None",
+			"Faction": "Neutral",
+			"SocketBonus": "none",
+			"Name": "Stark Ametrine",
+			"Id": "40159",
+			"Slot": "Orange"
+		},
+		{
+			"ItemLevel": "80",
+			"DisplayId": "0",
+			"DisplaySlot": "0",
+			"IconPath": "inv_jewelcrafting_gem_39",
+			"Stats": {
+				"DodgeRating": "10",
+				"DefenseRating": "10"
+			},
+			"Quality": "Epic",
+			"Type": "None",
+			"Faction": "Neutral",
+			"SocketBonus": "none",
+			"Name": "Stalwart Ametrine",
+			"Id": "40160",
+			"Slot": "Orange"
+		},
+		{
+			"ItemLevel": "80",
+			"DisplayId": "0",
+			"DisplaySlot": "0",
+			"IconPath": "inv_jewelcrafting_gem_39",
+			"Stats": {
+				"ParryRating": "10",
+				"DefenseRating": "10"
+			},
+			"Quality": "Epic",
+			"Type": "None",
+			"Faction": "Neutral",
+			"SocketBonus": "none",
+			"Name": "Glimmering Ametrine",
+			"Id": "40161",
+			"Slot": "Orange"
+		},
+		{
+			"ItemLevel": "80",
+			"DisplayId": "0",
+			"DisplaySlot": "0",
+			"IconPath": "inv_jewelcrafting_gem_39",
+			"Stats": {
+				"HitRating": "10",
+				"ExpertiseRating": "10"
+			},
+			"Quality": "Epic",
+			"Type": "None",
+			"Faction": "Neutral",
+			"SocketBonus": "none",
+			"Name": "Accurate Ametrine",
+			"Id": "40162",
+			"Slot": "Orange"
+		},
+		{
+			"ItemLevel": "80",
+			"DisplayId": "0",
+			"DisplaySlot": "0",
+			"IconPath": "inv_jewelcrafting_gem_39",
+			"Stats": {
+				"DefenseRating": "10",
+				"ExpertiseRating": "10"
+			},
+			"Quality": "Epic",
+			"Type": "None",
+			"Faction": "Neutral",
+			"SocketBonus": "none",
+			"Name": "Resolute Ametrine",
+			"Id": "40163",
+			"Slot": "Orange"
+		},
+		{
+			"ItemLevel": "80",
+			"DisplayId": "0",
+			"DisplaySlot": "0",
+			"IconPath": "inv_jewelcrafting_gem_40",
+			"Stats": {
+				"Stamina": "15",
+				"Strength": "10"
+			},
+			"Quality": "Epic",
+			"Type": "None",
+			"Faction": "Neutral",
+			"SocketBonus": "none",
+			"Name": "Sovereign Dreadstone",
+			"Id": "40129",
+			"Slot": "Purple"
+		},
+		{
+			"ItemLevel": "80",
+			"DisplayId": "0",
+			"DisplaySlot": "0",
+			"IconPath": "inv_jewelcrafting_gem_40",
+			"Stats": {
+				"Agility": "10",
+				"Stamina": "15"
+			},
+			"Quality": "Epic",
+			"Type": "None",
+			"Faction": "Neutral",
+			"SocketBonus": "none",
+			"Name": "Shifting Dreadstone",
+			"Id": "40130",
+			"Slot": "Purple"
+		},
+		{
+			"ItemLevel": "80",
+			"DisplayId": "0",
+			"DisplaySlot": "0",
+			"IconPath": "inv_jewelcrafting_gem_40",
+			"Stats": {
+				"Agility": "10",
+				"Mp5": "5"
+			},
+			"Quality": "Epic",
+			"Type": "None",
+			"Faction": "Neutral",
+			"SocketBonus": "none",
+			"Name": "Tenuous Dreadstone",
+			"Id": "40131",
+			"Slot": "Purple"
+		},
+		{
+			"ItemLevel": "80",
+			"DisplayId": "0",
+			"DisplaySlot": "0",
+			"IconPath": "inv_jewelcrafting_gem_40",
+			"Stats": {
+				"Stamina": "15",
+				"SpellPower": "12"
+			},
+			"Quality": "Epic",
+			"Type": "None",
+			"Faction": "Neutral",
+			"SocketBonus": "none",
+			"Name": "Glowing Dreadstone",
+			"Id": "40132",
+			"Slot": "Purple"
+		},
+		{
+			"ItemLevel": "80",
+			"DisplayId": "0",
+			"DisplaySlot": "0",
+			"IconPath": "inv_jewelcrafting_gem_40",
+			"Stats": {
+				"Spirit": "10",
+				"SpellPower": "12"
+			},
+			"Quality": "Epic",
+			"Type": "None",
+			"Faction": "Neutral",
+			"SocketBonus": "none",
+			"Name": "Purified Dreadstone",
+			"Id": "40133",
+			"Slot": "Purple"
+		},
+		{
+			"ItemLevel": "80",
+			"DisplayId": "0",
+			"DisplaySlot": "0",
+			"IconPath": "inv_jewelcrafting_gem_40",
+			"Stats": {
+				"SpellPower": "12",
+				"Mp5": "5"
+			},
+			"Quality": "Epic",
+			"Type": "None",
+			"Faction": "Neutral",
+			"SocketBonus": "none",
+			"Name": "Royal Dreadstone",
+			"Id": "40134",
+			"Slot": "Purple"
+		},
+		{
+			"ItemLevel": "80",
+			"DisplayId": "0",
+			"DisplaySlot": "0",
+			"IconPath": "inv_jewelcrafting_gem_40",
+			"Stats": {
+				"SpellPower": "12",
+				"SpellPenetration": "13"
+			},
+			"Quality": "Epic",
+			"Type": "None",
+			"Faction": "Neutral",
+			"SocketBonus": "none",
+			"Name": "Mysterious Dreadstone",
+			"Id": "40135",
+			"Slot": "Purple"
+		},
+		{
+			"ItemLevel": "80",
+			"DisplayId": "0",
+			"DisplaySlot": "0",
+			"IconPath": "inv_jewelcrafting_gem_40",
+			"Stats": {
+				"Stamina": "15",
+				"AttackPower": "20"
+			},
+			"Quality": "Epic",
+			"Type": "None",
+			"Faction": "Neutral",
+			"SocketBonus": "none",
+			"Name": "Balanced Dreadstone",
+			"Id": "40136",
+			"Slot": "Purple"
+		},
+		{
+			"ItemLevel": "80",
+			"DisplayId": "0",
+			"DisplaySlot": "0",
+			"IconPath": "inv_jewelcrafting_gem_40",
+			"Stats": {
+				"AttackPower": "20",
+				"Mp5": "5"
+			},
+			"Quality": "Epic",
+			"Type": "None",
+			"Faction": "Neutral",
+			"SocketBonus": "none",
+			"Name": "Infused Dreadstone",
+			"Id": "40137",
+			"Slot": "Purple"
+		},
+		{
+			"ItemLevel": "80",
+			"DisplayId": "0",
+			"DisplaySlot": "0",
+			"IconPath": "inv_jewelcrafting_gem_40",
+			"Stats": {
+				"Stamina": "15",
+				"DodgeRating": "10"
+			},
+			"Quality": "Epic",
+			"Type": "None",
+			"Faction": "Neutral",
+			"SocketBonus": "none",
+			"Name": "Regal Dreadstone",
+			"Id": "40138",
+			"Slot": "Purple"
+		},
+		{
+			"ItemLevel": "80",
+			"DisplayId": "0",
+			"DisplaySlot": "0",
+			"IconPath": "inv_jewelcrafting_gem_40",
+			"Stats": {
+				"Stamina": "15",
+				"ParryRating": "10"
+			},
+			"Quality": "Epic",
+			"Type": "None",
+			"Faction": "Neutral",
+			"SocketBonus": "none",
+			"Name": "Defender's Dreadstone",
+			"Id": "40139",
+			"Slot": "Purple"
+		},
+		{
+			"ItemLevel": "80",
+			"DisplayId": "0",
+			"DisplaySlot": "0",
+			"IconPath": "inv_jewelcrafting_gem_40",
+			"Stats": {
+				"Stamina": "15",
+				"ArmorPenetrationRating": "10"
+			},
+			"Quality": "Epic",
+			"Type": "None",
+			"Faction": "Neutral",
+			"SocketBonus": "none",
+			"Name": "Puissant Dreadstone",
+			"Id": "40140",
+			"Slot": "Purple"
+		},
+		{
+			"ItemLevel": "80",
+			"DisplayId": "0",
+			"DisplaySlot": "0",
+			"IconPath": "inv_jewelcrafting_gem_40",
+			"Stats": {
+				"Stamina": "15",
+				"ExpertiseRating": "10"
+			},
+			"Quality": "Epic",
+			"Type": "None",
+			"Faction": "Neutral",
+			"SocketBonus": "none",
+			"Name": "Guardian's Dreadstone",
+			"Id": "40141",
+			"Slot": "Purple"
+		},
+		{
+			"ItemLevel": "80",
+			"DisplayId": "0",
+			"DisplaySlot": "0",
+			"IconPath": "inv_jewelcrafting_dragonseye05",
+			"Stats": {
+				"AttackPower": "68"
+			},
+			"Quality": "Epic",
+			"Type": "None",
+			"Faction": "Neutral",
+			"Unique": "true",
+			"Bind": "BoP",
+			"SocketBonus": "none",
+			"Name": "Bright Dragon's Eye",
+			"Id": "36766",
+			"Slot": "Red"
+		},
+		{
+			"ItemLevel": "80",
+			"DisplayId": "0",
+			"DisplaySlot": "0",
+			"IconPath": "inv_jewelcrafting_gem_37",
+			"Stats": {
+				"Strength": "20"
+			},
+			"Quality": "Epic",
+			"Type": "None",
+			"Faction": "Neutral",
+			"SocketBonus": "none",
+			"Name": "Bold Cardinal Ruby",
+			"Id": "40111",
+			"Slot": "Red"
+		},
+		{
+			"ItemLevel": "80",
+			"DisplayId": "0",
+			"DisplaySlot": "0",
+			"IconPath": "inv_jewelcrafting_gem_37",
+			"Stats": {
+				"Agility": "20"
+			},
+			"Quality": "Epic",
+			"Type": "None",
+			"Faction": "Neutral",
+			"SocketBonus": "none",
+			"Name": "Delicate Cardinal Ruby",
+			"Id": "40112",
+			"Slot": "Red"
+		},
+		{
+			"ItemLevel": "80",
+			"DisplayId": "0",
+			"DisplaySlot": "0",
+			"IconPath": "inv_jewelcrafting_gem_37",
+			"Stats": {
+				"SpellPower": "23"
+			},
+			"Quality": "Epic",
+			"Type": "None",
+			"Faction": "Neutral",
+			"SocketBonus": "none",
+			"Name": "Runed Cardinal Ruby",
+			"Id": "40113",
+			"Slot": "Red"
+		},
+		{
+			"ItemLevel": "80",
+			"DisplayId": "0",
+			"DisplaySlot": "0",
+			"IconPath": "inv_jewelcrafting_gem_37",
+			"Stats": {
+				"AttackPower": "40"
+			},
+			"Quality": "Epic",
+			"Type": "None",
+			"Faction": "Neutral",
+			"SocketBonus": "none",
+			"Name": "Bright Cardinal Ruby",
+			"Id": "40114",
+			"Slot": "Red"
+		},
+		{
+			"ItemLevel": "80",
+			"DisplayId": "0",
+			"DisplaySlot": "0",
+			"IconPath": "inv_jewelcrafting_gem_37",
+			"Stats": {
+				"DodgeRating": "20"
+			},
+			"Quality": "Epic",
+			"Type": "None",
+			"Faction": "Neutral",
+			"SocketBonus": "none",
+			"Name": "Subtle Cardinal Ruby",
+			"Id": "40115",
+			"Slot": "Red"
+		},
+		{
+			"ItemLevel": "80",
+			"DisplayId": "0",
+			"DisplaySlot": "0",
+			"IconPath": "inv_jewelcrafting_gem_37",
+			"Stats": {
+				"ParryRating": "20"
+			},
+			"Quality": "Epic",
+			"Type": "None",
+			"Faction": "Neutral",
+			"SocketBonus": "none",
+			"Name": "Flashing Cardinal Ruby",
+			"Id": "40116",
+			"Slot": "Red"
+		},
+		{
+			"ItemLevel": "80",
+			"DisplayId": "0",
+			"DisplaySlot": "0",
+			"IconPath": "inv_jewelcrafting_gem_37",
+			"Stats": {
+				"ArmorPenetrationRating": "20"
+			},
+			"Quality": "Epic",
+			"Type": "None",
+			"Faction": "Neutral",
+			"SocketBonus": "none",
+			"Name": "Fractured Cardinal Ruby",
+			"Id": "40117",
+			"Slot": "Red"
+		},
+		{
+			"ItemLevel": "80",
+			"DisplayId": "0",
+			"DisplaySlot": "0",
+			"IconPath": "inv_jewelcrafting_gem_37",
+			"Stats": {
+				"ExpertiseRating": "20"
+			},
+			"Quality": "Epic",
+			"Type": "None",
+			"Faction": "Neutral",
+			"SocketBonus": "none",
+			"Name": "Precise Cardinal Ruby",
+			"Id": "40118",
+			"Slot": "Red"
+		},
+		{
+			"ItemLevel": "80",
+			"DisplayId": "0",
+			"DisplaySlot": "0",
+			"IconPath": "inv_jewelcrafting_dragonseye05",
+			"Stats": {
+				"Strength": "34"
+			},
+			"Quality": "Epic",
+			"Type": "None",
+			"Faction": "Neutral",
+			"Unique": "true",
+			"Bind": "BoP",
+			"SocketBonus": "none",
+			"Name": "Bold Dragon's Eye",
+			"Id": "42142",
+			"Slot": "Red"
+		},
+		{
+			"ItemLevel": "80",
+			"DisplayId": "0",
+			"DisplaySlot": "0",
+			"IconPath": "inv_jewelcrafting_dragonseye05",
+			"Stats": {
+				"Agility": "34"
+			},
+			"Quality": "Epic",
+			"Type": "None",
+			"Faction": "Neutral",
+			"Unique": "true",
+			"Bind": "BoP",
+			"SocketBonus": "none",
+			"Name": "Delicate Dragon's Eye",
+			"Id": "42143",
+			"Slot": "Red"
+		},
+		{
+			"ItemLevel": "80",
+			"DisplayId": "0",
+			"DisplaySlot": "0",
+			"IconPath": "inv_jewelcrafting_dragonseye05",
+			"Stats": {
+				"SpellPower": "39"
+			},
+			"Quality": "Epic",
+			"Type": "None",
+			"Faction": "Neutral",
+			"Unique": "true",
+			"Bind": "BoP",
+			"SocketBonus": "none",
+			"Name": "Runed Dragon's Eye",
+			"Id": "42144",
+			"Slot": "Red"
+		},
+		{
+			"ItemLevel": "80",
+			"DisplayId": "0",
+			"DisplaySlot": "0",
+			"IconPath": "inv_jewelcrafting_dragonseye05",
+			"Stats": {
+				"DodgeRating": "34"
+			},
+			"Quality": "Epic",
+			"Type": "None",
+			"Faction": "Neutral",
+			"Unique": "true",
+			"Bind": "BoP",
+			"SocketBonus": "none",
+			"Name": "Subtle Dragon's Eye",
+			"Id": "42151",
+			"Slot": "Red"
+		},
+		{
+			"ItemLevel": "80",
+			"DisplayId": "0",
+			"DisplaySlot": "0",
+			"IconPath": "inv_jewelcrafting_dragonseye05",
+			"Stats": {
+				"ParryRating": "34"
+			},
+			"Quality": "Epic",
+			"Type": "None",
+			"Faction": "Neutral",
+			"Unique": "true",
+			"Bind": "BoP",
+			"SocketBonus": "none",
+			"Name": "Flashing Dragon's Eye",
+			"Id": "42152",
+			"Slot": "Red"
+		},
+		{
+			"ItemLevel": "80",
+			"DisplayId": "0",
+			"DisplaySlot": "0",
+			"IconPath": "inv_jewelcrafting_dragonseye05",
+			"Stats": {
+				"ArmorPenetrationRating": "34"
+			},
+			"Quality": "Epic",
+			"Type": "None",
+			"Faction": "Neutral",
+			"Unique": "true",
+			"Bind": "BoP",
+			"SocketBonus": "none",
+			"Name": "Fractured Dragon's Eye",
+			"Id": "42153",
+			"Slot": "Red"
+		},
+		{
+			"ItemLevel": "80",
+			"DisplayId": "0",
+			"DisplaySlot": "0",
+			"IconPath": "inv_jewelcrafting_dragonseye05",
+			"Stats": {
+				"ExpertiseRating": "34"
+			},
+			"Quality": "Epic",
+			"Type": "None",
+			"Faction": "Neutral",
+			"Unique": "true",
+			"Bind": "BoP",
+			"SocketBonus": "none",
+			"Name": "Precise Dragon's Eye",
+			"Id": "42154",
+			"Slot": "Red"
+		},
+		{
+			"ItemLevel": "80",
+			"DisplayId": "0",
+			"DisplaySlot": "0",
+			"IconPath": "inv_jewelcrafting_gem_37",
+			"Stats": {
+				"Strength": "20"
+			},
+			"Quality": "Epic",
+			"Type": "None",
+			"Faction": "Neutral",
+			"SocketBonus": "none",
+			"Name": "Bold Stormjewel",
+			"Id": "45862",
+			"Slot": "Red"
+		},
+		{
+			"ItemLevel": "80",
+			"DisplayId": "0",
+			"DisplaySlot": "0",
+			"IconPath": "inv_jewelcrafting_gem_37",
+			"Stats": {
+				"Agility": "20"
+			},
+			"Quality": "Epic",
+			"Type": "None",
+			"Faction": "Neutral",
+			"SocketBonus": "none",
+			"Name": "Delicate Stormjewel",
+			"Id": "45879",
+			"Slot": "Red"
+		},
+		{
+			"ItemLevel": "80",
+			"DisplayId": "0",
+			"DisplaySlot": "0",
+			"IconPath": "inv_jewelcrafting_gem_37",
+			"Stats": {
+				"SpellPower": "23"
+			},
+			"Quality": "Epic",
+			"Type": "None",
+			"Faction": "Neutral",
+			"SocketBonus": "none",
+			"Name": "Runed Stormjewel",
+			"Id": "45883",
+			"Slot": "Red"
+		},
+		{
+			"ItemLevel": "80",
+			"DisplayId": "0",
+			"DisplaySlot": "0",
+			"IconPath": "inv_jewelcrafting_gem_38",
+			"Stats": {
+				"Intellect": "20"
+			},
+			"Quality": "Epic",
+			"Type": "None",
+			"Faction": "Neutral",
+			"SocketBonus": "none",
+			"Name": "Brilliant King's Amber",
+			"Id": "40123",
+			"Slot": "Yellow"
+		},
+		{
+			"ItemLevel": "80",
+			"DisplayId": "0",
+			"DisplaySlot": "0",
+			"IconPath": "inv_jewelcrafting_gem_38",
+			"Stats": {
+				"CritRating": "20"
+			},
+			"Quality": "Epic",
+			"Type": "None",
+			"Faction": "Neutral",
+			"SocketBonus": "none",
+			"Name": "Smooth King's Amber",
+			"Id": "40124",
+			"Slot": "Yellow"
+		},
+		{
+			"ItemLevel": "80",
+			"DisplayId": "0",
+			"DisplaySlot": "0",
+			"IconPath": "inv_jewelcrafting_gem_38",
+			"Stats": {
+				"HitRating": "20"
+			},
+			"Quality": "Epic",
+			"Type": "None",
+			"Faction": "Neutral",
+			"SocketBonus": "none",
+			"Name": "Rigid King's Amber",
+			"Id": "40125",
+			"Slot": "Yellow"
+		},
+		{
+			"ItemLevel": "80",
+			"DisplayId": "0",
+			"DisplaySlot": "0",
+			"IconPath": "inv_jewelcrafting_gem_38",
+			"Stats": {
+				"DefenseRating": "20"
+			},
+			"Quality": "Epic",
+			"Type": "None",
+			"Faction": "Neutral",
+			"SocketBonus": "none",
+			"Name": "Thick King's Amber",
+			"Id": "40126",
+			"Slot": "Yellow"
+		},
+		{
+			"ItemLevel": "80",
+			"DisplayId": "0",
+			"DisplaySlot": "0",
+			"IconPath": "inv_jewelcrafting_gem_38",
+			"Stats": {
+				"Resilience": "20"
+			},
+			"Quality": "Epic",
+			"Type": "None",
+			"Faction": "Neutral",
+			"SocketBonus": "none",
+			"Name": "Mystic King's Amber",
+			"Id": "40127",
+			"Slot": "Yellow"
+		},
+		{
+			"ItemLevel": "80",
+			"DisplayId": "0",
+			"DisplaySlot": "0",
+			"IconPath": "inv_jewelcrafting_gem_38",
+			"Stats": {
+				"HasteRating": "20"
+			},
+			"Quality": "Epic",
+			"Type": "None",
+			"Faction": "Neutral",
+			"SocketBonus": "none",
+			"Name": "Quick King's Amber",
+			"Id": "40128",
+			"Slot": "Yellow"
+		},
+		{
+			"ItemLevel": "80",
+			"DisplayId": "0",
+			"DisplaySlot": "0",
+			"IconPath": "inv_jewelcrafting_dragonseye03",
+			"Stats": {
+				"Intellect": "34"
+			},
+			"Quality": "Epic",
+			"Type": "None",
+			"Faction": "Neutral",
+			"Unique": "true",
+			"Bind": "BoP",
+			"SocketBonus": "none",
+			"Name": "Brilliant Dragon's Eye",
+			"Id": "42148",
+			"Slot": "Yellow"
+		},
+		{
+			"ItemLevel": "80",
+			"DisplayId": "0",
+			"DisplaySlot": "0",
+			"IconPath": "inv_jewelcrafting_dragonseye03",
+			"Stats": {
+				"CritRating": "34"
+			},
+			"Quality": "Epic",
+			"Type": "None",
+			"Faction": "Neutral",
+			"Unique": "true",
+			"Bind": "BoP",
+			"SocketBonus": "none",
+			"Name": "Smooth Dragon's Eye",
+			"Id": "42149",
+			"Slot": "Yellow"
+		},
+		{
+			"ItemLevel": "80",
+			"DisplayId": "0",
+			"DisplaySlot": "0",
+			"IconPath": "inv_jewelcrafting_dragonseye03",
+			"Stats": {
+				"HasteRating": "34"
+			},
+			"Quality": "Epic",
+			"Type": "None",
+			"Faction": "Neutral",
+			"Unique": "true",
+			"Bind": "BoP",
+			"SocketBonus": "none",
+			"Name": "Quick Dragon's Eye",
+			"Id": "42150",
+			"Slot": "Yellow"
+		},
+		{
+			"ItemLevel": "80",
+			"DisplayId": "0",
+			"DisplaySlot": "0",
+			"IconPath": "inv_jewelcrafting_dragonseye03",
+			"Stats": {
+				"HitRating": "34"
+			},
+			"Quality": "Epic",
+			"Type": "None",
+			"Faction": "Neutral",
+			"Unique": "true",
+			"Bind": "BoP",
+			"SocketBonus": "none",
+			"Name": "Rigid Dragon's Eye",
+			"Id": "42156",
+			"Slot": "Yellow"
+		},
+		{
+			"ItemLevel": "80",
+			"DisplayId": "0",
+			"DisplaySlot": "0",
+			"IconPath": "inv_jewelcrafting_dragonseye03",
+			"Stats": {
+				"DefenseRating": "34"
+			},
+			"Quality": "Epic",
+			"Type": "None",
+			"Faction": "Neutral",
+			"Unique": "true",
+			"Bind": "BoP",
+			"SocketBonus": "none",
+			"Name": "Thick Dragon's Eye",
+			"Id": "42157",
+			"Slot": "Yellow"
+		},
+		{
+			"ItemLevel": "80",
+			"DisplayId": "0",
+			"DisplaySlot": "0",
+			"IconPath": "inv_jewelcrafting_dragonseye03",
+			"Stats": {
+				"Resilience": "34"
+			},
+			"Quality": "Epic",
+			"Type": "None",
+			"Faction": "Neutral",
+			"Unique": "true",
+			"Bind": "BoP",
+			"SocketBonus": "none",
+			"Name": "Mystic Dragon's Eye",
+			"Id": "42158",
+			"Slot": "Yellow"
+		},
+		{
+			"ItemLevel": "80",
+			"DisplayId": "0",
+			"DisplaySlot": "0",
+			"IconPath": "inv_jewelcrafting_gem_26",
+			"Stats": {
+				"Resilience": "20"
+			},
+			"Quality": "Epic",
+			"Type": "None",
+			"Faction": "Neutral",
+			"Unique": "true",
+			"SocketBonus": "none",
+			"Name": "Kharmaa's Grace",
+			"Id": "44066",
+			"Slot": "Yellow"
+		},
+		{
+			"ItemLevel": "80",
+			"DisplayId": "0",
+			"DisplaySlot": "0",
+			"IconPath": "inv_jewelcrafting_gem_38",
+			"Stats": {
+				"Intellect": "20"
+			},
+			"Quality": "Epic",
+			"Type": "None",
+			"Faction": "Neutral",
+			"SocketBonus": "none",
+			"Name": "Brilliant Stormjewel",
+			"Id": "45882",
+			"Slot": "Yellow"
+		},
+		{
+			"ItemLevel": "80",
+			"DisplayId": "0",
+			"DisplaySlot": "0",
+			"IconPath": "inv_jewelcrafting_gem_38",
+			"Stats": {
+				"HitRating": "20"
+			},
+			"Quality": "Epic",
+			"Type": "None",
+			"Faction": "Neutral",
+			"SocketBonus": "none",
+			"Name": "Rigid Stormjewel",
+			"Id": "45987",
+			"Slot": "Yellow"
+		}
+]}
