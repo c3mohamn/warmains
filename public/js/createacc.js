@@ -7,6 +7,23 @@ $(document).ready(function(){
     var pass2 = $("input[name=pass2field]");
     var email = $("input[name=emailfield]");
 
+    function change_border_red(infield) {
+        // only fade to red if not already red
+        if ($(infield).css('border-left-color') != 'rgb(197, 0, 0)') {
+            $(infield).fadeTo('slow', 0.3, function() {
+                $(this).css("border", "1px solid #C50000");
+            }).fadeTo('slow', 1);
+        }
+    }
+    function change_border_green(infield) {
+        // only fade to green if not already green
+        if ($(infield).css('border-left-color') != 'rgb(10, 197, 0)') {
+            $(infield).fadeTo('slow', 0.3, function() {
+                $(this).css("border", "1px solid #0AC500");
+            }).fadeTo('slow', 1);
+        }
+    }
+
     // used to check if fields are valid.
     var create_disabled = true;
     var valid_username = false;
@@ -20,7 +37,7 @@ $(document).ready(function(){
     var pass2_msg = $("#no-password-3");
     var email_msg = $("#no-email");
 
-    var regusername = /^[a-z0-9_-]{3,16}$/;
+    var regusername = /^[a-zA-Z0-9_-]{3,16}$/;
     var regpass = /^[a-z0-9_-]{6,18}$/;
     var regemail = /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/;
 
@@ -72,11 +89,14 @@ $(document).ready(function(){
 
         if (username.val().length == 0 || username.val() === null) {
             username_msg.html("Enter a user name please.");
+            change_border_red(username);
             valid_username = false;
         } else if (username.val().length < 3) {
             username_msg.html("Usernames must be at least 3 characters long.");
+            change_border_red(username);
             valid_username = false;
         } else if (!username.val().toString().match(regusername)) {
+            change_border_red(username);
             username_msg.html("Invalid characters.");
             valid_username = false;
         } else {
@@ -90,11 +110,14 @@ $(document).ready(function(){
 
         if (pass1.val().length < 6) {
             pass1_msg.html("Password must be at least 6 characters long.");
+            change_border_red(pass1);
             valid_pass1 = false;
         } else if (!pass1.val().toString().match(regpass)) {
             pass1_msg.html("Only use valid characters and numbers.");
+            change_border_red(pass1);
             valid_pass1 = false;
         } else {
+            change_border_green(pass1);
             valid_pass1 = true;
         }
     });
@@ -105,8 +128,10 @@ $(document).ready(function(){
 
         if (pass2.val() != pass1.val()) {
             pass2_msg.html("Passwords do not match.");
+            change_border_red(pass2);
             valid_pass2 = false;
         } else {
+            change_border_green(pass2);
             valid_pass2 = true;
         }
     });
@@ -117,6 +142,7 @@ $(document).ready(function(){
 
         if (!check_email()) {
             email_msg.html("Invalid email.");
+            change_border_red(email);
             valid_email = false;
         } else {
             valid_email = true;

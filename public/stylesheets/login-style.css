@@ -101,6 +101,8 @@
 #no-username-1, #no-email {
     visibility: hidden;
     color: red;
+    font-size: 18px;
+    opacity: .8;
 }
 
 #register-container {
@@ -109,4 +111,16 @@
 
 input[name=createaccount], input[name=createaccount]:hover {
     background-color: grey;
+}
+
+#error-msg, #duplicate-username {
+    opacity: .8;
+    color: red;
+    font-size: 18px;
+}
+
+#success-msg {
+    opacity: .8;
+    color: #12D700;
+    font-size: 18px;
 }

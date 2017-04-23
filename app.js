@@ -16,11 +16,12 @@ mongoose.connect('mongodb://admin:password@ds129600.mlab.com:29600/warmains');
 var db = mongoose.connection;
 
 var routes = require('./routes/index');
-var login = require('./routes/login');
+var users = require('./routes/users');
 var about = require('./routes/about');
 var settings = require('./routes/settings');
 var profile = require('./routes/profile');
-var register = require('./routes/register');
+//var register = require('./routes/register');
+//var login = require('./routes/login');
 
 // init app
 var app = express();
@@ -78,15 +79,15 @@ app.use(function (req, res, next) {
     res.locals.success_msg = req.flash('success_msg');
     res.locals.error_msg = req.flash('error_msg');
     res.locals.error = req.flash('error');
+    res.locals.user = req.user || null;
     next();
 });
 
 app.use('/', routes);
-app.use('/login', login);
 app.use('/about', about);
 app.use('/settings', settings);
 app.use('/profile', profile);
-app.use('/register', register);
+app.use('/users', users);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

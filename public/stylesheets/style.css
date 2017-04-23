@@ -1,4 +1,9 @@
 @import url(http://fonts.googleapis.com/css?family=Roboto);
+[ng\:cloak],
+[ng-cloak],
+.ng-cloak {
+  display: none;
+}
 body {
   text-align: center;
   font-family: roboto;

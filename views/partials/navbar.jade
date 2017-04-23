@@ -22,20 +22,30 @@ div(class="container")
                 ul(class="nav navbar-nav" class="pull-right")
                     li: a(href="/") HOME
                         span(class="sr-only") (current)
-                    li: a(href="#" data-toggle="modal"
-                    data-target="#login-modal") LOGIN
-                    li: a(href="/register") REGISTER
+                    -if(!user)
+                        li: a(href="/users/login") LOGIN
+                        li: a(href="/users/register") REGISTER
                     // THIS WILL ONLY SHOW WHEN LOGGED IN.
-                    li(class="dropdown")
-                        a(href="#" class="dropdown-toggle"
-                        data-toggle="dropdown" role="button"
-                        aria-haspopup="true" aria-expanded="false") ACCOUNT
-                            span(class="caret")
-                        ul(class="dropdown-menu")
-                            li: a(href="/profile") PROFILE
-                            li(role="separator" class="divider")
-                            li: a(href="/settings") SETTINGS
+                    -if(user)
+                        li(class="dropdown")
+                            a(href="#" class="dropdown-toggle"
+                            data-toggle="dropdown" role="button"
+                            aria-haspopup="true" aria-expanded="false") ACCOUNT
+                                span(class="caret")
+                            ul(class="dropdown-menu")
+                                li: a(href="/profile") PROFILE
+                                li(role="separator" class="divider")
+                                li: a(href="/settings") SETTINGS
+                                li: a(href="/users/logout") LOGOUT
 
+-if(error_msg)
+    p(id="error-msg") #{error_msg}
+-if(error)
+    p(id="error-msg") #{error}
+-if(success_msg)
+    p(id="success-msg") #{success_msg}
+//href="#" data-toggle="modal"
+//data-target="#login-modal"
 // Code for search in navbar
 //-form(class="navbar-form navbar-right" role="search")
     div(class="form-group")
