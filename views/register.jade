@@ -8,14 +8,16 @@ html(ng-app='registerApp' ng-cloak)
             h1 CREATE ACCOUNT
             form(action="/users/register" method="post")
                 input(type="text" name="userfield" placeholder="Username"
-                ng-blur="check_username()" ng-model='user_name')
+                ng-change="check_username()" ng-model='user_name')
                 span(id="no-username-1")
-                span(id="duplicate-username") {{duplicate_username}}
+                span(id="error-msg") {{duplicate_username}}
                 input(type="password" name="pass1field" placeholder="Password")
                 span(id="no-password-2")
                 input(type="password" name="pass2field" placeholder="Confirm Password")
                 span(id="no-password-3")
-                input(type="text" name="emailfield" placeholder="Email")
+                input(type="text" name="emailfield" placeholder="Email"
+                ng-change="check_email()" ng-model='email_addr')
+                span(id="error-msg") {{duplicate_email}}
                 span(id="no-email")
                 input(type="submit" name="createaccount"
                 class="create loginmodal-submit"

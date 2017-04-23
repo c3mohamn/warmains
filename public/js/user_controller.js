@@ -1,56 +1,63 @@
 var registerApp = angular.module("registerApp", []);
 
-// functions fade border colour if duplicate usernames or valid username
-function name_border_red() {
-    if ($('input[name=userfield]').css('border-left-color') != 'rgb(197, 0, 0)') {
-        $('input[name=userfield]').fadeTo('slow', 0.3, function() {
-            $(this).css("border", "1px solid #C50000");
-        }).fadeTo('slow', 1);
-    }
-}
-function name_border_green() {
-    if ($('input[name=userfield]').css('border-left-color') != 'rgb(10, 197, 0)') {
-        $('input[name=userfield]').fadeTo('slow', 0.3, function() {
-            $(this).css("border", "1px solid #0AC500");
-        }).fadeTo('slow', 1);
-    }
-}
-
 registerApp.controller('registerctrl', ['$scope', '$http', function($scope, $http) {
     angular.element(document).ready(function () {
 
         $http.get('/users/AllUser/').then(function(response){
             var all_users = response.data;
-            var prev_user = ""; // will use to use if entered user name changed
 
             // function used to check if duplicate user name.
             $scope.check_username = function() {
-                var cur_user = $scope.user_name;
+                var entered_user = $scope.user_name;
 
-                if (cur_user && cur_user.length > 2 && cur_user != prev_user) {
-                    cur_user_prev = cur_user;
-                    cur_user = cur_user.toLowerCase();
+                if (entered_user && entered_user.length > 2) {
+                    entered_user = entered_user.toLowerCase();
                     var is_duplicate = false;
 
                     // cycle through db usernames and compare
                     angular.forEach(all_users, function(user, key){
-                        if (user.username.toLowerCase() == cur_user) {
+                        if (user.username == entered_user) {
                             is_duplicate = true;
                         }
                     });
                     if (is_duplicate) {
                         $scope.duplicate_username = "Username is already taken.";
-                        name_border_red();
-
+                        change_border_red(username);
+                        user_exists = true;
                     } else {
                         $scope.duplicate_username = "";
-                        name_border_green();
+                        change_border_green(username);
+                        user_exists = false;
                     }
                 }
             }
 
-            // TODO: CHECK IF EMAIL IS ALREADY TAKEN NOW.
-            // TODO: DISABLE CREATE ACCOUNT BUTTON FOR DUPLICATES.
+            // function used to check if email address already in use.
+            $scope.check_email = function() {
+                var entered_email = $scope.email_addr;
+
+                if (entered_email && entered_email.length > 4) {
+                    entered_email = entered_email.toLowerCase();
+                    var is_duplicate = false;
+
+                    // cycle through db usernames and compare
+                    angular.forEach(all_users, function(user, key){
+                        if (user.email == entered_email) {
+                            is_duplicate = true;
+                        }
+                    });
+                    if (is_duplicate) {
+                        $scope.duplicate_email = "Email Address already used.";
+                        change_border_red(email);
+                        email_used = true;
+                    } else {
+                        $scope.duplicate_email = "";
+                        change_border_green(email);
+                        email_used = false;
+                    }
+                }
+            }
+
 
         });
     });

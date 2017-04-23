@@ -21,10 +21,25 @@ router.post('/register', function(req, res){
     var password2 = req.body.pass2field.toLowerCase();
     var email = req.body.emailfield.toLowerCase();
 
-    //username = username.toLowerCase();
-
+    req.checkBody('email', 'Email is required.').notEmpty();
+    req.checkBody('email', 'Invalid Email.').isEmail();
+    req.checkBody('username', 'Username is required.').notEmpty();
+    req.checkBody('password1', 'Password is required.').notEmpty();
+    req.checkBody('password2', 'Passwords do not match.').equals(password1);
 
     var errors = req.validationErrors();
+
+
+    // TODO: Make some better server side protection.
+    /*User.findOne({username: username},
+        function(err, user) {
+        if (err) {
+            console.log(err);
+            return res.status(500).send();
+        }
+        res.redirect('/');
+        return res.status(200);
+    });*/
 
     if(errors){
         res.rend('register', {
@@ -89,7 +104,7 @@ passport.authenticate('local', {
 
 router.get('/logout', function(req, res, user) {
     req.logout();
-    req.flash('success_msg', 'You have logged.');
+    req.flash('success_msg', 'You have logged out.');
     res.redirect('/')
 });
 

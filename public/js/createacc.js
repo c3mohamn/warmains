@@ -1,52 +1,53 @@
+// INPUT BORDER COLOUR CHANGE FUNCTIONS
+function change_border_red(infield) {
+    // only fade to red if not already red
+    if ($(infield).css('border-left-color') != 'rgb(197, 0, 0)') {
+        $(infield).fadeTo('slow', 0.3, function() {
+            $(this).css("border", "1px solid #C50000");
+        }).fadeTo('slow', 1);
+    }
+}
+function change_border_green(infield) {
+    // only fade to green if not already green
+    if ($(infield).css('border-left-color') != 'rgb(10, 197, 0)') {
+        $(infield).fadeTo('slow', 0.3, function() {
+            $(this).css("border", "1px solid #0AC500");
+        }).fadeTo('slow', 1);
+    }
+}
+
+// variables for input values
+var createbutton = $("input[name=createaccount]");
+var username = $("input[name=userfield]");
+var pass1 = $("input[name=pass1field]");
+var pass2 = $("input[name=pass2field]");
+var email = $("input[name=emailfield]");
+
+// used to check if fields are valid.
+var create_disabled = true;
+var valid_username = false;
+var valid_pass1 = false;
+var valid_pass2 = false;
+var valid_email = false;
+var user_exists = true;
+var email_used = true;
+
+// variables for invalid input messages.
+var username_msg = $("#no-username-1");
+var pass1_msg = $("#no-password-2");
+var pass2_msg = $("#no-password-3");
+var email_msg = $("#no-email");
+
+var regusername = /^[a-zA-Z0-9_-]{3,16}$/;
+var regpass = /^[a-z0-9_-]{6,18}$/;
+var regemail = /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/;
+
 $(document).ready(function(){
-
-    // variables for input values
-    var createbutton = $("input[name=createaccount]");
-    var username = $("input[name=userfield]");
-    var pass1 = $("input[name=pass1field]");
-    var pass2 = $("input[name=pass2field]");
-    var email = $("input[name=emailfield]");
-
-    function change_border_red(infield) {
-        // only fade to red if not already red
-        if ($(infield).css('border-left-color') != 'rgb(197, 0, 0)') {
-            $(infield).fadeTo('slow', 0.3, function() {
-                $(this).css("border", "1px solid #C50000");
-            }).fadeTo('slow', 1);
-        }
-    }
-    function change_border_green(infield) {
-        // only fade to green if not already green
-        if ($(infield).css('border-left-color') != 'rgb(10, 197, 0)') {
-            $(infield).fadeTo('slow', 0.3, function() {
-                $(this).css("border", "1px solid #0AC500");
-            }).fadeTo('slow', 1);
-        }
-    }
-
-    // used to check if fields are valid.
-    var create_disabled = true;
-    var valid_username = false;
-    var valid_pass1 = false;
-    var valid_pass2 = false;
-    var valid_email = false;
-
-    // variables for invalid input messages.
-    var username_msg = $("#no-username-1");
-    var pass1_msg = $("#no-password-2");
-    var pass2_msg = $("#no-password-3");
-    var email_msg = $("#no-email");
-
-    var regusername = /^[a-zA-Z0-9_-]{3,16}$/;
-    var regpass = /^[a-z0-9_-]{6,18}$/;
-    var regemail = /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/;
-
-    // TODO: Check if username is taken.
     // ----------------------
     // functions used for enabling/disabling create button
     // ----------------------
     function check_username() {
-        if (!username.val().toString().match(regusername))
+        if (!username.val().toString().match(regusername) || user_exists)
             return false;
         else return true;
     }
@@ -61,7 +62,7 @@ $(document).ready(function(){
         else return true;
     }
     function check_email() {
-        if (!email.val().toString().match(regemail))
+        if (!email.val().toString().match(regemail) || email_used)
             return false;
         else return true;
     }
@@ -80,8 +81,9 @@ $(document).ready(function(){
         createbutton.prop("disabled", true);
         createbutton.css("background-color", "gray");
     }
+
     // ----------------------
-    // messages under input boxes when invalid
+    // messages under input boxes when invalid input
     // ----------------------
     username.blur(function() {
         username_msg.css("visibility", "visible");
@@ -169,8 +171,4 @@ $(document).ready(function(){
         alert("username is valid!");
         createbutton.prop("disabled", false);
     }
-
-    // disabling create account button until fields are filled out
-    //createbutton.prop("disabled", true);
-    //createbutton.css("background-color", "gray");
 });
