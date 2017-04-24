@@ -1,0 +1,31 @@
+doctype html
+html(ng-app='charApp' ng-cloak)
+    include partials/head.jade
+    body(ng-controller='charctrl')
+        include partials/navbar.jade
+
+        form(class="navbar-form navbar" role="search")
+            div(class="form-group")
+                input(type="text" class="form-control"
+                placeholder="Search")
+            button(type="submit" class="btn btn-default") Submit
+
+        h2 TODO:
+        h1 Allow user to 'create character'
+        p name, class
+        h1 Allow user to choose gear
+        h1 Display stats gained from gear
+        h1 Allow user to save character
+        table(ng-init="img_path = '/wowdata/tooltip_images/'")
+            tr(ng-repeat="item in backs")
+                td {{item.Name}}
+                td {{item.ItemLevel}}
+                td {{item.Quality}}
+                td: img(ng-src="/wowdata/tooltip_images/{{item.IconPath}}.jpg")
+
+        div(class="items_container")
+            div(class="item_tooltip")
+            // Make this hidden, then show when hovering over item image.
+
+        include partials/footer.jade
+        script(src="/js/items_controller.js")
