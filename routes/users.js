@@ -6,12 +6,14 @@ var LocalStrategy = require('passport-local').Strategy;
 
 router.get('/register', function(req, res) {
   res.render('register');
-  console.log("Rendering Register Page");
 });
 
 router.get('/login', function(req, res) {
   res.render('login');
-  console.log("Rendering Login Page");
+});
+
+router.get('/chardev', function(req, res) {
+    res.render('character');
 });
 
 // --------- REGISTER USER ---------
@@ -21,17 +23,17 @@ router.post('/register', function(req, res){
     var password2 = req.body.pass2field.toLowerCase();
     var email = req.body.emailfield.toLowerCase();
 
-    //req.checkBody('email', 'Email is required.').notEmpty();
-    //req.checkBody('email', 'Invalid Email.').isEmail();
-    //req.checkBody('username', 'Username is required.').notEmpty();
-    //req.checkBody('password1', 'Password is required.').notEmpty();
-    //req.checkBody('password2', 'Passwords do not match.').equals(password1);
+    req.checkBody('email', 'Email is required.').notEmpty();
+    req.checkBody('email', 'Invalid Email.').isEmail();
+    req.checkBody('username', 'Username is required.').notEmpty();
+    req.checkBody('password1', 'Password is required.').notEmpty();
+    req.checkBody('password2', 'Passwords do not match.').equals(password1);
 
     // TODO: create server side validations
     var errors = req.validationErrors();
 
     if(errors){
-        res.rend('register', {
+        res.render('register', {
             errors:errors
         });
     } else {
