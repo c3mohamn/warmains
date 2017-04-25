@@ -23,16 +23,18 @@ router.post('/register', function(req, res){
     var password2 = req.body.pass2field.toLowerCase();
     var email = req.body.emailfield.toLowerCase();
 
-    req.checkBody('email', 'Email is required.').notEmpty();
-    req.checkBody('email', 'Invalid Email.').isEmail();
-    req.checkBody('username', 'Username is required.').notEmpty();
-    req.checkBody('password1', 'Password is required.').notEmpty();
-    req.checkBody('password2', 'Passwords do not match.').equals(password1);
+    // Server side registration validations
+    req.checkBody('userfield',
+    'Username must be 2 to 20 characters long.').isLength({min:2, max: 20});
+    req.checkBody('pass1field',
+    'Password must be 6 to 20 characters long.').isLength({min:6, max: 20});
+    req.checkBody('pass2field', 'Passwords do not match.').equals(password1);
+    req.checkBody('emailfield', 'Invalid Email.').isEmail();
 
-    // TODO: create server side validations
     var errors = req.validationErrors();
 
     if(errors){
+        console.log(errors);
         res.render('register', {
             errors:errors
         });
@@ -48,8 +50,7 @@ router.post('/register', function(req, res){
             console.log(user);
         });
 
-        req.flash('success_msg', 'You are registered!');
-
+        req.flash('success_msg', 'You are registered ' + username + '!');
         res.redirect('/');
     }
 });

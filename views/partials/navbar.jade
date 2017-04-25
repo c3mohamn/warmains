@@ -39,12 +39,16 @@ div(class="container")
                                 li: a(href="/settings") SETTINGS
                                 li: a(href="/users/logout") LOGOUT
 
--if(error_msg)
-    p(id="error-msg") #{error_msg}
--if(error)
-    p(id="error-msg") #{error}
--if(success_msg)
-    p(id="success-msg") #{success_msg}
+div(class="errors-container")
+    -if(error_msg)
+        p(id="error-msg") #{error_msg}
+    -if(error)
+        p(id="error-msg") #{error}
+    -if(errors)
+        for e in errors
+          p(id="error-msg") #{e.msg}
+    -if(success_msg)
+        p(id="success-msg") #{success_msg}
 //href="#" data-toggle="modal"
 //data-target="#login-modal"
 // Code for search in navbar
