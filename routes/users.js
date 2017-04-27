@@ -12,10 +12,6 @@ router.get('/login', function(req, res) {
   res.render('login');
 });
 
-router.get('/chardev', function(req, res) {
-    res.render('character');
-});
-
 // --------- REGISTER USER ---------
 router.post('/register', function(req, res){
     var username = req.body.userfield.toLowerCase();
@@ -52,6 +48,39 @@ router.post('/register', function(req, res){
 
         req.flash('success_msg', 'You are registered ' + username + '!');
         res.redirect('/');
+    }
+});
+
+router.post('/changeinfo', function(req, res) {
+    var prevpass = req.body.oldpass.toLowerCase();
+    var newpass = req.body.newpass.toLowerCase();
+    var newpass_confirm = req.body.newpassconfirm.toLowerCase();
+    var cur_pass = req.user.password;
+
+    console.log(prevpass, newpass, newpass_confirm);
+    //TODO: FIX VALIDATOR ERROR MESSAGES POPPING UP WITHOUT ACTUALY ERRORS.
+    
+    // Server side registration validations
+    req.checkBody('oldpass', 'Enter your old password.').isEmpty();
+    req.checkBody('newpass', 'Enter a new password.').isEmpty();
+    req.checkBody('newpassconfirm', 'Passwords do not match.').equals(newpass);
+
+    var errors = req.validationErrors();
+
+    if(errors){
+        console.log(errors);
+        res.render('profile', {
+            errors:errors
+        });
+    } else {
+        User.comparePassword(prevpass, cur_pass, function(err, isMatch) {
+            if(err) throw err;
+            if(isMatch) {
+                console.log('Current and and oldpass are a match.');
+            } else {
+                console.log("Passwords do not match.");
+            }
+        });
     }
 });
 

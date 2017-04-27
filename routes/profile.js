@@ -4,7 +4,7 @@ var router = express.Router();
 
 /* GET Profile page. */
 router.get('/', ensureAuthenticated, function(req, res, next) {
-  res.render('profile', { title: 'Profile' });
+  res.render('profile');
 });
 
 // Make sure user is logged in first
