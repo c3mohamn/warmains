@@ -3,8 +3,8 @@ var mongoose = require('mongoose');
 //char Schema
 var CharSchema = mongoose.Schema({
     username: {type: String},
-    name: {type: String, index: true},
-    class: {type: String},
+    name: {type: String, required: true},
+    class: {type: String, required: true},
     description: {type: String},
     // items
     head_id: {type: String},

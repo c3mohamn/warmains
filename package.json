@@ -6,22 +6,25 @@
     "start": "node ./bin/www"
   },
   "dependencies": {
+    "async": "^2.3.0",
+    "bcryptjs": "*",
     "body-parser": "~1.13.2",
+    "connect-flash": "*",
     "cookie-parser": "~1.3.5",
     "debug": "~2.2.0",
     "express": "~4.13.1",
-    "jade": "~1.11.0",
-    "morgan": "~1.6.1",
-    "serve-favicon": "~2.3.0",
-    "bcryptjs": "*",
-    "connect-flash": "*",
     "express-messages": "*",
     "express-session": "*",
     "express-validator": "*",
+    "jade": "~1.11.0",
     "mongodb": "*",
     "mongoose": "*",
+    "morgan": "~1.6.1",
+    "nodemailer": "^4.0.1",
     "passport": "*",
     "passport-http": "*",
-    "passport-local": "*"
+    "passport-local": "*",
+    "serve-favicon": "~2.3.0",
+    "xoauth2": "^1.2.0"
   }
 }

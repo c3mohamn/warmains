@@ -1,0 +1,16 @@
+doctype html
+html
+    include partials/head.jade
+    body
+        include partials/navbar.jade
+
+        div(class="modal-dialog")
+            div(class="loginmodal-container")
+                h1 PASSWORD RECOVERY
+                br
+                form(action="/users/forgot" method="post")
+                    input(type="text" name="forgotemail" placeholder="Email")
+                    input(type="submit" name="login" value="Reset Password"
+                    class="reset loginmodal-submit")
+
+        include partials/footer.jade

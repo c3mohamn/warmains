@@ -9,7 +9,7 @@ html(ng-app='registerApp' ng-cloak)
             form(action="/users/register" method="post")
                 input(type="text" name="userfield" placeholder="Username"
                 ng-change="check_username()" ng-model='user_name'
-                maxlength=20)
+                maxlength=20 autofocus)
                 span(id="no-username-1")
                 span(id="error-msg") {{duplicate_username}}
                 input(type="password" name="pass1field" placeholder="Password"

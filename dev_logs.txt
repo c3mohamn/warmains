@@ -1,0 +1,12 @@
+----- Apr 28/2017 ------
+
+- Start of the developer logs.
+- So far we have finished registration and login page with server and client
+side error checking.
+- Have started password reset and character page.
+- Finished password reset on profile page.
+- Finished password reset on forgot password page with emails service.
+
+TODO:
+- Finish up character creation portion of character page.
+- Search bar for items in character page.
