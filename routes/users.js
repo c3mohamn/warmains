@@ -34,9 +34,9 @@ router.post('/register', function(req, res){
 
     // Server side registration validations
     req.checkBody('userfield',
-    'Username must be 2 to 20 characters long.').isLength({min:2, max: 20});
+    'Username must be 2 to 16 characters long.').isLength({min:2, max: 16});
     req.checkBody('pass1field',
-    'Password must be 6 to 20 characters long.').isLength({min:6, max: 20});
+    'Password must be 6 to 18 characters long.').isLength({min:6, max: 18});
     req.checkBody('pass2field', 'Passwords do not match.').equals(password1);
     req.checkBody('emailfield', 'Invalid Email.').isEmail();
 
@@ -67,6 +67,7 @@ router.post('/changeinfo', function(req, res) {
     var newpass = req.body.newpass.toLowerCase();
     var newpass_confirm = req.body.newpassconfirm.toLowerCase();
     var cur_pass = req.user.password;
+    var username = req.user.username;
 
     // Server side registration validations
     req.checkBody('newpass',
@@ -97,7 +98,7 @@ router.post('/changeinfo', function(req, res) {
                 console.log("incorrect old password.");
                 req.flash('error_msg',
                 'The old password you entered is incorrect.');
-                res.redirect('/profile');
+                res.redirect('/profile/' + username);
             }
         });
     }
@@ -261,7 +262,7 @@ router.post('/reset/:token', function(req, res) {
 
 // For getting information in db for controllers.
 router.get("/CurUser/", function(req, res) {
-    User.findOne({username: req.session.user.username},
+    User.findOne({username: req.user.username},
         function(err, user) {
         if (err) {
             console.log(err);

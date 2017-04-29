@@ -19,7 +19,7 @@ var routes = require('./routes/index');
 var users = require('./routes/users');
 var about = require('./routes/about');
 var profile = require('./routes/profile');
-var chardev = require('./routes/chardev');
+var character = require('./routes/character');
 
 // init app
 var app = express();
@@ -85,7 +85,7 @@ app.use('/', routes);
 app.use('/about', about);
 app.use('/profile', profile);
 app.use('/users', users);
-app.use('/chardev', chardev);
+app.use('/character', character);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

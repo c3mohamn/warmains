@@ -1,4 +1,5 @@
------ Apr 28/2017 ------
+----- 04/28/2017 ------
+------- v2.1.0 --------
 
 - Start of the developer logs.
 - So far we have finished registration and login page with server and client
@@ -8,5 +9,17 @@ side error checking.
 - Finished password reset on forgot password page with emails service.
 
 TODO:
-- Finish up character creation portion of character page.
+- separate char creation and edit
 - Search bar for items in character page.
+
+----- 04/29/2017 ------
+------- v2.2.0 --------
+
+- separated character character selection page and character edit page
+- made a simple character creation form/page
+- can make and delete characters now
+
+TODO:
+- make a better looking character creation/selection page
+- for existing characters display class icon next to them
+- make a usable character edit page, with char name in url

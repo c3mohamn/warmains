@@ -1,26 +1,28 @@
 doctype html
 html
-    include partials/head.jade
-    body
-    include partials/navbar.jade
-    h1(id="page-title") Hello #{user.username}
-    br
-
-    div(class="col-lg-6 col-md-6 col-sm-6 col-xs-12")
+  include partials/head.jade
+  body
+  include partials/navbar.jade
+  h1(id="page-title") Hello #{user.username}
+  br
+  .container
+    .row
+      div(class="col-lg-6 col-md-6 col-sm-6 col-xs-12")
         div(class="loginmodal-container" id="profile-view")
-            form(action="/users/changeinfo" method="post")
-                input(type="password" name="oldpass" placeholder="Old Password")
-                input(type="password" name="newpass" placeholder="New Password")
-                input(type="password" name="newpassconfirm"
-                placeholder="Confirm New Password")
-                input(type="submit" class="login loginmodal-submit"
-                value="Change Information" name="changeinfo")
-    div(class="col-lg-6 col-md-6 col-sm-6 col-xs-12")
+          h1 Change Password
+          br
+          form(action="/users/changeinfo" method="post")
+            input(type="password" name="oldpass" placeholder="Old Password")
+            input(type="password" name="newpass" placeholder="New Password")
+            input(type="password" name="newpassconfirm"
+            placeholder="Confirm New Password")
+            input(type="submit" class="login loginmodal-submit"
+            value="Change Information" name="changeinfo")
+      div(class="col-lg-6 col-md-6 col-sm-6 col-xs-12")
         div(class="loginmodal-container" id="char-view")
-            p show users characters here
-            p allow users to change character name, description, and delete
+          p show users characters here
+          p allow users to change character name, description, and delete
 
-    div(class="clearfix visible-md visible-sm visible-lg")
-    br
-    br
-    include partials/footer.jade
+  br
+  br
+  include partials/footer.jade

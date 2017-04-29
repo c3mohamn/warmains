@@ -1,7 +1,6 @@
-var charApp = angular.module("charApp", []);
+var editApp = angular.module("editApp", []);
 
-var back = {};
-charApp.controller('charctrl', ['$scope', '$http', function($scope, $http) {
+editApp.controller('editctrl', ['$scope', '$http', function($scope, $http) {
     angular.element(document).ready(function () {
 
         $http.get('/wowdata/Back.json').then(function(response){
@@ -10,6 +9,10 @@ charApp.controller('charctrl', ['$scope', '$http', function($scope, $http) {
 
             //angular.forEach(backs, function(item, key){
             //});
+        });
+        $http.get('/character/find/').then(function(response){
+            $scope.characters = response.data;
+            
         });
     });
 

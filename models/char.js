@@ -2,7 +2,7 @@ var mongoose = require('mongoose');
 
 //char Schema
 var CharSchema = mongoose.Schema({
-    username: {type: String},
+    username: {type: String, required: true},
     name: {type: String, required: true},
     class: {type: String, required: true},
     description: {type: String},
@@ -28,6 +28,6 @@ var CharSchema = mongoose.Schema({
 
 var Char = module.exports = mongoose.model('Char', CharSchema);
 
-module.exports.createChar = function(newChar, callback) {
+module.exports.saveChar = function(newChar, callback) {
     newChar.save(callback);
 }

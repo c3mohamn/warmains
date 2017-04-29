@@ -1,0 +1,32 @@
+doctype html
+html(ng-app='editApp' ng-cloak)
+  include partials/head.jade
+  link(rel='stylesheet', type="text/css" href='/stylesheets/char.css')
+  body(ng-controller='editctrl')
+      include partials/navbar.jade
+      .container
+        .row
+          form(class="navbar-form navbar" role="search")
+              .form-group
+                  input(type="text" class="form-control" placeholder="Search")
+              button(type="submit" class="btn btn-default") Submit
+        .row
+          p {{characters}}
+        .row
+          h2 TODO:
+          h1 Display a container for character gear and what not
+          h1 Allow user to choose gear
+          h1 Display stats gained from gear
+          table(ng-init="img_path = '/wowdata/tooltip_images/'")
+              tr(ng-repeat="item in backs")
+                  td {{item.Name}}
+                  td {{item.ItemLevel}}
+                  td {{item.Quality}}
+                  td: img(ng-src="/wowdata/tooltip_images/{{item.IconPath}}.jpg")
+
+      div(class="items_container")
+          div(class="item_tooltip")
+          // Make this hidden, then show when hovering over item image.
+
+  include partials/footer.jade
+  script(src="/js/edit_controller.js")
