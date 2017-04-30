@@ -10,15 +10,15 @@ html(ng-app='editApp' ng-cloak)
         -else
           -if(username == user.username)
             h3 #{char} is your character #{username}.
+            .row
+              form(class="navbar-form navbar" role="search")
+                  .form-group
+                      input(type="text" class="form-control" placeholder="Search"
+                      ng-model='pick_slot')
+                  button(type="submit" class="btn btn-default"
+                  ng-click="finditems()") Submit
           -else if(user)
             h3 Viewing #{char} as #{user.username}.
-          .row
-            form(class="navbar-form navbar" role="search")
-                .form-group
-                    input(type="text" class="form-control" placeholder="Search"
-                    ng-model='pick_slot')
-                button(type="submit" class="btn btn-default"
-                ng-click="finditems()") Submit
         .row
           div(class="col-lg-6 col-md-6 col-sm-6 col-xs-12")
             .char_panel

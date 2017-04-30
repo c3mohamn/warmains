@@ -22,9 +22,13 @@ html(ng-app='charApp' ng-cloak)
                 div(class='existing_chars2')
                   table(ng-repeat='char in characters')
                     tbody
-                      td: img(ng-src='/images/class-icons/{{char.class}}.png'
-                              class='class_icon')
-                      td: h3 {{char.name}}
+                      tr
+                        td
+                          a(ng-href='/character/profile/' + user.username +
+                          '/{{char.name}}')
+                            img(ng-src='/images/class-icons/{{char.class}}.png'
+                                class='class_icon')
+                        td: h3 {{char.name}}
             div(class="col-lg-6 col-md-6 col-sm-6 col-xs-12")
               .create_container
                 div(class="loginmodal-container" id="char-create")
