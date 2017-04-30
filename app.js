@@ -20,6 +20,7 @@ var users = require('./routes/users');
 var about = require('./routes/about');
 var profile = require('./routes/profile');
 var character = require('./routes/character');
+//var charprofile = require('./routes/charprofile');
 
 // init app
 var app = express();

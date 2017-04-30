@@ -6,7 +6,6 @@ var LocalStrategy = require('passport-local').Strategy;
 var async = require('async');
 var crypto = require('crypto');
 var nodemailer = require('nodemailer');
-//var xoauth2 = require('xoauth2');
 
 //email used for sending password reset info.
 var smtpTransport = nodemailer.createTransport({
@@ -138,7 +137,6 @@ router.post('/login',
 passport.authenticate('local', {
     successRedirect: '/', failureRedirect: '/users/login', failureFlash: true
 }), function(req, res) {
-    console.log("Does it break here?");
     res.redirect('/');
 });
 

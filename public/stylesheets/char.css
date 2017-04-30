@@ -1,0 +1,42 @@
+@font-face {
+  font-family: wow-font;
+  src: url('/lib/fonts/WoW-plexus.ttf');
+}
+.class_icon {
+  width: 80px;
+  height: 80px;
+  opacity: .8;
+}
+.class_icon:hover {
+  opacity: 1;
+}
+.existing_chars2 h1,
+.existing_chars2 h2,
+.existing_chars2 h3,
+.existing_chars2 h4,
+.existing_chars2 h5 {
+  font-family: wow-font;
+}
+.char_panel {
+  border-style: solid;
+  border-color: black;
+  max-width: 350px;
+}
+.char_panel h1,
+.char_panel h2,
+.char_panel h3,
+.char_panel h4,
+.char_panel h5 {
+  font-family: wow-font;
+}
+.char_panel .item_slot {
+  width: 50px;
+  height: 50px;
+  border-style: solid;
+  border-color: red;
+  background-color: blue;
+  opacity: .8;
+}
+.char_panel .item_slot:hover {
+  opacity: 1;
+}

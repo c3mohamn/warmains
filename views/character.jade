@@ -1,7 +1,7 @@
 doctype html
 html(ng-app='charApp' ng-cloak)
-  include partials/head.jade
   link(rel='stylesheet', type="text/css" href='/stylesheets/char.css')
+  include partials/head.jade
   body(ng-controller='charctrl')
       include partials/navbar.jade
       .container
@@ -11,13 +11,22 @@ html(ng-app='charApp' ng-cloak)
                 div(class='existing_chars')
                   form(action='/character/delete' method='post')
                     select(multiple class='form-control' name='pickchar')
-                      option(ng-repeat='char in characters'
-                      name='charname') {{char.name}}
+                      option(ng-repeat='char in characters' name='charname')
+                        {{char.name}}
                     button(type="submit" class="btn btn-danger pull-left"
                     name='cbutton' value='del') Delete
-                  a(href='/character/edit'): button(class="btn btn-info pull-right") Edit
+                    button(type="submit" class="btn btn-info pull-left"
+                    name='cbutton' value='edit') Edit
+                br
+                br
+                div(class='existing_chars2')
+                  table(ng-repeat='char in characters')
+                    tbody
+                      td: img(ng-src='/images/class-icons/{{char.class}}.png'
+                              class='class_icon')
+                      td: h3 {{char.name}}
             div(class="col-lg-6 col-md-6 col-sm-6 col-xs-12")
-              .char_container
+              .create_container
                 div(class="loginmodal-container" id="char-create")
                   h1 CREATE A CHARACTER
                     form(action='/character/create' method='post')
@@ -34,6 +43,7 @@ html(ng-app='charApp' ng-cloak)
                         option(value='mage') Mage
                         option(value='priest') Priest
                         option(value='warlock') Warlock
+                        option(value='deathknight') Death Knight
                       br
                       textarea(class="form-control" rows=5  maxlength=255
                       name="description" placeholder="Description")

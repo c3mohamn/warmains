@@ -64,17 +64,18 @@ router.post('/delete', function(req, res) {
       req.flash('success_msg', char + ' has been deleted.');
       return res.redirect('/character');
     });
-  }
-
-  if (char && button == 'edit') {
+  } else if (char && button == 'edit') {
     console.log('go to edit char page.');
-    res.redirect('/character/' + char);
+    res.redirect('/character/profile/' + uname + '/' + char);
   }
 });
 
 // GET Character Edit Page.
-router.get('/edit', ensureAuthenticated, function(req, res, next) {
-  res.render('charedit');
+router.get('/profile/:username/:char', function(req, res) {
+  res.render('charedit', {
+    char: req.params.char,
+    username: req.params.username
+  });
 });
 
 // Make sure user is logged in first
@@ -89,7 +90,21 @@ function ensureAuthenticated(req, res, next) {
 
 // Find the characters of the current logged in user
 router.get("/find/", function(req, res) {
+  console.log("Find all characters for current user.");
     Char.find({username: req.user.username},
+        function (err, result) {
+            if (err) {
+                console.log(err);
+                return res.status(500).send();
+            }
+            res.send(result);
+            return res.status(200);
+        });
+});
+
+// Find a specific character based off username and character name
+router.get("/findchar/", function(req, res) {
+    Char.find({username: req.query.username, name: req.query.charname},
         function (err, result) {
             if (err) {
                 console.log(err);

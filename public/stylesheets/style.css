@@ -1,1 +1,55 @@
-@import url(http://fonts.googleapis.com/css?family=Roboto);.ng-cloak,[ng-cloak],[ng\:cloak]{display:none}body{text-align:center;font-family:roboto;color:#2E2E2E}#page-title{margin:0 auto;font-family:roboto;font-weight:700}.logo a{text-decoration:none;color:#000;font-size:20px;font-weight:700;margin-top:12px}.logo a #logo-brown{color:brown}.banner-container{width:85%;max-width:1600px;min-width:800px;margin:0 auto;border-style:solid}.banner-container img{width:100%;display:block;opacity:1}.login-container{margin:0 auto;width:500px;height:400px;background-color:#a9a9a9;filter:drop-shadow(0 0 10px #000)}.footerdiv{margin-top:100px}.footerdiv ul li a{text-decoration:none;color:#000}.footerdiv ul li a:hover{color:brown}
+@import url(http://fonts.googleapis.com/css?family=Roboto);
+[ng\:cloak],
+[ng-cloak],
+.ng-cloak {
+  display: none;
+}
+body {
+  text-align: center;
+  font-family: roboto;
+  color: #2E2E2E;
+}
+#page-title {
+  margin: 0 auto;
+  font-family: roboto;
+  font-weight: bold;
+}
+.logo a {
+  text-decoration: none;
+  color: black;
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 12px;
+}
+.logo a #logo-brown {
+  color: brown;
+}
+.banner-container {
+  width: 85%;
+  max-width: 1600px;
+  min-width: 800px;
+  margin: 0 auto;
+  border-style: solid;
+}
+.banner-container img {
+  width: 100%;
+  display: block;
+  opacity: 1;
+}
+.login-container {
+  margin: 0 auto;
+  width: 500px;
+  height: 400px;
+  background-color: darkgrey;
+  filter: drop-shadow(0px 0px 10px black);
+}
+.footerdiv {
+  margin-top: 100px;
+}
+.footerdiv ul li a {
+  text-decoration: none;
+  color: black;
+}
+.footerdiv ul li a:hover {
+  color: brown;
+}

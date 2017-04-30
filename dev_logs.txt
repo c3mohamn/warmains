@@ -18,8 +18,26 @@ TODO:
 - separated character character selection page and character edit page
 - made a simple character creation form/page
 - can make and delete characters now
+- can access character page based on url
 
 TODO:
 - make a better looking character creation/selection page
 - for existing characters display class icon next to them
-- make a usable character edit page, with char name in url
+- create a UI for the character profile page
+
+----- 04/30/2017 ------
+------- v2.3.0 --------
+
+- changed schema for char to include gems and enchants
+- character profile page now correctly displays things based person viewing char
+  - if logged in, and you own the character, then you can edit it
+  - else you can only view it.
+- made an ugly ui for character profiles
+- found and added a folder with class icons from:
+  http://www.hearthpwn.com/news/44-lorewalker-cho-tutorial-voiceovers-class-icons
+- found and added a wow font from:
+  http://www.dafont.com/wow-plexus.font
+
+TODO:
+- eventually will need to add server side protection for character editing
+- still need to make character creation page better looking.
