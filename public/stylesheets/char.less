@@ -1,5 +1,3 @@
-@font-face { font-family: wow-font; src: url('/lib/fonts/WoW-plexus.ttf');}
-
 .class_icon {
   width: 80px;
   height: 80px;
@@ -8,7 +6,6 @@
 .class_icon:hover {
   opacity: 1;
 }
-
 .existing_chars2 {
   h1, h2, h3, h4, h5 {
     font-family: wow-font;
@@ -22,14 +19,27 @@
     font-family: wow-font;
   }
   .item_slot {
-    width: 50px;
-    height: 50px;
+    width: 64px;
+    height: 64px;
     border-style: solid;
     border-color: red;
-    background-color: blue;
+    img {
+      width: 50px;
+      height: 50px;
+    }
+    //background-image: url('/wowdata/tooltip_images/inv_axe_113.jpg');
+    //background-color: blue;
     opacity: .8;
   }
   .item_slot:hover {
     opacity: 1;
+  }
+}
+.results_table {
+  max-height: 200px;
+  overflow: auto;
+  img {
+    height: 35px;
+    width: 35px;
   }
 }

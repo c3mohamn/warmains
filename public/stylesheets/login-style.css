@@ -1,4 +1,5 @@
-@import url(http://fonts.googleapis.com/css?family=Roboto);
+@font-face { font-family: CaviarDreams; src: url('/lib/fonts/CaviarDreams.ttf'); }
+@font-face { font-family: code_bold; src: url('/lib/fonts/CODE Bold.otf');}
 
 /****** LOGIN MODAL ******/
 .loginmodal-container {
@@ -10,13 +11,13 @@
   border-radius: 2px;
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
   overflow: hidden;
-  font-family: roboto;
+  font-family: code_bold;
 }
 
 .loginmodal-container h1 {
   text-align: center;
   font-size: 1.8em;
-  font-family: roboto;
+  font-family: code_bold;
 }
 
 .loginmodal-container input[type=submit] {
@@ -70,7 +71,8 @@
   text-shadow: 0 1px rgba(0,0,0,0.1);
   background-color: #703C00;
   padding: 17px 0px;
-  font-family: roboto;
+  font-family: CaviarDreams;
+  font-weight: bold;
   font-size: 14px;
   /* background-image: -webkit-gradient(linear, 0 0, 0 100%,   from(#4d90fe), to(#4787ed)); */
 }

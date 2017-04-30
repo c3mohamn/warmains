@@ -37,6 +37,8 @@ TODO:
   http://www.hearthpwn.com/news/44-lorewalker-cho-tutorial-voiceovers-class-icons
 - found and added a wow font from:
   http://www.dafont.com/wow-plexus.font
+- Can search items based on what item slot you clicked
+- Item Display Icons are retrieved from online website now
 
 TODO:
 - eventually will need to add server side protection for character editing

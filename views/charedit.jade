@@ -11,43 +11,80 @@ html(ng-app='editApp' ng-cloak)
           -if(username == user.username)
             h3 #{char} is your character #{username}.
             .row
-              form(class="navbar-form navbar" role="search")
-                  .form-group
-                      input(type="text" class="form-control" placeholder="Search"
-                      ng-model='pick_slot')
-                  button(type="submit" class="btn btn-default"
+                ul(class='list-inline')
+                  li: label {{slot}}
+                  li: select(class='form-control' name='search_type')
+                    option(selected) Name
+                    option id
+                  li: input(type="text" class="form-control" placeholder="Search"
+                  ng-model='search')
+                  li: button(type="submit" class="btn btn-default"
                   ng-click="finditems()") Submit
+                p {{message}}
+            .row
+              div(class='results_table')
+                table
+                  thead
+                    tr
+                      td
+                      td Name
+                      td Item Level
+                      td Slot
+                      td Type
+                  tbody
+                    tr(ng-repeat="item in items"
+                    ng-init='result_quality = item.Quality')
+                      td: img(ng-src='http://wow.zamimg.com/images/wow/icons/large/{{item.IconPath}}.jpg')
+                      td(ng-style='item_quality(result_quality)') {{item.Name}}
+                      td {{item.ItemLevel}}
+                      td {{item.Slot}}
+                      td {{item.Type}}
           -else if(user)
             h3 Viewing #{char} as #{user.username}.
+        br
         .row
           div(class="col-lg-6 col-md-6 col-sm-6 col-xs-12")
             .char_panel
               .row
                 h1(class='pull-center') {{character.name}}
                 h4(class='pull-center') {{character.class}}
-                div(class='item_slot pull-left' id='head_slot')
-                div(class='item_slot pull-right' id='hand_slot')
+                div(class='item_slot pull-left' id='head_slot'
+                ng-click="set_slot('Head')")
+                div(class='item_slot pull-right' id='hand_slot'
+                ng-click="set_slot('Hands')")
               .row
-                div(class='item_slot pull-left' id='neck_slot')
-                div(class='item_slot pull-right' id='belt_slot')
+                div(class='item_slot pull-left' id='neck_slot'
+                ng-click="set_slot('Neck')")
+                div(class='item_slot pull-right' id='belt_slot'
+                ng-click="set_slot('Waist')")
               .row
-                div(class='item_slot pull-left' id='shoulders_slot')
-                div(class='item_slot pull-right' id='legs_slot')
+                div(class='item_slot pull-left' id='shoulders_slot'
+                ng-click="set_slot('Shoulders')")
+                div(class='item_slot pull-right' id='legs_slot'
+                ng-click="set_slot('Legs')")
               .row
-                div(class='item_slot pull-left' id='back_slot')
-                div(class='item_slot pull-right' id='feet_slot')
+                div(class='item_slot pull-left' id='back_slot'
+                ng-click="set_slot('Back')")
+                div(class='item_slot pull-right' id='feet_slot'
+                ng-click="set_slot('Feet')")
               .row
-                div(class='item_slot pull-left' id='chest_slot')
-                div(class='item_slot pull-right' id='ring1_slot')
+                div(class='item_slot pull-left' id='chest_slot'
+                ng-click="set_slot('Chest')")
+                div(class='item_slot pull-right' id='finger1_slot'
+                ng-click="set_slot('Finger')")
               .row
                 div(class='item_slot pull-left' id='shirt_slot')
-                div(class='item_slot pull-right' id='ring2_slot')
+                div(class='item_slot pull-right' id='ring2_slot'
+                ng-click="set_slot('Finger')")
               .row
                 div(class='item_slot pull-left' id='tabard_slot')
-                div(class='item_slot pull-right' id='trinket1_slot')
+                div(class='item_slot pull-right' id='trinket1_slot'
+                ng-click="set_slot('Trinket')")
               .row
-                div(class='item_slot pull-left' id='bracer_slot')
-                div(class='item_slot pull-right' id='trinket2_slot')
+                div(class='item_slot pull-left' id='wrist_slot'
+                ng-click="set_slot('Wrist')")
+                div(class='item_slot pull-right' id='trinket2_slot'
+                ng-click="set_slot('Trinket')")
               .row
                 ul(class='list-inline')
                   li: div(class='item_slot' id='mh_slot')
@@ -56,16 +93,16 @@ html(ng-app='editApp' ng-cloak)
           div(class="col-lg-6 col-md-6 col-sm-6 col-xs-12")
             .stats_sheet
               h3 Item stats here.
-
-
-
-        .row
-          table
-              tr(ng-repeat="item in items")
-                  td {{item.Name}}
-                  td {{item.ItemLevel}}
-                  td {{item.Quality}}
-                  td: img(ng-src="/wowdata/tooltip_images/{{item.IconPath}}.jpg")
+              table
+                tr
+                  td(class='pull-left') Stamina:
+                  td(class='pull-right') 0000
+                tr
+                  td(class='pull-left') Intellect:
+                  td(class='pull-right') 0000
+                tr
+                  td(class='pull-left') Attack Power:
+                  td(class='pull-right') 0000
 
       div(class="items_container")
           div(class="item_tooltip")
