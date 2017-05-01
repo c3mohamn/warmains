@@ -57,17 +57,18 @@ editApp.controller('editctrl', ['$scope', '$http', '$location', function($scope,
 
       // Function to find items for a given set item slot.
       $scope.finditems = function() {
+        console.log($scope.search_val);
         if (!$scope.slot) {
           $scope.message = 'Select a item slot before searching for items.';
-        } else if (!$scope.search || $scope.search.length < 3) {
+        } else if (!$scope.search_val || $scope.search_val.length < 3) {
           $scope.message = 'Enter a longer search value';
         } else {
           $scope.message = '';
           $http.get('/wowdata/' + $scope.slot + '.json').then(function(response){
               var all_items = response.data.items;
               var matching_items = [];
-              var search_val = $scope.search.toLowerCase();
-
+              var search_val = $scope.search_val.toLowerCase();
+              console.log(search_val);
               // loop through all items
               angular.forEach(all_items, function(item, key){
                 // finding matching items to search value
@@ -90,7 +91,7 @@ editApp.controller('editctrl', ['$scope', '$http', '$location', function($scope,
         }
       }
 
-      // find the current character in database - see if it actually exists.
+      // find the current character in database - see if it actually
       $http.get('/character/findchar/',
       {params:{"username":user_name, "charname":char_name}}).then(function(response){
           $scope.character = response.data[0];
