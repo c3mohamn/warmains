@@ -4,8 +4,8 @@ html(ng-app='editApp' ng-cloak)
   link(rel='stylesheet', type="text/css" href='/stylesheets/char.css')
   body(ng-controller='editctrl')
       include partials/navbar.jade
-      .container
-        -if(!user)
+      div(class='container' ng-if='character')
+        if(!user)
           h3 Viewing #{char} while offline.
         -else
           -if(username == user.username)
@@ -22,8 +22,8 @@ html(ng-app='editApp' ng-cloak)
                   ng-click="finditems()") Submit
                 p {{message}}
             .row
-              div(class='results_table')
-                table
+              div(class='results_table' ng-style='show_result_table()')
+                table(class='table table-hover')
                   thead
                     tr
                       td
@@ -32,13 +32,16 @@ html(ng-app='editApp' ng-cloak)
                       td Slot
                       td Type
                   tbody
-                    tr(ng-repeat="item in items"
-                    ng-init='result_quality = item.Quality')
+                    tr(ng-repeat="item in items")
                       td: img(ng-src='http://wow.zamimg.com/images/wow/icons/large/{{item.IconPath}}.jpg')
-                      td(ng-style='item_quality(result_quality)') {{item.Name}}
+                      td(ng-style='item_quality(item.Quality)') {{item.Name}}
+                      td(ng-style='class_color(item.RequiredClasses)')
+                        {{item.RequiredClasses}}
                       td {{item.ItemLevel}}
                       td {{item.Slot}}
                       td {{item.Type}}
+
+              button(class='btn btn-warning' ng-click='equip_item()') Equip
           -else if(user)
             h3 Viewing #{char} as #{user.username}.
         br
@@ -107,6 +110,7 @@ html(ng-app='editApp' ng-cloak)
       div(class="items_container")
           div(class="item_tooltip")
           // Make this hidden, then show when hovering over item image.
+      p(ng-if='!character') This character does not exist.
 
   include partials/footer.jade
   script(src="/js/edit_controller.js")

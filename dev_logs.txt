@@ -39,6 +39,7 @@ TODO:
   http://www.dafont.com/wow-plexus.font
 - Can search items based on what item slot you clicked
 - Item Display Icons are retrieved from online website now
+- Displays proper message when viewing a character that does not exist.
 
 TODO:
 - eventually will need to add server side protection for character editing

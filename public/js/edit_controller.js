@@ -29,6 +29,31 @@ editApp.controller('editctrl', ['$scope', '$http', '$location', function($scope,
         else
           return {'color': 'black'}
       }
+      // Set the color of class names
+      $scope.class_color = function(item_class) {
+        if (item_class == 'Warrior')
+          return {'color': '#C79C6E'}
+        else if (item_class == 'Warlock')
+          return {'color': '#9482C9'}
+        else if (item_class == 'Shaman')
+          return {'color': '#0070DE'}
+        else if (item_class == 'Rogue')
+          return {'color': '#FFF569'}
+        else if (item_class == 'Paladin')
+          return {'color': '#F58CBA'}
+        else if (item_class == 'Mage')
+          return {'color': '#69CCF0	'}
+        else if (item_class == 'Hunter')
+          return {'color': '#ABD473'}
+        else if (item_class == 'Death Knight')
+          return {'color': '#C41F3B'}
+        else if (item_class == 'Druid')
+          return {'color': '#FF7D0A'}
+        else if (item_class == 'Priest')
+          return {'color': '#FFFFFF'}
+        else
+          return {'color': 'black'}
+      }
 
       // Function to find items for a given set item slot.
       $scope.finditems = function() {
@@ -42,7 +67,6 @@ editApp.controller('editctrl', ['$scope', '$http', '$location', function($scope,
               var all_items = response.data.items;
               var matching_items = [];
               var search_val = $scope.search.toLowerCase();
-              console.log(search_val);
 
               // loop through all items
               angular.forEach(all_items, function(item, key){
@@ -52,17 +76,27 @@ editApp.controller('editctrl', ['$scope', '$http', '$location', function($scope,
                   matching_items.push(item);
                 }
               });
-              console.log(matching_items);
+
+              // Hide / show result table based on whether there are any results
+              $scope.show_result_table = function() {
+                console.log(matching_items);
+                if (matching_items.length > 0)
+                  return {'visibility': 'visible'}
+                else
+                  return {'visibility': 'hidden'}
+              }
               $scope.items = matching_items;
           });
         }
       }
-        $http.get('/character/findchar/',
-        {params:{"username":user_name, "charname":char_name}}).then(function(response){
-            $scope.character = response.data[0];
-            $scope.charname = response.data.name;
 
-        });
+      // find the current character in database - see if it actually exists.
+      $http.get('/character/findchar/',
+      {params:{"username":user_name, "charname":char_name}}).then(function(response){
+          $scope.character = response.data[0];
+          $scope.charname = response.data.name;
+
+      });
     });
 
 }]);
