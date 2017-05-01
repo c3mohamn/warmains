@@ -4,7 +4,7 @@ html(ng-app='editApp' ng-cloak)
   link(rel='stylesheet', type="text/css" href='/stylesheets/char.css')
   body(ng-controller='editctrl')
       include partials/navbar.jade
-      div(class='container')
+      div(class='container' ng-show='character')
         if(!user)
           h3 Viewing #{char} while offline.
         -else
@@ -21,7 +21,6 @@ html(ng-app='editApp' ng-cloak)
                   li: button(type="submit" class="btn btn-default"
                   ng-click="finditems()") Submit
                 p {{message}}
-                {{char_items}}
             .row
               div(class='results_table' ng-style='show_result_table()')
                 table(class='table table-hover')
@@ -34,7 +33,7 @@ html(ng-app='editApp' ng-cloak)
                       td Slot
                       td Type
                   tbody
-                    tr(ng-repeat="item in items")
+                    tr(ng-repeat="item in items" ng-click='select_search_item(item)')
                       td: img(ng-src='http://wow.zamimg.com/images/wow/icons/large/{{item.IconPath}}.jpg')
                       td(ng-style='item_quality(item.Quality)') {{item.Name}}
                       td(ng-style='class_color(item.RequiredClasses)')
@@ -44,6 +43,8 @@ html(ng-app='editApp' ng-cloak)
                       td {{item.Type}}
 
               button(class='btn btn-warning' ng-click='equip_item()') Equip
+              br
+              p {{char_items}}
           -else if(user)
             h3 Viewing #{char} as #{user.username}.
         br
@@ -54,7 +55,7 @@ html(ng-app='editApp' ng-cloak)
                 h1(class='pull-center') {{character.name}}
                 h4(class='pull-center') {{character.class}}
                 div(class='item_slot pull-left' id='head_slot'
-                ng-click="set_slot('Head')")
+                ng-click="set_slot('Head')" ng-style='set_slot_image()')
                 div(class='item_slot pull-right' id='hand_slot'
                 ng-click="set_slot('Hands')")
               .row
@@ -76,25 +77,26 @@ html(ng-app='editApp' ng-cloak)
                 div(class='item_slot pull-left' id='chest_slot'
                 ng-click="set_slot('Chest')")
                 div(class='item_slot pull-right' id='finger1_slot'
-                ng-click="set_slot('Finger')")
+                ng-click="set_slot('Finger1')")
               .row
                 div(class='item_slot pull-left' id='shirt_slot')
                 div(class='item_slot pull-right' id='ring2_slot'
-                ng-click="set_slot('Finger')")
+                ng-click="set_slot('Finger2')")
               .row
                 div(class='item_slot pull-left' id='tabard_slot')
                 div(class='item_slot pull-right' id='trinket1_slot'
-                ng-click="set_slot('Trinket')")
+                ng-click="set_slot('Trinket1')")
               .row
                 div(class='item_slot pull-left' id='wrist_slot'
                 ng-click="set_slot('Wrist')")
                 div(class='item_slot pull-right' id='trinket2_slot'
-                ng-click="set_slot('Trinket')")
+                ng-click="set_slot('Trinket2')")
               .row
                 ul(class='list-inline')
-                  li: div(class='item_slot' id='mh_slot')
-                  li: div(class='item_slot' id='oh_slot')
-                  li: div(class='item_slot' id='ranged_slot')
+                  li: div(class='item_slot' id='mh_slot' ng-click="set_slot('MainHand')")
+                  li: div(class='item_slot' id='oh_slot' ng-click="set_slot('OffHand')")
+                  li: div(class='item_slot' id='ranged_slot' ng-click="set_slot('Ranged')")
+
           div(class="col-lg-6 col-md-6 col-sm-6 col-xs-12")
             .stats_sheet
               h3 Item stats here.

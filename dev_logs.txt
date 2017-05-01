@@ -45,4 +45,10 @@ TODO:
 TODO:
 - eventually will need to add server side protection for character editing
 - still need to make character creation page better looking.
-- Fix, or find alternative to the (ng-if) breaking the search
+- Fix, or find alternative to the (ng-if) breaking the $scope
+
+
+----- 05/01/2017 ------
+------- v2.3.0 --------
+
+- used ng-show instead to fix $scope issue

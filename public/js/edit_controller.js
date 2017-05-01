@@ -8,18 +8,34 @@ var user_name = cur_url.pop();
 
 // Useful Variables
 //var item_slot = "Back";
-var char_items = { head: null, neck: null }
+
+// Stores the items equipped for the current character
+var char_items = {  head: null, neck: null, shoulders: null, back: null,
+                    chest: null, wrist: null, hands: null, waist: null,
+                    legs: null, feet: null, finger1: null, finger2: null,
+                    trinket1: null, trinket2: null, mainhand: null,
+                    offhand: null, ranged: null }
+
+// Stores the currently selected item.
+var selected_item = null;
 
 editApp.controller('editctrl', ['$scope', '$http', '$location', function($scope, $http, $location) {
     angular.element(document).ready(function () {
 
       $scope.char_items = char_items;
 
+      /* Need to assign an item to each item slot display
+         TODO: Need to fix this.....
+         For now, make it so the image changes when you equip an item. 
+      */
+      $scope.set_slot_image = function () {
+        return { 'background-image': 'url(' + char_items.head.IconPath + ')'}
+      }
+
       // Set the item slot that we are looking for.
       $scope.set_slot = function(slot) {
         $scope.slot = slot;
       }
-
       // Set the color of the item name based on its quality.
       $scope.item_quality = function(quality) {
         if (quality == 'Epic')
@@ -57,6 +73,15 @@ editApp.controller('editctrl', ['$scope', '$http', '$location', function($scope,
           return {'color': 'black'}
       }
 
+      // select an item from results table
+      $scope.select_search_item = function(item) {
+        console.log('selected item: ', item.Name, '. slot: ', $scope.slot);
+        selected_item = item;
+      }
+
+      $scope.equip_item = function() {
+        char_items[$scope.slot.toLowerCase()] = selected_item;
+      }
       // Function to find items for a given set item slot.
       $scope.finditems = function() {
 
@@ -89,7 +114,6 @@ editApp.controller('editctrl', ['$scope', '$http', '$location', function($scope,
 
               // Hide / show result table based on whether there are any results
               $scope.show_result_table = function() {
-                console.log(matching_items);
                 if (matching_items.length > 0)
                   return {'visibility': 'visible'}
                 else

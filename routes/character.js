@@ -72,7 +72,7 @@ router.post('/delete', function(req, res) {
 
 // GET Character Edit Page.
 router.get('/profile/:username/:char', function(req, res) {
-  res.render('charedit', {
+  res.render('charprofile', {
     char: req.params.char,
     username: req.params.username
   });
