@@ -40,7 +40,9 @@ TODO:
 - Can search items based on what item slot you clicked
 - Item Display Icons are retrieved from online website now
 - Displays proper message when viewing a character that does not exist.
+- implemented search by ID
 
 TODO:
 - eventually will need to add server side protection for character editing
 - still need to make character creation page better looking.
+- Fix, or find alternative to the (ng-if) breaking the search

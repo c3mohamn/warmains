@@ -8,10 +8,12 @@ var user_name = cur_url.pop();
 
 // Useful Variables
 //var item_slot = "Back";
-//var items = [];
+var char_items = { head: null, neck: null }
 
 editApp.controller('editctrl', ['$scope', '$http', '$location', function($scope, $http, $location) {
     angular.element(document).ready(function () {
+
+      $scope.char_items = char_items;
 
       // Set the item slot that we are looking for.
       $scope.set_slot = function(slot) {
@@ -57,7 +59,7 @@ editApp.controller('editctrl', ['$scope', '$http', '$location', function($scope,
 
       // Function to find items for a given set item slot.
       $scope.finditems = function() {
-        console.log($scope.search_val);
+
         if (!$scope.slot) {
           $scope.message = 'Select a item slot before searching for items.';
         } else if (!$scope.search_val || $scope.search_val.length < 3) {
@@ -68,13 +70,20 @@ editApp.controller('editctrl', ['$scope', '$http', '$location', function($scope,
               var all_items = response.data.items;
               var matching_items = [];
               var search_val = $scope.search_val.toLowerCase();
-              console.log(search_val);
+
               // loop through all items
               angular.forEach(all_items, function(item, key){
                 // finding matching items to search value
                 var item_name = item.Name.toLowerCase();
-                if (item_name.indexOf(search_val) > -1) {
-                  matching_items.push(item);
+                var item_id = item.Id;
+                if ($scope.search_type) {
+                  if ($scope.search_type == 'Name' && item_name.indexOf(search_val) > -1) {
+                    matching_items.push(item);
+                  } else if (item_id.indexOf(search_val) == 0) {
+                    matching_items.push(item);
+                  }
+                } else {
+                  $scope.message = 'Selected a search by.';
                 }
               });
 

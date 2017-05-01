@@ -43,8 +43,10 @@
   visibility: hidden;
   max-height: 200px;
   overflow: auto;
-  background-color: #D9D9D9;
   border-radius: 2px;
+}
+.results_table tbody {
+  background-color: #D9D9D9;
 }
 .results_table img {
   height: 40px;
