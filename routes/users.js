@@ -30,12 +30,16 @@ router.get('/login', function(req, res) {
 * Registers a new user, adding it to the database in user collection.
 */
 router.post('/register', function(req, res){
+    var name = req.body.namefield;
     var username = req.body.userfield.toLowerCase();
     var password1 = req.body.pass1field.toLowerCase();
     var password2 = req.body.pass2field.toLowerCase();
     var email = req.body.emailfield.toLowerCase();
 
     // Server side registration validations
+    req.checkBody('namefield', 'Enter a name please.').notEmpty();
+    req.checkBody('namefield',
+    'Invalid characters in name field.').isAlphanumeric();
     req.checkBody('userfield', 'Enter a user name please.').notEmpty();
     req.checkBody('userfield',
     'Username must be 2 to 16 characters long.').isLength({min:2, max: 16});
@@ -52,18 +56,45 @@ router.post('/register', function(req, res){
           errors:errors
       });
     } else {
-      // Creating a new user with given input.
-      var newUser = new User({
-          username: username,
-          password: password1,
-          email: email
+      // Checking if the username exists already.
+      User.getUserByUsername(username, function(err, user) {
+          if (err) throw err;
+          if (user) {
+            console.log(username, ' already exist.');
+            req.flash('error_msg', username + ' already exists.');
+            res.redirect('/users/register');
+          } else {
+            // User name is not taken.
+            // Now check if email is taken or not.
+            User.getUserByEmail(email, function(err, user) {
+              if (err) throw err;
+              if (user) {
+                console.log(email, ' already in use.');
+                req.flash('error_msg', email + ' already in use.');
+                res.redirect('/users/register');
+              } else {
+                // Email and username not taken, proceed with registration.
+                // Creating a new user with given input.
+                var newUser = new User({
+                    name: name,
+                    username: username,
+                    password: password1,
+                    email: email
+                });
+                newUser.save(function(err) {
+                    console.log(newUser);
+                });
+                req.flash('success_msg', 'You are registered ' + username + '!');
+                res.redirect('/');
+              }
+
+            });
+          }
       });
-      newUser.save(function(err) {
-          console.log(newUser);
-      });
-      req.flash('success_msg', 'You are registered ' + username + '!');
-      res.redirect('/');
     }
+
+
+
 });
 
 /* --------- PASSWORD CHANGE ---------
@@ -291,16 +322,16 @@ router.post('/reset/:token', function(req, res) {
 *  Mainly used by controllers.
 */
 router.get("/AllUser/", function(req, res) {
-    console.log("Getting All Users.");
-    User.find({},
-        function (err, result) {
-            if (err) {
-                console.log(err);
-                return res.status(500).send();
-            }
-            res.send(result);
-            return res.status(200);
-        });
+  console.log("Getting All Users.");
+  User.find({},
+    function (err, result) {
+      if (err) {
+        console.log(err);
+        return res.status(500).send();
+      }
+      res.send(result);
+      return res.status(200);
+    });
 });
 
 module.exports = router;

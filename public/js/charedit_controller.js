@@ -1,41 +1,5 @@
 var editApp = angular.module("editApp", []);
 
-// Getting the data for the character from the URL
-var cur_url = window.location.href;
-cur_url = cur_url.split("/");
-var char_name = cur_url.pop();
-var user_name = cur_url.pop();
-
-// Useful Variables
-
-// Stores the items equipped for the current character
-var char_items = {  head: null, neck: null, shoulders: null, back: null,
-                    chest: null, wrist: null, hands: null, waist: null,
-                    legs: null, feet: null, finger1: null, finger2: null,
-                    trinket1: null, trinket2: null, mainhand: null,
-                    offhand: null, ranged: null }
-
-// Store the enchants for corresponding item slots
-var char_enchants = {}
-// Store the gems for corresponding item slots
-var char_gems = {}
-
-var class_armor_type = {}
-
-
-
-
-// Stores the currently selected item.
-var selected_item = null;
-
-// Setting the icon img of the corresponding slot to what is in char_items
-function set_slot_image(slot) {
-  slot = slot.toLowerCase();
-  $('#' + slot + '_slot').css('background-image', 'url(' +
-  "http://wow.zamimg.com/images/wow/icons/large/" + char_items[slot].IconPath +
-  '.jpg)');
-}
-
 editApp.controller('editctrl', ['$scope', '$http', '$location', function($scope, $http, $location) {
 
     angular.element(document).ready(function () {
@@ -98,8 +62,12 @@ editApp.controller('editctrl', ['$scope', '$http', '$location', function($scope,
       $scope.equip_item = function() {
         if (selected_item) {
           if (selected_item.Slot == $scope.slot) {
-              char_items[$scope.slot.toLowerCase()] = selected_item;
-              set_slot_image($scope.slot);
+              if (can_wield($scope.character, selected_item)) {
+                char_items[$scope.slot.toLowerCase()] = selected_item;
+                set_slot_image($scope.slot);
+              } else {
+                $scope.message = 'You cannot equip ' + selected_item.Type + '.';
+              }
           } else {
             $scope.message = 'Select the correct item slot!';
           }
@@ -116,10 +84,22 @@ editApp.controller('editctrl', ['$scope', '$http', '$location', function($scope,
           $scope.message = 'Enter a longer search value';
         } else {
           $scope.message = '';
-          $http.get('/wowdata/' + $scope.slot + '.json').then(function(response){
+
+          var temp_slot = $scope.slot;
+          var last_char = temp_slot[temp_slot.length - 1];
+
+          // Remove the 1 from Finger1 when searching for items.
+          if (last_char == '1' || last_char == '2') {
+            temp_slot = temp_slot.slice(0, temp_slot.length - 1);
+          }
+          //var all_items = [];
+
+          $http.get('/wowdata/' + temp_slot + '.json').then(function(response){
               var all_items = response.data.items;
               var matching_items = [];
               var search_val = $scope.search_val.toLowerCase();
+
+              //TODO: Add TwoHand and OneHand weapons to MainHand list.
 
               // loop through all items
               angular.forEach(all_items, function(item, key){
@@ -153,6 +133,14 @@ editApp.controller('editctrl', ['$scope', '$http', '$location', function($scope,
               $scope.items = matching_items;
           });
         }
+      }
+
+      //TODO: Create a function to search for items in JSON file.
+      // Retrieves list of all items from item slot
+      $scope.get_items = function(item_slot) {
+        $http.get('/wowdata/' + item_slot + '.json').then(function(response) {
+          return respone.data.items;
+        });
       }
 
       // find the current character in database - see if it actually

@@ -62,3 +62,16 @@ TODO:
 - Need to make it so cloths/leather/mail can't wear plates and so forth
 - Should start on saving character gear functionality
 - Add a field for display name in registration
+
+----- 05/02/2017 ------
+------- v2.3.6 --------
+
+- Added server side protection so that users cannot create accounts with
+  existing account names/emails
+- Added a name field for accounts.
+- Fixed search for fingers/trinkets (by removing the 1/2 at the end)
+- Added a helper js file for char profile page.
+
+TODO:
+- Combine weapons in json files to Mainhand and OffHand
+- Add all mainhand weapons when searching for mainhand slot

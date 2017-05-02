@@ -11,9 +11,12 @@ html(ng-app='registerApp' ng-cloak)
 
             form(action="/users/register" method="post")
 
+                input(type='text' name='namefield' placeholder='Name'
+                      maxlength=16 autofocus)
+
                 input(type="text" name="userfield" placeholder="Username"
                       ng-change="check_username()" ng-model='user_name'
-                      maxlength=16 autofocus)
+                      maxlength=16)
                 span(id="no-username-1")
                 span(id="error-msg") {{duplicate_username}}
 
