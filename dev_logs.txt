@@ -49,6 +49,15 @@ TODO:
 
 
 ----- 05/01/2017 ------
-------- v2.3.0 --------
+------- v2.3.5 --------
 
 - used ng-show instead to fix $scope issue
+- stores selected items in a variable
+- can 'equip' items, only images transferred so far
+- cannot equip an item in the wrong item slot (ex. putting helm into hands slot)
+- filtered out search results that are meant for classes that the current
+  character is not (ex. if on a paladins profile, won't see warrior gear)
+
+TODO:
+- Need to make it so cloths/leather/mail can't wear plates and so forth
+- Should start on saving character gear functionality

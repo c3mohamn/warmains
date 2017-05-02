@@ -16,7 +16,7 @@
 .char_panel {
   border-style: solid;
   border-color: black;
-  max-width: 350px;
+  max-width: 300px;
 }
 .char_panel h1,
 .char_panel h2,

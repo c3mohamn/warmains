@@ -7,7 +7,6 @@ var char_name = cur_url.pop();
 var user_name = cur_url.pop();
 
 // Useful Variables
-//var item_slot = "Back";
 
 // Stores the items equipped for the current character
 var char_items = {  head: null, neck: null, shoulders: null, back: null,
@@ -16,21 +15,37 @@ var char_items = {  head: null, neck: null, shoulders: null, back: null,
                     trinket1: null, trinket2: null, mainhand: null,
                     offhand: null, ranged: null }
 
+// Store the enchants for corresponding item slots
+var char_enchants = {}
+// Store the gems for corresponding item slots
+var char_gems = {}
+
+var class_armor_type = {}
+
+
+
+
 // Stores the currently selected item.
 var selected_item = null;
 
+// Setting the icon img of the corresponding slot to what is in char_items
+function set_slot_image(slot) {
+  slot = slot.toLowerCase();
+  $('#' + slot + '_slot').css('background-image', 'url(' +
+  "http://wow.zamimg.com/images/wow/icons/large/" + char_items[slot].IconPath +
+  '.jpg)');
+}
+
 editApp.controller('editctrl', ['$scope', '$http', '$location', function($scope, $http, $location) {
+
     angular.element(document).ready(function () {
 
       $scope.char_items = char_items;
 
       /* Need to assign an item to each item slot display
          TODO: Need to fix this.....
-         For now, make it so the image changes when you equip an item. 
+         For now, make it so the image changes when you equip an item.
       */
-      $scope.set_slot_image = function () {
-        return { 'background-image': 'url(' + char_items.head.IconPath + ')'}
-      }
 
       // Set the item slot that we are looking for.
       $scope.set_slot = function(slot) {
@@ -79,8 +94,18 @@ editApp.controller('editctrl', ['$scope', '$http', '$location', function($scope,
         selected_item = item;
       }
 
+      // TODO: ADD CONDITIONS FOR TYPES OF ARMOR THAT CAN BE EQUIPPED BY CERTAIN CLASS
       $scope.equip_item = function() {
-        char_items[$scope.slot.toLowerCase()] = selected_item;
+        if (selected_item) {
+          if (selected_item.Slot == $scope.slot) {
+              char_items[$scope.slot.toLowerCase()] = selected_item;
+              set_slot_image($scope.slot);
+          } else {
+            $scope.message = 'Select the correct item slot!';
+          }
+        } else {
+          $scope.message = 'Select an item before trying to equip.';
+        }
       }
       // Function to find items for a given set item slot.
       $scope.finditems = function() {
@@ -102,10 +127,16 @@ editApp.controller('editctrl', ['$scope', '$http', '$location', function($scope,
                 var item_name = item.Name.toLowerCase();
                 var item_id = item.Id;
                 if ($scope.search_type) {
-                  if ($scope.search_type == 'Name' && item_name.indexOf(search_val) > -1) {
-                    matching_items.push(item);
-                  } else if (item_id.indexOf(search_val) == 0) {
-                    matching_items.push(item);
+                  /* Filter out the items that have a required class that does
+                     not match our chars */
+                  if (item.RequiredClasses &&
+                    item.RequiredClasses.toLowerCase().indexOf($scope.character.class) > -1
+                    || !item.RequiredClasses) {
+                    if ($scope.search_type == 'Name' && item_name.indexOf(search_val) > -1) {
+                      matching_items.push(item);
+                    } else if (item_id.indexOf(search_val) == 0) {
+                      matching_items.push(item);
+                    }
                   }
                 } else {
                   $scope.message = 'Selected a search by.';
@@ -128,8 +159,6 @@ editApp.controller('editctrl', ['$scope', '$http', '$location', function($scope,
       $http.get('/character/findchar/',
       {params:{"username":user_name, "charname":char_name}}).then(function(response){
           $scope.character = response.data[0];
-          $scope.charname = response.data.name;
-
       });
     });
 
