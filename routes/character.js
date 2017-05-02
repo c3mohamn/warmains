@@ -3,24 +3,29 @@ var router = express.Router();
 var Char = require('../models/char');
 
 
-// GET Character Selection page.
+/* GET Character Selection page. */
 router.get('/', ensureAuthenticated, function(req, res, next) {
-  res.render('character');
+  res.render('character', {title: 'Warmains'});
 });
 
-// --------- CREATE NEW CHARACTER ---------
+/* --------- CREATE NEW CHARACTER ---------
+*  Creates a new character, storing it in the database in char collection.
+*/
 router.post('/create', function(req, res, next) {
     var name = req.body.Name;
     var char_class = req.body.pickclass.toLowerCase();
     var description = req.body.description.toLowerCase();
 
-    // Server side creation validations
+    // Making user enters information about the character.
+    req.checkBody('Name', 'Enter a name for your character.').notEmpty();
     req.checkBody('Name',
-    'Name must be between 2 and 12 characters long.').isLength({min:2, max: 12});
+    "Only use letters aA-zZ for your character's name please.").isAlpha();
+    req.checkBody('Name',
+    'Name must be between 2 and 12 characters long.').isLength({min:2, max:12});
     req.checkBody('pickclass',
     'Must choose a class.').isLength({min:1, max: undefined});
-
-    console.log(char_class);
+    req.checkBody('description',
+    'Description cannot be longer than 255 characters.').isLength({min:0, max:255});
 
     var errors = req.validationErrors();
 
@@ -30,13 +35,13 @@ router.post('/create', function(req, res, next) {
             errors:errors
         });
     } else {
+        // Creates a new character and saves it.
         var newChar = new Char({
             username: req.user.username,
             name: name,
             class: char_class,
             description: description
         });
-
         Char.saveChar(newChar, function(err, char) {
             if(err) throw err;
             console.log(char);
@@ -47,10 +52,10 @@ router.post('/create', function(req, res, next) {
     }
 });
 
-// --------- DELETE SELECTED CHARACTER ---------
+/* --------- DELETE SELECTED CHARACTER ---------
+*  TODO: May change this later, when fixing up character page.
+*/
 router.post('/delete', function(req, res) {
-  // delete the selected character
-  console.log("Delete Char post.");
   var uname = req.user.username;
   var char = req.body.pickchar;
   var button = req.body.cbutton;
@@ -70,7 +75,7 @@ router.post('/delete', function(req, res) {
   }
 });
 
-// GET Character Edit Page.
+/* GET Character Edit page. */
 router.get('/profile/:username/:char', function(req, res) {
   res.render('charprofile', {
     char: req.params.char,
@@ -78,7 +83,7 @@ router.get('/profile/:username/:char', function(req, res) {
   });
 });
 
-// Make sure user is logged in first
+// Function to make sure user is logged in before viewing a page.
 function ensureAuthenticated(req, res, next) {
     if(req.isAuthenticated()) {
         return next();
@@ -88,7 +93,8 @@ function ensureAuthenticated(req, res, next) {
     }
 }
 
-// Find the characters of the current logged in user
+// Retrieve characters of logged in user from database.
+// Primarily used for the character selection page.
 router.get("/find/", function(req, res) {
   console.log("Find all characters for current user.");
     Char.find({username: req.user.username},
@@ -102,7 +108,7 @@ router.get("/find/", function(req, res) {
         });
 });
 
-// Find a specific character based off username and character name
+// Find a specific character using user's account name and name of character.
 router.get("/findchar/", function(req, res) {
     Char.find({username: req.query.username, name: req.query.charname},
         function (err, result) {

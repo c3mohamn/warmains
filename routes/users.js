@@ -16,15 +16,19 @@ var smtpTransport = nodemailer.createTransport({
   }
 });
 
+/* GET Registration page. */
 router.get('/register', function(req, res) {
-  res.render('register');
+  res.render('register', {title: 'Warmains'});
 });
 
+/* GET Login page. */
 router.get('/login', function(req, res) {
-  res.render('login');
+  res.render('login', {title: 'Warmains'});
 });
 
-// --------- REGISTER USER ---------
+/* --------- REGISTER USER ---------
+* Registers a new user, adding it to the database in user collection.
+*/
 router.post('/register', function(req, res){
     var username = req.body.userfield.toLowerCase();
     var password1 = req.body.pass1field.toLowerCase();
@@ -32,6 +36,7 @@ router.post('/register', function(req, res){
     var email = req.body.emailfield.toLowerCase();
 
     // Server side registration validations
+    req.checkBody('userfield', 'Enter a user name please.').notEmpty();
     req.checkBody('userfield',
     'Username must be 2 to 16 characters long.').isLength({min:2, max: 16});
     req.checkBody('pass1field',
@@ -42,33 +47,36 @@ router.post('/register', function(req, res){
     var errors = req.validationErrors();
 
     if(errors){
-        console.log(errors);
-        res.render('register', {
-            errors:errors
-        });
+      // Refresh page and post errors if any.
+      res.render('register', {
+          errors:errors
+      });
     } else {
-        var newUser = new User({
-            username: username,
-            password: password1,
-            email: email
-        });
-        newUser.save(function(err) {
-            console.log(newUser);
-        });
-        req.flash('success_msg', 'You are registered ' + username + '!');
-        res.redirect('/');
+      // Creating a new user with given input.
+      var newUser = new User({
+          username: username,
+          password: password1,
+          email: email
+      });
+      newUser.save(function(err) {
+          console.log(newUser);
+      });
+      req.flash('success_msg', 'You are registered ' + username + '!');
+      res.redirect('/');
     }
 });
 
-// --------- PASSWORD CHANGE ---------
+/* --------- PASSWORD CHANGE ---------
+* Changes the logged in users password in the database.
+*/
 router.post('/changeinfo', function(req, res) {
-    var prevpass = req.body.oldpass.toLowerCase();
+    var oldpass = req.body.oldpass.toLowerCase();
     var newpass = req.body.newpass.toLowerCase();
     var newpass_confirm = req.body.newpassconfirm.toLowerCase();
     var cur_pass = req.user.password;
     var username = req.user.username;
 
-    // Server side registration validations
+    // Server side validations to make sure new password is valid.
     req.checkBody('newpass',
     'Enter a new password with at least 6 characters.').isLength({min:6, max: 20});
     req.checkBody('newpassconfirm', 'New passwords do not match.').equals(newpass);
@@ -76,34 +84,35 @@ router.post('/changeinfo', function(req, res) {
     var errors = req.validationErrors();
 
     if(errors){
-        console.log(errors);
-        res.render('profile', {
-            errors:errors
-        });
+      console.log(errors);
+      res.render('profile', {
+          errors:errors
+      });
     } else {
-        User.comparePassword(prevpass, cur_pass, function(err, isMatch) {
-            if(err) throw err;
-            if(isMatch) {
-                console.log('Current and and oldpass are a match.');
-                // change user password and logout user
-                req.user.password = newpass;
-                req.user.save(function(err) {
-                });
-                req.logout();
-                req.flash('error_msg', 'Password Changed.');
-                res.redirect('/');
-
-            } else {
-                console.log("incorrect old password.");
-                req.flash('error_msg',
-                'The old password you entered is incorrect.');
-                res.redirect('/profile/' + username);
-            }
-        });
+      // Check if they correctly entered their current password.
+      User.comparePassword(oldpass, cur_pass, function(err, isMatch) {
+          if(err) throw err;
+          if(isMatch) {
+              // Change user password and log user out.
+              req.user.password = newpass;
+              req.user.save(function(err) {});
+              req.logout();
+              req.flash('error_msg', 'Password Changed.');
+              res.redirect('/');
+          } else {
+              // Incorrectly entered current password, refresh page.
+              req.flash('error_msg',
+              'The old password you entered is incorrect.');
+              res.redirect('/profile/' + username);
+          }
+      });
     }
 });
 
-// --------- LOGIN ---------
+/* --------- USER LOGIN ---------
+* Logs user in after verifying that the user does indeed exist.
+* Using passport primarily for this.
+*/
 passport.use(new LocalStrategy(function(username, password, done) {
     User.getUserByUsername(username, function(err, user) {
         if(err) throw err;
@@ -133,6 +142,9 @@ passport.deserializeUser(function(id, done) {
   });
 });
 
+// Logs user in
+// Displays flash messages if failure
+// redirects to index page.
 router.post('/login',
 passport.authenticate('local', {
     successRedirect: '/', failureRedirect: '/users/login', failureFlash: true
@@ -140,18 +152,22 @@ passport.authenticate('local', {
     res.redirect('/');
 });
 
-// --------- LOGOUT ---------
+/* --------- LOGOUT --------- */
 router.get('/logout', function(req, res, user) {
     req.logout();
     req.flash('success_msg', 'You have logged out.');
     res.redirect('/');
 });
 
-// --------- FORGOT PASSWORD ---------
+/* --------- GET Forgot Password page. --------- */
 router.get('/forgot', function(req, res) {
   res.render('forgot');
 });
 
+/* Directed here after clicking Reset Password on forgot page.
+*  Sends an email to the user with a link and a 'token' that can be used to
+*  reset their password.
+ */
 router.post('/forgot', function(req, res, next) {
   async.waterfall([
     function(done) {
@@ -161,6 +177,7 @@ router.post('/forgot', function(req, res, next) {
       });
     },
     function(token, done) {
+      // Verify that the email address is entered correctly.
       User.findOne({ email: req.body.forgotemail }, function(err, user) {
         if (!user) {
           req.flash('error', 'No account with that email address exists.');
@@ -177,13 +194,18 @@ router.post('/forgot', function(req, res, next) {
         to: user.email,
         from: 'warmains.passreset@gmail.com',
         subject: 'Warmains Password Reset',
-        text: 'You are receiving this because you (or someone else) have requested the reset of the password for your account.\n\n' +
-          'Please click on the following link, or paste this into your browser to complete the process:\n\n' +
+        text: 'You are receiving this because you (or someone else) have ' +
+          'requested the reset of the password for your account.\n\n' +
+          'Please click on the following link, or paste this into your ' +
+          'browser to complete the process:\n\n' +
           'http://' + req.headers.host + '/users/reset/' + token + '\n\n' +
-          'If you did not request this, please ignore this email and your password will remain unchanged.\n'
+          'If you did not request this, please ignore this email and your ' +
+          'password will remain unchanged.\n'
       };
+      // Sends the mail to the user's email.
       smtpTransport.sendMail(mailOptions, function(err) {
-        req.flash('info', 'An e-mail has been sent to ' + user.email + ' with further instructions.');
+        req.flash('info', 'An e-mail has been sent to ' + user.email +
+                  ' with further instructions.');
         done(err, 'done');
       });
       console.log("Token sent to user's mail.")
@@ -194,7 +216,9 @@ router.post('/forgot', function(req, res, next) {
   });
 });
 
-// --------- RESET PASSWORD ---------
+/* --------- GET Reset Passowrd page. ---------
+* Renders the reset password page if the user's token is valid / exists.
+*/
 router.get('/reset/:token', function(req, res) {
   User.findOne({ resetPasswordToken: req.params.token }, function(err, user) {
     if (!user) {
@@ -207,21 +231,21 @@ router.get('/reset/:token', function(req, res) {
   });
 });
 
+// Directed here after user enters reset password information.
 router.post('/reset/:token', function(req, res) {
   async.waterfall([
     function(done) {
+      // Checking if the token is valid.
       User.findOne({ resetPasswordToken: req.params.token }, function(err, user) {
         if (!user) {
             console.log("Password token invalid/expired: " + req.body.resetpass1);
             req.flash('error', 'Password reset token is invalid or has expired.');
           return res.redirect('back');
         }
-        user.password = req.body.resetpass1;
-        user.resetPasswordToken = undefined;
 
-        // Server side registration validations
+        // Making sure that the new passwords are valid.
         req.checkBody('resetpass1',
-        'Enter a password with greater than 6 characters.').isLength({min:6, max: 20});
+        'Enter a password with more than 6 characters.').isLength({min:6, max: 20});
         req.checkBody('resetpass2',
         'Passwords do not match.').equals(req.body.resetpass1);
 
@@ -233,6 +257,9 @@ router.post('/reset/:token', function(req, res) {
                 errors:errors
             });
         } else {
+            // Setting and saving the new passwords for the user.
+            user.password = req.body.resetpass1;
+            user.resetPasswordToken = undefined;
             user.save(function(err) {
                 done(err, user);
             });
@@ -240,13 +267,15 @@ router.post('/reset/:token', function(req, res) {
         }
       });
   },
+  // Notifying user via mail that their password has been reset.
   function(user, done) {
     var mailOptions = {
       to: user.email,
       from: 'warmains.passreset@gmail.com',
       subject: 'Your password has been changed',
       text: 'Hello,\n\n' +
-        'This is a confirmation that the password for your account ' + user.email + ' has just been changed.\n'
+        'This is a confirmation that the password for your account ' +
+        user.email + ' has just been changed.\n'
     };
     smtpTransport.sendMail(mailOptions, function(err) {
       req.flash('success', 'Success! Your password has been changed.');
@@ -258,19 +287,9 @@ router.post('/reset/:token', function(req, res) {
   });
 });
 
-// For getting information in db for controllers.
-router.get("/CurUser/", function(req, res) {
-    User.findOne({username: req.user.username},
-        function(err, user) {
-        if (err) {
-            console.log(err);
-            return res.status(500).send();
-        }
-        res.send(user);
-        return res.status(200);
-    });
-});
-
+/* Get all the users in the database.
+*  Mainly used by controllers.
+*/
 router.get("/AllUser/", function(req, res) {
     console.log("Getting All Users.");
     User.find({},

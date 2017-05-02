@@ -1,8 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
-
-/* GET home page. */
+/* GET About age. */
 router.get('/', function(req, res, next) {
   res.render('about', { title: 'About' });
 });

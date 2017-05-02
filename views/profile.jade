@@ -3,25 +3,30 @@ html
   include partials/head.jade
   body
   include partials/navbar.jade
-  h1(id="page-title") Hello #{user.username}
   br
   .container
     .row
       div(class="col-lg-6 col-md-6 col-sm-6 col-xs-12")
-        div(class="loginmodal-container" id="profile-view")
-          h1 Change Password
+        div(class="loginmodal-container" id="user-information")
+          .page-header
+            h3 Hello #{user.username}
+          p(class='pull-left') Should add a name for users, and allow them to change it.
+          p(class='pull-left') Account: #{user.username}
+          p(class='pull-left') Email: #{user.email}
+          p(class='pull-left') Originally have change password hidden.
+
+      div(class="col-lg-6 col-md-6 col-sm-6 col-xs-12")
+        div(class="loginmodal-container" id="password-change")
+          .page-header
+            h3 Change Password
           br
           form(action="/users/changeinfo" method="post")
             input(type="password" name="oldpass" placeholder="Old Password")
             input(type="password" name="newpass" placeholder="New Password")
             input(type="password" name="newpassconfirm"
-            placeholder="Confirm New Password")
+                  placeholder="Confirm New Password")
             input(type="submit" class="login loginmodal-submit"
-            value="Change Information" name="changeinfo")
-      div(class="col-lg-6 col-md-6 col-sm-6 col-xs-12")
-        div(class="loginmodal-container" id="char-view")
-          p show users characters here
-          p allow users to change character name, description, and delete
+                  value="Change Information" name="changeinfo")
 
   br
   br

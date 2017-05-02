@@ -6,14 +6,13 @@ html
 
         div(class="modal-dialog")
             div(class="loginmodal-container")
-                h1 LOG IN
+                .page-header
+                  h3 LOG IN
                 form(action="/users/login" method="post")
                     input(type="text" name="username" placeholder="Username")
-                    span(id="no-username") Must enter user name.
                     input(type="password" name="password" placeholder="Password")
-                    span(id="no-password") Must enter a password.
                     input(type="submit" name="login" class="login loginmodal-submit"
-                    value="Login")
+                          value="Login")
                     div(class="login-help")
                         a(href="/users/register") Register
                         br

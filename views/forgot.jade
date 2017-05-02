@@ -6,11 +6,12 @@ html
 
         div(class="modal-dialog")
             div(class="loginmodal-container")
-                h1 PASSWORD RECOVERY
+                .page-header
+                  h3 PASSWORD RECOVERY
                 br
                 form(action="/users/forgot" method="post")
                     input(type="text" name="forgotemail" placeholder="Email")
-                    input(type="submit" name="login" value="Reset Password"
-                    class="reset loginmodal-submit")
+                    input(type="submit" name="login" value="Reset"
+                          class="reset loginmodal-submit")
 
         include partials/footer.jade

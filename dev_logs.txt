@@ -61,3 +61,4 @@ TODO:
 TODO:
 - Need to make it so cloths/leather/mail can't wear plates and so forth
 - Should start on saving character gear functionality
+- Add a field for display name in registration

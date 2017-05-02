@@ -1,31 +1,37 @@
 doctype html
 html(ng-app='registerApp' ng-cloak)
     include partials/head.jade
+
     body(ng-controller='registerctrl')
         include partials/navbar.jade
 
         div(class="loginmodal-container" id="register-container")
-            h1 CREATE ACCOUNT
+            .page-header
+              h3 CREATE ACCOUNT
+
             form(action="/users/register" method="post")
+
                 input(type="text" name="userfield" placeholder="Username"
-                ng-change="check_username()" ng-model='user_name'
-                maxlength=16 autofocus)
+                      ng-change="check_username()" ng-model='user_name'
+                      maxlength=16 autofocus)
                 span(id="no-username-1")
                 span(id="error-msg") {{duplicate_username}}
+
                 input(type="password" name="pass1field" placeholder="Password"
-                maxlength=18)
+                      maxlength=18)
                 span(id="no-password-2")
+
                 input(type="password" name="pass2field" maxlength=20
-                placeholder="Confirm Password")
+                      placeholder="Confirm Password")
                 span(id="no-password-3")
+
                 input(type="text" name="emailfield" placeholder="Email"
-                ng-change="check_email()" ng-model='email_addr')
+                      ng-change="check_email()" ng-model='email_addr')
                 span(id="error-msg") {{duplicate_email}}
                 span(id="no-email")
-                input(type="submit" name="createaccount"
-                class="create loginmodal-submit"
-                value="Create Account"
-                disabled="disabled")
+
+                input(type="submit" name="createaccount" disabled
+                      class="create loginmodal-submit" value="Create Account")
 
         include partials/footer.jade
         script(src="/js/user_controller.js")

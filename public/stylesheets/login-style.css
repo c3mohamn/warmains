@@ -69,7 +69,7 @@
   border: 0px;
   color: #fff;
   text-shadow: 0 1px rgba(0,0,0,0.1);
-  background-color: #703C00;
+  background-color: #FE9A2E;
   padding: 17px 0px;
   font-family: CaviarDreams;
   font-weight: bold;
@@ -81,7 +81,7 @@
   /* border: 1px solid #2f5bb7; */
   border: 0px;
   text-shadow: 0 1px rgba(0,0,0,0.3);
-  background-color: #C56900;
+  background-color: #FFBF00;
   /* background-image: -webkit-gradient(linear, 0 0, 0 100%,   from(#4d90fe), to(#357ae8)); */
 }
 
@@ -101,8 +101,7 @@
 .login-help a:hover {
     color: black;
 }
-#no-password-1, #no-password-2, #no-password-3, #no-username,
-#no-username-1, #no-email {
+#no-password-1, #no-password-2, #no-password-3, #no-username-1, #no-email {
     visibility: hidden;
     color: red;
     font-size: 18px;
