@@ -71,7 +71,8 @@ TODO:
 - Added a name field for accounts.
 - Fixed search for fingers/trinkets (by removing the 1/2 at the end)
 - Added a helper js file for char profile page.
+- Combined weapons in json files to Mainhand and OffHand
+- Add all mainhand weapons when searching for mainhand slot
 
 TODO:
-- Combine weapons in json files to Mainhand and OffHand
-- Add all mainhand weapons when searching for mainhand slot
+- Add more restrictions on equipping items - UNIQUE ITEMS.
