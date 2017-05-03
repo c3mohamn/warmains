@@ -4,12 +4,33 @@ editApp.controller('editctrl', ['$scope', '$http', '$location', function($scope,
 
     angular.element(document).ready(function () {
 
-      $scope.char_items = char_items;
-
-      /* Need to assign an item to each item slot display
-         TODO: Need to fix this.....
-         For now, make it so the image changes when you equip an item.
+      /* Saves the currently equipped items (data in char_items) to database.
       */
+      $scope.save_to_db = function() {
+        $http.post('/character/saveItems', {
+          char: char_items,
+          charname: $scope.character.name
+        }).then(function successCallback(response) {
+            console.log(response);
+          }, function errorCallback(response) {
+            console.log(response);
+          });
+      }
+
+      /* Changes what is currently visible on right hand side of page.
+      *  Switch between: Search, Stats
+      */
+      $scope.stats_view = function() {
+        if ($scope.cur_view != 'stats') {
+          return {'display': 'none'};
+        } else return {'visibility': 'visible'};
+      }
+
+      $scope.search_view = function() {
+        if ($scope.cur_view != 'search') {
+          return {'display': 'none'};
+        } else return {'visibility': 'visible'};
+      }
 
       // Set the item slot that we are looking for.
       $scope.set_slot = function(slot) {
@@ -70,19 +91,11 @@ editApp.controller('editctrl', ['$scope', '$http', '$location', function($scope,
                 char_items['mainhand'].Slot == 'TwoHand' &&
                 $scope.character.class != 'warrior' && temp_slot != 'MainHand')) {
 
-                console.log(is_unique($scope.slot, selected_item));
-
                 // Go through unique item restrictions
                 if (!is_unique($scope.slot, selected_item)) {
                   // Equip the item and change the icon image.
                   char_items[$scope.slot.toLowerCase()] = selected_item;
                   set_slot_image($scope.slot);
-
-                  $http.post('/character/saveItem', {
-                    item: selected_item,
-                    charname: $scope.character.name,
-                    item_slot: $scope.slot
-                  });
 
                 } else { $scope.message = error_msg_5; }
               } else { $scope.message =  error_msg_4; }
@@ -98,11 +111,11 @@ editApp.controller('editctrl', ['$scope', '$http', '$location', function($scope,
       *  - Remove items that are not meant for the current character's class.
       *  - Show result table only when we have matching items for search value.
       */
-      $scope.finditems = function() {
-
+      $scope.finditems = function(search_val, search_type) {
+        $scope.test1 = search_val;
         if (!$scope.slot) {
           $scope.message = 'Select a item slot before searching for items.';
-        } else if (!$scope.search_val || $scope.search_val.length < 3) {
+        } else if (!search_val || search_val.length < 3) {
           $scope.message = 'Enter a longer search value';
         } else {
           $scope.message = '';
@@ -113,21 +126,21 @@ editApp.controller('editctrl', ['$scope', '$http', '$location', function($scope,
           $http.get('/wowdata/' + temp_slot + '.json').then(function(response){
             var all_items = response.data.items;
             var matching_items = [];
-            var search_val = $scope.search_val.toLowerCase();
+            search_val = search_val.toLowerCase();
 
             // loop through all items
             angular.forEach(all_items, function(item, key){
               var item_name = item.Name.toLowerCase();
               var item_id = item.Id;
 
-              if ($scope.search_type) {
+              if (search_type) {
                 /* Filter out the items that have a required class that does
                    not match our chars */
                 if (item.RequiredClasses &&
                   item.RequiredClasses.toLowerCase().indexOf($scope.character.class) > -1
                   || !item.RequiredClasses) {
                   // finding matching items based on item name
-                  if ($scope.search_type == 'Name' && item_name.indexOf(search_val) > -1) {
+                  if (search_type == 'Name' && item_name.indexOf(search_val) > -1) {
                     matching_items.push(item);
                   } // finding matching items based on item ID
                   else if (item_id.indexOf(search_val) == 0) {
@@ -147,38 +160,20 @@ editApp.controller('editctrl', ['$scope', '$http', '$location', function($scope,
           });
         }
       }
-      // find the current character in database - see if it actually
-      // Gotta resolve this, asynch --- =(
+
+      /* Find the current character in database and display the data ont he page
+      */
       $http.get('/character/findchar/',
       {params:{"username":user_name, "charname":char_name}}).then(function(response1){
           $scope.character = response1.data[0];
 
-          console.log($scope.character);
+          // Loop through the items of retrieved character and display data.
           for (var slot in char_items) {
-
-            console.log(slot);
-
-            if ($scope.character[slot] && $scope.character[slot].id) {
-
-              $http.get('/wowdata/' + slot + '.json').then(function(response2) {
-
-                var temp_char = response1.data[0];
-                var items = response2.data.items;
-
-                console.log(temp_char[slot].id);
-
-                angular.forEach(items, function(item, key){
-                  if (item.Id == temp_char[slot].id) {
-                    char_items[slot] = item;
-                    console.log("WE FOUND A MATCH!");
-                  }
-                });
-              });
-
+            if ($scope.character[slot].item) {
+              char_items[slot] = $scope.character[slot].item;
+              set_slot_image(slot);
             }
           }
-
-          console.log(char_items, $scope.character);
       });
     });
 }]);

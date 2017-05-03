@@ -179,7 +179,7 @@ function set_slot_image(slot) {
 *  Will need to make sure that characters do not dual wield two handers.
 */
 function can_wield(character, item) {
-  var char_class = character.class;
+  var char_class = character.class.replace(' ', ''); // remove white space
   var item_type = item.Type;
   var item_slot = item.Slot;
 

@@ -122,31 +122,28 @@ router.get("/findchar/", function(req, res) {
 });
 
 // Save an item to character in database.
-router.post('/saveItem', function(req, res) {
-  var item = req.body.item;
-  var slot = req.body.item_slot.toLowerCase();
-  var char = req.body.charname;
+router.post('/saveItems', function(req, res) {
+  var char_post = req.body.char;
+  var charname = req.body.charname;
   var user = req.user.username;
 
-  console.log(item.Name, slot, char, user);
-
-  Char.findOne({username: user, name: char},
-    function (err, char) {
+  Char.findOne({username: user, name: charname},
+    function (err, char_db) {
       if (err) {
         console.log(err);
         return res.status(500).send();
       }
-
-      console.log('Found matching character.', char);
-      char[slot].id = item.Id;
-
-      char.save(function(err) {
+      // Loop through each slot and if item exists, store in db
+      for (var slot in char_post) {
+        var item = char_post[slot];
+        if (item) {
+          char_db[item.Slot.toLowerCase()].item = item;
+        }
+      }
+      char_db.save(function(err) {
           if (err) throw err;
       });
-
     });
-
-
 });
 
 module.exports = router;
