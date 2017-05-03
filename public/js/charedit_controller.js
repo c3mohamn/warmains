@@ -55,6 +55,7 @@ editApp.controller('editctrl', ['$scope', '$http', '$location', function($scope,
         var error_msg_1 = 'Select an item before trying to equip.';
         var error_msg_2 = 'Invalid item selection.';
         var error_msg_4 = 'Cannot equip an offhand while using a twohand.';
+        var error_msg_5 = 'You cannot equip another one of those.';
         $scope.message = '';
         var temp_slot = $scope.slot;
         temp_slot = remove_trailing_number(temp_slot);
@@ -70,9 +71,20 @@ editApp.controller('editctrl', ['$scope', '$http', '$location', function($scope,
                 $scope.character.class != 'warrior' && temp_slot != 'MainHand')) {
 
                 console.log(is_unique($scope.slot, selected_item));
-                // Equip the item and change the icon image.
-                char_items[$scope.slot.toLowerCase()] = selected_item;
-                set_slot_image($scope.slot);
+
+                // Go through unique item restrictions
+                if (!is_unique($scope.slot, selected_item)) {
+                  // Equip the item and change the icon image.
+                  char_items[$scope.slot.toLowerCase()] = selected_item;
+                  set_slot_image($scope.slot);
+
+                  $http.post('/character/saveItem', {
+                    item: selected_item,
+                    charname: $scope.character.name,
+                    item_slot: $scope.slot
+                  });
+
+                } else { $scope.message = error_msg_5; }
               } else { $scope.message =  error_msg_4; }
             } else { $scope.message = error_msg_3; }
           } else { $scope.message = error_msg_2; }
@@ -87,7 +99,6 @@ editApp.controller('editctrl', ['$scope', '$http', '$location', function($scope,
       *  - Show result table only when we have matching items for search value.
       */
       $scope.finditems = function() {
-        var show_results = false; // used to show or hide results table
 
         if (!$scope.slot) {
           $scope.message = 'Select a item slot before searching for items.';
@@ -118,11 +129,9 @@ editApp.controller('editctrl', ['$scope', '$http', '$location', function($scope,
                   // finding matching items based on item name
                   if ($scope.search_type == 'Name' && item_name.indexOf(search_val) > -1) {
                     matching_items.push(item);
-                    show_result = true;
                   } // finding matching items based on item ID
                   else if (item_id.indexOf(search_val) == 0) {
                     matching_items.push(item);
-                    show_result = true;
                   }
                 }
               } else {
@@ -131,19 +140,45 @@ editApp.controller('editctrl', ['$scope', '$http', '$location', function($scope,
             });
             // Hide or show result table based on whether there are any results
             $scope.show_result_table = function() {
-              if (show_result)  return {'visibility': 'visible'}
-              else              return {'visibility': 'hidden'}
+              if (matching_items.length > 0)  return {'visibility': 'visible'}
+              else                            return {'visibility': 'hidden'}
             }
             $scope.items = matching_items;
           });
         }
       }
-
       // find the current character in database - see if it actually
+      // Gotta resolve this, asynch --- =(
       $http.get('/character/findchar/',
-      {params:{"username":user_name, "charname":char_name}}).then(function(response){
-          $scope.character = response.data[0];
+      {params:{"username":user_name, "charname":char_name}}).then(function(response1){
+          $scope.character = response1.data[0];
+
+          console.log($scope.character);
+          for (var slot in char_items) {
+
+            console.log(slot);
+
+            if ($scope.character[slot] && $scope.character[slot].id) {
+
+              $http.get('/wowdata/' + slot + '.json').then(function(response2) {
+
+                var temp_char = response1.data[0];
+                var items = response2.data.items;
+
+                console.log(temp_char[slot].id);
+
+                angular.forEach(items, function(item, key){
+                  if (item.Id == temp_char[slot].id) {
+                    char_items[slot] = item;
+                    console.log("WE FOUND A MATCH!");
+                  }
+                });
+              });
+
+            }
+          }
+
+          console.log(char_items, $scope.character);
       });
     });
-
 }]);

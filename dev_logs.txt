@@ -76,3 +76,11 @@ TODO:
 
 TODO:
 - Add more restrictions on equipping items - UNIQUE ITEMS.
+
+----- 05/03/2017 ------
+------- v2.4.0 --------
+
+- Saves items to char db collection when you equip it now
+
+TODO:
+- Display those saved items when loading profile

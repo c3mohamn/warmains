@@ -100,6 +100,7 @@ function is_weapon_slot(item_slot) {
 *  slot1: the currently selected slot
 *  sel_item: the currently selected item to be put into slot1
 *  char: the current characte profile
+*  *Not perfect yet.
 */
 function compare_slot(slot1, sel_item, char) {
   var slot2 = sel_item.Slot;
@@ -134,20 +135,34 @@ function compare_slot(slot1, sel_item, char) {
 /* Make sure that two unique rings/trinkets are not equipped at the same time.
 *  slot1: the currently selected slot.
 *  sel_item: the currently selected item to be put into slot1.
+*  *Not perfect yet.
 */
 function is_unique(slot1, sel_item) {
   if (slot1 == 'Finger1') {
-    console.log('Finger1.');
-    if (char_items.finger2 && char_items.finger2.Unique) {
-
-    }
+    if (char_items.finger2)
+      if (char_items.finger2.Name == sel_item.Name)
+        return true;
   } else if (slot1 == 'Finger2') {
-    console.log('Finger2.');
+    if (char_items.finger1)
+      if (char_items.finger1.Name == sel_item.Name)
+        return true;
   } else if (slot1 == 'Trinket1') {
-    console.log('Trinket1.');
+    if (char_items.trinket2) {
+      if (char_items.trinket2.Name != "Death's Choice" &&
+          char_items.trinket2.Name != "Death's Verdict") {
+            if (char_items.trinket2.Name == sel_item.Name)
+              return true;
+          }
+    }
   } else if (slot1 == 'Trinket2') {
-    console.log('Trinket2.');
-  } else return false;
+    if (char_items.trinket1) {
+      if (char_items.trinket1.Name != "Death's Choice" &&
+          char_items.trinket1.Name != "Death's Verdict") {
+            if (char_items.trinket1.Name == sel_item.Name)
+              return true;
+          }
+    }
+  } else { return false; }
 
 }
 

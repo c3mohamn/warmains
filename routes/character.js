@@ -110,15 +110,43 @@ router.get("/find/", function(req, res) {
 
 // Find a specific character using user's account name and name of character.
 router.get("/findchar/", function(req, res) {
-    Char.find({username: req.query.username, name: req.query.charname},
-        function (err, result) {
-            if (err) {
-                console.log(err);
-                return res.status(500).send();
-            }
-            res.send(result);
-            return res.status(200);
-        });
+  Char.find({username: req.query.username, name: req.query.charname},
+    function (err, result) {
+      if (err) {
+        console.log(err);
+        return res.status(500).send();
+      }
+      res.send(result);
+      return res.status(200);
+    });
+});
+
+// Save an item to character in database.
+router.post('/saveItem', function(req, res) {
+  var item = req.body.item;
+  var slot = req.body.item_slot.toLowerCase();
+  var char = req.body.charname;
+  var user = req.user.username;
+
+  console.log(item.Name, slot, char, user);
+
+  Char.findOne({username: user, name: char},
+    function (err, char) {
+      if (err) {
+        console.log(err);
+        return res.status(500).send();
+      }
+
+      console.log('Found matching character.', char);
+      char[slot].id = item.Id;
+
+      char.save(function(err) {
+          if (err) throw err;
+      });
+
+    });
+
+
 });
 
 module.exports = router;
