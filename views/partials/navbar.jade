@@ -31,7 +31,7 @@ div(class="container")
                         li(class="dropdown")
                             a(href="#" class="dropdown-toggle"
                             data-toggle="dropdown" role="button"
-                            aria-haspopup="true" aria-expanded="false") ACCOUNT
+                            aria-haspopup="true" aria-expanded="false") #{user.username}
                                 span(class="caret")
                             ul(class="dropdown-menu")
                                 li: a(href="/profile/" + user.username) PROFILE

@@ -27,10 +27,10 @@ html(ng-app='charApp' ng-cloak)
                     tbody
                       tr
                         td
-                          a(ng-href='/character/profile/' + user.username +
-                            '/{{char.name}}')
+                          a(ng-href='/character/profile/'
+                            + user.username + '/{{char.name}}')
                             img(ng-src='/images/class-icons/{{char.class}}.png'
-                                class='class_icon')
+                            class='class_icon')
                         td: h3 {{char.name}}
             div(class="col-lg-6 col-md-6 col-sm-6 col-xs-12")
               .create_container

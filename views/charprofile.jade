@@ -3,11 +3,9 @@ html(ng-app='editApp' ng-cloak)
 
   include partials/head.jade
   link(rel='stylesheet', type="text/css" href='/stylesheets/char.css')
-  script(type="text/javascript" src="//db.warmane.com/wotlk/item=48211" charset="utf8")
-  <script type="text/javascript" src="//wow.zamimg.com/widgets/power.js"></script>
-  <script>var wowhead_tooltips = { "colorlinks": true, "iconizelinks": true, "renamelinks": true }</script>
+  <script src="https://cdn.warmane.com/api/tooltip.js"></script>
 
-  body(ng-controller='editctrl' ng-init="cur_view = 'search'")
+  body(ng-controller='editctrl' ng-init="cur_view = 'stats'")
       include partials/navbar.jade
 
       div(class='container' ng-show='character')
@@ -17,76 +15,108 @@ html(ng-app='editApp' ng-cloak)
               .row
                 h2(class='pull-center') {{character.name}}
                 h5(class='pull-center') {{character.class}}
+                p(class='pull-center') #{username}
 
-                div(class='item_slot pull-left' id='head_slot'
-                    ng-click="set_slot('Head')")
-                div(class='item_slot pull-right' id='hands_slot'
-                    ng-click="set_slot('Hands')")
+                a(href="" rel="#" id='head_link')
+                  div(class='item_slot pull-left' id='head_slot'
+                      ng-click="set_slot('Head')")
+                a(href="#" rel="#" id='hands_link')
+                  div(class='item_slot pull-right' id='hands_slot'
+                      ng-click="set_slot('Hands')")
               .row
-                div(class='item_slot pull-left' id='neck_slot'
-                    ng-click="set_slot('Neck')")
-                div(class='item_slot pull-right' id='waist_slot'
-                    ng-click="set_slot('Waist')")
+                a(href="#" rel="#" id='neck_link')
+                  div(class='item_slot pull-left' id='neck_slot'
+                      ng-click="set_slot('Neck')")
+                a(href="#" rel="#" id='waist_link')
+                  div(class='item_slot pull-right' id='waist_slot'
+                      ng-click="set_slot('Waist')")
               .row
-                div(class='item_slot pull-left' id='shoulders_slot'
-                    ng-click="set_slot('Shoulders')")
-                div(class='item_slot pull-right' id='legs_slot'
-                    ng-click="set_slot('Legs')")
+                a(href="#" rel="#" id='shoulders_link')
+                  div(class='item_slot pull-left' id='shoulders_slot'
+                      ng-click="set_slot('Shoulders')")
+                a(href="#" rel="#" id='legs_link')
+                  div(class='item_slot pull-right' id='legs_slot'
+                      ng-click="set_slot('Legs')")
               .row
-                div(class='item_slot pull-left' id='back_slot'
-                    ng-click="set_slot('Back')")
-                div(class='item_slot pull-right' id='feet_slot'
-                    ng-click="set_slot('Feet')")
+                a(href="#" rel="#" id='back_link')
+                  div(class='item_slot pull-left' id='back_slot'
+                      ng-click="set_slot('Back')")
+                a(href="#" rel="#" id='feet_link')
+                  div(class='item_slot pull-right' id='feet_slot'
+                      ng-click="set_slot('Feet')")
               .row
-                div(class='item_slot pull-left' id='chest_slot'
-                    ng-click="set_slot('Chest')")
-                div(class='item_slot pull-right' id='finger1_slot'
-                    ng-click="set_slot('Finger1')")
+                a(href="#" rel="#" id='chest_link')
+                  div(class='item_slot pull-left' id='chest_slot'
+                      ng-click="set_slot('Chest')")
+                a(href="#" rel="#" id='finger1_link')
+                  div(class='item_slot pull-right' id='finger1_slot'
+                      ng-click="set_slot('Finger1')")
               .row
                 div(class='item_slot pull-left' id='shirt_slot')
-                div(class='item_slot pull-right' id='finger2_slot'
-                    ng-click="set_slot('Finger2')")
+                a(href="#" rel="#" id='finger2_link')
+                  div(class='item_slot pull-right' id='finger2_slot'
+                      ng-click="set_slot('Finger2')")
               .row
                 div(class='item_slot pull-left' id='tabard_slot')
-                div(class='item_slot pull-right' id='trinket1_slot'
-                    ng-click="set_slot('Trinket1')")
+                a(href="#" rel="#" id='trinket1_link')
+                  div(class='item_slot pull-right' id='trinket1_slot'
+                      ng-click="set_slot('Trinket1')")
               .row
-                div(class='item_slot pull-left' id='wrist_slot'
-                    ng-click="set_slot('Wrist')")
-                div(class='item_slot pull-right' id='trinket2_slot'
-                    ng-click="set_slot('Trinket2')")
+                a(href="#" rel="#" id='wrist_link')
+                  div(class='item_slot pull-left' id='wrist_slot'
+                      ng-click="set_slot('Wrist')")
+                a(href="#" rel="#" id='trinket2_link')
+                  div(class='item_slot pull-right' id='trinket2_slot'
+                      ng-click="set_slot('Trinket2')")
               .row
                 ul(class='list-inline')
-                  li: div(class='item_slot' id='mainhand_slot'
-                          ng-click="set_slot('MainHand')")
-                  li: div(class='item_slot' id='offhand_slot'
-                          ng-click="set_slot('OffHand')")
-                  li: div(class='item_slot' id='ranged_slot'
-                          ng-click="set_slot('Ranged')")
+                  li: a(href="#" rel="#" id='mainhand_link')
+                    div(class='item_slot' id='mainhand_slot'
+                        ng-click="set_slot('MainHand')")
+                  li: a(href="#" rel="#" id='offhand_link')
+                    div(class='item_slot' id='offhand_slot'
+                        ng-click="set_slot('OffHand')")
+                  li: a(href="#" rel="#" id='ranged_link')
+                    div(class='item_slot' id='ranged_slot'
+                        ng-click="set_slot('Ranged')")
 
-          //a(target="_blank" href='http://db.warmane.com/wotlk/item=48211' rel='item=48211') {{cur_view}}
-          //<a href="//www.wowhead.com/item=25697" class="q3" rel="gems=23121&amp;ench=2647&amp;pcs=25695:25696:25697">[Felstalker Bracers]</a>
-          {{cur_view}}
           div(class="col-lg-6 col-md-6 col-sm-6 col-xs-12")
-            ul(class='list-inline')
-              li: button(class='btn btn-danger' ng-click="cur_view = 'search'") Search
-              li: button(class='btn btn-success' ng-click="cur_view = 'stats'") Stats
-            if(!user)
-              h4 Viewing #{char} while offline.
-            -else
+            if(user)
               -if(username == user.username)
-                h4 #{char} is your character #{username}.
+
+                .page-header
+                  ul(class='list-inline')
+                      li: a(href='#')
+                        h3(class='view_tab' ng-click="cur_view = 'search'") Search
+                      li: a(href='#')
+                        h3(class='view_tab' ng-click="cur_view = 'stats'") Stats
+
                 div(class='search_container' ng-style='search_view()')
                   .row
                       ul(class='list-inline')
-                        li: label {{slot}}
-                        li: select(class='form-control' ng-model='search_type')
-                          option Name
-                          option id
+                        li Slot:
+                        li: select(class='form-control' ng-model='slot')
+                          option MainHand
+                          option OffHand
+                          option Ranged
+                          option Head
+                          option Neck
+                          option Shoulders
+                          option Back
+                          option Chest
+                          option Wrist
+                          option Hands
+                          option Waist
+                          option Legs
+                          option Feet
+                          option Finger1
+                          option Finger2
+                          option Trinket1
+                          option Trinket2
                         li: input(type="text" class="form-control" placeholder="Search"
                                   ng-model='search_val')
                         li: button(type="submit" class="btn btn-default"
-                                   ng-click="finditems(search_val, search_type)") Submit
+                                   ng-click="finditems(search_val)") Submit
                       p(ng-style="{'color': 'red'}") {{message}}
                   .row
                     div(class='results_table' ng-style='show_result_table()')
@@ -100,16 +130,20 @@ html(ng-app='editApp' ng-cloak)
                             td Slot
                             td Type
                         tbody
-                          tr(ng-repeat="item in items"
-                             ng-click='select_search_item(item)')
-                            td: img(ng-src='http://wow.zamimg.com/images/wow' +
-                                    '/icons/large/{{item.IconPath}}.jpg')
-                            td(ng-style='item_quality(item.Quality)') {{item.Name}}
-                            td(ng-style='class_color(item.RequiredClasses)')
-                            | {{item.RequiredClasses}}
-                            td {{item.ItemLevel}}
-                            td {{item.Slot}}
-                            td {{item.Type}}
+                            tr(ng-repeat="item in items"
+                               ng-click='select_search_item(item)')
+                              td
+                                a(target="_blank" ng-href="http://db.warmane.com/wotlk/item={{item.Id}}")
+                                  img(ng-src='http://wow.zamimg.com/images/wow' +
+                                      '/icons/large/{{item.IconPath}}.jpg')
+                              td(ng-style='item_quality(item.Quality)')
+                                a(target="_blank" ng-href="http://db.warmane.com/wotlk/item={{item.Id}}")
+                                  {{item.Name}}
+                              td(ng-style='class_color(item.RequiredClasses)')
+                              | {{item.RequiredClasses}}
+                              td {{item.ItemLevel}}
+                              td {{item.Slot}}
+                              td {{item.Type}}
 
                     button(class='btn btn-warning' ng-click='equip_item()') Equip
                     button(class='btn btn-success' ng-click='save_to_db()') Save
@@ -119,18 +153,16 @@ html(ng-app='editApp' ng-cloak)
                 h4 Viewing #{char} as #{user.username}.
 
             div(class='stats_container' ng-style='stats_view()')
-              .page-header
-                h3 Stats.
               table
                 tr
                   td(class='pull-left') Stamina:
-                  td(class='pull-right') 0000
+                  td(class='pull-right')
                 tr
                   td(class='pull-left') Intellect:
-                  td(class='pull-right') 0000
+                  td(class='pull-right')
                 tr
                   td(class='pull-left') Attack Power:
-                  td(class='pull-right') 0000
+                  td(class='pull-right')
 
       div(class="items_container")
           div(class="item_tooltip")

@@ -1,4 +1,4 @@
-          /* ------ Useful Variables ------ */
+          /* ------ VARIABLES ------ */
 
 // Getting the data for the character from the URL
 var cur_url = window.location.href;
@@ -76,7 +76,7 @@ var class_wield_type = {
 // Stores the currently selected item.
 var selected_item = null;
 
-          /* ------ Useful Functions ------ */
+          /* ------ FUNCTIONS ------ */
 
 /* This function is used to remove the 1/2 at the end of finger/trinket. */
 function remove_trailing_number(slot) {
@@ -166,13 +166,16 @@ function is_unique(slot1, sel_item) {
 
 }
 
-
 /* Setting the icon img of the corresponding slot to what is in char_items */
 function set_slot_image(slot) {
   slot = slot.toLowerCase();
   $('#' + slot + '_slot').css('background-image', 'url(' +
   "http://wow.zamimg.com/images/wow/icons/large/" + char_items[slot].IconPath +
   '.jpg)');
+
+  // Add link for the tooltip of item
+  $('#' + slot + '_link').attr('href', 'http://db.warmane.com/wotlk/item=' +
+                                        char_items[slot].Id);
 }
 
 /* Check if the current character can wield the corresponding item.

@@ -85,7 +85,7 @@ TODO:
 TODO:
 - Display those saved items when loading profile
 
-------- v2.4.0 --------
+------- v2.4.1 --------
 
 - Save button added, which saves equipped items to db now
 - Can change view with a temp button now.
@@ -94,3 +94,14 @@ TODO:
 - Make a better looking button for switching view in char profile page
 - Add a tooltip for items
 - Maybe begin stats sheet for currently equipped items
+
+----- 05/04/2017 ------
+------- v2.5.0 -------
+
+- Added basic tooltip for items, links to external website
+- Changed some visuals
+- Can search by item ID or NAME without specifying search type now.
+
+TODO:
+- Either work on visuals more, find empty item slot pictures, cool bg-pics
+- Or Work on stats sheet.

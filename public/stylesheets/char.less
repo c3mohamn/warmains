@@ -1,7 +1,12 @@
+a, a:hover {
+  color:inherit;
+  text-decoration: none;
+}
+
 .class_icon {
   width: 80px;
   height: 80px;
-  opacity: .8;
+  opacity: .9;
 }
 .class_icon:hover {
   opacity: 1;
@@ -11,30 +16,42 @@
     font-family: wow-font;
   }
 }
+
+.view_tab {
+  color:brown;
+  opacity: 0.8;
+}
+
+.view_tab:hover {
+  opacity: 1;
+}
+
 .char_panel {
-  border-style: solid;
-  border-color: black;
-  max-width: 300px;
+  max-width: 400px;
   h1, h2, h3, h4, h5 {
     font-family: wow-font;
   }
   .item_slot {
-    width: 64px;
-    height: 64px;
+    width: 58px;
+    height: 58px;
+    border-width: 2px;
+    border-radius: 1px;
     border-style: solid;
-    border-color: red;
-    img {
-      width: 50px;
-      height: 50px;
-    }
-    //background-image: url('/wowdata/tooltip_images/inv_axe_113.jpg');
-    //background-color: blue;
-    opacity: .8;
-  }
-  .item_slot:hover {
+    border-color: black;
+    background-color: grey;
     opacity: 1;
   }
+  #tabard_slot, #shirt_slot {
+    pointer-events:none;
+    opacity: .5;
+  }
+  .item_slot:hover {
+    -webkit-box-shadow: inset 0 0 10px #fff;
+    -moz-box-shadow: inset 0 0 10px #fff;
+    box-shadow: inset 0 0 10px #fff;
+  }
 }
+
 .results_table {
   visibility: hidden;
   max-height: 350px;
@@ -45,6 +62,9 @@
   }
   tbody {
     background-color: #D9D9D9;
+    tr {
+      cursor: pointer;
+    }
   }
   img {
     height: 40px;

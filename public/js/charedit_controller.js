@@ -111,7 +111,7 @@ editApp.controller('editctrl', ['$scope', '$http', '$location', function($scope,
       *  - Remove items that are not meant for the current character's class.
       *  - Show result table only when we have matching items for search value.
       */
-      $scope.finditems = function(search_val, search_type) {
+      $scope.finditems = function(search_val) {
         $scope.test1 = search_val;
         if (!$scope.slot) {
           $scope.message = 'Select a item slot before searching for items.';
@@ -133,22 +133,18 @@ editApp.controller('editctrl', ['$scope', '$http', '$location', function($scope,
               var item_name = item.Name.toLowerCase();
               var item_id = item.Id;
 
-              if (search_type) {
-                /* Filter out the items that have a required class that does
-                   not match our chars */
-                if (item.RequiredClasses &&
-                  item.RequiredClasses.toLowerCase().indexOf($scope.character.class) > -1
-                  || !item.RequiredClasses) {
-                  // finding matching items based on item name
-                  if (search_type == 'Name' && item_name.indexOf(search_val) > -1) {
-                    matching_items.push(item);
-                  } // finding matching items based on item ID
-                  else if (item_id.indexOf(search_val) == 0) {
-                    matching_items.push(item);
-                  }
+              /* Filter out the items that have a required class that does
+                 not match our chars */
+              if (item.RequiredClasses &&
+                item.RequiredClasses.toLowerCase().indexOf($scope.character.class) > -1
+                || !item.RequiredClasses) {
+                // finding matching items based on item name
+                if (item_name.indexOf(search_val) > -1) {
+                  matching_items.push(item);
+                } // finding matching items based on item ID
+                if (item_id.indexOf(search_val) == 0) {
+                  matching_items.push(item);
                 }
-              } else {
-                $scope.message = 'Selected a search by.';
               }
             });
             // Hide or show result table based on whether there are any results

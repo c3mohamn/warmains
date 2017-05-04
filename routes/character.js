@@ -136,8 +136,9 @@ router.post('/saveItems', function(req, res) {
       // Loop through each slot and if item exists, store in db
       for (var slot in char_post) {
         var item = char_post[slot];
+
         if (item) {
-          char_db[item.Slot.toLowerCase()].item = item;
+          char_db[slot].item = item;
         }
       }
       char_db.save(function(err) {
