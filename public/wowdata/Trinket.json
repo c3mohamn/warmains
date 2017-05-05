@@ -2665,6 +2665,25 @@
 			"Slot": "Trinket"
 		},
 		{
+			"ItemLevel": "264",
+			"DisplayId": "37840",
+			"DisplaySlot": "12",
+			"IconPath": "inv_jewelry_trinketpvp_01",
+			"Stats": {
+				"Resilience": "153",
+				"PVPTrinket": "1"
+			},
+			"Quality": "Epic",
+			"Type": "None",
+			"Faction": "Alliance",
+			"Unique": "true",
+			"Bind": "BoP",
+			"SocketBonus": "none",
+			"Name": "Medallion of the Alliance",
+			"Id": "51377",
+			"Slot": "Trinket"
+		},
+		{
 			"ItemLevel": "226",
 			"DisplayId": "0",
 			"DisplaySlot": "0",
@@ -2681,6 +2700,25 @@
 			"SocketBonus": "none",
 			"Name": "Medallion of the Horde",
 			"Id": "42126",
+			"Slot": "Trinket"
+		},
+		{
+			"ItemLevel": "264",
+			"DisplayId": "0",
+			"DisplaySlot": "0",
+			"IconPath": "inv_jewelry_trinketpvp_02",
+			"Stats": {
+				"Resilience": "153",
+				"PVPTrinket": "1"
+			},
+			"Quality": "Epic",
+			"Type": "None",
+			"Faction": "Horde",
+			"Unique": "true",
+			"Bind": "BoP",
+			"SocketBonus": "none",
+			"Name": "Medallion of the Horde",
+			"Id": "51378",
 			"Slot": "Trinket"
 		},
 		{

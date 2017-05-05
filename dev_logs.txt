@@ -105,3 +105,15 @@ TODO:
 TODO:
 - Either work on visuals more, find empty item slot pictures, cool bg-pics
 - Or Work on stats sheet.
+- GEARSCORE!!
+
+----- 05/05/2017 ------
+------- v2.5.1 -------
+
+- Cleaned up code, more helper functions and useful comments
+- Added item level option for search
+- Items that cannot be wielded by character will not show up anymore
+- Empty search bar searches for all items now.
+
+TODO:
+- Still need to work on previous todo list.

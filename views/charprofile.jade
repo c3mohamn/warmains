@@ -17,7 +17,7 @@ html(ng-app='editApp' ng-cloak)
                 h5(class='pull-center') {{character.class}}
                 p(class='pull-center') #{username}
 
-                a(href="" rel="#" id='head_link')
+                a(href="#" rel="#" id='head_link')
                   div(class='item_slot pull-left' id='head_slot'
                       ng-click="set_slot('Head')")
                 a(href="#" rel="#" id='hands_link')
@@ -94,6 +94,12 @@ html(ng-app='editApp' ng-cloak)
                 div(class='search_container' ng-style='search_view()')
                   .row
                       ul(class='list-inline')
+                        li iLvl
+                        li: input(type='text' class='form-control' maxlength=3
+                                  placeholder='Min' size=3 ng-model='ilvlmin')
+                        li -
+                        li: input(type='text' class='form-control' maxlength=3
+                                  placeholder='Max' size=3 ng-model='ilvlmax')
                         li Slot:
                         li: select(class='form-control' ng-model='slot')
                           option MainHand
@@ -114,7 +120,7 @@ html(ng-app='editApp' ng-cloak)
                           option Trinket1
                           option Trinket2
                         li: input(type="text" class="form-control" placeholder="Search"
-                                  ng-model='search_val')
+                                  ng-model='search_val' maxlength=30)
                         li: button(type="submit" class="btn btn-default"
                                    ng-click="finditems(search_val)") Submit
                       p(ng-style="{'color': 'red'}") {{message}}
@@ -140,7 +146,7 @@ html(ng-app='editApp' ng-cloak)
                                 a(target="_blank" ng-href="http://db.warmane.com/wotlk/item={{item.Id}}")
                                   {{item.Name}}
                               td(ng-style='class_color(item.RequiredClasses)')
-                              | {{item.RequiredClasses}}
+                                {{item.RequiredClasses}}
                               td {{item.ItemLevel}}
                               td {{item.Slot}}
                               td {{item.Type}}
@@ -153,16 +159,21 @@ html(ng-app='editApp' ng-cloak)
                 h4 Viewing #{char} as #{user.username}.
 
             div(class='stats_container' ng-style='stats_view()')
-              table
-                tr
-                  td(class='pull-left') Stamina:
-                  td(class='pull-right')
-                tr
-                  td(class='pull-left') Intellect:
-                  td(class='pull-right')
-                tr
-                  td(class='pull-left') Attack Power:
-                  td(class='pull-right')
+              table(class='table')
+                thead
+                  tr
+                    td Base Stats
+                    td Defenses
+                tbody
+                  tr
+                    td(class='pull-left') Stamina:
+                    td(class='pull-right') 0
+                  tr
+                    td(class='pull-left') Intellect:
+                    td(class='pull-right') 0
+                  tr
+                    td(class='pull-left') Attack Power:
+                    td(class='pull-right') 0
 
       div(class="items_container")
           div(class="item_tooltip")
