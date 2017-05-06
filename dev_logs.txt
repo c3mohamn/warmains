@@ -117,3 +117,13 @@ TODO:
 
 TODO:
 - Still need to work on previous todo list.
+- Remove select box from character page, add different option for deleting chars
+
+----- 05/05/2017 ------
+------- v2.5.2 -------
+
+- Changed visuals for character selection page, not as ugly as before.
+- Removed the selected box.
+
+TODO:
+- 2.5.0 TODO list

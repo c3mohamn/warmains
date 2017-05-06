@@ -52,29 +52,6 @@ router.post('/create', function(req, res, next) {
     }
 });
 
-/* --------- DELETE SELECTED CHARACTER ---------
-*  TODO: May change this later, when fixing up character page.
-*/
-router.post('/delete', function(req, res) {
-  var uname = req.user.username;
-  var char = req.body.pickchar;
-  var button = req.body.cbutton;
-
-  if (char && button == 'del') {
-    Char.findOneAndRemove({username: uname, name: char}, (err) => {
-      if (err) {
-        console.log(err);
-        return res.status(500).send();
-      }
-      req.flash('success_msg', char + ' has been deleted.');
-      return res.redirect('/character');
-    });
-  } else if (char && button == 'edit') {
-    console.log('go to edit char page.');
-    res.redirect('/character/profile/' + uname + '/' + char);
-  }
-});
-
 /* GET Character Edit page. */
 router.get('/profile/:username/:char', function(req, res) {
   res.render('charprofile', {
@@ -95,7 +72,7 @@ function ensureAuthenticated(req, res, next) {
 
 // Retrieve characters of logged in user from database.
 // Primarily used for the character selection page.
-router.get("/find/", function(req, res) {
+router.get("/findall/", function(req, res) {
   console.log("Find all characters for current user.");
     Char.find({username: req.user.username},
         function (err, result) {
@@ -106,6 +83,23 @@ router.get("/find/", function(req, res) {
             res.send(result);
             return res.status(200);
         });
+});
+
+/* --------- DELETE SELECTED CHARACTER ---------
+ *  Delete the selected character in character selected page.
+ */
+router.post('/delete', function(req, res) {
+  var uname = req.user.username;
+  var char = req.body.char;
+
+  Char.findOneAndRemove({username: uname, name: char}, (err) => {
+    if (err) {
+      console.log(err);
+      return res.status(500).send();
+    }
+    req.flash('success_msg', char + ' has been deleted.');
+    return res.redirect('/character');
+  });
 });
 
 // Find a specific character using user's account name and name of character.

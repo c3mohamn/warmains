@@ -10,29 +10,6 @@ html(ng-app='charApp' ng-cloak)
       .container
           .row
             div(class="col-lg-6 col-md-6 col-sm-6 col-xs-12")
-              h3 Your Characters
-                div(class='existing_chars')
-                  form(action='/character/delete' method='post')
-                    select(multiple class='form-control' name='pickchar')
-                      option(ng-repeat='char in characters' name='charname')
-                        {{char.name}}
-                    button(type="submit" class="btn btn-danger pull-left"
-                           name='cbutton' value='del') Delete
-                    button(type="submit" class="btn btn-info pull-left"
-                           name='cbutton' value='edit') Edit
-                br
-                br
-                div(class='existing_chars2')
-                  table(ng-repeat='char in characters')
-                    tbody
-                      tr
-                        td
-                          a(ng-href='/character/profile/'
-                            + user.username + '/{{char.name}}')
-                            img(ng-src='/images/class-icons/{{char.class}}.png'
-                            class='class_icon')
-                        td: h3 {{char.name}}
-            div(class="col-lg-6 col-md-6 col-sm-6 col-xs-12")
               .create_container
                 div(class="loginmodal-container" id="char-create")
                   .page-header
@@ -58,6 +35,36 @@ html(ng-app='charApp' ng-cloak)
                     br
                     input(type="submit" name="createchar"
                           class="create loginmodal-submit" value="Create")
+
+            div(class="col-lg-6 col-md-6 col-sm-6 col-xs-12")
+              h3 Your Characters
+              h4(id='error-msg') {{message}}
+              div(class='existing_chars')
+                table(ng-repeat='char in characters')
+                  tr(ng-click = 'select_char(char.name)' class='char_rows')
+                    td: h3 {{char.name}}
+                    td: a(ng-href='/character/profile/'
+                        + user.username + '/{{char.name}}')
+                      img(ng-src='/images/class-icons/{{char.class}}.png'
+                      class='class_icon pull-right')
+
+              p {{selected_char}}
+              input(type="submit" value='delete' class="delete_char loginmodal-submit"
+                    href="#" data-toggle="modal" data-target="#delete-char-modal")
+              input(type="submit" value='edit' class="edit_char loginmodal-submit"
+                    ng-click='redirect_edit()')
+
+    div(class="modal fade" id="delete-char-modal" tabindex="-1" role="dialog"
+    aria-labelledby="myModalLabel" aria-hidden="true")
+    div(class="modal-dialog")
+      div(class="loginmodal-container")
+          .page-header
+            h4 Are you sure?
+            br
+            input(type="submit" name="confirm" class="confirm loginmodal-submit"
+            value="YES" data-dismiss="modal" ng-click='delete_char()')
+            input(type="submit" name="decline" class="decline loginmodal-submit"
+            value="NO" data-dismiss="modal")
 
   include partials/footer.jade
   script(src="/js/char_controller.js")
