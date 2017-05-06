@@ -8,11 +8,14 @@ a, a:hover {
 }
 
 .view_tab {
-  color:brown;
-  opacity: 0.8;
+  width: 100px;
+  background-color: white;
+  color:black;
+  opacity: 1;
 }
 
 .view_tab:hover {
+  background-color: grey;
   opacity: 1;
 }
 
@@ -44,9 +47,10 @@ a, a:hover {
 
 .search_container {
   select {
-    width: 60px;
+    width: 80px;
   }
 }
+
 .results_table {
   visibility: hidden;
   max-height: 350px;
@@ -65,4 +69,36 @@ a, a:hover {
     height: 40px;
     width: 40px;
   }
+}
+
+.equip_item, .save_item {
+  width: 150px;
+  padding: 10px;
+  border-style: solid;
+  border-width: 2px;
+  border-color: black;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 10px;
+  background-color: white;
+}
+
+.equip_item:hover {
+  border-style: solid;
+  border-width: 2px;
+  border-color: green;
+}
+
+.save_item:hover {
+  border-style: solid;
+  border-width: 2px;
+  border-color: red;
+}
+
+.equip_item {
+  color: red;
+}
+
+.save_item {
+  color: green;
 }

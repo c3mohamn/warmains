@@ -127,3 +127,9 @@ TODO:
 
 TODO:
 - 2.5.0 TODO list
+
+----- 05/06/2017 ------
+------- v2.5.3 -------
+
+- Results table sorting added
+- minor visual changes and error fixes

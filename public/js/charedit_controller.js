@@ -1,8 +1,14 @@
 var editApp = angular.module("editApp", []);
 
-editApp.controller('editctrl', ['$scope', '$http', '$location', function($scope, $http, $location) {
+editApp.controller('editctrl', ['$scope', '$http', function($scope, $http) {
+
+  $scope.slot = '';
+  $scope.orderByField = 'result_ilvl';
+  $scope.reverseSort = false;
+  $scope.message = '';
 
     angular.element(document).ready(function () {
+      // variables used to sort results table
 
       /* Saves the currently equipped items (from char_items) to database.
        */
@@ -21,14 +27,12 @@ editApp.controller('editctrl', ['$scope', '$http', '$location', function($scope,
        * Switches between: Search, Stats
        */
       $scope.stats_view = function() {
-        if ($scope.cur_view != 'stats') {
-          return {'display': 'none'};
-        } else return {'visibility': 'visible'};
+        if ($scope.cur_view != 'stats')     return {'display': 'none'};
+        else                                return {'visibility': 'visible'};
       }
       $scope.search_view = function() {
-        if ($scope.cur_view != 'search') {
-          return {'display': 'none'};
-        } else return {'visibility': 'visible'};
+        if ($scope.cur_view != 'search')    return {'display': 'none'};
+        else                                return {'visibility': 'visible'};
       }
 
       /* Sets the item slot to search for after clicking an empty item slot
@@ -83,12 +87,14 @@ editApp.controller('editctrl', ['$scope', '$http', '$location', function($scope,
         var error_msg_3 = 'You cannot equip that type of item.';
         var error_msg_4 = 'Cannot equip an offhand while using a twohand.';
         var error_msg_5 = 'You cannot equip another one of those.';
-        var slot = remove_trailing_number($scope.slot);
         var item = selected_item;
+        var slot = $scope.slot;
+
         var char = $scope.character;
         $scope.message = ''; // reset error message
 
-        if (item) {
+        if (selected_item) {
+          var slot = remove_trailing_number(selected_slot);
           if (compare_slot(slot, item, char)) {
             if (can_wield(item, char)) {
               if (!dual_twohand(slot, char)) {

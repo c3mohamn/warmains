@@ -3,7 +3,7 @@ html(ng-app='editApp' ng-cloak)
 
   include partials/head.jade
   link(rel='stylesheet', type="text/css" href='/stylesheets/char-profile.css')
-  <script src="https://cdn.warmane.com/api/tooltip.js"></script>
+  script(src="https://cdn.warmane.com/api/tooltip.js")
 
   body(ng-controller='editctrl' ng-init="cur_view = 'stats'")
       include partials/navbar.jade
@@ -86,10 +86,12 @@ html(ng-app='editApp' ng-cloak)
 
                 .page-header
                   ul(class='list-inline')
-                      li: a(href='#')
-                        h3(class='view_tab' ng-click="cur_view = 'search'") Search
-                      li: a(href='#')
-                        h3(class='view_tab' ng-click="cur_view = 'stats'") Stats
+                      li: input(type='submit' value='Search'
+                                class="view_tab loginmodal-submit"
+                                ng-click="cur_view = 'search'")
+                      li: input(type='submit' value='Stats'
+                                class="view_tab loginmodal-submit"
+                                ng-click="cur_view = 'stats'")
 
                 div(class='search_container' ng-style='search_view()')
                   .row
@@ -97,7 +99,6 @@ html(ng-app='editApp' ng-cloak)
                         li iLvl
                         li: input(type='text' class='form-control' maxlength=3
                                   placeholder='Min' size=3 ng-model='ilvlmin')
-                        li -
                         li: input(type='text' class='form-control' maxlength=3
                                   placeholder='Max' size=3 ng-model='ilvlmax')
                         li Slot:
@@ -129,14 +130,14 @@ html(ng-app='editApp' ng-cloak)
                       table(class='table')
                         thead
                           tr(ng-style="{'background-color': 'white'}")
-                            td
-                            td Name
-                            td Class
-                            td Item Level
-                            td Slot
-                            td Type
+                            th
+                            td: a(href='#' ng-click="orderByField='Name';reverseSort=!reverseSort") Name
+                            td: a(href='#' ng-click="orderByField='RequiredClasses';reverseSort=!reverseSort") Class
+                            td: a(href='#' ng-click="orderByField='ItemLevel';reverseSort=!reverseSort") Item Level
+                            td: a(href='#' ng-click="orderByField='Slot';reverseSort=!reverseSort") Slot
+                            td: a(href='#' ng-click="orderByField='Type';reverseSort=!reverseSort") Type
                         tbody
-                            tr(ng-repeat="item in items"
+                            tr(ng-repeat="item in items | orderBy:orderByField:reverseSort"
                                ng-click='select_search_item(item)')
                               td
                                 a(target="_blank" ng-href="http://db.warmane.com/wotlk/item={{item.Id}}")
@@ -151,8 +152,10 @@ html(ng-app='editApp' ng-cloak)
                               td {{item.Slot}}
                               td {{item.Type}}
 
-                    button(class='btn btn-warning' ng-click='equip_item()') Equip
-                    button(class='btn btn-success' ng-click='save_to_db()') Save
+                    input(type="submit" value='Equip' ng-click='equip_item()'
+                          class="equip_item loginmodal-submit")
+                    input(type="submit" value='Save' ng-click='save_to_db()'
+                          class="save_item loginmodal-submit")
                     br
                     br
               -else if(user)
@@ -163,7 +166,22 @@ html(ng-app='editApp' ng-cloak)
                 thead
                   tr
                     td Base Stats
-                    td Defenses
+                    td Value
+                tbody
+                  tr
+                    td(class='pull-left') Stamina:
+                    td(class='pull-right') 0
+                  tr
+                    td(class='pull-left') Intellect:
+                    td(class='pull-right') 0
+                  tr
+                    td(class='pull-left') Attack Power:
+                    td(class='pull-right') 0
+              table(class='table')
+                thead
+                  tr
+                    td defenses
+                    td Value
                 tbody
                   tr
                     td(class='pull-left') Stamina:

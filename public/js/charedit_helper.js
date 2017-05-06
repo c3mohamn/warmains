@@ -83,14 +83,14 @@ var selected_item = null;
  *
  * slot: the currently selected slot ($scope.slot).
  */
-function remove_trailing_number(slot) {
-  var last_char = slot[slot.length - 1];
+ function remove_trailing_number(slot) {
+   var last_char = slot[slot.length - 1];
 
-  // Remove the 1 from Finger1 when searching for items.
-  if (last_char == '1' || last_char == '2') {
-    return slot.slice(0, slot.length - 1);
-  } else return slot
-}
+   // Remove the 1 from Finger1 when searching for items.
+   if (last_char == '1' || last_char == '2') {
+     return slot.slice(0, slot.length - 1);
+   } else return slot
+ }
 
 /* Return true if slot is a weapon.
  *
