@@ -85,23 +85,38 @@ html(ng-app='editApp' ng-cloak)
               -if(username == user.username)
                 .page-header
                   ul(class='list-inline')
-                      li: input(type='submit' value='Search'
+                      li: input(type='submit' value='Gems'
                                 class="view_tab loginmodal-submit"
-                                ng-click="cur_view = 'search'")
+                                ng-click="cur_view = 'gems'")
+                      li: input(type='submit' value='Items'
+                                class="view_tab loginmodal-submit"
+                                ng-click="cur_view = 'items'")
                       li: input(type='submit' value='Stats'
                                 class="view_tab loginmodal-submit"
                                 ng-click="cur_view = 'stats'")
 
-                div(class='search_container' ng-style='search_view()')
+                div(class='search_container' ng-style='item_view()')
+                  h4(ng-style='gem_view()' id='error-msg') Still not fully implemented yet.
                   .row
                       ul(class='list-inline')
-                        li iLvl
-                        li: input(type='text' class='form-control' maxlength=3
-                                  placeholder='Min' size=3 ng-model='ilvlmin')
-                        li: input(type='text' class='form-control' maxlength=3
-                                  placeholder='Max' size=3 ng-model='ilvlmax')
+                        li(ng-style='notgem_view()') iLvl
+                        li(ng-style='notgem_view()')
+                          input(type='text' class='form-control' maxlength=3
+                                placeholder='Min' size=3 ng-model='ilvlmin')
+                        li(ng-style='notgem_view()')
+                          input(type='text' class='form-control' maxlength=3
+                                placeholder='Max' size=3 ng-model='ilvlmax')
+                        li(ng-style='gem_view()') Colour:
+                        li(ng-style='gem_view()')
+                          select(class='form-control' ng-model='gem_colour')
+                            option Red
+                            option Yellow
+                            option Blue
+                            option Green
+                            option Orange
+                            option Purple
                         li Slot:
-                        li: select(class='form-control' ng-model='slot')
+                        li: select(class='form-control' ng-model="slot")
                           option MainHand
                           option OffHand
                           option Ranged
@@ -120,7 +135,7 @@ html(ng-app='editApp' ng-cloak)
                           option Trinket1
                           option Trinket2
                         li: input(type="text" class="form-control" placeholder="Search"
-                                  ng-model='search_val' maxlength=30
+                                  ng-model='search_val' maxlength=30 size=15
                                   ng-keyup="$event.keyCode == 13 && finditems(search_val)")
                         li: button(type="submit" class="btn btn-default"
                                    ng-click="finditems(search_val)") Submit

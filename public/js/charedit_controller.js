@@ -74,10 +74,21 @@ editApp.controller('editctrl', ['$scope', '$http', function($scope, $http) {
         if ($scope.cur_view != 'stats')     return {'display': 'none'};
         else                                return {'visibility': 'visible'};
       }
-      $scope.search_view = function() {
-        if ($scope.cur_view != 'search')    return {'display': 'none'};
+      $scope.item_view = function() {
+        if ($scope.cur_view == 'items' || $scope.cur_view == 'gems')
+          return {'visibility': 'visible'};
+        else
+          return {'display': 'none'};
+      }
+      $scope.notgem_view = function() {
+        if ($scope.cur_view == 'gems')      return {'display': 'none'};
         else                                return {'visibility': 'visible'};
       }
+      $scope.gem_view = function() {
+        if ($scope.cur_view == 'gems')      return {'visibility': 'visible'};
+        else                                return {'display': 'none'};
+      }
+
 
       /* Sets the item slot to search for after clicking an empty item slot
        * in the character panel.
@@ -125,6 +136,7 @@ editApp.controller('editctrl', ['$scope', '$http', function($scope, $http) {
        *  - Check if the selected item can be equipped in corresponding slot.
        *  - Check if the current character can wield that type of item.
        *  - Make sure we cannot equip an offhand when a twohand is equipped.
+       *  TODO: Add unequipping for gems as well.
        */
       $scope.equip_item = function() {
         var error_msg_1 = 'Select an item before trying to equip.';
@@ -162,25 +174,30 @@ editApp.controller('editctrl', ['$scope', '$http', function($scope, $http) {
         } else { $scope.error_msg = error_msg_1; }
       }
 
-      /* Unequips the item at $scope.slot. Removing stats, image and link. */
+      /* Unequips the item at $scope.slot. Removing stats, image and link.
+       * TODO: Add unequipping for gems as well.
+       */
       $scope.unequip_item = function() {
         var slot = $scope.slot;
         var error_msg_1 = 'You must have slot selected first.';
         var error_msg_2 = 'Cannot unequip nothing...';
+        var cur_view = $scope.cur_view;
         $scope.error_msg = '';
         $scope.success_msg = '';
 
-        if (slot) {
-          slot = slot.toLowerCase();
-          if (char_items[slot]) {
-            $scope.success_msg = char_items[slot].Name + 'has been unequipped.';
-            $scope.update_stats(char_items[slot], false);
-            char_items[slot] = null;
-            remove_slot_image(slot);
+        if (cur_view != 'gems') {
+          if (slot) {
+            slot = slot.toLowerCase();
+            if (char_items[slot]) {
+              $scope.success_msg = char_items[slot].Name + 'has been unequipped.';
+              $scope.update_stats(char_items[slot], false);
+              char_items[slot] = null;
+              remove_slot_image(slot);
 
-            //console.log(char_items[slot]);
-          } else { $scope.error_msg = error_msg_2; }
-        } else { $scope.error_msg = error_msg_1; }
+              //console.log(char_items[slot]);
+            } else { $scope.error_msg = error_msg_1; }
+          } else { $scope.error_msg = error_msg_1; }
+        }
       }
 
       /* Finds matching items to search_val and displays them in results_table.
@@ -197,9 +214,11 @@ editApp.controller('editctrl', ['$scope', '$http', function($scope, $http) {
         var char = $scope.character;
         var min = $scope.ilvlmin;
         var max = $scope.ilvlmax;
+        var cur_view = $scope.cur_view;
+        var gem_colour = $scope.gem_colour;
         $scope.error_msg = ''; // reset error_msg
 
-        if (!slot)
+        if (!slot && cur_view != 'gems')
           $scope.error_msg = 'Select a item slot before searching for items.';
         else if (!valid_number(min))
           $scope.error_msg = 'Invalid min ilvl.';
@@ -211,6 +230,7 @@ editApp.controller('editctrl', ['$scope', '$http', function($scope, $http) {
           else search_val = search_val.toLowerCase();
 
           var temp_slot = remove_trailing_number(slot);
+          if (cur_view == 'gems') temp_slot = 'Gems';
 
           $http.get('/wowdata/' + temp_slot + '.json').then(function(response){
             var all_items = response.data.items;
@@ -224,6 +244,7 @@ editApp.controller('editctrl', ['$scope', '$http', function($scope, $http) {
               // do not push item if item does not match requirements
               // wield? - matches ilvls? - matches search_val?
               if (!can_wield(item, char)) item_matches = false;
+              else if (gem_colour && gem_colour != item.Slot) item_matches = false;
               else if (min && min > item.ItemLevel) item_matches = false;
               else if (max && max < item.ItemLevel) item_matches = false;
               else if (!(search_val == '')) {

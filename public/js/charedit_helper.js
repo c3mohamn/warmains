@@ -111,8 +111,14 @@ var selected_item = null;
  * slot: the currently selected slot ($scope.slot).
  */
 function is_weapon_slot(slot) {
-  weapons_slot = ['MainHand', 'OffHand', 'OneHand', 'TwoHand', 'Ranged'];
-  return (weapons_slot.indexOf(slot) >= 0);
+  weapons = ['MainHand', 'OffHand', 'OneHand', 'TwoHand', 'Ranged'];
+  return (weapons.indexOf(slot) >= 0);
+}
+
+/* Return true if slot is that of a Gem. */
+function is_gem_slot(slot) {
+  gems = ['Yellow', 'Red', 'Orange', 'Blue', 'Purple', 'Green'];
+  return (gems.indexOf(slot) >= 0);
 }
 
 /* Return true iff user is trying to equip a TwoHand item in their OffHand

@@ -135,3 +135,14 @@ TODO:
 - minor visual changes and error fixes
 - Stats show now
 - Can unequip items now.
+
+TODO:
+- Start gems?
+
+----- 05/07/2017 ------
+------- v2.5.5 -------
+
+- Started gems, you can search for them now
+
+TODO:
+- Add equipping, unequipping, socket / error checks and saving for gems.
