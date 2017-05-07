@@ -126,7 +126,7 @@ function dual_twohand(slot, char) {
   var char_mh = char_items['mainhand'];
 
   if (char_mh && char_mh.Slot == 'TwoHand' && char.class != 'warrior' &&
-  slot != 'MainHand') {
+  slot == 'OffHand') {
     return true;
   }
   return false;
