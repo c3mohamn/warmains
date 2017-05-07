@@ -5,7 +5,16 @@ editApp.controller('editctrl', ['$scope', '$http', function($scope, $http) {
   $scope.slot = '';
   $scope.orderByField = 'result_ilvl';
   $scope.reverseSort = false;
-  $scope.message = '';
+  $scope.error_msg = '';
+  $scope.success_msg = '';
+  $scope.Stats = {
+    Strength: 0, Agility: 0, Intellect: 0, Spirit: 0, Stamina: 0,
+    AttackPower: 0, HitRating: 0, CritRating: 0, ExpertiseRating: 0,
+    ArmorPenetrationRating: 0, SpellPower: 0, HasteRating: 0, Mp5: 0,
+    Armor: 0, BonusArmor: 0, DefenseRating: 0, DodgeRating: 0, ParryRating: 0,
+    BlockRating: 0, BlockValue: 0, ShadowResistance: 0, ArcaneResistance: 0,
+    FrostResistance: 0, NatureResistance: 0, FireResistance: 0, Resilience: 0
+  };
 
     angular.element(document).ready(function () {
       // variables used to sort results table
@@ -21,7 +30,39 @@ editApp.controller('editctrl', ['$scope', '$http', function($scope, $http) {
           }, function errorCallback(response) {
             console.log(response);
           });
+          $scope.error_msg = '';
+          $scope.success_msg = 'Successfully saved.';
       }
+
+      /* Update the stats of the character with the stats gained from the given item.
+       *
+       * item: item being equipped or unequipped.
+       * equipping: true iff item is being equipped.
+       */
+      $scope.update_stats = function(item, equipping) {
+        var slot = item.Slot.toLowerCase();
+
+        // Remove the stats of the previously equipped item if exists
+        if (char_items[slot]) {
+          var old_stats = char_items[slot].Stats;
+          for (var key in old_stats) {
+            stat_num = parseInt(old_stats[key], 10);
+            $scope.Stats[key] -= stat_num;
+            //console.log('Removing ', stat_num, ' from ', key);
+          }
+        }
+
+        // Add the stats of item if we are equipping it.
+        if (equipping) {
+          var new_stats = item.Stats;
+          for (var key in new_stats) {
+            stat_num = parseInt(new_stats[key], 10);
+            $scope.Stats[key] += stat_num;
+            //console.log('Adding ', stat_num, ' to ', key);
+          }
+        }
+      }
+
 
       /* Changes what is currently visible on right hand side of page.
        * Switches between: Search, Stats
@@ -42,6 +83,14 @@ editApp.controller('editctrl', ['$scope', '$http', function($scope, $http) {
        */
       $scope.set_slot = function(slot) {
         $scope.slot = slot;
+      }
+
+      /* Mark the clicked item in results table as the currently selected item.
+       */
+      $scope.select_search_item = function(item) {
+        console.log('selected item: ', item.Name, '. slot: ', $scope.slot);
+        selected_item = item;
+        set_slot_image('selected', item);
       }
 
       /* Set the color of the item name based on its quality in results table.
@@ -68,13 +117,6 @@ editApp.controller('editctrl', ['$scope', '$http', function($scope, $http) {
         else                                    return {'color': 'black'};
       }
 
-      /* Mark the clicked item in results table as the currently selected item.
-       */
-      $scope.select_search_item = function(item) {
-        console.log('selected item: ', item.Name, '. slot: ', $scope.slot);
-        selected_item = item;
-      }
-
       /* Equips an item to corresponding slot selected.
        *  - Check if an item is selected first.
        *  - Check if the selected item can be equipped in corresponding slot.
@@ -83,32 +125,59 @@ editApp.controller('editctrl', ['$scope', '$http', function($scope, $http) {
        */
       $scope.equip_item = function() {
         var error_msg_1 = 'Select an item before trying to equip.';
-        var error_msg_2 = 'Invalid item selection.';
-        var error_msg_3 = 'You cannot equip that type of item.';
-        var error_msg_4 = 'Cannot equip an offhand while using a twohand.';
-        var error_msg_5 = 'You cannot equip another one of those.';
+        var error_msg_2 = 'That item is already equipped!';
+        var error_msg_3 = 'Invalid item selection.';
+        var error_msg_4 = 'You cannot equip that type of item.';
+        var error_msg_5 = 'Cannot equip an offhand while using a twohand.';
+        var error_msg_6 = 'You cannot equip another one of those.';
         var item = selected_item;
         var slot = $scope.slot;
-
         var char = $scope.character;
-        $scope.message = ''; // reset error message
+        $scope.error_msg = '';
+        $scope.success_msg = '';
 
         if (selected_item) {
-          var slot = remove_trailing_number(selected_slot);
-          if (compare_slot(slot, item, char)) {
-            if (can_wield(item, char)) {
-              if (!dual_twohand(slot, char)) {
-                if (!already_equipped(slot, item)) {
+          //console.log(is_equipped(slot, item));
+          if (!is_equipped(slot, item)) {
+            var slot = remove_trailing_number(slot);
+            if (compare_slot(slot, item, char)) {
+              if (can_wield(item, char)) {
+                if (!dual_twohand(slot, char)) {
+                  if (!is_unique(slot, item)) {
 
-                  // Equip the item and change the icon image.
-                  char_items[$scope.slot.toLowerCase()] = item;
-                  set_slot_image($scope.slot);
+                    // Equip the item, change icon image and update stats
+                    $scope.update_stats(item, true);
+                    char_items[$scope.slot.toLowerCase()] = item;
+                    set_slot_image($scope.slot, item);
+                    $scope.success_msg = item.Name + 'has been equipped!';
 
-                } else { $scope.message = error_msg_5; }
-              } else { $scope.message =  error_msg_4; }
-            } else { $scope.message = error_msg_3; }
-          } else { $scope.message = error_msg_2; }
-        } else { $scope.message = error_msg_1; }
+                  } else { $scope.error_msg = error_msg_6; }
+                } else { $scope.error_msg =  error_msg_5; }
+              } else { $scope.error_msg = error_msg_4; }
+            } else { $scope.error_msg = error_msg_3; }
+          } else { $scope.error_msg = error_msg_2; }
+        } else { $scope.error_msg = error_msg_1; }
+      }
+
+      /* Unequips the item at $scope.slot. Removing stats, image and link. */
+      $scope.unequip_item = function() {
+        var slot = $scope.slot;
+        var error_msg_1 = 'You must have slot selected first.';
+        var error_msg_2 = 'Cannot unequip nothing...';
+        $scope.error_msg = '';
+        $scope.success_msg = '';
+
+        if (slot) {
+          slot = slot.toLowerCase();
+          if (char_items[slot]) {
+            $scope.success_msg = char_items[slot].Name + 'has been unequipped.';
+            $scope.update_stats(char_items[slot], false);
+            char_items[slot] = null;
+            remove_slot_image(slot);
+
+            //console.log(char_items[slot]);
+          } else { $scope.error_msg = error_msg_2; }
+        } else { $scope.error_msg = error_msg_1; }
       }
 
       /* Finds matching items to search_val and displays them in results_table.
@@ -125,14 +194,14 @@ editApp.controller('editctrl', ['$scope', '$http', function($scope, $http) {
         var char = $scope.character;
         var min = $scope.ilvlmin;
         var max = $scope.ilvlmax;
-        $scope.message = ''; // reset error message
+        $scope.error_msg = ''; // reset error_msg
 
         if (!slot)
-          $scope.message = 'Select a item slot before searching for items.';
+          $scope.error_msg = 'Select a item slot before searching for items.';
         else if (!valid_number(min))
-          $scope.message = 'Invalid min ilvl.';
+          $scope.error_msg = 'Invalid min ilvl.';
         else if (!valid_number(max))
-          $scope.message = 'Invalid max ilvl.';
+          $scope.error_msg = 'Invalid max ilvl.';
         else {
 
           if (!search_val) search_val = '';
@@ -184,8 +253,9 @@ editApp.controller('editctrl', ['$scope', '$http', function($scope, $http) {
           // Loop through the items of retrieved character and display data.
           for (var slot in char_items) {
             if ($scope.character[slot].item) {
+              $scope.update_stats($scope.character[slot].item, true);
               char_items[slot] = $scope.character[slot].item;
-              set_slot_image(slot);
+              set_slot_image(slot, char_items[slot]);
             }
           }
       });

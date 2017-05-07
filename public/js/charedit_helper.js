@@ -13,6 +13,20 @@ var char_items = {  head: null, neck: null, shoulders: null, back: null,
                     trinket1: null, trinket2: null, mainhand: null,
                     offhand: null, ranged: null }
 
+// Net total of character stats gained from the items.
+var char_stats = {
+  BaseStats: {
+    Strength: 0, Agility: 0, Intellect: 0, Spirit: 0, Stamina: 0,
+    AttackPower: 0, HitRating: 0, CritRating: 0, ExpertiseRating: 0,
+    ArmorPenetrationRating: 0, SpellPower: 0, HasteRating: 0, Mp5: 0
+  },
+  Defenses: {
+    Armor: 0, BonusArmor: 0, DefenseRating: 0, DodgeRating: 0, ParryRating: 0,
+    BlockRating: 0, BlockValue: 0, ShadowResistance: 0, ArcaneResistance: 0,
+    FrostResistance: 0, NatureResistance: 0, FireResistance: 0, Resilience: 0
+  }
+}
+
 // Store the enchants for corresponding item slots
 var char_enchants = {}
 // Store the gems for corresponding item slots
@@ -177,14 +191,14 @@ function compare_slot(slot, item, char) {
   return (case1 || case2 || case3 || case4) && case5 && case6;
 }
 
-/* Return true iff the item is not already equipped.
+/* Return true iff the item is not already equipped in another slot.
  * - Exceptions for certain rings/trinkets.
  *
  *  slot: the currently selected slot ($scope.slot).
  *  item: the currently selected item (selected_item).
  *  ~ Not all cases covered yet.
  */
-function already_equipped(slot, item) {
+function is_unique(slot, item) {
 
   if (slot == 'Finger1') {
     if (char_items.finger2)
@@ -213,21 +227,42 @@ function already_equipped(slot, item) {
   } else return false;
 }
 
+/* Return true iff character already has item equipped in that slot. */
+function is_equipped(slot, item) {
+  slot = slot.toLowerCase()
+  if (char_items[slot]) {
+    if (char_items[slot].Id == item.Id) {
+      return true;
+    }
+  }
+  return false;
+}
+
 /* Setting the icon img of the corresponding slot to what is in char_items.
  * Also adds a link and tooltip for the item equipped into the slot.
  *
  * slot: currently selected item ($scope.slot).
+ * item: the selected item.
  */
-function set_slot_image(slot) {
+function set_slot_image(slot, item) {
   slot = slot.toLowerCase();
   $('#' + slot + '_slot').css('background-image', 'url(' +
-  "http://wow.zamimg.com/images/wow/icons/large/" + char_items[slot].IconPath +
+  "http://wow.zamimg.com/images/wow/icons/large/" + item.IconPath +
   '.jpg)');
 
   // Add link for the tooltip of item
   $('#' + slot + '_link').attr('href', 'http://db.warmane.com/wotlk/item=' +
-                                        char_items[slot].Id);
+                                        item.Id);
   $('#' + slot + '_link').attr('target', '_blank');
+}
+
+/* Removes the icon img in the given slot. */
+function remove_slot_image(slot) {
+  slot = slot.toLowerCase();
+
+  $('#' + slot + '_slot').css('background-image', 'none');
+  $('#' + slot + '_link').attr('href', ''); // removes link as well
+  $('#' + slot + '_link').attr('target', '');
 }
 
 /* Return true iff char can equip item.
