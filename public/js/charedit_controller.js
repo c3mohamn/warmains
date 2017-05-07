@@ -7,14 +7,13 @@ editApp.controller('editctrl', ['$scope', '$http', function($scope, $http) {
   $scope.reverseSort = false;
   $scope.error_msg = '';
   $scope.success_msg = '';
-  $scope.Stats = {
-    Strength: 0, Agility: 0, Intellect: 0, Spirit: 0, Stamina: 0,
+  $scope.Stats = {};
+/*    Strength: 0, Agility: 0, Intellect: 0, Spirit: 0, Stamina: 0,
     AttackPower: 0, HitRating: 0, CritRating: 0, ExpertiseRating: 0,
     ArmorPenetrationRating: 0, SpellPower: 0, HasteRating: 0, Mp5: 0,
     Armor: 0, BonusArmor: 0, DefenseRating: 0, DodgeRating: 0, ParryRating: 0,
     BlockRating: 0, BlockValue: 0, ShadowResistance: 0, ArcaneResistance: 0,
-    FrostResistance: 0, NatureResistance: 0, FireResistance: 0, Resilience: 0
-  };
+    FrostResistance: 0, NatureResistance: 0, FireResistance: 0, Resilience: 0*/
 
     angular.element(document).ready(function () {
       // variables used to sort results table
@@ -56,9 +55,13 @@ editApp.controller('editctrl', ['$scope', '$http', function($scope, $http) {
         if (equipping) {
           var new_stats = item.Stats;
           for (var key in new_stats) {
-            stat_num = parseInt(new_stats[key], 10);
-            $scope.Stats[key] += stat_num;
-            //console.log('Adding ', stat_num, ' to ', key);
+            if (key != "SpecialEffectCount" && key != "SpecialEffects") {
+              stat_num = parseInt(new_stats[key], 10);
+              if (!$scope.Stats[key])
+                $scope.Stats[key] = 0;
+              $scope.Stats[key] += stat_num;
+              //console.log('Adding ', stat_num, ' to ', key);
+            }
           }
         }
       }

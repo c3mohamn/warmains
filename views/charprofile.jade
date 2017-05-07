@@ -120,7 +120,8 @@ html(ng-app='editApp' ng-cloak)
                           option Trinket1
                           option Trinket2
                         li: input(type="text" class="form-control" placeholder="Search"
-                                  ng-model='search_val' maxlength=30)
+                                  ng-model='search_val' maxlength=30
+                                  ng-keyup="$event.keyCode == 13 && finditems(search_val)")
                         li: button(type="submit" class="btn btn-default"
                                    ng-click="finditems(search_val)") Submit
                       p(id='error-msg') {{error_msg}}
