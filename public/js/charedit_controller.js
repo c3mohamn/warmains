@@ -16,8 +16,6 @@ editApp.controller('editctrl', ['$scope', '$http', function($scope, $http) {
     FrostResistance: 0, NatureResistance: 0, FireResistance: 0, Resilience: 0*/
 
     angular.element(document).ready(function () {
-      // variables used to sort results table
-
       /* Saves the currently equipped items (from char_items) to database.
        */
       $scope.save_to_db = function() {
@@ -66,7 +64,6 @@ editApp.controller('editctrl', ['$scope', '$http', function($scope, $http) {
         }
       }
 
-
       /* Changes what is currently visible on right hand side of page.
        * Switches between: Search, Stats
        */
@@ -88,7 +85,6 @@ editApp.controller('editctrl', ['$scope', '$http', function($scope, $http) {
         if ($scope.cur_view == 'gems')      return {'visibility': 'visible'};
         else                                return {'display': 'none'};
       }
-
 
       /* Sets the item slot to search for after clicking an empty item slot
        * in the character panel.
@@ -148,34 +144,46 @@ editApp.controller('editctrl', ['$scope', '$http', function($scope, $http) {
         var item = selected_item;
         var slot = $scope.slot;
         var char = $scope.character;
+        var cur_view = $scope.cur_view;
         $scope.error_msg = '';
         $scope.success_msg = '';
 
-        if (selected_item) {
-          //console.log(is_equipped(slot, item));
-          if (!is_equipped(slot, item)) {
-            var slot = remove_trailing_number(slot);
-            if (compare_slot(slot, item, char)) {
-              if (can_wield(item, char)) {
-                if (!dual_twohand(slot, char)) {
-                  if (!is_unique(slot, item)) {
+        if (cur_view == 'gems') {
+          /* TODO:
+           * - First check if a gem is selected.
+           * - Then check if a item slot to gem is selected.
+           * - When we pick an item slot to gem, should try and display gem slot
+           * - information.
+           */
+          $scope.error_msg = 'Equipping gems not implemented yet.';
+        } else {
+          if (selected_item) {
+            //console.log(is_equipped(slot, item));
+            if (!is_equipped(slot, item)) {
+              var slot = remove_trailing_number(slot);
+              if (compare_slot(slot, item, char)) {
+                if (can_wield(item, char)) {
+                  if (!dual_twohand(slot, char)) {
+                    if (!is_unique(slot, item)) {
 
-                    // Equip the item, change icon image and update stats
-                    $scope.update_stats(item, true);
-                    char_items[$scope.slot.toLowerCase()] = item;
-                    set_slot_image($scope.slot, item);
-                    $scope.success_msg = item.Name + 'has been equipped!';
+                      // Equip the item, change icon image and update stats
+                      $scope.update_stats(item, true);
+                      char_items[$scope.slot.toLowerCase()] = item;
+                      set_slot_image($scope.slot, item);
+                      $scope.success_msg = item.Name + 'has been equipped!';
 
-                  } else { $scope.error_msg = error_msg_6; }
-                } else { $scope.error_msg =  error_msg_5; }
-              } else { $scope.error_msg = error_msg_4; }
-            } else { $scope.error_msg = error_msg_3; }
-          } else { $scope.error_msg = error_msg_2; }
-        } else { $scope.error_msg = error_msg_1; }
+                    } else { $scope.error_msg = error_msg_6; }
+                  } else { $scope.error_msg =  error_msg_5; }
+                } else { $scope.error_msg = error_msg_4; }
+              } else { $scope.error_msg = error_msg_3; }
+            } else { $scope.error_msg = error_msg_2; }
+          } else { $scope.error_msg = error_msg_1; }
+        }
       }
 
       /* Unequips the item at $scope.slot. Removing stats, image and link.
-       * TODO: Add unequipping for gems as well.
+       * If the current view is gems, then we unequip gem from the selected
+       * item slot ($scope.slot).
        */
       $scope.unequip_item = function() {
         var slot = $scope.slot;
@@ -185,7 +193,14 @@ editApp.controller('editctrl', ['$scope', '$http', function($scope, $http) {
         $scope.error_msg = '';
         $scope.success_msg = '';
 
-        if (cur_view != 'gems') {
+        if (cur_view == 'gems') {
+          /* TODO: Make sure that an item slot is selected first.
+           * Make sure that it is gemmed before hand.
+           * Easy: Unequip all gems from item slot.
+           * Harder: Unequip specific gems from item slot.
+           */
+          $scope.error_msg = 'Unequipping gems not implemented yet.';
+        } else {
           if (slot) {
             slot = slot.toLowerCase();
             if (char_items[slot]) {
