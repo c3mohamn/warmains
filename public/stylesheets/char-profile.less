@@ -28,17 +28,58 @@ a, a:hover {
     pointer-events:none;
     opacity: .5;
   }
+  #head_slot {
+    background-image: url('/images/empty-slots/UI-EmptyHead.png');
+  } #neck_slot {
+    background-image: url('/images/empty-slots/UI-EmptyNeck.png');
+  } #shoulders_slot {
+    background-image: url('/images/empty-slots/UI-EmptyShoulders.png');
+  } #chest_slot {
+    background-image: url('/images/empty-slots/UI-EmptyChest.png');
+  } #back_slot {
+    background-image: url('/images/empty-slots/UI-EmptyBack.png');
+  } #wrist_slot {
+    background-image: url('/images/empty-slots/UI-EmptyWrist.png');
+  } #hands_slot {
+    background-image: url('/images/empty-slots/UI-EmptyHands.png');
+  } #waist_slot {
+    background-image: url('/images/empty-slots/UI-EmptyWaist.png');
+  } #legs_slot {
+    background-image: url('/images/empty-slots/UI-EmptyLegs.png');
+  } #feet_slot {
+    background-image: url('/images/empty-slots/UI-EmptyFeet.png');
+  } #finger1_slot {
+    background-image: url('/images/empty-slots/UI-EmptyFinger.png');
+  } #finger2_slot {
+    background-image: url('/images/empty-slots/UI-EmptyFinger.png');
+  } #trinket1_slot {
+    background-image: url('/images/empty-slots/UI-EmptyTrinket.png');
+  } #trinket2_slot {
+    background-image: url('/images/empty-slots/UI-EmptyTrinket.png');
+  } #mainhand_slot {
+    background-image: url('/images/empty-slots/UI-EmptyMainHand.png');
+  } #offhand_slot {
+    background-image: url('/images/empty-slots/UI-EmptyOffHand.png');
+  } #ranged_slot {
+    background-image: url('/images/empty-slots/UI-EmptyRanged.png');
+  }
+}
+#selected_slot {
+  background-image: url('/images/empty-slots/UI-EmptyBag.png');
+} #socket1_slot {
+  //background-image: url('/images/empty-slots/UI-MetaSocket.png');
 }
 
 .item_slot {
-  width: 58px;
-  height: 58px;
-  border-width: 2px;
-  border-radius: 1px;
-  border-style: solid;
-  border-color: black;
-  background-color: grey;
+  width: 55px;
+  height: 55px;
+  margin-bottom: 3px;
   opacity: 1;
+  background-size: 55px 55px;
+  img {
+    width: 55px;
+    height: 55px;
+  }
 }
 .item_slot:hover {
   -webkit-box-shadow: inset 0 0 10px #fff;
@@ -60,7 +101,7 @@ a, a:hover {
 
 .results_table {
   visibility: hidden;
-  max-height: 350px;
+  max-height: 300px;
   overflow: auto;
   border-radius: 2px;
   tr:hover {
@@ -75,6 +116,17 @@ a, a:hover {
   img {
     height: 40px;
     width: 40px;
+  }
+}
+
+.stats_container {
+  table {
+    margin: 0 auto;
+    margin-top: 200px;
+    td {
+      width: 100px;
+      height: 25px;
+    }
   }
 }
 

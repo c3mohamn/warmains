@@ -41,7 +41,8 @@ html(ng-app='charApp' ng-cloak)
               h4(id='error-msg') {{message}}
               div(class='existing_chars')
                 table(ng-repeat='char in characters')
-                  tr(ng-click = 'select_char(char.name)' class='char_rows')
+                  tr(ng-click = 'select_char(char.name)' class='char_rows'
+                     ng-dblclick = 'redirect_edit()')
                     td: h3 {{char.name}}
                     td: a(ng-href='/character/profile/'
                         + user.username + '/{{char.name}}')

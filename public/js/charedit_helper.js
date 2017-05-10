@@ -6,26 +6,17 @@ url = url.split("/");
 var char_name = url.pop();
 var user_name = url.pop();
 
+// Disables links from directing to another page - makes easier to select slots.
+$('.char_panel a').click(function() {
+  return false;
+});
+
 // Stores the items equipped for the current character
 var char_items = {  head: null, neck: null, shoulders: null, back: null,
                     chest: null, wrist: null, hands: null, waist: null,
                     legs: null, feet: null, finger1: null, finger2: null,
                     trinket1: null, trinket2: null, mainhand: null,
                     offhand: null, ranged: null }
-
-// Net total of character stats gained from the items.
-var char_stats = {
-  BaseStats: {
-    Strength: 0, Agility: 0, Intellect: 0, Spirit: 0, Stamina: 0,
-    AttackPower: 0, HitRating: 0, CritRating: 0, ExpertiseRating: 0,
-    ArmorPenetrationRating: 0, SpellPower: 0, HasteRating: 0, Mp5: 0
-  },
-  Defenses: {
-    Armor: 0, BonusArmor: 0, DefenseRating: 0, DodgeRating: 0, ParryRating: 0,
-    BlockRating: 0, BlockValue: 0, ShadowResistance: 0, ArcaneResistance: 0,
-    FrostResistance: 0, NatureResistance: 0, FireResistance: 0, Resilience: 0
-  }
-}
 
 // Store the enchants for corresponding item slots
 var char_enchants = {}
@@ -115,7 +106,9 @@ function is_weapon_slot(slot) {
   return (weapons.indexOf(slot) >= 0);
 }
 
-/* Return true if slot is that of a Gem. */
+/* Return true if slot is that of a Gem.
+ * An item is a gem if it's Slot value is a colour.
+ */
 function is_gem_slot(slot) {
   gems = ['Yellow', 'Red', 'Orange', 'Blue', 'Purple', 'Green'];
   return (gems.indexOf(slot) >= 0);
@@ -252,8 +245,9 @@ function is_equipped(slot, item) {
  */
 function set_slot_image(slot, item) {
   slot = slot.toLowerCase();
+
   $('#' + slot + '_slot').css('background-image', 'url(' +
-  "http://wow.zamimg.com/images/wow/icons/large/" + item.IconPath +
+  "http://cdn.warmane.com/wotlk/icons/large/" + item.IconPath +
   '.jpg)');
 
   // Add link for the tooltip of item
@@ -262,13 +256,35 @@ function set_slot_image(slot, item) {
   $('#' + slot + '_link').attr('target', '_blank');
 }
 
+/* Set the background image of a gem socket to that of colour. */
+function set_gem_image(socket, colour) {
+  $('#' + socket + '_slot').css('background-image',
+    'url(/images/empty-slots/' + 'UI-' + colour + 'Socket' + '.png)');
+}
+
+/* Removes the background image for the socket. */
+function remove_gem_image(socket) {
+  $('#' + socket + '_slot').css('background-image',
+    'none');
+}
+
+/* Sockets a gem.
+ * Saves the gem to the corresponding slot in char_gems.
+ * TODO:
+ */
+function socket_item(item, gem, socket) {
+
+}
+
 /* Removes the icon img in the given slot. */
 function remove_slot_image(slot) {
-  slot = slot.toLowerCase();
+  slot1 = slot.toLowerCase();
+  slot = remove_trailing_number(slot);
 
-  $('#' + slot + '_slot').css('background-image', 'none');
-  $('#' + slot + '_link').attr('href', ''); // removes link as well
-  $('#' + slot + '_link').attr('target', '');
+  $('#' + slot1 + '_slot').css('background-image',
+    'url(/images/empty-slots/UI-Empty' + slot + '.png)');
+  $('#' + slot1 + '_link').attr('href', ''); // removes link as well
+  $('#' + slot1 + '_link').attr('target', '');
 }
 
 /* Return true iff char can equip item.

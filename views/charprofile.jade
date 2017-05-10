@@ -5,7 +5,8 @@ html(ng-app='editApp' ng-cloak)
   link(rel='stylesheet', type="text/css" href='/stylesheets/char-profile.css')
   script(src="https://cdn.warmane.com/api/tooltip.js")
 
-  body(ng-controller='editctrl' ng-init="cur_view = 'stats'")
+  body(ng-controller='editctrl' ng-init="cur_view = 'stats'"
+  ng-keyup="$event.keyCode == 82 && unequip_item(); $event.keyCode == 69 && equip_item(); $event.keyCode == 83 && save_to_db()")
       include partials/navbar.jade
 
       div(class='container' ng-show='character')
@@ -53,11 +54,13 @@ html(ng-app='editApp' ng-cloak)
                       ng-click="set_slot('Finger1')")
               .row
                 div(class='item_slot pull-left' id='shirt_slot')
+                  img(src='/images/empty-slots/UI-EmptyShirt.png')
                 a(href="" rel="" id='finger2_link')
                   div(class='item_slot pull-right' id='finger2_slot'
                       ng-click="set_slot('Finger2')")
               .row
                 div(class='item_slot pull-left' id='tabard_slot')
+                  img(src='/images/empty-slots/UI-EmptyTabard.png')
                 a(href="" rel="" id='trinket1_link')
                   div(class='item_slot pull-right' id='trinket1_slot'
                       ng-click="set_slot('Trinket1')")
@@ -145,12 +148,16 @@ html(ng-app='editApp' ng-cloak)
                       table(class='table')
                         thead
                           tr(ng-style="{'background-color': 'white'}")
-                            th
-                            td: a(href='' ng-click="orderByField='Name';reverseSort=!reverseSort") Name
-                            td: a(href='' ng-click="orderByField='RequiredClasses';reverseSort=!reverseSort") Class
-                            td: a(href='' ng-click="orderByField='ItemLevel';reverseSort=!reverseSort") Item Level
-                            td: a(href='' ng-click="orderByField='Slot';reverseSort=!reverseSort") Slot
-                            td: a(href='' ng-click="orderByField='Type';reverseSort=!reverseSort") Type
+                            td
+                              a(href='' ng-click="orderByField='Name';reverseSort=!reverseSort") Name
+                            td
+                              a(href='' ng-click="orderByField='RequiredClasses';reverseSort=!reverseSort") Class
+                            td
+                              a(href='' ng-click="orderByField='ItemLevel';reverseSort=!reverseSort") Item Level
+                            td
+                              a(href='' ng-click="orderByField='Slot';reverseSort=!reverseSort") Slot
+                            td
+                              a(href='' ng-click="orderByField='Type';reverseSort=!reverseSort") Type
                         tbody
                             tr(ng-repeat="item in items | orderBy:orderByField:reverseSort"
                                ng-click='select_search_item(item)')
@@ -167,29 +174,41 @@ html(ng-app='editApp' ng-cloak)
                               td {{item.Slot}}
                               td {{item.Type}}
 
-                    input(type="submit" value='Unequip' ng-click='unequip_item()'
+                    input(type="submit" value='Unequip (R)' ng-click='unequip_item()'
                           class="unequip_item loginmodal-submit")
-                    input(type="submit" value='Equip' ng-click='equip_item()'
+                    input(type="submit" value='Equip (E)' ng-click='equip_item()'
                           class="equip_item loginmodal-submit")
-                    input(type="submit" value='Save' ng-click='save_to_db()'
+                    input(type="submit" value='Save (S)' ng-click='save_to_db()'
                           class="save_item loginmodal-submit")
                     br
                     br
-                    a(href="" rel="" id='selected_link'): div(class='item_slot pull-center' id='selected_slot')
+                    ul(class='list-inline')
+                      li: a(href="http://db.warmane.com/wotlk/item=49623" rel="item=49623&ench=3789&gems=3549:3550:3572" id='selected_link')
+                        div(class='item_slot' id='selected_slot')
+
+                    ul(class='list-inline' ng-style='gem_view()')
+                      li: a(href='' id='socket1_link')
+                        div(class='item_slot' id='socket1_slot'
+                            ng-click="cur_socket='socket1'")
+                      li: a(href='' id='socket2_link')
+                        div(class='item_slot' id='socket2_slot'
+                            ng-click="cur_socket='socket2'")
+                      li: a(href='' id='socket3_link')
+                        div(class='item_slot' id='socket3_slot'
+                            ng-click="cur_socket='socket3'")
+
+                    p {{cur_socket}}
+
               -else if(user)
                 h4 Viewing #{char} as #{user.username}.
 
           div(class='stats_container' ng-style='stats_view()')
-            div(class="col-lg-3 col-md-3 col-sm-6 col-xs-6")
-              table( id='stats')
-                tbody
-                  tr(ng-repeat='(key,val) in Stats')
-                    td {{key}}
-                    td {{val}}
+            table(id='stats')
+              tbody
+                tr(ng-repeat='(key,val) in Stats')
+                  td {{key}}
+                  td {{val}}
 
-      div(class="items_container")
-          div(class="item_tooltip")
-          // Make this hidden, then show when hovering over item image.
       p(ng-if='!character') This character does not exist.
 
   include partials/footer.jade

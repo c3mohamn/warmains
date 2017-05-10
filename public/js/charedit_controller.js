@@ -8,6 +8,9 @@ editApp.controller('editctrl', ['$scope', '$http', function($scope, $http) {
   $scope.error_msg = '';
   $scope.success_msg = '';
   $scope.Stats = {};
+  $scope.socket1 = '';
+  $scope.socket2 = '';
+  $scope.socket3 = '';
 /*    Strength: 0, Agility: 0, Intellect: 0, Spirit: 0, Stamina: 0,
     AttackPower: 0, HitRating: 0, CritRating: 0, ExpertiseRating: 0,
     ArmorPenetrationRating: 0, SpellPower: 0, HasteRating: 0, Mp5: 0,
@@ -93,6 +96,31 @@ editApp.controller('editctrl', ['$scope', '$http', function($scope, $http) {
        */
       $scope.set_slot = function(slot) {
         $scope.slot = slot;
+        slot = slot.toLowerCase();
+        if (char_items[slot]) {
+          set_slot_image('selected', char_items[slot]);
+
+
+          // Show gem sockets and their respective colours here.
+          // TODO: If a gem socket is gemmed, show the gem in it.
+          if ($scope.cur_view == 'gems') {
+            if (char_items[slot].SocketColor1) {
+              var colour = char_items[slot].SocketColor1;
+              $scope.socket1 = colour;
+              set_gem_image('socket1', colour);
+            } else remove_gem_image('socket1');
+            if (char_items[slot].SocketColor2) {
+              var colour = char_items[slot].SocketColor2;
+              $scope.socket2 = colour;
+              set_gem_image('socket2', colour);
+            } else remove_gem_image('socket2');
+            if (char_items[slot].SocketColor3) {
+              var colour = char_items[slot].SocketColor3;
+              $scope.socket3 = colour;
+              set_gem_image('socket3', colour);
+            } else remove_gem_image('socket3');
+          }
+        }
       }
 
       /* Mark the clicked item in results table as the currently selected item.
@@ -141,6 +169,8 @@ editApp.controller('editctrl', ['$scope', '$http', function($scope, $http) {
         var error_msg_4 = 'You cannot equip that type of item.';
         var error_msg_5 = 'Cannot equip an offhand while using a twohand.';
         var error_msg_6 = 'You cannot equip another one of those.';
+        var error_msg_7 = 'Select a gem before trying to equip.';
+        var error_msg_8 = 'Select a slot to gem first please.';
         var item = selected_item;
         var slot = $scope.slot;
         var char = $scope.character;
@@ -155,9 +185,16 @@ editApp.controller('editctrl', ['$scope', '$http', function($scope, $http) {
            * - When we pick an item slot to gem, should try and display gem slot
            * - information.
            */
-          $scope.error_msg = 'Equipping gems not implemented yet.';
+
+          if (item && is_gem_slot(item.Slot)) {
+            if (slot) {
+
+            } else { $scope.error_msg = error_msg_8; }
+          } else { $scope.error_msg = error_msg_7; }
+
+          //$scope.error_msg = 'Equipping gems not implemented yet.';
         } else {
-          if (selected_item) {
+          if (item) {
             //console.log(is_equipped(slot, item));
             if (!is_equipped(slot, item)) {
               var slot = remove_trailing_number(slot);
@@ -207,7 +244,7 @@ editApp.controller('editctrl', ['$scope', '$http', function($scope, $http) {
               $scope.success_msg = char_items[slot].Name + 'has been unequipped.';
               $scope.update_stats(char_items[slot], false);
               char_items[slot] = null;
-              remove_slot_image(slot);
+              remove_slot_image($scope.slot);
 
               //console.log(char_items[slot]);
             } else { $scope.error_msg = error_msg_1; }

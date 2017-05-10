@@ -146,3 +146,16 @@ TODO:
 
 TODO:
 - Add equipping, unequipping, socket / error checks and saving for gems.
+
+----- 05/09/2017 ------
+------- v2.6.0 -------
+
+- Added empty slot icons
+- started gem frames
+- some visual Changes
+- can click 'r' to unequip, 'e' to equip and 's' to save now
+
+TODO:
+- Work on gems more, add equipping
+  - IDs are dif for warmane and gems.json
+  - orange/green = 36592, red = 36593 - don't know rel (can leave this till last)
