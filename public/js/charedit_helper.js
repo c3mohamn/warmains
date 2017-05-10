@@ -7,21 +7,42 @@ var char_name = url.pop();
 var user_name = url.pop();
 
 // Disables links from directing to another page - makes easier to select slots.
-$('.char_panel a').click(function() {
+$('.char_panel a, #selected_link, #socket1_link, #socket2_link, #socket3_link').click(function() {
   return false;
 });
 
 // Stores the items equipped for the current character
-var char_items = {  head: null, neck: null, shoulders: null, back: null,
-                    chest: null, wrist: null, hands: null, waist: null,
-                    legs: null, feet: null, finger1: null, finger2: null,
-                    trinket1: null, trinket2: null, mainhand: null,
-                    offhand: null, ranged: null }
+var char_items = {  Head: null, Neck: null, Shoulders: null, Back: null,
+                    Chest: null, Wrist: null, Hands: null, Waist: null,
+                    Legs: null, Feet: null, Finger1: null, Finger2: null,
+                    Trinket1: null, Trinket2: null, MainHand: null,
+                    OffHand: null, Ranged: null }
 
 // Store the enchants for corresponding item slots
-var char_enchants = {}
+var char_enchants = { Head: null, Neck: null, Shoulders: null, Back: null,
+                      Chest: null, Wrist: null, Hands: null, Waist: null,
+                      Legs: null, Feet: null, Finger1: null, Finger2: null,
+                      Trinket1: null, Trinket2: null, MainHand: null,
+                      OffHand: null, Ranged: null }
+
 // Store the gems for corresponding item slots
-var char_gems = {}
+var char_gems = {
+  Head: {socket1: null, socket2: null, socket3: null},
+  Neck: {socket1: null, socket2: null, socket3: null},
+  Shoulders: {socket1: null, socket2: null, socket3: null},
+  Back: {socket1: null, socket2: null, socket3: null},
+  Chest: {socket1: null, socket2: null, socket3: null},
+  Wrist: {socket1: null, socket2: null, socket3: null},
+  Hands: {socket1: null, socket2: null, socket3: null},
+  Waist: {socket1: null, socket2: null, socket3: null},
+  Legs: {socket1: null, socket2: null, socket3: null},
+  Feet: {socket1: null, socket2: null, socket3: null},
+  Finger1: {socket1: null, socket2: null, socket3: null},
+  Finger2: {socket1: null, socket2: null, socket3: null},
+  MainHand: {socket1: null, socket2: null, socket3: null},
+  OffHand: {socket1: null, socket2: null, socket3: null},
+  Ranged: {socket1: null, socket2: null, socket3: null}
+}
 
 // Stores the types of items each class can wield.
 var class_wield_type = {
@@ -110,7 +131,7 @@ function is_weapon_slot(slot) {
  * An item is a gem if it's Slot value is a colour.
  */
 function is_gem_slot(slot) {
-  gems = ['Yellow', 'Red', 'Orange', 'Blue', 'Purple', 'Green'];
+  gems = ['Yellow', 'Red', 'Orange', 'Blue', 'Purple', 'Green', 'Meta'];
   return (gems.indexOf(slot) >= 0);
 }
 
@@ -228,7 +249,6 @@ function is_unique(slot, item) {
 
 /* Return true iff character already has item equipped in that slot. */
 function is_equipped(slot, item) {
-  slot = slot.toLowerCase()
   if (char_items[slot]) {
     if (char_items[slot].Id == item.Id) {
       return true;
@@ -244,7 +264,6 @@ function is_equipped(slot, item) {
  * item: the selected item.
  */
 function set_slot_image(slot, item) {
-  slot = slot.toLowerCase();
 
   $('#' + slot + '_slot').css('background-image', 'url(' +
   "http://cdn.warmane.com/wotlk/icons/large/" + item.IconPath +
@@ -257,7 +276,7 @@ function set_slot_image(slot, item) {
 }
 
 /* Set the background image of a gem socket to that of colour. */
-function set_gem_image(socket, colour) {
+function set_gem_bg(socket, colour) {
   $('#' + socket + '_slot').css('background-image',
     'url(/images/empty-slots/' + 'UI-' + colour + 'Socket' + '.png)');
 }
@@ -268,23 +287,63 @@ function remove_gem_image(socket) {
     'none');
 }
 
+/* Update the rel attribute of an item so we can see gems in item tooltip. */
+function set_slot_rel(slot) {
+  var item_id = char_items[slot].Id;
+  var ench = 0;
+  var sock1 = 0;
+  var sock2 = 0;
+  var sock3 = 0;
+  if (char_gems[slot].socket1) sock1 = alter_gem_id(char_gems[slot].socket1);
+  if (char_gems[slot].socket2) sock2 = alter_gem_id(char_gems[slot].socket2);
+  if (char_gems[slot].socket3) sock3 = alter_gem_id(char_gems[slot].socket3);
+
+  $('#' + slot + '_link').attr('rel', 'item=' + item_id +
+    '&ench=0' + '&gems=' + sock1 + ':' + sock2 + ':' + sock3);
+}
+
+/* Changes the gems id to match that of warmains gem rel link ids. */
+function alter_gem_id(gem) {
+  var cur_id = gem.Id;
+  if (gem.Slot == 'Red') {
+    return cur_id - 36593;
+  } else if (gem.Slot == 'Green' || gem.Slot == 'Orange') {
+    return cur_id - 36592;
+  } else if(gem.Slot == 'Purple') {
+    return cur_id - 36592;
+  }
+  return cur_id;
+}
+
+/* Check if we can put gem into socket.
+ * Mainly for meta socket.
+ */
+function can_gem(gem, socket) {
+  if (gem.Slot != 'Meta' && socket == 'Meta')
+    return false;
+  if (gem.Slot == 'Meta' && socket != 'Meta')
+    return false;
+  return true;
+}
+
 /* Sockets a gem.
  * Saves the gem to the corresponding slot in char_gems.
  * TODO:
  */
-function socket_item(item, gem, socket) {
-
+function socket_item(slot, gem, socket) {
+  char_gems[slot][socket] = gem;
+  console.log(char_gems[slot]);
+  set_slot_image(socket, gem);
 }
 
 /* Removes the icon img in the given slot. */
 function remove_slot_image(slot) {
-  slot1 = slot.toLowerCase();
   slot = remove_trailing_number(slot);
 
-  $('#' + slot1 + '_slot').css('background-image',
+  $('#' + slot + '_slot').css('background-image',
     'url(/images/empty-slots/UI-Empty' + slot + '.png)');
-  $('#' + slot1 + '_link').attr('href', ''); // removes link as well
-  $('#' + slot1 + '_link').attr('target', '');
+  $('#' + slot + '_link').attr('href', ''); // removes link as well
+  $('#' + slot + '_link').attr('target', '');
 }
 
 /* Return true iff char can equip item.

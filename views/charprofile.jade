@@ -5,8 +5,7 @@ html(ng-app='editApp' ng-cloak)
   link(rel='stylesheet', type="text/css" href='/stylesheets/char-profile.css')
   script(src="https://cdn.warmane.com/api/tooltip.js")
 
-  body(ng-controller='editctrl' ng-init="cur_view = 'stats'"
-  ng-keyup="$event.keyCode == 82 && unequip_item(); $event.keyCode == 69 && equip_item(); $event.keyCode == 83 && save_to_db()")
+  body(ng-controller='editctrl' ng-init="cur_view = 'stats'")
       include partials/navbar.jade
 
       div(class='container' ng-show='character')
@@ -18,69 +17,69 @@ html(ng-app='editApp' ng-cloak)
                 h5(class='pull-center') {{character.class}}
                 p(class='pull-center') #{username}
 
-                a(href="" rel="" id='head_link')
-                  div(class='item_slot pull-left' id='head_slot'
+                a(href="" rel="" id='Head_link')
+                  div(class='item_slot pull-left' id='Head_slot'
                       ng-click="set_slot('Head')")
-                a(href="" rel="" id='hands_link')
-                  div(class='item_slot pull-right' id='hands_slot'
+                a(href="" rel="" id='Hands_link')
+                  div(class='item_slot pull-right' id='Hands_slot'
                       ng-click="set_slot('Hands')")
               .row
-                a(href="" rel="" id='neck_link')
-                  div(class='item_slot pull-left' id='neck_slot'
+                a(href="" rel="" id='Neck_link')
+                  div(class='item_slot pull-left' id='Neck_slot'
                       ng-click="set_slot('Neck')")
-                a(href="" rel="" id='waist_link')
-                  div(class='item_slot pull-right' id='waist_slot'
+                a(href="" rel="" id='Waist_link')
+                  div(class='item_slot pull-right' id='Waist_slot'
                       ng-click="set_slot('Waist')")
               .row
-                a(href="" rel="" id='shoulders_link')
-                  div(class='item_slot pull-left' id='shoulders_slot'
+                a(href="" rel="" id='Shoulders_link')
+                  div(class='item_slot pull-left' id='Shoulders_slot'
                       ng-click="set_slot('Shoulders')")
-                a(href="" rel="" id='legs_link')
-                  div(class='item_slot pull-right' id='legs_slot'
+                a(href="" rel="" id='Legs_link')
+                  div(class='item_slot pull-right' id='Legs_slot'
                       ng-click="set_slot('Legs')")
               .row
-                a(href="" rel="" id='back_link')
-                  div(class='item_slot pull-left' id='back_slot'
+                a(href="" rel="" id='Back_link')
+                  div(class='item_slot pull-left' id='Back_slot'
                       ng-click="set_slot('Back')")
-                a(href="" rel="" id='feet_link')
-                  div(class='item_slot pull-right' id='feet_slot'
+                a(href="" rel="" id='Feet_link')
+                  div(class='item_slot pull-right' id='Feet_slot'
                       ng-click="set_slot('Feet')")
               .row
-                a(href="" rel="" id='chest_link')
-                  div(class='item_slot pull-left' id='chest_slot'
+                a(href="" rel="" id='Chest_link')
+                  div(class='item_slot pull-left' id='Chest_slot'
                       ng-click="set_slot('Chest')")
-                a(href="" rel="" id='finger1_link')
-                  div(class='item_slot pull-right' id='finger1_slot'
+                a(href="" rel="" id='Finger1_link')
+                  div(class='item_slot pull-right' id='Finger1_slot'
                       ng-click="set_slot('Finger1')")
               .row
-                div(class='item_slot pull-left' id='shirt_slot')
+                div(class='item_slot pull-left' id='Shirt_slot')
                   img(src='/images/empty-slots/UI-EmptyShirt.png')
-                a(href="" rel="" id='finger2_link')
-                  div(class='item_slot pull-right' id='finger2_slot'
+                a(href="" rel="" id='Finger2_link')
+                  div(class='item_slot pull-right' id='Finger2_slot'
                       ng-click="set_slot('Finger2')")
               .row
-                div(class='item_slot pull-left' id='tabard_slot')
+                div(class='item_slot pull-left' id='Tabard_slot')
                   img(src='/images/empty-slots/UI-EmptyTabard.png')
-                a(href="" rel="" id='trinket1_link')
-                  div(class='item_slot pull-right' id='trinket1_slot'
+                a(href="" rel="" id='Trinket1_link')
+                  div(class='item_slot pull-right' id='Trinket1_slot'
                       ng-click="set_slot('Trinket1')")
               .row
-                a(href="" rel="" id='wrist_link')
-                  div(class='item_slot pull-left' id='wrist_slot'
+                a(href="" rel="" id='Wrist_link')
+                  div(class='item_slot pull-left' id='Wrist_slot'
                       ng-click="set_slot('Wrist')")
-                a(href="" rel="" id='trinket2_link')
-                  div(class='item_slot pull-right' id='trinket2_slot'
+                a(href="" rel="" id='Trinket2_link')
+                  div(class='item_slot pull-right' id='Trinket2_slot'
                       ng-click="set_slot('Trinket2')")
               .row
                 ul(class='list-inline')
-                  li: a(href="" rel="" id='mainhand_link')
-                    div(class='item_slot' id='mainhand_slot'
+                  li: a(href="" rel="" id='MainHand_link')
+                    div(class='item_slot' id='MainHand_slot'
                         ng-click="set_slot('MainHand')")
-                  li: a(href="" rel="" id='offhand_link')
-                    div(class='item_slot' id='offhand_slot'
+                  li: a(href="" rel="" id='OffHand_link')
+                    div(class='item_slot' id='OffHand_slot'
                         ng-click="set_slot('OffHand')")
-                  li: a(href="" rel="" id='ranged_link')
-                    div(class='item_slot' id='ranged_slot'
+                  li: a(href="" rel="" id='Ranged_link')
+                    div(class='item_slot' id='Ranged_slot'
                         ng-click="set_slot('Ranged')")
 
           div(class="col-lg-6 col-md-6 col-sm-6 col-xs-12")
@@ -117,6 +116,7 @@ html(ng-app='editApp' ng-cloak)
                             option Green
                             option Orange
                             option Purple
+                            option Meta
                         li Slot:
                         li: select(class='form-control' ng-model="slot")
                           option MainHand
@@ -149,20 +149,15 @@ html(ng-app='editApp' ng-cloak)
                         thead
                           tr(ng-style="{'background-color': 'white'}")
                             td
-                              a(href='' ng-click="orderByField='Name';reverseSort=!reverseSort") Name
-                            td
-                              a(href='' ng-click="orderByField='RequiredClasses';reverseSort=!reverseSort") Class
-                            td
-                              a(href='' ng-click="orderByField='ItemLevel';reverseSort=!reverseSort") Item Level
-                            td
-                              a(href='' ng-click="orderByField='Slot';reverseSort=!reverseSort") Slot
-                            td
-                              a(href='' ng-click="orderByField='Type';reverseSort=!reverseSort") Type
+                            td: a(href='' ng-click="orderByField='Name';reverseSort=!reverseSort") Name
+                            td: a(href='' ng-click="orderByField='RequiredClasses';reverseSort=!reverseSort") Class
+                            td: a(href='' ng-click="orderByField='ItemLevel';reverseSort=!reverseSort") Item Level
+                            td: a(href='' ng-click="orderByField='Slot';reverseSort=!reverseSort") Slot
+                            td: a(href='' ng-click="orderByField='Type';reverseSort=!reverseSort") Type
                         tbody
                             tr(ng-repeat="item in items | orderBy:orderByField:reverseSort"
                                ng-click='select_search_item(item)')
-                              td
-                                a(target="_blank" ng-href="http://db.warmane.com/wotlk/item={{item.Id}}")
+                              td: a(target="_blank" ng-href="http://db.warmane.com/wotlk/item={{item.Id}}")
                                   img(ng-src='http://wow.zamimg.com/images/wow' +
                                       '/icons/large/{{item.IconPath}}.jpg')
                               td(ng-style='item_quality(item.Quality)')
@@ -174,16 +169,16 @@ html(ng-app='editApp' ng-cloak)
                               td {{item.Slot}}
                               td {{item.Type}}
 
-                    input(type="submit" value='Unequip (R)' ng-click='unequip_item()'
+                    input(type="submit" value='Unequip' ng-click='unequip_item()'
                           class="unequip_item loginmodal-submit")
-                    input(type="submit" value='Equip (E)' ng-click='equip_item()'
+                    input(type="submit" value='Equip' ng-click='equip_item()'
                           class="equip_item loginmodal-submit")
-                    input(type="submit" value='Save (S)' ng-click='save_to_db()'
+                    input(type="submit" value='Save' ng-click='save_to_db()'
                           class="save_item loginmodal-submit")
                     br
                     br
                     ul(class='list-inline')
-                      li: a(href="http://db.warmane.com/wotlk/item=49623" rel="item=49623&ench=3789&gems=3549:3550:3572" id='selected_link')
+                      li: a(href="" rel="" id='selected_link')
                         div(class='item_slot' id='selected_slot')
 
                     ul(class='list-inline' ng-style='gem_view()')

@@ -1,0 +1,14 @@
+List of things that could be worked on:
+
+1.  Work on the 'rel' attribute for equipping.
+  - NOTE: IDs are dif for warmane and gems.json
+  - orange/green = 36592, red = 36593 - don't know rel (can leave this till last)
+
+2. Update stats when equipping a gem.
+
+3. Implement the unequipping function for gems.
+
+4.  Either change error/success messages to alerts or at least add fade
+    animation to it.
+
+5. Add an enchant tab.
