@@ -163,3 +163,13 @@ TODO:
 - Can gem items now
 - Save function now saves gems as well, and is loaded with character
 - Saved gems show up when you click item now as well
+
+----- 05/12/2017 ------
+------- v2.7.0 -------
+
+- Unequipping gems implemented
+- Some changes to gem, removed view functions for ng-show/if
+- Stat update for gems implemented
+- Fixes with equipping and unequipping rings/trinkets
+- Cannot equip gems in libram anymore if socket was previously selected
+- When unequipping an item, removes it's gems and gem's stats as well

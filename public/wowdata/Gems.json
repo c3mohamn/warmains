@@ -2197,5 +2197,24 @@
 			 "Name": "Trenchant Earthshatter Diamond",
 			 "Id": "44089",
 			 "Slot": "Meta"
+		},
+		{
+			"ItemLevel": "80",
+			"DisplayId": "0",
+			"DisplaySlot": "0",
+			"IconPath": "inv_misc_gem_pearl_12",
+			"Stats": {
+				 "Strength": "10",
+				 "Agility": "10",
+				 "Intellect": "10",
+				 "Spirit": "10"
+			},
+			"Quality": "Epic",
+			"Type": "None",
+			"Faction": "Neutral",
+			"SocketBonus": "none",
+			"Name": "Nightmare Tear",
+			"Id": "49110",
+			"Slot": "Prismatic"
 		}
 ]}

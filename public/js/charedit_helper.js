@@ -7,7 +7,8 @@ var char_name = url.pop();
 var user_name = url.pop();
 
 // Disables links from directing to another page - makes easier to select slots.
-$('.char_panel a, #selected_link, #socket1_link, #socket2_link, #socket3_link').click(function() {
+$('.char_panel a, #selected_link, #socket1_link, #socket2_link, ' +
+  '#socket3_link, #selected_gem_link').click(function() {
   return false;
 });
 
@@ -131,7 +132,8 @@ function is_weapon_slot(slot) {
  * An item is a gem if it's Slot value is a colour.
  */
 function is_gem_slot(slot) {
-  gems = ['Yellow', 'Red', 'Orange', 'Blue', 'Purple', 'Green', 'Meta'];
+  gems = ['Yellow', 'Red', 'Orange', 'Blue', 'Purple', 'Green', 'Meta',
+  'Prismatic'];
   return (gems.indexOf(slot) >= 0);
 }
 
@@ -338,10 +340,10 @@ function socket_item(slot, gem, socket) {
 
 /* Removes the icon img in the given slot. */
 function remove_slot_image(slot) {
-  slot = remove_trailing_number(slot);
+  slot1 = remove_trailing_number(slot);
 
   $('#' + slot + '_slot').css('background-image',
-    'url(/images/empty-slots/UI-Empty' + slot + '.png)');
+    'url(/images/empty-slots/UI-Empty' + slot1 + '.png)');
   $('#' + slot + '_link').attr('href', ''); // removes link as well
   $('#' + slot + '_link').attr('target', '');
 }

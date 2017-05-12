@@ -1,11 +1,5 @@
 {
-	"enchants": [
-		{
-			"Id": "0",
-			"Name": "No Enchant",
-			"Slot": "None",
-			"Stats": "none",
-		},
+	"items": [
 		{
 			"Id": "2999",
 			"Name": "Arcanum of the Defender",
