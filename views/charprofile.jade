@@ -89,16 +89,16 @@ html(ng-app='editApp' ng-cloak)
                   ul(class='list-inline')
                       li: input(type='submit' value='Gems'
                                 class="view_tab loginmodal-submit"
-                                ng-click="cur_view = 'gems'; reset_table()")
+                                ng-click="cur_view = 'gems'; reset_table()"
+                                ng-class="{'selected_view': cur_view == 'gems'}")
                       li: input(type='submit' value='Enchants'
                                 class="view_tab loginmodal-submit"
-                                ng-click="cur_view = 'enchants'; reset_table()")
+                                ng-click="cur_view = 'enchants'; reset_table()"
+                                ng-class="{'selected_view': cur_view == 'enchants'}")
                       li: input(type='submit' value='Items'
                                 class="view_tab loginmodal-submit"
-                                ng-click="cur_view = 'items'; reset_table()")
-                      li: input(type='submit' value='Stats'
-                                class="view_tab loginmodal-submit"
-                                ng-click="cur_view = 'stats'")
+                                ng-click="cur_view = 'items'; reset_table()"
+                                ng-class="{'selected_view': cur_view == 'items'}")
 
                 div(class='search_container' ng-show="cur_view != 'stats'")
                   .row
@@ -207,12 +207,14 @@ html(ng-app='editApp' ng-cloak)
               -else if(user)
                 h4 Viewing #{char} as #{user.username}.
 
-          div(class='stats_container' ng-hide="cur_view != 'stats'")
-            table(id='stats')
-              tbody
-                tr(ng-repeat='(key,val) in Stats')
-                  td {{key}}
-                  td {{val}}
+          div(class='clearfix visible sm')
+          div(class="col-lg-6 col-md-6 col-sm-6 col-xs-12")
+            div(class='stats_container')
+              table(id='stats')
+                tbody
+                  tr(ng-repeat='(key,val) in Stats')
+                    td {{key}}
+                    td {{val}}
 
       p(ng-if='!character') This character does not exist.
 

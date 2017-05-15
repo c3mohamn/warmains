@@ -7,16 +7,20 @@ a, a:hover {
   text-decoration: none;
 }
 
+.selected_row {
+  .class_icon {
+    opacity: 1;
+  }
+  background-color: rgba(66, 179, 244, .4);
+  transition: .5s;
+}
+
 .class_icon {
   width: 70px;
   height: 70px;
   opacity: .9;
 }
-.class_icon_sm {
-  width: 30px;
-  height: 30px;
-  opacity: .9;
-}
+
 .class_icon:hover, .class_icon_sm {
   opacity: 1;
 }
@@ -25,6 +29,13 @@ a, a:hover {
   min-height: 400px;
   max-height: 500px;
   overflow: auto;
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+   -khtml-user-select: none; /* Konqueror HTML */
+     -moz-user-select: none; /* Firefox */
+      -ms-user-select: none; /* Internet Explorer/Edge */
+          user-select: none; /* Non-prefixed version, currently
+                                supported by Chrome and Opera */
   h3 {
     font-family: wow-font;
     color: brown;

@@ -9,22 +9,26 @@ a, a:hover {
 
 .view_tab {
   width: 100px;
-  background-color: grey;
+  background-color: rgb(219, 219, 219);
   color:black;
   opacity: 1;
 }
 
-.selected_tab {
+.selected_view {
   background-color: white;
+  transition: background-color 0.5s;
 }
 
 .view_tab:hover {
   background-color: white;
+  transition: background-color 0.5s;
   opacity: 1;
 }
 
 .char_panel {
+  margin: 0 auto;
   max-width: 400px;
+  //border-style: solid;
   h1, h2, h3, h4, h5 {
     font-family: wow-font;
   }
@@ -87,6 +91,7 @@ a, a:hover {
   -webkit-box-shadow: inset 0 0 10px #fff;
   -moz-box-shadow: inset 0 0 10px #fff;
   box-shadow: inset 0 0 10px #fff;
+  transition: .3s;
 }
 
 .search_container {
@@ -107,6 +112,7 @@ a, a:hover {
   border-radius: 2px;
   tr:hover {
       background-color: grey;
+      transition: .3s;
   }
   tbody {
     background-color: #D9D9D9;
@@ -121,9 +127,13 @@ a, a:hover {
 }
 
 .stats_container {
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 3px;
   table {
     margin: 0 auto;
-    margin-top: 200px;
+    margin-top: 50px;
+    margin-bottom: 50px;
     td {
       width: 100px;
       height: 25px;
@@ -147,14 +157,16 @@ a, a:hover {
   border-style: solid;
   border-width: 2px;
   border-color: green;
-  background-color: grey;
+  background-color: rgb(224, 224, 224);
+  transition: .5s;
 }
 
 .equip_item:hover {
   border-style: solid;
   border-width: 2px;
   border-color: red;
-  background-color: grey;
+  background-color: rgb(224, 224, 224);
+  transition: .5s;
 }
 
 .unequip_item {
@@ -171,4 +183,5 @@ a, a:hover {
 
 .save_item:hover {
   background-color: black;
+  transition: .5s;
 }

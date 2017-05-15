@@ -1,19 +1,21 @@
 var charApp = angular.module("charApp", []);
 
 // doesn't work with ng-click there.
-$('#table1').on('click', '.table1r', function(event) {
+$('.table1').on('click', '.table1r', function(event) {
   console.log('DOES THIS DO ANYTHING.');
   $(this).addClass('bg-info').siblings().removeClass('bg-info');
 });
 
 
 charApp.controller('charctrl', ['$scope', '$http', function($scope, $http) {
+  $scope.selected_char = '';
+
     angular.element(document).ready(function () {
         $http.get('/character/findall/').then(function(response){
             $scope.characters = response.data;
         });
 
-        $scope.selected_char = '';
+        //$scope.selected_char = '';
 
         /* Mark the char as the currently selected character. */
         $scope.select_char = function(char) {

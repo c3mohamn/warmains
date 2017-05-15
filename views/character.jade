@@ -39,9 +39,10 @@ html(ng-app='charApp' ng-cloak)
             div(class="col-lg-6 col-md-6 col-sm-6 col-xs-12")
               h3 Your Characters
               h4(id='error-msg') {{message}}
-              div(class='existing_chars')
+              .existing_chars
                 table(ng-repeat='char in characters')
-                  tr(ng-click = 'select_char(char.name)' class='char_rows'
+                  tr(ng-click = 'select_char(char.name)'
+                     ng-class="{'selected_row': char.name == selected_char}"
                      ng-dblclick = 'redirect_edit()')
                     td: h3 {{char.name}}
                     td: a(ng-href='/character/profile/'
@@ -49,7 +50,6 @@ html(ng-app='charApp' ng-cloak)
                       img(ng-src='/images/class-icons/{{char.class}}.png'
                       class='class_icon pull-right')
 
-              p {{selected_char}}
               input(type="submit" value='delete' class="delete_char loginmodal-submit"
                     href="#" data-toggle="modal" data-target="#delete-char-modal")
               input(type="submit" value='edit' class="edit_char loginmodal-submit"
