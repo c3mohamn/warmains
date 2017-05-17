@@ -100,10 +100,34 @@ var class_wield_type = {
   }
 }
 
+var multiplier_to_stat = {
+  "BonusBlockValueMultiplier": "BlockValue",
+  "BonusIntellectMultiplier": "Intellect",
+  "BaseArmorMultiplier": "Armor",
+  "BonusStaminaMultiplier": "Stamina",
+  "BonusCritMultiplier": null,
+  "BonusSpellCritMultiplier": null,
+  "BonusCritHealMultiplier": null,
+  "SpellDamageTakenMultiplier": null,
+  "BonusManaMultiplier": null,
+  "ThreatReductionMultiplier": null,
+  "ThreatIncreaseMultiplier": null,
+  "BonusStrengthMultiplier": null,
+  "BonusFrostDamageMultiplier": null
+}
+
 // Stores the currently selected item.
 var selected_item = null;
 
           /* ------ FUNCTIONS ------ */
+
+/* Return true if the number entered is a valid number or undefined. */
+ function valid_number(num) {
+  if (num && isNaN(num))
+      return false;
+
+  return true;
+ }
 
 /* Removes the '1' or '2' at the end of slot if it exist.
  * Used mainly for finger/trinket slots to avoid errors.
@@ -137,6 +161,52 @@ function is_gem_slot(slot) {
   return (gems.indexOf(slot) >= 0);
 }
 
+/* Return true iff character already has item equipped in that slot. */
+function is_equipped(slot, item) {
+  if (char_items[slot]) {
+    if (char_items[slot].Id == item.Id) {
+      return true;
+    }
+  }
+  return false;
+}
+
+/* Return true iff the item is not already equipped in another slot.
+ * - Exceptions for certain rings/trinkets.
+ *
+ *  slot: the currently selected slot ($scope.slot).
+ *  item: the currently selected item (selected_item).
+ *  ~ Not all cases covered yet.
+ */
+function is_unique(slot, item) {
+
+  if (slot == 'Finger1') {
+    if (char_items.finger2)
+      if (char_items.finger2.Name == item.Name)
+        return true;
+  } else if (slot == 'Finger2') {
+    if (char_items.finger1)
+      if (char_items.finger1.Name == item.Name)
+        return true;
+  } else if (slot == 'Trinket1') {
+    if (char_items.trinket2) {
+      if (char_items.trinket2.Name != "Death's Choice" &&
+          char_items.trinket2.Name != "Death's Verdict") {
+            if (char_items.trinket2.Name == item.Name)
+              return true;
+          }
+    }
+  } else if (slot == 'Trinket2') {
+    if (char_items.trinket1) {
+      if (char_items.trinket1.Name != "Death's Choice" &&
+          char_items.trinket1.Name != "Death's Verdict") {
+            if (char_items.trinket1.Name == item.Name)
+              return true;
+          }
+    }
+  } else return false;
+}
+
 /* Return true iff user is trying to equip a TwoHand item in their OffHand
  * while already carrying a TwoHand item in their MainHand.
  * - Only exception is if the current character is a warrior.
@@ -163,14 +233,6 @@ function dual_twohand(slot, char) {
   if (item.RequiredClasses)
     if (item.RequiredClasses.toLowerCase().indexOf(char.class) < 0)
       return false;
-  return true;
- }
-
-/* Return true if the number entered is a valid number or undefined. */
- function valid_number(num) {
-  if (num && isNaN(num))
-      return false;
-
   return true;
  }
 
@@ -213,52 +275,6 @@ function compare_slot(slot, item, char) {
   return (case1 || case2 || case3 || case4) && case5 && case6;
 }
 
-/* Return true iff the item is not already equipped in another slot.
- * - Exceptions for certain rings/trinkets.
- *
- *  slot: the currently selected slot ($scope.slot).
- *  item: the currently selected item (selected_item).
- *  ~ Not all cases covered yet.
- */
-function is_unique(slot, item) {
-
-  if (slot == 'Finger1') {
-    if (char_items.finger2)
-      if (char_items.finger2.Name == item.Name)
-        return true;
-  } else if (slot == 'Finger2') {
-    if (char_items.finger1)
-      if (char_items.finger1.Name == item.Name)
-        return true;
-  } else if (slot == 'Trinket1') {
-    if (char_items.trinket2) {
-      if (char_items.trinket2.Name != "Death's Choice" &&
-          char_items.trinket2.Name != "Death's Verdict") {
-            if (char_items.trinket2.Name == item.Name)
-              return true;
-          }
-    }
-  } else if (slot == 'Trinket2') {
-    if (char_items.trinket1) {
-      if (char_items.trinket1.Name != "Death's Choice" &&
-          char_items.trinket1.Name != "Death's Verdict") {
-            if (char_items.trinket1.Name == item.Name)
-              return true;
-          }
-    }
-  } else return false;
-}
-
-/* Return true iff character already has item equipped in that slot. */
-function is_equipped(slot, item) {
-  if (char_items[slot]) {
-    if (char_items[slot].Id == item.Id) {
-      return true;
-    }
-  }
-  return false;
-}
-
 /* Setting the icon img of the corresponding slot to what is in char_items.
  * Also adds a link and tooltip for the item equipped into the slot.
  *
@@ -283,12 +299,6 @@ function set_gem_bg(socket, colour) {
     'url(/images/empty-slots/' + 'UI-' + colour + 'Socket' + '.png)');
 }
 
-/* Removes the background image for the socket. */
-function remove_gem_image(socket) {
-  $('#' + socket + '_slot').css('background-image',
-    'none');
-}
-
 /* Update the rel attribute of an item so we can see gems in item tooltip. */
 function set_slot_rel(slot) {
   var item_id = char_items[slot].Id;
@@ -304,6 +314,22 @@ function set_slot_rel(slot) {
     '&ench=' + ench + '&gems=' + sock1 + ':' + sock2 + ':' + sock3);
 }
 
+/* Removes the icon img in the given slot. */
+function remove_slot_image(slot) {
+  slot1 = remove_trailing_number(slot);
+
+  $('#' + slot + '_slot').css('background-image',
+    'url(/images/empty-slots/UI-Empty' + slot1 + '.png)');
+  $('#' + slot + '_link').attr('href', ''); // removes link as well
+  $('#' + slot + '_link').attr('target', '');
+}
+
+/* Removes the background image for the socket. */
+function remove_gem_image(socket) {
+  $('#' + socket + '_slot').css('background-image',
+    'none');
+}
+
 /* Check if we can put gem into socket.
  * Mainly for meta socket.
  */
@@ -313,16 +339,6 @@ function can_gem(gem, socket) {
   if (gem.Slot == 'Meta' && socket != 'Meta')
     return false;
   return true;
-}
-
-/* Removes the icon img in the given slot. */
-function remove_slot_image(slot) {
-  slot1 = remove_trailing_number(slot);
-
-  $('#' + slot + '_slot').css('background-image',
-    'url(/images/empty-slots/UI-Empty' + slot1 + '.png)');
-  $('#' + slot + '_link').attr('href', ''); // removes link as well
-  $('#' + slot + '_link').attr('target', '');
 }
 
 /* Return true iff char can equip item.
@@ -355,4 +371,26 @@ function can_wield(item, char) {
     return false;
   }
   return true;
+}
+
+/* Multiply character stats by multiplier.
+ *
+ * multipliers: the current multipliers active at the moment.
+ * stats: the current character stats
+ * reverse: true if multiplier is being removed (negative multiplier)
+ */
+function multiply_stats(multipliers, stats, reverse) {
+
+  for (var key in multipliers) {
+    if (multiplier_to_stat[key]) {
+      var stat = multiplier_to_stat[key];
+      var m_value = parseFloat(multipliers[key], 10);
+      var stat_value = 0;
+
+      if (reverse) m_value = m_value - 2 * m_value;
+      if (stats[stat]) stat_value = stats[stat];
+
+      stats[stat] = Math.round(stat_value * (1 + m_value));
+    }
+  }
 }

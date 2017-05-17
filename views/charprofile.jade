@@ -15,7 +15,6 @@ html(ng-app='editApp' ng-cloak)
               .row
                 h2(class='pull-center') {{character.name}}
                 h5(class='pull-center') {{character.class}}
-                p(class='pull-center') #{username}
 
                 a(href="" rel="" id='Head_link')
                   div(class='item_slot pull-left' id='Head_slot'
@@ -187,7 +186,7 @@ html(ng-app='editApp' ng-cloak)
                     ul(class='list-inline')
                       li: a(href="" rel="" id='selected_link')
                         div(class='item_slot' id='selected_slot')
-                      li(ng-hide="cur_view != 'gems'")
+                      li(ng-show="cur_view == 'gems' || cur_view == 'enchants'")
                         a(href="" rel="" id='selected_gem_link')
                           div(class='item_slot' id='selected_gem_slot')
 
@@ -206,7 +205,7 @@ html(ng-app='editApp' ng-cloak)
 
               -else if(user)
                 h4 Viewing #{char} as #{user.username}.
-
+          
           div(class='clearfix visible sm')
           div(class="col-lg-6 col-md-6 col-sm-6 col-xs-12")
             div(class='stats_container')

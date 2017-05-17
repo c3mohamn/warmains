@@ -1,12 +1,10 @@
 List of things that could be worked on:
 
-1.  'rel' is not updated when equipping items.
+1. 'rel' is not updated when equipping items.
 
 2. Will need to add enchant items actual ids
 
-3. Multipliers for meta gems and enchants
-
-4. Cleaner update stats functions
+3. Multipliers for enchants
 
 
 
@@ -15,3 +13,6 @@ Ideas:
 
 - GS
 - upload warmane armory character?
+- buffs with UI similiar to Wow, mainly just raid buffs
+  - flasks as well
+  - potions as well

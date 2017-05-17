@@ -182,6 +182,7 @@ TODO:
 - more visual changes, some transitions added
 
 ----- 05/17/2017 ------
-------- v2.7.3 --------
+------- v2.7.4 --------
 
 - enchantId's (tooltip id) for gems added, works only on char load atm
+- meta socket multipliers work.
