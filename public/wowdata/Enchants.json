@@ -1,7 +1,7 @@
 {
 	"items": [
 		{
-			"Id": "2999",
+			"enchantId": "2999",
 			"Name": "Arcanum of the Defender",
 			"Slot": "Head",
 			"Stats": {
@@ -10,7 +10,7 @@
 			}
 		},
 		{
-			"Id": "3818",
+			"enchantId": "3818",
 			"Name": "Arcanum of the Stalwart Protector",
 			"Slot": "Head",
 			"Stats": {
@@ -19,7 +19,7 @@
 			}
 		},
 		{
-			"Id": "2991",
+			"enchantId": "2991",
 			"Name": "Greater Inscription of the Knight",
 			"Slot": "Shoulders",
 			"Stats": {
@@ -28,7 +28,7 @@
 			}
 		},
 		{
-			"Id": "2990",
+			"enchantId": "2990",
 			"Name": "Inscription of the Knight",
 			"Slot": "Shoulders",
 			"Stats": {
@@ -36,7 +36,7 @@
 			}
 		},
 		{
-			"Id": "2978",
+			"enchantId": "2978",
 			"Name": "Greater Inscription of Warding",
 			"Slot": "Shoulders",
 			"Stats": {
@@ -45,7 +45,7 @@
 			}
 		},
 		{
-			"Id": "2977",
+			"enchantId": "2977",
 			"Name": "Inscription of Warding",
 			"Slot": "Shoulders",
 			"Stats": {
@@ -53,7 +53,7 @@
 			}
 		},
 		{
-			"Id": "368",
+			"enchantId": "368",
 			"Name": "Greater Agility",
 			"Slot": "Back",
 			"Stats": {
@@ -61,7 +61,7 @@
 			}
 		},
 		{
-			"Id": "983",
+			"enchantId": "983",
 			"Name": "Superior Agility",
 			"Slot": "Back",
 			"Stats": {
@@ -69,7 +69,7 @@
 			}
 		},
 		{
-			"Id": "1099",
+			"enchantId": "1099",
 			"Name": "Major Agility",
 			"Slot": "Back",
 			"Stats": {
@@ -77,7 +77,7 @@
 			}
 		},
 		{
-			"Id": "3256",
+			"enchantId": "3256",
 			"Name": "Shadow Armor",
 			"Slot": "Back",
 			"Stats": {
@@ -85,7 +85,7 @@
 			}
 		},
 		{
-			"Id": "3825",
+			"enchantId": "3825",
 			"Name": "Speed",
 			"Slot": "Back",
 			"Stats": {
@@ -93,7 +93,7 @@
 			}
 		},
 		{
-			"Id": "3831",
+			"enchantId": "3831",
 			"Name": "Greater Speed",
 			"Slot": "Back",
 			"Stats": {
@@ -101,7 +101,7 @@
 			}
 		},
 		{
-			"Id": "2662",
+			"enchantId": "2662",
 			"Name": "Major Armor",
 			"Slot": "Back",
 			"Stats": {
@@ -109,7 +109,7 @@
 			}
 		},
 		{
-			"Id": "3294",
+			"enchantId": "3294",
 			"Name": "Mighty Armor",
 			"Slot": "Back",
 			"Stats": {
@@ -117,7 +117,7 @@
 			}
 		},
 		{
-			"Id": "2622",
+			"enchantId": "2622",
 			"Name": "Dodge",
 			"Slot": "Back",
 			"Stats": {
@@ -125,7 +125,7 @@
 			}
 		},
 		{
-			"Id": "2659",
+			"enchantId": "2659",
 			"Name": "Exceptional Health",
 			"Slot": "Chest",
 			"Stats": {
@@ -133,7 +133,7 @@
 			}
 		},
 		{
-			"Id": "3236",
+			"enchantId": "3236",
 			"Name": "Mighty Health",
 			"Slot": "Chest",
 			"Stats": {
@@ -141,7 +141,7 @@
 			}
 		},
 		{
-			"Id": "3297",
+			"enchantId": "3297",
 			"Name": "Super Health",
 			"Slot": "Chest",
 			"Stats": {
@@ -149,7 +149,7 @@
 			}
 		},
 		{
-			"Id": "2661",
+			"enchantId": "2661",
 			"Name": "Exceptional Stats",
 			"Slot": "Chest",
 			"Stats": {
@@ -161,7 +161,7 @@
 			}
 		},
 		{
-			"Id": "3252",
+			"enchantId": "3252",
 			"Name": "Super Stats",
 			"Slot": "Chest",
 			"Stats": {
@@ -173,7 +173,7 @@
 			}
 		},
 		{
-			"Id": "3832",
+			"enchantId": "3832",
 			"Name": "Powerful Stats",
 			"Slot": "Chest",
 			"Stats": {
@@ -185,7 +185,7 @@
 			}
 		},
 		{
-			"Id": "2933",
+			"enchantId": "2933",
 			"Name": "Major Resilience",
 			"Slot": "Chest",
 			"Stats": {
@@ -193,7 +193,7 @@
 			}
 		},
 		{
-			"Id": "3245",
+			"enchantId": "3245",
 			"Name": "Exceptional Resilience",
 			"Slot": "Chest",
 			"Stats": {
@@ -201,7 +201,7 @@
 			}
 		},
 		{
-			"Id": "1950",
+			"enchantId": "1950",
 			"Name": "Major Defense",
 			"Slot": "Chest",
 			"Stats": {
@@ -209,7 +209,7 @@
 			}
 		},
 		{
-			"Id": "1953",
+			"enchantId": "1953",
 			"Name": "Greater Defense",
 			"Slot": "Chest",
 			"Stats": {
@@ -217,7 +217,7 @@
 			}
 		},
 		{
-			"Id": "2649",
+			"enchantId": "2649",
 			"Name": "Fortitude",
 			"Slot": "Wrist",
 			"Stats": {
@@ -225,7 +225,7 @@
 			}
 		},
 		{
-			"Id": "1886",
+			"enchantId": "1886",
 			"Name": "Superior Stamina",
 			"Slot": "Wrist",
 			"Stats": {
@@ -233,7 +233,7 @@
 			}
 		},
 		{
-			"Id": "2648",
+			"enchantId": "2648",
 			"Name": "Major Defense",
 			"Slot": "Wrist",
 			"Stats": {
@@ -241,7 +241,7 @@
 			}
 		},
 		{
-			"Id": "1891",
+			"enchantId": "1891",
 			"Name": "Stats",
 			"Slot": "Wrist",
 			"Stats": {
@@ -253,7 +253,7 @@
 			}
 		},
 		{
-			"Id": "2661",
+			"enchantId": "2661",
 			"Name": "Greater Stats",
 			"Slot": "Wrist",
 			"Stats": {
@@ -265,7 +265,7 @@
 			}
 		},
 		{
-			"Id": "2564",
+			"enchantId": "2564",
 			"Name": "Superior Agility",
 			"Slot": "Hands",
 			"Stats": {
@@ -273,7 +273,7 @@
 			}
 		},
 		{
-			"Id": "3222",
+			"enchantId": "3222",
 			"Name": "Major Agility",
 			"Slot": "Hands",
 			"Stats": {
@@ -281,7 +281,7 @@
 			}
 		},
 		{
-			"Id": "3011",
+			"enchantId": "3011",
 			"Name": "Clefthide Leg Armor",
 			"Slot": "Legs",
 			"Stats": {
@@ -290,7 +290,7 @@
 			}
 		},
 		{
-			"Id": "3013",
+			"enchantId": "3013",
 			"Name": "Nethercleft Leg Armor",
 			"Slot": "Legs",
 			"Stats": {
@@ -299,7 +299,7 @@
 			}
 		},
 		{
-			"Id": "3325",
+			"enchantId": "3325",
 			"Name": "Jormungar Leg Armor",
 			"Slot": "Legs",
 			"Stats": {
@@ -308,7 +308,7 @@
 			}
 		},
 		{
-			"Id": "3822",
+			"enchantId": "3822",
 			"Name": "Frosthide Leg Armor",
 			"Slot": "Legs",
 			"Stats": {
@@ -317,7 +317,7 @@
 			}
 		},
 		{
-			"Id": "2939",
+			"enchantId": "2939",
 			"Name": "Cat's Swiftness",
 			"Slot": "Feet",
 			"Stats": {
@@ -326,7 +326,7 @@
 			}
 		},
 		{
-			"Id": "2940",
+			"enchantId": "2940",
 			"Name": "Boar's Speed",
 			"Slot": "Feet",
 			"Stats": {
@@ -335,7 +335,7 @@
 			}
 		},
 		{
-			"Id": "3232",
+			"enchantId": "3232",
 			"Name": "Tuskarr's Vitality",
 			"Slot": "Feet",
 			"Stats": {
@@ -344,7 +344,7 @@
 			}
 		},
 		{
-			"Id": "2657",
+			"enchantId": "2657",
 			"Name": "Dexterity",
 			"Slot": "Feet",
 			"Stats": {
@@ -352,7 +352,7 @@
 			}
 		},
 		{
-			"Id": "983",
+			"enchantId": "983",
 			"Name": "Superior Agility",
 			"Slot": "Feet",
 			"Stats": {
@@ -360,7 +360,7 @@
 			}
 		},
 		{
-			"Id": "3824",
+			"enchantId": "3824",
 			"Name": "Assault",
 			"Slot": "Feet",
 			"Stats": {
@@ -368,7 +368,7 @@
 			}
 		},
 		{
-			"Id": "1597",
+			"enchantId": "1597",
 			"Name": "Greater Assault",
 			"Slot": "Feet",
 			"Stats": {
@@ -376,7 +376,7 @@
 			}
 		},
 		{
-			"Id": "2649",
+			"enchantId": "2649",
 			"Name": "Fortitude",
 			"Slot": "Feet",
 			"Stats": {
@@ -384,7 +384,7 @@
 			}
 		},
 		{
-			"Id": "1075",
+			"enchantId": "1075",
 			"Name": "Greater Fortitude",
 			"Slot": "Feet",
 			"Stats": {
@@ -392,7 +392,7 @@
 			}
 		},
 		{
-			"Id": "2931",
+			"enchantId": "2931",
 			"Name": "Stats",
 			"Slot": "Finger",
 			"Stats": {
@@ -404,7 +404,7 @@
 			}
 		},
 		{
-			"Id": "3791",
+			"enchantId": "3791",
 			"Name": "Stamina",
 			"Slot": "Finger",
 			"Stats": {
@@ -412,7 +412,7 @@
 			}
 		},
 		{
-			"Id": "2670",
+			"enchantId": "2670",
 			"Name": "Major Agility",
 			"Slot": "TwoHand",
 			"Stats": {
@@ -420,7 +420,7 @@
 			}
 		},
 		{
-			"Id": "2792",
+			"enchantId": "2792",
 			"Name": "Knothide Armor Kit",
 			"Slot": "Chest",
 			"Stats": {
@@ -428,7 +428,7 @@
 			}
 		},
 		{
-			"Id": "2792",
+			"enchantId": "2792",
 			"Name": "Knothide Armor Kit",
 			"Slot": "Legs",
 			"Stats": {
@@ -436,7 +436,7 @@
 			}
 		},
 		{
-			"Id": "2792",
+			"enchantId": "2792",
 			"Name": "Knothide Armor Kit",
 			"Slot": "Hands",
 			"Stats": {
@@ -444,7 +444,7 @@
 			}
 		},
 		{
-			"Id": "2792",
+			"enchantId": "2792",
 			"Name": "Knothide Armor Kit",
 			"Slot": "Feet",
 			"Stats": {
@@ -452,7 +452,7 @@
 			}
 		},
 		{
-			"Id": "3329",
+			"enchantId": "3329",
 			"Name": "Borean Armor Kit",
 			"Slot": "Chest",
 			"Stats": {
@@ -460,7 +460,7 @@
 			}
 		},
 		{
-			"Id": "3329",
+			"enchantId": "3329",
 			"Name": "Borean Armor Kit",
 			"Slot": "Legs",
 			"Stats": {
@@ -468,7 +468,7 @@
 			}
 		},
 		{
-			"Id": "3329",
+			"enchantId": "3329",
 			"Name": "Borean Armor Kit",
 			"Slot": "Hands",
 			"Stats": {
@@ -476,7 +476,7 @@
 			}
 		},
 		{
-			"Id": "3329",
+			"enchantId": "3329",
 			"Name": "Borean Armor Kit",
 			"Slot": "Feet",
 			"Stats": {
@@ -484,7 +484,7 @@
 			}
 		},
 		{
-			"Id": "3330",
+			"enchantId": "3330",
 			"Name": "Heavy Borean Armor Kit",
 			"Slot": "Chest",
 			"Stats": {
@@ -492,7 +492,7 @@
 			}
 		},
 		{
-			"Id": "3330",
+			"enchantId": "3330",
 			"Name": "Heavy Borean Armor Kit",
 			"Slot": "Legs",
 			"Stats": {
@@ -500,7 +500,7 @@
 			}
 		},
 		{
-			"Id": "3330",
+			"enchantId": "3330",
 			"Name": "Heavy Borean Armor Kit",
 			"Slot": "Hands",
 			"Stats": {
@@ -508,7 +508,7 @@
 			}
 		},
 		{
-			"Id": "3330",
+			"enchantId": "3330",
 			"Name": "Heavy Borean Armor Kit",
 			"Slot": "Feet",
 			"Stats": {
@@ -516,7 +516,7 @@
 			}
 		},
 		{
-			"Id": "3330",
+			"enchantId": "3330",
 			"Name": "Heavy Borean Armor Kit",
 			"Slot": "Head",
 			"Stats": {
@@ -524,7 +524,7 @@
 			}
 		},
 		{
-			"Id": "3330",
+			"enchantId": "3330",
 			"Name": "Heavy Borean Armor Kit",
 			"Slot": "Shoulders",
 			"Stats": {
@@ -532,7 +532,7 @@
 			}
 		},
 		{
-			"Id": "2793",
+			"enchantId": "2793",
 			"Name": "Vindicator's Armor Kit",
 			"Slot": "Chest",
 			"Stats": {
@@ -540,7 +540,7 @@
 			}
 		},
 		{
-			"Id": "2793",
+			"enchantId": "2793",
 			"Name": "Vindicator's Armor Kit",
 			"Slot": "Hands",
 			"Stats": {
@@ -548,7 +548,7 @@
 			}
 		},
 		{
-			"Id": "2793",
+			"enchantId": "2793",
 			"Name": "Vindicator's Armor Kit",
 			"Slot": "Legs",
 			"Stats": {
@@ -556,7 +556,7 @@
 			}
 		},
 		{
-			"Id": "2793",
+			"enchantId": "2793",
 			"Name": "Vindicator's Armor Kit",
 			"Slot": "Feet",
 			"Stats": {
@@ -564,7 +564,7 @@
 			}
 		},
 		{
-			"Id": "2841",
+			"enchantId": "2841",
 			"Name": "Heavy Knothide Armor Kit",
 			"Slot": "Head",
 			"Stats": {
@@ -572,7 +572,7 @@
 			}
 		},
 		{
-			"Id": "2841",
+			"enchantId": "2841",
 			"Name": "Heavy Knothide Armor Kit",
 			"Slot": "Chest",
 			"Stats": {
@@ -580,7 +580,7 @@
 			}
 		},
 		{
-			"Id": "2841",
+			"enchantId": "2841",
 			"Name": "Heavy Knothide Armor Kit",
 			"Slot": "Shoulders",
 			"Stats": {
@@ -588,7 +588,7 @@
 			}
 		},
 		{
-			"Id": "2841",
+			"enchantId": "2841",
 			"Name": "Heavy Knothide Armor Kit",
 			"Slot": "Legs",
 			"Stats": {
@@ -596,7 +596,7 @@
 			}
 		},
 		{
-			"Id": "2841",
+			"enchantId": "2841",
 			"Name": "Heavy Knothide Armor Kit",
 			"Slot": "Hands",
 			"Stats": {
@@ -604,7 +604,7 @@
 			}
 		},
 		{
-			"Id": "2841",
+			"enchantId": "2841",
 			"Name": "Heavy Knothide Armor Kit",
 			"Slot": "Feet",
 			"Stats": {
@@ -612,7 +612,7 @@
 			}
 		},
 		{
-			"Id": "3260",
+			"enchantId": "3260",
 			"Name": "Glove Reinforcements",
 			"Slot": "Hands",
 			"Stats": {
@@ -620,7 +620,7 @@
 			}
 		},
 		{
-			"Id": "1441",
+			"enchantId": "1441",
 			"Name": "Greater Shadow Resistance",
 			"Slot": "Back",
 			"Stats": {
@@ -628,7 +628,7 @@
 			}
 		},
 		{
-			"Id": "2543",
+			"enchantId": "2543",
 			"Name": "Arcanum of Rapidity",
 			"Slot": "Head",
 			"Stats": {
@@ -636,7 +636,7 @@
 			}
 		},
 		{
-			"Id": "3003",
+			"enchantId": "3003",
 			"Name": "Arcanum of Ferocity",
 			"Slot": "Head",
 			"Stats": {
@@ -645,7 +645,7 @@
 			}
 		},
 		{
-			"Id": "3817",
+			"enchantId": "3817",
 			"Name": "Arcanum of Torment",
 			"Slot": "Head",
 			"Stats": {
@@ -654,7 +654,7 @@
 			}
 		},
 		{
-			"Id": "3096",
+			"enchantId": "3096",
 			"Name": "Arcanum of the Outcast",
 			"Slot": "Head",
 			"Stats": {
@@ -663,7 +663,7 @@
 			}
 		},
 		{
-			"Id": "2716",
+			"enchantId": "2716",
 			"Name": "Fortitude of the Scourge",
 			"Slot": "Shoulders",
 			"Stats": {
@@ -672,7 +672,7 @@
 			}
 		},
 		{
-			"Id": "2717",
+			"enchantId": "2717",
 			"Name": "Might of the Scourge",
 			"Slot": "Shoulders",
 			"Stats": {
@@ -681,7 +681,7 @@
 			}
 		},
 		{
-			"Id": "2583",
+			"enchantId": "2583",
 			"Name": "Presence of Might",
 			"Slot": "Head",
 			"Stats": {
@@ -691,7 +691,7 @@
 			}
 		},
 		{
-			"Id": "2583",
+			"enchantId": "2583",
 			"Name": "Presence of Might",
 			"Slot": "Legs",
 			"Stats": {
@@ -701,7 +701,7 @@
 			}
 		},
 		{
-			"Id": "2997",
+			"enchantId": "2997",
 			"Name": "Greater Inscription of the Blade",
 			"Slot": "Shoulders",
 			"Stats": {
@@ -710,7 +710,7 @@
 			}
 		},
 		{
-			"Id": "2986",
+			"enchantId": "2986",
 			"Name": "Greater Inscription of Vengeance",
 			"Slot": "Shoulders",
 			"Stats": {
@@ -719,7 +719,7 @@
 			}
 		},
 		{
-			"Id": "2996",
+			"enchantId": "2996",
 			"Name": "Inscription of the Blade",
 			"Slot": "Shoulders",
 			"Stats": {
@@ -727,7 +727,7 @@
 			}
 		},
 		{
-			"Id": "2983",
+			"enchantId": "2983",
 			"Name": "Inscription of Vengeance",
 			"Slot": "Shoulders",
 			"Stats": {
@@ -735,7 +735,7 @@
 			}
 		},
 		{
-			"Id": "2606",
+			"enchantId": "2606",
 			"Name": "Zandalar Signet of Might",
 			"Slot": "Shoulders",
 			"Stats": {
@@ -743,7 +743,7 @@
 			}
 		},
 		{
-			"Id": "2647",
+			"enchantId": "2647",
 			"Name": "Brawn",
 			"Slot": "Wrist",
 			"Stats": {
@@ -751,7 +751,7 @@
 			}
 		},
 		{
-			"Id": "684",
+			"enchantId": "684",
 			"Name": "Major Strength",
 			"Slot": "Hands",
 			"Stats": {
@@ -759,7 +759,7 @@
 			}
 		},
 		{
-			"Id": "931",
+			"enchantId": "931",
 			"Name": "Minor Haste",
 			"Slot": "Hands",
 			"Stats": {
@@ -767,7 +767,7 @@
 			}
 		},
 		{
-			"Id": "3012",
+			"enchantId": "3012",
 			"Name": "Nethercobra Leg Armor",
 			"Slot": "Legs",
 			"Stats": {
@@ -776,7 +776,7 @@
 			}
 		},
 		{
-			"Id": "3010",
+			"enchantId": "3010",
 			"Name": "Cobrahide Leg Armor",
 			"Slot": "Legs",
 			"Stats": {
@@ -785,7 +785,7 @@
 			}
 		},
 		{
-			"Id": "3823",
+			"enchantId": "3823",
 			"Name": "Icescale Leg Armor",
 			"Slot": "Legs",
 			"Stats": {
@@ -794,7 +794,7 @@
 			}
 		},
 		{
-			"Id": "3326",
+			"enchantId": "3326",
 			"Name": "Nerubian Leg Armor",
 			"Slot": "Legs",
 			"Stats": {
@@ -803,7 +803,7 @@
 			}
 		},
 		{
-			"Id": "2658",
+			"enchantId": "2658",
 			"Name": "Surefooted",
 			"Slot": "Feet",
 			"Stats": {
@@ -812,7 +812,7 @@
 			}
 		},
 		{
-			"Id": "3826",
+			"enchantId": "3826",
 			"Name": "Icewalker",
 			"Slot": "Feet",
 			"Stats": {
@@ -821,7 +821,7 @@
 			}
 		},
 		{
-			"Id": "2929",
+			"enchantId": "2929",
 			"Name": "Striking",
 			"Slot": "Finger",
 			"Stats": {
@@ -829,7 +829,7 @@
 			}
 		},
 		{
-			"Id": "3839",
+			"enchantId": "3839",
 			"Name": "Assault",
 			"Slot": "Finger",
 			"Stats": {
@@ -837,7 +837,7 @@
 			}
 		},
 		{
-			"Id": "2667",
+			"enchantId": "2667",
 			"Name": "Savagery",
 			"Slot": "TwoHand",
 			"Stats": {
@@ -845,7 +845,7 @@
 			}
 		},
 		{
-			"Id": "3828",
+			"enchantId": "3828",
 			"Name": "Greater Savagery",
 			"Slot": "TwoHand",
 			"Stats": {
@@ -853,7 +853,7 @@
 			}
 		},
 		{
-			"Id": "3827",
+			"enchantId": "3827",
 			"Name": "Massacre",
 			"Slot": "TwoHand",
 			"Stats": {
@@ -861,7 +861,7 @@
 			}
 		},
 		{
-			"Id": "1593",
+			"enchantId": "1593",
 			"Name": "Assault",
 			"Slot": "Wrist",
 			"Stats": {
@@ -869,7 +869,7 @@
 			}
 		},
 		{
-			"Id": "1600",
+			"enchantId": "1600",
 			"Name": "Striking",
 			"Slot": "Wrist",
 			"Stats": {
@@ -877,7 +877,7 @@
 			}
 		},
 		{
-			"Id": "3845",
+			"enchantId": "3845",
 			"Name": "Greater Assault",
 			"Slot": "Wrist",
 			"Stats": {
@@ -885,7 +885,7 @@
 			}
 		},
 		{
-			"Id": "3231",
+			"enchantId": "3231",
 			"Name": "Expertise",
 			"Slot": "Wrist",
 			"Stats": {
@@ -893,7 +893,7 @@
 			}
 		},
 		{
-			"Id": "3829",
+			"enchantId": "3829",
 			"Name": "Greater Assault",
 			"Slot": "Hands",
 			"Stats": {
@@ -901,7 +901,7 @@
 			}
 		},
 		{
-			"Id": "1594",
+			"enchantId": "1594",
 			"Name": "Assault",
 			"Slot": "Hands",
 			"Stats": {
@@ -909,7 +909,7 @@
 			}
 		},
 		{
-			"Id": "1603",
+			"enchantId": "1603",
 			"Name": "Crusher",
 			"Slot": "Hands",
 			"Stats": {
@@ -917,7 +917,7 @@
 			}
 		},
 		{
-			"Id": "3231",
+			"enchantId": "3231",
 			"Name": "Expertise",
 			"Slot": "Hands",
 			"Stats": {
@@ -925,7 +925,7 @@
 			}
 		},
 		{
-			"Id": "3222",
+			"enchantId": "3222",
 			"Name": "Greater Agility",
 			"Slot": "OneHand",
 			"Stats": {
@@ -933,7 +933,7 @@
 			}
 		},
 		{
-			"Id": "1103",
+			"enchantId": "1103",
 			"Name": "Exceptional Agility",
 			"Slot": "OneHand",
 			"Stats": {
@@ -941,7 +941,7 @@
 			}
 		},
 		{
-			"Id": "2668",
+			"enchantId": "2668",
 			"Name": "Potency",
 			"Slot": "OneHand",
 			"Stats": {
@@ -949,7 +949,7 @@
 			}
 		},
 		{
-			"Id": "1606",
+			"enchantId": "1606",
 			"Name": "Greater Potency",
 			"Slot": "OneHand",
 			"Stats": {
@@ -957,7 +957,7 @@
 			}
 		},
 		{
-			"Id": "3833",
+			"enchantId": "3833",
 			"Name": "Superior Potency",
 			"Slot": "OneHand",
 			"Stats": {
@@ -965,7 +965,7 @@
 			}
 		},
 		{
-			"Id": "3731",
+			"enchantId": "3731",
 			"Name": "Titanium Weapon Chain",
 			"Slot": "OneHand",
 			"Stats": {
@@ -973,7 +973,7 @@
 			}
 		},
 		{
-			"Id": "3223",
+			"enchantId": "3223",
 			"Name": "Adamantite Weapon Chain",
 			"Slot": "OneHand",
 			"Stats": {
@@ -981,7 +981,7 @@
 			}
 		},
 		{
-			"Id": "2722",
+			"enchantId": "2722",
 			"Name": "Adamantite Scope",
 			"Slot": "Ranged",
 			"Stats": {
@@ -989,7 +989,7 @@
 			}
 		},
 		{
-			"Id": "2723",
+			"enchantId": "2723",
 			"Name": "Khorium Scope",
 			"Slot": "Ranged",
 			"Stats": {
@@ -997,7 +997,7 @@
 			}
 		},
 		{
-			"Id": "3843",
+			"enchantId": "3843",
 			"Name": "Diamond-cut Refractor Scope",
 			"Slot": "Ranged",
 			"Stats": {
@@ -1005,7 +1005,7 @@
 			}
 		},
 		{
-			"Id": "3608",
+			"enchantId": "3608",
 			"Name": "Heartseeker Scope",
 			"Slot": "Ranged",
 			"Stats": {
@@ -1013,7 +1013,7 @@
 			}
 		},
 		{
-			"Id": "2724",
+			"enchantId": "2724",
 			"Name": "Stabilized Eternium Scope",
 			"Slot": "Ranged",
 			"Stats": {
@@ -1021,7 +1021,7 @@
 			}
 		},
 		{
-			"Id": "3607",
+			"enchantId": "3607",
 			"Name": "Sun Scope",
 			"Slot": "Ranged",
 			"Stats": {
@@ -1029,7 +1029,7 @@
 			}
 		},
 		{
-			"Id": "2621",
+			"enchantId": "2621",
 			"Name": "Subtlety",
 			"Slot": "Back",
 			"Stats": {
@@ -1037,7 +1037,7 @@
 			}
 		},
 		{
-			"Id": "3296",
+			"enchantId": "3296",
 			"Name": "Wisdom",
 			"Slot": "Back",
 			"Stats": {
@@ -1046,7 +1046,7 @@
 			}
 		},
 		{
-			"Id": "2613",
+			"enchantId": "2613",
 			"Name": "Threat",
 			"Slot": "Hands",
 			"Stats": {
@@ -1054,7 +1054,7 @@
 			}
 		},
 		{
-			"Id": "3253",
+			"enchantId": "3253",
 			"Name": "Armsman",
 			"Slot": "Hands",
 			"Stats": {
@@ -1063,7 +1063,7 @@
 			}
 		},
 		{
-			"Id": "2650",
+			"enchantId": "2650",
 			"Name": "Spellpower",
 			"Slot": "Wrist",
 			"Stats": {
@@ -1071,7 +1071,7 @@
 			}
 		},
 		{
-			"Id": "2332",
+			"enchantId": "2332",
 			"Name": "Superior Spellpower",
 			"Slot": "Wrist",
 			"Stats": {
@@ -1079,7 +1079,7 @@
 			}
 		},
 		{
-			"Id": "2326",
+			"enchantId": "2326",
 			"Name": "Greater Spellpower",
 			"Slot": "Wrist",
 			"Stats": {
@@ -1087,7 +1087,7 @@
 			}
 		},
 		{
-			"Id": "2937",
+			"enchantId": "2937",
 			"Name": "Major Spellpower",
 			"Slot": "Hands",
 			"Stats": {
@@ -1095,7 +1095,7 @@
 			}
 		},
 		{
-			"Id": "3246",
+			"enchantId": "3246",
 			"Name": "Exceptional Spellpower",
 			"Slot": "Hands",
 			"Stats": {
@@ -1103,7 +1103,7 @@
 			}
 		},
 		{
-			"Id": "2935",
+			"enchantId": "2935",
 			"Name": "Precise Strikes",
 			"Slot": "Hands",
 			"Stats": {
@@ -1111,7 +1111,7 @@
 			}
 		},
 		{
-			"Id": "3234",
+			"enchantId": "3234",
 			"Name": "Precision",
 			"Slot": "Hands",
 			"Stats": {
@@ -1119,7 +1119,7 @@
 			}
 		},
 		{
-			"Id": "2928",
+			"enchantId": "2928",
 			"Name": "Spellpower",
 			"Slot": "Finger",
 			"Stats": {
@@ -1127,7 +1127,7 @@
 			}
 		},
 		{
-			"Id": "3840",
+			"enchantId": "3840",
 			"Name": "Greater Spellpower",
 			"Slot": "Finger",
 			"Stats": {
@@ -1135,7 +1135,7 @@
 			}
 		},
 		{
-			"Id": "2669",
+			"enchantId": "2669",
 			"Name": "Major Spellpower",
 			"Slot": "OneHand",
 			"Stats": {
@@ -1143,7 +1143,7 @@
 			}
 		},
 		{
-			"Id": "3830",
+			"enchantId": "3830",
 			"Name": "Exceptional Spellpower",
 			"Slot": "OneHand",
 			"Stats": {
@@ -1151,7 +1151,7 @@
 			}
 		},
 		{
-			"Id": "3834",
+			"enchantId": "3834",
 			"Name": "Mighty Spellpower",
 			"Slot": "OneHand",
 			"Stats": {
@@ -1159,7 +1159,7 @@
 			}
 		},
 		{
-			"Id": "3788",
+			"enchantId": "3788",
 			"Name": "Accuracy",
 			"Slot": "OneHand",
 			"Stats": {
@@ -1168,7 +1168,7 @@
 			}
 		},
 		{
-			"Id": "2666",
+			"enchantId": "2666",
 			"Name": "Major Intellect",
 			"Slot": "OneHand",
 			"Stats": {
@@ -1176,7 +1176,7 @@
 			}
 		},
 		{
-			"Id": "3844",
+			"enchantId": "3844",
 			"Name": "Exceptional Spirit",
 			"Slot": "OneHand",
 			"Stats": {
@@ -1184,7 +1184,7 @@
 			}
 		},
 		{
-			"Id": "2679",
+			"enchantId": "2679",
 			"Name": "Restore Mana Prime",
 			"Slot": "Wrist",
 			"Stats": {
@@ -1192,7 +1192,7 @@
 			}
 		},
 		{
-			"Id": "1147",
+			"enchantId": "1147",
 			"Name": "Major Spirit",
 			"Slot": "Wrist",
 			"Stats": {
@@ -1200,7 +1200,7 @@
 			}
 		},
 		{
-			"Id": "3872",
+			"enchantId": "3872",
 			"Name": "Sanctified Spellthread",
 			"Slot": "Legs",
 			"Stats": {
@@ -1209,7 +1209,7 @@
 			}
 		},
 		{
-			"Id": "2748",
+			"enchantId": "2748",
 			"Name": "Runic Spellthread",
 			"Slot": "Legs",
 			"Stats": {
@@ -1218,7 +1218,7 @@
 			}
 		},
 		{
-			"Id": "2747",
+			"enchantId": "2747",
 			"Name": "Mystic Spellthread",
 			"Slot": "Legs",
 			"Stats": {
@@ -1227,7 +1227,7 @@
 			}
 		},
 		{
-			"Id": "3719",
+			"enchantId": "3719",
 			"Name": "Brilliant Spellthread",
 			"Slot": "Legs",
 			"Stats": {
@@ -1236,7 +1236,7 @@
 			}
 		},
 		{
-			"Id": "3721",
+			"enchantId": "3721",
 			"Name": "Sapphire Spellthread",
 			"Slot": "Legs",
 			"Stats": {
@@ -1245,7 +1245,7 @@
 			}
 		},
 		{
-			"Id": "3718",
+			"enchantId": "3718",
 			"Name": "Shining Spellthread",
 			"Slot": "Legs",
 			"Stats": {
@@ -1254,7 +1254,7 @@
 			}
 		},
 		{
-			"Id": "3720",
+			"enchantId": "3720",
 			"Name": "Azure Spellthread",
 			"Slot": "Legs",
 			"Stats": {
@@ -1263,7 +1263,7 @@
 			}
 		},
 		{
-			"Id": "2982",
+			"enchantId": "2982",
 			"Name": "Greater Inscription of Discipline",
 			"Slot": "Shoulders",
 			"Stats": {
@@ -1272,7 +1272,7 @@
 			}
 		},
 		{
-			"Id": "2995",
+			"enchantId": "2995",
 			"Name": "Greater Inscription of the Orb",
 			"Slot": "Shoulders",
 			"Stats": {
@@ -1281,7 +1281,7 @@
 			}
 		},
 		{
-			"Id": "2981",
+			"enchantId": "2981",
 			"Name": "Inscription of Discipline",
 			"Slot": "Shoulders",
 			"Stats": {
@@ -1289,7 +1289,7 @@
 			}
 		},
 		{
-			"Id": "2994",
+			"enchantId": "2994",
 			"Name": "Inscription of the Orb",
 			"Slot": "Shoulders",
 			"Stats": {
@@ -1297,7 +1297,7 @@
 			}
 		},
 		{
-			"Id": "3002",
+			"enchantId": "3002",
 			"Name": "Arcanum of Power",
 			"Slot": "Head",
 			"Stats": {
@@ -1306,7 +1306,7 @@
 			}
 		},
 		{
-			"Id": "3820",
+			"enchantId": "3820",
 			"Name": "Arcanum of Burning Mysteries",
 			"Slot": "Head",
 			"Stats": {
@@ -1315,7 +1315,7 @@
 			}
 		},
 		{
-			"Id": "3797",
+			"enchantId": "3797",
 			"Name": "Arcanum of Dominance",
 			"Slot": "Head",
 			"Stats": {
@@ -1324,7 +1324,7 @@
 			}
 		},
 		{
-			"Id": "2671",
+			"enchantId": "2671",
 			"Name": "Sunfire",
 			"Slot": "OneHand",
 			"Stats": {
@@ -1333,7 +1333,7 @@
 			}
 		},
 		{
-			"Id": "2672",
+			"enchantId": "2672",
 			"Name": "Soulfrost",
 			"Slot": "OneHand",
 			"Stats": {
@@ -1342,7 +1342,7 @@
 			}
 		},
 		{
-			"Id": "2938",
+			"enchantId": "2938",
 			"Name": "Spell Penetration",
 			"Slot": "Back",
 			"Stats": {
@@ -1350,7 +1350,7 @@
 			}
 		},
 		{
-			"Id": "3243",
+			"enchantId": "3243",
 			"Name": "Spell Piercing",
 			"Slot": "Back",
 			"Stats": {
@@ -1358,7 +1358,7 @@
 			}
 		},
 		{
-			"Id": "3244",
+			"enchantId": "3244",
 			"Name": "Greater Vitality",
 			"Slot": "Feet",
 			"Stats": {
@@ -1367,7 +1367,7 @@
 			}
 		},
 		{
-			"Id": "2656",
+			"enchantId": "2656",
 			"Name": "Vitality",
 			"Slot": "Feet",
 			"Stats": {
@@ -1376,7 +1376,7 @@
 			}
 		},
 		{
-			"Id": "369",
+			"enchantId": "369",
 			"Name": "Major Intellect",
 			"Slot": "Wrist",
 			"Stats": {
@@ -1384,7 +1384,7 @@
 			}
 		},
 		{
-			"Id": "1119",
+			"enchantId": "1119",
 			"Name": "Exceptional Intellect",
 			"Slot": "Wrist",
 			"Stats": {
@@ -1392,7 +1392,7 @@
 			}
 		},
 		{
-			"Id": "1144",
+			"enchantId": "1144",
 			"Name": "Major Spirit",
 			"Slot": "Chest",
 			"Stats": {
@@ -1400,7 +1400,7 @@
 			}
 		},
 		{
-			"Id": "851",
+			"enchantId": "851",
 			"Name": "Spirit",
 			"Slot": "Feet",
 			"Stats": {
@@ -1408,7 +1408,7 @@
 			}
 		},
 		{
-			"Id": "1147",
+			"enchantId": "1147",
 			"Name": "Greater Spirit",
 			"Slot": "Feet",
 			"Stats": {
@@ -1416,7 +1416,7 @@
 			}
 		},
 		{
-			"Id": "3001",
+			"enchantId": "3001",
 			"Name": "Arcanum of Renewal",
 			"Slot": "Head",
 			"Stats": {
@@ -1425,7 +1425,7 @@
 			}
 		},
 		{
-			"Id": "3819",
+			"enchantId": "3819",
 			"Name": "Arcanum of Blissful Mending",
 			"Slot": "Head",
 			"Stats": {
@@ -1434,7 +1434,7 @@
 			}
 		},
 		{
-			"Id": "3150",
+			"enchantId": "3150",
 			"Name": "Restore Mana Prime",
 			"Slot": "Chest",
 			"Stats": {
@@ -1442,7 +1442,7 @@
 			}
 		},
 		{
-			"Id": "2381",
+			"enchantId": "2381",
 			"Name": "Greater Mana Restoration",
 			"Slot": "Chest",
 			"Stats": {
@@ -1450,7 +1450,7 @@
 			}
 		},
 		{
-			"Id": "3233",
+			"enchantId": "3233",
 			"Name": "Exceptional Mana",
 			"Slot": "Chest",
 			"Stats": {
@@ -1458,7 +1458,7 @@
 			}
 		},
 		{
-			"Id": "2980",
+			"enchantId": "2980",
 			"Name": "Greater Inscription of Faith",
 			"Slot": "Shoulders",
 			"Stats": {
@@ -1467,7 +1467,7 @@
 			}
 		},
 		{
-			"Id": "2993",
+			"enchantId": "2993",
 			"Name": "Greater Inscription of the Oracle",
 			"Slot": "Shoulders",
 			"Stats": {
@@ -1476,7 +1476,7 @@
 			}
 		},
 		{
-			"Id": "2979",
+			"enchantId": "2979",
 			"Name": "Inscription of Faith",
 			"Slot": "Shoulders",
 			"Stats": {
@@ -1484,7 +1484,7 @@
 			}
 		},
 		{
-			"Id": "2992",
+			"enchantId": "2992",
 			"Name": "Inscription of the Oracle",
 			"Slot": "Shoulders",
 			"Stats": {
@@ -1492,7 +1492,7 @@
 			}
 		},
 		{
-			"Id": "2604",
+			"enchantId": "2604",
 			"Name": "Zandalar Signet of Serenity",
 			"Slot": "Shoulders",
 			"Stats": {
@@ -1500,7 +1500,7 @@
 			}
 		},
 		{
-			"Id": "2322",
+			"enchantId": "2322",
 			"Name": "Major Healing",
 			"Slot": "Hands",
 			"Stats": {
@@ -1508,7 +1508,7 @@
 			}
 		},
 		{
-			"Id": "2934",
+			"enchantId": "2934",
 			"Name": "Blasting",
 			"Slot": "Hands",
 			"Stats": {
@@ -1516,7 +1516,7 @@
 			}
 		},
 		{
-			"Id": "3249",
+			"enchantId": "3249",
 			"Name": "Greater Blasting",
 			"Slot": "Hands",
 			"Stats": {
@@ -1524,7 +1524,7 @@
 			}
 		},
 		{
-			"Id": "2746",
+			"enchantId": "2746",
 			"Name": "Golden Spellthread",
 			"Slot": "Legs",
 			"Stats": {
@@ -1533,7 +1533,7 @@
 			}
 		},
 		{
-			"Id": "2745",
+			"enchantId": "2745",
 			"Name": "Silver Spellthread",
 			"Slot": "Legs",
 			"Stats": {
@@ -1542,7 +1542,7 @@
 			}
 		},
 		{
-			"Id": "2794",
+			"enchantId": "2794",
 			"Name": "Magister's Armor Kit",
 			"Slot": "Chest",
 			"Stats": {
@@ -1550,7 +1550,7 @@
 			}
 		},
 		{
-			"Id": "2794",
+			"enchantId": "2794",
 			"Name": "Magister's Armor Kit",
 			"Slot": "Feet",
 			"Stats": {
@@ -1558,7 +1558,7 @@
 			}
 		},
 		{
-			"Id": "2794",
+			"enchantId": "2794",
 			"Name": "Magister's Armor Kit",
 			"Slot": "Legs",
 			"Stats": {
@@ -1566,7 +1566,7 @@
 			}
 		},
 		{
-			"Id": "2794",
+			"enchantId": "2794",
 			"Name": "Magister's Armor Kit",
 			"Slot": "Hands",
 			"Stats": {
@@ -1574,7 +1574,7 @@
 			}
 		},
 		{
-			"Id": "2930",
+			"enchantId": "2930",
 			"Name": "Healing Power",
 			"Slot": "Finger",
 			"Stats": {
@@ -1582,7 +1582,7 @@
 			}
 		},
 		{
-			"Id": "2343",
+			"enchantId": "2343",
 			"Name": "Major Healing",
 			"Slot": "OneHand",
 			"Stats": {
@@ -1590,7 +1590,7 @@
 			}
 		},
 		{
-			"Id": "2654",
+			"enchantId": "2654",
 			"Name": "Intellect",
 			"Slot": "OffHand",
 			"Stats": {
@@ -1598,7 +1598,7 @@
 			}
 		},
 		{
-			"Id": "1128",
+			"enchantId": "1128",
 			"Name": "Greater Intellect",
 			"Slot": "OffHand",
 			"Stats": {
@@ -1606,7 +1606,7 @@
 			}
 		},
 		{
-			"Id": "2617",
+			"enchantId": "2617",
 			"Name": "Superior Healing",
 			"Slot": "Wrist",
 			"Stats": {
@@ -1614,7 +1614,7 @@
 			}
 		},
 		{
-			"Id": "2648",
+			"enchantId": "2648",
 			"Name": "Steelweave",
 			"Slot": "Back",
 			"Stats": {
@@ -1622,7 +1622,7 @@
 			}
 		},
 		{
-			"Id": "1951",
+			"enchantId": "1951",
 			"Name": "Titanweave",
 			"Slot": "Back",
 			"Stats": {
@@ -1630,7 +1630,7 @@
 			}
 		},
 		{
-			"Id": "3004",
+			"enchantId": "3004",
 			"Name": "Arcanum of the Gladiator",
 			"Slot": "Head",
 			"Stats": {
@@ -1639,7 +1639,7 @@
 			}
 		},
 		{
-			"Id": "3842",
+			"enchantId": "3842",
 			"Name": "Arcanum of the Savage Gladiator",
 			"Slot": "Head",
 			"Stats": {
@@ -1648,7 +1648,7 @@
 			}
 		},
 		{
-			"Id": "3795",
+			"enchantId": "3795",
 			"Name": "Arcanum of Triumph",
 			"Slot": "Head",
 			"Stats": {
@@ -1657,7 +1657,7 @@
 			}
 		},
 		{
-			"Id": "3793",
+			"enchantId": "3793",
 			"Name": "Inscription of Triumph",
 			"Slot": "Shoulders",
 			"Stats": {
@@ -1666,7 +1666,7 @@
 			}
 		},
 		{
-			"Id": "3794",
+			"enchantId": "3794",
 			"Name": "Inscription of Dominance",
 			"Slot": "Shoulders",
 			"Stats": {
@@ -1675,7 +1675,7 @@
 			}
 		},
 		{
-			"Id": "3869",
+			"enchantId": "3869",
 			"Name": "Blade Ward",
 			"Slot": "OneHand",
 			"Stats": {
@@ -1695,7 +1695,7 @@
 			}
 		},
 		{
-			"Id": "3789",
+			"enchantId": "3789",
 			"Name": "Berserking",
 			"Slot": "OneHand",
 			"Stats": {
@@ -1716,7 +1716,7 @@
 			}
 		},
 		{
-			"Id": "3790",
+			"enchantId": "3790",
 			"Name": "Black Magic",
 			"Slot": "OneHand",
 			"Stats": {
@@ -1746,7 +1746,7 @@
 			}
 		},
 		{
-			"Id": "3225",
+			"enchantId": "3225",
 			"Name": "Executioner",
 			"Slot": "OneHand",
 			"Stats": {
@@ -1766,7 +1766,7 @@
 			}
 		},
 		{
-			"Id": "2673",
+			"enchantId": "2673",
 			"Name": "Mongoose",
 			"Slot": "OneHand",
 			"Stats": {
@@ -1787,7 +1787,7 @@
 			}
 		},
 		{
-			"Id": "3870",
+			"enchantId": "3870",
 			"Name": "Blood Draining",
 			"Slot": "OneHand",
 			"Stats": {
@@ -1819,7 +1819,7 @@
 			}
 		},
 		{
-			"Id": "3239",
+			"enchantId": "3239",
 			"Name": "Icebreaker",
 			"Slot": "OneHand",
 			"Stats": {
@@ -1839,7 +1839,7 @@
 			}
 		},
 		{
-			"Id": "2984",
+			"enchantId": "2984",
 			"Name": "Shadow Armor Kit",
 			"Slot": "Hands",
 			"Stats": {
@@ -1847,7 +1847,7 @@
 			}
 		},
 		{
-			"Id": "2984",
+			"enchantId": "2984",
 			"Name": "Shadow Armor Kit",
 			"Slot": "Feet",
 			"Stats": {
@@ -1855,7 +1855,7 @@
 			}
 		},
 		{
-			"Id": "2984",
+			"enchantId": "2984",
 			"Name": "Shadow Armor Kit",
 			"Slot": "Chest",
 			"Stats": {
@@ -1863,7 +1863,7 @@
 			}
 		},
 		{
-			"Id": "2984",
+			"enchantId": "2984",
 			"Name": "Shadow Armor Kit",
 			"Slot": "Legs",
 			"Stats": {
@@ -1871,7 +1871,7 @@
 			}
 		},
 		{
-			"Id": "2985",
+			"enchantId": "2985",
 			"Name": "Flame Armor Kit",
 			"Slot": "Hands",
 			"Stats": {
@@ -1879,7 +1879,7 @@
 			}
 		},
 		{
-			"Id": "2985",
+			"enchantId": "2985",
 			"Name": "Flame Armor Kit",
 			"Slot": "Feet",
 			"Stats": {
@@ -1887,7 +1887,7 @@
 			}
 		},
 		{
-			"Id": "2985",
+			"enchantId": "2985",
 			"Name": "Flame Armor Kit",
 			"Slot": "Chest",
 			"Stats": {
@@ -1895,7 +1895,7 @@
 			}
 		},
 		{
-			"Id": "2985",
+			"enchantId": "2985",
 			"Name": "Flame Armor Kit",
 			"Slot": "Legs",
 			"Stats": {
@@ -1903,7 +1903,7 @@
 			}
 		},
 		{
-			"Id": "2987",
+			"enchantId": "2987",
 			"Name": "Frost Armor Kit",
 			"Slot": "Hands",
 			"Stats": {
@@ -1911,7 +1911,7 @@
 			}
 		},
 		{
-			"Id": "2987",
+			"enchantId": "2987",
 			"Name": "Frost Armor Kit",
 			"Slot": "Feet",
 			"Stats": {
@@ -1919,7 +1919,7 @@
 			}
 		},
 		{
-			"Id": "2987",
+			"enchantId": "2987",
 			"Name": "Frost Armor Kit",
 			"Slot": "Chest",
 			"Stats": {
@@ -1927,7 +1927,7 @@
 			}
 		},
 		{
-			"Id": "2987",
+			"enchantId": "2987",
 			"Name": "Frost Armor Kit",
 			"Slot": "Legs",
 			"Stats": {
@@ -1935,7 +1935,7 @@
 			}
 		},
 		{
-			"Id": "2988",
+			"enchantId": "2988",
 			"Name": "Nature Armor Kit",
 			"Slot": "Hands",
 			"Stats": {
@@ -1943,7 +1943,7 @@
 			}
 		},
 		{
-			"Id": "2988",
+			"enchantId": "2988",
 			"Name": "Nature Armor Kit",
 			"Slot": "Feet",
 			"Stats": {
@@ -1951,7 +1951,7 @@
 			}
 		},
 		{
-			"Id": "2988",
+			"enchantId": "2988",
 			"Name": "Nature Armor Kit",
 			"Slot": "Chest",
 			"Stats": {
@@ -1959,7 +1959,7 @@
 			}
 		},
 		{
-			"Id": "2988",
+			"enchantId": "2988",
 			"Name": "Nature Armor Kit",
 			"Slot": "Legs",
 			"Stats": {
@@ -1967,7 +1967,7 @@
 			}
 		},
 		{
-			"Id": "2989",
+			"enchantId": "2989",
 			"Name": "Arcane Armor Kit",
 			"Slot": "Hands",
 			"Stats": {
@@ -1975,7 +1975,7 @@
 			}
 		},
 		{
-			"Id": "2989",
+			"enchantId": "2989",
 			"Name": "Arcane Armor Kit",
 			"Slot": "Feet",
 			"Stats": {
@@ -1983,7 +1983,7 @@
 			}
 		},
 		{
-			"Id": "2989",
+			"enchantId": "2989",
 			"Name": "Arcane Armor Kit",
 			"Slot": "Chest",
 			"Stats": {
@@ -1991,7 +1991,7 @@
 			}
 		},
 		{
-			"Id": "2989",
+			"enchantId": "2989",
 			"Name": "Arcane Armor Kit",
 			"Slot": "Legs",
 			"Stats": {
@@ -1999,7 +1999,7 @@
 			}
 		},
 		{
-			"Id": "3005",
+			"enchantId": "3005",
 			"Name": "Arcanum of Nature Warding",
 			"Slot": "Head",
 			"Stats": {
@@ -2007,7 +2007,7 @@
 			}
 		},
 		{
-			"Id": "3813",
+			"enchantId": "3813",
 			"Name": "Arcanum of Toxic Warding",
 			"Slot": "Head",
 			"Stats": {
@@ -2016,7 +2016,7 @@
 			}
 		},
 		{
-			"Id": "3006",
+			"enchantId": "3006",
 			"Name": "Arcanum of Arcane Warding",
 			"Slot": "Head",
 			"Stats": {
@@ -2024,7 +2024,7 @@
 			}
 		},
 		{
-			"Id": "3815",
+			"enchantId": "3815",
 			"Name": "Arcanum of the Eclipsed Moon",
 			"Slot": "Head",
 			"Stats": {
@@ -2033,7 +2033,7 @@
 			}
 		},
 		{
-			"Id": "3007",
+			"enchantId": "3007",
 			"Name": "Arcanum of Fire Warding",
 			"Slot": "Head",
 			"Stats": {
@@ -2041,7 +2041,7 @@
 			}
 		},
 		{
-			"Id": "3816",
+			"enchantId": "3816",
 			"Name": "Arcanum of the Flame's Soul",
 			"Slot": "Head",
 			"Stats": {
@@ -2050,7 +2050,7 @@
 			}
 		},
 		{
-			"Id": "3008",
+			"enchantId": "3008",
 			"Name": "Arcanum of Frost Warding",
 			"Slot": "Head",
 			"Stats": {
@@ -2058,7 +2058,7 @@
 			}
 		},
 		{
-			"Id": "3812",
+			"enchantId": "3812",
 			"Name": "Arcanum of the Frosty Soul",
 			"Slot": "Head",
 			"Stats": {
@@ -2067,7 +2067,7 @@
 			}
 		},
 		{
-			"Id": "3009",
+			"enchantId": "3009",
 			"Name": "Arcanum of Shadow Warding",
 			"Slot": "Head",
 			"Stats": {
@@ -2075,7 +2075,7 @@
 			}
 		},
 		{
-			"Id": "3814",
+			"enchantId": "3814",
 			"Name": "Arcanum of the Fleeing Shadow",
 			"Slot": "Head",
 			"Stats": {
@@ -2084,7 +2084,7 @@
 			}
 		},
 		{
-			"Id": "2998",
+			"enchantId": "2998",
 			"Name": "Inscription of Endurance",
 			"Slot": "Shoulders",
 			"Stats": {
@@ -2096,7 +2096,7 @@
 			}
 		},
 		{
-			"Id": "2664",
+			"enchantId": "2664",
 			"Name": "Major Resistance",
 			"Slot": "Back",
 			"Stats": {
@@ -2108,7 +2108,7 @@
 			}
 		},
 		{
-			"Id": "2619",
+			"enchantId": "2619",
 			"Name": "Greater Fire Resistance",
 			"Slot": "Back",
 			"Stats": {
@@ -2116,7 +2116,7 @@
 			}
 		},
 		{
-			"Id": "1262",
+			"enchantId": "1262",
 			"Name": "Superior Arcane Resistance",
 			"Slot": "Back",
 			"Stats": {
@@ -2124,7 +2124,7 @@
 			}
 		},
 		{
-			"Id": "1446",
+			"enchantId": "1446",
 			"Name": "Superior Shadow Resistance",
 			"Slot": "Back",
 			"Stats": {
@@ -2132,7 +2132,7 @@
 			}
 		},
 		{
-			"Id": "1354",
+			"enchantId": "1354",
 			"Name": "Superior Fire Resistance",
 			"Slot": "Back",
 			"Stats": {
@@ -2140,7 +2140,7 @@
 			}
 		},
 		{
-			"Id": "3230",
+			"enchantId": "3230",
 			"Name": "Superior Frost Resistance",
 			"Slot": "Back",
 			"Stats": {
@@ -2148,7 +2148,7 @@
 			}
 		},
 		{
-			"Id": "1400",
+			"enchantId": "1400",
 			"Name": "Superior Nature Resistance",
 			"Slot": "Back",
 			"Stats": {
@@ -2156,7 +2156,7 @@
 			}
 		},
 		{
-			"Id": "1505",
+			"enchantId": "1505",
 			"Name": "Lesser Arcanum of Resilience",
 			"Slot": "Head",
 			"Stats": {
@@ -2164,7 +2164,7 @@
 			}
 		},
 		{
-			"Id": "1505",
+			"enchantId": "1505",
 			"Name": "Lesser Arcanum of Resilience",
 			"Slot": "Legs",
 			"Stats": {
@@ -2172,7 +2172,7 @@
 			}
 		},
 		{
-			"Id": "1071",
+			"enchantId": "1071",
 			"Name": "Major Stamina",
 			"Slot": "OffHand",
 			"Stats": {
@@ -2180,7 +2180,7 @@
 			}
 		},
 		{
-			"Id": "2655",
+			"enchantId": "2655",
 			"Name": "Shield Block",
 			"Slot": "OffHand",
 			"Stats": {
@@ -2188,7 +2188,7 @@
 			}
 		},
 		{
-			"Id": "2653",
+			"enchantId": "2653",
 			"Name": "Tough Shield",
 			"Slot": "OffHand",
 			"Stats": {
@@ -2196,7 +2196,7 @@
 			}
 		},
 		{
-			"Id": "1952",
+			"enchantId": "1952",
 			"Name": "Defense",
 			"Slot": "OffHand",
 			"Stats": {
@@ -2204,7 +2204,7 @@
 			}
 		},
 		{
-			"Id": "3229",
+			"enchantId": "3229",
 			"Name": "Resilience",
 			"Slot": "OffHand",
 			"Stats": {
@@ -2212,7 +2212,7 @@
 			}
 		},
 		{
-			"Id": "2523",
+			"enchantId": "2523",
 			"Name": "Biznicks 247x128 Accurascope",
 			"Slot": "Ranged",
 			"Stats": {
@@ -2220,7 +2220,7 @@
 			}
 		},
 		{
-			"Id": "2721",
+			"enchantId": "2721",
 			"Name": "Power of the Scourge",
 			"Slot": "Shoulders",
 			"Stats": {
@@ -2229,7 +2229,7 @@
 			}
 		},
 		{
-			"Id": "2715",
+			"enchantId": "2715",
 			"Name": "Resilience of the Scourge",
 			"Slot": "Shoulders",
 			"Stats": {
@@ -2238,7 +2238,7 @@
 			}
 		},
 		{
-			"Id": "3808",
+			"enchantId": "3808",
 			"Name": "Greater Inscription of the Axe",
 			"Slot": "Shoulders",
 			"Stats": {
@@ -2247,7 +2247,7 @@
 			}
 		},
 		{
-			"Id": "3875",
+			"enchantId": "3875",
 			"Name": "Lesser Inscription of the Axe",
 			"Slot": "Shoulders",
 			"Stats": {
@@ -2256,7 +2256,7 @@
 			}
 		},
 		{
-			"Id": "3809",
+			"enchantId": "3809",
 			"Name": "Greater Inscription of the Crag",
 			"Slot": "Shoulders",
 			"Stats": {
@@ -2265,7 +2265,7 @@
 			}
 		},
 		{
-			"Id": "3807",
+			"enchantId": "3807",
 			"Name": "Lesser Inscription of the Crag",
 			"Slot": "Shoulders",
 			"Stats": {
@@ -2274,7 +2274,7 @@
 			}
 		},
 		{
-			"Id": "3811",
+			"enchantId": "3811",
 			"Name": "Greater Inscription of the Pinnacle",
 			"Slot": "Shoulders",
 			"Stats": {
@@ -2283,7 +2283,7 @@
 			}
 		},
 		{
-			"Id": "3876",
+			"enchantId": "3876",
 			"Name": "Lesser Inscription of the Pinnacle",
 			"Slot": "Shoulders",
 			"Stats": {
@@ -2292,7 +2292,7 @@
 			}
 		},
 		{
-			"Id": "3810",
+			"enchantId": "3810",
 			"Name": "Greater Inscription of the Storm",
 			"Slot": "Shoulders",
 			"Stats": {
@@ -2301,7 +2301,7 @@
 			}
 		},
 		{
-			"Id": "3806",
+			"enchantId": "3806",
 			"Name": "Lesser Inscription of the Storm",
 			"Slot": "Shoulders",
 			"Stats": {
@@ -2310,7 +2310,7 @@
 			}
 		},
 		{
-			"Id": "3835",
+			"enchantId": "3835",
 			"Name": "Master's Inscription of the Axe",
 			"Slot": "Shoulders",
 			"Stats": {
@@ -2319,7 +2319,7 @@
 			}
 		},
 		{
-			"Id": "3836",
+			"enchantId": "3836",
 			"Name": "Master's Inscription of the Crag",
 			"Slot": "Shoulders",
 			"Stats": {
@@ -2328,7 +2328,7 @@
 			}
 		},
 		{
-			"Id": "3837",
+			"enchantId": "3837",
 			"Name": "Master's Inscription of the Pinnacle",
 			"Slot": "Shoulders",
 			"Stats": {
@@ -2337,7 +2337,7 @@
 			}
 		},
 		{
-			"Id": "3838",
+			"enchantId": "3838",
 			"Name": "Master's Inscription of the Storm",
 			"Slot": "Shoulders",
 			"Stats": {
@@ -2346,7 +2346,7 @@
 			}
 		},
 		{
-			"Id": "3756",
+			"enchantId": "3756",
 			"Name": "Fur Lining - Attack Power",
 			"Slot": "Wrist",
 			"Stats": {
@@ -2354,7 +2354,7 @@
 			}
 		},
 		{
-			"Id": "3757",
+			"enchantId": "3757",
 			"Name": "Fur Lining - Stamina",
 			"Slot": "Wrist",
 			"Stats": {
@@ -2362,7 +2362,7 @@
 			}
 		},
 		{
-			"Id": "3758",
+			"enchantId": "3758",
 			"Name": "Fur Lining - Spell Power",
 			"Slot": "Wrist",
 			"Stats": {
@@ -2370,7 +2370,7 @@
 			}
 		},
 		{
-			"Id": "3759",
+			"enchantId": "3759",
 			"Name": "Fur Lining - Fire Resist",
 			"Slot": "Wrist",
 			"Stats": {
@@ -2378,7 +2378,7 @@
 			}
 		},
 		{
-			"Id": "3760",
+			"enchantId": "3760",
 			"Name": "Fur Lining - Frost Resist",
 			"Slot": "Wrist",
 			"Stats": {
@@ -2386,7 +2386,7 @@
 			}
 		},
 		{
-			"Id": "3761",
+			"enchantId": "3761",
 			"Name": "Fur Lining - Shadow Resist",
 			"Slot": "Wrist",
 			"Stats": {
@@ -2394,7 +2394,7 @@
 			}
 		},
 		{
-			"Id": "3762",
+			"enchantId": "3762",
 			"Name": "Fur Lining - Nature Resist",
 			"Slot": "Wrist",
 			"Stats": {
@@ -2402,7 +2402,7 @@
 			}
 		},
 		{
-			"Id": "3763",
+			"enchantId": "3763",
 			"Name": "Fur Lining - Arcane Resist",
 			"Slot": "Wrist",
 			"Stats": {
@@ -2410,7 +2410,7 @@
 			}
 		},
 		{
-			"Id": "3327",
+			"enchantId": "3327",
 			"Name": "Jormungar Leg Reinforcements",
 			"Slot": "Legs",
 			"Stats": {
@@ -2419,7 +2419,7 @@
 			}
 		},
 		{
-			"Id": "3328",
+			"enchantId": "3328",
 			"Name": "Nerubian Leg Reinforcements",
 			"Slot": "Legs",
 			"Stats": {
@@ -2428,7 +2428,7 @@
 			}
 		},
 		{
-			"Id": "3368",
+			"enchantId": "3368",
 			"Name": "Rune of the Fallen Crusader",
 			"Slot": "OneHand",
 			"Stats": {
@@ -2458,7 +2458,7 @@
 			}
 		},
 		{
-			"Id": "3370",
+			"enchantId": "3370",
 			"Name": "Rune of Razorice",
 			"Slot": "OneHand",
 			"Stats": {
@@ -2479,7 +2479,7 @@
 			}
 		},
 		{
-			"Id": "3369",
+			"enchantId": "3369",
 			"Name": "Rune of Cinderglacier",
 			"Slot": "OneHand",
 			"Stats": {
@@ -2499,7 +2499,7 @@
 			}
 		},
 		{
-			"Id": "3365",
+			"enchantId": "3365",
 			"Name": "Rune of Swordshattering",
 			"Slot": "TwoHand",
 			"Stats": {
@@ -2507,7 +2507,7 @@
 			}
 		},
 		{
-			"Id": "3594",
+			"enchantId": "3594",
 			"Name": "Rune of Swordbreaking",
 			"Slot": "OneHand",
 			"Stats": {
@@ -2515,7 +2515,7 @@
 			}
 		},
 		{
-			"Id": "3847",
+			"enchantId": "3847",
 			"Name": "Rune of the Stoneskin Gargoyle",
 			"Slot": "TwoHand",
 			"Stats": {
@@ -2524,7 +2524,7 @@
 			}
 		},
 		{
-			"Id": "3883",
+			"enchantId": "3883",
 			"Name": "Rune of the Nerubian Carapace",
 			"Slot": "OneHand",
 			"Stats": {
@@ -2533,7 +2533,7 @@
 			}
 		},
 		{
-			"Id": "3604",
+			"enchantId": "3604",
 			"Name": "Hyperspeed Accelerators",
 			"Slot": "Hands",
 			"Stats": {
@@ -2553,7 +2553,7 @@
 			}
 		},
 		{
-			"Id": "3860",
+			"enchantId": "3860",
 			"Name": "Reticulated Armor Webbing",
 			"Slot": "Hands",
 			"Stats": {
@@ -2561,7 +2561,7 @@
 			}
 		},
 		{
-			"Id": "3606",
+			"enchantId": "3606",
 			"Name": "Nitro Boosts",
 			"Slot": "Feet",
 			"Stats": {
@@ -2582,7 +2582,7 @@
 			}
 		},
 		{
-			"Id": "3878",
+			"enchantId": "3878",
 			"Name": "Mind Amplification Dish",
 			"Slot": "Head",
 			"Stats": {
@@ -2590,7 +2590,7 @@
 			}
 		},
 		{
-			"Id": "3859",
+			"enchantId": "3859",
 			"Name": "Springy Arachnoweave",
 			"Slot": "Back",
 			"Stats": {
@@ -2598,7 +2598,7 @@
 			}
 		},
 		{
-			"Id": "3605",
+			"enchantId": "3605",
 			"Name": "Flexweave Underlay",
 			"Slot": "Back",
 			"Stats": {
@@ -2606,7 +2606,7 @@
 			}
 		},
 		{
-			"Id": "3722",
+			"enchantId": "3722",
 			"Name": "Lightweave Embroidery",
 			"Slot": "Back",
 			"Stats": {
@@ -2627,7 +2627,7 @@
 			}
 		},
 		{
-			"Id": "3730",
+			"enchantId": "3730",
 			"Name": "Swordguard Embroidery",
 			"Slot": "Back",
 			"Stats": {
@@ -2647,7 +2647,7 @@
 			}
 		},
 		{
-			"Id": "3728",
+			"enchantId": "3728",
 			"Name": "Darkglow Embroidery",
 			"Slot": "Back",
 			"Stats": {
@@ -2667,7 +2667,7 @@
 			}
 		},
 		{
-			"Id": "3873",
+			"enchantId": "3873",
 			"Name": "Master's Spellthread",
 			"Slot": "Legs",
 			"Stats": {
@@ -2676,7 +2676,7 @@
 			}
 		},
 		{
-			"Id": "3850",
+			"enchantId": "3850",
 			"Name": "Major Stamina",
 			"Slot": "Wrist",
 			"Stats": {
@@ -2684,7 +2684,7 @@
 			}
 		},
 		{
-			"Id": "3849",
+			"enchantId": "3849",
 			"Name": "Titanium Plating",
 			"Slot": "OffHand",
 			"Stats": {
@@ -2692,7 +2692,7 @@
 			}
 		},
 		{
-			"Id": "3852",
+			"enchantId": "3852",
 			"Name": "Greater Inscription of the Gladiator",
 			"Slot": "Shoulders",
 			"Stats": {
@@ -2701,7 +2701,7 @@
 			}
 		},
 		{
-			"Id": "3854",
+			"enchantId": "3854",
 			"Name": "Greater Spellpower (Staff)",
 			"Slot": "TwoHand",
 			"Stats": {
@@ -2709,7 +2709,7 @@
 			}
 		},
 		{
-			"Id": "3855",
+			"enchantId": "3855",
 			"Name": "Spellpower (Staff)",
 			"Slot": "TwoHand",
 			"Stats": {
@@ -2717,7 +2717,7 @@
 			}
 		},
 		{
-			"Id": "3603",
+			"enchantId": "3603",
 			"Name": "Hand-Mounted Pyro Rocket",
 			"Slot": "Hands",
 			"Stats": {

@@ -296,25 +296,12 @@ function set_slot_rel(slot) {
   var sock1 = 0;
   var sock2 = 0;
   var sock3 = 0;
-  if (char_gems[slot].socket1) sock1 = alter_gem_id(char_gems[slot].socket1);
-  if (char_gems[slot].socket2) sock2 = alter_gem_id(char_gems[slot].socket2);
-  if (char_gems[slot].socket3) sock3 = alter_gem_id(char_gems[slot].socket3);
+  if (char_gems[slot].socket1) sock1 = char_gems[slot].socket1.enchantId;
+  if (char_gems[slot].socket2) sock2 = char_gems[slot].socket2.enchantId;
+  if (char_gems[slot].socket3) sock3 = char_gems[slot].socket3.enchantId;
 
   $('#' + slot + '_link').attr('rel', 'item=' + item_id +
-    '&ench=0' + '&gems=' + sock1 + ':' + sock2 + ':' + sock3);
-}
-
-/* Changes the gems id to match that of warmains gem rel link ids. */
-function alter_gem_id(gem) {
-  var cur_id = gem.Id;
-  if (gem.Slot == 'Red') {
-    return cur_id - 36593;
-  } else if (gem.Slot == 'Green' || gem.Slot == 'Orange') {
-    return cur_id - 36592;
-  } else if(gem.Slot == 'Purple') {
-    return cur_id - 36592;
-  }
-  return cur_id;
+    '&ench=' + ench + '&gems=' + sock1 + ':' + sock2 + ':' + sock3);
 }
 
 /* Check if we can put gem into socket.
@@ -326,16 +313,6 @@ function can_gem(gem, socket) {
   if (gem.Slot == 'Meta' && socket != 'Meta')
     return false;
   return true;
-}
-
-/* Sockets a gem.
- * Saves the gem to the corresponding slot in char_gems.
- * TODO:
- */
-function socket_item(slot, gem, socket) {
-  char_gems[slot][socket] = gem;
-  console.log(char_gems[slot]);
-  set_slot_image(socket, gem);
 }
 
 /* Removes the icon img in the given slot. */

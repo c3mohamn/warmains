@@ -194,10 +194,16 @@ editApp.controller('editctrl', ['$scope', '$http', function($scope, $http) {
             if (slot) {
               if (cur_socket) {
                 if (can_gem(item, $scope[cur_socket])) {
+
+                  // Socket gem, equip in tooltip, and update stats
                   $scope.update_stats(item, true, cur_socket);
-                  socket_item(slot, item, cur_socket);
+                  char_gems[slot][cur_socket] = item;
+                  console.log(char_gems[slot]);
+                  set_slot_image(cur_socket, item);
+                  set_slot_rel(slot);
                   $scope.success_msg = "You have socketed " + item.Name +
                   " into your " + slot + '.';
+
                 } else { $scope.error_msg = error_msg_10; }
               } else { $scope.error_msg = error_msg_9; }
             } else { $scope.error_msg = error_msg_8; }
@@ -214,7 +220,7 @@ editApp.controller('editctrl', ['$scope', '$http', function($scope, $http) {
                   if (!dual_twohand(slot, char)) {
                     if (!is_unique($scope.slot, item)) {
 
-                      // Equip the item, change icon image and update stats
+                      // Equip item, change icon image and update stats
                       $scope.update_stats(item, true, null);
                       char_items[$scope.slot] = item;
                       set_slot_image($scope.slot, item);
@@ -376,7 +382,7 @@ editApp.controller('editctrl', ['$scope', '$http', function($scope, $http) {
                   char_gems[slot].socket3 = gems.socket3;
                 }
 
-                //set_slot_rel(slot);
+                set_slot_rel(slot);
               }
             }
           }

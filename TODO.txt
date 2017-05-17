@@ -1,10 +1,17 @@
 List of things that could be worked on:
 
-1.  Work on the 'rel' attribute for equipping.
-  - NOTE: IDs are dif for warmane and gems.json
-  - orange/green = 36592, red = 36593 - don't know rel (can leave this till last)
+1.  'rel' is not updated when equipping items.
 
-2.  Either change error/success messages to alerts or at least add fade
-    animation to it.
+2. Will need to add enchant items actual ids
 
-3. Add an enchant tab.
+3. Multipliers for meta gems and enchants
+
+4. Cleaner update stats functions
+
+
+
+
+Ideas:
+
+- GS
+- upload warmane armory character?

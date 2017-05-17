@@ -180,3 +180,8 @@ TODO:
 - 'Visual' selection for character selection page
 - 'Visual' selection for cur_view in char profile page
 - more visual changes, some transitions added
+
+----- 05/17/2017 ------
+------- v2.7.3 --------
+
+- enchantId's (tooltip id) for gems added, works only on char load atm

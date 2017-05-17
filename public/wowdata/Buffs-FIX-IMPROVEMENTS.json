@@ -796,7 +796,6 @@
 			"Source": "Prot Paladin",
 			"SetThreshold": "0",
 			"Improvements": {
-				{
 					"Name": "Blessing of Sanctuary (Str/Sta Bonus)",
 					"Group": "Stat Multiplier",
 					"Stats": {
@@ -837,8 +836,7 @@
 					"ConflictingBuffs": {
 						"string": "SanctuaryKings"
 					}
-				}
-			},
+				},
 			"IsTargetDebuff": "false",
 			"IsCustom": "false",
 			"AllowedClasses": {
