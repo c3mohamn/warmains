@@ -12,6 +12,42 @@ $('.char_panel a, #selected_link, #socket1_link, #socket2_link, ' +
   return false;
 });
 
+/*li: a(id='socket1_link')
+  div(class='item_slot' id='socket1_slot'
+      ng-click="cur_socket='socket1'"
+      ng-show="socket1 != ''")*/
+
+      //ul(class='list-inline' ng-show="cur_view == 'gems'")
+        /*li: a(href='' id='socket1_link')
+          div(class='item_slot' id='socket1_slot'
+              ng-click="cur_socket='socket1'"
+              ng-show="socket1 != ''")
+        li: a(href='' id='socket2_link')
+          div(class='item_slot' id='socket2_slot'
+              ng-click="cur_socket='socket2'"
+              ng-show="socket2 != ''")
+        li: a(href='' id='socket3_link')
+          div(class='item_slot' id='socket3_slot'
+              ng-click="cur_socket='socket3'"
+              ng-show="socket3 != ''")*/
+// TODO: Make a insertBefore FOR RIGHT SIDE ITEM SLOTS.
+var socket1_html =
+"<li class='pull-left'> <a id='socket1_link'> " +
+"<div class='item_slot' id='socket1_slot'> " +
+"</div></a></li>"
+
+function insert_socket1() {
+  $(socket1_html).insertAfter('#li1');
+  $('#socket1_link').click(function() {
+    return false;
+  });
+  $('#socket1_link').attr('ng-click', "cur_socket='socket1'");
+}
+
+function remove_socket(num) {
+  $('#socket' + num + '_slot').remove();
+}
+
 // Stores the items equipped for the current character
 var char_items = {  Head: null, Neck: null, Shoulders: null, Back: null,
                     Chest: null, Wrist: null, Hands: null, Waist: null,

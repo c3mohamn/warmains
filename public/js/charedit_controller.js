@@ -1,6 +1,6 @@
 var editApp = angular.module("editApp", []);
 
-editApp.controller('editctrl', ['$scope', '$http', function($scope, $http) {
+editApp.controller('editctrl', ['$scope', '$http', '$compile', function($scope, $http, $compile) {
 
   /* --------- Globals --------- */
   $scope.slot = '';
@@ -163,31 +163,36 @@ editApp.controller('editctrl', ['$scope', '$http', function($scope, $http) {
     if (char_items[slot]) {
       set_slot_image('selected', char_items[slot]);
 
-    // Show gem sockets and their respective colours here.
-    if (char_items[slot].SocketColor1) {
-      var colour = char_items[slot].SocketColor1;
-      $scope.socket1 = colour;
-      if (char_gems[slot].socket1)
-        set_slot_image('socket1', char_gems[slot].socket1)
-      else set_gem_bg('socket1', colour);
-    } else remove_gem_image('socket1');
+      // Show gem sockets and their respective colours here.
+      //remove_socket(1);
+      if (char_items[slot].SocketColor1) {
+        var colour = char_items[slot].SocketColor1;
+        $scope.socket1 = colour;
+        //insert_socket1();
+        if (char_gems[slot].socket1) {
+          set_slot_image('socket1', char_gems[slot].socket1)
+        }
+        else set_gem_bg('socket1', colour);
+      } else remove_gem_image('socket1');
 
-    if (char_items[slot].SocketColor2) {
-      var colour = char_items[slot].SocketColor2;
-      $scope.socket2 = colour;
-      if (char_gems[slot].socket2)
-        set_slot_image('socket2', char_gems[slot].socket2)
-      else set_gem_bg('socket2', colour);
-    } else remove_gem_image('socket2');
+      if (char_items[slot].SocketColor2) {
+        var colour = char_items[slot].SocketColor2;
+        $scope.socket2 = colour;
+        if (char_gems[slot].socket2)
+          set_slot_image('socket2', char_gems[slot].socket2)
+        else set_gem_bg('socket2', colour);
+      } else remove_gem_image('socket2');
 
-    if (char_items[slot].SocketColor3) {
-      var colour = char_items[slot].SocketColor3;
-      $scope.socket3 = colour;
-      if (char_gems[slot].socket3)
-        set_slot_image('socket3', char_gems[slot].socket3)
-      else set_gem_bg('socket3', colour);
-    } else remove_gem_image('socket3');
+      if (char_items[slot].SocketColor3) {
+        var colour = char_items[slot].SocketColor3;
+        $scope.socket3 = colour;
+        if (char_gems[slot].socket3)
+          set_slot_image('socket3', char_gems[slot].socket3)
+        else set_gem_bg('socket3', colour);
+      } else remove_gem_image('socket3');
     }
+    var body = $angular.element(document).find('body');
+    $compile(body)($scope);
   }
 
   /* Equips an item to corresponding slot selected.

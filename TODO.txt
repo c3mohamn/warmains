@@ -6,6 +6,11 @@ List of things that could be worked on:
 
 3. Multipliers for enchants
 
+4. Make gem slots show beside the item slot.
+ - Can use insertAfter/Before in Jquery.
+
+5. RESET GEMS when unequpping an item.
+
 
 
 

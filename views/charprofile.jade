@@ -16,68 +16,92 @@ html(ng-app='editApp' ng-cloak)
                 h2(class='pull-center') {{character.name}}
                 h5(class='pull-center') {{character.class}}
 
-                a(href="" rel="" id='Head_link')
-                  div(class='item_slot pull-left' id='Head_slot'
-                      ng-click="set_slot('Head')")
-                a(href="" rel="" id='Hands_link')
-                  div(class='item_slot pull-right' id='Hands_slot'
-                      ng-click="set_slot('Hands')")
-              .row
-                a(href="" rel="" id='Neck_link')
-                  div(class='item_slot pull-left' id='Neck_slot'
-                      ng-click="set_slot('Neck')")
-                a(href="" rel="" id='Waist_link')
-                  div(class='item_slot pull-right' id='Waist_slot'
-                      ng-click="set_slot('Waist')")
-              .row
-                a(href="" rel="" id='Shoulders_link')
-                  div(class='item_slot pull-left' id='Shoulders_slot'
-                      ng-click="set_slot('Shoulders')")
-                a(href="" rel="" id='Legs_link')
-                  div(class='item_slot pull-right' id='Legs_slot'
-                      ng-click="set_slot('Legs')")
-              .row
-                a(href="" rel="" id='Back_link')
-                  div(class='item_slot pull-left' id='Back_slot'
-                      ng-click="set_slot('Back')")
-                a(href="" rel="" id='Feet_link')
-                  div(class='item_slot pull-right' id='Feet_slot'
-                      ng-click="set_slot('Feet')")
-              .row
-                a(href="" rel="" id='Chest_link')
-                  div(class='item_slot pull-left' id='Chest_slot'
-                      ng-click="set_slot('Chest')")
-                a(href="" rel="" id='Finger1_link')
-                  div(class='item_slot pull-right' id='Finger1_slot'
-                      ng-click="set_slot('Finger1')")
-              .row
-                div(class='item_slot pull-left' id='Shirt_slot')
-                  img(src='/images/empty-slots/UI-EmptyShirt.png')
-                a(href="" rel="" id='Finger2_link')
-                  div(class='item_slot pull-right' id='Finger2_slot'
-                      ng-click="set_slot('Finger2')")
-              .row
-                div(class='item_slot pull-left' id='Tabard_slot')
-                  img(src='/images/empty-slots/UI-EmptyTabard.png')
-                a(href="" rel="" id='Trinket1_link')
-                  div(class='item_slot pull-right' id='Trinket1_slot'
-                      ng-click="set_slot('Trinket1')")
-              .row
-                a(href="" rel="" id='Wrist_link')
-                  div(class='item_slot pull-left' id='Wrist_slot'
-                      ng-click="set_slot('Wrist')")
-                a(href="" rel="" id='Trinket2_link')
-                  div(class='item_slot pull-right' id='Trinket2_slot'
-                      ng-click="set_slot('Trinket2')")
+                ul(class='list-inline')
+                  li(class='pull-left' id='li1')
+                    a(href="" id='Head_link')
+                      div(class='item_slot' id='Head_slot'
+                          ng-click="set_slot('Head')")
+                  li(class='pull-right')
+                    a(href="" id='Hands_link')
+                      div(class='item_slot' id='Hands_slot'
+                          ng-click="set_slot('Hands')")
               .row
                 ul(class='list-inline')
-                  li: a(href="" rel="" id='MainHand_link')
+                  li(class='pull-left')
+                    a(href="" id='Neck_link')
+                      div(class='item_slot' id='Neck_slot'
+                          ng-click="set_slot('Neck')")
+                  li(class='pull-right')
+                    a(href="" id='Waist_link')
+                      div(class='item_slot' id='Waist_slot'
+                          ng-click="set_slot('Waist')")
+              .row
+                ul(class='list-inline')
+                  li(class='pull-left')
+                    a(href=""  id='Shoulders_link')
+                      div(class='item_slot' id='Shoulders_slot'
+                          ng-click="set_slot('Shoulders')")
+                  li(class='pull-right')
+                    a(href="" id='Legs_link')
+                      div(class='item_slot' id='Legs_slot'
+                          ng-click="set_slot('Legs')")
+              .row
+                ul(class='list-inline')
+                  li(class='pull-left')
+                    a(href="" id='Back_link')
+                      div(class='item_slot' id='Back_slot'
+                          ng-click="set_slot('Back')")
+                  li(class='pull-right')
+                    a(href="" id='Feet_link')
+                      div(class='item_slot' id='Feet_slot'
+                          ng-click="set_slot('Feet')")
+              .row
+                ul(class='list-inline')
+                  li(class='pull-left')
+                    a(href="" id='Chest_link')
+                      div(class='item_slot' id='Chest_slot'
+                          ng-click="set_slot('Chest')")
+                  li(class='pull-right')
+                    a(href="" id='Finger1_link')
+                      div(class='item_slot' id='Finger1_slot'
+                          ng-click="set_slot('Finger1')")
+              .row
+                ul(class='list-inline')
+                  li(class='pull-left')
+                    div(class='item_slot' id='Shirt_slot')
+                      img(src='/images/empty-slots/UI-EmptyShirt.png')
+                  li(class='pull-right')
+                    a(href="" id='Finger2_link')
+                      div(class='item_slot' id='Finger2_slot'
+                          ng-click="set_slot('Finger2')")
+              .row
+                ul(class='list-inline')
+                  li(class='pull-left')
+                    div(class='item_slot' id='Tabard_slot')
+                      img(src='/images/empty-slots/UI-EmptyTabard.png')
+                  li(class='pull-right')
+                    a(href="" id='Trinket1_link')
+                      div(class='item_slot' id='Trinket1_slot'
+                          ng-click="set_slot('Trinket1')")
+              .row
+                ul(class='list-inline')
+                  li(class='pull-left')
+                    a(href="" id='Wrist_link')
+                      div(class='item_slot' id='Wrist_slot'
+                          ng-click="set_slot('Wrist')")
+                  li(class='pull-right')
+                    a(href="" id='Trinket2_link')
+                      div(class='item_slot' id='Trinket2_slot'
+                          ng-click="set_slot('Trinket2')")
+              .row
+                ul(class='list-inline')
+                  li: a(href="" id='MainHand_link')
                     div(class='item_slot' id='MainHand_slot'
                         ng-click="set_slot('MainHand')")
-                  li: a(href="" rel="" id='OffHand_link')
+                  li: a(href="" id='OffHand_link')
                     div(class='item_slot' id='OffHand_slot'
                         ng-click="set_slot('OffHand')")
-                  li: a(href="" rel="" id='Ranged_link')
+                  li: a(href="" id='Ranged_link')
                     div(class='item_slot' id='Ranged_slot'
                         ng-click="set_slot('Ranged')")
 
@@ -184,28 +208,30 @@ html(ng-app='editApp' ng-cloak)
                     br
                     br
                     ul(class='list-inline')
-                      li: a(href="" rel="" id='selected_link')
+                      li: a(href="" id='selected_link')
                         div(class='item_slot' id='selected_slot')
                       li(ng-show="cur_view == 'gems' || cur_view == 'enchants'")
-                        a(href="" rel="" id='selected_gem_link')
+                        a(href="" id='selected_gem_link')
                           div(class='item_slot' id='selected_gem_slot')
 
                     ul(class='list-inline' ng-show="cur_view == 'gems'")
                       li: a(href='' id='socket1_link')
                         div(class='item_slot' id='socket1_slot'
-                            ng-click="cur_socket='socket1'")
+                            ng-click="cur_socket='socket1'"
+                            ng-show="socket1 != ''")
                       li: a(href='' id='socket2_link')
                         div(class='item_slot' id='socket2_slot'
-                            ng-click="cur_socket='socket2'")
+                            ng-click="cur_socket='socket2'"
+                            ng-show="socket2 != ''")
                       li: a(href='' id='socket3_link')
                         div(class='item_slot' id='socket3_slot'
-                            ng-click="cur_socket='socket3'")
+                            ng-click="cur_socket='socket3'"
+                            ng-show="socket3 != ''")
 
                     p(ng-hide="cur_view != 'gems'") {{cur_socket}}
-
               -else if(user)
                 h4 Viewing #{char} as #{user.username}.
-          
+
           div(class='clearfix visible sm')
           div(class="col-lg-6 col-md-6 col-sm-6 col-xs-12")
             div(class='stats_container')
