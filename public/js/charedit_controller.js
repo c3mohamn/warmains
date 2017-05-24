@@ -24,6 +24,7 @@ editApp.controller('editctrl', ['$scope', '$http', '$compile', function($scope, 
   $scope.select_search_item = function(item) {
     console.log('selected item: ', item.Name, '. slot: ', $scope.slot);
     selected_item = item;
+    $scope.enchant_stats = item.Stats;
     if (is_gem_slot(item.Slot))   set_slot_image('selected_gem', item);
     else                          set_slot_image('selected', item);
   }
@@ -154,11 +155,19 @@ editApp.controller('editctrl', ['$scope', '$http', '$compile', function($scope, 
     $scope.socket1 = '';
     $scope.socket2 = '';
     $scope.socket3 = '';
+    remove_socket(3);
+    remove_socket(2);
+    remove_socket(1);
 
-    if (char_items[slot] && $scope.slot != slot) {
+    // reset toggle when clicking a new item slot
+    if ($scope.slot != slot)
+      toggle_sockets = 0;
+
+    if (char_items[slot] && toggle_sockets == 0) {
+      toggle_sockets = 1;
       // Show gem sockets and their respective colours here.
       // Inserts the gem sockets if they exist as an <li> element
-      remove_socket(3);
+
       if (char_items[slot].SocketColor3) {
         var colour = char_items[slot].SocketColor3;
         $scope.socket3 = colour;
@@ -171,7 +180,6 @@ editApp.controller('editctrl', ['$scope', '$http', '$compile', function($scope, 
         else set_gem_bg('socket3', colour);
       }
 
-      remove_socket(2);
       if (char_items[slot].SocketColor2) {
         var colour = char_items[slot].SocketColor2;
         $scope.socket2 = colour;
@@ -184,7 +192,6 @@ editApp.controller('editctrl', ['$scope', '$http', '$compile', function($scope, 
         else set_gem_bg('socket2', colour);
       }
 
-      remove_socket(1);
       if (char_items[slot].SocketColor1) {
         var colour = char_items[slot].SocketColor1;
         $scope.socket1 = colour;
@@ -196,7 +203,7 @@ editApp.controller('editctrl', ['$scope', '$http', '$compile', function($scope, 
           set_slot_image('socket1', char_gems[slot].socket1)
         else set_gem_bg('socket1', colour);
       };
-    }
+    } else toggle_sockets = 0;
 
     $scope.slot = slot;
   }
@@ -304,6 +311,7 @@ editApp.controller('editctrl', ['$scope', '$http', '$compile', function($scope, 
            + slot + '.';
            $scope.update_stats(gem, false, cur_socket);
            char_gems[slot][cur_socket] = null;
+           set_slot_rel(slot);
            set_gem_bg(cur_socket, $scope[cur_socket]);
 
          } else { $scope.error_msg = error_msg_2; }
@@ -380,9 +388,12 @@ editApp.controller('editctrl', ['$scope', '$http', '$compile', function($scope, 
           if (temp_slot != 'Enchants' && !can_wield(item, char)) item_matches = false;
           else if (cur_view == 'gems' && gem_colour && gem_colour != item.Slot)
             item_matches = false;
-          else if (temp_slot == 'Enchants' && slot &&
-                   slot != item.Slot) item_matches = false;
-          else if (min && min > item.ItemLevel) item_matches = false;
+          else if (temp_slot == 'Enchants' && slot) {
+            if (slot == 'MainHand') {
+              if (item.Slot != 'OneHand' && item.Slot != 'TwoHand')
+                item_matches = false;
+            } else if (slot != item.Slot) item_matches = false;
+          } else if (min && min > item.ItemLevel) item_matches = false;
           else if (max && max < item.ItemLevel) item_matches = false;
           else if (!(search_val == '')) {
 

@@ -185,15 +185,20 @@ html(ng-app='editApp' ng-cloak)
                                   ng-keyup="$event.keyCode == 13 && finditems(search_val)")
                         li: button(type="submit" class="btn btn-default"
                                    ng-click="finditems(search_val)") Submit
+
                      ul(class='list-inline')
                        li(ng-show="cur_view == 'items'")
                          a(href="" id='selected_link')
                            div(class='item_slot' id='selected_slot')
-                       li(ng-show="cur_view == 'gems' || cur_view == 'enchants'")
+                       li(ng-show="cur_view == 'gems'")
                          a(href="" id='selected_gem_link')
                            div(class='item_slot' id='selected_gem_slot')
-                      p(id='error-msg') {{error_msg}}
-                      p(id='success-msg') {{success_msg}}
+                       li(ng-show="cur_view == 'enchants'")
+                         p(ng-repeat="(key, val) in enchant_stats")
+                           {{key}}: {{val}}
+
+                      p(id='error-msg' ng-show="error_msg != ''") {{error_msg}}
+                      p(id='success-msg' ng-show="success_msg != ''") {{success_msg}}
                   .row
                     div(class='results_table' ng-show="items.length > 0")
                       table(class='table')
@@ -203,7 +208,8 @@ html(ng-app='editApp' ng-cloak)
                             td: a(href='' ng-click="orderByField='Name';reverseSort=!reverseSort") Name
                             td(ng-if="cur_view == 'items'")
                               a(href='' ng-click="orderByField='RequiredClasses';reverseSort=!reverseSort") Class
-                            td: a(href='' ng-click="orderByField='ItemLevel';reverseSort=!reverseSort") Item Level
+                            td(ng-if="cur_view == 'items'")
+                              a(href='' ng-click="orderByField='ItemLevel';reverseSort=!reverseSort") Item Level
                             td: a(href='' ng-click="orderByField='Slot';reverseSort=!reverseSort") Slot
                             td(ng-if="cur_view == 'items'")
                               a(href='' ng-click="orderByField='Type';reverseSort=!reverseSort") Type
@@ -219,7 +225,7 @@ html(ng-app='editApp' ng-cloak)
                               td(ng-style='class_color(item.RequiredClasses)'
                                  ng-if="cur_view == 'items'")
                                 {{item.RequiredClasses}}
-                              td {{item.ItemLevel}}
+                              td(ng-if="cur_view == 'items'") {{item.ItemLevel}}
                               td {{item.Slot}}
                               td(ng-if="cur_view == 'items'") {{item.Type}}
 

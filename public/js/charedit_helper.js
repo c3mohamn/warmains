@@ -133,6 +133,8 @@ var multiplier_to_stat = {
 
 // Stores the currently selected item.
 var selected_item = null;
+// used to toggle sockets when clicking slots in sequence
+var toggle_sockets = 0;
 
           /* ------ FUNCTIONS ------ */
 
@@ -377,8 +379,6 @@ function insert_gem_socket(slot, socket_num) {
       $(socket).hide().insertAfter('#li_Wrist').show('normal');
   else
     $(socket).hide().insertAfter('#li_' + slot).show('normal');
-
-//ng-class="{'selected_slot': slot == 'Head'}"
 
   // disable the links
   $('#socket' + socket_num + '_link').click(function() {

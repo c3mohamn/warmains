@@ -196,3 +196,8 @@ TODO:
 - selected_item is reserved for results table items only
 - animation added when sockets are shown for an item
 - some transitions added for sockets/slots
+
+----- 05/24/2017 ------
+------- v2.8.1 --------
+
+- some transitions and small changes

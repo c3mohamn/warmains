@@ -120,10 +120,26 @@ input[name=createaccount], input[name=createaccount]:hover {
     opacity: .8;
     color: red;
     font-size: 18px;
+    animation: 0.5s msg_pop;
 }
 
 #success-msg {
     opacity: .8;
-    color: #12D700;
+    color: #0080FF;
     font-size: 18px;
+    animation: 0.5s msg_pop;
+}
+
+@keyframes msg_pop {
+  0% {
+    opacity:0;
+    transform: scale(0.5);
+  }
+  70% {
+    transform: scale(1.02);
+  }
+  100% {
+    opacity:1;
+    transform: scale(1);
+  }
 }

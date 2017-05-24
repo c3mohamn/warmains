@@ -1,6 +1,6 @@
 List of things that could be worked on:
 
-1. 'rel' is not updated when equipping items.
+1. Work on character page.
 
 2. Will need to add enchant items actual ids
 
