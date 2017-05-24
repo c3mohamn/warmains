@@ -186,3 +186,13 @@ TODO:
 
 - enchantId's (tooltip id) for gems added, works only on char load atm
 - meta socket multipliers work.
+
+----- 05/23/2017 ------
+------- v2.8.0 --------
+
+- selected slot/sockets are shown with inner glow now
+- gem sockets show in character panel now near the respective items/slot
+- fixed bug when searching for gem without selected slot
+- selected_item is reserved for results table items only
+- animation added when sockets are shown for an item
+- some transitions added for sockets/slots

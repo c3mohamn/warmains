@@ -3,10 +3,6 @@ var editApp = angular.module("editApp", []);
 editApp.controller('editctrl', ['$scope', '$http', '$compile', function($scope, $http, $compile) {
 
   /* --------- Globals --------- */
-  $scope.slot = '';
-  $scope.socket1 = '';
-  $scope.socket2 = '';
-  $scope.socket3 = '';
   $scope.orderByField = 'result_ilvl';
   $scope.reverseSort = false;
   $scope.error_msg = '';
@@ -154,45 +150,55 @@ editApp.controller('editctrl', ['$scope', '$http', '$compile', function($scope, 
    * cur_slot: currently selected slot.
    */
   $scope.set_slot = function(slot) {
-    $scope.slot = slot;
     $scope.cur_socket = '';
     $scope.socket1 = '';
     $scope.socket2 = '';
     $scope.socket3 = '';
 
-    if (char_items[slot]) {
-      set_slot_image('selected', char_items[slot]);
-
+    if (char_items[slot] && $scope.slot != slot) {
       // Show gem sockets and their respective colours here.
-      //remove_socket(1);
-      if (char_items[slot].SocketColor1) {
-        var colour = char_items[slot].SocketColor1;
-        $scope.socket1 = colour;
-        //insert_socket1();
-        if (char_gems[slot].socket1) {
-          set_slot_image('socket1', char_gems[slot].socket1)
-        }
-        else set_gem_bg('socket1', colour);
-      } else remove_gem_image('socket1');
-
-      if (char_items[slot].SocketColor2) {
-        var colour = char_items[slot].SocketColor2;
-        $scope.socket2 = colour;
-        if (char_gems[slot].socket2)
-          set_slot_image('socket2', char_gems[slot].socket2)
-        else set_gem_bg('socket2', colour);
-      } else remove_gem_image('socket2');
-
+      // Inserts the gem sockets if they exist as an <li> element
+      remove_socket(3);
       if (char_items[slot].SocketColor3) {
         var colour = char_items[slot].SocketColor3;
         $scope.socket3 = colour;
+
+        insert_gem_socket(slot, 3);
+        $compile($("#socket3_slot"))($scope);
+
         if (char_gems[slot].socket3)
           set_slot_image('socket3', char_gems[slot].socket3)
         else set_gem_bg('socket3', colour);
-      } else remove_gem_image('socket3');
+      }
+
+      remove_socket(2);
+      if (char_items[slot].SocketColor2) {
+        var colour = char_items[slot].SocketColor2;
+        $scope.socket2 = colour;
+
+        insert_gem_socket(slot, 2);
+        $compile($("#socket2_slot"))($scope);
+
+        if (char_gems[slot].socket2)
+          set_slot_image('socket2', char_gems[slot].socket2)
+        else set_gem_bg('socket2', colour);
+      }
+
+      remove_socket(1);
+      if (char_items[slot].SocketColor1) {
+        var colour = char_items[slot].SocketColor1;
+        $scope.socket1 = colour;
+
+        insert_gem_socket(slot, 1);
+        $compile($("#socket1_slot"))($scope);
+
+        if (char_gems[slot].socket1)
+          set_slot_image('socket1', char_gems[slot].socket1)
+        else set_gem_bg('socket1', colour);
+      };
     }
-    var body = $angular.element(document).find('body');
-    $compile(body)($scope);
+
+    $scope.slot = slot;
   }
 
   /* Equips an item to corresponding slot selected.
@@ -315,6 +321,9 @@ editApp.controller('editctrl', ['$scope', '$http', '$compile', function($scope, 
           char_gems[slot].socket1 = null;
           char_gems[slot].socket2 = null;
           char_gems[slot].socket3 = null;
+          remove_socket(1);
+          remove_socket(2);
+          remove_socket(3);
           remove_slot_image($scope.slot);
 
           //console.log(char_items[slot]);
@@ -339,6 +348,7 @@ editApp.controller('editctrl', ['$scope', '$http', '$compile', function($scope, 
     var max = $scope.ilvlmax;
     var cur_view = $scope.cur_view;
     var gem_colour = $scope.gem_colour;
+    var temp_slot = '';
     $scope.error_msg = ''; // reset error_msg
 
     if (!slot && cur_view != 'gems' && cur_view != 'enchants')
@@ -352,7 +362,7 @@ editApp.controller('editctrl', ['$scope', '$http', '$compile', function($scope, 
       if (!search_val) search_val = '';
       else search_val = search_val.toLowerCase();
 
-      var temp_slot = remove_trailing_number(slot);
+      if (slot) temp_slot = remove_trailing_number(slot);
       if (cur_view == 'gems') temp_slot = 'Gems';
       if (cur_view == 'enchants') temp_slot = 'Enchants';
 

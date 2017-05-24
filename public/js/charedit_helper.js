@@ -7,46 +7,25 @@ var char_name = url.pop();
 var user_name = url.pop();
 
 // Disables links from directing to another page - makes easier to select slots.
-$('.char_panel a, #selected_link, #socket1_link, #socket2_link, ' +
-  '#socket3_link, #selected_gem_link').click(function() {
+$('.char_panel a, #selected_link, #selected_gem_link').click(function() {
   return false;
 });
 
-/*li: a(id='socket1_link')
-  div(class='item_slot' id='socket1_slot'
-      ng-click="cur_socket='socket1'"
-      ng-show="socket1 != ''")*/
-
-      //ul(class='list-inline' ng-show="cur_view == 'gems'")
-        /*li: a(href='' id='socket1_link')
-          div(class='item_slot' id='socket1_slot'
-              ng-click="cur_socket='socket1'"
-              ng-show="socket1 != ''")
-        li: a(href='' id='socket2_link')
-          div(class='item_slot' id='socket2_slot'
-              ng-click="cur_socket='socket2'"
-              ng-show="socket2 != ''")
-        li: a(href='' id='socket3_link')
-          div(class='item_slot' id='socket3_slot'
-              ng-click="cur_socket='socket3'"
-              ng-show="socket3 != ''")*/
-// TODO: Make a insertBefore FOR RIGHT SIDE ITEM SLOTS.
+// Socket html code to be added to DOM when clicking on an item.
 var socket1_html =
-"<li class='pull-left'> <a id='socket1_link'> " +
-"<div class='item_slot' id='socket1_slot'> " +
-"</div></a></li>"
+"<a id='socket1_link'> " +
+"<div class='item_slot' id='socket1_slot' ng-click=\"cur_socket='socket1'\"> " +
+"</div></a></li>";
 
-function insert_socket1() {
-  $(socket1_html).insertAfter('#li1');
-  $('#socket1_link').click(function() {
-    return false;
-  });
-  $('#socket1_link').attr('ng-click', "cur_socket='socket1'");
-}
+var socket2_html =
+"<a id='socket2_link'> " +
+"<div class='item_slot' id='socket2_slot' ng-click=\"cur_socket='socket2'\"> " +
+"</div></a></li>";
 
-function remove_socket(num) {
-  $('#socket' + num + '_slot').remove();
-}
+var socket3_html =
+"<a id='socket3_link'> " +
+"<div class='item_slot' id='socket3_slot' ng-click=\"cur_socket='socket3'\"> " +
+"</div></a></li>";
 
 // Stores the items equipped for the current character
 var char_items = {  Head: null, Neck: null, Shoulders: null, Back: null,
@@ -354,16 +333,74 @@ function set_slot_rel(slot) {
 function remove_slot_image(slot) {
   slot1 = remove_trailing_number(slot);
 
+  // sets background image to empty item slot image
   $('#' + slot + '_slot').css('background-image',
     'url(/images/empty-slots/UI-Empty' + slot1 + '.png)');
   $('#' + slot + '_link').attr('href', ''); // removes link as well
   $('#' + slot + '_link').attr('target', '');
 }
 
-/* Removes the background image for the socket. */
-function remove_gem_image(socket) {
-  $('#' + socket + '_slot').css('background-image',
-    'none');
+/* Inserts a gem socket beside the item slot in character panel by adding
+ * the <li> element and it's derivatives.
+ *
+ * slot: the slot currently selected.
+ * socket_num: the socket number to be inserted beside slot.
+ */
+function insert_gem_socket(slot, socket_num) {
+
+  var socket = '';
+  var socket_html = '';
+  var socket_side = "<li class='pull-center'>";
+  var slot_id = '#li_' + slot;
+  var side = $(slot_id).attr('class');
+  //console.log(slot_id, side);
+
+  if (side)
+    socket_side = "<li class=" + side + ">"
+
+  switch (socket_num)
+  {
+    case 1:
+      socket_html = socket1_html;
+      break;
+    case 2:
+      socket_html = socket2_html;
+      break
+    case 3:
+      socket_html = socket3_html;
+      break;
+  }
+  socket = $(socket_side + socket_html);
+
+  // if weapons row
+  if (!side)
+      $(socket).hide().insertAfter('#li_Wrist').show('normal');
+  else
+    $(socket).hide().insertAfter('#li_' + slot).show('normal');
+
+//ng-class="{'selected_slot': slot == 'Head'}"
+
+  // disable the links
+  $('#socket' + socket_num + '_link').click(function() {
+    return false;
+  });
+  // add the pointer on hover
+  $('#socket' + socket_num + '_slot').hover(function() {
+    $(this).css('cursor', 'pointer');
+  });
+  // add class when selected
+  $('#socket' + socket_num + '_slot').attr('ng-class',
+  "{'selected_slot': cur_socket == 'socket" + socket_num +  "'}");
+}
+
+/* Remove the socket from character panel.
+ *
+ * num: the socket number
+ */
+function remove_socket(num) {
+  var socket = $('#socket' + num + '_slot');
+  var li_socket = socket.parent().parent();
+  $(li_socket).remove();
 }
 
 /* Check if we can put gem into socket.

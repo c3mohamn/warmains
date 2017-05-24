@@ -20,6 +20,13 @@ a, a:hover {
   transition: background-color 0.5s;
 }
 
+.selected_slot {
+  -webkit-box-shadow: inset 0 0 20px #819FF7;
+  -moz-box-shadow: inset 0 0 20px #819FF7;
+  box-shadow: inset 0 0 20px #819FF7;
+  transition: 0.5s;
+}
+
 .view_tab:hover {
   background-color: white;
   transition: background-color 0.5s;
@@ -73,7 +80,7 @@ a, a:hover {
     background-image: url('/images/empty-slots/UI-EmptyRanged.png');
   }
 }
-#selected_slot {
+#selected_slot, #selected_gem_slot {
   background-image: url('/images/empty-slots/UI-EmptyBag.png');
 }
 
@@ -81,12 +88,12 @@ a, a:hover {
   width: 55px;
   height: 55px;
   margin-bottom: 3px;
-  opacity: 1;
   background-size: 55px 55px;
   img {
     width: 55px;
     height: 55px;
   }
+  transition: .5s;
 }
 .item_slot:hover {
   -webkit-box-shadow: inset 0 0 20px #819FF7;
@@ -152,6 +159,7 @@ a, a:hover {
   margin-right: 10px;
   margin-top: 10px;
   background-color: white;
+  transition: .5s;
 }
 
 .unequip_item:hover {
@@ -183,6 +191,8 @@ a, a:hover {
 }
 
 .save_item:hover {
+  border-style: solid;
+  border-width: 2px;
   background-color: black;
   transition: .5s;
 }
