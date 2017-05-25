@@ -1,10 +1,22 @@
 List of things that could be worked on:
 
+
+Urgent: Finish up IconPath's and Ids of Enchants.
+
 1. Work on character page.
 
-2. Will need to add enchant items actual ids
+2. Enchants:
+ - Multipliers
+ - IDs
+ - Make icon regular scroll icon with tooltip based on ID.
 
-3. Multipliers for enchants
+3. Socket Bonus
+
+4. Professions
+
+5. Try ng-show/hide on select options (onehand/twohand) enchants tab
+
+6. Add Requirements for GEMs as well.
 
 
 Ideas:

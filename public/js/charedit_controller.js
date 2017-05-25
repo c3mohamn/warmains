@@ -25,8 +25,12 @@ editApp.controller('editctrl', ['$scope', '$http', '$compile', function($scope, 
     console.log('selected item: ', item.Name, '. slot: ', $scope.slot);
     selected_item = item;
     $scope.enchant_stats = item.Stats;
-    if (is_gem_slot(item.Slot))   set_slot_image('selected_gem', item);
-    else                          set_slot_image('selected', item);
+    if ($scope.cur_view == 'gems')
+      set_slot_image('selected_gem', item);
+    else if ($scope.cur_view == 'enchants')
+      set_slot_image('selected_enchant', item);
+    else
+      set_slot_image('selected', item);
   }
 
   /* Set the color of the item name based on its quality in results table. */
@@ -370,9 +374,15 @@ editApp.controller('editctrl', ['$scope', '$http', '$compile', function($scope, 
       if (!search_val) search_val = '';
       else search_val = search_val.toLowerCase();
 
-      if (slot) temp_slot = remove_trailing_number(slot);
+      var temp_slot2 = '';
+      if (slot) {
+        temp_slot = remove_trailing_number(slot);
+        temp_slot2 = remove_trailing_number(slot);
+      }
       if (cur_view == 'gems') temp_slot = 'Gems';
       if (cur_view == 'enchants') temp_slot = 'Enchants';
+
+      console.log(temp_slot2, slot);
 
       $http.get('/wowdata/' + temp_slot + '.json').then(function(response){
         var all_items = response.data.items;
@@ -385,15 +395,17 @@ editApp.controller('editctrl', ['$scope', '$http', '$compile', function($scope, 
 
           // do not push item if item does not match requirements
           // wield? - matches ilvls? - matches search_val?
-          if (temp_slot != 'Enchants' && !can_wield(item, char)) item_matches = false;
+          if (cur_view != 'enchants' && !can_wield(item, char)) item_matches = false;
           else if (cur_view == 'gems' && gem_colour && gem_colour != item.Slot)
             item_matches = false;
-          else if (temp_slot == 'Enchants' && slot) {
+          else if (cur_view == 'enchants' && slot) {
             if (slot == 'MainHand') {
-              if (item.Slot != 'OneHand' && item.Slot != 'TwoHand')
+              if (item.Slot != 'TwoHand' && item.Slot != 'OneHand')
                 item_matches = false;
-            } else if (slot != item.Slot) item_matches = false;
-          } else if (min && min > item.ItemLevel) item_matches = false;
+            }
+            else if (temp_slot2 != item.Slot) item_matches = false;
+          }
+          else if (min && min > item.ItemLevel) item_matches = false;
           else if (max && max < item.ItemLevel) item_matches = false;
           else if (!(search_val == '')) {
 

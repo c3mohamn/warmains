@@ -300,6 +300,7 @@ function compare_slot(slot, item, char) {
  */
 function set_slot_image(slot, item) {
 
+  // Add icon image for item
   $('#' + slot + '_slot').css('background-image', 'url(' +
   "http://cdn.warmane.com/wotlk/icons/large/" + item.IconPath +
   '.jpg)');
