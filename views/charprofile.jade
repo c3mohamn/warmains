@@ -196,9 +196,6 @@ html(ng-app='editApp' ng-cloak)
                          a(href="" id='selected_gem_link')
                            div(class='item_slot' id='selected_gem_slot')
                        li(ng-show="cur_view == 'enchants'")
-                         p(ng-repeat="(key, val) in enchant_stats")
-                           {{key}}: {{val}}
-                       li(ng-show="cur_view == 'enchants'")
                          a(href="" id='selected_enchant_link')
                            div(class='item_slot' id='selected_enchant_slot')
 
@@ -224,7 +221,7 @@ html(ng-app='editApp' ng-cloak)
                             tr(ng-repeat="item in items | orderBy:orderByField:reverseSort"
                                ng-click='select_search_item(item)')
                               td
-                                a(target="_blank" ng-href="http://db.warmane.com/wotlk/item={{item.Id}}")
+                                a(target="_blank" ng-href="{{item.Id != '' ? 'http://db.warmane.com/wotlk/item='+item.Id : 'http://db.warmane.com/wotlk/spell='+item.SpellId}}")
                                   img(ng-src='http://wow.zamimg.com/images/wow' +
                                       '/icons/large/{{item.IconPath}}.jpg')
                               td(ng-style='item_quality(item.Quality)')

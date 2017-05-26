@@ -172,8 +172,10 @@ editApp.controller('editctrl', ['$scope', '$http', '$compile', function($scope, 
       // Show gem sockets and their respective colours here.
       // Inserts the gem sockets if they exist as an <li> element
 
-      if (char_items[slot].SocketColor3) {
-        var colour = char_items[slot].SocketColor3;
+      if (char_items[slot].SocketColor3 || slot == 'Waist') {
+        var colour = 'Prismatic'; // For Eternal Belt Buckle Extra socket
+       
+        if (slot != 'Waist') colour = char_items[slot].SocketColor3;
         $scope.socket3 = colour;
 
         insert_gem_socket(slot, 3);

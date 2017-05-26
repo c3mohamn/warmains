@@ -300,14 +300,20 @@ function compare_slot(slot, item, char) {
  */
 function set_slot_image(slot, item) {
 
+  var item_path = 'item=';
+  var spell_path = 'spell=';
+  var Idpath = '';
+
+  if (item.Id == '')  Idpath = spell_path + item.SpellId;
+  else                Idpath = item_path + item.Id;
+
   // Add icon image for item
   $('#' + slot + '_slot').css('background-image', 'url(' +
   "http://cdn.warmane.com/wotlk/icons/large/" + item.IconPath +
   '.jpg)');
 
   // Add link for the tooltip of item
-  $('#' + slot + '_link').attr('href', 'http://db.warmane.com/wotlk/item=' +
-                                        item.Id);
+  $('#' + slot + '_link').attr('href', 'http://db.warmane.com/wotlk/' + Idpath);
   $('#' + slot + '_link').attr('target', '_blank');
 }
 

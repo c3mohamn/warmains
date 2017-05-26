@@ -201,3 +201,9 @@ TODO:
 ------- v2.8.1 --------
 
 - some transitions and small changes
+
+----- 05/26/2017 ------
+------- v2.8.5 --------
+
+- Added SpellIds, Iconpaths, and Ids for enchants
+- Extra socket for eternal belt bucket waist enchant added
