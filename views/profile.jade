@@ -4,30 +4,29 @@ html
   body
   include partials/navbar.jade
   br
+  header
+    .header-content
+      .header-content-inner
+        h1(id="homeHeading") Hello #{user.name}
+        hr
   .container
-    .row
-      div(class="col-lg-6 col-md-6 col-sm-6 col-xs-12")
-        div(class="loginmodal-container" id="user-information")
-          .page-header
-            h3 Hello #{user.name}
-          p(class='pull-left') Allow users to change name.
-          p(class='pull-left') Account: #{user.username}
-          p(class='pull-left') Email: #{user.email}
-          p(class='pull-left') Originally have change password hidden.
+    div(class="col-lg-6 col-md-6 col-sm-6 col-xs-12")
+      h3 Your Information
+        hr(class='light')
+      div(class="loginmodal-container" id="user-information")
+        p(class='pull-left') Account: #{user.username}
+        p(class='pull-left') Email: #{user.email}
 
-      div(class="col-lg-6 col-md-6 col-sm-6 col-xs-12")
-        div(class="loginmodal-container" id="password-change")
-          .page-header
-            h3 Change Password
-          br
-          form(action="/users/changeinfo" method="post")
-            input(type="password" name="oldpass" placeholder="Old Password")
-            input(type="password" name="newpass" placeholder="New Password")
-            input(type="password" name="newpassconfirm"
-                  placeholder="Confirm New Password")
-            input(type="submit" class="login loginmodal-submit"
-                  value="Change Information" name="changeinfo")
+    div(class="col-lg-6 col-md-6 col-sm-6 col-xs-12")
+      h3 Change Password
+        hr(class='light')
+      div(class="loginmodal-container" id="password-change")
+        form(action="/users/changeinfo" method="post")
+          input(type="password" name="oldpass" placeholder="Old Password")
+          input(type="password" name="newpass" placeholder="New Password")
+          input(type="password" name="newpassconfirm"
+                placeholder="Confirm New Password")
+          input(type="submit" class="login loginmodal-submit"
+                value="Change Information" name="changeinfo")
 
-  br
-  br
   include partials/footer.jade

@@ -3,8 +3,10 @@ html
     include partials/head.jade
     body
         include partials/navbar.jade
-        .page-header
-          h1 ABOUT PAGE
-        p Last in priority
+        header
+          .header-content
+            .header-content-inner
+              h1(id="homeHeading") About
+              hr
         div(class="about-container")
         include partials/footer.jade

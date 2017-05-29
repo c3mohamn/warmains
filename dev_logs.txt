@@ -209,6 +209,7 @@ TODO:
 - Extra socket for eternal belt bucket waist enchant added
 
 ----- 05/29/2017 ------
-------- v2.8.6 --------
+------- v2.8.7 --------
 
 - Changed theme and added bg to index page.
+- More changes, fonts consistency in pages

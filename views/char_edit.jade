@@ -8,249 +8,252 @@ html(ng-app='editApp' ng-cloak)
   body(ng-controller='editctrl' ng-init="cur_view = 'stats'")
       include partials/navbar.jade
 
-      div(class='container' id='main-container' ng-show='character')
-          div(class="col-lg-6 col-md-6 col-sm-6 col-xs-12")
-            div(class='char_panel')
-              .row
-                h2(class='pull-center' id="homeHeading") {{character.name}}
-                h5(class='pull-center') {{character.class}}
+      header
+        .header-content
+          .header-content-inner
+            h1(id="homeHeading") {{character.name}}
+            hr
+            h3 {{character.class}}
+      div(class='container' ng-show='character')
+        div(class="col-lg-6 col-md-6 col-sm-6 col-xs-12")
+          div(class='char_panel')
+            .row
+              ul(class='list-inline')
+                li(class='pull-left' id='li_Head')
+                  a(href="" id='Head_link')
+                    div(class='item_slot' id='Head_slot'
+                        ng-click="set_slot('Head')"
+                        ng-class="{'selected_slot': slot == 'Head'}")
+                li(class='pull-right' id='li_Hands')
+                  a(href="" id='Hands_link')
+                    div(class='item_slot' id='Hands_slot'
+                        ng-click="set_slot('Hands')"
+                        ng-class="{'selected_slot': slot == 'Hands'}")
+            .row
+              ul(class='list-inline')
+                li(class='pull-left' id='li_Neck')
+                  a(href="" id='Neck_link')
+                    div(class='item_slot' id='Neck_slot'
+                        ng-click="set_slot('Neck')"
+                        ng-class="{'selected_slot': slot == 'Neck'}")
+                li(class='pull-right' id='li_Waist')
+                  a(href="" id='Waist_link')
+                    div(class='item_slot' id='Waist_slot'
+                        ng-click="set_slot('Waist')"
+                        ng-class="{'selected_slot': slot == 'Waist'}")
+            .row
+              ul(class='list-inline')
+                li(class='pull-left' id='li_Shoulders')
+                  a(href="" id='Shoulders_link')
+                    div(class='item_slot' id='Shoulders_slot'
+                        ng-click="set_slot('Shoulders')"
+                        ng-class="{'selected_slot': slot == 'Shoulders'}")
+                li(class='pull-right' id='li_Legs')
+                  a(href="" id='Legs_link')
+                    div(class='item_slot' id='Legs_slot'
+                        ng-click="set_slot('Legs')"
+                        ng-class="{'selected_slot': slot == 'Legs'}")
+            .row
+              ul(class='list-inline')
+                li(class='pull-left' id='li_Back')
+                  a(href="" id='Back_link')
+                    div(class='item_slot' id='Back_slot'
+                        ng-click="set_slot('Back')"
+                        ng-class="{'selected_slot': slot == 'Back'}")
+                li(class='pull-right' id='li_Feet')
+                  a(href="" id='Feet_link')
+                    div(class='item_slot' id='Feet_slot'
+                        ng-click="set_slot('Feet')"
+                        ng-class="{'selected_slot': slot == 'Feet'}")
+            .row
+              ul(class='list-inline')
+                li(class='pull-left' id='li_Chest')
+                  a(href="" id='Chest_link')
+                    div(class='item_slot' id='Chest_slot'
+                        ng-click="set_slot('Chest')"
+                        ng-class="{'selected_slot': slot == 'Chest'}")
+                li(class='pull-right' id='li_Finger1')
+                  a(href="" id='Finger1_link')
+                    div(class='item_slot' id='Finger1_slot'
+                        ng-click="set_slot('Finger1')"
+                        ng-class="{'selected_slot': slot == 'Finger1'}")
+            .row
+              ul(class='list-inline')
+                li(class='pull-left')
+                  div(class='item_slot' id='Shirt_slot')
+                    img(src='/images/empty-slots/UI-EmptyShirt.png')
+                li(class='pull-right' id='li_Finger2')
+                  a(href="" id='Finger2_link')
+                    div(class='item_slot' id='Finger2_slot'
+                        ng-click="set_slot('Finger2')"
+                        ng-class="{'selected_slot': slot == 'Finger2'}")
+            .row
+              ul(class='list-inline')
+                li(class='pull-left')
+                  div(class='item_slot' id='Tabard_slot')
+                    img(src='/images/empty-slots/UI-EmptyTabard.png')
+                li(class='pull-right' id='li_Trinket1')
+                  a(href="" id='Trinket1_link')
+                    div(class='item_slot' id='Trinket1_slot'
+                        ng-click="set_slot('Trinket1')"
+                        ng-class="{'selected_slot': slot == 'Trinket1'}")
+            .row
+              ul(class='list-inline')
+                li(class='pull-left' id='li_Wrist')
+                  a(href="" id='Wrist_link')
+                    div(class='item_slot' id='Wrist_slot'
+                        ng-click="set_slot('Wrist')"
+                        ng-class="{'selected_slot': slot == 'Wrist'}")
+                li(class='pull-right' id='li_Trinket2')
+                  a(href="" id='Trinket2_link')
+                    div(class='item_slot' id='Trinket2_slot'
+                        ng-click="set_slot('Trinket2')"
+                        ng-class="{'selected_slot': slot == 'Trinket2'}")
+            .row
+              ul(class='list-inline')
+                li(id='li_MainHand'): a(href="" id='MainHand_link')
+                  div(class='item_slot' id='MainHand_slot'
+                      ng-click="set_slot('MainHand')"
+                      ng-class="{'selected_slot': slot == 'MainHand'}")
+                li(id='li_OffHand'): a(href="" id='OffHand_link')
+                  div(class='item_slot' id='OffHand_slot'
+                      ng-click="set_slot('OffHand')"
+                      ng-class="{'selected_slot': slot == 'OffHand'}")
+                li(id='li_Ranged'): a(href="" id='Ranged_link')
+                  div(class='item_slot' id='Ranged_slot'
+                      ng-click="set_slot('Ranged')"
+                      ng-class="{'selected_slot': slot == 'Ranged'}")
 
+        div(class="col-lg-6 col-md-6 col-sm-6 col-xs-12")
+          if(user)
+            -if(username == user.username)
+              .page-header
                 ul(class='list-inline')
-                  li(class='pull-left' id='li_Head')
-                    a(href="" id='Head_link')
-                      div(class='item_slot' id='Head_slot'
-                          ng-click="set_slot('Head')"
-                          ng-class="{'selected_slot': slot == 'Head'}")
-                  li(class='pull-right' id='li_Hands')
-                    a(href="" id='Hands_link')
-                      div(class='item_slot' id='Hands_slot'
-                          ng-click="set_slot('Hands')"
-                          ng-class="{'selected_slot': slot == 'Hands'}")
-              .row
-                ul(class='list-inline')
-                  li(class='pull-left' id='li_Neck')
-                    a(href="" id='Neck_link')
-                      div(class='item_slot' id='Neck_slot'
-                          ng-click="set_slot('Neck')"
-                          ng-class="{'selected_slot': slot == 'Neck'}")
-                  li(class='pull-right' id='li_Waist')
-                    a(href="" id='Waist_link')
-                      div(class='item_slot' id='Waist_slot'
-                          ng-click="set_slot('Waist')"
-                          ng-class="{'selected_slot': slot == 'Waist'}")
-              .row
-                ul(class='list-inline')
-                  li(class='pull-left' id='li_Shoulders')
-                    a(href="" id='Shoulders_link')
-                      div(class='item_slot' id='Shoulders_slot'
-                          ng-click="set_slot('Shoulders')"
-                          ng-class="{'selected_slot': slot == 'Shoulders'}")
-                  li(class='pull-right' id='li_Legs')
-                    a(href="" id='Legs_link')
-                      div(class='item_slot' id='Legs_slot'
-                          ng-click="set_slot('Legs')"
-                          ng-class="{'selected_slot': slot == 'Legs'}")
-              .row
-                ul(class='list-inline')
-                  li(class='pull-left' id='li_Back')
-                    a(href="" id='Back_link')
-                      div(class='item_slot' id='Back_slot'
-                          ng-click="set_slot('Back')"
-                          ng-class="{'selected_slot': slot == 'Back'}")
-                  li(class='pull-right' id='li_Feet')
-                    a(href="" id='Feet_link')
-                      div(class='item_slot' id='Feet_slot'
-                          ng-click="set_slot('Feet')"
-                          ng-class="{'selected_slot': slot == 'Feet'}")
-              .row
-                ul(class='list-inline')
-                  li(class='pull-left' id='li_Chest')
-                    a(href="" id='Chest_link')
-                      div(class='item_slot' id='Chest_slot'
-                          ng-click="set_slot('Chest')"
-                          ng-class="{'selected_slot': slot == 'Chest'}")
-                  li(class='pull-right' id='li_Finger1')
-                    a(href="" id='Finger1_link')
-                      div(class='item_slot' id='Finger1_slot'
-                          ng-click="set_slot('Finger1')"
-                          ng-class="{'selected_slot': slot == 'Finger1'}")
-              .row
-                ul(class='list-inline')
-                  li(class='pull-left')
-                    div(class='item_slot' id='Shirt_slot')
-                      img(src='/images/empty-slots/UI-EmptyShirt.png')
-                  li(class='pull-right' id='li_Finger2')
-                    a(href="" id='Finger2_link')
-                      div(class='item_slot' id='Finger2_slot'
-                          ng-click="set_slot('Finger2')"
-                          ng-class="{'selected_slot': slot == 'Finger2'}")
-              .row
-                ul(class='list-inline')
-                  li(class='pull-left')
-                    div(class='item_slot' id='Tabard_slot')
-                      img(src='/images/empty-slots/UI-EmptyTabard.png')
-                  li(class='pull-right' id='li_Trinket1')
-                    a(href="" id='Trinket1_link')
-                      div(class='item_slot' id='Trinket1_slot'
-                          ng-click="set_slot('Trinket1')"
-                          ng-class="{'selected_slot': slot == 'Trinket1'}")
-              .row
-                ul(class='list-inline')
-                  li(class='pull-left' id='li_Wrist')
-                    a(href="" id='Wrist_link')
-                      div(class='item_slot' id='Wrist_slot'
-                          ng-click="set_slot('Wrist')"
-                          ng-class="{'selected_slot': slot == 'Wrist'}")
-                  li(class='pull-right' id='li_Trinket2')
-                    a(href="" id='Trinket2_link')
-                      div(class='item_slot' id='Trinket2_slot'
-                          ng-click="set_slot('Trinket2')"
-                          ng-class="{'selected_slot': slot == 'Trinket2'}")
-              .row
-                ul(class='list-inline')
-                  li(id='li_MainHand'): a(href="" id='MainHand_link')
-                    div(class='item_slot' id='MainHand_slot'
-                        ng-click="set_slot('MainHand')"
-                        ng-class="{'selected_slot': slot == 'MainHand'}")
-                  li(id='li_OffHand'): a(href="" id='OffHand_link')
-                    div(class='item_slot' id='OffHand_slot'
-                        ng-click="set_slot('OffHand')"
-                        ng-class="{'selected_slot': slot == 'OffHand'}")
-                  li(id='li_Ranged'): a(href="" id='Ranged_link')
-                    div(class='item_slot' id='Ranged_slot'
-                        ng-click="set_slot('Ranged')"
-                        ng-class="{'selected_slot': slot == 'Ranged'}")
+                    li: input(type='submit' value='Gems'
+                              class="view_tab loginmodal-submit"
+                              ng-click="cur_view = 'gems'; reset_table()"
+                              ng-class="{'selected_view': cur_view == 'gems'}")
+                    li: input(type='submit' value='Enchants'
+                              class="view_tab loginmodal-submit"
+                              ng-click="cur_view = 'enchants'; reset_table()"
+                              ng-class="{'selected_view': cur_view == 'enchants'}")
+                    li: input(type='submit' value='Items'
+                              class="view_tab loginmodal-submit"
+                              ng-click="cur_view = 'items'; reset_table()"
+                              ng-class="{'selected_view': cur_view == 'items'}")
 
-          div(class="col-lg-6 col-md-6 col-sm-6 col-xs-12")
-            if(user)
-              -if(username == user.username)
-                .page-header
-                  ul(class='list-inline')
-                      li: input(type='submit' value='Gems'
-                                class="view_tab loginmodal-submit"
-                                ng-click="cur_view = 'gems'; reset_table()"
-                                ng-class="{'selected_view': cur_view == 'gems'}")
-                      li: input(type='submit' value='Enchants'
-                                class="view_tab loginmodal-submit"
-                                ng-click="cur_view = 'enchants'; reset_table()"
-                                ng-class="{'selected_view': cur_view == 'enchants'}")
-                      li: input(type='submit' value='Items'
-                                class="view_tab loginmodal-submit"
-                                ng-click="cur_view = 'items'; reset_table()"
-                                ng-class="{'selected_view': cur_view == 'items'}")
+              div(class='search_container' ng-show="cur_view != 'stats'")
+                .row
+                    ul(class='list-inline')
+                      li(ng-show="cur_view == 'items'") iLvl
+                      li(ng-show="cur_view == 'items'")
+                        input(type='text' class='form-control' maxlength=3
+                              placeholder='Min' size=3 ng-model='ilvlmin')
+                      li(ng-show="cur_view == 'items'")
+                        input(type='text' class='form-control' maxlength=3
+                              placeholder='Max' size=3 ng-model='ilvlmax')
+                      li(ng-show="cur_view == 'gems'") Colour:
+                      li(ng-show="cur_view == 'gems'")
+                        select(class='form-control' ng-model='gem_colour')
+                          option Red
+                          option Yellow
+                          option Blue
+                          option Green
+                          option Orange
+                          option Purple
+                          option Meta
+                          option Prismatic
+                      li Slot:
+                      li: select(class='form-control' ng-model="slot")
+                        option(ng-show="cur_view=='enchants'") OneHand
+                        option(ng-show="cur_view=='enchants'") TwoHand
+                        option(ng-hide="cur_view=='enchants'") MainHand
+                        option OffHand
+                        option Ranged
+                        option Head
+                        option Neck
+                        option Shoulders
+                        option Back
+                        option Chest
+                        option Wrist
+                        option Hands
+                        option Waist
+                        option Legs
+                        option Feet
+                        option Finger1
+                        option Finger2
+                        option Trinket1
+                        option Trinket2
+                      li: input(type="text" class="form-control" placeholder="Search"
+                                ng-model='search_val' maxlength=30 size=15
+                                ng-keyup="$event.keyCode == 13 && finditems(search_val)")
+                      li: button(type="submit" class="btn btn-default"
+                                 ng-click="finditems(search_val)") Submit
 
-                div(class='search_container' ng-show="cur_view != 'stats'")
-                  .row
-                      ul(class='list-inline')
-                        li(ng-show="cur_view == 'items'") iLvl
-                        li(ng-show="cur_view == 'items'")
-                          input(type='text' class='form-control' maxlength=3
-                                placeholder='Min' size=3 ng-model='ilvlmin')
-                        li(ng-show="cur_view == 'items'")
-                          input(type='text' class='form-control' maxlength=3
-                                placeholder='Max' size=3 ng-model='ilvlmax')
-                        li(ng-show="cur_view == 'gems'") Colour:
-                        li(ng-show="cur_view == 'gems'")
-                          select(class='form-control' ng-model='gem_colour')
-                            option Red
-                            option Yellow
-                            option Blue
-                            option Green
-                            option Orange
-                            option Purple
-                            option Meta
-                            option Prismatic
-                        li Slot:
-                        li: select(class='form-control' ng-model="slot")
-                          option(ng-show="cur_view=='enchants'") OneHand
-                          option(ng-show="cur_view=='enchants'") TwoHand
-                          option(ng-hide="cur_view=='enchants'") MainHand
-                          option OffHand
-                          option Ranged
-                          option Head
-                          option Neck
-                          option Shoulders
-                          option Back
-                          option Chest
-                          option Wrist
-                          option Hands
-                          option Waist
-                          option Legs
-                          option Feet
-                          option Finger1
-                          option Finger2
-                          option Trinket1
-                          option Trinket2
-                        li: input(type="text" class="form-control" placeholder="Search"
-                                  ng-model='search_val' maxlength=30 size=15
-                                  ng-keyup="$event.keyCode == 13 && finditems(search_val)")
-                        li: button(type="submit" class="btn btn-default"
-                                   ng-click="finditems(search_val)") Submit
+                   ul(class='list-inline')
+                     li(ng-show="cur_view == 'items'")
+                       a(href="" id='selected_link')
+                         div(class='item_slot' id='selected_slot')
+                     li(ng-show="cur_view == 'gems'")
+                       a(href="" id='selected_gem_link')
+                         div(class='item_slot' id='selected_gem_slot')
+                     li(ng-show="cur_view == 'enchants'")
+                       a(href="" id='selected_enchant_link')
+                         div(class='item_slot' id='selected_enchant_slot')
 
-                     ul(class='list-inline')
-                       li(ng-show="cur_view == 'items'")
-                         a(href="" id='selected_link')
-                           div(class='item_slot' id='selected_slot')
-                       li(ng-show="cur_view == 'gems'")
-                         a(href="" id='selected_gem_link')
-                           div(class='item_slot' id='selected_gem_slot')
-                       li(ng-show="cur_view == 'enchants'")
-                         a(href="" id='selected_enchant_link')
-                           div(class='item_slot' id='selected_enchant_slot')
-
-                      p(id='error-msg' ng-show="error_msg != ''") {{error_msg}}
-                      p(id='success-msg' ng-show="success_msg != ''") {{success_msg}}
-                  .row
-                    div(class='results_table' ng-show="items.length > 0")
-                      table(class='table')
-                        thead
-                          tr(ng-style="{'background-color': 'white'}")
+                    p(id='error-msg' ng-show="error_msg != ''") {{error_msg}}
+                    p(id='success-msg' ng-show="success_msg != ''") {{success_msg}}
+                .row
+                  div(class='results_table' ng-show="items.length > 0")
+                    table(class='table')
+                      thead
+                        tr(ng-style="{'background-color': 'white'}")
+                          td
+                          td: a(href='' ng-click="orderByField='Name';reverseSort=!reverseSort") Name
+                          td(ng-if="cur_view == 'items'")
+                            a(href='' ng-click="orderByField='RequiredClasses';reverseSort=!reverseSort") Class
+                          td(ng-if="cur_view == 'items'")
+                            a(href='' ng-click="orderByField='ItemLevel';reverseSort=!reverseSort") Item Level
+                          td: a(href='' ng-click="orderByField='Slot';reverseSort=!reverseSort") Slot
+                          td(ng-if="cur_view == 'items'")
+                            a(href='' ng-click="orderByField='Type';reverseSort=!reverseSort") Type
+                          td(ng-if="cur_view == 'enchants'")
+                            a(href='' ng-click="orderByField='Requirements';reverseSort=!reverseSort") Requirements
+                      tbody
+                          tr(ng-repeat="item in items | orderBy:orderByField:reverseSort"
+                             ng-click='select_search_item(item)')
                             td
-                            td: a(href='' ng-click="orderByField='Name';reverseSort=!reverseSort") Name
-                            td(ng-if="cur_view == 'items'")
-                              a(href='' ng-click="orderByField='RequiredClasses';reverseSort=!reverseSort") Class
-                            td(ng-if="cur_view == 'items'")
-                              a(href='' ng-click="orderByField='ItemLevel';reverseSort=!reverseSort") Item Level
-                            td: a(href='' ng-click="orderByField='Slot';reverseSort=!reverseSort") Slot
-                            td(ng-if="cur_view == 'items'")
-                              a(href='' ng-click="orderByField='Type';reverseSort=!reverseSort") Type
-                            td(ng-if="cur_view == 'enchants'")
-                              a(href='' ng-click="orderByField='Requirements';reverseSort=!reverseSort") Requirements
-                        tbody
-                            tr(ng-repeat="item in items | orderBy:orderByField:reverseSort"
-                               ng-click='select_search_item(item)')
-                              td
-                                a(target="_blank" ng-href="{{item.Id != '' ? 'http://db.warmane.com/wotlk/item='+item.Id : 'http://db.warmane.com/wotlk/spell='+item.SpellId}}")
-                                  img(ng-src='http://wow.zamimg.com/images/wow' +
-                                      '/icons/large/{{item.IconPath}}.jpg')
-                              td(ng-style='item_quality(item.Quality)')
-                                  {{item.Name}}
-                              td(ng-style='class_color(item.RequiredClasses)'
-                                 ng-if="cur_view == 'items'")
-                                {{item.RequiredClasses}}
-                              td(ng-if="cur_view == 'items'") {{item.ItemLevel}}
-                              td {{item.Slot}}
-                              td(ng-if="cur_view == 'items'") {{item.Type}}
-                              td(ng-if="cur_view == 'enchants'") {{item.Requirements}}
+                              a(target="_blank" ng-href="{{item.Id != '' ? 'http://db.warmane.com/wotlk/item='+item.Id : 'http://db.warmane.com/wotlk/spell='+item.SpellId}}")
+                                img(ng-src='http://wow.zamimg.com/images/wow' +
+                                    '/icons/large/{{item.IconPath}}.jpg')
+                            td(ng-style='item_quality(item.Quality)')
+                                {{item.Name}}
+                            td(ng-style='class_color(item.RequiredClasses)'
+                               ng-if="cur_view == 'items'")
+                              {{item.RequiredClasses}}
+                            td(ng-if="cur_view == 'items'") {{item.ItemLevel}}
+                            td {{item.Slot}}
+                            td(ng-if="cur_view == 'items'") {{item.Type}}
+                            td(ng-if="cur_view == 'enchants'") {{item.Requirements}}
 
-                    input(type="submit" value='Unequip' ng-click='unequip_item()'
-                          class="unequip_item loginmodal-submit")
-                    input(type="submit" value='Equip' ng-click='equip_item()'
-                          class="equip_item loginmodal-submit")
-                    input(type="submit" value='Save' ng-click='save_to_db()'
-                          class="save_item loginmodal-submit")
+                  input(type="submit" value='Unequip' ng-click='unequip_item()'
+                        class="unequip_item loginmodal-submit")
+                  input(type="submit" value='Equip' ng-click='equip_item()'
+                        class="equip_item loginmodal-submit")
+                  input(type="submit" value='Save' ng-click='save_to_db()'
+                        class="save_item loginmodal-submit")
 
-              -else if(user)
-                h4 Viewing #{char} as #{user.username}.
+            -else if(user)
+              h4 Viewing #{char} as #{user.username}.
 
-          div(class='clearfix visible sm')
-          div(class="col-lg-6 col-md-6 col-sm-6 col-xs-12")
-            div(class='stats_container')
-              table(id='stats')
-                tbody
-                  tr(ng-repeat='(key,val) in Stats')
-                    td {{key}}
-                    td {{val}}
+        div(class='clearfix visible sm')
+        div(class="col-lg-6 col-md-6 col-sm-6 col-xs-12")
+          div(class='stats_container')
+            table(id='stats')
+              tbody
+                tr(ng-repeat='(key,val) in Stats')
+                  td {{key}}
+                  td {{val}}
 
       p(ng-show='!character') This character does not exist.
 

@@ -1,5 +1,14 @@
 @import "variables.less";
 @import "mixins.less";
+@font-face {
+  font-family: "H-Font";
+  src: url("/lib/fonts/CODE-Bold.otf");
+}
+
+@font-face {
+  font-family: "P-Font";
+  src: url("/lib/fonts/Roboto-Thin.ttf");
+}
 
 // Global Components
 html,
@@ -9,7 +18,8 @@ body {
 }
 
 body {
-    .serif-font;
+    //.serif-font;
+    font-family: 'P-Font';
 }
 
 hr {
@@ -20,6 +30,8 @@ hr {
 
 hr.light {
     border-color: white;
+    max-width: 150px;
+    border-width: 2px;
 }
 
 a {
@@ -42,7 +54,10 @@ h3,
 h4,
 h5,
 h6 {
-    .sans-serif-font;
+    font-family: 'H-font';
+    //.sans-serif-font;
+    font-weight: 700;
+    text-transform: uppercase;
 }
 
 p {
@@ -135,14 +150,15 @@ aside {
         }
         .nav > li > a,
         .nav > li > a:focus {
-            color: fade(white, 70%);
+            color: fade(white, 50%);
             &:hover {
                 color: white;
             }
         }
         &.affix {
             background-color: white;
-            opacity: 0.5;
+            opacity: .5;
+            box-shadow: 0px 2px 2px 0px #888888;
             border-color: fade(@gray-darker, 5%);
             .navbar-header .navbar-brand {
                 color: @theme-primary;
@@ -181,6 +197,10 @@ header {
         width: 100%;
         .header-content-inner {
             h1 {
+                cursor: default;
+                -webkit-user-select: none; /* Chrome/Safari */
+                -moz-user-select: none; /* Firefox */
+                -ms-user-select: none; /* IE10+ */
                 font-weight: 700;
                 text-transform: uppercase;
                 margin-top: 0;
