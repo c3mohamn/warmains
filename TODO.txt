@@ -13,6 +13,7 @@ List of things that could be worked on:
 
 5. Add Requirements for GEMs as well.
 
+6. Work on aesthetics more.
 
 Ideas:
 

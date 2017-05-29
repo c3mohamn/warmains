@@ -5,10 +5,10 @@ $(document).ready(function(){
         $("#logo-black").css("color", "brown");
     });
     $(".logo a").mouseout(function (){
-        $("#logo-black").css("color", "black");
+        $("#logo-black").css("color", "grey");
     });
     $(".logo a").mouseover(function (){
-        $("#logo-brown").css("color", "black");
+        $("#logo-brown").css("color", "grey");
     });
     $(".logo a").mouseout(function (){
         $("#logo-brown").css("color", "brown");

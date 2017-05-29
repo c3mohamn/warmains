@@ -1,0 +1,71 @@
+doctype html
+html(ng-app='charApp' ng-cloak)
+
+  include partials/head.jade
+  link(rel='stylesheet', type="text/css" href='/stylesheets/char_select_style.css')
+
+  body(ng-controller='charctrl')
+      include partials/navbar.jade
+
+      div(class='container' id='main-container')
+        .row
+          div(class="col-lg-6 col-md-6 col-sm-6 col-xs-12")
+            .create_container
+              div(class="loginmodal-container" id="char-create")
+                .page-header
+                  h3 CREATE A CHARACTER
+                form(action='/character/create' method='post')
+                  input(type="text" name="Name" placeholder="Name"
+                  maxlength=12)
+                  select(class="form-control" name="pickclass")
+                    option(selected value= '') Pick a Class
+                    option(value='paladin') Paladin
+                    option(value='druid') Druid
+                    option(value='shaman') Shaman
+                    option(value='hunter') Hunter
+                    option(value='warrior') Warrior
+                    option(value='rogue') Rogue
+                    option(value='mage') Mage
+                    option(value='priest') Priest
+                    option(value='warlock') Warlock
+                    option(value='death knight') Death Knight
+                  br
+                  textarea(class="form-control" rows=5  maxlength=255
+                           name="description" placeholder="Description")
+                  br
+                  input(type="submit" name="createchar"
+                        class="create loginmodal-submit" value="Create")
+
+          div(class="col-lg-6 col-md-6 col-sm-6 col-xs-12")
+            h3 Your Characters
+            h4(id='error-msg') {{message}}
+            .existing_chars
+              table(ng-repeat='char in characters')
+                tr(ng-click = 'select_char(char.name)'
+                   ng-class="{'selected_row': char.name == selected_char}"
+                   ng-dblclick = 'redirect_edit()')
+                  td: h3 {{char.name}}
+                  td: a(ng-href='/character/profile/'
+                      + user.username + '/{{char.name}}')
+                    img(ng-src='/images/class-icons/{{char.class}}.png'
+                    class='class_icon pull-right')
+
+            input(type="submit" value='delete' class="delete_char loginmodal-submit"
+                  href="#" data-toggle="modal" data-target="#delete-char-modal")
+            input(type="submit" value='edit' class="edit_char loginmodal-submit"
+                  ng-click='redirect_edit()')
+
+    div(class="modal fade" id="delete-char-modal" tabindex="-1" role="dialog"
+    aria-labelledby="myModalLabel" aria-hidden="true")
+    div(class="modal-dialog")
+      div(class="loginmodal-container")
+          .page-header
+            h4 Are you sure?
+            br
+            input(type="submit" name="confirm" class="confirm loginmodal-submit"
+            value="YES" data-dismiss="modal" ng-click='delete_char()')
+            input(type="submit" name="decline" class="decline loginmodal-submit"
+            value="NO" data-dismiss="modal")
+
+  include partials/footer.jade
+  script(src="/js/char_controller.js")

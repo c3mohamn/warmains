@@ -2,18 +2,17 @@ doctype html
 html(ng-app='editApp' ng-cloak)
 
   include partials/head.jade
-  link(rel='stylesheet', type="text/css" href='/stylesheets/char-profile.css')
+  link(rel='stylesheet', type="text/css" href='/stylesheets/char_edit_style.css')
   script(src="https://cdn.warmane.com/api/tooltip.js")
 
   body(ng-controller='editctrl' ng-init="cur_view = 'stats'")
       include partials/navbar.jade
 
-      div(class='container' ng-show='character')
-        .row
+      div(class='container' id='main-container' ng-show='character')
           div(class="col-lg-6 col-md-6 col-sm-6 col-xs-12")
-            div(class='char_panel' char-directive)
+            div(class='char_panel')
               .row
-                h2(class='pull-center') {{character.name}}
+                h2(class='pull-center' id="homeHeading") {{character.name}}
                 h5(class='pull-center') {{character.class}}
 
                 ul(class='list-inline')
@@ -253,7 +252,7 @@ html(ng-app='editApp' ng-cloak)
                     td {{key}}
                     td {{val}}
 
-      p(ng-if='!character') This character does not exist.
+      p(ng-show='!character') This character does not exist.
 
   include partials/footer.jade
   script(src="/js/charedit_helper.js")

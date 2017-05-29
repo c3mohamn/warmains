@@ -5,7 +5,7 @@ var Char = require('../models/char');
 
 /* GET Character Selection page. */
 router.get('/', ensureAuthenticated, function(req, res, next) {
-  res.render('character', {title: 'Warmains'});
+  res.render('char_select', {title: 'Warmains'});
 });
 
 /* --------- CREATE NEW CHARACTER ---------
@@ -31,7 +31,7 @@ router.post('/create', function(req, res, next) {
 
     if(errors){
         console.log(errors);
-        res.render('character', {
+        res.render('char_select', {
             errors:errors
         });
     } else {
@@ -54,7 +54,7 @@ router.post('/create', function(req, res, next) {
 
 /* GET Character Edit page. */
 router.get('/profile/:username/:char', function(req, res) {
-  res.render('charprofile', {
+  res.render('char_edit', {
     char: req.params.char,
     username: req.params.username
   });

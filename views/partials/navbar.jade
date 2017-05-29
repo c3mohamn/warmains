@@ -1,50 +1,28 @@
-div(class="container")
-    nav(class="navbar navbar-default")
-        div(class="container-fluid")
-            div(class="navbar-header")
-                // collapsible dropdown for when window too small
-                button(type="button" class="navbar-toggle collapsed"
-                data-toggle="collapse"
-                data-target="#bs-example-navbar-collapse-1"
-                aria-expanded="false")
-                    span(class="sr-only")
-                    span(class="icon-bar")
-                    span(class="icon-bar")
-                    span(class="icon-bar")
-                // Home logo/icon
-                div(class="logo")
-                    a(class="pull-left" href="/")
-                        span(id="logo-brown") WAR
-                        span(id="logo-black") MAINS
+nav(id="mainNav" class="navbar navbar-default navbar-fixed-top")
+  .container-fluid
+    .navbar-header
+      button(type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1")
+        span(class="sr-only") Toggle navigation
+        i(class="fa fa-bars")
+      .logo
+        a(class="navbar-brand page-scroll" href="/")
+          span(id="logo-brown") WAR
+          span(id="logo-black") MAINS
 
-            div(class="collapse navbar-collapse"
-            id="bs-example-navbar-collapse-1")
-                ul(class="nav navbar-nav" class="pull-right")
-                    li: a(href="/") HOME
-                        span(class="sr-only") (current)
-                    -if(!user)
-                        li: a(href="/users/login") LOGIN
-                        li: a(href="/users/register") REGISTER
-                    // THIS WILL ONLY SHOW WHEN LOGGED IN.
-                    -if(user)
-                        li: a(href="/character") CHARACTERS
-                        li(class="dropdown")
-                            a(href="#" class="dropdown-toggle"
-                            data-toggle="dropdown" role="button"
-                            aria-haspopup="true" aria-expanded="false") #{user.name}
-                                span(class="caret")
-                            ul(class="dropdown-menu")
-                                li: a(href="/profile/" + user.username) PROFILE
-                                li(role="separator" class="divider")
-                                li: a(href="/users/logout") LOGOUT
-
-div(class="errors-container")
-    -if(error_msg)
-        p(id="error-msg") #{error_msg}
-    -if(error)
-        p(id="error-msg") #{error}
-    -if(errors)
-        for e in errors
-          p(id="error-msg") #{e.msg}
-    -if(success_msg)
-        p(id="success-msg") #{success_msg}
+    div(class="collapse navbar-collapse" id="bs-example-navbar-collapse-1")
+      ul(class="nav navbar-nav navbar-right")
+        li: a(class="page-scroll" href="/") Home
+        -if (!user)
+          li: a(class="page-scroll" href="/users/login") Login
+          li: a(class="page-scroll" href="/users/register") Register
+        -if(user)
+          li: a(class="page-scroll" href="/character") Characters
+          li(class="dropdown")
+              a(href="#" class="dropdown-toggle"
+              data-toggle="dropdown" role="button"
+              aria-haspopup="true" aria-expanded="false") #{user.name}
+                  span(class="caret")
+              ul(class="dropdown-menu")
+                  li: a(class="page-scroll" href="/profile/" + user.username) PROFILE
+                  li(role="separator" class="divider")
+                  li: a(class="page-scroll" href="/users/logout") LOGOUT

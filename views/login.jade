@@ -3,18 +3,18 @@ html
     include partials/head.jade
     body
         include partials/navbar.jade
-
-        div(class="modal-dialog")
-            div(class="loginmodal-container")
-                .page-header
-                  h3 LOG IN
-                form(action="/users/login" method="post")
-                    input(type="text" name="username" placeholder="Username")
-                    input(type="password" name="password" placeholder="Password")
-                    input(type="submit" name="login" class="login loginmodal-submit"
-                          value="Login")
-                    div(class="login-help")
-                        a(href="/users/register") Register
-                        br
-                        a(href="/users/forgot") Forgot Password?
+        .login-container
+          div(class="modal-dialog")
+              div(class="loginmodal-container")
+                  .page-header
+                    h3 LOG IN
+                  form(action="/users/login" method="post")
+                      input(type="text" name="username" placeholder="Username")
+                      input(type="password" name="password" placeholder="Password")
+                      input(type="submit" name="login" class="login loginmodal-submit"
+                            value="Login")
+                      div(class="login-help")
+                          a(href="/users/register") Register
+                          br
+                          a(href="/users/forgot") Forgot Password?
         include partials/footer.jade

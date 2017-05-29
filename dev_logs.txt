@@ -207,3 +207,8 @@ TODO:
 
 - Added SpellIds, Iconpaths, and Ids for enchants
 - Extra socket for eternal belt bucket waist enchant added
+
+----- 05/29/2017 ------
+------- v2.8.6 --------
+
+- Changed theme and added bg to index page.
