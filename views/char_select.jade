@@ -5,6 +5,7 @@ html(ng-app='charApp' ng-cloak)
   link(rel='stylesheet', type="text/css" href='/stylesheets/char_select_style.css')
 
   body(ng-controller='charctrl')
+      <script>document.body.className += ' fade-out';</script>
       include partials/navbar.jade
 
       header
@@ -43,7 +44,7 @@ html(ng-app='charApp' ng-cloak)
         div(class="col-lg-6 col-md-6 col-sm-6 col-xs-12")
           h3 SELECT
           hr(class='light')
-          h4(id='error-msg') {{message}}
+          h4(class='error-msg') {{message}}
           .existing_chars
             table(ng-repeat='char in characters')
               tr(ng-click = 'select_char(char.name)'

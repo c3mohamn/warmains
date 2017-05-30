@@ -2,16 +2,20 @@ doctype html
 html
     include partials/head.jade
     body
-        include partials/navbar.jade
+      <script>document.body.className += ' fade-out';</script>
+      include partials/navbar.jade
 
-        div(class="modal-dialog")
-            div(class="loginmodal-container")
-                .page-header
-                  h3 PASSWORD RECOVERY
-                br
-                form(action="/users/forgot" method="post")
-                    input(type="text" name="forgotemail" placeholder="Email")
-                    input(type="submit" name="login" value="Reset"
-                          class="reset loginmodal-submit")
+      header(class='signup-header')
+        .header-content
+          .header-content-inner
 
-        include partials/footer.jade
+      .signup-container
+        div(class="loginmodal-container")
+          h1 PASSWORD RECOVERY
+          hr(class='light')
+          form(action="/users/forgot" method="post")
+            input(type="text" name="forgotemail" placeholder="Email")
+            input(type="submit" name="login" value="Reset"
+                  class="reset loginmodal-submit")
+
+      include partials/footer.jade

@@ -2,6 +2,7 @@ doctype html
 html
   include partials/head.jade
   body
+  <script>document.body.className += ' fade-out';</script>
   include partials/navbar.jade
   br
   header
@@ -9,6 +10,7 @@ html
       .header-content-inner
         h1(id="homeHeading") Hello #{user.name}
         hr
+
   .container
     div(class="col-lg-6 col-md-6 col-sm-6 col-xs-12")
       h3 Your Information

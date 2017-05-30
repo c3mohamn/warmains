@@ -2,11 +2,12 @@ doctype html
 html
     include partials/head.jade
     body
-        include partials/navbar.jade
-        header
-          .header-content
-            .header-content-inner
-              h1(id="homeHeading") About
-              hr
-        div(class="about-container")
-        include partials/footer.jade
+      <script>document.body.className += ' fade-out';</script>
+      include partials/navbar.jade
+      header
+        .header-content
+          .header-content-inner
+            h1 About
+            hr
+      div(class="about-container")
+      include partials/footer.jade

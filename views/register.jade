@@ -3,14 +3,16 @@ html(ng-app='registerApp' ng-cloak)
     include partials/head.jade
 
     body(ng-controller='registerctrl')
-        include partials/navbar.jade
+      <script>document.body.className += ' fade-out';</script>
+      include partials/navbar.jade
 
-        header
-          .header-content
-            .header-content-inner
-              h1(id="homeHeading") Signup
-              hr
-        div(class="loginmodal-container" id="register-container")
+      header(class='signup-header')
+        .header-content
+          .header-content-inner
+      .signup-container
+        div(class="loginmodal-container")
+          h1 SignUP
+          hr(class='light')
           form(action="/users/register" method="post")
 
               input(type='text' name='namefield' placeholder='Name'
@@ -19,25 +21,25 @@ html(ng-app='registerApp' ng-cloak)
               input(type="text" name="userfield" placeholder="Username"
                     ng-change="check_username()" ng-model='user_name'
                     maxlength=16)
-              span(id="no-username-1")
-              span(id="error-msg") {{duplicate_username}}
+              span(class="error-msg" id="no-username-1")
+              span(class="error-msg") {{duplicate_username}}
 
               input(type="password" name="pass1field" placeholder="Password"
                     maxlength=18)
-              span(id="no-password-2")
+              span(class="error-msg" id="no-password-2")
 
               input(type="password" name="pass2field" maxlength=20
                     placeholder="Confirm Password")
-              span(id="no-password-3")
+              span(class="error-msg" id="no-password-3")
 
               input(type="text" name="emailfield" placeholder="Email"
                     ng-change="check_email()" ng-model='email_addr')
-              span(id="error-msg") {{duplicate_email}}
-              span(id="no-email")
+              span(class="error-msg") {{duplicate_email}}
+              span(class="error-msg" id="no-email")
 
               input(type="submit" name="createaccount" disabled
                     class="create loginmodal-submit" value="Create Account")
 
-        include partials/footer.jade
-        script(src="/js/user_controller.js")
-        script(src="/js/createacc.js")
+      include partials/footer.jade
+      script(src="/js/user_controller.js")
+      script(src="/js/createacc.js")

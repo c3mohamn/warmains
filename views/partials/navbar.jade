@@ -26,3 +26,14 @@ nav(id="mainNav" class="navbar navbar-default navbar-fixed-top")
                   li: a(class="page-scroll" href="/profile/" + user.username) PROFILE
                   li(role="separator" class="divider")
                   li: a(class="page-scroll" href="/users/logout") LOGOUT
+
+div(class="errors-container")
+    -if(error_msg)
+        p(class="error-msg") #{error_msg}
+    -if(error)
+        p(class="error-msg") #{error}
+    -if(errors)
+        for e in errors
+          p(class="error-msg") #{e.msg}
+    -if(success_msg)
+        p(class="success-msg") #{success_msg}

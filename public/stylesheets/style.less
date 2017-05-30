@@ -1,47 +1,23 @@
+// Global Stylesheet
+
 [ng\:cloak], [ng-cloak], .ng-cloak {
     display: none;
 }
 
 body {
+    transition: 1s opacity;
     text-align: center;
     font-weight: bold;
     color: #2E2E2E;
     background-color: black;
 }
 
-.container {
-  border-radius: 1px;
-  padding: 20px;
-  width: 80%;
-  position: relative;
-  margin-top: -210px;
-  background-color: rgba(255, 255, 255, .5);
-  @media (max-width: 768px) {
-    margin-top: -110px;
-  }
+body.fade-out {
+    opacity: 0;
+    transition: none;
 }
 
-// -------- Profile Page ----------
-
-#user-information {
-  max-width: 400px;
-}
-
-#password-change {
-
-}
-
-// -------- Signup Page ----------
-
-#register-container {
-  position: relative;
-  margin-top: -200px;
-}
-
-#page-title {
-    margin: 0 auto;
-    font-weight: bold;
-}
+// Site Logo
 .logo {
     a {
         text-decoration: none;
@@ -58,24 +34,125 @@ body {
     }
 }
 
-.login-container {
-    margin: 0 auto;
-    opacity: .8;
-    margin-top: 100px;
-    filter: drop-shadow(0px 0px 10px black);
+// Bootstrap Container override
+.container {
+  border-radius: 1px;
+  padding: 50px;
+  width: 80%;
+  position: relative;
+  margin-top: -210px;
+  background-color: rgba(255, 255, 255, .5);
+  box-shadow: inset 0px 0px 0px 5px rgba(0,0,0,1);
+  @media (max-width: 768px) {
+    margin-top: -110px;
+  }
+  animation: .5s ease-out 0s 1 slideDown;
 }
 
+// -------- Profile Page ----------
+
+#user-information {
+  max-width: 400px;
+}
+
+#password-change {
+
+}
+
+// -------- Signup/Login Page ----------
+
+.signup-header {
+  background-image: url('/images/bg/sindi.jpg');
+  box-shadow: inset 0px -30px 100px 70px rgba(0, 0, 0, 1);
+  max-width: 1600px;
+  max-height: 700px;
+}
+.signup-container {
+    .loginmodal-container {
+      max-width: 400px;
+      padding: 50px;
+      background-color: rgba(0, 0, 0, .5);
+      h1 {
+        color: rgba(255, 255, 255, .8);
+      }
+      input[name=login] {
+        background-color: rgba(0, 0, 0, .5);
+      }
+      input[name=login]:hover {
+        background-color: rgba(255, 255, 255, .5);
+        transition: .5s;
+      }
+    }
+    opacity: .8;
+    margin-top: -700px;
+    margin-bottom: 300px;
+    filter: drop-shadow(0px 0px 10px black);
+    @media (max-width: 768px) {
+      margin-top: -110px;
+    }
+    animation: 1s slideDown;
+}
+
+// Footer
 .footerdiv {
     margin-top: 100px;
     ul {
         li {
             a {
                 text-decoration: none;
-                color: black;
+                color: grey;
             }
             a:hover {
                 color: brown;
             }
         }
     }
+}
+
+// Error Messages
+
+.error-msg {
+    font-weight: bold;
+    opacity: .8;
+    color: red;
+    font-size: 18px;
+    animation: 0.5s msg_pop;
+}
+
+.success-msg {
+    font-weight: bold;
+    opacity: .8;
+    color: #0080FF;
+    font-size: 18px;
+    animation: 0.5s msg_pop;
+}
+
+// Registration error messages
+#no-password-1, #no-password-2, #no-password-3, #no-username-1, #no-email {
+    visibility: hidden;
+}
+
+// Key Frames
+
+@keyframes msg_pop {
+  0% {
+    opacity:0;
+    transform: scale(0.5);
+  }
+  70% {
+    transform: scale(1.02);
+  }
+  100% {
+    opacity:1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideDown {
+  0% {
+    transform: translateY(-50%);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }

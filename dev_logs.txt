@@ -213,3 +213,10 @@ TODO:
 
 - Changed theme and added bg to index page.
 - More changes, fonts consistency in pages
+
+----- 05/30/2017 ------
+------- v2.8.8 --------
+
+- More work on visuals:
+  - Login/register/reset/forgot pages all similar /w LK bg
+  - small fixes and changes
