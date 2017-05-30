@@ -91,13 +91,6 @@
   transition: opacity ease 0.5s;
 }
 
-.login-help{
-  font-size: 12px;
-}
-.login-help a:hover {
-    color: black;
-}
-
 input[name=createaccount], input[name=createaccount]:hover {
     background-color: grey;
 }

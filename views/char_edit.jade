@@ -9,7 +9,7 @@ html(ng-app='editApp' ng-cloak)
     <script>document.body.className += ' fade-out';</script>
     include partials/navbar.jade
 
-    header
+    header(class='char-header')
       .header-content
         .header-content-inner
           h1(id="homeHeading") {{character.name}}

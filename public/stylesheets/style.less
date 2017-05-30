@@ -43,10 +43,30 @@ body.fade-out {
   margin-top: -210px;
   background-color: rgba(255, 255, 255, .5);
   box-shadow: inset 0px 0px 0px 5px rgba(0,0,0,1);
+  animation: .5s ease-out 0s 1 slideDown;
+
+  // Media Change animation
+    /* webkit */
+  -webkit-animation-property: -webkit-width;
+  -webkit-animation-property: -webkit-height;
+  -webkit-transition-duration: 1s;
+  /* moz */
+  -moz-animation-property: -moz-width;
+  -moz-animation-property: -moz-height;
+  -moz-transition-duration: 1s;
+  /* opera */
+  -o-animation-property: -o-width;
+  -o-animation-property: -o-height;
+  -o-transition-duration: 1s;
+
+  // mobile view
   @media (max-width: 768px) {
     margin-top: -110px;
   }
-  animation: .5s ease-out 0s 1 slideDown;
+  // when height very low
+  @media (max-height: 473px) and (min-width: 768px) {
+    margin-top: 0px;
+  }
 }
 
 // -------- Profile Page ----------
@@ -59,38 +79,61 @@ body.fade-out {
 
 }
 
+// -------- Char Pages ----------
+
+header.char-header {
+  background-image: url('/images/bg/classes.jpg');
+}
+
 // -------- Signup/Login Page ----------
 
-.signup-header {
+header.signup-header {
   background-image: url('/images/bg/sindi.jpg');
   box-shadow: inset 0px -30px 100px 70px rgba(0, 0, 0, 1);
-  max-width: 1600px;
-  max-height: 700px;
 }
+
 .signup-container {
-    .loginmodal-container {
-      max-width: 400px;
-      padding: 50px;
+
+  opacity: .8;
+  margin-top: -700px;
+  margin-bottom: 300px;
+  filter: drop-shadow(0px 0px 10px black);
+  animation: 1s slideDown;
+
+  // container for input
+  .loginmodal-container {
+    max-width: 400px;
+    padding: 50px;
+    background-color: rgba(0, 0, 0, .5);
+    h1 {
+      color: rgba(255, 255, 255, .8);
+    }
+    input[name=login] {
       background-color: rgba(0, 0, 0, .5);
-      h1 {
-        color: rgba(255, 255, 255, .8);
-      }
-      input[name=login] {
-        background-color: rgba(0, 0, 0, .5);
-      }
-      input[name=login]:hover {
-        background-color: rgba(255, 255, 255, .5);
-        transition: .5s;
-      }
     }
-    opacity: .8;
-    margin-top: -700px;
-    margin-bottom: 300px;
-    filter: drop-shadow(0px 0px 10px black);
-    @media (max-width: 768px) {
-      margin-top: -110px;
+    input[name=login]:hover {
+      background-color: rgba(255, 255, 255, .5);
+      transition: .5s;
     }
-    animation: 1s slideDown;
+  }
+
+  // Mobile view
+  @media (max-width: 768px) {
+    margin-top: -110px;
+    .loginmodal-container {
+      background-color: rgba(0, 0, 0, 0);
+    }
+  }
+}
+
+// Register/Forgot Password links
+.login-help {
+  font-size: 14px;
+  //background-color: black;
+  box-shadow: inset 0px 0px 50px 2px rgba(0, 0, 0, 1);
+}
+.login-help a:hover {
+    color: red;
 }
 
 // Footer

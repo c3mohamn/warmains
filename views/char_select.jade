@@ -8,14 +8,14 @@ html(ng-app='charApp' ng-cloak)
       <script>document.body.className += ' fade-out';</script>
       include partials/navbar.jade
 
-      header
+      header(class='char-header')
         .header-content
           .header-content-inner
             h1(id="homeHeading") Your characters
             hr
       .container
         div(class="col-lg-6 col-md-6 col-sm-6 col-xs-12")
-          h3 CREATE
+          h3 CREATE NEW CHARACTER
           hr(class='light')
           .create_container
             div(class="loginmodal-container" id="char-create")
@@ -67,11 +67,11 @@ html(ng-app='charApp' ng-cloak)
       div(class="loginmodal-container")
           .page-header
             h4 Are you sure?
-            br
-            input(type="submit" name="confirm" class="confirm loginmodal-submit"
-            value="YES" data-dismiss="modal" ng-click='delete_char()')
-            input(type="submit" name="decline" class="decline loginmodal-submit"
-            value="NO" data-dismiss="modal")
+          br
+          input(type="submit" name="confirm" class="confirm loginmodal-submit"
+          value="YES" data-dismiss="modal" ng-click='delete_char()')
+          input(type="submit" name="decline" class="decline loginmodal-submit"
+          value="NO" data-dismiss="modal")
 
   include partials/footer.jade
   script(src="/js/char_controller.js")
