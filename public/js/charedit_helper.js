@@ -57,7 +57,9 @@ var char_gems = {
   Finger2: {socket1: null, socket2: null, socket3: null},
   MainHand: {socket1: null, socket2: null, socket3: null},
   OffHand: {socket1: null, socket2: null, socket3: null},
-  Ranged: {socket1: null, socket2: null, socket3: null}
+  Ranged: {socket1: null, socket2: null, socket3: null},
+  Trinket1: {socket1: null, socket2: null, socket3: null},
+  Trinket2: {socket1: null, socket2: null, socket3: null}
 }
 
 // Stores the types of items each class can wield.
@@ -130,6 +132,8 @@ var multiplier_to_stat = {
   "BonusStrengthMultiplier": null,
   "BonusFrostDamageMultiplier": null
 }
+
+var cur_multipliers = {};
 
 // Stores the currently selected item.
 var selected_item = null;
@@ -482,6 +486,94 @@ function can_wield(item, char) {
     return false;
   }
   return true;
+}
+
+
+/* Helper function for stat functions:
+ * Ignore SpecialEffects when adding/removing stats.
+ */
+function not_special(key) {
+  if (key == "SpecialEffectCount" || key == "SpecialEffects")
+    return false;
+  return true;
+}
+
+/* Remove item.Stats from stats.
+ *
+ * item: item that is being unequipped
+ * has_enchants: true iff we need to remove gem and enchant stats as well
+ * slot: slot of item
+ * stats: the current net stats of character
+ */
+function remove_stats(item, has_enchants, slot, stats) {
+  var old_stats = item.Stats;
+
+  if (!has_enchants) {
+    for (var key in old_stats) {
+      if (not_special(key)) {
+
+        // if a multiplier stat, remove from list of multipliers
+        // TODO
+        if (key.indexOf('Multiplier') >= 0) {
+          //multiply_stats($scope.multipliers_meta, $scope.Stats, true);
+        } else {
+          stat_num = parseFloat(old_stats[key], 10);
+          stats[key] -= stat_num;
+        }
+      }
+    }
+
+  } else { // must remove enchants and gems as well
+    // Remove the gem stats if gems exist.
+    if (char_gems[slot].socket1)
+      remove_stats(char_gems[slot].socket1, false, slot, stats);
+    if (char_gems[slot].socket2)
+      remove_stats(char_gems[slot].socket2, false, slot, stats);
+    if (char_gems[slot].socket3)
+      remove_stats(char_gems[slot].socket3, false, slot, stats);
+
+    // Remove enchant stats if enchant exists
+    if (char_enchants[slot])
+      remove_stats(char_enchants[slot], false, slot, stats);
+
+    // remove stats of the item itself now
+    remove_stats(item, false, slot, stats);
+  }
+}
+
+/* Remove prev_item.Stats from stats, then add new_item.Stats to stats.
+ *
+ * prev_item: the item previously equipped
+ * new_item: item that is being equipped
+ * type: gem, enchant or regular item
+ * slot: slot of item
+ * stats: the current net stats of character
+ */
+function add_stats(prev_item, new_item, has_enchants, slot, stats) {
+  var new_stats = new_item.Stats;
+
+  // remove stats of the previous item
+  if (prev_item) {
+    remove_stats(prev_item, has_enchants, slot, stats);
+  }
+
+  // add stats of the new item
+  for (var key in new_stats) {
+    if (not_special(key)) {
+      // if a multiplier stat, add the list of multipliers
+      // TODO:
+      if (key.indexOf('Multiplier') >= 0) {
+        //cur_multipliers[key] = new_stats[key];
+      } else {
+        stat_num = parseFloat(new_stats[key], 10);
+        // initialize stat to 0 if it does not exist already
+        if (!stats[key])
+          stats[key] = 0;
+        stats[key] += stat_num;
+      }
+      //console.log('Adding ', stat_num, ' to ', key);
+    }
+  }
 }
 
 /* Multiply character stats by multiplier.

@@ -222,10 +222,12 @@ TODO:
   - small fixes and changes
 
 ----- 05/31/2017 ------
-------- v2.9.0 --------
+------- v2.9.2 --------
 
 - More work on visuals:
   - character creation section
   - modal box
   - header bg changes based on class of character
 - remove duplicate bloodsurges
+- Reworked stat updating when equipping/unequipping items/gems/enchants
+- Stats and tooltip updated for enchants now

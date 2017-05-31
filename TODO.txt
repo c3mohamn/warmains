@@ -2,8 +2,6 @@ List of things that could be worked on:
 
 1. REDO multipliers
 
-2. Work on enchant update stats.
-
 3. Socket Bonus
 
 4. Professions

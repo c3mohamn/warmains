@@ -8,8 +8,8 @@ editApp.controller('editctrl', ['$scope', '$http', '$compile', function($scope, 
   $scope.error_msg = '';
   $scope.success_msg = '';
   $scope.Stats = {};
-  $scope.multipliers_meta = {};
-  $scope.multipliers_enchants = {};
+  // all multipliers for enchants/gems currently equipped TODO: calculate at end
+  $scope.multipliers = {}; 
 
 
   /* ---------  Functions --------- */
@@ -72,84 +72,6 @@ editApp.controller('editctrl', ['$scope', '$http', '$compile', function($scope, 
       });
       $scope.error_msg = '';
       $scope.success_msg = 'Successfully saved.';
-  }
-
-  /* Update the stats of the character with the stats gained from the given item.
-   *
-   * item: item being equipped or unequipped.
-   * equipping: true iff item is being equipped.
-   * socket: if gem, the socket that the gem is in, null otherwise
-   *
-   * **Even if equipping, must remove stats of prev item/gem/enchant first.
-   */
-  $scope.update_stats = function(item, equipping, socket) {
-    var slot = $scope.slot;
-
-    // Do not show the special effects in stats table
-    function no_specials(key) {
-      if (key == "SpecialEffectCount" || key == "SpecialEffects")
-        return false;
-      return true;
-    }
-
-    // Remove the stats of the previously equipped item if exists
-    if (char_items[slot] && !is_gem(item) && !is_enchant(item)) {
-      var old_stats = char_items[slot].Stats;
-
-      // Remove the gem stats if they exist.
-      if (char_gems[slot].socket1)
-        $scope.update_stats(char_gems[slot].socket1, false, 'socket1')
-      if (char_gems[slot].socket2)
-        $scope.update_stats(char_gems[slot].socket2, false, 'socket2')
-      if (char_gems[slot].socket3)
-        $scope.update_stats(char_gems[slot].socket3, false, 'socket3')
-      // TODO: remove enchant stats as well.
-
-      for (var key in old_stats) {
-        if (no_specials(key)) {
-          stat_num = parseFloat(old_stats[key], 10);
-          $scope.Stats[key] -= stat_num;
-        }
-        //console.log('Removing ', stat_num, ' from ', key);
-      }
-
-    } // Remove stats for a gem
-    else if (char_gems[slot] && char_gems[slot][socket]) {
-      var old_stats = char_gems[slot][socket].Stats;
-
-      for (var key in old_stats) {
-        if (no_specials(key)) {
-
-          if (key.indexOf('Multiplier') >= 0) {
-            //multiply_stats($scope.multipliers_meta, $scope.Stats, true);
-            $scope.multipliers_meta = {};
-          } else {
-            stat_num = parseFloat(old_stats[key], 10);
-            $scope.Stats[key] -= stat_num;
-          }
-        }
-      }
-    }
-
-    // Add the stats of item if we are equipping it.
-    if (equipping) {
-      var new_stats = item.Stats;
-      for (var key in new_stats) {
-        if (no_specials(key)) {
-
-          if (key.indexOf('Multiplier') >= 0) {
-            $scope.multipliers_meta[key] = new_stats[key];
-          } else {
-            stat_num = parseFloat(new_stats[key], 10);
-            if (!$scope.Stats[key])
-              $scope.Stats[key] = 0;
-            $scope.Stats[key] += stat_num;
-          }
-          //console.log('Adding ', stat_num, ' to ', key);
-        }
-      }
-      //multiply_stats($scope.multipliers_meta, $scope.Stats, false);
-    }
   }
 
   /* Sets the item slot to search for after clicking an empty item slot
@@ -257,7 +179,7 @@ editApp.controller('editctrl', ['$scope', '$http', '$compile', function($scope, 
             if (can_enchant(item, char_items[slot], $scope.character.class)) {
 
               // enchant item to slot, change tooltip, update stats
-              // TODO: UPDATE STATS
+              add_stats(char_enchants[slot], item, false, slot, $scope.Stats);
               char_enchants[slot] = item;
               console.log(char_enchants[slot]);
               set_slot_rel(slot);
@@ -276,9 +198,8 @@ editApp.controller('editctrl', ['$scope', '$http', '$compile', function($scope, 
             if (can_gem(item, $scope[cur_socket])) {
 
               // Socket gem, equip in tooltip, and update stats
-              $scope.update_stats(item, true, cur_socket);
+              add_stats(char_gems[slot][cur_socket], item, false, slot, $scope.Stats);
               char_gems[slot][cur_socket] = item;
-              //console.log(char_gems[slot]);
               set_slot_image(cur_socket, item);
               set_slot_rel(slot);
               $scope.success_msg = "You have socketed " + item.Name +
@@ -291,7 +212,6 @@ editApp.controller('editctrl', ['$scope', '$http', '$compile', function($scope, 
     }
     else if (cur_view == 'items') {
       if (item) {
-        //console.log(is_equipped(slot, item));
         if (!is_equipped(slot, item)) {
           var slot = remove_trailing_number(slot);
           if (compare_slot(slot, item, char)) {
@@ -300,7 +220,7 @@ editApp.controller('editctrl', ['$scope', '$http', '$compile', function($scope, 
                 if (!is_unique($scope.slot, item)) {
 
                   // Equip item, change icon image and update stats
-                  $scope.update_stats(item, true, null);
+                  add_stats(char_items[$scope.slot], item, true, slot, $scope.Stats);
                   char_items[$scope.slot] = item;
                   set_slot_image($scope.slot, item);
                   $scope.success_msg = item.Name + 'has been equipped!';
@@ -337,6 +257,7 @@ editApp.controller('editctrl', ['$scope', '$http', '$compile', function($scope, 
           $scope.success_msg = char_enchants[slot].Name + ' has been removed from '
           + slot + '.';
           //TODO: update stats
+          remove_stats(char_enchants[slot], false, slot, $scope.Stats);
           char_enchants[slot] = null;
           set_slot_rel(slot);
 
@@ -353,7 +274,7 @@ editApp.controller('editctrl', ['$scope', '$http', '$compile', function($scope, 
            var gem = char_gems[slot][cur_socket];
            $scope.success_msg = gem.Name + ' has been unequipped from '
            + slot + '.';
-           $scope.update_stats(gem, false, cur_socket);
+           remove_stats(gem, false, slot, $scope.Stats);
            char_gems[slot][cur_socket] = null;
            set_slot_rel(slot);
            set_gem_bg(cur_socket, $scope[cur_socket]);
@@ -368,7 +289,7 @@ editApp.controller('editctrl', ['$scope', '$http', '$compile', function($scope, 
           // Remove item from current slot & char_items, remove sockets, and
           // update stats.
           $scope.success_msg = char_items[slot].Name + ' has been unequipped.';
-          $scope.update_stats(char_items[slot], false, null);
+          remove_stats(char_items[slot], true, slot, $scope.Stats);
           char_items[slot] = null;
           char_gems[slot].socket1 = null;
           char_gems[slot].socket2 = null;
@@ -482,7 +403,7 @@ editApp.controller('editctrl', ['$scope', '$http', '$compile', function($scope, 
             if ($scope.character[slot.toLowerCase()] &&
                 $scope.character[slot.toLowerCase()].item) {
               var item = $scope.character[slot.toLowerCase()].item;
-              $scope.update_stats(item, true, null);
+              add_stats(null, item, false, slot, $scope.Stats);
               char_items[slot] = item;
               set_slot_image(slot, char_items[slot]);
 
@@ -490,18 +411,19 @@ editApp.controller('editctrl', ['$scope', '$http', '$compile', function($scope, 
                 var gems = $scope.character[slot.toLowerCase()].gems,
                     enchant = $scope.character[slot.toLowerCase()].enchant;
                 if (gems.socket1) {
-                  $scope.update_stats(gems.socket1, true, 'socket1')
+                  add_stats(null, gems.socket1, false, slot, $scope.Stats);
                   char_gems[slot].socket1 = gems.socket1;
                 }
                 if (gems.socket2) {
-                  $scope.update_stats(gems.socket2, true, 'socket2')
+                  add_stats(null, gems.socket2, false, slot, $scope.Stats);
                   char_gems[slot].socket2 = gems.socket2;
                 }
                 if (gems.socket3) {
-                  $scope.update_stats(gems.socket3, true, 'socket3')
+                  add_stats(null, gems.socket3, false, slot, $scope.Stats);
                   char_gems[slot].socket3 = gems.socket3;
                 }
                 if (enchant) {
+                  add_stats(null, enchant, false, slot, $scope.Stats);
                   char_enchants[slot] = enchant;
                 }
 
