@@ -18,11 +18,55 @@ html(ng-app='charApp' ng-cloak)
           h3 CREATE NEW CHARACTER
           hr(class='light')
           .create_container
+
             div(class="loginmodal-container" id="char-create")
               form(action='/character/create' method='post')
-                input(type="text" name="Name" placeholder="Name"
-                maxlength=12)
-                select(class="form-control" name="pickclass")
+
+                h4 Pick a Class
+
+                ul(class='list-inline')
+                  li: img(class='class-icon-sm'
+                          ng-class="{'coloured-icon': selected_class=='paladin'}"
+                          ng-click="selected_class='paladin'"
+                          src='images/class-icons/paladin.png')
+                  li: img(class='class-icon-sm'
+                          ng-class="{'coloured-icon': selected_class=='druid'}"
+                          ng-click="selected_class='druid'"
+                          src='images/class-icons/druid.png')
+                  li: img(class='class-icon-sm'
+                          ng-class="{'coloured-icon': selected_class=='shaman'}"
+                          ng-click="selected_class='shaman'"
+                          src='images/class-icons/shaman.png')
+                  li: img(class='class-icon-sm'
+                          ng-class="{'coloured-icon': selected_class=='hunter'}"
+                          ng-click="selected_class='hunter'"
+                          src='images/class-icons/hunter.png')
+                  li: img(class='class-icon-sm'
+                          ng-class="{'coloured-icon': selected_class=='warrior'}"
+                          ng-click="selected_class='warrior'"
+                          src='images/class-icons/warrior.png')
+                  li: img(class='class-icon-sm'
+                          ng-class="{'coloured-icon': selected_class=='rogue'}"
+                          ng-click="selected_class='rogue'"
+                          src='images/class-icons/rogue.png')
+                  li: img(class='class-icon-sm'
+                          ng-class="{'coloured-icon': selected_class=='mage'}"
+                          ng-click="selected_class='mage'"
+                          src='images/class-icons/mage.png')
+                  li: img(class='class-icon-sm'
+                          ng-class="{'coloured-icon': selected_class=='priest'}"
+                          ng-click="selected_class='priest'"
+                          src='images/class-icons/priest.png')
+                  li: img(class='class-icon-sm'
+                          ng-class="{'coloured-icon': selected_class=='warlock'}"
+                          ng-click="selected_class='warlock'"
+                          src='images/class-icons/warlock.png')
+                  li: img(class='class-icon-sm'
+                          ng-class="{'coloured-icon': selected_class=='death knight'}"
+                          ng-click="selected_class='death knight'"
+                          src='images/class-icons/death knight.png')
+
+                select(ng-hide='true' class="form-control" name="pickclass" ng-model='selected_class')
                   option(selected value= '') Pick a Class
                   option(value='paladin') Paladin
                   option(value='druid') Druid
@@ -34,9 +78,13 @@ html(ng-app='charApp' ng-cloak)
                   option(value='priest') Priest
                   option(value='warlock') Warlock
                   option(value='death knight') Death Knight
-                br
+
+                h4 Name
+                input(type="text" name="Name" maxlength=12)
+
+                h4 Description (Optional)
                 textarea(class="form-control" rows=5  maxlength=255
-                         name="description" placeholder="Description")
+                         name="description")
                 br
                 input(type="submit" name="createchar"
                       class="create loginmodal-submit" value="Create")
@@ -57,7 +105,7 @@ html(ng-app='charApp' ng-cloak)
                   class='class_icon pull-right')
 
           input(type="submit" value='delete' class="delete_char loginmodal-submit"
-                href="#" data-toggle="modal" data-target="#delete-char-modal")
+                data-toggle="modal" data-target="#delete-char-modal")
           input(type="submit" value='edit' class="edit_char loginmodal-submit"
                 ng-click='redirect_edit()')
 
@@ -65,9 +113,7 @@ html(ng-app='charApp' ng-cloak)
     aria-labelledby="myModalLabel" aria-hidden="true")
     div(class="modal-dialog")
       div(class="loginmodal-container")
-          .page-header
-            h4 Are you sure?
-          br
+          h3 Delete {{selected_char}}?
           input(type="submit" name="confirm" class="confirm loginmodal-submit"
           value="YES" data-dismiss="modal" ng-click='delete_char()')
           input(type="submit" name="decline" class="decline loginmodal-submit"

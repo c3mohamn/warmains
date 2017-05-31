@@ -11,7 +11,6 @@ a, a:hover {
     opacity: .8;
   }
   color: red;
-  //background-color: rgba(66, 179, 244, .3);
   transition: .5s;
 }
 
@@ -24,6 +23,26 @@ a, a:hover {
 .class_icon:hover, .class_icon_sm {
   opacity: 1;
 }
+
+.class-icon-sm {
+  width: 55px;
+  height: 55px;
+  cursor: pointer;
+  filter: grayscale(100%);
+  -webkit-filter: grayscale(100%);
+}
+
+.class-icon-sm:hover {
+  filter: none;
+  -webkit-filter: grayscale(0%);
+  transition: .5s;
+}
+
+.coloured-icon {
+  filter: none;
+  -webkit-filter: grayscale(0%);
+}
+
 .existing_chars {
   padding-bottom: 10px;
   min-height: 400px;

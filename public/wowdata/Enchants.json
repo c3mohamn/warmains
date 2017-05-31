@@ -763,7 +763,7 @@
 		{
 			"Requirements": "",
       "IconPath": "inv_misc_enchantedscroll",
-      "Id": "",
+      "Id": "44467",
       "enchantId": "3834",
 			"Name": "Mighty Spellpower",
 			"Slot": "OneHand",

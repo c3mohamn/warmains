@@ -3079,34 +3079,6 @@
 			"Slot": "MainHand"
 		},
 		{
-			"ItemLevel": "284",
-			"DisplayId": "64530",
-			"DisplaySlot": "21",
-			"IconPath": "inv_sword_150",
-			"Stats": {
-				"Stamina": "81",
-				"Intellect": "81",
-				"SpellPower": "893",
-				"CritRating": "55",
-				"HasteRating": "71"
-			},
-			"Quality": "Epic",
-			"Type": "OneHandSword",
-			"Faction": "Neutral",
-			"MinDamage": "160",
-			"MaxDamage": "447",
-			"Speed": "1.8",
-			"Unique": "true",
-			"Bind": "BoP",
-			"SocketColor1": "Red",
-			"SocketBonus": {
-				"SpellPower": "5"
-			},
-			"Name": "Bloodsurge, Kel'Thuzad's Blade of Agony",
-			"Id": "50732",
-			"Slot": "MainHand"
-		},
-		{
 			"ItemLevel": "200",
 			"DisplayId": "58716",
 			"DisplaySlot": "17",
@@ -11058,31 +11030,6 @@
 			"UniqueId": "50704",
 			"Name": "Rigormortis",
 			"Id": "50068",
-			"Slot": "MainHand"
-		},
-		{
-			"ItemLevel": "271",
-			"DisplayId": "64531",
-			"DisplaySlot": "21",
-			"IconPath": "inv_sword_150",
-			"Stats": {
-				"Stamina": "71",
-				"Intellect": "71",
-				"SpellPower": "792",
-				"CritRating": "63",
-				"HasteRating": "63"
-			},
-			"Quality": "Epic",
-			"Type": "OneHandSword",
-			"Faction": "Neutral",
-			"MinDamage": "128",
-			"MaxDamage": "388",
-			"Speed": "1.8",
-			"Unique": "true",
-			"Bind": "BoP",
-			"SocketBonus": "none",
-			"Name": "Bloodsurge, Kel'Thuzad's Blade of Agony",
-			"Id": "50427",
 			"Slot": "MainHand"
 		},
 		{
