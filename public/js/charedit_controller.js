@@ -22,7 +22,7 @@ editApp.controller('editctrl', ['$scope', '$http', '$compile', function($scope, 
   /* Mark the clicked item in results table as the currently selected item.
    */
   $scope.select_search_item = function(item) {
-    console.log('selected item: ', item.Name, '. slot: ', $scope.slot);
+    console.log('selected item: ', item.Name, '. slot: ', item.Slot);
     selected_item = item;
     $scope.enchant_stats = item.Stats;
     if ($scope.cur_view == 'gems')
@@ -42,17 +42,18 @@ editApp.controller('editctrl', ['$scope', '$http', '$compile', function($scope, 
   }
 
   /* Set the color of class name based on class in results table. */
-  $scope.class_color = function(item_class) {
-    if      (item_class == 'Warrior')       return {'color': '#C79C6E'};
-    else if (item_class == 'Warlock')       return {'color': '#9482C9'};
-    else if (item_class == 'Shaman')        return {'color': '#0070DE'};
-    else if (item_class == 'Rogue')         return {'color': '#FFF569'};
-    else if (item_class == 'Paladin')       return {'color': '#F58CBA'};
-    else if (item_class == 'Mage')          return {'color': '#69CCF0'};
-    else if (item_class == 'Hunter')        return {'color': '#ABD473'};
-    else if (item_class == 'Death Knight')  return {'color': '#C41F3B'};
-    else if (item_class == 'Druid')         return {'color': '#FF7D0A'};
-    else if (item_class == 'Priest')        return {'color': '#FFFFFF'};
+  $scope.class_color = function(class_name) {
+    if (class_name) class_name = class_name.toLowerCase();
+    if      (class_name == 'warrior')       return {'color': '#C79C6E'};
+    else if (class_name == 'warlock')       return {'color': '#9482C9'};
+    else if (class_name == 'shaman')        return {'color': '#0070DE'};
+    else if (class_name == 'rogue')         return {'color': '#FFF569'};
+    else if (class_name == 'paladin')       return {'color': '#F58CBA'};
+    else if (class_name == 'mage')          return {'color': '#69CCF0'};
+    else if (class_name == 'hunter')        return {'color': '#ABD473'};
+    else if (class_name == 'death knight')  return {'color': '#C41F3B'};
+    else if (class_name == 'druid')         return {'color': '#FF7D0A'};
+    else if (class_name == 'priest')        return {'color': '#FFFFFF'};
     else                                    return {'color': 'black'};
   }
 
@@ -78,6 +79,8 @@ editApp.controller('editctrl', ['$scope', '$http', '$compile', function($scope, 
    * item: item being equipped or unequipped.
    * equipping: true iff item is being equipped.
    * socket: if gem, the socket that the gem is in, null otherwise
+   *
+   * **Even if equipping, must remove stats of prev item/gem/enchant first.
    */
   $scope.update_stats = function(item, equipping, socket) {
     var slot = $scope.slot;
@@ -90,40 +93,40 @@ editApp.controller('editctrl', ['$scope', '$http', '$compile', function($scope, 
     }
 
     // Remove the stats of the previously equipped item if exists
-    if (char_items[slot] && !is_gem_slot(item.Slot)) {
+    if (char_items[slot] && !is_gem(item) && !is_enchant(item)) {
       var old_stats = char_items[slot].Stats;
-      for (var key in old_stats) {
-        if (no_specials(key)) {
-          stat_num = parseFloat(old_stats[key], 10);
-          $scope.Stats[key] -= stat_num;
-          if (slot == 'Head') {
-            multiply_stats($scope.multipliers_meta, $scope.Stats, true);
-            $scope.multipliers_meta = {};
-          }
-        }
-        //console.log('Removing ', stat_num, ' from ', key);
-      }
-      // Remove the gem stats as well
+
+      // Remove the gem stats if they exist.
       if (char_gems[slot].socket1)
         $scope.update_stats(char_gems[slot].socket1, false, 'socket1')
       if (char_gems[slot].socket2)
         $scope.update_stats(char_gems[slot].socket2, false, 'socket2')
       if (char_gems[slot].socket3)
         $scope.update_stats(char_gems[slot].socket3, false, 'socket3')
+      // TODO: remove enchant stats as well.
 
-    } else if (char_gems[slot] && char_gems[slot][socket]) { // for gems
+      for (var key in old_stats) {
+        if (no_specials(key)) {
+          stat_num = parseFloat(old_stats[key], 10);
+          $scope.Stats[key] -= stat_num;
+        }
+        //console.log('Removing ', stat_num, ' from ', key);
+      }
+
+    } // Remove stats for a gem
+    else if (char_gems[slot] && char_gems[slot][socket]) {
       var old_stats = char_gems[slot][socket].Stats;
+
       for (var key in old_stats) {
         if (no_specials(key)) {
 
           if (key.indexOf('Multiplier') >= 0) {
-            multiply_stats($scope.multipliers_meta, $scope.Stats, true);
+            //multiply_stats($scope.multipliers_meta, $scope.Stats, true);
             $scope.multipliers_meta = {};
           } else {
             stat_num = parseFloat(old_stats[key], 10);
             $scope.Stats[key] -= stat_num;
           }
-
         }
       }
     }
@@ -145,7 +148,7 @@ editApp.controller('editctrl', ['$scope', '$http', '$compile', function($scope, 
           //console.log('Adding ', stat_num, ' to ', key);
         }
       }
-      multiply_stats($scope.multipliers_meta, $scope.Stats, false);
+      //multiply_stats($scope.multipliers_meta, $scope.Stats, false);
     }
   }
 
@@ -169,9 +172,9 @@ editApp.controller('editctrl', ['$scope', '$http', '$compile', function($scope, 
 
     if (char_items[slot] && toggle_sockets == 0) {
       toggle_sockets = 1;
+
       // Show gem sockets and their respective colours here.
       // Inserts the gem sockets if they exist as an <li> element
-
       if (char_items[slot].SocketColor3 || slot == 'Waist') {
         var colour = 'Prismatic'; // For Eternal Belt Buckle Extra socket
 
@@ -209,6 +212,9 @@ editApp.controller('editctrl', ['$scope', '$http', '$compile', function($scope, 
           set_slot_image('socket1', char_gems[slot].socket1)
         else set_gem_bg('socket1', colour);
       };
+
+      // TODO: Show enchant as well
+      //if (char_enchants)
     } else toggle_sockets = 0;
 
     $scope.slot = slot;
@@ -221,30 +227,50 @@ editApp.controller('editctrl', ['$scope', '$http', '$compile', function($scope, 
    *  - Make sure we cannot equip an offhand when a twohand is equipped.
    */
   $scope.equip_item = function() {
-    var error_msg_1 = 'Select an item before trying to equip.';
-    var error_msg_2 = 'That item is already equipped!';
-    var error_msg_3 = 'Invalid item selection.';
-    var error_msg_4 = 'You cannot equip that type of item.';
-    var error_msg_5 = 'Cannot equip an offhand while using a twohand.';
-    var error_msg_6 = 'You cannot equip another one of those.';
-    var error_msg_7 = 'Select a gem before trying to equip.';
-    var error_msg_8 = 'Select a slot to gem first please.';
-    var error_msg_9 = 'Select a socket to gem.';
-    var error_msg_10 = 'Invalid gem socket.';
-    var item = selected_item;
-    var slot = $scope.slot;
-    var char = $scope.character;
-    var cur_view = $scope.cur_view;
-    var cur_socket = $scope.cur_socket;
+    var error_msg_1 = 'Select an item before trying to equip.',
+        error_msg_2 = 'That item is already equipped!',
+        error_msg_3 = 'Invalid item selection.',
+        error_msg_4 = 'You cannot equip that type of item.',
+        error_msg_5 = 'Cannot equip an offhand while using a twohand.',
+        error_msg_6 = 'You cannot equip another one of those.',
+        error_msg_7 = 'Select a gem before trying to equip.',
+        error_msg_8 = 'Select an item slot to gem first please.',
+        error_msg_9 = 'Select a socket to gem.',
+        error_msg_10 = 'Invalid gem socket.',
+        error_msg_11 = 'Select an enchant before trying to equip.',
+        error_msg_12 = 'Select an item slot to enchant first please.',
+        error_msg_13 = 'Select an item slot on the left before trying to enchant.',
+        error_msg_14 = 'Cannot enchant that item.',
+        item = selected_item,
+        slot = $scope.slot,
+        char = $scope.character,
+        cur_view = $scope.cur_view,
+        cur_socket = $scope.cur_socket;
+    // reset messages
     $scope.error_msg = '';
     $scope.success_msg = '';
 
     if (cur_view == 'enchants') {
-      $scope.error_msg = 'Not implemented just yet.';
-      // TODO
+      if (item && is_enchant(item)) {
+        if (slot) {
+          if (char_items[slot]) {
+            if (can_enchant(item, char_items[slot], $scope.character.class)) {
+
+              // enchant item to slot, change tooltip, update stats
+              // TODO: UPDATE STATS
+              char_enchants[slot] = item;
+              console.log(char_enchants[slot]);
+              set_slot_rel(slot);
+              $scope.success_msg = "You have enchanted " + char_items[slot].Name
+              + " with " + item.Name + '.';
+
+            } else { $scope.error_msg = error_msg_14; }
+          } else { $scope.error_msg = error_msg_13; }
+        } else { $scope.error_msg = error_msg_12; }
+      } else { $scope.error_msg = error_msg_11; }
     }
     else if (cur_view == 'gems') {
-      if (item && is_gem_slot(item.Slot)) {
+      if (item && is_gem(item)) {
         if (slot) {
           if (cur_socket) {
             if (can_gem(item, $scope[cur_socket])) {
@@ -252,7 +278,7 @@ editApp.controller('editctrl', ['$scope', '$http', '$compile', function($scope, 
               // Socket gem, equip in tooltip, and update stats
               $scope.update_stats(item, true, cur_socket);
               char_gems[slot][cur_socket] = item;
-              console.log(char_gems[slot]);
+              //console.log(char_gems[slot]);
               set_slot_image(cur_socket, item);
               set_slot_rel(slot);
               $scope.success_msg = "You have socketed " + item.Name +
@@ -293,19 +319,31 @@ editApp.controller('editctrl', ['$scope', '$http', '$compile', function($scope, 
    * item slot ($scope.slot).
    */
   $scope.unequip_item = function() {
-    var slot = $scope.slot;
-    var error_msg_1 = 'You must have slot selected first.';
-    var error_msg_2 = 'Nothing to unequip.';
-    var error_msg_3 = 'Select a socket to unequip.';
-    var cur_view = $scope.cur_view;
-    var cur_socket = $scope.cur_socket;
+    var slot = $scope.slot,
+        error_msg_1 = 'You must have item selected first.',
+        error_msg_2 = 'Nothing to unequip.',
+        error_msg_3 = 'Select a socket to unequip.',
+        cur_view = $scope.cur_view,
+        cur_socket = $scope.cur_socket;
+    //reset messages
     $scope.error_msg = '';
     $scope.success_msg = '';
 
     if (cur_view == 'enchants') {
-      $scope.error_msg = 'Not implemented just yet.';
-      //TODO: Remove enchant from slot
-      // Update stats
+      if (slot) {
+        if (char_enchants[slot]) {
+
+          // Remove enchant from tooltip, char_enchants and update stats
+          $scope.success_msg = char_enchants[slot].Name + ' has been removed from '
+          + slot + '.';
+          //TODO: update stats
+          char_enchants[slot] = null;
+          set_slot_rel(slot);
+
+        } else { $scope.error_msg = error_msg_2; }
+      } else { $scope.error_msg = error_msg_1; }
+
+
     }
     else if (cur_view == 'gems') {
        if (cur_socket) {
@@ -335,6 +373,7 @@ editApp.controller('editctrl', ['$scope', '$http', '$compile', function($scope, 
           char_gems[slot].socket1 = null;
           char_gems[slot].socket2 = null;
           char_gems[slot].socket3 = null;
+          char_enchants[slot] = null;
           remove_socket(1);
           remove_socket(2);
           remove_socket(3);
@@ -448,7 +487,8 @@ editApp.controller('editctrl', ['$scope', '$http', '$compile', function($scope, 
               set_slot_image(slot, char_items[slot]);
 
               if ($scope.character[slot.toLowerCase()].gems) {
-                var gems = $scope.character[slot.toLowerCase()].gems;
+                var gems = $scope.character[slot.toLowerCase()].gems,
+                    enchant = $scope.character[slot.toLowerCase()].enchant;
                 if (gems.socket1) {
                   $scope.update_stats(gems.socket1, true, 'socket1')
                   char_gems[slot].socket1 = gems.socket1;
@@ -460,6 +500,9 @@ editApp.controller('editctrl', ['$scope', '$http', '$compile', function($scope, 
                 if (gems.socket3) {
                   $scope.update_stats(gems.socket3, true, 'socket3')
                   char_gems[slot].socket3 = gems.socket3;
+                }
+                if (enchant) {
+                  char_enchants[slot] = enchant;
                 }
 
                 set_slot_rel(slot);

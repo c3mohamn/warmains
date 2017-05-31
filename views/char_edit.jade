@@ -14,7 +14,7 @@ html(ng-app='editApp' ng-cloak)
         .header-content-inner
           h1(id="homeHeading") {{character.name}}
           hr
-          h3 {{character.class}}
+          h3(ng-style="class_color(character.class)") {{character.class}}
     div(class='container' ng-show='character')
       div(class="col-lg-6 col-md-6 col-sm-6 col-xs-12")
         div(class='char_panel')
@@ -130,15 +130,15 @@ html(ng-app='editApp' ng-cloak)
           -if(username == user.username)
             .page-header
               ul(class='list-inline')
-                  li: input(type='submit' value='Gems'
+                  li: input(type='submit' value='GEM'
                             class="view_tab loginmodal-submit"
                             ng-click="cur_view = 'gems'; reset_table()"
                             ng-class="{'selected_view': cur_view == 'gems'}")
-                  li: input(type='submit' value='Enchants'
+                  li: input(type='submit' value='ENCHANT'
                             class="view_tab loginmodal-submit"
                             ng-click="cur_view = 'enchants'; reset_table()"
                             ng-class="{'selected_view': cur_view == 'enchants'}")
-                  li: input(type='submit' value='Items'
+                  li: input(type='submit' value='ITEMS'
                             class="view_tab loginmodal-submit"
                             ng-click="cur_view = 'items'; reset_table()"
                             ng-class="{'selected_view': cur_view == 'items'}")

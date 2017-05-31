@@ -1,21 +1,14 @@
 List of things that could be worked on:
 
-1. Work on character page.
+1. REDO multipliers
 
-2. Enchants:
- - Multipliers
- - IDs
- - Make icon regular scroll icon with tooltip based on ID.
+2. Work on enchant update stats.
 
 3. Socket Bonus
 
 4. Professions
 
 5. Add Requirements for GEMs as well.
-
-6. Work on aesthetics more.
-
-7. GREY OUT SECTIONS OF BG DEPENDING ON CLASS.
 
 Ideas:
 

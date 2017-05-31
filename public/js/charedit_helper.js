@@ -172,10 +172,19 @@ function is_weapon_slot(slot) {
 /* Return true if slot is that of a Gem.
  * An item is a gem if it's Slot value is a colour.
  */
-function is_gem_slot(slot) {
+function is_gem(item) {
   gems = ['Yellow', 'Red', 'Orange', 'Blue', 'Purple', 'Green', 'Meta',
   'Prismatic'];
-  return (gems.indexOf(slot) >= 0);
+  return (gems.indexOf(item.Slot) >= 0);
+}
+
+/* Return true iff the item is an enchant.
+ * An item is an enchant if it contains an enchantId.
+ */
+function is_enchant(item) {
+  if (item.enchantId)
+    return true;
+  return false;
 }
 
 /* Return true iff character already has item equipped in that slot. */
@@ -325,14 +334,18 @@ function set_gem_bg(socket, colour) {
 
 /* Update the rel attribute of an item so we can see gems in item tooltip. */
 function set_slot_rel(slot) {
-  var item_id = char_items[slot].Id;
-  var ench = 0;
-  var sock1 = 0;
-  var sock2 = 0;
-  var sock3 = 0;
+  if (slot == 'TwoHand' || slot == 'OneHand')
+    slot = 'MainHand';
+  var item_id = char_items[slot].Id,
+      ench = 0,
+      sock1 = 0,
+      sock2 = 0,
+      sock3 = 0;
   if (char_gems[slot].socket1) sock1 = char_gems[slot].socket1.enchantId;
   if (char_gems[slot].socket2) sock2 = char_gems[slot].socket2.enchantId;
   if (char_gems[slot].socket3) sock3 = char_gems[slot].socket3.enchantId;
+  if (char_enchants[slot]) ench = char_enchants[slot].enchantId;
+  //console.log(ench, sock1, sock2, sock3);
 
   $('#' + slot + '_link').attr('rel', 'item=' + item_id +
     '&ench=' + ench + '&gems=' + sock1 + ':' + sock2 + ':' + sock3);
@@ -417,6 +430,24 @@ function can_gem(gem, socket) {
   if (gem.Slot != 'Meta' && socket == 'Meta')
     return false;
   if (gem.Slot == 'Meta' && socket != 'Meta')
+    return false;
+  return true;
+}
+
+/* Check if we can enchant given item.
+ * TODO: Add conditions for professions.
+ */
+function can_enchant(enchant, item, char_class) {
+  // Staff specific enchant.
+  if (enchant.Id == '45056' && item.Type != 'Staff')
+    return false;
+  // only dks can use runeforged enchants
+  if (enchant.Requirements == 'Runeforging' && char_class != 'death knight')
+    return false;
+  // Twohand weapons can also used OneHand weapon enchants
+  if (enchant.Slot == 'OneHand' && item.Slot == 'TwoHand')
+    return true;
+  if (enchant.Slot != item.Slot)
     return false;
   return true;
 }
