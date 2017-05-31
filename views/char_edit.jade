@@ -9,7 +9,7 @@ html(ng-app='editApp' ng-cloak)
     <script>document.body.className += ' fade-out';</script>
     include partials/navbar.jade
 
-    header(class='char-header')
+    header(ng-class="character.class")
       .header-content
         .header-content-inner
           h1(id="homeHeading") {{character.name}}
@@ -241,7 +241,7 @@ html(ng-app='editApp' ng-cloak)
                       class="unequip_item loginmodal-submit")
                 input(type="submit" value='Equip' ng-click='equip_item()'
                       class="equip_item loginmodal-submit")
-                input(type="submit" value='Save' ng-click='save_to_db()'
+                input(type="submit" value='Save Changes' ng-click='save_to_db()'
                       class="save_item loginmodal-submit")
 
           -else if(user)

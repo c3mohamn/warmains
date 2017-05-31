@@ -174,7 +174,7 @@ editApp.controller('editctrl', ['$scope', '$http', '$compile', function($scope, 
 
       if (char_items[slot].SocketColor3 || slot == 'Waist') {
         var colour = 'Prismatic'; // For Eternal Belt Buckle Extra socket
-       
+
         if (slot != 'Waist') colour = char_items[slot].SocketColor3;
         $scope.socket3 = colour;
 

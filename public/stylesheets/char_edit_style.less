@@ -1,6 +1,18 @@
 @import "theme/variables.less";
 @import "theme/mixins.less";
 
+// Header Image based on class of character
+header.death.knight { background-image: url('/images/bg/class-bg/dk.jpg'); }
+header.shaman { background-image: url('/images/bg/class-bg/shaman.jpg'); }
+header.paladin { background-image: url('/images/bg/class-bg/paladin.jpg'); }
+header.druid { background-image: url('/images/bg/class-bg/druid.jpg'); }
+header.hunter { background-image: url('/images/bg/class-bg/hunter.jpg'); }
+header.mage { background-image: url('/images/bg/class-bg/mage.jpg'); }
+header.rogue { background-image: url('/images/bg/class-bg/rogue.jpg'); }
+header.warrior { background-image: url('/images/bg/class-bg/warrior.jpg'); }
+header.warlock { background-image: url('/images/bg/class-bg/warlock.jpg'); }
+header.priest { background-image: url('/images/bg/class-bg/priest.jpg'); }
+
 .view_tab {
   width: 100px;
   background-color: grey;
@@ -39,6 +51,8 @@
     pointer-events:none;
     opacity: .5;
   }
+
+  // Background images for item slots
   #Head_slot {
     background-image: url('/images/empty-slots/UI-EmptyHead.png');
   } #Neck_slot {
@@ -79,6 +93,7 @@
   background-image: url('/images/empty-slots/UI-EmptyBag.png');
 }
 
+// Item Slot styles
 .item_slot {
   width: 55px;
   height: 55px;
@@ -97,6 +112,7 @@
   transition: .3s;
 }
 
+// Search bar
 .search_container {
   select {
     width: 80px;
@@ -128,23 +144,6 @@
   }
 }
 
-@keyframes results_table_slide {
-  from {
-    opacity: 0;
-    height: 0;
-  } to {
-    opacity: 1;
-    height: 300px;
-  }
-}
-
-@keyframes fade_in {
-  from {
-    opacity: 0;
-  } to {
-    opacity: 1;
-  }
-}
 .stats_container {
   border-style: solid;
   border-width: 1px;
@@ -159,6 +158,8 @@
     }
   }
 }
+
+// Equipping/Unequiping and save button styles
 
 .equip_item, .unequip_item, .save_item {
   width: 150px;
@@ -206,4 +207,24 @@
   border-width: 2px;
   background-color: black;
   transition: .5s;
+}
+
+
+// Keyframe animations
+@keyframes results_table_slide {
+  from {
+    opacity: 0;
+    height: 0;
+  } to {
+    opacity: 1;
+    height: 300px;
+  }
+}
+
+@keyframes fade_in {
+  from {
+    opacity: 0;
+  } to {
+    opacity: 1;
+  }
 }
