@@ -8,8 +8,9 @@ editApp.controller('editctrl', ['$scope', '$http', '$compile', function($scope, 
   $scope.error_msg = '';
   $scope.success_msg = '';
   $scope.Stats = {};
+  $scope.updated_Stats = {};
   // all multipliers for enchants/gems currently equipped TODO: calculate at end
-  $scope.multipliers = {}; 
+  $scope.multipliers = {};
 
 
   /* ---------  Functions --------- */
@@ -17,6 +18,18 @@ editApp.controller('editctrl', ['$scope', '$http', '$compile', function($scope, 
   /* Reset the results table (when switching view). */
   $scope.reset_table = function() {
     $scope.items = [];
+  }
+
+  /* Updates base Stats with any multipliers and active Socket Bonuses */
+  function update_stats() {
+
+    // add any socketbonus to stats
+    $scope.updated_Stats = bonus_stats($scope.Stats);
+
+    // update multipliers and stats based on multipliers
+    $scope.multipliers.ench = ench_multipliers;
+    $scope.updated_Stats = multiply_stats($scope.multipliers.ench, $scope.updated_Stats);
+
   }
 
   /* Mark the clicked item in results table as the currently selected item.
@@ -232,6 +245,7 @@ editApp.controller('editctrl', ['$scope', '$http', '$compile', function($scope, 
         } else { $scope.error_msg = error_msg_2; }
       } else { $scope.error_msg = error_msg_1; }
     }
+    update_stats();
   }
 
   /* Unequips the item at $scope.slot. Removing stats, image and link.
@@ -304,6 +318,7 @@ editApp.controller('editctrl', ['$scope', '$http', '$compile', function($scope, 
         } else { $scope.error_msg = error_msg_2; }
       } else { $scope.error_msg = error_msg_1; }
     }
+    update_stats();
   }
 
   /* Finds matching items to search_val and displays them in results_table.
@@ -429,6 +444,7 @@ editApp.controller('editctrl', ['$scope', '$http', '$compile', function($scope, 
 
                 set_slot_rel(slot);
               }
+              update_stats();
             }
           }
       });

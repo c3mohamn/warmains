@@ -1,12 +1,8 @@
 List of things that could be worked on:
 
-1. REDO multipliers
+1. Professions
 
-3. Socket Bonus
-
-4. Professions
-
-5. Add Requirements for GEMs as well.
+2. Add Requirements for GEMs as well.
 
 Ideas:
 

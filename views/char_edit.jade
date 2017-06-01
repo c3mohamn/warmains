@@ -253,9 +253,9 @@ html(ng-app='editApp' ng-cloak)
         div(class='stats_container')
           table(id='stats')
             tbody
-              tr(ng-repeat='(key,val) in Stats')
-                td {{key}}
-                td {{val}}
+              tr(ng-repeat='(key,val) in updated_Stats')
+                td(ng-class='key') {{key}}
+                td(ng-class='key') {{val}}
 
     p(ng-show='!character') This character does not exist.
 

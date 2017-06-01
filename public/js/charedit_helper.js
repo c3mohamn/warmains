@@ -6,11 +6,6 @@ url = url.split("/");
 var char_name = url.pop();
 var user_name = url.pop();
 
-// Disables links from directing to another page - makes easier to select slots.
-$('.char_panel a, #selected_link, #selected_gem_link').click(function() {
-  return false;
-});
-
 // Socket html code to be added to DOM when clicking on an item.
 var socket1_html =
 "<a id='socket1_link'> " +
@@ -133,17 +128,24 @@ var multiplier_to_stat = {
   "BonusFrostDamageMultiplier": null
 }
 
-var cur_multipliers = {};
+// Stores the multipliers gained from enchants and gems
+var ench_multipliers = {};
 
 // Stores the currently selected item.
 var selected_item = null;
+
 // used to toggle sockets when clicking slots in sequence
 var toggle_sockets = 0;
+
+// Disables links from directing to another page - makes easier to select slots.
+$('.char_panel a, #selected_link, #selected_gem_link').click(function() {
+  return false;
+});
 
           /* ------ FUNCTIONS ------ */
 
 /* Return true if the number entered is a valid number or undefined. */
- function valid_number(num) {
+function valid_number(num) {
   if (num && isNaN(num))
       return false;
 
@@ -155,7 +157,7 @@ var toggle_sockets = 0;
  *
  * slot: the currently selected slot ($scope.slot).
  */
- function remove_trailing_number(slot) {
+function remove_trailing_number(slot) {
    var last_char = slot[slot.length - 1];
 
    // Remove the 1 from Finger1 when searching for items.
@@ -515,7 +517,7 @@ function remove_stats(item, has_enchants, slot, stats) {
         // if a multiplier stat, remove from list of multipliers
         // TODO
         if (key.indexOf('Multiplier') >= 0) {
-          //multiply_stats($scope.multipliers_meta, $scope.Stats, true);
+          delete ench_multipliers[key];
         } else {
           stat_num = parseFloat(old_stats[key], 10);
           stats[key] -= stat_num;
@@ -563,7 +565,7 @@ function add_stats(prev_item, new_item, has_enchants, slot, stats) {
       // if a multiplier stat, add the list of multipliers
       // TODO:
       if (key.indexOf('Multiplier') >= 0) {
-        //cur_multipliers[key] = new_stats[key];
+        ench_multipliers[key] = new_stats[key];
       } else {
         stat_num = parseFloat(new_stats[key], 10);
         // initialize stat to 0 if it does not exist already
@@ -582,7 +584,10 @@ function add_stats(prev_item, new_item, has_enchants, slot, stats) {
  * stats: the current character stats
  * reverse: true if multiplier is being removed (negative multiplier)
  */
-function multiply_stats(multipliers, stats, reverse) {
+function multiply_stats(multipliers, stats) {
+
+  // clone stats
+  var new_stats = jQuery.extend({}, stats);
 
   for (var key in multipliers) {
     if (multiplier_to_stat[key]) {
@@ -590,10 +595,105 @@ function multiply_stats(multipliers, stats, reverse) {
       var m_value = parseFloat(multipliers[key], 10);
       var stat_value = 0;
 
-      if (reverse) m_value = m_value - 2 * m_value;
       if (stats[stat]) stat_value = stats[stat];
 
-      stats[stat] = Math.round(stat_value * (1 + m_value));
+      new_stats[stat] = Math.round(stat_value * (1 + m_value));
     }
   }
+  return new_stats;
+}
+
+/* Add any active SocketBonus stats to stats. */
+function bonus_stats(stats) {
+
+  // clone stats
+  var new_stats = jQuery.extend({}, stats);
+  //var bonuses = {};
+
+  // check if any of the equipped items have active socket bonuses.
+  for (var slot in char_items) {
+    if (char_items[slot]) {
+      // if it does, add socket bonus stats to new stats
+      if (is_bonus_active(slot)) {
+        var SocketBonus = char_items[slot].SocketBonus;
+
+        // add the socket bonuses to new_stats
+        for (var stat in SocketBonus) {
+
+          if (new_stats[stat])
+            new_stats[stat] = new_stats[stat] + parseFloat(SocketBonus[stat], 10);
+          else
+            new_stats[stat] = SocketBonus[stat];
+        }
+      }
+    }
+  }
+
+  return new_stats;
+}
+
+/* Check if an item at given slot has active socket bonuses.
+ *
+ * Helper function for bonus_stats.
+ */
+function is_bonus_active(slot) {
+  var item = char_items[slot],
+      gems = char_gems[slot],
+      socket_colour = '',
+      gem_colour = '',
+      socket1_active = true,
+      socket2_active = true,
+      socket3_active = true;
+
+  // Check if each socket match
+  if (item.SocketColor1) {
+    if (gems.socket1) {
+      socket_colour = item.SocketColor1;
+      gem_colour = gems.socket1.Slot;
+
+      socket1_active = socket_matches(socket_colour, gem_colour);
+    } else {
+      socket1_active = false;
+    }
+  }
+  if (item.SocketColor2) {
+    if (gems.socket2) {
+      socket_colour = item.SocketColor2;
+      gem_colour = gems.socket2.Slot;
+
+      socket2_active = socket_matches(socket_colour, gem_colour);
+    } else {
+      socket2_active = false;
+    }
+  }
+  if (item.SocketColor3) {
+    if (gems.socket3) {
+      socket_colour = item.SocketColor3;
+      gem_colour = gems.socket3.Slot;
+
+      socket3_active = socket_matches(socket_colour, gem_colour);
+    } else {
+      socket3_active = false;
+    }
+  }
+
+  return socket1_active && socket2_active && socket3_active;
+}
+
+/* Check if the socket and the gem match.
+ *
+ * Helper function for is_bonus_active.
+ */
+function socket_matches(socket, gem) {
+  if (socket == 'Prismatic' || gem == 'Prismatic')
+    return true;
+  if (socket == gem)
+    return true;
+  if ((socket == 'Red' || socket == 'Blue') && gem == 'Purple')
+    return true;
+  if ((socket == 'Blue' || socket == 'Yellow') && gem == 'Green')
+    return true;
+  if ((socket == 'Yellow' || socket == 'Red') && gem == 'Orange')
+    return true;
+  return false;
 }

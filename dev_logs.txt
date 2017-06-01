@@ -231,3 +231,9 @@ TODO:
 - remove duplicate bloodsurges
 - Reworked stat updating when equipping/unequipping items/gems/enchants
 - Stats and tooltip updated for enchants now
+
+----- 06/01/2017 ------
+------- v2.9.3 --------
+
+- Multipliers for gems and enchants work properly now
+- SocketBonuses for items work!
