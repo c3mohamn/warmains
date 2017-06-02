@@ -612,7 +612,7 @@ function bonus_stats(stats) {
 
   // check if any of the equipped items have active socket bonuses.
   for (var slot in char_items) {
-    if (char_items[slot]) {
+    if (char_items[slot] && char_items[slot].SocketBonus != 'none') {
       // if it does, add socket bonus stats to new stats
       if (is_bonus_active(slot)) {
         var SocketBonus = char_items[slot].SocketBonus;
@@ -696,4 +696,17 @@ function socket_matches(socket, gem) {
   if ((socket == 'Yellow' || socket == 'Red') && gem == 'Orange')
     return true;
   return false;
+}
+
+/* Adding percentages for certain stats (arp/hit rating). */
+function add_percentages(stats) {
+  for (var stat in stats) {
+    if (stat == 'HitRating') {
+      stats[stat] = stats[stat] + ' (' + (stats[stat] / 32.78).toFixed(2) +
+      '%)';
+    } else if (stat == 'ArmorPenetrationRating') {
+      stats[stat] = stats[stat] + ' (' + (stats[stat] / 13.99).toFixed(2) +
+      '%)';
+    }
+  }
 }

@@ -18,6 +18,7 @@ editApp.controller('editctrl', ['$scope', '$http', '$compile', function($scope, 
   /* Reset the results table (when switching view). */
   $scope.reset_table = function() {
     $scope.items = [];
+    $scope.search_val = '';
   }
 
   /* Updates base Stats with any multipliers and active Socket Bonuses */
@@ -29,6 +30,9 @@ editApp.controller('editctrl', ['$scope', '$http', '$compile', function($scope, 
     // update multipliers and stats based on multipliers
     $scope.multipliers.ench = ench_multipliers;
     $scope.updated_Stats = multiply_stats($scope.multipliers.ench, $scope.updated_Stats);
+
+    // add percentages of arp and hit rating as well
+    add_percentages($scope.updated_Stats);
 
   }
 
@@ -444,9 +448,9 @@ editApp.controller('editctrl', ['$scope', '$http', '$compile', function($scope, 
 
                 set_slot_rel(slot);
               }
-              update_stats();
             }
           }
+          update_stats();
       });
     });
 }]);

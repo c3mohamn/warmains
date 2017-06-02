@@ -128,20 +128,19 @@ html(ng-app='editApp' ng-cloak)
       div(class="col-lg-6 col-md-6 col-sm-6 col-xs-12")
         if(user)
           -if(username == user.username)
-            .page-header
-              ul(class='list-inline')
-                  li: input(type='submit' value='GEM'
-                            class="view_tab loginmodal-submit"
-                            ng-click="cur_view = 'gems'; reset_table()"
-                            ng-class="{'selected_view': cur_view == 'gems'}")
-                  li: input(type='submit' value='ENCHANT'
-                            class="view_tab loginmodal-submit"
-                            ng-click="cur_view = 'enchants'; reset_table()"
-                            ng-class="{'selected_view': cur_view == 'enchants'}")
-                  li: input(type='submit' value='ITEMS'
-                            class="view_tab loginmodal-submit"
-                            ng-click="cur_view = 'items'; reset_table()"
-                            ng-class="{'selected_view': cur_view == 'items'}")
+            ul(class='list-inline')
+                li: input(type='submit' value='GEM'
+                          class="view_tab loginmodal-submit"
+                          ng-click="cur_view = 'gems'; reset_table()"
+                          ng-class="{'selected_view': cur_view == 'gems'}")
+                li: input(type='submit' value='ENCHANT'
+                          class="view_tab loginmodal-submit"
+                          ng-click="cur_view = 'enchants'; reset_table()"
+                          ng-class="{'selected_view': cur_view == 'enchants'}")
+                li: input(type='submit' value='ITEMS'
+                          class="view_tab loginmodal-submit"
+                          ng-click="cur_view = 'items'; reset_table()"
+                          ng-class="{'selected_view': cur_view == 'items'}")
 
             div(class='search_container' ng-show="cur_view != 'stats'")
               .row
@@ -149,10 +148,12 @@ html(ng-app='editApp' ng-cloak)
                     li(ng-show="cur_view == 'items'") iLvl
                     li(ng-show="cur_view == 'items'")
                       input(type='text' class='form-control' maxlength=3
-                            placeholder='Min' size=3 ng-model='ilvlmin')
+                            placeholder='Min' size=3 ng-model='ilvlmin'
+                            ng-keyup="$event.keyCode == 13 && finditems(search_val)")
                     li(ng-show="cur_view == 'items'")
                       input(type='text' class='form-control' maxlength=3
-                            placeholder='Max' size=3 ng-model='ilvlmax')
+                            placeholder='Max' size=3 ng-model='ilvlmax'
+                            ng-keyup="$event.keyCode == 13 && finditems(search_val)")
                     li(ng-show="cur_view == 'gems'") Colour:
                     li(ng-show="cur_view == 'gems'")
                       select(class='form-control' ng-model='gem_colour')
@@ -251,6 +252,7 @@ html(ng-app='editApp' ng-cloak)
         div(class='clearfix visible sm')
       div(class="col-lg-6 col-md-6 col-sm-6 col-xs-12")
         div(class='stats_container')
+          h3 Net Stats from items
           table(id='stats')
             tbody
               tr(ng-repeat='(key,val) in updated_Stats')

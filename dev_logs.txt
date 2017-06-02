@@ -233,7 +233,10 @@ TODO:
 - Stats and tooltip updated for enchants now
 
 ----- 06/01/2017 ------
-------- v2.9.3 --------
+------- v2.9.5 --------
 
 - Multipliers for gems and enchants work properly now
 - SocketBonuses for items work!
+- search val resets now
+- percentages added
+- fixed bug for socketbonuses that are 'none'
