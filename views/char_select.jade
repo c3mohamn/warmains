@@ -20,7 +20,7 @@ html(ng-app='charApp' ng-cloak)
           .create_container
 
             div(class="loginmodal-container" id="char-create")
-              form(action='/character/create' method='post')
+              form(action='/character' method='post')
 
                 h4 Pick a Class
 
@@ -78,6 +78,7 @@ html(ng-app='charApp' ng-cloak)
                   option(value='priest') Priest
                   option(value='warlock') Warlock
                   option(value='death knight') Death Knight
+
 
                 h4 Name
                 input(type="text" name="Name" maxlength=12)

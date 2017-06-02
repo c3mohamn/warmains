@@ -5,6 +5,7 @@ var CharSchema = mongoose.Schema({
     username: {type: String, required: true},
     name: {type: String, required: true},
     class: {type: String, required: true},
+    spec: String,
     description: String,
     // items
     head: {item: Object, gems: Object, enchant: Object},

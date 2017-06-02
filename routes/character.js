@@ -11,8 +11,8 @@ router.get('/', ensureAuthenticated, function(req, res, next) {
 /* --------- CREATE NEW CHARACTER ---------
 *  Creates a new character, storing it in the database in char collection.
 */
-router.post('/create', function(req, res, next) {
-    var name = req.body.Name;
+router.post('/', function(req, res, next) {
+    var name = req.body.Name.toLowerCase();
     var char_class = req.body.pickclass.toLowerCase();
     var description = req.body.description.toLowerCase();
 

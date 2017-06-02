@@ -20,6 +20,7 @@ var users = require('./routes/users');
 var about = require('./routes/about');
 var profile = require('./routes/profile');
 var character = require('./routes/character');
+var search = require('./routes/search');
 
 // init app
 var app = express();
@@ -86,6 +87,7 @@ app.use('/about', about);
 app.use('/profile', profile);
 app.use('/users', users);
 app.use('/character', character);
+app.use('/search', search);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

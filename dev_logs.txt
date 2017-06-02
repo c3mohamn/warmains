@@ -240,3 +240,10 @@ TODO:
 - search val resets now
 - percentages added
 - fixed bug for socketbonuses that are 'none'
+
+----- 06/02/2017 ------
+------- v2.9.6 --------
+
+- small fix with results table ordering
+- small fix with selecting slots inner glow
+- started search page

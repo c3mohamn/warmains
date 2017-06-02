@@ -212,14 +212,14 @@ html(ng-app='editApp' ng-cloak)
                       tr(ng-style="{'background-color': 'white'}")
                         td
                         td: a(href='' ng-click="orderByField='Name';reverseSort=!reverseSort") Name
-                        td(ng-if="cur_view == 'items'")
+                        td(ng-show="cur_view == 'items'")
                           a(href='' ng-click="orderByField='RequiredClasses';reverseSort=!reverseSort") Class
-                        td(ng-if="cur_view == 'items'")
+                        td(ng-show="cur_view == 'items'")
                           a(href='' ng-click="orderByField='ItemLevel';reverseSort=!reverseSort") Item Level
                         td: a(href='' ng-click="orderByField='Slot';reverseSort=!reverseSort") Slot
-                        td(ng-if="cur_view == 'items'")
+                        td(ng-show="cur_view == 'items'")
                           a(href='' ng-click="orderByField='Type';reverseSort=!reverseSort") Type
-                        td(ng-if="cur_view == 'enchants'")
+                        td(ng-show="cur_view == 'enchants'")
                           a(href='' ng-click="orderByField='Requirements';reverseSort=!reverseSort") Requirements
                     tbody
                         tr(ng-repeat="item in items | orderBy:orderByField:reverseSort"

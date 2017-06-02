@@ -1,0 +1,33 @@
+// Search options
+.search_for {
+  padding: 10px;
+  cursor: pointer;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+hr.light {
+  max-width: 70px;
+}
+
+hr.light.right {
+  // Only in larger browser view
+  @media (min-width: 768px) {
+    animation: .5s slideRight;
+  }
+}
+
+hr.light.left {
+  // Only in larger browser view
+  @media (min-width: 768px) {
+    animation: .5s slideLeft;
+  }
+}
+
+input {
+  width: 50px;
+}

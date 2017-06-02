@@ -4,6 +4,15 @@ List of things that could be worked on:
 
 2. Add Requirements for GEMs as well.
 
+3. ADD A SEARCH PAGE TO LOOK UP CHARCTERS
+  - class logo | name | description
+
+4. Allow users to edit charcter description.
+
+5. Show character description.
+
+6. Char SPECS.
+
 Ideas:
 
 - GS
