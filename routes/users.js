@@ -318,9 +318,7 @@ router.post('/reset/:token', function(req, res) {
   });
 });
 
-/* Get all the users in the database.
-*  Mainly used by controllers.
-*/
+/* Get all the users in the database. */
 router.get("/AllUser/", function(req, res) {
   console.log("Getting All Users.");
   User.find({},

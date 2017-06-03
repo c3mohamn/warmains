@@ -35,20 +35,35 @@ router.post('/', function(req, res, next) {
             errors:errors
         });
     } else {
-        // Creates a new character and saves it.
-        var newChar = new Char({
-            username: req.user.username,
-            name: name,
-            class: char_class,
-            description: description
-        });
-        Char.saveChar(newChar, function(err, char) {
-            if(err) throw err;
-            console.log(char);
-        });
 
-        req.flash('success_msg', name + ' created!');
-        res.redirect('/character');
+      Char.find({username: req.user.username, name: name},
+        function (err, result) {
+          if (err) {
+            console.log(err);
+            return res.status(500).send();
+          }
+          // user already has a character with that name
+          if (result.length > 0) {
+            //console.log(result);
+            req.flash('error_msg', 'Already have a character named ' + name + '.');
+            res.redirect('/character');
+          } else {
+            // Creates a new character and saves it.
+            var newChar = new Char({
+                username: req.user.username,
+                name: name,
+                class: char_class,
+                description: description
+            });
+            Char.saveChar(newChar, function(err, char) {
+                if(err) throw err;
+                console.log(char);
+            });
+
+            req.flash('success_msg', name + ' created!');
+            res.redirect('/character');
+          }
+        });
     }
 });
 

@@ -11,20 +11,51 @@ html
           .header-content-inner
             h1 Search
             hr
-            p Not Implemented Yet.
+
       div(class='container' ng-app='searchApp' ng-controller='searchCtrl'
              ng-init="search_for = 'characters'")
-        ul(class='list-inline')
-          li(ng-click="search_for = 'characters'"): h3(class='search_for') Characters
-            hr(class='light left' ng-show="search_for == 'characters'")
-          li(ng-click="search_for = 'items'"): h3(class='search_for') Items
-            hr(class='light right' ng-show="search_for == 'items'")
-        ul(class='list-inline')
-          li: input(type="text" class="form-control" placeholder="Search"
-                    ng-model='search_val' maxlength=30 size=30
-                    ng-keyup="$event.keyCode == 13 && search(search_val, search_for)")
-          li: button(type="submit" class="btn btn-default"
-                      ng-click="search(search_val, search_for)") Submit
+
+        .search_options
+          ul(class='list-inline')
+            li(ng-click="search_for = 'characters'")
+              h3(class='search_for'
+              ng-class="{'selected_search_for': search_for == 'characters'}") Characters
+              hr(class='light left' ng-show="search_for == 'characters'")
+            li(ng-click="search_for = 'items'")
+              h3(class='search_for'
+              ng-class="{'selected_search_for': search_for == 'items'}") Items
+              hr(class='light right' ng-show="search_for == 'items'")
+
+          ul(class='list-inline')
+            li: input(type="text" class="form-control" placeholder="Search"
+                      ng-model='search_val' maxlength=30 size=30
+                      ng-keyup="$event.keyCode == 13 && search(search_val, search_for)")
+            li: button(type="submit" class="btn btn-default"
+                        ng-click="search(search_val, search_for)") Submit
+
+
+        .search_results
+          table(class='table')
+            thead
+              tr
+                td: h4 Class
+                td: h4 Name
+                td: h4 Creator
+                td: h4 Description
+            tbody
+              tr(ng-repeat="char in characters"
+                 ng-dblclick="char_page(char.username, char.name)"
+                 ng-click="select(char)"
+                 ng-class="{'selected_char': selected_user == char.username && selected_name == char.name}")
+                td: img(class='class_icon'
+                    ng-src="/images/class-icons/{{char.class}}.png")
+                td: h3 {{char.name}}
+                td: h3: small {{char.username}}
+                td: p {{char.description}}
+
+        input(type="submit" name="view" class="view loginmodal-submit"
+              value="View" ng-click="char_page(selected_user, selected_name)")
+
 
       include partials/footer.jade
       script(src="/js/search_controller.js")

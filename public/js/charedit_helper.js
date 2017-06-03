@@ -137,11 +137,6 @@ var selected_item = null;
 // used to toggle sockets when clicking slots in sequence
 var toggle_sockets = 0;
 
-// Disables links from directing to another page - makes easier to select slots.
-$('.char_panel a, #selected_link, #selected_gem_link').click(function() {
-  return false;
-});
-
           /* ------ FUNCTIONS ------ */
 
 /* Return true if the number entered is a valid number or undefined. */

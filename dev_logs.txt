@@ -247,3 +247,9 @@ TODO:
 - small fix with results table ordering
 - small fix with selecting slots inner glow
 - started search page
+
+----- 06/03/2017 ------
+------- v2.9.8 --------
+
+- search for characters added
+- cannot create duplicate characters on the same account now
