@@ -12,8 +12,38 @@ editApp.controller('editctrl', ['$scope', '$http', '$compile', function($scope, 
   // all multipliers for enchants/gems currently equipped TODO: calculate at end
   $scope.multipliers = {};
 
+  //classes and corresponding specs for each class
+  $scope.class_specs = {
+    'death knight': ['blood', 'frost', 'unholy'],
+    'druid': ['balance', 'feral', 'restoration'],
+    'mage': ['arcane', 'fire', 'frost'],
+    'paladin': ['holy', 'protection', 'retribution'],
+    'priest': ['discipline', 'holy', 'shadow'],
+    'rogue': ['assassination', 'combat', 'subtlety'],
+    'shaman': ['elemental', 'enhancement', 'restoration'],
+    'warlock': ['afflication', 'demonology', 'destruction'],
+    'warrior': ['arms', 'fury', 'protection']
+  }
+
 
   /* ---------  Functions --------- */
+
+  /* Saves the current state of the character in db. */
+  $scope.save_to_db = function() {
+    $http.post('/character/saveChar', {
+      char: char_items,
+      gems: char_gems,
+      enchants: char_enchants,
+      spec: $scope.character.spec,
+      charname: $scope.character.name
+    }).then(function successCallback(response) {
+        console.log(response);
+      }, function errorCallback(response) {
+        console.log(response);
+      });
+      $scope.error_msg = '';
+      $scope.success_msg = 'Successfully saved.';
+  }
 
   /* Reset the results table (when switching view). */
   $scope.reset_table = function() {
@@ -72,23 +102,6 @@ editApp.controller('editctrl', ['$scope', '$http', '$compile', function($scope, 
     else if (class_name == 'druid')         return {'color': '#FF7D0A'};
     else if (class_name == 'priest')        return {'color': '#FFFFFF'};
     else                                    return {'color': 'black'};
-  }
-
-
-  /* Saves the current state of the character in db. */
-  $scope.save_to_db = function() {
-    $http.post('/character/saveItems', {
-      char: char_items,
-      gems: char_gems,
-      enchants: char_enchants,
-      charname: $scope.character.name
-    }).then(function successCallback(response) {
-        console.log(response);
-      }, function errorCallback(response) {
-        console.log(response);
-      });
-      $scope.error_msg = '';
-      $scope.success_msg = 'Successfully saved.';
   }
 
   /* Sets the item slot to search for after clicking an empty item slot

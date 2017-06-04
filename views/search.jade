@@ -33,12 +33,13 @@ html
             li: button(type="submit" class="btn btn-default"
                         ng-click="search(search_val, search_for)") Submit
 
-        h5 Search by character, user or class.
+        h5 Search by class, spec, name or creator
         .search_results
           table(class='table')
             thead
               tr
                 td: a(href='' ng-click="orderByField='class';reverseSort=!reverseSort"): h4 Class
+                td: a(href='' ng-click="orderByField='spec';reverseSort=!reverseSort"): h4 Spec
                 td: a(href='' ng-click="orderByField='name';reverseSort=!reverseSort"): h4 Name
                 td: a(href='' ng-click="orderByField='username';reverseSort=!reverseSort"): h4 Creator
                 td: a(href=''): h4 Description
@@ -49,6 +50,7 @@ html
                  ng-class="{'selected_char': selected_user == char.username && selected_name == char.name}")
                 td: img(class='class_icon'
                     ng-src="/images/class-icons/{{char.class}}.png")
+                td: h3(ng-style='class_color(char.class)') {{char.spec}}
                 td: h3 {{char.name}}
                 td: h3: small {{char.username}}
                 td: p {{char.description}}

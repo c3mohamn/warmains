@@ -36,19 +36,34 @@ header.priest { background-image: url('/images/bg/class-bg/priest.jpg'); }
   transition: 0.5s;
 }
 
+.unselected_spec {
+  filter: grayscale(100%);
+  transition: .5s;
+}
+
 .view_tab:hover {
   background-color: white;
   transition: background-color 0.5s;
   opacity: 1;
 }
 
+#choose_spec {
+  img:hover {
+    filter:grayscale(0%);
+  }
+}
+
+.char_spec_img img {
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  filter: grayscale(100%);
+}
+
 .char_panel {
   margin: 0 auto;
   max-width: 400px;
   //border-style: solid;
-  h1, h2, h3, h4, h5 {
-    font-family: wow-font;
-  }
   #tabard_slot, #shirt_slot {
     pointer-events:none;
     opacity: .5;

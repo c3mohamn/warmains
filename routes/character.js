@@ -131,12 +131,13 @@ router.get("/findchar/", function(req, res) {
 });
 
 // Save an item to character in database.
-router.post('/saveItems', function(req, res) {
+router.post('/saveChar', function(req, res) {
   var charname = req.body.charname,
       user = req.user.username,
       char_post = req.body.char,
       gems_post = req.body.gems,
-      enchants_post = req.body.enchants;
+      enchants_post = req.body.enchants,
+      spec = req.body.spec;
 
   Char.findOne({username: user, name: charname},
     function (err, char_db) {
@@ -153,6 +154,7 @@ router.post('/saveItems', function(req, res) {
         char_db[slot1].item = item;
         char_db[slot1].gems = gems;
         char_db[slot1].enchant = enchant;
+        char_db.spec = spec;
       }
       char_db.save(function(err) {
           if (err) throw err;

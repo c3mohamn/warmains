@@ -14,8 +14,8 @@ router.get("/findChars/", function(req, res) {
   var search = req.query.search.toLowerCase();
   search = RegExp(search);
 
-  // search for name, user or class
-  Char.find({ $or: [{name: search}, {username: search}, {class: search}]},
+  // search for name, user, class or spec
+  Char.find({ $or: [{name: search}, {username: search}, {class: search}, {spec: search}]},
     function (err, result) {
       if (err) {
         console.log(err);

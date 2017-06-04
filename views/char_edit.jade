@@ -14,12 +14,27 @@ html(ng-app='editApp' ng-cloak)
         .header-content-inner
           h1(id="homeHeading") {{character.name}}
           hr
+          img(ng-src='/images/spec-icons/{{character.class}}/{{character.spec}}.jpg')
           h3(ng-style="class_color(character.class)") {{character.class}}
     div(class='container' ng-show='character')
       div(class="col-lg-6 col-md-6 col-sm-6 col-xs-12")
         div(class='char_panel')
           .row
+            -if (user && username == user.username)
+              h4(ng-hide='character.spec' id='choose_spec_text') Choose a spec
+              ul(class='list-inline' id='choose_spec')
+                li(ng-click='character.spec = class_specs[character.class][0]')
+                  img(ng-class="(character.spec == class_specs[character.class][0]) ? 'selected_spec' : 'unselected_spec'"
+                  ng-src='/images/spec-icons/{{character.class}}/{{class_specs[character.class][0]}}.jpg')
+                li(ng-click='character.spec = class_specs[character.class][1]')
+                  img(ng-class="(character.spec == class_specs[character.class][1]) ? 'selected_spec' : 'unselected_spec'"
+                  ng-src='/images/spec-icons/{{character.class}}/{{class_specs[character.class][1]}}.jpg')
+                li(ng-click='character.spec = class_specs[character.class][2]')
+                  img(ng-class="(character.spec == class_specs[character.class][2]) ? 'selected_spec' : 'unselected_spec'"
+                  ng-src='/images/spec-icons/{{character.class}}/{{class_specs[character.class][2]}}.jpg')
+
             ul(class='list-inline')
+
               li(class='pull-left' id='li_Head')
                 a(href="" id='Head_link')
                   div(class='item_slot' id='Head_slot'
@@ -262,5 +277,6 @@ html(ng-app='editApp' ng-cloak)
     p(ng-show='!character') This character does not exist.
 
   include partials/footer.jade
-  script(src="/js/charedit_helper.js")
+  script(src="/js/charedit_helper_vars.js")
+  script(src='/js/charedit_helper_functs.js')
   script(src="/js/charedit_controller.js")
