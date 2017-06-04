@@ -3,10 +3,17 @@ var searchApp = angular.module("searchApp", []);
 
 searchApp.controller('searchCtrl', ['$scope', '$http', function($scope, $http) {
 
+  $scope.orderByField = 'class';
+  $scope.reverseSort = false;
+
   // directs user to the character page
   $scope.char_page = function(user, char) {
-    var url = '/character/profile/' + user + '/' + char;
-    window.location = url;
+    if (user && char) {
+      var url = '/character/profile/' + user + '/' + char;
+      window.location = url;
+    } else {
+      $scope.error_msg = 'Select or double click a row.';
+    }
   }
 
   // assigns char as the currently selected char
@@ -23,7 +30,7 @@ searchApp.controller('searchCtrl', ['$scope', '$http', function($scope, $http) {
     else { // characters
 
       $http.get('/search/findChars/',
-      {params:{"charname":search_val}}).then(function(response){
+      {params:{"search":search_val}}).then(function(response){
           $scope.characters = response.data;
 
           //console.log($scope.characters);

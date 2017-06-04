@@ -249,7 +249,8 @@ TODO:
 - started search page
 
 ----- 06/03/2017 ------
-------- v2.9.8 --------
+------- v2.9.9 --------
 
 - search for characters added
 - cannot create duplicate characters on the same account now
+- can search by char, user or class

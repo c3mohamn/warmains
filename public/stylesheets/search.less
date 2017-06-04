@@ -48,6 +48,11 @@ input {
     height: 60px;
     width: 60px;
   }
+  thead {
+    a {
+      text-decoration: none;
+    }
+  }
   tbody {
     tr {
       cursor: pointer;
@@ -56,10 +61,12 @@ input {
       box-shadow: inset 0px 0px 25px 5px rgba(0,0,0,.5);
       background-color: rgba(255,255,255,.5);
     }
+    animation: 1s slideRightNoSwing;
   }
   small {
-    color: black;
-    opacity: .8;
+    color: white;
+    opacity: .5;
+    text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
   }
   .selected_char {
     box-shadow: inset 0px 0px 25px 5px rgba(0,0,0,.5);
