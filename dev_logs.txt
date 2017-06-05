@@ -1,3 +1,18 @@
+----- 06/05/2017 ------
+------- v3.0.1 --------
+
+- start of character talents & professions
+
+----- 06/04/2017 ------
+------- v3.0.0 --------
+
+- added ability to choose character spec
+- character specs visible and searchable in search page
+
+ -----------------------------------------------------------------------
+| It would probably be smarter to have newer logs at top of the page... | 
+ -----------------------------------------------------------------------
+
 ----- 04/28/2017 ------
 ------- v2.1.0 --------
 
@@ -254,9 +269,3 @@ TODO:
 - search for characters added
 - cannot create duplicate characters on the same account now
 - can search by char, user or class
-
------ 06/04/2017 ------
-------- v3.0.0 --------
-
-- added ability to choose character spec
-- character specs visible and searchable in search page

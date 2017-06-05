@@ -5,7 +5,7 @@ html(ng-app='editApp' ng-cloak)
   link(rel='stylesheet', type="text/css" href='/stylesheets/char_edit_style.css')
   script(src="https://cdn.warmane.com/api/tooltip.js")
 
-  body(ng-controller='editctrl' ng-init="cur_view = 'stats'")
+  body(ng-controller='editctrl' ng-init="gear_view = 'stats'; cur_view='gearing'")
     <script>document.body.className += ' fade-out';</script>
     include partials/navbar.jade
 
@@ -16,22 +16,49 @@ html(ng-app='editApp' ng-cloak)
           hr
           img(ng-src='/images/spec-icons/{{character.class}}/{{character.spec}}.jpg')
           h3(ng-style="class_color(character.class)") {{character.class}}
+          -if(user && username == user.username)
+            ul(class='list-inline' id='view_tabs')
+              li(ng-click="cur_view = 'gearing'")
+                h3(class='view_tab'
+                ng-class="{'selected_view': cur_view == 'gearing'}") Gearing
+
+              li(ng-click="cur_view = 'talents'")
+                h3(class='view_tab'
+                ng-class="{'selected_view': cur_view == 'talents'}") Talents
+
+              li(ng-click="cur_view = 'professions'")
+                h3(class='view_tab'
+                ng-class="{'selected_view': cur_view == 'professions'}") Professions
+
     div(class='container' ng-show='character')
-      div(class="col-lg-6 col-md-6 col-sm-6 col-xs-12")
+
+      include partials/talents_view.jade
+
+      div(class="col-lg-6 col-md-6 col-sm-6 col-xs-12"  ng-show="cur_view=='gearing'")
         div(class='char_panel')
           .row
             -if (user && username == user.username)
               h4(ng-hide='character.spec' id='choose_spec_text') Choose a spec
               ul(class='list-inline' id='choose_spec')
                 li(ng-click='character.spec = class_specs[character.class][0]')
-                  img(ng-class="(character.spec == class_specs[character.class][0]) ? 'selected_spec' : 'unselected_spec'"
-                  ng-src='/images/spec-icons/{{character.class}}/{{class_specs[character.class][0]}}.jpg')
+                  img(
+                  title='{{class_specs[character.class][0]}}'
+                  ng-class="(character.spec == class_specs[character.class][0]) ? 'selected_spec' : 'unselected_spec'"
+                  ng-src='/images/spec-icons/{{character.class}}/{{class_specs[character.class][0]}}.jpg'
+                  )
                 li(ng-click='character.spec = class_specs[character.class][1]')
-                  img(ng-class="(character.spec == class_specs[character.class][1]) ? 'selected_spec' : 'unselected_spec'"
-                  ng-src='/images/spec-icons/{{character.class}}/{{class_specs[character.class][1]}}.jpg')
+                  img(
+                  title='{{class_specs[character.class][1]}}'
+                  ng-class="(character.spec == class_specs[character.class][1]) ? 'selected_spec' : 'unselected_spec'"
+                  ng-src='/images/spec-icons/{{character.class}}/{{class_specs[character.class][1]}}.jpg'
+                  )
                 li(ng-click='character.spec = class_specs[character.class][2]')
-                  img(ng-class="(character.spec == class_specs[character.class][2]) ? 'selected_spec' : 'unselected_spec'"
-                  ng-src='/images/spec-icons/{{character.class}}/{{class_specs[character.class][2]}}.jpg')
+                  img(
+                  title='{{class_specs[character.class][2]}}'
+                  ng-class="(character.spec == class_specs[character.class][2]) ? 'selected_spec' : 'unselected_spec'"
+                  ng-src='/images/spec-icons/{{character.class}}/{{class_specs[character.class][2]}}.jpg'
+                  )
+
 
             ul(class='list-inline')
 
@@ -141,131 +168,13 @@ html(ng-app='editApp' ng-cloak)
                     ng-class="{'selected_slot': slot == 'Ranged'}")
 
       div(class="col-lg-6 col-md-6 col-sm-6 col-xs-12")
-        if(user)
-          -if(username == user.username)
-            ul(class='list-inline')
-                li: input(type='submit' value='GEM'
-                          class="view_tab loginmodal-submit"
-                          ng-click="cur_view = 'gems'; reset_table()"
-                          ng-class="{'selected_view': cur_view == 'gems'}")
-                li: input(type='submit' value='ENCHANT'
-                          class="view_tab loginmodal-submit"
-                          ng-click="cur_view = 'enchants'; reset_table()"
-                          ng-class="{'selected_view': cur_view == 'enchants'}")
-                li: input(type='submit' value='ITEMS'
-                          class="view_tab loginmodal-submit"
-                          ng-click="cur_view = 'items'; reset_table()"
-                          ng-class="{'selected_view': cur_view == 'items'}")
-
-            div(class='search_container' ng-show="cur_view != 'stats'")
-              .row
-                  ul(class='list-inline')
-                    li(ng-show="cur_view == 'items'") iLvl
-                    li(ng-show="cur_view == 'items'")
-                      input(type='text' class='form-control' maxlength=3
-                            placeholder='Min' size=3 ng-model='ilvlmin'
-                            ng-keyup="$event.keyCode == 13 && finditems(search_val)")
-                    li(ng-show="cur_view == 'items'")
-                      input(type='text' class='form-control' maxlength=3
-                            placeholder='Max' size=3 ng-model='ilvlmax'
-                            ng-keyup="$event.keyCode == 13 && finditems(search_val)")
-                    li(ng-show="cur_view == 'gems'") Colour:
-                    li(ng-show="cur_view == 'gems'")
-                      select(class='form-control' ng-model='gem_colour')
-                        option Red
-                        option Yellow
-                        option Blue
-                        option Green
-                        option Orange
-                        option Purple
-                        option Meta
-                        option Prismatic
-                    li Slot:
-                    li: select(class='form-control' ng-model="slot")
-                      option(ng-show="cur_view=='enchants'") OneHand
-                      option(ng-show="cur_view=='enchants'") TwoHand
-                      option(ng-hide="cur_view=='enchants'") MainHand
-                      option OffHand
-                      option Ranged
-                      option Head
-                      option Neck
-                      option Shoulders
-                      option Back
-                      option Chest
-                      option Wrist
-                      option Hands
-                      option Waist
-                      option Legs
-                      option Feet
-                      option Finger1
-                      option Finger2
-                      option Trinket1
-                      option Trinket2
-                    li: input(type="text" class="form-control" placeholder="Search"
-                              ng-model='search_val' maxlength=30 size=15
-                              ng-keyup="$event.keyCode == 13 && finditems(search_val)")
-                    li: button(type="submit" class="btn btn-default"
-                               ng-click="finditems(search_val)") Submit
-
-                 ul(class='list-inline')
-                   li(ng-show="cur_view == 'items'")
-                     a(href="" id='selected_link')
-                       div(class='item_slot' id='selected_slot')
-                   li(ng-show="cur_view == 'gems'")
-                     a(href="" id='selected_gem_link')
-                       div(class='item_slot' id='selected_gem_slot')
-                   li(ng-show="cur_view == 'enchants'")
-                     a(href="" id='selected_enchant_link')
-                       div(class='item_slot' id='selected_enchant_slot')
-
-                  p(class='error-msg' ng-show="error_msg != ''") {{error_msg}}
-                  p(class='success-msg' ng-show="success_msg != ''") {{success_msg}}
-              .row
-                div(class='results_table' ng-show="items.length > 0")
-                  table(class='table')
-                    thead
-                      tr(ng-style="{'background-color': 'white'}")
-                        td
-                        td: a(href='' ng-click="orderByField='Name';reverseSort=!reverseSort") Name
-                        td(ng-show="cur_view == 'items'")
-                          a(href='' ng-click="orderByField='RequiredClasses';reverseSort=!reverseSort") Class
-                        td(ng-show="cur_view == 'items'")
-                          a(href='' ng-click="orderByField='ItemLevel';reverseSort=!reverseSort") Item Level
-                        td: a(href='' ng-click="orderByField='Slot';reverseSort=!reverseSort") Slot
-                        td(ng-show="cur_view == 'items'")
-                          a(href='' ng-click="orderByField='Type';reverseSort=!reverseSort") Type
-                        td(ng-show="cur_view == 'enchants'")
-                          a(href='' ng-click="orderByField='Requirements';reverseSort=!reverseSort") Requirements
-                    tbody
-                        tr(ng-repeat="item in items | orderBy:orderByField:reverseSort"
-                           ng-click='select_search_item(item)')
-                          td
-                            a(target="_blank" ng-href="{{item.Id != '' ? 'http://db.warmane.com/wotlk/item='+item.Id : 'http://db.warmane.com/wotlk/spell='+item.SpellId}}")
-                              img(ng-src='http://wow.zamimg.com/images/wow' +
-                                  '/icons/large/{{item.IconPath}}.jpg')
-                          td(ng-style='item_quality(item.Quality)')
-                              {{item.Name}}
-                          td(ng-style='class_color(item.RequiredClasses)'
-                             ng-if="cur_view == 'items'")
-                            {{item.RequiredClasses}}
-                          td(ng-if="cur_view == 'items'") {{item.ItemLevel}}
-                          td {{item.Slot}}
-                          td(ng-if="cur_view == 'items'") {{item.Type}}
-                          td(ng-if="cur_view == 'enchants'") {{item.Requirements}}
-
-                input(type="submit" value='Unequip' ng-click='unequip_item()'
-                      class="unequip_item loginmodal-submit")
-                input(type="submit" value='Equip' ng-click='equip_item()'
-                      class="equip_item loginmodal-submit")
-                input(type="submit" value='Save Changes' ng-click='save_to_db()'
-                      class="save_item loginmodal-submit")
-
-          -else if(user)
-            h4 Viewing #{char} as #{user.username}.
+        -if(user && username == user.username)
+          include partials/gearing_view.jade
+          include partials/professions_view.jade
 
       -if (user && username == user.username)
         div(class='clearfix visible sm')
-      div(class="col-lg-6 col-md-6 col-sm-6 col-xs-12")
+      div(class="col-lg-6 col-md-6 col-sm-6 col-xs-12" ng-show="cur_view == 'gearing'")
         div(class='stats_container')
           h3 Net Stats from items
           table(id='stats')
@@ -275,7 +184,6 @@ html(ng-app='editApp' ng-cloak)
                 td(ng-class='key') {{val}}
 
     p(ng-show='!character') This character does not exist.
-
   include partials/footer.jade
   script(src="/js/charedit_helper_vars.js")
   script(src='/js/charedit_helper_functs.js')

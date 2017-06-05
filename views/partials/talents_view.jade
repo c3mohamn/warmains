@@ -1,0 +1,27 @@
+div(class='talents_view' ng-show="cur_view == 'talents'")
+  h1 Not implemented yet!
+  div(class='talents_info')
+    h3(ng-style="class_color(character.class)")
+      {{talent_points.remaining}} ({{talent_points.left}}/{{talent_points.center}}/{{talent_points.right}})
+
+
+  div(class='talent_tree' ng-if = "character.class == 'death knight'")
+    include talents/death knight.jade
+  div(class='talent_tree' ng-if= "character.class == 'druid'")
+    include talents/druid.jade
+  div(class='talent_tree' ng-if = "character.class == 'hunter'")
+    include talents/hunter.jade
+  div(class='talent_tree' ng-if = "character.class == 'mage'")
+    include talents/mage.jade
+  div(class='talent_tree' ng-if = "character.class == 'paladin'")
+    include talents/paladin.jade
+  div(class='talent_tree' ng-if = "character.class == 'priest'")
+    include talents/priest.jade
+  div(class='talent_tree' ng-if = "character.class == 'rogue'")
+    include talents/rogue.jade
+  div(class='talent_tree' ng-if = "character.class == 'shaman'")
+    include talents/shaman.jade
+  div(class='talent_tree' ng-if = "character.class == 'warlock")
+    include talents/warlock.jade
+  div(class='talent_tree' ng-if = "character.class == 'warrior")
+    include talents/warrior.jade

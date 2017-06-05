@@ -11,6 +11,8 @@ editApp.controller('editctrl', ['$scope', '$http', '$compile', function($scope, 
   $scope.updated_Stats = {};
   // all multipliers for enchants/gems currently equipped TODO: calculate at end
   $scope.multipliers = {};
+  $scope.talent_points = {remaining: 71, left: 0, center: 0, right: 0};
+  $scope.talents = {};
 
   //classes and corresponding specs for each class
   $scope.class_specs = {
@@ -22,7 +24,8 @@ editApp.controller('editctrl', ['$scope', '$http', '$compile', function($scope, 
     'rogue': ['assassination', 'combat', 'subtlety'],
     'shaman': ['elemental', 'enhancement', 'restoration'],
     'warlock': ['afflication', 'demonology', 'destruction'],
-    'warrior': ['arms', 'fury', 'protection']
+    'warrior': ['arms', 'fury', 'protection'],
+    'hunter': ['beastmastery', 'marksmanship', 'survival']
   }
 
 
@@ -72,9 +75,9 @@ editApp.controller('editctrl', ['$scope', '$http', '$compile', function($scope, 
     console.log('selected item: ', item.Name, '. slot: ', item.Slot);
     selected_item = item;
     $scope.enchant_stats = item.Stats;
-    if ($scope.cur_view == 'gems')
+    if ($scope.gear_view == 'gems')
       set_slot_image('selected_gem', item);
-    else if ($scope.cur_view == 'enchants')
+    else if ($scope.gear_view == 'enchants')
       set_slot_image('selected_enchant', item);
     else
       set_slot_image('selected', item);
@@ -102,6 +105,12 @@ editApp.controller('editctrl', ['$scope', '$http', '$compile', function($scope, 
     else if (class_name == 'druid')         return {'color': '#FF7D0A'};
     else if (class_name == 'priest')        return {'color': '#FFFFFF'};
     else                                    return {'color': 'black'};
+  }
+
+  $scope.get_talent_bg = function(num) {
+    console.log($scope.character.class);
+    return {'background-image': 'url(/images/talents/ ' + $scope.character.class
+    + '/' + $scope.class_specs[$scope.character.class][num] + '/background.jpg)'};
   }
 
   /* Sets the item slot to search for after clicking an empty item slot
@@ -196,13 +205,13 @@ editApp.controller('editctrl', ['$scope', '$http', '$compile', function($scope, 
         item = selected_item,
         slot = $scope.slot,
         char = $scope.character,
-        cur_view = $scope.cur_view,
+        gear_view = $scope.gear_view,
         cur_socket = $scope.cur_socket;
     // reset messages
     $scope.error_msg = '';
     $scope.success_msg = '';
 
-    if (cur_view == 'enchants') {
+    if (gear_view == 'enchants') {
       if (item && is_enchant(item)) {
         if (slot) {
           if (char_items[slot]) {
@@ -221,7 +230,7 @@ editApp.controller('editctrl', ['$scope', '$http', '$compile', function($scope, 
         } else { $scope.error_msg = error_msg_12; }
       } else { $scope.error_msg = error_msg_11; }
     }
-    else if (cur_view == 'gems') {
+    else if (gear_view == 'gems') {
       if (item && is_gem(item)) {
         if (slot) {
           if (cur_socket) {
@@ -240,7 +249,7 @@ editApp.controller('editctrl', ['$scope', '$http', '$compile', function($scope, 
         } else { $scope.error_msg = error_msg_8; }
       } else { $scope.error_msg = error_msg_7; }
     }
-    else if (cur_view == 'items') {
+    else if (gear_view == 'items') {
       if (item) {
         if (!is_equipped(slot, item)) {
           var slot = remove_trailing_number(slot);
@@ -274,13 +283,13 @@ editApp.controller('editctrl', ['$scope', '$http', '$compile', function($scope, 
         error_msg_1 = 'You must have item selected first.',
         error_msg_2 = 'Nothing to unequip.',
         error_msg_3 = 'Select a socket to unequip.',
-        cur_view = $scope.cur_view,
+        gear_view = $scope.gear_view,
         cur_socket = $scope.cur_socket;
     //reset messages
     $scope.error_msg = '';
     $scope.success_msg = '';
 
-    if (cur_view == 'enchants') {
+    if (gear_view == 'enchants') {
       if (slot) {
         if (char_enchants[slot]) {
 
@@ -297,7 +306,7 @@ editApp.controller('editctrl', ['$scope', '$http', '$compile', function($scope, 
 
 
     }
-    else if (cur_view == 'gems') {
+    else if (gear_view == 'gems') {
        if (cur_socket) {
          if (char_gems[slot][cur_socket]) {
 
@@ -313,7 +322,7 @@ editApp.controller('editctrl', ['$scope', '$http', '$compile', function($scope, 
          } else { $scope.error_msg = error_msg_2; }
        } else { $scope.error_msg = error_msg_3; }
     }
-    else if (cur_view == 'items') {
+    else if (gear_view == 'items') {
       if (slot) {
         if (char_items[slot]) {
 
@@ -352,12 +361,12 @@ editApp.controller('editctrl', ['$scope', '$http', '$compile', function($scope, 
     var char = $scope.character;
     var min = $scope.ilvlmin;
     var max = $scope.ilvlmax;
-    var cur_view = $scope.cur_view;
+    var gear_view = $scope.gear_view;
     var gem_colour = $scope.gem_colour;
     var temp_slot = '';
     $scope.error_msg = ''; // reset error_msg
 
-    if (!slot && cur_view != 'gems' && cur_view != 'enchants')
+    if (!slot && gear_view != 'gems' && gear_view != 'enchants')
       $scope.error_msg = 'Select a item slot before searching for items.';
     else if (!valid_number(min))
       $scope.error_msg = 'Invalid min ilvl.';
@@ -373,8 +382,8 @@ editApp.controller('editctrl', ['$scope', '$http', '$compile', function($scope, 
         temp_slot = remove_trailing_number(slot);
         temp_slot2 = remove_trailing_number(slot);
       }
-      if (cur_view == 'gems') temp_slot = 'Gems';
-      if (cur_view == 'enchants') temp_slot = 'Enchants';
+      if (gear_view == 'gems') temp_slot = 'Gems';
+      if (gear_view == 'enchants') temp_slot = 'Enchants';
 
       console.log(temp_slot2, slot);
 
@@ -389,10 +398,10 @@ editApp.controller('editctrl', ['$scope', '$http', '$compile', function($scope, 
 
           // do not push item if item does not match requirements
           // wield? - matches ilvls? - matches search_val?
-          if (cur_view != 'enchants' && !can_wield(item, char)) item_matches = false;
-          else if (cur_view == 'gems' && gem_colour && gem_colour != item.Slot)
+          if (gear_view != 'enchants' && !can_wield(item, char)) item_matches = false;
+          else if (gear_view == 'gems' && gem_colour && gem_colour != item.Slot)
             item_matches = false;
-          else if (cur_view == 'enchants' && slot) {
+          else if (gear_view == 'enchants' && slot) {
             if (slot == 'MainHand') {
               if (item.Slot != 'TwoHand' && item.Slot != 'OneHand')
                 item_matches = false;
