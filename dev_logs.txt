@@ -1,4 +1,12 @@
 ----- 06/06/2017 ------
+------- v3.0.5 --------
+
+- Shaman talents finished
+- some bugs fixed
+- can save talents now
+- non-character owners can not modify talents
+
+----- 06/06/2017 ------
 ------- v3.0.2 --------
 
 - conditions for adding and removing talents implemented

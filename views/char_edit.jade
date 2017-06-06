@@ -6,6 +6,11 @@ html(ng-app='editApp' ng-cloak)
   script(src="https://cdn.warmane.com/api/tooltip.js")
 
   body(ng-controller='editctrl' ng-init="gear_view = 'stats'; cur_view='gearing'")
+    -if(user && username == user.username)
+      div(ng-init="permission = true")
+    -else
+      div(ng-init="permission = false")
+
     <script>document.body.className += ' fade-out';</script>
     include partials/navbar.jade
 
@@ -16,19 +21,18 @@ html(ng-app='editApp' ng-cloak)
           hr
           img(ng-src='/images/spec-icons/{{character.class}}/{{character.spec}}.jpg')
           h3(ng-style="class_color(character.class)") {{character.class}}
-          -if(user && username == user.username)
-            ul(class='list-inline' id='view_tabs')
-              li(ng-click="cur_view = 'gearing'")
-                h3(class='view_tab'
-                ng-class="{'selected_view': cur_view == 'gearing'}") Gearing
+          ul(class='list-inline' id='view_tabs')
+            li(ng-click="cur_view = 'gearing'")
+              h3(class='view_tab'
+              ng-class="{'selected_view': cur_view == 'gearing'}") Gearing
 
-              li(ng-click="cur_view = 'talents'")
-                h3(class='view_tab'
-                ng-class="{'selected_view': cur_view == 'talents'}") Talents
+            li(ng-click="cur_view = 'talents'")
+              h3(class='view_tab'
+              ng-class="{'selected_view': cur_view == 'talents'}") Talents
 
-              li(ng-click="cur_view = 'professions'")
-                h3(class='view_tab'
-                ng-class="{'selected_view': cur_view == 'professions'}") Professions
+            //li(ng-click="cur_view = 'professions'")
+              h3(class='view_tab'
+              ng-class="{'selected_view': cur_view == 'professions'}") Professions
 
     div(class='container' ng-show='character')
 

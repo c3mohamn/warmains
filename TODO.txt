@@ -13,7 +13,8 @@ List of things that could be worked on:
   - add arrows for the talents that are prequisites
   - add all other talents
   - figure out links ?
-  - can do glyphs by making them provide ID, then just add to href
+
+7. DO GLYPHS!
 
 Ideas:
 

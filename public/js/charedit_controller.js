@@ -25,22 +25,7 @@ editApp.controller('editctrl', ['$scope', '$http', '$compile', function($scope, 
   $scope.character = {};
   // all multipliers for enchants/gems currently equipped TODO: calculate at end
   $scope.multipliers = {};
-  $scope.talent_points = {
-    remaining: 71,
-    left: {
-      total: 0,
-      row: {0:0, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0, 8:0, 9:0, 10:0}
-    },
-    center: {
-      total: 0,
-      row: {0:0, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0, 8:0, 9:0, 10:0}
-    },
-    right: {
-      total: 0,
-      row: {0:0, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0, 8:0, 9:0, 10:0}
-    }
-  };
-  var last_active_row = 0;
+  $scope.talent_points = {};
   $scope.cur_talents = {};
 
   //classes and corresponding specs for each class
@@ -69,7 +54,9 @@ editApp.controller('editctrl', ['$scope', '$http', '$compile', function($scope, 
         tree = class_talents[talent].tree,
         points_used = $scope.talent_points[tree].total,
         can_add = true;
-    //console.log(points_used, row);
+
+    if (!$scope.permission)
+      return false;
 
     // only add points to rows that are enabled
     if (points_used < 5 * row)
@@ -91,7 +78,7 @@ editApp.controller('editctrl', ['$scope', '$http', '$compile', function($scope, 
       $scope.talent_points[tree].row[row] += 1;
       $scope.talent_points[tree].total += 1;
       $scope.talent_points.remaining -= 1;
-      if (last_active_row < row) last_active_row = row;
+      if ($scope.talent_points.last_active_row < row) $scope.talent_points.last_active_row = row;
     }
   }
 
@@ -103,22 +90,26 @@ editApp.controller('editctrl', ['$scope', '$http', '$compile', function($scope, 
         points_used = $scope.talent_points[tree].total,
         can_remove = true;
 
+    if (!$scope.permission)
+      return false;
+
     // need to have points in there to remove it
     if ($scope.cur_talents[talent] <= 0)
       return false;
 
     // check it talent is prequisite for any talents down the road we chose
     if (class_talents[talent].allows) {
-      if ($scope.cur_talents[class_talents[talent].allows] > 0)
-        return false;
+      for (var i=0; i < class_talents[talent].allows.length; i+=1) {
+        if ($scope.cur_talents[class_talents[talent].allows[i]] > 0)
+          return false;
+      }
     }
 
-
     // check if talents further down the tree depend on this talent
-    if (row != last_active_row)
+    if (row != $scope.talent_points.last_active_row)
       var i = 0;
-      while (last_active_row - i > row) {
-        if (sum_rows(last_active_row - i, $scope.talent_points[tree].row) <= (last_active_row - i) * 5)
+      while ($scope.talent_points.last_active_row - i > row) {
+        if (sum_rows($scope.talent_points.last_active_row - i, $scope.talent_points[tree].row) <= ($scope.talent_points.last_active_row - i) * 5)
           return false;
         i += 1;
       }
@@ -128,8 +119,8 @@ editApp.controller('editctrl', ['$scope', '$http', '$compile', function($scope, 
       $scope.talent_points[tree].row[row] -= 1;
       $scope.talent_points[tree].total -= 1;
       $scope.talent_points.remaining += 1;
-      if (row == last_active_row && $scope.talent_points[tree].row[row] == 0)
-        last_active_row -= 1;
+      if (row == $scope.talent_points.last_active_row && $scope.talent_points[tree].row[row] == 0)
+        $scope.talent_points.last_active_row -= 1;
     }
   }
 
@@ -154,11 +145,12 @@ editApp.controller('editctrl', ['$scope', '$http', '$compile', function($scope, 
 
     if (points_used < row * 5)
       return true;
-    if (remaining_points == 0)
+    if (remaining_points == 0 && $scope.cur_talents[talent] == 0)
       return true;
     // check if talent has a prequisite talent
     if (class_talents[talent].requires) {
-      if ($scope.cur_talents[class_talents[talent].requires] == 0)
+      var required_tal = class_talents[talent].requires;
+      if ($scope.cur_talents[required_tal] != class_talents[required_tal].max_rank)
         return true;
     }
     return false;
@@ -172,6 +164,8 @@ editApp.controller('editctrl', ['$scope', '$http', '$compile', function($scope, 
       gems: char_gems,
       enchants: char_enchants,
       spec: $scope.character.spec,
+      talents: $scope.cur_talents,
+      points: $scope.talent_points,
       charname: $scope.character.name
     }).then(function successCallback(response) {
         console.log(response);
@@ -601,9 +595,36 @@ editApp.controller('editctrl', ['$scope', '$http', '$compile', function($scope, 
           }
         }
         update_stats();
-        // initialize talents
-        for (var talent in all_talents[$scope.character.class]) {
-          $scope.cur_talents[talent] = 0;//all_talents[$scope.character.class][talent].rank;
+
+        // talents
+        if ($scope.character.talents) {
+          $scope.cur_talents = $scope.character.talents;
+        } else {
+          // initialize talents
+          for (var talent in all_talents[$scope.character.class]) {
+            $scope.cur_talents[talent] = 0;
+          }
+        }
+        if ($scope.character.points) {
+          $scope.talent_points = $scope.character.points;
+        } else {
+          // initialize talent points
+          $scope.talent_points = {
+            remaining: 71,
+            last_active_row: 0,
+            left: {
+              total: 0,
+              row: {0:0, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0, 8:0, 9:0, 10:0}
+            },
+            center: {
+              total: 0,
+              row: {0:0, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0, 8:0, 9:0, 10:0}
+            },
+            right: {
+              total: 0,
+              row: {0:0, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0, 8:0, 9:0, 10:0}
+            }
+          };
         }
     });
   });
