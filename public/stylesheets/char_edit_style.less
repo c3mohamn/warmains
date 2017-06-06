@@ -85,6 +85,7 @@ header.priest { background-image: url('/images/bg/class-bg/priest.jpg'); }
 .char_panel {
   margin: 0 auto;
   max-width: 400px;
+  transition: .5s;
   //border-style: solid;
   #tabard_slot, #shirt_slot {
     pointer-events:none;
@@ -253,13 +254,14 @@ header.priest { background-image: url('/images/bg/class-bg/priest.jpg'); }
 
 // Talents View styles
 .talents_view {
+  transition: .5s;
   min-width: 80%;
   .talent_bg_container {
     border: solid;
     border-color: black;
     border-width: 2px;
     width: 200px;
-    height: 580px;
+    height: 550px;
     //max-width: 200px;
   }
   .talents_container {
@@ -269,15 +271,54 @@ header.priest { background-image: url('/images/bg/class-bg/priest.jpg'); }
     background-color: red;
   }
   td {
-    padding: 4px;
+    padding: 2px;
   }
   .talent {
-    width: 43px;
-    height: 43px;
+    width: 45px;
+    height: 45px;
+    border: solid;
+    border-width: 2px;
+    border-radius: 3px;
+    border-color: black;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  .talent:hover {
+    -webkit-box-shadow: inset 0 0 20px #819FF7;
+    -moz-box-shadow: inset 0 0 20px #819FF7;
+    box-shadow: inset 0 0 20px #819FF7;
+    transition: .3s;
+    cursor: pointer;
   }
   .empty_talent_space {
     width: 43px;
     height: 43px;
+  }
+  .talent_counter {
+    font-size: 12px;
+    margin-left: 30px;
+    margin-top: 30px;
+    background-color: black;
+    width: 13px;
+    height: 17px;
+    color: #01DF01;
+    border: solid;
+    border-width: 1px;
+    border-radius: 4px;
+    border-color: yellow;
+  }
+  .maxed_talent {
+    color: yellow;
+  }
+  .talent_inactive {
+    filter: grayscale(100%);
+    .talent_counter {
+      visibility: hidden;
+    }
   }
 }
 

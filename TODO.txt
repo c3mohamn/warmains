@@ -9,6 +9,11 @@ List of things that could be worked on:
 5. Show character description.
 
 6. Char SPECS.
+  - save spec, and talent tree view for other users
+  - add arrows for the talents that are prequisites
+  - add all other talents
+  - figure out links ?
+  - can do glyphs by making them provide ID, then just add to href
 
 Ideas:
 

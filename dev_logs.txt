@@ -1,3 +1,9 @@
+----- 06/06/2017 ------
+------- v3.0.2 --------
+
+- conditions for adding and removing talents implemented
+- part of elemental tree finished
+
 ----- 06/05/2017 ------
 ------- v3.0.1 --------
 
@@ -10,7 +16,7 @@
 - character specs visible and searchable in search page
 
  -----------------------------------------------------------------------
-| It would probably be smarter to have newer logs at top of the page... | 
+| It would probably be smarter to have newer logs at top of the page... |
  -----------------------------------------------------------------------
 
 ----- 04/28/2017 ------

@@ -1,27 +1,27 @@
 div(class='talents_view' ng-show="cur_view == 'talents'")
-  h1 Not implemented yet!
+  h1 Work in progress.
   div(class='talents_info')
     h3(ng-style="class_color(character.class)")
-      {{talent_points.remaining}} ({{talent_points.left}}/{{talent_points.center}}/{{talent_points.right}})
+      {{talent_points.remaining}} ({{talent_points.left.total}}/{{talent_points.center.total}}/{{talent_points.right.total}})
 
 
-  div(class='talent_tree' ng-if = "character.class == 'death knight'")
+  div(class='talent_tree' ng-if="character.class == 'death knight'")
     include talents/death knight.jade
-  div(class='talent_tree' ng-if= "character.class == 'druid'")
+  div(class='talent_tree' ng-if="character.class == 'druid'")
     include talents/druid.jade
-  div(class='talent_tree' ng-if = "character.class == 'hunter'")
+  div(class='talent_tree' ng-if "character.class == 'hunter'")
     include talents/hunter.jade
-  div(class='talent_tree' ng-if = "character.class == 'mage'")
+  div(class='talent_tree' ng-if="character.class == 'mage'")
     include talents/mage.jade
-  div(class='talent_tree' ng-if = "character.class == 'paladin'")
+  div(class='talent_tree' ng-if="character.class == 'paladin'")
     include talents/paladin.jade
-  div(class='talent_tree' ng-if = "character.class == 'priest'")
+  div(class='talent_tree' ng-if="character.class == 'priest'")
     include talents/priest.jade
-  div(class='talent_tree' ng-if = "character.class == 'rogue'")
+  div(class='talent_tree' ng-if="character.class == 'rogue'")
     include talents/rogue.jade
-  div(class='talent_tree' ng-if = "character.class == 'shaman'")
+  div(class='talent_tree' ng-if="character.class == 'shaman'")
     include talents/shaman.jade
-  div(class='talent_tree' ng-if = "character.class == 'warlock")
+  div(class='talent_tree' ng-if="character.class == 'warlock'")
     include talents/warlock.jade
-  div(class='talent_tree' ng-if = "character.class == 'warrior")
+  div(class='talent_tree' ng-if="character.class == 'warrior'")
     include talents/warrior.jade

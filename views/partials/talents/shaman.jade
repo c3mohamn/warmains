@@ -6,21 +6,239 @@ ul(class='list-inline')
         tbody
           tr
             td: div(class='empty_talent_space')
-            td: div(class='talent' id='convection'
-            ng-style="{'background-image': 'url(/images/talents/' + character.class + '/' + class_specs[character.class][0] +  '/Convection.jpg)'}")
+            td: div(
+            class='talent'
+            ng-style="{'background-image': 'url(/images/talents/' + character.class + '/' + class_specs[character.class][0] +  '/spell_nature_wispsplode.gif)'}"
+            ng-click="add_point('convection')"
+            ng-right-click="remove_point('convection')"
+            ng-class="{'talent_inactive': is_inactive('convection')}")
+              div(class='talent_counter'
+              ng-class="{'maxed_talent': is_talent_maxed('convection')}")
+                {{cur_talents.convection}}
+            td: div(
+            class='talent'
+            ng-style="{'background-image': 'url(/images/talents/' + character.class + '/' + class_specs[character.class][0] +  '/spell_fire_fireball.gif)'}"
+            ng-click="add_point('concussion')"
+            ng-right-click="remove_point('concussion')"
+            ng-class="{'talent_inactive': is_inactive('concussion')}")
+              div(class='talent_counter'
+              ng-class="{'maxed_talent': is_talent_maxed('concussion')}")
+                {{cur_talents.concussion}}
+            td: div(class='empty_talent_space')
+
+          tr
             td: div(class='talent'
-            ng-style="{'background-image': 'url(/images/talents/' + character.class + '/' + class_specs[character.class][0] +  '/Concussion.jpg)'}")
+            ng-style="{'background-image': 'url(/images/talents/' + character.class + '/' + class_specs[character.class][0] +  '/spell_fire_immolation.gif)'}"
+            ng-click="add_point('call_of_flame')"
+            ng-right-click="remove_point('call_of_flame')"
+            ng-class="{'talent_inactive': is_inactive('call_of_flame')}")
+              div(class='talent_counter'
+              ng-class="{'maxed_talent': is_talent_maxed('call_of_flame')}")
+                {{cur_talents.call_of_flame}}
+            td: div(class='talent'
+            ng-style="{'background-image': 'url(/images/talents/' + character.class + '/' + class_specs[character.class][0] +  '/spell_nature_spiritarmor.gif)'}"
+            ng-click="add_point('elemental_warding')"
+            ng-right-click="remove_point('elemental_warding')"
+            ng-class="{'talent_inactive': is_inactive('elemental_warding')}")
+              div(class='talent_counter'
+              ng-class="{'maxed_talent': is_talent_maxed('elemental_warding')}")
+                {{cur_talents.elemental_warding}}
+            td: div(class='talent'
+            ng-style="{'background-image': 'url(/images/talents/' + character.class + '/' + class_specs[character.class][0] +  '/spell_fire_elementaldevastation.gif)'}"
+            ng-click="add_point('elemental_devastation')"
+            ng-right-click="remove_point('elemental_devastation')"
+            ng-class="{'talent_inactive': is_inactive('elemental_devastation')}")
+              div(class='talent_counter'
+              ng-class="{'maxed_talent': is_talent_maxed('elemental_devastation')}")
+                {{cur_talents.elemental_devastation}}
+            td: div(class='empty_talent_space')
+
+          tr
+            td: div(class='talent'
+            ng-style="{'background-image': 'url(/images/talents/' + character.class + '/' + class_specs[character.class][0] +  '/spell_frost_frostward.gif)'}"
+            ng-click="add_point('reverberation')"
+            ng-right-click="remove_point('reverberation')"
+            ng-class="{'talent_inactive': is_inactive('reverberation')}")
+              div(class='talent_counter'
+              ng-class="{'maxed_talent': is_talent_maxed('reverberation')}")
+                {{cur_talents.reverberation}}
+            td: div(class='talent'
+            ng-style="{'background-image': 'url(/images/talents/' + character.class + '/' + class_specs[character.class][0] +  '/spell_shadow_manaburn.gif)'}"
+            ng-click="add_point('elemental_focus')"
+            ng-right-click="remove_point('elemental_focus')"
+            ng-class="{'talent_inactive': is_inactive('elemental_focus')}")
+              div(class='talent_counter'
+              ng-class="{'maxed_talent': is_talent_maxed('elemental_focus')}")
+                {{cur_talents.elemental_focus}}
+            td: div(class='talent'
+            ng-style="{'background-image': 'url(/images/talents/' + character.class + '/' + class_specs[character.class][0] +  '/spell_fire_volcano.gif)'}"
+            ng-click="add_point('elemental_fury')"
+            ng-right-click="remove_point('elemental_fury')"
+            ng-class="{'talent_inactive': is_inactive('elemental_fury')}")
+              div(class='talent_counter'
+              ng-class="{'maxed_talent': is_talent_maxed('elemental_fury')}")
+                {{cur_talents.elemental_fury}}
             td: div(class='empty_talent_space')
           tr
+            td: div(class='talent'
+            ng-style="{'background-image': 'url(/images/talents/' + character.class + '/' + class_specs[character.class][0] +  '/spell_fire_sealoffire.gif)'}"
+            ng-click="add_point('improved_fire_nova')"
+            ng-right-click="remove_point('improved_fire_nova')"
+            ng-class="{'talent_inactive': is_inactive('improved_fire_nova')}")
+              div(class='talent_counter'
+              ng-class="{'maxed_talent': is_talent_maxed('improved_fire_nova')}")
+                {{cur_talents.improved_fire_nova}}
+            td: div(class='empty_talent_space')
+            td: div(class='empty_talent_space')
+            td: div(class='talent'
+            ng-style="{'background-image': 'url(/images/talents/' + character.class + '/' + class_specs[character.class][0] +  '/spell_shadow_soulleech_2.gif)'}"
+            ng-click="add_point('eye_of_the_storm')"
+            ng-right-click="remove_point('eye_of_the_storm')"
+            ng-class="{'talent_inactive': is_inactive('eye_of_the_storm')}")
+              div(class='talent_counter'
+              ng-class="{'maxed_talent': is_talent_maxed('eye_of_the_storm')}")
+                {{cur_talents.eye_of_the_storm}}
           tr
+            td: div(class='talent'
+            ng-style="{'background-image': 'url(/images/talents/' + character.class + '/' + class_specs[character.class][0] +  '/spell_nature_stormreach.gif)'}"
+            ng-click="add_point('elemental_reach')"
+            ng-right-click="remove_point('elemental_reach')"
+            ng-class="{'talent_inactive': is_inactive('elemental_reach')}")
+              div(class='talent_counter'
+              ng-class="{'maxed_talent': is_talent_maxed('elemental_reach')}")
+                {{cur_talents.elemental_reach}}
+            td: div(class='talent'
+            ng-style="{'background-image': 'url(/images/talents/' + character.class + '/' + class_specs[character.class][0] +  '/spell_nature_callstorm.gif)'}"
+            ng-click="add_point('call_of_thunder')"
+            ng-right-click="remove_point('call_of_thunder')"
+            ng-class="{'talent_inactive': is_inactive('call_of_thunder')}")
+              div(class='talent_counter'
+              ng-class="{'maxed_talent': is_talent_maxed('call_of_thunder')}")
+                {{cur_talents.call_of_thunder}}
+            td: div(class='empty_talent_space')
+            td: div(class='talent'
+            ng-style="{'background-image': 'url(/images/talents/' + character.class + '/' + class_specs[character.class][0] +  '/spell_nature_unrelentingstorm.gif)'}"
+            ng-click="add_point('unrelenting_storm')"
+            ng-right-click="remove_point('unrelenting_storm')"
+            ng-class="{'talent_inactive': is_inactive('unrelenting_storm')}")
+              div(class='talent_counter'
+              ng-class="{'maxed_talent': is_talent_maxed('unrelenting_storm')}")
+                {{cur_talents.unrelenting_storm}}
           tr
+            td: div(class='talent'
+            ng-style="{'background-image': 'url(/images/talents/' + character.class + '/' + class_specs[character.class][0] +  '/spell_nature_elementalprecision_1.gif)'}"
+            ng-click="add_point('elemental_precision')"
+            ng-right-click="remove_point('elemental_precision')"
+            ng-class="{'talent_inactive': is_inactive('elemental_precision')}")
+              div(class='talent_counter'
+              ng-class="{'maxed_talent': is_talent_maxed('elemental_precision')}")
+                {{cur_talents.elemental_precision}}
+            td: div(class='empty_talent_space')
+            td: div(class='talent'
+            ng-style="{'background-image': 'url(/images/talents/' + character.class + '/' + class_specs[character.class][0] +  '/spell_lightning_lightningbolt01.gif)'}"
+            ng-click="add_point('lightning_mastery')"
+            ng-right-click="remove_point('lightning_mastery')"
+            ng-class="{'talent_inactive': is_inactive('lightning_mastery')}")
+              div(class='talent_counter'
+              ng-class="{'maxed_talent': is_talent_maxed('lightning_mastery')}")
+                {{cur_talents.lightning_mastery}}
+            td: div(class='empty_talent_space')
           tr
+            td: div(class='empty_talent_space')
+            td: div(class='talent'
+            ng-style="{'background-image': 'url(/images/talents/' + character.class + '/' + class_specs[character.class][0] +  '/spell_nature_wispheal.gif)'}"
+            ng-click="add_point('elemental_mastery')"
+            ng-right-click="remove_point('elemental_mastery')"
+            ng-class="{'talent_inactive': is_inactive('elemental_mastery')}")
+              div(class='talent_counter'
+              ng-class="{'maxed_talent': is_talent_maxed('elemental_mastery')}")
+                {{cur_talents.elemental_mastery}}
+            td: div(class='talent'
+            ng-style="{'background-image': 'url(/images/talents/' + character.class + '/' + class_specs[character.class][0] +  '/spell_shaman_stormearthfire.gif)'}"
+            ng-click="add_point('storm_earth_fire')"
+            ng-right-click="remove_point('storm_earth_fire')"
+            ng-class="{'talent_inactive': is_inactive('storm_earth_fire')}")
+              div(class='talent_counter'
+              ng-class="{'maxed_talent': is_talent_maxed('storm_earth_fire')}")
+                {{cur_talents.storm_earth_fire}}
+            td: div(class='empty_talent_space')
           tr
+            td: div(class='talent'
+            ng-style="{'background-image': 'url(/images/talents/' + character.class + '/' + class_specs[character.class][0] +  '/spell_fire_blueflamering.gif)'}"
+            ng-click="add_point('booming_echoes')"
+            ng-right-click="remove_point('booming_echoes')"
+            ng-class="{'talent_inactive': is_inactive('booming_echoes')}")
+              div(class='talent_counter'
+              ng-class="{'maxed_talent': is_talent_maxed('booming_echoes')}")
+                {{cur_talents.booming_echoes}}
+            td: div(class='talent'
+            ng-style="{'background-image': 'url(/images/talents/' + character.class + '/' + class_specs[character.class][0] +  '/spell_shaman_elementaloath.gif)'}"
+            ng-click="add_point('elemental_oath')"
+            ng-right-click="remove_point('elemental_oath')"
+            ng-class="{'talent_inactive': is_inactive('elemental_oath')}")
+              div(class='talent_counter'
+              ng-class="{'maxed_talent': is_talent_maxed('elemental_oath')}")
+                {{cur_talents.elemental_oath}}
+            td: div(class='talent'
+            ng-style="{'background-image': 'url(/images/talents/' + character.class + '/' + class_specs[character.class][0] +  '/spell_nature_lightningoverload.gif)'}"
+            ng-click="add_point('lightning_overload')"
+            ng-right-click="remove_point('lightning_overload')"
+            ng-class="{'talent_inactive': is_inactive('lightning_overload')}")
+              div(class='talent_counter'
+              ng-class="{'maxed_talent': is_talent_maxed('lightning_overload')}")
+                {{cur_talents.lightning_overload}}
+            td: div(class='empty_talent_space')
           tr
+            td: div(class='talent'
+            ng-style="{'background-image': 'url(/images/talents/' + character.class + '/' + class_specs[character.class][0] +  '/spell_shaman_astralshift.gif)'}"
+            ng-click="add_point('astral_shift')"
+            ng-right-click="remove_point('astral_shift')"
+            ng-class="{'talent_inactive': is_inactive('astral_shift')}")
+              div(class='talent_counter'
+              ng-class="{'maxed_talent': is_talent_maxed('astral_shift')}")
+                {{cur_talents.astral_shift}}
+            td: div(class='talent'
+            ng-style="{'background-image': 'url(/images/talents/' + character.class + '/' + class_specs[character.class][0] +  '/spell_fire_totemofwrath.gif)'}"
+            ng-click="add_point('totem_of_wrath')"
+            ng-right-click="remove_point('totem_of_wrath')"
+            ng-class="{'talent_inactive': is_inactive('totem_of_wrath')}")
+              div(class='talent_counter'
+              ng-class="{'maxed_talent': is_talent_maxed('totem_of_wrath')}")
+                {{cur_talents.totem_of_wrath}}
+            td: div(class='talent'
+            ng-style="{'background-image': 'url(/images/talents/' + character.class + '/' + class_specs[character.class][0] +  '/spell_shaman_lavaflow.gif)'}"
+            ng-click="add_point('lava_flows')"
+            ng-right-click="remove_point('lava_flows')"
+            ng-class="{'talent_inactive': is_inactive('lava_flows')}")
+              div(class='talent_counter'
+              ng-class="{'maxed_talent': is_talent_maxed('lava_flows')}")
+                {{cur_talents.lava_flows}}
+            td: div(class='empty_talent_space')
           tr
+            td: div(class='empty_talent_space')
+            td: div(class='talent'
+            ng-style="{'background-image': 'url(/images/talents/' + character.class + '/' + class_specs[character.class][0] +  '/spell_unused2.gif)'}"
+            ng-click="add_point('shamanism')"
+            ng-right-click="remove_point('shamanism')"
+            ng-class="{'talent_inactive': is_inactive('shamanism')}")
+              div(class='talent_counter'
+              ng-class="{'maxed_talent': is_talent_maxed('shamanism')}")
+                {{cur_talents.shamanism}}
+            td: div(class='empty_talent_space')
+            td: div(class='empty_talent_space')
           tr
-          tr
-          tr
+            td: div(class='empty_talent_space')
+            td: div(class='talent'
+            ng-style="{'background-image': 'url(/images/talents/' + character.class + '/' + class_specs[character.class][0] +  '/spell_shaman_thunderstorm.gif)'}"
+            ng-click="add_point('thunderstorm')"
+            ng-right-click="remove_point('thunderstorm')"
+            ng-class="{'talent_inactive': is_inactive('thunderstorm')}")
+              div(class='talent_counter'
+              ng-class="{'maxed_talent': is_talent_maxed('thunderstorm')}")
+                {{cur_talents.thunderstorm}}
+            td: div(class='empty_talent_space')
+            td: div(class='empty_talent_space')
+
   li
     div(class='talent_bg_container' id='talents-middle'
     ng-style="{'background-image': 'url(/images/talents/' + character.class + '/' + class_specs[character.class][1] +  '/background.jpg)'}")
