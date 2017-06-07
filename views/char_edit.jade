@@ -5,7 +5,7 @@ html(ng-app='editApp' ng-cloak)
   link(rel='stylesheet', type="text/css" href='/stylesheets/char_edit_style.css')
   script(src="https://cdn.warmane.com/api/tooltip.js")
 
-  body(ng-controller='editctrl' ng-init="gear_view = 'stats'; cur_view='gearing'")
+  body(ng-controller='editctrl' ng-init="gear_view = 'stats'; cur_view='talents'")
     -if(user && username == user.username)
       div(ng-init="permission = true")
     -else
@@ -21,20 +21,21 @@ html(ng-app='editApp' ng-cloak)
           hr
           img(ng-src='/images/spec-icons/{{character.class}}/{{character.spec}}.jpg')
           h3(ng-style="class_color(character.class)") {{character.class}}
-          ul(class='list-inline' id='view_tabs')
-            li(ng-click="cur_view = 'gearing'")
-              h3(class='view_tab'
-              ng-class="{'selected_view': cur_view == 'gearing'}") Gearing
-
-            li(ng-click="cur_view = 'talents'")
-              h3(class='view_tab'
-              ng-class="{'selected_view': cur_view == 'talents'}") Talents
-
-            //li(ng-click="cur_view = 'professions'")
-              h3(class='view_tab'
-              ng-class="{'selected_view': cur_view == 'professions'}") Professions
 
     div(class='container' ng-show='character')
+
+      ul(class='list-inline' id='view_tabs')
+        li(ng-click="cur_view = 'gearing'")
+          h3(class='view_tab'
+          ng-class="{'selected_view': cur_view == 'gearing'}") Gearing
+
+        li(ng-click="cur_view = 'talents'")
+          h3(class='view_tab'
+          ng-class="{'selected_view': cur_view == 'talents'}") Talents
+
+        //li(ng-click="cur_view = 'professions'")
+          h3(class='view_tab'
+          ng-class="{'selected_view': cur_view == 'professions'}") Professions
 
       include partials/talents_view.jade
 

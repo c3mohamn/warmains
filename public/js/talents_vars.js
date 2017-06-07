@@ -85,12 +85,110 @@ var all_talents = {
     'riptide': {max_rank:1, row:10, tree: 'right'}
   },
   'paladin': {
-
+    // holy tree
+    'spiritual_focus': {max_rank:5, row:0, tree: 'left'},
+    'seals_of_the_pure': {max_rank:5, row:0, tree: 'left'},
+    'healing_light': {max_rank:3, row:1, tree: 'left'},
+    'divine_intellect': {max_rank:5, row:1, tree: 'left'},
+    'unyielding_faith': {max_rank:2, row:1, tree: 'left'},
+    'aura_mastery': {max_rank:1, row:2, tree: 'left'},
+    'illumination': {max_rank:5, row:2, tree: 'left', allows: ['divine_favor']},
+    'improved_lay_on_hands': {max_rank:2, row:2, tree: 'left'},
+    'improved_concentration_aura': {max_rank:3, row:3, tree: 'left'},
+    'improved_blessing_of_wisdom': {max_rank:2, row:3, tree: 'left'},
+    'blessed_hands': {max_rank:2, row:3, tree: 'left'},
+    'pure_of_heart': {max_rank:2, row:4, tree: 'left'},
+    'divine_favor': {max_rank:3, row:4, tree: 'left', requires: 'illumination', allows: ['holy_shock']},
+    'sanctified_light': {max_rank:3, row:4, tree: 'left'},
+    'purifying_power': {max_rank:2, row:5, tree: 'left'},
+    'holy_power': {max_rank:5, row:5, tree: 'left'},
+    'lights_grace': {max_rank:3, row:6, tree: 'left'},
+    'holy_shock': {max_rank:1, row:6, tree: 'left', allows: ['infusion_of_light'], requires: 'divine_favor'},
+    'blessed_life': {max_rank:3, row:6, tree: 'left'},
+    'sacred_cleansing': {max_rank:3, row:7, tree: 'left'},
+    'holy_guidance': {max_rank:5, row:7, tree: 'left'},
+    'divine_illumination': {max_rank:1, row:8, tree: 'left'},
+    'judgements_of_the_pure': {max_rank:5, row:8, tree: 'left'},
+    'infusion_of_light': {max_rank:2, row:9, tree: 'left', requires: 'holy_shock'},
+    'enlightened_judgements': {max_rank:2, row:9, tree: 'left'},
+    'beacon_of_light': {max_rank:1, row:10, tree: 'left'},
+    // prot tree
+    'divinity': {max_rank:5, row:0, tree: 'center'},
+    'divine_strength': {max_rank:5, row:0, tree: 'center'},
+    'stoicism': {max_rank:3, row:1, tree: 'center'},
+    'guardians_favor': {max_rank:2, row:1, tree: 'center'},
+    'anticipation': {max_rank:5, row:1, tree: 'center'},
+    'divine_sacrifice': {max_rank:1, row:2, tree: 'center', allows: ['divine_guardian']},
+    'improved_righteous_fury': {max_rank:3, row:2, tree: 'center'},
+    'toughness': {max_rank:5, row:2, tree: 'center'},
+    'divine_guardian': {max_rank:2, row:3, tree: 'center', requires: 'divine_sacrifice'},
+    'improved_hammer_of_justice': {max_rank:2, row:3, tree: 'center'},
+    'improved_devotion_aura': {max_rank:3, row:3, tree: 'center'},
+    'blessing_of_sanctuary': {max_rank:1, row:4, tree: 'center', allows: ['holy_shield']},
+    'reckoning': {max_rank:5, row:4, tree: 'center'},
+    'sacred_duty': {max_rank:2, row:5, tree: 'center'},
+    'onehanded_weapon_specialization': {max_rank:3, row:5, tree: 'center'},
+    'spiritual_attunement': {max_rank:2, row:6, tree: 'center'},
+    'holy_shield': {max_rank:1, row:6, tree: 'center', allows: ['avengers_shield'], requires: 'blessing_of_sanctuary'},
+    'ardent_defender': {max_rank:3, row:6, tree: 'center'},
+    'redoubt': {max_rank:3, row:7, tree: 'center'},
+    'combat_expertise': {max_rank:3, row:7, tree: 'center'},
+    'touched_by_the_light': {max_rank:3, row:8, tree: 'center'},
+    'avengers_shield': {max_rank:1, row:8, tree: 'center', allows: ['shield_of_the_templar'], requires: 'holy_shield'},
+    'guarded_by_the_light': {max_rank:2, row:8, tree: 'center'},
+    'shield_of_the_templar': {max_rank:3, row:9, tree: 'center', requires: 'avengers_shield'},
+    'judgements_of_the_just': {max_rank:2, row:9, tree: 'center'},
+    'hammer_of_the_righteous': {max_rank:1, row:10, tree: 'center'},
+    // ret tree
+    'deflection': {max_rank:5, row:0, tree: 'right'},
+    "benediction": {max_rank:5, row:0, tree: 'right'},
+    "improved_judgements": {max_rank:2, row:1, tree: 'right'},
+    'heart_of_the_crusader': {max_rank:3, row:1, tree: 'right'},
+    'improved_blessing_of_might': {max_rank:2, row:1, tree: 'right'},
+    'vindication': {max_rank:2, row:2, tree: 'right'},
+    'conviction': {max_rank:5, row:2, tree: 'right', allows: ['vengeance']},
+    'seal_of_command': {max_rank:1, row:2, tree: 'right'},
+    'pursuit_of_justice': {max_rank:2, row:2, tree: 'right'},
+    'eye_for_an_eye': {max_rank:2, row:3, tree: 'right'},
+    'sanctity_of_battle': {max_rank:3, row:3, tree: 'right'},
+    'crusade': {max_rank:3, row:3, tree: 'right'},
+    'twohanded_weapon_specialization': {max_rank:3, row:4, tree: 'right'},
+    'sancitified_retribution': {max_rank:1, row:4, tree: 'right'},
+    'vengeance': {max_rank:3, row:5, tree: 'right', requires: 'conviction'},
+    'divine_purpose': {max_rank:2, row:5, tree: 'right'},
+    'the_art_of_war': {max_rank:2, row:6, tree: 'right'},
+    'repentance': {max_rank:1, row:6, tree: 'right', allows: ['fanaticism']},
+    'judgements_of_the_wise': {max_rank:3, row:6, tree: 'right'},
+    'fanaticism': {max_rank:3, row:7, tree: 'right', requires: 'repentance'},
+    'sancitified_wrath': {max_rank:2, row:7, tree: 'right'},
+    'swift_retribution': {max_rank:3, row:8, tree: 'right'},
+    'crusader_strike': {max_rank:1, row:8, tree: 'right'},
+    'sheath_of_light': {max_rank:3, row:8, tree: 'right'},
+    'righteous_vengeance': {max_rank:3, row:9, tree: 'right'},
+    'divine_storm': {max_rank:1, row:10, tree: 'right'}
   },
   'hunter': {
 
   },
   'druid': {
+
+  },
+  'mage': {
+
+  },
+  'priest': {
+
+  },
+  'rogue': {
+
+  },
+  'warrior': {
+
+  },
+  'warlock': {
+
+  },
+  'death knight': {
 
   }
 }

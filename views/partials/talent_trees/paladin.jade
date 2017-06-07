@@ -1,50 +1,743 @@
 ul(class='list-inline')
+  // HOLY TREE
   li
     div(class='talent_bg_container'
-    ng-style="{'background-image': 'url(/images/talents/paladin/' + class_specs[character.class][0] +  '/background.jpg)'}")
+    ng-style="{'background-image': 'url(/images/talents/' + character.class + '/' + class_specs[character.class][0] +  '/background.jpg)'}")
       table
         tbody
           tr
+            td: div(class='empty_talent_space')
+            td: div(
+            class='talent'
+            ng-style="{'background-image': 'url(/images/talents/' + character.class + '/' + class_specs[character.class][0] +  '/spell_arcane_blink.gif)'}"
+            ng-click="add_point('spiritual_focus')"
+            ng-right-click="remove_point('spiritual_focus')"
+            ng-class="{'talent_inactive': is_inactive('spiritual_focus')}")
+              div(class='talent_counter'
+              ng-class="{'maxed_talent': is_talent_maxed('spiritual_focus')}")
+                | {{cur_talents.spiritual_focus}}
+            td: div(
+            class='talent'
+            ng-style="{'background-image': 'url(/images/talents/' + character.class + '/' + class_specs[character.class][0] +  '/ability_thunderbolt.gif)'}"
+            ng-click="add_point('seals_of_the_pure')"
+            ng-right-click="remove_point('seals_of_the_pure')"
+            ng-class="{'talent_inactive': is_inactive('seals_of_the_pure')}")
+              div(class='talent_counter'
+              ng-class="{'maxed_talent': is_talent_maxed('seals_of_the_pure')}")
+                | {{cur_talents.seals_of_the_pure}}
+            td: div(class='empty_talent_space')
+
           tr
+            td: div(class='talent'
+            ng-style="{'background-image': 'url(/images/talents/' + character.class + '/' + class_specs[character.class][0] +  '/spell_holy_holybolt.gif)'}"
+            ng-click="add_point('healing_light')"
+            ng-right-click="remove_point('healing_light')"
+            ng-class="{'talent_inactive': is_inactive('healing_light')}")
+              div(class='talent_counter'
+              ng-class="{'maxed_talent': is_talent_maxed('healing_light')}")
+                | {{cur_talents.healing_light}}
+            td: div(class='talent'
+            ng-style="{'background-image': 'url(/images/talents/' + character.class + '/' + class_specs[character.class][0] +  '/spell_nature_sleep.gif)'}"
+            ng-click="add_point('divine_intellect')"
+            ng-right-click="remove_point('divine_intellect')"
+            ng-class="{'talent_inactive': is_inactive('divine_intellect')}")
+              div(class='talent_counter'
+              ng-class="{'maxed_talent': is_talent_maxed('divine_intellect')}")
+                | {{cur_talents.divine_intellect}}
+            td: div(class='talent'
+            ng-style="{'background-image': 'url(/images/talents/' + character.class + '/' + class_specs[character.class][0] +  '/spell_holy_unyieldingfaith.gif)'}"
+            ng-click="add_point('unyielding_faith')"
+            ng-right-click="remove_point('unyielding_faith')"
+            ng-class="{'talent_inactive': is_inactive('unyielding_faith')}")
+              div(class='talent_counter'
+              ng-class="{'maxed_talent': is_talent_maxed('unyielding_faith')}")
+                | {{cur_talents.unyielding_faith}}
+            td: div(class='empty_talent_space')
+
           tr
+            td: div(class='talent'
+            ng-style="{'background-image': 'url(/images/talents/' + character.class + '/' + class_specs[character.class][0] +  '/spell_holy_auramastery.gif)'}"
+            ng-click="add_point('aura_mastery')"
+            ng-right-click="remove_point('aura_mastery')"
+            ng-class="{'talent_inactive': is_inactive('aura_mastery')}")
+              div(class='talent_counter'
+              ng-class="{'maxed_talent': is_talent_maxed('aura_mastery')}")
+                | {{cur_talents.aura_mastery}}
+            td: div(class='talent'
+            ng-style="{'background-image': 'url(/images/talents/' + character.class + '/' + class_specs[character.class][0] +  '/spell_holy_greaterheal.gif)'}"
+            ng-click="add_point('illumination')"
+            ng-right-click="remove_point('illumination')"
+            ng-class="{'talent_inactive': is_inactive('illumination')}")
+              div(class='talent_counter'
+              ng-class="{'maxed_talent': is_talent_maxed('illumination')}")
+                | {{cur_talents.illumination}}
+            td: div(class='talent'
+            ng-style="{'background-image': 'url(/images/talents/' + character.class + '/' + class_specs[character.class][0] +  '/spell_holy_layonhands.gif)'}"
+            ng-click="add_point('improved_lay_on_hands')"
+            ng-right-click="remove_point('improved_lay_on_hands')"
+            ng-class="{'talent_inactive': is_inactive('improved_lay_on_hands')}")
+              div(class='talent_counter'
+              ng-class="{'maxed_talent': is_talent_maxed('improved_lay_on_hands')}")
+                | {{cur_talents.improved_lay_on_hands}}
+            td: div(class='empty_talent_space')
           tr
+            td: div(class='talent'
+            ng-style="{'background-image': 'url(/images/talents/' + character.class + '/' + class_specs[character.class][0] +  '/spell_holy_mindsooth.gif)'}"
+            ng-click="add_point('improved_concentration_aura')"
+            ng-right-click="remove_point('improved_concentration_aura')"
+            ng-class="{'talent_inactive': is_inactive('improved_concentration_aura')}")
+              div(class='talent_counter'
+              ng-class="{'maxed_talent': is_talent_maxed('improved_concentration_aura')}")
+                | {{cur_talents.improved_concentration_aura}}
+            td: div(class='empty_talent_space')
+            td: div(class='talent'
+            ng-style="{'background-image': 'url(/images/talents/' + character.class + '/' + class_specs[character.class][0] +  '/spell_holy_sealofwisdom.gif)'}"
+            ng-click="add_point('improved_blessing_of_wisdom')"
+            ng-right-click="remove_point('improved_blessing_of_wisdom')"
+            ng-class="{'talent_inactive': is_inactive('improved_blessing_of_wisdom')}")
+              div(class='talent_counter'
+              ng-class="{'maxed_talent': is_talent_maxed('improved_blessing_of_wisdom')}")
+                | {{cur_talents.improved_blessing_of_wisdom}}
+            td: div(class='talent'
+            ng-style="{'background-image': 'url(/images/talents/' + character.class + '/' + class_specs[character.class][0] +  '/ability_paladin_blessedhands.gif)'}"
+            ng-click="add_point('blessed_hands')"
+            ng-right-click="remove_point('blessed_hands')"
+            ng-class="{'talent_inactive': is_inactive('blessed_hands')}")
+              div(class='talent_counter'
+              ng-class="{'maxed_talent': is_talent_maxed('blessed_hands')}")
+                | {{cur_talents.blessed_hands}}
           tr
+            td: div(class='talent'
+            ng-style="{'background-image': 'url(/images/talents/' + character.class + '/' + class_specs[character.class][0] +  '/spell_holy_pureofheart.gif)'}"
+            ng-click="add_point('pure_of_heart')"
+            ng-right-click="remove_point('pure_of_heart')"
+            ng-class="{'talent_inactive': is_inactive('pure_of_heart')}")
+              div(class='talent_counter'
+              ng-class="{'maxed_talent': is_talent_maxed('pure_of_heart')}")
+                | {{cur_talents.pure_of_heart}}
+            td: div(class='talent'
+            ng-style="{'background-image': 'url(/images/talents/' + character.class + '/' + class_specs[character.class][0] +  '/spell_holy_heal.gif)'}"
+            ng-click="add_point('divine_favor')"
+            ng-right-click="remove_point('divine_favor')"
+            ng-class="{'talent_inactive': is_inactive('divine_favor')}")
+              div(class='talent_counter'
+              ng-class="{'maxed_talent': is_talent_maxed('divine_favor')}")
+                | {{cur_talents.divine_favor}}
+            td: div(class='talent'
+            ng-style="{'background-image': 'url(/images/talents/' + character.class + '/' + class_specs[character.class][0] +  '/spell_holy_healingaura.gif)'}"
+            ng-click="add_point('sanctified_light')"
+            ng-right-click="remove_point('sanctified_light')"
+            ng-class="{'talent_inactive': is_inactive('sanctified_light')}")
+              div(class='talent_counter'
+              ng-class="{'maxed_talent': is_talent_maxed('sanctified_light')}")
+                | {{cur_talents.sanctified_light}}
+            td: div(class='empty_talent_space')
           tr
+            td: div(class='talent'
+            ng-style="{'background-image': 'url(/images/talents/' + character.class + '/' + class_specs[character.class][0] +  '/spell_holy_purifyingpower.gif)'}"
+            ng-click="add_point('purifying_power')"
+            ng-right-click="remove_point('purifying_power')"
+            ng-class="{'talent_inactive': is_inactive('purifying_power')}")
+              div(class='talent_counter'
+              ng-class="{'maxed_talent': is_talent_maxed('purifying_power')}")
+                | {{cur_talents.purifying_power}}
+            td: div(class='empty_talent_space')
+            td: div(class='talent'
+            ng-style="{'background-image': 'url(/images/talents/' + character.class + '/' + class_specs[character.class][0] +  '/spell_holy_power.gif)'}"
+            ng-click="add_point('holy_power')"
+            ng-right-click="remove_point('holy_power')"
+            ng-class="{'talent_inactive': is_inactive('holy_power')}")
+              div(class='talent_counter'
+              ng-class="{'maxed_talent': is_talent_maxed('holy_power')}")
+                | {{cur_talents.holy_power}}
+            td: div(class='empty_talent_space')
           tr
+            td: div(class='talent'
+            ng-style="{'background-image': 'url(/images/talents/' + character.class + '/' + class_specs[character.class][0] +  '/spell_holy_lightsgrace.gif)'}"
+            ng-click="add_point('lights_grace')"
+            ng-right-click="remove_point('lights_grace')"
+            ng-class="{'talent_inactive': is_inactive('lights_grace')}")
+              div(class='talent_counter'
+              ng-class="{'maxed_talent': is_talent_maxed('lights_grace')}")
+                | {{cur_talents.lights_grace}}
+            td: div(class='talent'
+            ng-style="{'background-image': 'url(/images/talents/' + character.class + '/' + class_specs[character.class][0] +  '/spell_holy_searinglight.gif)'}"
+            ng-click="add_point('holy_shock')"
+            ng-right-click="remove_point('holy_shock')"
+            ng-class="{'talent_inactive': is_inactive('holy_shock')}")
+              div(class='talent_counter'
+              ng-class="{'maxed_talent': is_talent_maxed('holy_shock')}")
+                | {{cur_talents.holy_shock}}
+            td: div(class='talent'
+            ng-style="{'background-image': 'url(/images/talents/' + character.class + '/' + class_specs[character.class][0] +  '/spell_holy_blessedlife.gif)'}"
+            ng-click="add_point('blessed_life')"
+            ng-right-click="remove_point('blessed_life')"
+            ng-class="{'talent_inactive': is_inactive('blessed_life')}")
+              div(class='talent_counter'
+              ng-class="{'maxed_talent': is_talent_maxed('blessed_life')}")
+                | {{cur_talents.blessed_life}}
+            td: div(class='empty_talent_space')
           tr
+            td: div(class='talent'
+            ng-style="{'background-image': 'url(/images/talents/' + character.class + '/' + class_specs[character.class][0] +  '/ability_paladin_sacredcleansing.gif)'}"
+            ng-click="add_point('sacred_cleansing')"
+            ng-right-click="remove_point('sacred_cleansing')"
+            ng-class="{'talent_inactive': is_inactive('sacred_cleansing')}")
+              div(class='talent_counter'
+              ng-class="{'maxed_talent': is_talent_maxed('sacred_cleansing')}")
+                | {{cur_talents.sacred_cleansing}}
+            td: div(class='empty_talent_space')
+            td: div(class='talent'
+            ng-style="{'background-image': 'url(/images/talents/' + character.class + '/' + class_specs[character.class][0] +  '/spell_holy_holyguidance.gif)'}"
+            ng-click="add_point('holy_guidance')"
+            ng-right-click="remove_point('holy_guidance')"
+            ng-class="{'talent_inactive': is_inactive('holy_guidance')}")
+              div(class='talent_counter'
+              ng-class="{'maxed_talent': is_talent_maxed('holy_guidance')}")
+                | {{cur_talents.holy_guidance}}
+            td: div(class='empty_talent_space')
           tr
+            td: div(class='talent'
+            ng-style="{'background-image': 'url(/images/talents/' + character.class + '/' + class_specs[character.class][0] +  '/spell_holy_divineillumination.gif)'}"
+            ng-click="add_point('divine_illumination')"
+            ng-right-click="remove_point('divine_illumination')"
+            ng-class="{'talent_inactive': is_inactive('divine_illumination')}")
+              div(class='talent_counter'
+              ng-class="{'maxed_talent': is_talent_maxed('divine_illumination')}")
+                | {{cur_talents.divine_illumination}}
+            td: div(class='empty_talent_space')
+            td: div(class='talent'
+            ng-style="{'background-image': 'url(/images/talents/' + character.class + '/' + class_specs[character.class][0] +  '/ability_paladin_judgementofthepure.gif)'}"
+            ng-click="add_point('judgements_of_the_pure')"
+            ng-right-click="remove_point('judgements_of_the_pure')"
+            ng-class="{'talent_inactive': is_inactive('judgements_of_the_pure')}")
+              div(class='talent_counter'
+              ng-class="{'maxed_talent': is_talent_maxed('judgements_of_the_pure')}")
+                | {{cur_talents.judgements_of_the_pure}}
+            td: div(class='empty_talent_space')
           tr
+            td: div(class='empty_talent_space')
+            td: div(class='talent'
+            ng-style="{'background-image': 'url(/images/talents/' + character.class + '/' + class_specs[character.class][0] +  '/ability_paladin_infusionoflight.gif)'}"
+            ng-click="add_point('infusion_of_light')"
+            ng-right-click="remove_point('infusion_of_light')"
+            ng-class="{'talent_inactive': is_inactive('infusion_of_light')}")
+              div(class='talent_counter'
+              ng-class="{'maxed_talent': is_talent_maxed('infusion_of_light')}")
+                | {{cur_talents.infusion_of_light}}
+            td: div(class='talent'
+            ng-style="{'background-image': 'url(/images/talents/' + character.class + '/' + class_specs[character.class][0] +  '/ability_paladin_enlightenedjudgements.gif)'}"
+            ng-click="add_point('enlightened_judgements')"
+            ng-right-click="remove_point('enlightened_judgements')"
+            ng-class="{'talent_inactive': is_inactive('enlightened_judgements')}")
+              div(class='talent_counter'
+              ng-class="{'maxed_talent': is_talent_maxed('enlightened_judgements')}")
+                | {{cur_talents.enlightened_judgements}}
+            td: div(class='empty_talent_space')
           tr
+            td: div(class='empty_talent_space')
+            td: div(class='talent'
+            ng-style="{'background-image': 'url(/images/talents/' + character.class + '/' + class_specs[character.class][0] +  '/ability_paladin_beaconoflight.gif)'}"
+            ng-click="add_point('beacon_of_light')"
+            ng-right-click="remove_point('beacon_of_light')"
+            ng-class="{'talent_inactive': is_inactive('beacon_of_light')}")
+              div(class='talent_counter'
+              ng-class="{'maxed_talent': is_talent_maxed('beacon_of_light')}")
+                | {{cur_talents.beacon_of_light}}
+            td: div(class='empty_talent_space')
+            td: div(class='empty_talent_space')
+  // PROT TREE
   li
     div(class='talent_bg_container' id='talents-middle'
-    ng-style="{'background-image': 'url(/images/talents/paladin/' + class_specs[character.class][1] +  '/background.jpg)'}")
+    ng-style="{'background-image': 'url(/images/talents/' + character.class + '/' + class_specs[character.class][1] +  '/background.jpg)'}")
       table
         tbody
           tr
-          tr
-          tr
-          tr
-          tr
-          tr
-          tr
-          tr
-          tr
-          tr
-          tr
+            td: div(class='empty_talent_space')
+            td: div(
+            class='talent'
+            ng-style="{'background-image': 'url(/images/talents/' + character.class + '/' + class_specs[character.class][1] +  '/spell_holy_blindingheal.gif)'}"
+            ng-click="add_point('divinity')"
+            ng-right-click="remove_point('divinity')"
+            ng-class="{'talent_inactive': is_inactive('divinity')}")
+              div(class='talent_counter'
+              ng-class="{'maxed_talent': is_talent_maxed('divinity')}")
+                | {{cur_talents.divinity}}
+            td: div(
+            class='talent'
+            ng-style="{'background-image': 'url(/images/talents/' + character.class + '/' + class_specs[character.class][1] +  '/ability_golemthunderclap.gif)'}"
+            ng-click="add_point('divine_strength')"
+            ng-right-click="remove_point('divine_strength')"
+            ng-class="{'talent_inactive': is_inactive('divine_strength')}")
+              div(class='talent_counter'
+              ng-class="{'maxed_talent': is_talent_maxed('divine_strength')}")
+                | {{cur_talents.divine_strength}}
+            td: div(class='empty_talent_space')
 
+          tr
+            td: div(class='talent'
+            ng-style="{'background-image': 'url(/images/talents/' + character.class + '/' + class_specs[character.class][1] +  '/spell_holy_stoicism.gif)'}"
+            ng-click="add_point('stoicism')"
+            ng-right-click="remove_point('stoicism')"
+            ng-class="{'talent_inactive': is_inactive('stoicism')}")
+              div(class='talent_counter'
+              ng-class="{'maxed_talent': is_talent_maxed('stoicism')}")
+                | {{cur_talents.stoicism}}
+            td: div(class='talent'
+            ng-style="{'background-image': 'url(/images/talents/' + character.class + '/' + class_specs[character.class][1] +  '/spell_holy_sealofprotection.gif)'}"
+            ng-click="add_point('guardians_favor')"
+            ng-right-click="remove_point('guardians_favor')"
+            ng-class="{'talent_inactive': is_inactive('guardians_favor')}")
+              div(class='talent_counter'
+              ng-class="{'maxed_talent': is_talent_maxed('guardians_favor')}")
+                | {{cur_talents.guardians_favor}}
+            td: div(class='talent'
+            ng-style="{'background-image': 'url(/images/talents/' + character.class + '/' + class_specs[character.class][1] +  '/spell_magic_lesserinvisibilty.gif)'}"
+            ng-click="add_point('anticipation')"
+            ng-right-click="remove_point('anticipation')"
+            ng-class="{'talent_inactive': is_inactive('anticipation')}")
+              div(class='talent_counter'
+              ng-class="{'maxed_talent': is_talent_maxed('anticipation')}")
+                | {{cur_talents.anticipation}}
+            td: div(class='empty_talent_space')
+
+          tr
+            td: div(class='talent'
+            ng-style="{'background-image': 'url(/images/talents/' + character.class + '/' + class_specs[character.class][1] +  '/spell_holy_powerwordbarrier.gif)'}"
+            ng-click="add_point('divine_sacrifice')"
+            ng-right-click="remove_point('divine_sacrifice')"
+            ng-class="{'talent_inactive': is_inactive('divine_sacrifice')}")
+              div(class='talent_counter'
+              ng-class="{'maxed_talent': is_talent_maxed('divine_sacrifice')}")
+                | {{cur_talents.divine_sacrifice}}
+            td: div(class='talent'
+            ng-style="{'background-image': 'url(/images/talents/' + character.class + '/' + class_specs[character.class][1] +  '/spell_holy_sealoffury.gif)'}"
+            ng-click="add_point('improved_righteous_fury')"
+            ng-right-click="remove_point('improved_righteous_fury')"
+            ng-class="{'talent_inactive': is_inactive('improved_righteous_fury')}")
+              div(class='talent_counter'
+              ng-class="{'maxed_talent': is_talent_maxed('improved_righteous_fury')}")
+                | {{cur_talents.improved_righteous_fury}}
+            td: div(class='talent'
+            ng-style="{'background-image': 'url(/images/talents/' + character.class + '/' + class_specs[character.class][1] +  '/spell_holy_devotion.gif)'}"
+            ng-click="add_point('toughness')"
+            ng-right-click="remove_point('toughness')"
+            ng-class="{'talent_inactive': is_inactive('toughness')}")
+              div(class='talent_counter'
+              ng-class="{'maxed_talent': is_talent_maxed('toughness')}")
+                | {{cur_talents.toughness}}
+            td: div(class='empty_talent_space')
+          tr
+            td: div(class='talent'
+            ng-style="{'background-image': 'url(/images/talents/' + character.class + '/' + class_specs[character.class][1] +  '/spell_holy_powerwordbarrier.gif)'}"
+            ng-click="add_point('divine_guardian')"
+            ng-right-click="remove_point('divine_guardian')"
+            ng-class="{'talent_inactive': is_inactive('divine_guardian')}")
+              div(class='talent_counter'
+              ng-class="{'maxed_talent': is_talent_maxed('divine_guardian')}")
+                | {{cur_talents.divine_guardian}}
+            td: div(class='talent'
+            ng-style="{'background-image': 'url(/images/talents/' + character.class + '/' + class_specs[character.class][1] +  '/spell_holy_sealofmight.gif)'}"
+            ng-click="add_point('improved_hammer_of_justice')"
+            ng-right-click="remove_point('improved_hammer_of_justice')"
+            ng-class="{'talent_inactive': is_inactive('improved_hammer_of_justice')}")
+              div(class='talent_counter'
+              ng-class="{'maxed_talent': is_talent_maxed('improved_hammer_of_justice')}")
+                | {{cur_talents.improved_hammer_of_justice}}
+            td: div(class='talent'
+            ng-style="{'background-image': 'url(/images/talents/' + character.class + '/' + class_specs[character.class][1] +  '/spell_holy_devotionaura.gif)'}"
+            ng-click="add_point('improved_devotion_aura')"
+            ng-right-click="remove_point('improved_devotion_aura')"
+            ng-class="{'talent_inactive': is_inactive('improved_devotion_aura')}")
+              div(class='talent_counter'
+              ng-class="{'maxed_talent': is_talent_maxed('improved_devotion_aura')}")
+                | {{cur_talents.improved_devotion_aura}}
+            td: div(class='empty_talent_space')
+          tr
+            td: div(class='empty_talent_space')
+            td: div(class='talent'
+            ng-style="{'background-image': 'url(/images/talents/' + character.class + '/' + class_specs[character.class][1] +  '/spell_nature_lightningshield.gif)'}"
+            ng-click="add_point('blessing_of_sanctuary')"
+            ng-right-click="remove_point('blessing_of_sanctuary')"
+            ng-class="{'talent_inactive': is_inactive('blessing_of_sanctuary')}")
+              div(class='talent_counter'
+              ng-class="{'maxed_talent': is_talent_maxed('blessing_of_sanctuary')}")
+                | {{cur_talents.blessing_of_sanctuary}}
+            td: div(class='talent'
+            ng-style="{'background-image': 'url(/images/talents/' + character.class + '/' + class_specs[character.class][1] +  '/spell_holy_blessingofstrength.gif)'}"
+            ng-click="add_point('reckoning')"
+            ng-right-click="remove_point('reckoning')"
+            ng-class="{'talent_inactive': is_inactive('reckoning')}")
+              div(class='talent_counter'
+              ng-class="{'maxed_talent': is_talent_maxed('reckoning')}")
+                | {{cur_talents.reckoning}}
+            td: div(class='empty_talent_space')
+          tr
+            td: div(class='talent'
+            ng-style="{'background-image': 'url(/images/talents/' + character.class + '/' + class_specs[character.class][1] +  '/spell_holy_divineintervention.gif)'}"
+            ng-click="add_point('sacred_duty')"
+            ng-right-click="remove_point('sacred_duty')"
+            ng-class="{'talent_inactive': is_inactive('sacred_duty')}")
+              div(class='talent_counter'
+              ng-class="{'maxed_talent': is_talent_maxed('sacred_duty')}")
+                | {{cur_talents.sacred_duty}}
+            td: div(class='empty_talent_space')
+            td: div(class='talent'
+            ng-style="{'background-image': 'url(/images/talents/' + character.class + '/' + class_specs[character.class][1] +  '/inv_sword_20.gif)'}"
+            ng-click="add_point('onehanded_weapon_specialization')"
+            ng-right-click="remove_point('onehanded_weapon_specialization')"
+            ng-class="{'talent_inactive': is_inactive('onehanded_weapon_specialization')}")
+              div(class='talent_counter'
+              ng-class="{'maxed_talent': is_talent_maxed('onehanded_weapon_specialization')}")
+                | {{cur_talents.onehanded_weapon_specialization}}
+            td: div(class='empty_talent_space')
+          tr
+            td: div(class='talent'
+            ng-style="{'background-image': 'url(/images/talents/' + character.class + '/' + class_specs[character.class][1] +  '/spell_holy_revivechampion.gif)'}"
+            ng-click="add_point('spiritual_attunement')"
+            ng-right-click="remove_point('spiritual_attunement')"
+            ng-class="{'talent_inactive': is_inactive('spiritual_attunement')}")
+              div(class='talent_counter'
+              ng-class="{'maxed_talent': is_talent_maxed('spiritual_attunement')}")
+                | {{cur_talents.spiritual_attunement}}
+            td: div(class='talent'
+            ng-style="{'background-image': 'url(/images/talents/' + character.class + '/' + class_specs[character.class][1] +  '/spell_holy_blessingofprotection.gif)'}"
+            ng-click="add_point('holy_shield')"
+            ng-right-click="remove_point('holy_shield')"
+            ng-class="{'talent_inactive': is_inactive('holy_shield')}")
+              div(class='talent_counter'
+              ng-class="{'maxed_talent': is_talent_maxed('holy_shield')}")
+                | {{cur_talents.holy_shield}}
+            td: div(class='talent'
+            ng-style="{'background-image': 'url(/images/talents/' + character.class + '/' + class_specs[character.class][1] +  '/spell_holy_ardentdefender.gif)'}"
+            ng-click="add_point('ardent_defender')"
+            ng-right-click="remove_point('ardent_defender')"
+            ng-class="{'talent_inactive': is_inactive('ardent_defender')}")
+              div(class='talent_counter'
+              ng-class="{'maxed_talent': is_talent_maxed('ardent_defender')}")
+                | {{cur_talents.ardent_defender}}
+            td: div(class='empty_talent_space')
+          tr
+            td: div(class='talent'
+            ng-style="{'background-image': 'url(/images/talents/' + character.class + '/' + class_specs[character.class][1] +  '/ability_defend.gif)'}"
+            ng-click="add_point('redoubt')"
+            ng-right-click="remove_point('redoubt')"
+            ng-class="{'talent_inactive': is_inactive('redoubt')}")
+              div(class='talent_counter'
+              ng-class="{'maxed_talent': is_talent_maxed('redoubt')}")
+                | {{cur_talents.redoubt}}
+            td: div(class='empty_talent_space')
+            td: div(class='talent'
+            ng-style="{'background-image': 'url(/images/talents/' + character.class + '/' + class_specs[character.class][1] +  '/spell_holy_weaponmastery.gif)'}"
+            ng-click="add_point('combat_expertise')"
+            ng-right-click="remove_point('combat_expertise')"
+            ng-class="{'talent_inactive': is_inactive('combat_expertise')}")
+              div(class='talent_counter'
+              ng-class="{'maxed_talent': is_talent_maxed('combat_expertise')}")
+                | {{cur_talents.combat_expertise}}
+            td: div(class='empty_talent_space')
+          tr
+            td: div(class='talent'
+            ng-style="{'background-image': 'url(/images/talents/' + character.class + '/' + class_specs[character.class][1] +  '/ability_paladin_touchedbylight.gif)'}"
+            ng-click="add_point('touched_by_the_light')"
+            ng-right-click="remove_point('touched_by_the_light')"
+            ng-class="{'talent_inactive': is_inactive('touched_by_the_light')}")
+              div(class='talent_counter'
+              ng-class="{'maxed_talent': is_talent_maxed('touched_by_the_light')}")
+                | {{cur_talents.touched_by_the_light}}
+            td: div(class='talent'
+            ng-style="{'background-image': 'url(/images/talents/' + character.class + '/' + class_specs[character.class][1] +  '/spell_holy_avengersshield.gif)'}"
+            ng-click="add_point('avengers_shield')"
+            ng-right-click="remove_point('avengers_shield')"
+            ng-class="{'talent_inactive': is_inactive('avengers_shield')}")
+              div(class='talent_counter'
+              ng-class="{'maxed_talent': is_talent_maxed('avengers_shield')}")
+                | {{cur_talents.avengers_shield}}
+            td: div(class='talent'
+            ng-style="{'background-image': 'url(/images/talents/' + character.class + '/' + class_specs[character.class][1] +  '/ability_paladin_guardedbythelight.gif)'}"
+            ng-click="add_point('guarded_by_the_light')"
+            ng-right-click="remove_point('guarded_by_the_light')"
+            ng-class="{'talent_inactive': is_inactive('guarded_by_the_light')}")
+              div(class='talent_counter'
+              ng-class="{'maxed_talent': is_talent_maxed('guarded_by_the_light')}")
+                | {{cur_talents.guarded_by_the_light}}
+            td: div(class='empty_talent_space')
+          tr
+            td: div(class='empty_talent_space')
+            td: div(class='talent'
+            ng-style="{'background-image': 'url(/images/talents/' + character.class + '/' + class_specs[character.class][1] +  '/ability_paladin_shieldofthetemplar.gif)'}"
+            ng-click="add_point('shield_of_the_templar')"
+            ng-right-click="remove_point('shield_of_the_templar')"
+            ng-class="{'talent_inactive': is_inactive('shield_of_the_templar')}")
+              div(class='talent_counter'
+              ng-class="{'maxed_talent': is_talent_maxed('shield_of_the_templar')}")
+                | {{cur_talents.shield_of_the_templar}}
+            td: div(class='talent'
+            ng-style="{'background-image': 'url(/images/talents/' + character.class + '/' + class_specs[character.class][1] +  '/ability_paladin_judgementsofthejust.gif)'}"
+            ng-click="add_point('judgements_of_the_just')"
+            ng-right-click="remove_point('judgements_of_the_just')"
+            ng-class="{'talent_inactive': is_inactive('judgements_of_the_just')}")
+              div(class='talent_counter'
+              ng-class="{'maxed_talent': is_talent_maxed('judgements_of_the_just')}")
+                | {{cur_talents.judgements_of_the_just}}
+            td: div(class='empty_talent_space')
+          tr
+            td: div(class='empty_talent_space')
+            td: div(class='talent'
+            ng-style="{'background-image': 'url(/images/talents/' + character.class + '/' + class_specs[character.class][1] +  '/ability_paladin_hammeroftherighteous.gif)'}"
+            ng-click="add_point('hammer_of_the_righteous')"
+            ng-right-click="remove_point('hammer_of_the_righteous')"
+            ng-class="{'talent_inactive': is_inactive('hammer_of_the_righteous')}")
+              div(class='talent_counter'
+              ng-class="{'maxed_talent': is_talent_maxed('hammer_of_the_righteous')}")
+                | {{cur_talents.hammer_of_the_righteous}}
+            td: div(class='empty_talent_space')
+            td: div(class='empty_talent_space')
+
+  // RET TREE
   li
     div(class='talent_bg_container' id='talents-right'
-    ng-style="{'background-image': 'url(/images/talents/paladin/' + class_specs[character.class][2] +  '/background.jpg)'}")
+    ng-style="{'background-image': 'url(/images/talents/' + character.class + '/' + class_specs[character.class][2] +  '/background.jpg)'}")
       table
         tbody
           tr
+            td: div(class='empty_talent_space')
+            td: div(
+            class='talent'
+            ng-style="{'background-image': 'url(/images/talents/' + character.class + '/' + class_specs[character.class][2] +  '/ability_parry.gif)'}"
+            ng-click="add_point('deflection')"
+            ng-right-click="remove_point('deflection')"
+            ng-class="{'talent_inactive': is_inactive('deflection')}")
+              div(class='talent_counter'
+              ng-class="{'maxed_talent': is_talent_maxed('deflection')}")
+                | {{cur_talents.deflection}}
+            td: div(
+            class='talent'
+            ng-style="{'background-image': 'url(/images/talents/' + character.class + '/' + class_specs[character.class][2] +  '/spell_frost_windwalkon.gif)'}"
+            ng-click="add_point('benediction')"
+            ng-right-click="remove_point('benediction')"
+            ng-class="{'talent_inactive': is_inactive('benediction')}")
+              div(class='talent_counter'
+              ng-class="{'maxed_talent': is_talent_maxed('benediction')}")
+                | {{cur_talents.benediction}}
+            td: div(class='empty_talent_space')
+
           tr
+            td: div(class='talent'
+            ng-style="{'background-image': 'url(/images/talents/' + character.class + '/' + class_specs[character.class][2] +  '/spell_holy_righteousfury.gif)'}"
+            ng-click="add_point('improved_judgements')"
+            ng-right-click="remove_point('improved_judgements')"
+            ng-class="{'talent_inactive': is_inactive('improved_judgements')}")
+              div(class='talent_counter'
+              ng-class="{'maxed_talent': is_talent_maxed('improved_judgements')}")
+                | {{cur_talents.improved_judgements}}
+            td: div(class='talent'
+            ng-style="{'background-image': 'url(/images/talents/' + character.class + '/' + class_specs[character.class][2] +  '/spell_holy_holysmite.gif)'}"
+            ng-click="add_point('heart_of_the_crusader')"
+            ng-right-click="remove_point('heart_of_the_crusader')"
+            ng-class="{'talent_inactive': is_inactive('heart_of_the_crusader')}")
+              div(class='talent_counter'
+              ng-class="{'maxed_talent': is_talent_maxed('heart_of_the_crusader')}")
+                | {{cur_talents.heart_of_the_crusader}}
+            td: div(class='talent'
+            ng-style="{'background-image': 'url(/images/talents/' + character.class + '/' + class_specs[character.class][2] +  '/spell_holy_fistofjustice.gif)'}"
+            ng-click="add_point('improved_blessing_of_might')"
+            ng-right-click="remove_point('improved_blessing_of_might')"
+            ng-class="{'talent_inactive': is_inactive('improved_blessing_of_might')}")
+              div(class='talent_counter'
+              ng-class="{'maxed_talent': is_talent_maxed('improved_blessing_of_might')}")
+                | {{cur_talents.improved_blessing_of_might}}
+            td: div(class='empty_talent_space')
+
           tr
+            td: div(class='talent'
+            ng-style="{'background-image': 'url(/images/talents/' + character.class + '/' + class_specs[character.class][2] +  '/spell_holy_vindication.gif)'}"
+            ng-click="add_point('vindication')"
+            ng-right-click="remove_point('vindication')"
+            ng-class="{'talent_inactive': is_inactive('vindication')}")
+              div(class='talent_counter'
+              ng-class="{'maxed_talent': is_talent_maxed('vindication')}")
+                | {{cur_talents.vindication}}
+            td: div(class='talent'
+            ng-style="{'background-image': 'url(/images/talents/' + character.class + '/' + class_specs[character.class][2] +  '/spell_holy_retributionaura.gif)'}"
+            ng-click="add_point('conviction')"
+            ng-right-click="remove_point('conviction')"
+            ng-class="{'talent_inactive': is_inactive('conviction')}")
+              div(class='talent_counter'
+              ng-class="{'maxed_talent': is_talent_maxed('conviction')}")
+                | {{cur_talents.conviction}}
+            td: div(class='talent'
+            ng-style="{'background-image': 'url(/images/talents/' + character.class + '/' + class_specs[character.class][2] +  '/ability_warrior_innerrage.gif)'}"
+            ng-click="add_point('seal_of_command')"
+            ng-right-click="remove_point('seal_of_command')"
+            ng-class="{'talent_inactive': is_inactive('seal_of_command')}")
+              div(class='talent_counter'
+              ng-class="{'maxed_talent': is_talent_maxed('seal_of_command')}")
+                | {{cur_talents.seal_of_command}}
+            td: div(class='talent'
+            ng-style="{'background-image': 'url(/images/talents/' + character.class + '/' + class_specs[character.class][2] +  '/spell_holy_pursuitofjustice.gif)'}"
+            ng-click="add_point('pursuit_of_justice')"
+            ng-right-click="remove_point('pursuit_of_justice')"
+            ng-class="{'talent_inactive': is_inactive('pursuit_of_justice')}")
+              div(class='talent_counter'
+              ng-class="{'maxed_talent': is_talent_maxed('pursuit_of_justice')}")
+                | {{cur_talents.pursuit_of_justice}}
           tr
+            td: div(class='talent'
+            ng-style="{'background-image': 'url(/images/talents/' + character.class + '/' + class_specs[character.class][2] +  '/spell_holy_eyeforaneye.gif)'}"
+            ng-click="add_point('eye_for_an_eye')"
+            ng-right-click="remove_point('eye_for_an_eye')"
+            ng-class="{'talent_inactive': is_inactive('eye_for_an_eye')}")
+              div(class='talent_counter'
+              ng-class="{'maxed_talent': is_talent_maxed('eye_for_an_eye')}")
+                | {{cur_talents.eye_for_an_eye}}
+            td: div(class='empty_talent_space')
+            td: div(class='talent'
+            ng-style="{'background-image': 'url(/images/talents/' + character.class + '/' + class_specs[character.class][2] +  '/spell_holy_holysmite.gif)'}"
+            ng-click="add_point('sanctity_of_battle')"
+            ng-right-click="remove_point('sanctity_of_battle')"
+            ng-class="{'talent_inactive': is_inactive('sanctity_of_battle')}")
+              div(class='talent_counter'
+              ng-class="{'maxed_talent': is_talent_maxed('sanctity_of_battle')}")
+                | {{cur_talents.sanctity_of_battle}}
+            td: div(class='talent'
+            ng-style="{'background-image': 'url(/images/talents/' + character.class + '/' + class_specs[character.class][2] +  '/spell_holy_crusade.gif)'}"
+            ng-click="add_point('crusade')"
+            ng-right-click="remove_point('crusade')"
+            ng-class="{'talent_inactive': is_inactive('crusade')}")
+              div(class='talent_counter'
+              ng-class="{'maxed_talent': is_talent_maxed('crusade')}")
+                | {{cur_talents.crusade}}
           tr
+            td: div(class='talent'
+            ng-style="{'background-image': 'url(/images/talents/' + character.class + '/' + class_specs[character.class][2] +  '/inv_hammer_04.gif)'}"
+            ng-click="add_point('twohanded_weapon_specialization')"
+            ng-right-click="remove_point('twohanded_weapon_specialization')"
+            ng-class="{'talent_inactive': is_inactive('twohanded_weapon_specialization')}")
+              div(class='talent_counter'
+              ng-class="{'maxed_talent': is_talent_maxed('twohanded_weapon_specialization')}")
+                | {{cur_talents.twohanded_weapon_specialization}}
+            td: div(class='empty_talent_space')
+            td: div(class='talent'
+            ng-style="{'background-image': 'url(/images/talents/' + character.class + '/' + class_specs[character.class][2] +  '/spell_holy_mindvision.gif)'}"
+            ng-click="add_point('sancitified_retribution')"
+            ng-right-click="remove_point('sancitified_retribution')"
+            ng-class="{'talent_inactive': is_inactive('sancitified_retribution')}")
+              div(class='talent_counter'
+              ng-class="{'maxed_talent': is_talent_maxed('sancitified_retribution')}")
+                | {{cur_talents.sancitified_retribution}}
+            td: div(class='empty_talent_space')
           tr
+            td: div(class='empty_talent_space')
+            td: div(class='talent'
+            ng-style="{'background-image': 'url(/images/talents/' + character.class + '/' + class_specs[character.class][2] +  '/ability_racial_avatar.gif)'}"
+            ng-click="add_point('vengeance')"
+            ng-right-click="remove_point('vengeance')"
+            ng-class="{'talent_inactive': is_inactive('vengeance')}")
+              div(class='talent_counter'
+              ng-class="{'maxed_talent': is_talent_maxed('vengeance')}")
+                | {{cur_talents.vengeance}}
+            td: div(class='talent'
+            ng-style="{'background-image': 'url(/images/talents/' + character.class + '/' + class_specs[character.class][2] +  '/spell_holy_divinepurpose.gif)'}"
+            ng-click="add_point('purification')"
+            ng-right-click="remove_point('purification')"
+            ng-class="{'talent_inactive': is_inactive('purification')}")
+              div(class='talent_counter'
+              ng-class="{'maxed_talent': is_talent_maxed('purification')}")
+                | {{cur_talents.purification}}
+            td: div(class='empty_talent_space')
           tr
+            td: div(class='talent'
+            ng-style="{'background-image': 'url(/images/talents/' + character.class + '/' + class_specs[character.class][2] +  '/ability_paladin_artofwar.gif)'}"
+            ng-click="add_point('the_art_of_war')"
+            ng-right-click="remove_point('the_art_of_war')"
+            ng-class="{'talent_inactive': is_inactive('the_art_of_war')}")
+              div(class='talent_counter'
+              ng-class="{'maxed_talent': is_talent_maxed('the_art_of_war')}")
+                | {{cur_talents.the_art_of_war}}
+            td: div(class='talent'
+            ng-style="{'background-image': 'url(/images/talents/' + character.class + '/' + class_specs[character.class][2] +  '/spell_holy_prayerofhealing.gif)'}"
+            ng-click="add_point('repentance')"
+            ng-right-click="remove_point('repentance')"
+            ng-class="{'talent_inactive': is_inactive('repentance')}")
+              div(class='talent_counter'
+              ng-class="{'maxed_talent': is_talent_maxed('repentance')}")
+                | {{cur_talents.repentance}}
+            td: div(class='talent'
+            ng-style="{'background-image': 'url(/images/talents/' + character.class + '/' + class_specs[character.class][2] +  '/ability_paladin_judgementofthewise.gif)'}"
+            ng-click="add_point('judgements_of_the_wise')"
+            ng-right-click="remove_point('judgements_of_the_wise')"
+            ng-class="{'talent_inactive': is_inactive('judgements_of_the_wise')}")
+              div(class='talent_counter'
+              ng-class="{'maxed_talent': is_talent_maxed('judgements_of_the_wise')}")
+                | {{cur_talents.judgements_of_the_wise}}
+            td: div(class='empty_talent_space')
           tr
+            td: div(class='empty_talent_space')
+            td: div(class='talent'
+            ng-style="{'background-image': 'url(/images/talents/' + character.class + '/' + class_specs[character.class][2] +  '/spell_holy_fanaticism.gif)'}"
+            ng-click="add_point('fanaticism')"
+            ng-right-click="remove_point('fanaticism')"
+            ng-class="{'talent_inactive': is_inactive('fanaticism')}")
+              div(class='talent_counter'
+              ng-class="{'maxed_talent': is_talent_maxed('fanaticism')}")
+                | {{cur_talents.fanaticism}}
+            td: div(class='talent'
+            ng-style="{'background-image': 'url(/images/talents/' + character.class + '/' + class_specs[character.class][2] +  '/ability_paladin_sanctifiedwrath.gif)'}"
+            ng-click="add_point('sancitified_wrath')"
+            ng-right-click="remove_point('sancitified_wrath')"
+            ng-class="{'talent_inactive': is_inactive('sancitified_wrath')}")
+              div(class='talent_counter'
+              ng-class="{'maxed_talent': is_talent_maxed('sancitified_wrath')}")
+                | {{cur_talents.sancitified_wrath}}
+            td: div(class='empty_talent_space')
           tr
+            td: div(class='talent'
+            ng-style="{'background-image': 'url(/images/talents/' + character.class + '/' + class_specs[character.class][2] +  '/ability_paladin_swiftretribution.gif)'}"
+            ng-click="add_point('swift_retribution')"
+            ng-right-click="remove_point('swift_retribution')"
+            ng-class="{'talent_inactive': is_inactive('swift_retribution')}")
+              div(class='talent_counter'
+              ng-class="{'maxed_talent': is_talent_maxed('swift_retribution')}")
+                | {{cur_talents.swift_retribution}}
+            td: div(class='talent'
+            ng-style="{'background-image': 'url(/images/talents/' + character.class + '/' + class_specs[character.class][2] +  '/spell_holy_crusaderstrike.gif)'}"
+            ng-click="add_point('crusader_strike')"
+            ng-right-click="remove_point('crusader_strike')"
+            ng-class="{'talent_inactive': is_inactive('crusader_strike')}")
+              div(class='talent_counter'
+              ng-class="{'maxed_talent': is_talent_maxed('crusader_strike')}")
+                | {{cur_talents.crusader_strike}}
+            td: div(class='talent'
+            ng-style="{'background-image': 'url(/images/talents/' + character.class + '/' + class_specs[character.class][2] +  '/ability_paladin_sheathoflight.gif)'}"
+            ng-click="add_point('sheath_of_light')"
+            ng-right-click="remove_point('sheath_of_light')"
+            ng-class="{'talent_inactive': is_inactive('sheath_of_light')}")
+              div(class='talent_counter'
+              ng-class="{'maxed_talent': is_talent_maxed('sheath_of_light')}")
+                | {{cur_talents.sheath_of_light}}
+            td: div(class='empty_talent_space')
           tr
+            td: div(class='empty_talent_space')
+            td: div(class='talent'
+            ng-style="{'background-image': 'url(/images/talents/' + character.class + '/' + class_specs[character.class][2] +  '/ability_paladin_righteousvengeance.gif)'}"
+            ng-click="add_point('righteous_vengeance')"
+            ng-right-click="remove_point('righteous_vengeance')"
+            ng-class="{'talent_inactive': is_inactive('righteous_vengeance')}")
+              div(class='talent_counter'
+              ng-class="{'maxed_talent': is_talent_maxed('righteous_vengeance')}")
+                | {{cur_talents.righteous_vengeance}}
+            td: div(class='empty_talent_space')
+            td: div(class='empty_talent_space')
           tr
+            td: div(class='empty_talent_space')
+            td: div(class='talent'
+            ng-style="{'background-image': 'url(/images/talents/' + character.class + '/' + class_specs[character.class][2] +  '/ability_paladin_divinestorm.gif)'}"
+            ng-click="add_point('divine_storm')"
+            ng-right-click="remove_point('divine_storm')"
+            ng-class="{'talent_inactive': is_inactive('divine_storm')}")
+              div(class='talent_counter'
+              ng-class="{'maxed_talent': is_talent_maxed('divine_storm')}")
+                | {{cur_talents.divine_storm}}
+            td: div(class='empty_talent_space')
+            td: div(class='empty_talent_space')

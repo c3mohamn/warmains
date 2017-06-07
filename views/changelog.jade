@@ -1,0 +1,42 @@
+doctype html
+html
+    include partials/head.jade
+    body
+      <script>document.body.className += ' fade-out';</script>
+      include partials/navbar.jade
+      header
+        .header-content
+          .header-content-inner
+            h1 Changelog
+            hr
+      .container
+        div(class='changeLog')
+          h4 v3.0.6 - 06/07/2017
+
+          p - Paladin talents finished
+          p - Changelog added for the website!
+
+          h4 v3.0.5 - 06/06/2017
+
+          p - Shaman talents finished
+          p - some bugs fixed
+          p - can save talents now
+          p - non-character owners can not modify talents
+
+          h4 v3.0.2 - 06/06/2017
+
+          p - conditions for adding and removing talents implemented
+          p - part of elemental tree finished
+
+          h4 v3.0.1 - 06/05/2017
+
+          p start of character talents & professions
+
+          h4 v3.0.0 - 06/04/2017
+
+          p - added ability to choose character spec
+          p - character specs visible and searchable in search page
+
+
+      div(class="about-container")
+      include partials/footer.jade

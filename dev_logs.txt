@@ -1,3 +1,9 @@
+----- 06/07/2017 ------
+------- v3.0.6 --------
+
+- Paladin talents finished
+- Changelog added for the website!
+
 ----- 06/06/2017 ------
 ------- v3.0.5 --------
 
