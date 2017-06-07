@@ -37,7 +37,7 @@ editApp.controller('editctrl', ['$scope', '$http', '$compile', function($scope, 
     'priest': ['discipline', 'holy', 'shadow'],
     'rogue': ['assassination', 'combat', 'subtlety'],
     'shaman': ['elemental', 'enhancement', 'restoration'],
-    'warlock': ['afflication', 'demonology', 'destruction'],
+    'warlock': ['affliction', 'demonology', 'destruction'],
     'warrior': ['arms', 'fury', 'protection'],
     'hunter': ['beastmastery', 'marksmanship', 'survival']
   }

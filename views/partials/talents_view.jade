@@ -8,7 +8,7 @@ div(class='talents_view' ng-show="cur_view == 'talents'")
     include talent_trees/death knight.jade
   div(class='talent_tree' ng-if="character.class == 'druid'")
     include talent_trees/druid.jade
-  div(class='talent_tree' ng-if "character.class == 'hunter'")
+  div(class='talent_tree' ng-if="character.class == 'hunter'")
     include talent_trees/hunter.jade
   div(class='talent_tree' ng-if="character.class == 'mage'")
     include talent_trees/mage.jade
