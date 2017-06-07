@@ -27,7 +27,6 @@ var app = express();
 
 // allows use of images from public file
 app.use(express.static(path.join(__dirname + '/public')));
-app.use('/bower_components',  express.static(__dirname + '/bower_components'));
 
 // block header from showing server info
 app.disable('x-powered-by');

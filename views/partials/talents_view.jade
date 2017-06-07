@@ -5,25 +5,25 @@ div(class='talents_view' ng-show="cur_view == 'talents'")
       {{talent_points.remaining}} ({{talent_points.left.total}}/{{talent_points.center.total}}/{{talent_points.right.total}})
 
   div(class='talent_tree' ng-if="character.class == 'death knight'")
-    include talents/death knight.jade
+    include talent_trees/death knight.jade
   div(class='talent_tree' ng-if="character.class == 'druid'")
-    include talents/druid.jade
+    include talent_trees/druid.jade
   div(class='talent_tree' ng-if "character.class == 'hunter'")
-    include talents/hunter.jade
+    include talent_trees/hunter.jade
   div(class='talent_tree' ng-if="character.class == 'mage'")
-    include talents/mage.jade
+    include talent_trees/mage.jade
   div(class='talent_tree' ng-if="character.class == 'paladin'")
-    include talents/paladin.jade
+    include talent_trees/paladin.jade
   div(class='talent_tree' ng-if="character.class == 'priest'")
-    include talents/priest.jade
+    include talent_trees/priest.jade
   div(class='talent_tree' ng-if="character.class == 'rogue'")
-    include talents/rogue.jade
+    include talent_trees/rogue.jade
   div(class='talent_tree' ng-if="character.class == 'shaman'")
-    include talents/shaman.jade
+    include talent_trees/shaman.jade
   div(class='talent_tree' ng-if="character.class == 'warlock'")
-    include talents/warlock.jade
+    include talent_trees/warlock.jade
   div(class='talent_tree' ng-if="character.class == 'warrior'")
-    include talents/warrior.jade
+    include talent_trees/warrior.jade
 
   p(class='success-msg' ng-show="success_msg != ''") {{success_msg}}
   input(ng-if='permission' type="submit" value='Save Changes' ng-click='save_to_db()'
