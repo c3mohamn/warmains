@@ -79,11 +79,11 @@ editApp.controller('editctrl', ['$scope', '$http', '$compile', function($scope, 
       $scope.talent_points[tree].row[row] += 1;
       $scope.talent_points[tree].total += 1;
       $scope.talent_points.remaining -= 1;
-      console.log($scope.talent_points);
       if (last_active_row < row) $scope.talent_points[tree].last_active_row = row;
     }
   }
 
+  // gets talent info for given rank + next rank
   $scope.display_talent_info = function(talent) {
     var cur_rank = $scope.cur_talents[talent];
     var next_rank = 0;
@@ -91,6 +91,12 @@ editApp.controller('editctrl', ['$scope', '$http', '$compile', function($scope, 
 
     $scope.talent_info = rank[all_talents[$scope.character.class][talent].ranks][cur_rank];
     $scope.talent_info_next = rank[all_talents[$scope.character.class][talent].ranks][next_rank];
+  }
+
+  // returns url of image for talent
+  $scope.get_talent_img = function(spec, talent) {
+    return {'background-image': 'url(/images/talents/' + $scope.character.class + '/' +
+    $scope.class_specs[$scope.character.class][spec] + '/' + talent + '.jpg)'};
   }
 
   // remove a talent point from talent
