@@ -42,6 +42,32 @@ editApp.controller('editctrl', ['$scope', '$http', '$compile', function($scope, 
     'hunter': ['beastmastery', 'marksmanship', 'survival']
   }
 
+  $scope.insert_talents = function() {
+    //console.log('we here1');
+    //insert_talent();
+    // Insert the backgrounds for each talent tree
+    $('#tree-bg-left').attr('ng-style', "get_talent_img(0, 'background')");
+    $('#tree-bg-center').attr('ng-style', "get_talent_img(1, 'background')");
+    $('#tree-bg-right').attr('ng-style', "get_talent_img(2, 'background')");
+
+    var col = '0';
+    var row = '0';
+    var talent_loc = '.tree_left .r' + row + ' ' + '.c' + col + ' div';
+
+    $(talent_loc).addClass('talent');
+    $(talent_loc).attr('ng-style', "get_talent_img(0, 0)");
+    $(talent_loc).attr('ng-click', "add_point(0)");
+    $(talent_loc).attr('ng-right-click', "remove_point(0)");
+    $(talent_loc).attr('ng-class', "{'talent_inactive': is_inactive(0)}");
+    $(talent_loc).html("<div class='talent_counter' ng-class=\"{'maxed_talent': is_talent_maxed(0)}\">{{cur_talents[0]}}</div>");
+    //$('#c00').addClass('talent_counter');
+    //$('#c00').attr('ng-class', "{'maxed_talent': is_talent_maxed(0)}");
+    //$('#c00').html('{{cur_talents[0]}}');
+
+    //$compile($('.tree_left'))($scope);
+    $compile($('.talent_tree'))($scope);
+  }
+
 
   /* --------- Functions --------- */
 
@@ -648,6 +674,8 @@ editApp.controller('editctrl', ['$scope', '$http', '$compile', function($scope, 
             }
           };
         }
+
+        $scope.insert_talents();
     });
   });
 }]);

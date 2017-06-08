@@ -169,7 +169,7 @@ var all_talents = {
   },
   'hunter': {
     // BM tree
-    'improved_aspect_of_the_hawk': {name: '', max_rank:5, row:0, tree: 'left'},
+    0: {name: 'Improved Aspect of the Hawk', max_rank:5, row:0, tree: 'left'},
     'iendurance_training': {name: '', max_rank:5, row:0, tree: 'left'},
     'focused_fire': {name: '', max_rank:2, row:1, tree: 'left'},
     'improved_aspect_of_the_monkey': {name: '', max_rank:3, row:1, tree: 'left'},
