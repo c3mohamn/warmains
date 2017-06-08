@@ -42,36 +42,58 @@ editApp.controller('editctrl', ['$scope', '$http', '$compile', function($scope, 
     'hunter': ['beastmastery', 'marksmanship', 'survival']
   }
 
+
+  /* --------- Functions --------- */
+
+  // --------- Talent Functions
+
+  /* Inserts the talents and into the DOM using info from all_talents based
+   * on the class of the current character.
+   */
   $scope.insert_talents = function() {
-    //console.log('we here1');
-    //insert_talent();
+    var talents = all_talents[$scope.character.class];
+
     // Insert the backgrounds for each talent tree
     $('#tree-bg-left').attr('ng-style', "get_talent_img(0, 'background')");
     $('#tree-bg-center').attr('ng-style', "get_talent_img(1, 'background')");
     $('#tree-bg-right').attr('ng-style', "get_talent_img(2, 'background')");
 
-    var col = '0';
-    var row = '0';
-    var talent_loc = '.tree_left .r' + row + ' ' + '.c' + col + ' div';
+    /* looping through all the talents and inserting them into their respective
+     * locations in the talent tree. */
+    for (var spell in talents) {
+      var tree = talents[spell].tree,
+          row = talents[spell].row,
+          col = talents[spell].col;
 
-    $(talent_loc).addClass('talent');
-    $(talent_loc).attr('ng-style', "get_talent_img(0, 0)");
-    $(talent_loc).attr('ng-click', "add_point(0)");
-    $(talent_loc).attr('ng-right-click', "remove_point(0)");
-    $(talent_loc).attr('ng-class', "{'talent_inactive': is_inactive(0)}");
-    $(talent_loc).html("<div class='talent_counter' ng-class=\"{'maxed_talent': is_talent_maxed(0)}\">{{cur_talents[0]}}</div>");
-    //$('#c00').addClass('talent_counter');
-    //$('#c00').attr('ng-class', "{'maxed_talent': is_talent_maxed(0)}");
-    //$('#c00').html('{{cur_talents[0]}}');
+      // index of the tree used to get the name of the talent tree using class_specs
+      var tree_index = 0;
+      if (tree == 'center') tree_index = 1;
+      if (tree == 'right') tree_index = 2;
+      //console.log(spell, talents[spell].tree, talents[spell].row, talents[spell].col);
 
-    //$compile($('.tree_left'))($scope);
+      // location of the talent in the DOM, determined by tree, row and col
+      talent_loc = '.tree_' + tree + ' .r' + row + ' ' + '.c' + col + ' div';
+
+      // replace empty spot with a talent spot
+      $(talent_loc).removeClass('empty_talent_space');
+      $(talent_loc).addClass('talent');
+
+      // set background image of talent
+      $(talent_loc).attr('ng-style', "get_talent_img(" + tree_index + ", " + spell + ")");
+
+      // set angular attributes for adding and removing talent points
+      $(talent_loc).attr('ng-click', "add_point(" + spell + ")");
+      $(talent_loc).attr('ng-right-click', "remove_point(" + spell + ")");
+      $(talent_loc).attr('ng-class', "{'talent_inactive': is_inactive(" + spell + ")}");
+
+      // insert the talent counter for the given talent into the DOM
+      $(talent_loc).html("<div class='talent_counter' ng-class=\"{'maxed_talent': is_talent_maxed("
+      + spell + ")}\">{{cur_talents[" + spell + "]}}</div>");
+    }
+
+    // compile used to compile angular attributes
     $compile($('.talent_tree'))($scope);
   }
-
-
-  /* --------- Functions --------- */
-
-  /* --------- Talents --------- */
 
   // add a talent point to the talent
   $scope.add_point = function(talent) {
@@ -107,22 +129,6 @@ editApp.controller('editctrl', ['$scope', '$http', '$compile', function($scope, 
       $scope.talent_points.remaining -= 1;
       if (last_active_row < row) $scope.talent_points[tree].last_active_row = row;
     }
-  }
-
-  // gets talent info for given rank + next rank
-  $scope.display_talent_info = function(talent) {
-    var cur_rank = $scope.cur_talents[talent];
-    var next_rank = 0;
-    if (rank[cur_rank + 1]) next_rank = cur_rank + 1;
-
-    $scope.talent_info = rank[all_talents[$scope.character.class][talent].ranks][cur_rank];
-    $scope.talent_info_next = rank[all_talents[$scope.character.class][talent].ranks][next_rank];
-  }
-
-  // returns url of image for talent
-  $scope.get_talent_img = function(spec, talent) {
-    return {'background-image': 'url(/images/talents/' + $scope.character.class + '/' +
-    $scope.class_specs[$scope.character.class][spec] + '/' + talent + '.jpg)'};
   }
 
   // remove a talent point from talent
@@ -167,6 +173,22 @@ editApp.controller('editctrl', ['$scope', '$http', '$compile', function($scope, 
       if (row == last_active_row && $scope.talent_points[tree].row[row] == 0)
         $scope.talent_points[tree].last_active_row -= 1;
     }
+  }
+
+  // gets talent info for given rank + next rank
+  $scope.display_talent_info = function(talent) {
+    var cur_rank = $scope.cur_talents[talent];
+    var next_rank = 0;
+    if (rank[cur_rank + 1]) next_rank = cur_rank + 1;
+
+    $scope.talent_info = rank[all_talents[$scope.character.class][talent].ranks][cur_rank];
+    $scope.talent_info_next = rank[all_talents[$scope.character.class][talent].ranks][next_rank];
+  }
+
+  // returns url of image for talent
+  $scope.get_talent_img = function(spec, talent) {
+    return {'background-image': 'url(/images/talents/' + $scope.character.class + '/' +
+    $scope.class_specs[$scope.character.class][spec] + '/' + talent + '.jpg)'};
   }
 
   // check if talent has reached it's max rank.
@@ -239,7 +261,6 @@ editApp.controller('editctrl', ['$scope', '$http', '$compile', function($scope, 
 
     // add percentages of arp and hit rating as well
     add_percentages($scope.updated_Stats);
-
   }
 
   /* Mark the clicked item in results table as the currently selected item.
