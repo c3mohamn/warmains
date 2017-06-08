@@ -22,6 +22,9 @@ var socket3_html =
 "<div class='item_slot' id='socket3_slot' ng-click=\"cur_socket='socket3'\"> " +
 "</div></a></li>";
 
+// class of the character loaded
+var char_class = '';
+
 // Stores the items equipped for the current character
 var char_items = {  Head: null, Neck: null, Shoulders: null, Back: null,
           Chest: null, Wrist: null, Hands: null, Waist: null,

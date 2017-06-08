@@ -13,6 +13,11 @@ List of things that could be worked on:
   - add arrows for the talents that are prequisites
   - add all other talents
   - figure out links ?
+  - *Make a fancy box which displays the talent info
+  - **Change format of talents into: 1: {name: 'Infusion of Light', ...}
+    - will make thing easier for later...
+    - can also change talent pic names as well so can have a general format
+    - can also have a single page instead of multiple.
 
 7. DO GLYPHS!
 

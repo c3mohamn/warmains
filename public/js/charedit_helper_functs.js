@@ -1,5 +1,7 @@
 /* ------ FUNCTIONS ------ */
 
+$.getScript('/js/talent_ranks/shaman.js');
+
 /* Return true if the number entered is a valid number or undefined. */
 function valid_number(num) {
   if (num && isNaN(num))

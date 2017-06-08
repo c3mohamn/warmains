@@ -1,5 +1,7 @@
 ul(class='list-inline')
   // ELEMENTAL TREE
+  //p {{talent_info}}
+  //p {{talent_info_next}}
   li
     div(class='talent_bg_container'
     ng-style="{'background-image': 'url(/images/talents/' + character.class + '/' + class_specs[character.class][0] +  '/background.jpg)'}")
@@ -7,8 +9,7 @@ ul(class='list-inline')
         tbody
           tr
             td: div(class='empty_talent_space')
-            td: div(
-            class='talent'
+            td: div(class='talent'
             ng-style="{'background-image': 'url(/images/talents/' + character.class + '/' + class_specs[character.class][0] +  '/spell_nature_wispsplode.gif)'}"
             ng-click="add_point('convection')"
             ng-right-click="remove_point('convection')"
@@ -16,8 +17,7 @@ ul(class='list-inline')
               div(class='talent_counter'
               ng-class="{'maxed_talent': is_talent_maxed('convection')}")
                 | {{cur_talents.convection}}
-            td: div(
-            class='talent'
+            td: div(class='talent'
             ng-style="{'background-image': 'url(/images/talents/' + character.class + '/' + class_specs[character.class][0] +  '/spell_fire_fireball.gif)'}"
             ng-click="add_point('concussion')"
             ng-right-click="remove_point('concussion')"

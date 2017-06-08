@@ -53,6 +53,7 @@ editApp.controller('editctrl', ['$scope', '$http', '$compile', function($scope, 
         row = class_talents[talent].row,
         tree = class_talents[talent].tree,
         points_used = $scope.talent_points[tree].total,
+        last_active_row = $scope.talent_points[tree].last_active_row,
         can_add = true;
 
     if (!$scope.permission)
@@ -78,8 +79,18 @@ editApp.controller('editctrl', ['$scope', '$http', '$compile', function($scope, 
       $scope.talent_points[tree].row[row] += 1;
       $scope.talent_points[tree].total += 1;
       $scope.talent_points.remaining -= 1;
-      if ($scope.talent_points.last_active_row < row) $scope.talent_points.last_active_row = row;
+      console.log($scope.talent_points);
+      if (last_active_row < row) $scope.talent_points[tree].last_active_row = row;
     }
+  }
+
+  $scope.display_talent_info = function(talent) {
+    var cur_rank = $scope.cur_talents[talent];
+    var next_rank = 0;
+    if (rank[cur_rank + 1]) next_rank = cur_rank + 1;
+
+    $scope.talent_info = rank[all_talents[$scope.character.class][talent].ranks][cur_rank];
+    $scope.talent_info_next = rank[all_talents[$scope.character.class][talent].ranks][next_rank];
   }
 
   // remove a talent point from talent
@@ -88,6 +99,7 @@ editApp.controller('editctrl', ['$scope', '$http', '$compile', function($scope, 
         row = class_talents[talent].row,
         tree = class_talents[talent].tree,
         points_used = $scope.talent_points[tree].total,
+        last_active_row = $scope.talent_points[tree].last_active_row,
         can_remove = true;
 
     if (!$scope.permission)
@@ -106,21 +118,22 @@ editApp.controller('editctrl', ['$scope', '$http', '$compile', function($scope, 
     }
 
     // check if talents further down the tree depend on this talent
-    if (row != $scope.talent_points.last_active_row)
+    if (row != last_active_row) {
       var i = 0;
-      while ($scope.talent_points.last_active_row - i > row) {
-        if (sum_rows($scope.talent_points.last_active_row - i, $scope.talent_points[tree].row) <= ($scope.talent_points.last_active_row - i) * 5)
+      while (last_active_row - i > row) {
+        if (sum_rows(last_active_row - i, $scope.talent_points[tree].row) <= (last_active_row - i) * 5)
           return false;
         i += 1;
       }
+    }
 
     if(can_remove) {
       $scope.cur_talents[talent] -= 1;
       $scope.talent_points[tree].row[row] -= 1;
       $scope.talent_points[tree].total -= 1;
       $scope.talent_points.remaining += 1;
-      if (row == $scope.talent_points.last_active_row && $scope.talent_points[tree].row[row] == 0)
-        $scope.talent_points.last_active_row -= 1;
+      if (row == last_active_row && $scope.talent_points[tree].row[row] == 0)
+        $scope.talent_points[tree].last_active_row -= 1;
     }
   }
 
@@ -560,6 +573,7 @@ editApp.controller('editctrl', ['$scope', '$http', '$compile', function($scope, 
     $http.get('/character/findchar/',
     {params:{"username":user_name, "charname":char_name}}).then(function(response1){
         $scope.character = response1.data[0];
+        char_class = $scope.character.class;
 
         // Loop through the items of retrieved character and display data.
         for (var slot in char_items) {
@@ -611,16 +625,18 @@ editApp.controller('editctrl', ['$scope', '$http', '$compile', function($scope, 
           // initialize talent points
           $scope.talent_points = {
             remaining: 71,
-            last_active_row: 0,
             left: {
+              last_active_row: 0,
               total: 0,
               row: {0:0, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0, 8:0, 9:0, 10:0}
             },
             center: {
+              last_active_row: 0,
               total: 0,
               row: {0:0, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0, 8:0, 9:0, 10:0}
             },
             right: {
+              last_active_row: 0,
               total: 0,
               row: {0:0, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0, 8:0, 9:0, 10:0}
             }

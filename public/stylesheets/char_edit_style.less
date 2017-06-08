@@ -322,6 +322,24 @@ header.priest { background-image: url('/images/bg/class-bg/priest.jpg'); }
   }
 }
 
+.talent .tooltipp {
+  visibility: hidden;
+  width: 200px;
+  background-color: black;
+  color: #fff;
+  opacity: .8;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 99;
+}
+
+.talent:hover .tooltipp {
+  visibility: visible;
+}
+
 // Keyframe animations
 @keyframes results_table_slide {
   from {

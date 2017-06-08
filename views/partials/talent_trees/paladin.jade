@@ -639,12 +639,12 @@ ul(class='list-inline')
                 | {{cur_talents.vengeance}}
             td: div(class='talent'
             ng-style="{'background-image': 'url(/images/talents/' + character.class + '/' + class_specs[character.class][2] +  '/spell_holy_divinepurpose.gif)'}"
-            ng-click="add_point('purification')"
-            ng-right-click="remove_point('purification')"
-            ng-class="{'talent_inactive': is_inactive('purification')}")
+            ng-click="add_point('divine_purpose')"
+            ng-right-click="remove_point('divine_purpose')"
+            ng-class="{'talent_inactive': is_inactive('divine_purpose')}")
               div(class='talent_counter'
-              ng-class="{'maxed_talent': is_talent_maxed('purification')}")
-                | {{cur_talents.purification}}
+              ng-class="{'maxed_talent': is_talent_maxed('divine_purpose')}")
+                | {{cur_talents.divine_purpose}}
             td: div(class='empty_talent_space')
           tr
             td: div(class='talent'
