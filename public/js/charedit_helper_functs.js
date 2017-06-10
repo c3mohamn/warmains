@@ -1,6 +1,16 @@
 /* ------ FUNCTIONS ------ */
 
-$.getScript('/js/talent_ranks/shaman.js');
+//$.getScript('/js/talent_ranks/shaman.js');
+// initialize bootstrap tooltips
+$(document).ready(function(){
+    $('[data-toggle=tooltip]').hover(function(){
+        // on mouseenter
+        $(this).tooltip('show');
+    }, function(){
+        // on mouseleave
+        $(this).tooltip('hide');
+    });
+});
 
 /* Return true if the number entered is a valid number or undefined. */
 function valid_number(num) {

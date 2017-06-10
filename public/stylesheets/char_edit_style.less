@@ -271,15 +271,20 @@ header.priest { background-image: url('/images/bg/class-bg/priest.jpg'); }
     background-color: red;
   }
   td {
-    padding: 2px;
+    padding: 5px;
   }
   .talent {
-    width: 45px;
-    height: 45px;
+    animation: 2s fade_in;
+    width: 37px;
+    height: 37px;
+    background-repeat: no-repeat;
+    background-size: 35px 35px;
+    background-position: center;
     border: solid;
-    border-width: 2px;
+    border-width: 1px;
     border-radius: 3px;
-    border-color: black;
+    border-color: rgba(255,255,255,.5);
+    box-shadow: -2px 2px 5px 1px black;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;
@@ -288,6 +293,7 @@ header.priest { background-image: url('/images/bg/class-bg/priest.jpg'); }
     user-select: none;
   }
   .talent:hover {
+    border-color: black;
     -webkit-box-shadow: inset 0 0 20px #819FF7;
     -moz-box-shadow: inset 0 0 20px #819FF7;
     box-shadow: inset 0 0 20px #819FF7;
@@ -295,10 +301,11 @@ header.priest { background-image: url('/images/bg/class-bg/priest.jpg'); }
     cursor: pointer;
   }
   .empty_talent_space {
-    width: 43px;
-    height: 43px;
+    width: 40px;
+    height: 40px;
   }
   .talent_counter {
+    transition: .5s;
     font-size: 12px;
     margin-left: 30px;
     margin-top: 30px;
@@ -320,24 +327,6 @@ header.priest { background-image: url('/images/bg/class-bg/priest.jpg'); }
       visibility: hidden;
     }
   }
-}
-
-.talent .tooltipp {
-  visibility: hidden;
-  width: 200px;
-  background-color: black;
-  color: #fff;
-  opacity: .8;
-  border-radius: 6px;
-  padding: 5px 0;
-
-  /* Position the tooltip */
-  position: absolute;
-  z-index: 99;
-}
-
-.talent:hover .tooltipp {
-  visibility: visible;
 }
 
 // Keyframe animations

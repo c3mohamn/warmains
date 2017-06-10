@@ -58,18 +58,21 @@ editApp.controller('editctrl', ['$scope', '$http', '$compile', function($scope, 
     $('#tree-bg-center').attr('ng-style', "get_talent_img(1, 'background')");
     $('#tree-bg-right').attr('ng-style', "get_talent_img(2, 'background')");
 
+    //data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" data-title=
+
     /* looping through all the talents and inserting them into their respective
      * locations in the talent tree. */
-    for (var spell in talents) {
-      var tree = talents[spell].tree,
-          row = talents[spell].row,
-          col = talents[spell].col;
+    for (var talent in talents) {
+      var tree = talents[talent].tree,
+          talent_name = talents[talent].name;
+          row = talents[talent].row,
+          col = talents[talent].col;
 
       // index of the tree used to get the name of the talent tree using class_specs
       var tree_index = 0;
       if (tree == 'center') tree_index = 1;
       if (tree == 'right') tree_index = 2;
-      //console.log(spell, talents[spell].tree, talents[spell].row, talents[spell].col);
+      //console.log(talent, talents[talent].tree, talents[talent].row, talents[talent].col);
 
       // location of the talent in the DOM, determined by tree, row and col
       talent_loc = '.tree_' + tree + ' .r' + row + ' ' + '.c' + col + ' div';
@@ -77,22 +80,42 @@ editApp.controller('editctrl', ['$scope', '$http', '$compile', function($scope, 
       // replace empty spot with a talent spot
       $(talent_loc).removeClass('empty_talent_space');
       $(talent_loc).addClass('talent');
+      $(talent_loc).attr('id', 'talent_' + talent);
 
       // set background image of talent
-      $(talent_loc).attr('ng-style', "get_talent_img(" + tree_index + ", " + spell + ")");
+      $(talent_loc).attr('ng-style', "get_talent_img(" + tree_index + ", " + talent + ")");
 
       // set angular attributes for adding and removing talent points
-      $(talent_loc).attr('ng-click', "add_point(" + spell + ")");
-      $(talent_loc).attr('ng-right-click', "remove_point(" + spell + ")");
-      $(talent_loc).attr('ng-class', "{'talent_inactive': is_inactive(" + spell + ")}");
+      $(talent_loc).attr('ng-click', "add_point(" + talent + ")");
+      $(talent_loc).attr('ng-right-click', "remove_point(" + talent + ")");
+      $(talent_loc).attr('ng-class', "{'talent_inactive': is_inactive(" + talent + ")}");
+
+      // add the tooltip
+      $(talent_loc).attr('data-toggle', 'tooltip');
+      $(talent_loc).attr('data-trigger', 'hover');
+      $(talent_loc).attr('data-placement', 'bottom'); // TODO: make left/center/right
+      $(talent_loc).attr('data-html', 'true');
+      $(talent_loc).attr('data-original-title', talent_name);
 
       // insert the talent counter for the given talent into the DOM
       $(talent_loc).html("<div class='talent_counter' ng-class=\"{'maxed_talent': is_talent_maxed("
-      + spell + ")}\">{{cur_talents[" + spell + "]}}</div>");
+      + talent + ")}\">{{cur_talents[" + talent + "]}}</div>");
     }
 
     // compile used to compile angular attributes
     $compile($('.talent_tree'))($scope);
+    $("body").tooltip({
+      selector: '[data-toggle="tooltip"]'
+    });
+  }
+
+  // TODO: Still need to fix up for different classes
+  $scope.talent_tooltip = function(talent) {
+    if (rank[talent]) {
+      return rank[talent][$scope.cur_talents[talent]];
+    } else {
+      return 'hello';
+    }
   }
 
   // add a talent point to the talent
@@ -123,11 +146,16 @@ editApp.controller('editctrl', ['$scope', '$http', '$compile', function($scope, 
     }
 
     if (can_add) {
+      // update talent point variables
       $scope.cur_talents[talent] += 1;
       $scope.talent_points[tree].row[row] += 1;
       $scope.talent_points[tree].total += 1;
       $scope.talent_points.remaining -= 1;
       if (last_active_row < row) $scope.talent_points[tree].last_active_row = row;
+      // update tooltip while still hovered over
+      //$('#talent_' + talent)
+      //.attr('data-original-title', $scope.talent_tooltip(talent))
+      //.parent().find('.tooltip-inner').html($scope.talent_tooltip(talent));
     }
   }
 
@@ -695,7 +723,6 @@ editApp.controller('editctrl', ['$scope', '$http', '$compile', function($scope, 
             }
           };
         }
-
         $scope.insert_talents();
     });
   });
