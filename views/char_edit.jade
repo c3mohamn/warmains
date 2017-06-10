@@ -2,7 +2,8 @@ doctype html
 html(ng-app='editApp' ng-cloak)
 
   include partials/head.jade
-  link(rel='stylesheet', type="text/css" href='/stylesheets/char_edit_style.css')
+  link(rel='stylesheet', type="text/css" href='/stylesheets/char_edit/style.css')
+  link(rel='stylesheet', type'text/css' href='/stylesheets//char_edit/talents.css')
   script(src="https://cdn.warmane.com/api/tooltip.js")
 
   body(ng-controller='editctrl' ng-init="gear_view = 'stats'; cur_view='talents'")

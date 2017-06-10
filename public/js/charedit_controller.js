@@ -58,8 +58,6 @@ editApp.controller('editctrl', ['$scope', '$http', '$compile', function($scope, 
     $('#tree-bg-center').attr('ng-style', "get_talent_img(1, 'background')");
     $('#tree-bg-right').attr('ng-style', "get_talent_img(2, 'background')");
 
-    //data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-html="true" data-title=
-
     /* looping through all the talents and inserting them into their respective
      * locations in the talent tree. */
     for (var talent in talents) {
@@ -109,7 +107,8 @@ editApp.controller('editctrl', ['$scope', '$http', '$compile', function($scope, 
     });
   }
 
-  // TODO: Still need to fix up for different classes
+  // TODO: Still need to fix up for different classes & add talent name/rank/next rank
+  /* Insert the tooltips for each talent based on rank of talent. */
   $scope.talent_tooltip = function(talent) {
     if (rank[talent]) {
       return rank[talent][$scope.cur_talents[talent]];
@@ -215,7 +214,9 @@ editApp.controller('editctrl', ['$scope', '$http', '$compile', function($scope, 
 
   // returns url of image for talent
   $scope.get_talent_img = function(spec, talent) {
-    return {'background-image': 'url(/images/talents/' + $scope.character.class + '/' +
+    var char_class = $scope.character.class.replace(/\s/g, ''); // remove empty space
+
+    return {'background-image': 'url(/images/talents/' + char_class + '/' +
     $scope.class_specs[$scope.character.class][spec] + '/' + talent + '.jpg)'};
   }
 

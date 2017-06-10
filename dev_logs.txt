@@ -1,3 +1,9 @@
+----- 06/10/2017 ------
+------- v3.0.7 --------
+
+- Some visual changes to talents
+- Only Warrior, Rogue and Warlock left for talents
+
 ----- 06/07/2017 ------
 ------- v3.0.6 --------
 
