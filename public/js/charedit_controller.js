@@ -226,6 +226,16 @@ editApp.controller('editctrl', ['$scope', '$http', '$compile', function($scope, 
         actual_cur_rank = 0;
 
     if (char_class == 'druid') rank = druid_ranks;
+    else if (char_class == 'death knight') rank = dk_ranks;
+    else if (char_class == 'mage') rank = mage_ranks;
+    else if (char_class == 'hunter') rank = hunter_ranks;
+    else if (char_class == 'paladin') rank = paladin_ranks;
+    else if (char_class == 'priest') rank = priest_ranks;
+    else if (char_class == 'rogue') rank = rogue_ranks;
+    else if (char_class == 'shaman') rank = shaman_ranks;
+    else if (char_class == 'warlock') rank = warlock_ranks;
+    else if (char_class == 'warrior') rank = warrior_ranks;
+
 
     if ($scope.cur_talents[talent]) {
       cur_rank = $scope.cur_talents[talent] - 1;
