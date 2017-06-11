@@ -94,7 +94,7 @@ editApp.controller('editctrl', ['$scope', '$http', '$compile', function($scope, 
       $(talent_loc).attr('data-trigger', 'hover');
       $(talent_loc).attr('data-placement', 'bottom'); // TODO: make left/center/right
       $(talent_loc).attr('data-html', 'true');
-      $(talent_loc).attr('data-original-title', talent_name);
+      $(talent_loc).attr('data-original-title', '{{display_talent_info(' + talent + ')}}');
 
       // insert the talent counter for the given talent into the DOM
       $(talent_loc).html("<div class='talent_counter' ng-class=\"{'maxed_talent': is_talent_maxed("
@@ -106,16 +106,6 @@ editApp.controller('editctrl', ['$scope', '$http', '$compile', function($scope, 
     $("body").tooltip({
       selector: '[data-toggle="tooltip"]'
     });
-  }
-
-  // TODO: Still need to fix up for different classes & add talent name/rank/next rank
-  /* Insert the tooltips for each talent based on rank of talent. */
-  $scope.talent_tooltip = function(talent) {
-    if (rank[talent]) {
-      return rank[talent][$scope.cur_talents[talent]];
-    } else {
-      return 'hello';
-    }
   }
 
   // add a talent point to the talent
@@ -153,9 +143,9 @@ editApp.controller('editctrl', ['$scope', '$http', '$compile', function($scope, 
       $scope.talent_points.remaining -= 1;
       if (last_active_row < row) $scope.talent_points[tree].last_active_row = row;
       // update tooltip while still hovered over
-      //$('#talent_' + talent)
-      //.attr('data-original-title', $scope.talent_tooltip(talent))
-      //.parent().find('.tooltip-inner').html($scope.talent_tooltip(talent));
+      $('#talent_' + talent)
+      .attr('data-original-title', $scope.display_talent_info(talent))
+      .parent().find('.tooltip-inner').html($scope.display_talent_info(talent));
     }
   }
 
@@ -200,6 +190,10 @@ editApp.controller('editctrl', ['$scope', '$http', '$compile', function($scope, 
       $scope.talent_points.remaining += 1;
       if (row == last_active_row && $scope.talent_points[tree].row[row] == 0)
         $scope.talent_points[tree].last_active_row -= 1;
+      // update tooltip while still hovered over
+      $('#talent_' + talent)
+      .attr('data-original-title', $scope.display_talent_info(talent))
+      .parent().find('.tooltip-inner').html($scope.display_talent_info(talent));
     }
   }
 
@@ -221,14 +215,31 @@ editApp.controller('editctrl', ['$scope', '$http', '$compile', function($scope, 
     $scope.talent_points.right.row = {0:0, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0, 8:0, 9:0, 10:0};
   }
 
-  // gets talent info for given rank + next rank
+  // gets talent info for given talent at whatever its current rank is
   $scope.display_talent_info = function(talent) {
-    var cur_rank = $scope.cur_talents[talent];
-    var next_rank = 0;
-    if (rank[cur_rank + 1]) next_rank = cur_rank + 1;
+    var cur_rank = 0,
+        talent_rank_info = '',
+        talent_rank_info_next = '',
+        char_class = $scope.character.class,
+        rank = [],
+        talent_info = all_talents[$scope.character.class][talent],
+        actual_cur_rank = 0;
 
-    $scope.talent_info = rank[all_talents[$scope.character.class][talent].ranks][cur_rank];
-    $scope.talent_info_next = rank[all_talents[$scope.character.class][talent].ranks][next_rank];
+    if (char_class == 'druid') rank = druid_ranks;
+
+    if ($scope.cur_talents[talent]) {
+      cur_rank = $scope.cur_talents[talent] - 1;
+      actual_cur_rank = cur_rank + 1;
+    }
+
+
+    if (talent_info.max_rank - 1 > cur_rank) {
+      talent_rank_info_next = rank[talent][cur_rank + 1];
+    }
+
+    talent_rank_info = rank[talent][cur_rank];
+
+    return talent_info.name + '</br>' + actual_cur_rank + '/' + talent_info.max_rank + '</br></br>' + talent_rank_info;
   }
 
   // returns url of image for talent
