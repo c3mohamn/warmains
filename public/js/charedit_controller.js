@@ -27,6 +27,7 @@ editApp.controller('editctrl', ['$scope', '$http', '$compile', function($scope, 
   $scope.multipliers = {};
   $scope.talent_points = {};
   $scope.cur_talents = {};
+  $scope.talent_tooltips = [];
 
   //classes and corresponding specs for each class
   $scope.class_specs = {
@@ -200,6 +201,24 @@ editApp.controller('editctrl', ['$scope', '$http', '$compile', function($scope, 
       if (row == last_active_row && $scope.talent_points[tree].row[row] == 0)
         $scope.talent_points[tree].last_active_row -= 1;
     }
+  }
+
+  // Reset Talents points
+  $scope.reset_talents = function() {
+    // Resetting all talent variables to initial values
+    for (var talent in $scope.cur_talents) {
+      $scope.cur_talents[talent] = 0;
+    }
+    $scope.talent_points.remaining = 71;
+    $scope.talent_points.left.total = 0;
+    $scope.talent_points.center.total = 0;
+    $scope.talent_points.right.total = 0;
+    $scope.talent_points.left.last_active_row = 0;
+    $scope.talent_points.center.last_active_row = 0;
+    $scope.talent_points.right.last_active_row = 0;
+    $scope.talent_points.left.row = {0:0, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0, 8:0, 9:0, 10:0};
+    $scope.talent_points.center.row = {0:0, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0, 8:0, 9:0, 10:0};
+    $scope.talent_points.right.row = {0:0, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0, 8:0, 9:0, 10:0};
   }
 
   // gets talent info for given rank + next rank

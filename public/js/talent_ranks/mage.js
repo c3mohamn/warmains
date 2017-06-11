@@ -1,4 +1,5 @@
-﻿i = 0;
+﻿var i = 0;
+var rank = new Array();
 
 //Arcane Talents Begin
 
@@ -7,15 +8,15 @@ rank[i] = [
 		"Reduces the chance your spells will be dispelled by 15% and reduces the threat caused by your Arcane spells by 20%.",
 		"Reduces the chance your spells will be dispelled by 30% and reduces the threat caused by your Arcane spells by 40%."
 		];
-i++;		
-		
+i++;
+
 //Arcane Focus - Arcane
 rank[i] = [
 		"Increases your chance to hit and reduces the mana cost of your Arcane spells by 1%.",
 		"Increases your chance to hit and reduces the mana cost of your Arcane spells by 2%.",
 		"Increases your chance to hit and reduces the mana cost of your Arcane spells by 3%."
 		];
-i++;		
+i++;
 
 //Arcane Stability - Arcane
 rank[i] = [
@@ -33,16 +34,16 @@ rank[i] = [
 		"Increases your armor by an amount equal to 100% of your Intellect.",
 		"Increases your armor by an amount equal to 150% of your Intellect."
 		];
-i++;	
-		
+i++;
+
 //Magic Absorption - Arcane
 rank[i] = [
 		"Increases all resistances by .5 per level and causes all spells you fully resist to restore 1% of your total mana.  1 sec. cooldown.",
 		"Increases all resistances by 1 per level and causes all spells you fully resist to restore 2% of your total mana.  1 sec. cooldown."
 		];
-i++;		
+i++;
 
-//Arcane Concentration - Arcane	
+//Arcane Concentration - Arcane
 rank[i] = [
 	"Gives you a 2% chance of entering a Clearcasting state after any damage spell hits a target. The Clearcasting state reduces the mana cost of your next damage	spell by 100%.",
 	"Gives you a 4% chance of entering a Clearcasting state after any damage spell hits a target. The Clearcasting state reduces the mana cost of your next damage spell by 100%.",
@@ -50,68 +51,68 @@ rank[i] = [
 	"Gives you a 8% chance of entering a Clearcasting state after any damage spell hits a target. The Clearcasting state reduces the mana cost of your next damage spell by 100%.",
 	"Gives you a 10% chance of entering a Clearcasting state after any damage spell hits a target. The Clearcasting state reduces the mana cost of your next damage spell by 100%."
 		];
-i++;		
+i++;
 
 //Magic Attunement - Arcane
 rank[i] = [
 "Increases the range of your Arcane spells by 3 yards and the effect of your Amplify Magic and Dampen Magic spells by 25%.",
 "Increases the range of your Arcane spells by 6 yards and the effect of your Amplify Magic and Dampen Magic spells by 50%."
 		];
-i++;		
-		
-//Spell Impact - Arcane	
+i++;
+
+//Spell Impact - Arcane
 rank[i] = [
 "Increases the damage of your Arcane Explosion, Arcane Blast, Blast Wave, Fire Blast, Scorch, Fireball, Ice Lance and Cone of Cold spells by an additional 2%.",
 "Increases the damage of your Arcane Explosion, Arcane Blast, Blast Wave, Fire Blast, Scorch, Fireball, Ice Lance and Cone of Cold spells by an additional 4%.",
 "Increases the damage of your Arcane Explosion, Arcane Blast, Blast Wave, Fire Blast, Scorch, Fireball, Ice Lance and Cone of Cold spells by an additional 6%."
-		];		
+		];
 i++;
 
-//Student of the Mind - Arcane	
+//Student of the Mind - Arcane
 rank[i] = [
 "Increases your total Spirit by 4%.",
 "Increases your total Spirit by 7%.",
 "Increases your total Spirit by 10%."
-		];		
+		];
 i++;
 
 //Focus Magic - Arcane TALENT DIFFERENT
 rank[i] = [
 		"<span style=text-align:left;float:left;>6% of base mana</span><span style=text-align:right;float:right;>30 yd range</span><br><span style=text-align:left;float:left;>Instant cast</span><br>Increases the target's chance to critically hit with all spells by 3%. When the target critically hits the caster's chance to critically hit with spells is increased by 3% for 10 sec."
 		];
-i++;	
+i++;
 
-//Arcane Shielding - Arcane		
+//Arcane Shielding - Arcane
 rank[i] = [
 "Decreases the mana lost per point of damage taken when Mana Shield is active by 17% and increases the resistances granted by Mage Armor by 25%.",
 "Decreases the mana lost per point of damage taken when Mana Shield is active by 33% and increases the resistances granted by Mage Armor by 50%."
 		];
-i++;		
+i++;
 
-//Improved Counterspell - Arcane	
+//Improved Counterspell - Arcane
 rank[i] = [
 		"Your Counterspell also silences the target for 2 sec.",
 		"Your Counterspell also silences the target for 4 sec."
 		];
-i++;		
+i++;
 
-//Arcane Meditation - Arcane		
+//Arcane Meditation - Arcane
 rank[i] = [
 		"Allows 10% of your Mana regeneration to continue while casting.",
 		"Allows 20% of your Mana regeneration to continue while casting.",
 		"Allows 30% of your Mana regeneration to continue while casting."
 		];
-i++;	
+i++;
 
-//Torment the Weak - Arcane		
+//Torment the Weak - Arcane
 rank[i] = [
 "Your Frostbolt, Fireball, Frostfire Bolt, Arcane Missiles, and Arcane Barrage abilities deal 4% more damage to Snared targets.",
 "Your Frostbolt, Fireball, Frostfire Bolt, Arcane Missiles, and Arcane Barrage abilities deal 8% more damage to Snared targets.",
 "Your Frostbolt, Fireball, Frostfire Bolt, Arcane Missiles, and Arcane Barrage abilities deal 12% more damage to Snared targets."
 		];
-i++;	
+i++;
 
-//Improved Blink - Arcane	
+//Improved Blink - Arcane
 rank[i] = [
 		"Reduces the mana cost of Blink by 25% and for 4 sec after casting your chance to be hit by all attacks and spells is reduced by 15%.",
 		"Reduces the mana cost of Blink by 50% and for 4 sec after casting your chance to be hit by all attacks and spells is reduced by 30%."
@@ -122,9 +123,9 @@ i++;
 rank[i] = [
 		"<span style=text-align:left;float:left;>Instant</span><span style=text-align:right;float:right;>3 min cooldown</span><br>When activated, your next Mage spell with a casting time less than 10 sec becomes an instant cast spell."
 		];
-i++;		
+i++;
 
-//Arcane Mind - Arcane		
+//Arcane Mind - Arcane
 rank[i] = [
 		"Increases your total Intellect by 3%.",
 		"Increases your total Intellect by 6%.",
@@ -142,19 +143,19 @@ rank[i]=[
 		];
 i++;
 
-//Arcane Instability - Arcane		
+//Arcane Instability - Arcane
 rank[i] = [
 		"Increases your spell damage and critical strike chance by 1%.",
 		"Increases your spell damage and critical strike chance by 2%.",
 		"Increases your spell damage and critical strike chance by 3%."
-		];		
+		];
 i++;
 
-//Arcane Potency - Arcane		
+//Arcane Potency - Arcane
 rank[i] = [
 "Increases the critical strike chance of your next damaging spell by 15% after gaining Clearcasting or Presence of Mind.",
 "Increases the critical strike chance of your next damaging spell by 30% after gaining Clearcasting or Presence of Mind."
-		];		
+		];
 i++;
 
 //Arcane Empowerment - Arcane
@@ -165,13 +166,13 @@ rank[i]=[
 		];
 i++;
 
-//Arcane Power - Arcane				
+//Arcane Power - Arcane
 rank[i] = [
 		"<span style=text-align:left;float:left;>Instant</span><span style=text-align:right;float:right;>3 min cooldown</span><br>When activated, your spells deal 30% more damage while costing 30% more mana to cast. This effect lasts 15 sec."
 		];
-i++;	
+i++;
 
-//Incanter's Absorption - Arcane 
+//Incanter's Absorption - Arcane
 rank[i]=[
 "When you absorb damage your spell damage is increased by 5% of the amount absorbed for 10 sec.",
 "When you absorb damage your spell damage is increased by 10% of the amount absorbed for 10 sec.",
@@ -181,7 +182,7 @@ i++;
 
 
 
-//Arcane Flows - Arcane 
+//Arcane Flows - Arcane
 rank[i]=[
 "Reduces the cooldown of your Presence of Mind, Arcane Power and Invisibility spells by 30 secs.",
 "Reduces the cooldown of your Presence of Mind, Arcane Power and Invisibility spells by 60 secs.",
@@ -201,7 +202,7 @@ i++;
 
 
 
-//Slow - Arcane	TALENT DIFFERENT	
+//Slow - Arcane	TALENT DIFFERENT
 rank[i] = [
 		"<span style=text-align:left;float:left;>12% of base mana</span><span style=text-align:right;float:right;>30 yd range</span><br><span style=text-align:left;float:left;>Instant cast</span><BR>Reduces target's movement speed by 60%, increases the time between ranged attacks by 60% and increases casting time by 60%. Lasts 15 sec. Slow can only affect one target at a time."
 		];
@@ -224,7 +225,7 @@ rank[i] = [
 		]; i++;
 
 
-//Spell Power - Arcane 
+//Spell Power - Arcane
 rank[i]=[
 "Increases critical strike damage bonus of all spells by 25%.",
 "Increases critical strike damage bonus of all spells by 50%."
@@ -233,7 +234,7 @@ i++;
 
 
 
-//Arcane Barrage - Arcane TALENT DIFFERENT has trainable ranks			
+//Arcane Barrage - Arcane TALENT DIFFERENT has trainable ranks
 rank[i] = [
 		"<span style=text-align:left;float:left;>18% of base mana</span><span style=text-align:right;float:right;>30 yd range</span><br><span style=text-align:left;float:left;>Instant cast</span><span style=text-align:right;float:right;>3 sec cooldown</span><BR>Launches several missiles at the enemy target, causing 936 to 1144 Arcane damage.<br><br>"
 		];
@@ -241,15 +242,15 @@ i++;
 
 //FIRE TALENTS---------------------------------------------------
 
-//Improved Fire Blast - Fire	
+//Improved Fire Blast - Fire
 rank[i] = [
 			"Reduces the cooldown of your Fire Blast spell by 1 sec.",
 			"Reduces the cooldown of your Fire Blast spell by 2 sec."
 
 		];
-i++;	
+i++;
 
-//Incineration - Fire	
+//Incineration - Fire
 rank[i] = [
 "Increases the critical strike chance of your Fire Blast, Scorch, Arcane Blast and Cone of Cold spells by 2%.",
 "Increases the critical strike chance of your Fire Blast, Scorch, Arcane Blast and Cone of Cold spells by 4%.",
@@ -259,7 +260,7 @@ i++;
 
 
 
-//Improved Fireball - Fire	
+//Improved Fireball - Fire
 rank[i] = [
 			"Reduces the casting time of your Fireball spell by 0.1 sec.",
 			"Reduces the casting time of your Fireball spell by 0.2 sec.",
@@ -269,32 +270,32 @@ rank[i] = [
 		];
 i++;
 
-//Ignite - Fire		
+//Ignite - Fire
 rank[i] = [
 			"Your critical strikes from Fire damage spells cause the target to burn for an additional 8% of your spell's damage over 4 sec.",
 			"Your critical strikes from Fire damage spells cause the target to burn for an additional 16% of your spell's damage over 4 sec.",
 			"Your critical strikes from Fire damage spells cause the target to burn for an additional 24% of your spell's damage over 4 sec.",
 			"Your critical strikes from Fire damage spells cause the target to burn for an additional 32% of your spell's damage over 4 sec.",
 			"Your critical strikes from Fire damage spells cause the target to burn for an additional 40% of your spell's damage over 4 sec."
-		];		
-i++;	
+		];
+i++;
 
-//Burning Determination - Fire	
+//Burning Determination - Fire
 rank[i] = [
 "When Interrupted or Silenced you have a 50% chance to become immune to both mechanics for 10 sec.",
 "When Interrupted or Silenced you have a 100% chance to become immune to both mechanics for 10 sec."
 		];
 i++;
 
-//World in Flames - Fire	
+//World in Flames - Fire
 rank[i] = [
 "Increases the critical strike chance of your Flamestrike, Pyroblast, Blast Wave, Dragon's Breath, Living Bomb, Blizzard and Arcane Explosion spells by 2%.",
 "Increases the critical strike chance of your Flamestrike, Pyroblast, Blast Wave, Dragon's Breath, Living Bomb, Blizzard and Arcane Explosion spells by 4%.",
 "Increases the critical strike chance of your Flamestrike, Pyroblast, Blast Wave, Dragon's Breath, Living Bomb, Blizzard and Arcane Explosion spells by 6%."
-		]; 
+		];
 i++;
 
-//Flame Throwing - Fire	
+//Flame Throwing - Fire
 rank[i] = [
 			"Increases the range of your Fire spells by 3 yards.",
 			"Increases the range of your Fire spells by 6 yards."
@@ -302,7 +303,7 @@ rank[i] = [
 i++;
 
 
-//Impact - Fire			
+//Impact - Fire
 rank[i] = [
 			"Gives your damaging spells a 4% chance to stun the target for 2 sec.",
 			"Gives your damaging spells a 7% chance to stun the target for 2 sec.",
@@ -313,7 +314,7 @@ i++;
 //Pyroblast - Fire TALENT DIFFERENT has trainable ranks
 rank[i] = [
 		"<span style=text-align:left;float:left;>22% of base mana</span><span style=text-align:right;float:right;>35 yd range</span><br><span style=text-align:left;float:left;>5 sec cast</span><br>Hurls an immense fiery boulder that causes 148 to 195 Fire damage and an additional 56 Fire damage over 12 sec.<br><br>"
-		];		
+		];
 i++;
 
 //Burning Soul - Fire
@@ -321,99 +322,99 @@ rank[i] = [
 "Reduces the pushback suffered from damaging attacks while casting Fire spells by 35% and reduces the threat caused by your Fire spells by 5%.",
 "Reduces the pushback suffered from damaging attacks while casting Fire spells by 70% and reduces the threat caused by your Fire spells by 10%."
 		];
-i++;		
+i++;
 
-//Improved Scorch - Fire	
+//Improved Scorch - Fire
 rank[i] = [
 "Your damaging Scorch spells have a 33% chance to cause your target to be vulnerable to spell damage, increasing spell critical strike chance against that target by 2% and lasts 30 sec. Stacks up to 5 times.",
 "Your damaging Scorch spells have a 66% chance to cause your target to be vulnerable to spell damage, increasing spell critical strike chance against that target by 2% and lasts 30 sec. Stacks up to 5 times.",
 "Your damaging Scorch spells have a 100% chance to cause your target to be vulnerable to spell damage, increasing spell critical strike chance against that target by 2% and lasts 30 sec. Stacks up to 5 times."
 		];
-i++;		
+i++;
 
-//MOLTEN SHIELDS - Fire	
+//MOLTEN SHIELDS - Fire
 rank[i] = [
 "Causes your Fire Ward and Frost Ward spells to have a 15% chance to reflect the warded spell while active. In addition, your Molten Armor has a 50% chance to affect ranged and spell attacks.",
 "Causes your Fire Ward and Frost Ward spells to have a 30% chance to reflect the warded spell while active. In addition, your Molten Armor has a 50% chance to affect ranged and spell attacks."
 		];
-i++;		
+i++;
 
-//Master of Elements - Fire	
+//Master of Elements - Fire
 rank[i] = [
 			"Your spell criticals will refund 10% of their base mana cost.",
 			"Your spell criticals will refund 20% of their base mana cost.",
 			"Your spell criticals will refund 30% of their base mana cost."
 		]; i++;
 
-//Playing with Fire - Fire	
+//Playing with Fire - Fire
 rank[i] = [
 			"Increases all spell damage caused by 1% and all spell damage taken by 1%.",
 			"Increases all spell damage caused by 2% and all spell damage taken by 2%.",
 			"Increases all spell damage caused by 3% and all spell damage taken by 3%."
 		]; i++;
 
-//Critical Mass - Fire	
+//Critical Mass - Fire
 rank[i] = [
 			"Increases the critical strike chance of your fire spells by 2%.",
 			"Increases the critical strike chance of your fire spells by 4%.",
 			"Increases the critical strike chance of your fire spells by 6%."
-		];i++;		
+		];i++;
 
 //Blast Wave - Fire	TALENT DIFFERENT has trainable ranks
 rank[i] = [
 			"28% of base mana<br><span style=text-align:left;float:left;>Instant</span><span style=text-align:right;float:right;>30 sec cooldown</span><br>A wave of flame radiates outward from the caster, damaging all enemies caught within the blast for 154 to 186 Fire damage, knocking them back and Dazing them for 6 sec.<br><br>"
 
-		]; i++;		
+		]; i++;
 
-//Blazing Speed - Fire	
+//Blazing Speed - Fire
 rank[i] = [
 			"Gives you a 5% chance when hit by a melee or ranged attack to increase your movement speed by 50% and dispel all movement impairing effects. This effect lasts 8 sec.",
 			"Gives you a 10% chance when hit by a melee or ranged attack to increase your movement speed by 50% and dispel all movement impairing effects. This effect lasts 8 sec."
 		]; i++;
 
-//Fire Power - Fire	
+//Fire Power - Fire
 rank[i] = [
 			"Increases the damage done by your fire spells by 2%.",
 			"Increases the damage done by your fire spells by 4%.",
 			"Increases the damage done by your fire spells by 6%.",
 			"Increases the damage done by your fire spells by 8%.",
-			"Increases the damage done by your fire spells by 10%."		
+			"Increases the damage done by your fire spells by 10%."
 		]; i++;
 
-//Pyromaniac - Fire	
+//Pyromaniac - Fire
 rank[i] = [
 			"Increases chance to critically hit and reduces the mana cost of all Fire spells by an additional 1%.",
 			"Increases chance to critically hit and reduces the mana cost of all Fire spells by an additional 2%.",
-			"Increases chance to critically hit and reduces the mana cost of all Fire spells by an additional 3%."			
-		]; 
+			"Increases chance to critically hit and reduces the mana cost of all Fire spells by an additional 3%."
+		];
 i++;
-		
+
 //Combustion - Fire
 rank[i] = [
 		"<span style=text-align:left;float:left;>Instant</span><span style=text-align:right;float:right;>3 min cooldown</span><br>When activated, this spell causes each of your Fire damage spell hits to increase your critical strike chance with Fire damage spells by 10%. This effect lasts until you have caused 3 critical strikes with Fire spells."
 		];
 i++;
-		
-//Molten Fury - Fire	
+
+//Molten Fury - Fire
 rank[i] = [
 "Increases damage of all spells against targets with less than 35% health by 6%.",
 			"Increases damage of all spells against targets with less than 35% health by 12%."
-		]; 
+		];
 i++;
 
-//Fiery Payback - Fire	
+//Fiery Payback - Fire
 rank[i] = [
 "When below 35% health all damage taken is reduced by 10% and your Pyroblast spell's cast time is reduced by 1.8 secs while the cooldown is increased by 2.5 secs.",
 "When below 35% health all damage taken is reduced by 20% and your Pyroblast spell's cast time is reduced by 3.5 secs while the cooldown is increased by 5 secs."
-		]; 
+		];
 i++;
 
-//Empowered Fire - Fire	
+//Empowered Fire - Fire
 rank[i] = [
 			"Increases the damage of your Fireball and Frostfire bolt spells by an amount equal to 5% of your spell power.",
 			"Increases the damage of your Fireball and Frostfire bolt spells by an amount equal to 10% of your spell power.",
 			"Increases the damage of your Fireball and Frostfire bolt spells by an amount equal to 15% of your spell power."
-		]; 
+		];
 i++;
 
 //Firestarter - Fire TALENT DIFFERENT
@@ -430,40 +431,40 @@ rank[i] = [
 		];
 i++;
 
-//Hot Streak - Fire	
+//Hot Streak - Fire
 rank[i] = [
 "Any time you score 2 spell criticals in a row using Fireball, Fire Blast, Scorch, or Frostfire Bolt, you have a 33% chance the next Pyroblast spell cast within 10 sec will be instant cast.",
 "Any time you score 2 spell criticals in a row using Fireball, Fire Blast, Scorch, or Frostfire Bolt, you have a 66% chance the next Pyroblast spell cast within 10 sec will be instant cast.",
 "Any time you score 2 spell criticals in a row using Fireball, Fire Blast, Scorch, or Frostfire Bolt, you have a 100% chance the next Pyroblast spell cast within 10 sec will be instant cast."
-		]; 
+		];
 i++;
 
 
-//Burnout - Fire	
+//Burnout - Fire
 rank[i] = [
 "Increases your spell critical damage bonus with all Fire spells by 10% but your spell criticals cost an additional 1% of the spell's cost.",
 "Increases your spell critical damage bonus with all Fire spells by 20% but your spell criticals cost an additional 2% of the spell's cost.",
 "Increases your spell critical damage bonus with all Fire spells by 30% but your spell criticals cost an additional 3% of the spell's cost.",
 "Increases your spell critical damage bonus with all Fire spells by 40% but your spell criticals cost an additional 4% of the spell's cost.",
 "Increases your spell critical damage bonus with all Fire spells by 50% but your spell criticals cost an additional 5% of the spell's cost."
-		]; 
+		];
 i++;
 
-//Living Bomb - Fire TALENT DIFFERENT has trainable ranks				
+//Living Bomb - Fire TALENT DIFFERENT has trainable ranks
 rank[i] = [
 		"100 yd range</span><br><br><span style=text-align:left;float:left;>Instant</span><BR>The target becomes a Living Bomb, taking 1380 Fire Damage over 12 sec. After 12 sec or when the spell is dispelled, the target explodes dealing 306 Fire damage to all enemies within 10 yards. This spell can only affect one target at a time.<br><br>"
 		];
 i++;
 
 
-//FROST TREE--------------------------------------------------------------------------------------		
+//FROST TREE--------------------------------------------------------------------------------------
 //Frostbite - Frost
 rank[i]=[
 "Gives your Chill effects a 5% chance to freeze the target for 5 sec.",
 "Gives your Chill effects a 10% chance to freeze the target for 5 sec.",
 "Gives your Chill effects a 15% chance to freeze the target for 5 sec."
 		];
-i++;	
+i++;
 
 //Improved Frost Bolt - Frost
 rank[i]=[
@@ -473,24 +474,24 @@ rank[i]=[
 			"Reduces the casting time of your Frostbolt spell by 0.4 sec.",
 			"Reduces the casting time of your Frostbolt spell by 0.5 sec."
 			];
-i++;			
-			
+i++;
 
-//Ice Floes - Frost	
+
+//Ice Floes - Frost
 rank[i] = [
 		"Reduces the cooldown of your Frost Nova, Cone of Cold, Ice Block and Icy Veins spells by 7%.",
 		"Reduces the cooldown of your Frost Nova, Cone of Cold, Ice Block and Icy Veins spells by 14%.",
 		"Reduces the cooldown of your Frost Nova, Cone of Cold, Ice Block and Icy Veins spells by 20%."
 		];
 i++;
-		
+
 //Ice Shards - Frost
 rank[i]=[
 "Increases the critical strike damage bonus of your Frost spells by 33%.",
 "Increases the critical strike damage bonus of your Frost spells by 66%.",
 "Increases the critical strike damage bonus of your Frost spells by 100%."
 		];
-i++;		
+i++;
 
 
 //Frost Warding - Frost
@@ -498,7 +499,7 @@ rank[i]=[
 "Increases the armor and resistances given by your Frost Armor and Ice Armor spells by 25%. In addition, gives your Frost Ward and Fire Ward a 15% chance to negate the warded damage spell and restore mana equal to the damage caused.",
 "Increases the armor and resistances given by your Frost Armor and Ice Armor spells by 50%. In addition, gives your Frost Ward and Fire Ward a 30% chance to negate the warded damage spell and restore mana equal to the damage caused."
 		];
-i++;				
+i++;
 
 //Elemental Precision - Frost
 rank[i]=[
@@ -515,7 +516,7 @@ rank[i]=[
 			"Increases the duration of your Chill effects by 2 sec and reduces the target's speed by an additional 7%.",
 			"Increases the duration of your Chill effects by 3 sec and reduces the target's speed by an additional 10%."
 		];
-i++;		
+i++;
 
 
 
@@ -525,13 +526,13 @@ rank[i]=[
 "Increases the damage done by your Frost spells by 4%.",
 "Increases the damage done by your Frost spells by 6%."
 		];
-i++;		
+i++;
 
 //Icy Veins - Frost TALENT DIFFERENT
 rank[i]=[
 		"<span style=text-align:left;float:left;>3% of base mana</span><br><span style=text-align:left;float:left;>Instant</span><span style=text-align:right;float:right;>3 min cooldown</span><br>Hastens your spellcasting, increasing spell casting speed by 20% and reduces the pushback suffered from damaging attacks while casting by 100%. Lasts 20 sec."
 		];
-i++;		
+i++;
 
 //Improved Blizzard - Frost
 rank[i]=[
@@ -539,15 +540,15 @@ rank[i]=[
 "Adds a chill effect to your Blizzard spell. This effect lowers the target's movement speed by 50%. Lasts 1.50 sec.",
 "Adds a chill effect to your Blizzard spell. This effect lowers the target's movement speed by 65%. Lasts 1.50 sec."
 		];
-i++;		
+i++;
 
 //Arctic Reach - Frost
 rank[i]=[
 "Increases the range of your Frostbolt, Ice Lance, Deep Freeze and Blizzard spells and the radius of your Frost Nova and Cone of Cold spells by 10%.",
 "Increases the range of your Frostbolt, Ice Lance, Deep Freeze and Blizzard spells and the radius of your Frost Nova and Cone of Cold spells by 20%."
 		];
-i++;		
-		
+i++;
+
 
 //Frost Channeling - Frost
 rank[i]=[
@@ -555,8 +556,8 @@ rank[i]=[
 "Reduces the mana cost of all spells by 7% and reduces the threat caused by your Frost spells by 7%.",
 "Reduces the mana cost of all spells by 10% and reduces the threat caused by your Frost spells by 10%."
 		];
-i++;		
-		
+i++;
+
 //Shatter - Frost
 rank[i]=[
 "Increases the critical strike chance of all your spells against frozen targets by 17%.",
@@ -571,16 +572,16 @@ i++;
 rank[i]=[
 		"<span style=text-align:left;float:left;>Instant</span><span style=text-align:right;float:right;>8 min cooldown</span><br>When activated, this spell finishes the cooldown on all Frost spells you recently cast."
 		];
-i++;	
-		
-	
+i++;
+
+
 //Improved Cone of Cold - Frost
 rank[i]=[
 "Increases the damage dealt by your Cone of Cold spell by 15%.",
 "Increases the damage dealt by your Cone of Cold spell by 25%.",
 "Increases the damage dealt by your Cone of Cold spell by 35%."
 		];
-i++;	
+i++;
 
 //Frozen Core - Frost
 rank[i]=[
@@ -605,7 +606,7 @@ rank[i]=[
 		];
 i++;
 
-//Shattered Barrier - Frost	
+//Shattered Barrier - Frost
 rank[i] = [
 "Gives your Ice Barrier spell a 50% chance to freeze all enemies within 10 yds for 8 sec when it is destroyed.",
 "Gives your Ice Barrier spell a 100% chance to freeze all enemies within 10 yds for 8 sec when it is destroyed."
@@ -616,7 +617,7 @@ i++;
 rank[i]=[
 		"<span style=text-align:left;float:left;>25% of base mana</span><br><span style=text-align:left;float:left;>Instant cast</span><span style=text-align:right;float:right;>30 sec cooldown</span><br>Instantly shields you, absorbing 3300 damage. Lasts 1 min. While the shield holds, spells will not be interrupted.<br><br>"
 		];
-i++;	
+i++;
 
 //Arctic Winds - Frost
 rank[i]=[
@@ -679,6 +680,6 @@ rank[i]=[
 "<span style=text-align:left;float:left;>9% of base mana</span><span style=text-align:right;float:right;>30 yd range</span><br><span style=text-align:left;float:left;>Instant cast</span><span style=text-align:right;float:right;>24 sec cooldown</span><br>Stuns the target for 5 sec. Only usable on Frozen targets.<br><br>"
 		];
 i++;
-		
+
 //Frost Talents End^^
 jsLoaded=true;//needed for ajax script loading

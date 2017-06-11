@@ -12,3 +12,5 @@ div(class='talents_view' ng-show="cur_view == 'talents'")
   p(class='success-msg' ng-show="success_msg != ''") {{success_msg}}
   //input(ng-if='permission' type="submit" value='Save Changes' ng-click='save_to_db()'
         class="save_item loginmodal-submit")
+  input(ng-if='permission' type="submit" value='Reset Talents' ng-click='reset_talents()'
+        class="save_item loginmodal-submit")
