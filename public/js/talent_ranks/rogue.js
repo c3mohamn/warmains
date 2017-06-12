@@ -87,11 +87,11 @@ i++;
 
 //Improved Poisons - Assassination
 rogue_ranks[i] = [
-"Increases the chance to apply Instant and Deadly Poison to your target by 2%.",
-"Increases the chance to apply Instant and Deadly Poison to your target by 4%.",
-"Increases the chance to apply Instant and Deadly Poison to your target by 6%.",
-"Increases the chance to apply Instant and Deadly Poison to your target by 8%.",
-"Increases the chance to apply Instant and Deadly Poison to your target by 10%."
+"Increases the chance to apply Deadly Poison to your target by 4% and the frequency of applying Instant Poison to your target by 10%.",
+"Increases the chance to apply Deadly Poison to your target by 8% and the frequency of applying Instant Poison to your target by 20%.",
+"Increases the chance to apply Deadly Poison to your target by 12% and the frequency of applying Instant Poison to your target by 30%.",
+"Increases the chance to apply Deadly Poison to your target by 16% and the frequency of applying Instant Poison to your target by 40%.",
+"Increases the chance to apply Deadly Poison to your target by 20% and the frequency of applying Instant Poison to your target by 50%."
 		];
 i++;
 
@@ -135,12 +135,10 @@ i++;
 
 //Murder - Assassination - TALENT DIFFERENT - values changed
 rogue_ranks[i] = [
-"Increases all damage caused against Humanoid, Giant, Beast, and Dragonkin targets by 2%",
-"Increases all damage caused against Humanoid, Giant, Beast, and Dragonkin targets by 4%"
+"Increases all damage caused by 2%.",
+"Increases all damage caused by 4%."
 		];
 i++;
-
-
 
 //Deadly Brew - Assassination
 rogue_ranks[i] = [
@@ -151,10 +149,9 @@ i++;
 
 //Overkill - Assassination
 rogue_ranks[i] = [
-"Abilities used while stealthed and for 6 seconds after breaking stealth cost 10 less energy.",
+"While stealthed, and 20 seconds after breaking stealth, you regenerate 30% additional energy.",
 		];
 i++;
-
 
 //Deadened Nerves - Assassination - TALENT DIFFERENT - description changed
 rogue_ranks[i] = [
@@ -172,8 +169,6 @@ rogue_ranks[i] = [
 		];
 i++;
 
-
-
 //Find Weakness - Assassination
 rogue_ranks[i] = [
 "Offensive ability damage increased by 2%.",
@@ -184,16 +179,16 @@ i++;
 
 //Master Poisoner - Assassination
 rogue_ranks[i] = [
-"Increases the critical chance of all attacks made against any target you have poisoned by 1% and reduces the duration of all Poison effects applied to you by 17%.",
-"Increases the critical chance of all attacks made against any target you have poisoned by 2% and reduces the duration of all Poison effects applied to you by 34%.",
-"Increases the critical chance of all attacks made against any target you have poisoned by 3% and reduces the duration of all Poison effects applied to you by 50%."
+"Increases the critical chance of all attacks made against any target you have poisoned by 1%, reduces the duration of all Poison effects applied to you by 17%, and gives Envenom a 33% chance not to consume Deadly Poison.",
+"Increases the critical chance of all attacks made against any target you have poisoned by 2%, reduces the duration of all Poison effects applied to you by 34%, and gives Envenom a 66% chance not to consume Deadly Poison.",
+"Increases the critical chance of all attacks made against any target you have poisoned by 3%, reduces the duration of all Poison effects applied to you by 50%, and gives Envenom a 100% chance not to consume Deadly Poison."
 		];
 i++;
 
 //Mutilate - Assassination
 rogue_ranks[i] = [
-			"<span style=text-align:left;float:left;>60 Energy</span><span style=text-align:right;float:right;>Melee range</span><br>Instant<br>Requires Daggers<br>Instantly attacks with both weapons for an additional 44 with each weapon. Damage is increased by 50% against Poisoned targets. Awards 2 combo points.<br><br>\
-			&nbsp;Talent Has Trainable rogue_rankss"
+			"<span style=text-align:left;float:left;>60 Energy</span><span style=text-align:right;float:right;>Melee range</span><br><span style=text-align:left;float:left;>Instant</span><br><span style=text-align:left;float:left;>Requires Daggers</span><br>\
+			Instantly attacks with both weapons for weapon damage plus an additional 44 with each weapon. Damage is increased by 20% against Poisoned targets. Awards 2 combo points."
 		];
 i++;
 
@@ -217,7 +212,8 @@ i++;
 
 //Hunger For Blood - Assassination - TALENT DIFFERENT - description and duration
 rogue_ranks[i] = [
-			"<span style=text-align:left;float:left;>30 Energy</span><br><span style=text-align:left;float:left;>Instant</span><br>Enrages you, increasing all damage caused by 3%. If used while a Bleed affect is afflicting you, it will attempt to remove it and refund 15 energy. This effect can be stacked up to 3 times. Lasts 30 sec."
+			"<span style=text-align:left;float:left;>15 Energy</span><br><span style=text-align:left;float:left;>Instant</span><br>\
+			Enrages you, increasing all damage caused by 5%. Requires a bleed effect to be active on the target. Lasts 1 minute."
 		];
 i++;
 
@@ -289,7 +285,6 @@ rogue_ranks[i] = [
 		];
 i++;
 
-
 //Close Quarters Combat - Combat
 rogue_ranks[i] = [
 "Increases your chance to get a critical strike with Daggers and Fist Weapons by 1%.",
@@ -299,9 +294,6 @@ rogue_ranks[i] = [
 "Increases your chance to get a critical strike with Daggers and Fist Weapons by 5%."
 ];
 i++;
-
-
-
 
 //Improved Kick - Combat
 rogue_ranks[i] = [
@@ -319,11 +311,9 @@ i++;
 
 //Lightning Reflexes - Combat
 rogue_ranks[i] = [
-"Increases your Dodge chance by 1%.",
-"Increases your Dodge chance by 2%.",
-"Increases your Dodge chance by 3%.",
-"Increases your Dodge chance by 4%.",
-"Increases your Dodge chance by 5%."
+"Increases your Dodge chance by 1% and gives you 2% melee haste.",
+"Increases your Dodge chance by 2% and gives you 4% melee haste.",
+"Increases your Dodge chance by 3% and gives you 6% melee haste."
 		];
 i++;
 
@@ -349,23 +339,19 @@ i++;
 
 //Blade Flurry - Combat
 rogue_ranks[i]=[
-			"25 Energy<br><span style=text-align:left;float:left;>Instant</span><span style=text-align:right;float:right;>2 min cooldown</span><br>Increases your attack speed by 20%. In addition, attacks strike an additional nearby opponent. Lasts 15 sec."
+			"<span style=text-align:left;float:left;>25 Energy</span><br><span style=text-align:left;float:left;>Instant</span><span style=text-align:right;float:right;>2 min cooldown</span><br>Increases your attack speed by 20%. In addition, attacks strike an additional nearby opponent. Lasts 15 sec."
 			];
 i++;
 
 //Sword Specialization - Combat
 rogue_ranks[i]=[
-"Gives you a 1% chance to get an extra attack on the same target after hitting your target with your Sword.",
-"Gives you a 2% chance to get an extra attack on the same target after hitting your target with your Sword.",
-"Gives you a 3% chance to get an extra attack on the same target after hitting your target with your Sword.",
-"Gives you a 4% chance to get an extra attack on the same target after hitting your target with your Sword.",
-"Gives you a 5% chance to get an extra attack on the same target after hitting your target with your Sword."
+"Gives you a 1% chance to get an extra attack on the same target after hitting your target with your Sword or Axe.",
+"Gives you a 2% chance to get an extra attack on the same target after hitting your target with your Sword or Axe.",
+"Gives you a 3% chance to get an extra attack on the same target after hitting your target with your Sword or Axe.",
+"Gives you a 4% chance to get an extra attack on the same target after hitting your target with your Sword or Axe.",
+"Gives you a 5% chance to get an extra attack on the same target after hitting your target with your Sword or Axe."
 		];
 i++;
-
-
-
-
 
 //Weapon Expertise - Combat
 rogue_ranks[i]=[
@@ -391,7 +377,7 @@ i++;
 
 //Adrenaline Rush - Combat
 rogue_ranks[i]=[
-			"<span style=text-align:left;float:left;>Instant</span><span style=text-align:right;float:right;>5 min cooldown</span><br>Increases your Energy regeneration rate by 100% for 15 sec."
+			"<span style=text-align:left;float:left;>Instant</span><span style=text-align:right;float:right;>3 min cooldown</span><br>Increases your Energy regeneration rate by 100% for 15 sec."
 		];
 i++;
 
@@ -434,11 +420,10 @@ i++;
 
 //Savage Combat - Combat
 rogue_ranks[i]=[
-"Increases your total attack power by 2% and all physical damage caused to enemies you have poisoned is increased by 1%.",
-"Increases your total attack power by 4% and all physical damage caused to enemies you have poisoned is increased by 2%."
+"Increases your total attack power by 2% and all physical damage caused to enemies you have poisoned is increased by 2%.",
+"Increases your total attack power by 4% and all physical damage caused to enemies you have poisoned is increased by 4%."
 		];
 i++;
-
 
 //Prey on the Weak - Combat
 rogue_ranks[i]=[
@@ -452,7 +437,8 @@ i++;
 
 //Killing Spree - Combat
 rogue_ranks[i]=[
-			"<span style=text-align:left;float:left;>10 yd range</span><br/><span style=text-align:left;float:left;>Instant</span><span style=text-align:right;float:right;>2 min cooldown</span><br><span style=text-align:left;float:left;>Requires Melee Weapon</span><br/>Step through the shadows from enemy to enemy within 10 yards, attacking an enemy every .5 secs with both weapons until 5 assaults are made. Can hit the same target multiple times. Cannot hit invisible or stealthed targets."
+			"<span style=text-align:left;float:left;>10 yd range</span><br/><span style=text-align:left;float:left;>Instant</span><span style=text-align:right;float:right;>2 min cooldown</span><br><span style=text-align:left;float:left;>Requires Melee Weapon</span><br/>\
+			Step through the shadows from enemy to enemy within 10 yards, attacking an enemy every .5 secs with both weapons until 5 assaults are made, and increasing all damage done by 20% for the duration. Can hit the same target multiple times. Cannot hit invisible or stealthed targets."
 		];
 i++;
 
@@ -469,15 +455,11 @@ rogue_ranks[i]=[
 		];
 i++;
 
-
-
-
-
 //Master of Deception - Subtlety
 rogue_ranks[i]=[
 "Reduces the chance enemies have to detect you while in Stealth mode.",
-"Reduces the chance enemies have to detect you while in Stealth mode. More effective than Master of Deception (rogue_ranks 1).",
-"Reduces the chance enemies have to detect you while in Stealth mode. More effective than Master of Deception (rogue_ranks 2)."
+"Reduces the chance enemies have to detect you while in Stealth mode. More effective than Master of Deception (rank 1).",
+"Reduces the chance enemies have to detect you while in Stealth mode. More effective than Master of Deception (rank 2)."
 		];
 i++;
 
@@ -499,7 +481,6 @@ i++;
 rogue_ranks[i]=[
 "Increases the range of your Blind and Sap abilities by 2 yards and reduces the energy cost of your Blind and Sap abilities by 25%.",
 "Increases the range of your Blind and Sap abilities by 5 yards and reduces the energy cost of your Blind and Sap abilities by 50%."
-
 		];
 i++;
 
@@ -518,21 +499,18 @@ rogue_ranks[i]=[
 		];
 i++;
 
-
-
-
-
 //Ghostly Strike - Subtlety - TALENT DIFFERENT - range changed
 rogue_ranks[i]=[
-			"<span style=text-align:left;float:left;>40 Energy</span><span style=text-align:right;float:right;>Melee range</span><br><span style=text-align:left;float:left;>Instant</span><span style=text-align:right;float:right;>20 sec cooldown</span><br><span style='text-align:left;float:left;'>Requires Melee Weapon</span><br>A strike that deals 125% weapon damage and increases your chance to dodge by 15% for 7 sec. Awards 1 combo point."
+			"<span style=text-align:left;float:left;>40 Energy</span><span style=text-align:right;float:right;>Melee range</span><br><span style=text-align:left;float:left;>Instant</span><span style=text-align:right;float:right;>20 sec cooldown</span><br><span style='text-align:left;float:left;'>Requires Melee Weapon</span><br>A strike that deals 125% weapon damage \
+			(180% if a dagger is equipped) and increases your chance to dodge by 15% for 7 sec. Awards 1 combo point."
 		];
 i++;
 
 //Serrated Blades - Subtlety
 rogue_ranks[i]=[
-"Causes your attacks to ignore 213 of your target's Armor and increases the damage dealt by your Rupture ability by 10%.  The amount of Armor reduced increases with your level.",
-"Causes your attacks to ignore 427 of your target's Armor and increases the damage dealt by your Rupture ability by 20%.  The amount of Armor reduced increases with your level.",
-"Causes your attacks to ignore 640 of your target's Armor and increases the damage dealt by your Rupture ability by 30%.  The amount of Armor reduced increases with your level."
+"Causes your attacks to ignore 3% of your target's Armor and increases the damage dealt by your Rupture ability by 10%.  The amount of Armor reduced increases with your level.",
+"Causes your attacks to ignore 6% of your target's Armor and increases the damage dealt by your Rupture ability by 20%.  The amount of Armor reduced increases with your level.",
+"Causes your attacks to ignore 9% of your target's Armor and increases the damage dealt by your Rupture ability by 30%.  The amount of Armor reduced increases with your level."
 		];
 i++;
 
@@ -559,18 +537,16 @@ rogue_ranks[i]=[
 		];
 i++;
 
-
-
 //Heightened Senses - Subtlety
 rogue_ranks[i]=[
 "Increases your Stealth detection and reduces the chance you are hit by spells and ranged attacks by 2%.",
-"Increases your Stealth detection and reduces the chance you are hit by spells and ranged attacks by 4%. More effective than Heightened Senses (rogue_ranks 1)."
+"Increases your Stealth detection and reduces the chance you are hit by spells and ranged attacks by 4%. More effective than Heightened Senses (rank 1)."
 		];
 i++;
 
 //Preparation - Subtlety
 rogue_ranks[i]=[
-			"<span style=text-align:left;float:left;>Instant</span><span style=text-align:right;float:right;>10 min cooldown</span><br>When activated, this ability immediately finishes the cooldown on your Evasion, Sprint, Vanish, Cold Blood and Shadowstep abilities."
+			"<span style=text-align:left;float:left;>Instant</span><span style=text-align:right;float:right;>8 min cooldown</span><br>When activated, this ability immediately finishes the cooldown on your Evasion, Sprint, Vanish, Cold Blood and Shadowstep abilities."
 		];
 i++;
 
@@ -583,8 +559,8 @@ i++;
 
 //Hemorrhage - Subtlety
 rogue_ranks[i]=[
-			"<span style=text-align:left;float:left;>35 Energy</span><span style=text-align:right;float:right;>Melee range</span><br>Instant<br>Requires Melee Weapon<br>An instant strike that deals 110% weapon damage and causes the target to hemorrhage, increasing any Physical damage dealt to the target by up to 13.  Lasts 10 charges or 15 sec.  Awards 1 combo point.<br><br>\
-			&nbsp;Talent Has Trainable rogue_rankss"
+			"<span style=text-align:left;float:left;>35 Energy</span><span style=text-align:right;float:right;>Melee range</span><br><span style=text-align:left;float:left;>Instant</span><br><span style=text-align:left;float:left;>Requires Melee Weapon</span><br>\
+			An instant strike that deals 110% weapon damage (159.5% if a dagger is equipped) and causes the target to hemorrhage, increasing any Physical damage dealt to the target by up to 13.  Lasts 10 charges or 15 sec.  Awards 1 combo point.<br><br>"
 		];
 i++;
 
@@ -594,7 +570,6 @@ rogue_ranks[i]=[
 "Attacks made while stealthed and for 6 seconds after breaking stealth cause an additional 7% damage.",
 "Attacks made while stealthed and for 6 seconds after breaking stealth cause an additional 10% damage."		];
 i++;
-
 
 //Deadliness - Subtlety
 rogue_ranks[i]=[
@@ -616,7 +591,7 @@ i++;
 
 //Premeditation - Subtlety - TALENT DIFFERENT - cooldown
 rogue_ranks[i]=[
-			"30 yd range<br><span style=text-align:left;float:left;>Instant</span><span style=text-align:right;float:right;>20 sec cooldown</span><br><span style=color:eb0504>Requires Stealth</span><br>When used, adds 2 combo points to your target. You must add to or use those combo points within 20 sec or the combo points are lost."
+			"<span style=text-align:left;float:left;>30 yd range</span><br><span style=text-align:left;float:left;>Instant</span><span style=text-align:right;float:right;>20 sec cooldown</span><br><span style=text-align:left;float:left;>Requires Stealth</span><br>When used, adds 2 combo points to your target. You must add to or use those combo points within 20 sec or the combo points are lost."
 		];
 i++;
 
@@ -640,8 +615,8 @@ i++;
 
 //Waylay - Subtlety
 rogue_ranks[i]=[
-"Your Ambush critical hits have a 50% chance to reduce the target's melee and ranged attack speed by 20%, movement speed by 70% for 8 sec.",
-"Your Ambush critical hits have a 100% chance to reduce the target's melee and ranged attack speed by 20%, movement speed by 70% for 8 sec."
+"Your Ambush critical hits have a 50% chance to reduce the target's melee and ranged attack speed by 20%, movement speed by 50% for 8 sec.",
+"Your Ambush critical hits have a 100% chance to reduce the target's melee and ranged attack speed by 20%, movement speed by 50% for 8 sec."
 		];
 i++;
 
@@ -668,17 +643,18 @@ i++;
 
 //Slaughter form the Shadows - Subtlety
 rogue_ranks[i]=[
-"Reduces the energy cost of your Backstab and Ambush abilities by 3 and the energy cost of your Hemorrhage by 1.",
-"Reduces the energy cost of your Backstab and Ambush abilities by 6 and the energy cost of your Hemorrhage by 2.",
-"Reduces the energy cost of your Backstab and Ambush abilities by 9 and the energy cost of your Hemorrhage by 3.",
-"Reduces the energy cost of your Backstab and Ambush abilities by 12 and the energy cost of your Hemorrhage by 4.",
-"Reduces the energy cost of your Backstab and Ambush abilities by 15 and the energy cost of your Hemorrhage by 5."
+"Reduces the energy cost of your Backstab and Ambush abilities by 4, the energy cost of your Hemorrhage by 1 and increases all damage done by 1%.",
+"Reduces the energy cost of your Backstab and Ambush abilities by 8, the energy cost of your Hemorrhage by 2 and increases all damage done by 2%.",
+"Reduces the energy cost of your Backstab and Ambush abilities by 12, the energy cost of your Hemorrhage by 3 and increases all damage done by 3%.",
+"Reduces the energy cost of your Backstab and Ambush abilities by 16, the energy cost of your Hemorrhage by 4 and increases all damage done by 4%.",
+"Reduces the energy cost of your Backstab and Ambush abilities by 20, the energy cost of your Hemorrhage by 5 and increases all damage done by 5%."
 		];
 i++;
 
 //Shadow Dance - Subtlety
 rogue_ranks[i]=[
-			"<span style=text-align:left;float:left;>Instant</span><span style=text-align:right;float:right;>2 min cooldown</span><br>Enter the Shadow Dance, allowing the use of Sap, Garrotte, Ambush, Cheap Shot, Premeditation, Pickpocket and Disarm Trap regardless of being stealthed. Those abilities each gain a cooldown of 2 sec. Lasts 10 sec."
+			"<span style=text-align:left;float:left;>Instant</span><span style=text-align:right;float:right;>1 min cooldown</span><br>\
+			Enter the Shadow Dance for 6 seconds, allowing the use of Sap, Garrote, Ambush , Cheap SHot, Premeditation, Pickpocket and Disarm Trap regardless of being stealthed."
 		];
 i++;
 

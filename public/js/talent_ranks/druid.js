@@ -143,7 +143,7 @@ i++;
 
 //Moonkin Form - Balance  //UPDATED
 druid_ranks[i] = [
-		"22% of base mana<br><span style=text-align:left;float:left;>Instant cast</span><br>Shapeshift into Moonkin Form. While in this form the armor contribution from items is increased by 370% and all party members within 45 yards have their spell critical chance increased by 5%. Spell critical strikes in this form have a chance to instantly regenerate 2% of your total mana. The Moonkin can only cast Balance and Remove Curse spells while shapeshifted.<br><br>The act of shapeshifting frees the caster of Polymorph and Movement Impairing effects."
+		"<span style=text-align:left;float:left;>22% of base mana</span><br><span style=text-align:left;float:left;>Instant cast</span><br>Shapeshift into Moonkin Form. While in this form the armor contribution from items is increased by 370% and all party members within 45 yards have their spell critical chance increased by 5%. Spell critical strikes in this form have a chance to instantly regenerate 2% of your total mana. The Moonkin can only cast Balance and Remove Curse spells while shapeshifted.<br><br>The act of shapeshifting frees the caster of Polymorph and Movement Impairing effects."
 		];
 i++;
 
@@ -417,10 +417,10 @@ i++;
 
 //Infected Wounds - Feral
 druid_ranks[i] = [
-"Your Shred, Maul and Mangle attacks cause an Infected Wound in the target. The Infected Wound reduces the movement speed of the target by 8% and the attack speed by 3%. Stacks up to 2 times. Lasts 12 sec.",
-"Your Shred, Maul and Mangle attacks cause an Infected Wound in the target. The Infected Wound reduces the movement speed of the target by 17% and the attack speed by 7%. Stacks up to 2 times. Lasts 12 sec.",
-"Your Shred, Maul and Mangle attacks cause an Infected Wound in the target. The Infected Wound reduces the movement speed of the target by 25% and the attack speed by 10%. Stacks up to 2 times. Lasts 12 sec."
-		];
+"Your Shred, Maul, and Mangle attacks cause an Infected Wound in the target. The infected Wound reduces the movement speed of the target by 16% and attack speed by 6%. Lasts 12 seconds.",
+"Your Shred, Maul, and Mangle attacks cause an Infected Wound in the target. The infected Wound reduces the movement speed of the target by 34% and attack speed by 14%. Lasts 12 seconds.",
+"Your Shred, Maul, and Mangle attacks cause an Infected Wound in the target. The infected Wound reduces the movement speed of the target by 50% and attack speed by 20. Lasts 12 seconds."
+];
 i++;
 
 //King of the Jungle - Feral
@@ -471,8 +471,8 @@ i++;
 
 //Improved Mark of the Wild - Restoration
 druid_ranks[i]=[
-"Increases the effects of your Mark of the Wild and Gift of the Wild spells by 20%.",
-"Increases the effects of your Mark of the Wild and Gift of the Wild spells by 40%."
+"Increases the effects of your Mark of the WIld and Gift of the Wild spells by 20%, and increases all of your total attributes by 1%.",
+"Increases the effects of your Mark of the Wild and Gift of the Wild spells by 40%, and increases all of your total attributes by 2%."
 		];
 i++;
 
@@ -678,11 +678,11 @@ i++;
 
 //GIFT OF THE EARTHMOTHER - Restoration
 druid_ranks[i]=[
-"Reduces the base global cooldown of your Rejuvenation, Lifebloom and Wild Growth spells by 4%.",
-"Reduces the base global cooldown of your Rejuvenation, Lifebloom and Wild Growth spells by 8%.",
-"Reduces the base global cooldown of your Rejuvenation, Lifebloom and Wild Growth spells by 12%.",
-"Reduces the base global cooldown of your Rejuvenation, Lifebloom and Wild Growth spells by 16%.",
-"Reduces the base global cooldown of your Rejuvenation, Lifebloom and Wild Growth spells by 20%."
+"Increases your total spell haste by 2% and reduces the base cooldown of your lifebloom spell by 2%.",
+"Increases your total spell haste by 4% and reduces the base cooldown of your lifebloom spell by 4%.",
+"Increases your total spell haste by 6% and reduces the base cooldown of your lifebloom spell by 6%.",
+"Increases your total spell haste by 8% and reduces the base cooldown of your lifebloom spell by 8%.",
+"Increases your total spell haste by 10% and reduces the base cooldown of your lifebloom spell by 10%."
 		];
 i++;
 

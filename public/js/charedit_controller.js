@@ -252,8 +252,8 @@ editApp.controller('editctrl', ['$scope', '$http', '$compile', function($scope, 
     // get the talent info
     talent_rank_info = rank[talent][cur_rank];
 
-    // if we're maxed out in talent or it is a 0/1 talent
-    if (talent_rank_info_next == '') {
+    // if we're maxed out in talent or it is a 0/1 talent or have no points in talent
+    if (talent_rank_info_next == '' || actual_cur_rank == 0) {
       return "<span class='pull-left' style='color:red;font-size:14px'>" + talent_info.name + '</span>' +
       '<span class=\'pull-right\' style=\'color:#DAA500;\'> Rank ' + actual_cur_rank + '/' +
       talent_info.max_rank + '</span></br>' +

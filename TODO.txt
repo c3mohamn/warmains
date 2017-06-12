@@ -11,6 +11,7 @@ List of things that could be worked on:
 *4. Char SPECS.
   - add arrows for the talents that are prequisites
   - Add tooltips for spells
+    * UPDATE TOOLTIP DATA FOR WARLOCK AND WARRIOR
 
 5. DO GLYPHS!
 

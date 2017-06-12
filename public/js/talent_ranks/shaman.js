@@ -17,7 +17,7 @@ i++;
 shaman_ranks[i] = [
 "Increases the damage done by your Lightning Bolt, Chain Lightning, Thunderstorm, Lava Burst and Shock spells by 1%.",
 "Increases the damage done by your Lightning Bolt, Chain Lightning, Thunderstorm, Lava Burst and Shock spells by 2%.",
-"Increases the damage done by your Lightning Bolt, Chain Lightning, Thunderstorm, Lava Burst and Lava Lash and Shock spells by 3%.",
+"Increases the damage done by your Lightning Bolt, Chain Lightning, Thunderstorm, Lava Burst and Shock spells by 3%.",
 "Increases the damage done by your Lightning Bolt, Chain Lightning, Thunderstorm, Lava Burst and Shock spells by 4%.",
 "Increases the damage done by your Lightning Bolt, Chain Lightning, Thunderstorm, Lava Burst and Shock spells by 5%."
 		];
@@ -25,21 +25,19 @@ i++;
 
 //Call of Flame - Elemental
 shaman_ranks[i] = [
-"Increases the damage done by your Fire Totems by 5%, and damage done by your Lava Burst spell by 2%.",
-"Increases the damage done by your Fire Totems by 10%, and damage done by your Lava Burst spell by 4%.",
-"Increases the damage done by your Fire Totems by 15%, and damage done by your Lava Burst spell by 6%."
+"Increases the damage done by your Fire Totems and Fire Nova by 5%, and damage done by your Lava Burst spell by 2%.",
+"Increases the damage done by your Fire Totems and Fire Nova by 10%, and damage done by your Lava Burst spell by 4%.",
+"Increases the damage done by your Fire Totems and Fire Nova by 15%, and damage done by your Lava Burst spell by 6%."
 		];
 i++;
-
 
 //Elemental Warding - Elemental
 shaman_ranks[i] = [
-"Reduces damage taken from Fire, Frost and Nature effects by 4%.",
-"Reduces damage taken from Fire, Frost and Nature effects by 7%.",
-"Reduces damage taken from Fire, Frost and Nature effects by 10%."
+"Reduces all damage taken by 2%.",
+"Reduces all damage taken by 4%.",
+"Reduces all damage taken by 6%."
 		];
 i++;
-
 
 //Elemental Devistation - Elemental
 shaman_ranks[i] = [
@@ -65,7 +63,6 @@ shaman_ranks[i] = [
 		];
 i++;
 
-
 //Elemental Fury - Elemental
 shaman_ranks[i] = [
 "Increases the critical strike damage bonus of your Searing, Magma, and Fire Nova Totems and your Fire, Frost, and Nature spells by 20%.",
@@ -78,8 +75,8 @@ i++;
 
 //Improved Fire Nova Totem - Elemental TALENT CHANGED
 shaman_ranks[i] = [
-"Increases the damage done by your Fire Nova Totem by 10% and your Fire Nova totem has a 50% chance to stun all targets damaged by your Fire nova Totem for 2 sec.",
-"Increases the damage done by your Fire Nova Totem by 20% and your Fire Nova totem has a 100% chance to stun all targets damaged by your Fire nova Totem for 2 sec."
+"Increases the damage done by your Fire Nova by 10% and reduces the cooldown by 2 seconds.",
+"Increases the damage done by your Fire Nova by 20% and reduces the cooldown by 4 seconds"
 		];
 i++;
 
@@ -90,8 +87,6 @@ shaman_ranks[i] = [
 "Reduces the pushback suffered from damaging attacks while casting Lightning Bolt, Chain Lightning, Lava Burst and Hex spells by 70%."
 		];
 i++;
-
-
 
 //Elemental Reach Reach - Elemental TALENT CHANGED
 shaman_ranks[i] = [
@@ -106,15 +101,11 @@ shaman_ranks[i] = [
 		];
 i++;
 
-
-
 //Unrelenting Storm - Elemental
 shaman_ranks[i] = [
-"Regenerate mana equal to 2% of your Intellect every 5 sec, even while casting.",
 "Regenerate mana equal to 4% of your Intellect every 5 sec, even while casting.",
-"Regenerate mana equal to 6% of your Intellect every 5 sec, even while casting.",
 "Regenerate mana equal to 8% of your Intellect every 5 sec, even while casting.",
-"Regenerate mana equal to 10% of your Intellect every 5 sec, even while casting."
+"Regenerate mana equal to 12% of your Intellect every 5 sec, even while casting."
 		];
 i++;
 
@@ -138,34 +129,36 @@ i++;
 
 //Elemental Mastery - Elemental
 shaman_ranks[i] = [
-		"<span style=text-align:left;float:left;>Instant</span><span style=text-align:right;float:right;>3 min cooldown</span><br>When activated, this spell gives your next Fire, Frost, or Nature damage spell a 100% critical strike chance and reduces the mana cost by 100%."
+		"<span style=text-align:left;float:left;>Instant</span><span style=text-align:right;float:right;>3 min cooldown</span><br>\
+		When activated, your next Lightning Bolt, Chain Lightning or Lava Burst spell becomes an instant cast spell. In addition, you gain 15% spell haste for 15 seconds, Elemental Master shares a cooldown with Nature's Swiftnes."
 		];
 i++;
 
-//Elemental Shields - Elemental
+//Storm, Earth and Fire
 shaman_ranks[i] = [
-"Reduces all physical damage taken by 2%.",
-"Reduces all physical damage taken by 4%.",
-"Reduces all physical damage taken by 6%."
-		];
-i++;
+"Reduces the cooldown of your Chain Lightning spell by .75 seconds, your Earthbind Totem also has a 33% chance to root targets for 5 seconds when casted and the periodic damage done by your Flame Shock is increased by 20%.",
+"Reduces the cooldown of your Chain Lightning spell by 1.5 seconds, your Earthbind Totem also has a 67% chance to root targets for 5 seconds when casted and the periodic damage done by your Flame Shock is increased by 40%.",
+"Reduces the cooldown of your Chain Lightning spell by 2.5 seconds, your Earthbind Totem also has a 100% chance to root targets for 5 seconds when casted and the periodic damage done by your Flame Shock is increased by 60%."
+];i++;
+
+//Booming Echoes - Elemental
+shaman_ranks[i]=[
+"Reduces the cooldown of your Flame Shock and Frost Shock spells by an additional 1 second, and increases the direct damage done by your Flame Shock and Frost Shock spells by an additional 10%.",
+"Reduces the cooldown of your Flame Shock and Frost Shock spells by an additional 2 second, and increases the direct damage done by your Flame Shock and Frost Shock spells by an additional 20%."
+];i++;
 
 //Elemental Oath - Elemental
 shaman_ranks[i] = [
-"Your spell critical strikes grant your party or raid members within 100 yards Elemental Oath, increasing spell critical strike chance by 3%. Lasts 15 seconds.",
-"Your spell critical strikes grant your party or raid members within 100 yards Elemental Oath, increasing spell critical strike chance by 5%. Lasts 15 seconds.",
+"While Clearcasting from Elemental Focus is active, you deal 5% more spell damage. In addition, party and raid members within 100 yards receive a 3% bonus to their spell critical strike chance.",
+"While Clearcasting from Elemental Focus is active, you deal 10% more spell damage. In addition, party and raid members within 100 yards receive a 5% bonus to their spell critical strike chance."
 		];
 i++;
 
-
-
 //Lightning Overload - Elemental
 shaman_ranks[i] = [
-"Gives your Lightning Bolt and Chain Lightning spells a 4% chance to cast a second, similar spell on the same target at no additional cost that causes half damage and no threat.",
-"Gives your Lightning Bolt and Chain Lightning spells a 8% chance to cast a second, similar spell on the same target at no additional cost that causes half damage and no threat.",
-"Gives your Lightning Bolt and Chain Lightning spells a 12% chance to cast a second, similar spell on the same target at no additional cost that causes half damage and no threat.",
-"Gives your Lightning Bolt and Chain Lightning spells a 16% chance to cast a second, similar spell on the same target at no additional cost that causes half damage and no threat.",
-"Gives your Lightning Bolt and Chain Lightning spells a 20% chance to cast a second, similar spell on the same target at no additional cost that causes half damage and no threat."
+"Gives your Lightning Bolt and Chain Lightning spells a 11% chance to cast a second, similar spell on the same target at no additional cost that causes half damage and no threat.",
+"Gives your Lightning Bolt and Chain Lightning spells a 22% chance to cast a second, similar spell on the same target at no additional cost that causes half damage and no threat.",
+"Gives your Lightning Bolt and Chain Lightning spells a 33% chance to cast a second, similar spell on the same target at no additional cost that causes half damage and no threat."
 		];
 i++;
 
@@ -179,32 +172,32 @@ i++;
 
 //Totem of Wrath - Elemental
 shaman_ranks[i] = [
-	"5% of base mana<br>Instant cast<br>Tools: Fire Totem<br>Summons a Totem of Wrath with 5 health at the feet of the caster. The totem increases the damage done by spells and effects by 280 for all party and raid members, and increases the critical strike chance of spells and effects by 3% against all enemies within 40 yards. Lasts 5 min."
+	"<span style=text-align:left;float:left;>5% of base mana</span><br><span style=text-align:left;float:left;>Instant cast</span><br><span style=text-align:left;float:left;>Tools: Fire Totem</span><br>\
+  Summons a Totem of Wrath with 5 health at the feet of the caster, The totem increases spell power by 100 for all party and raid members, and increases the critical strike chance of all attacks by 3% against all enemies within 40 yards. Lasts 5 minutes."
 		];
 i++;
 
 //Lava Flows - Elemental
 shaman_ranks[i] = [
-"Increases the range of your Flame Shock by 5 yards, and increases the critical strike damage bonus of your Lava Burst spell by an additional 6%.",
-"Increases the range of your Flame Shock by 10 yards, and increases the critical strike damage bonus of your Lava Burst spell by an additional 12%.",
-"Increases the range of your Flame Shock by 15 yards, and increases the critical strike damage bonus of your Lava Burst spell by an additional 24%."
+"Increases the critical strike damage bonus of your Lava Burst spell by an additional 6%, and when your Flame Shock is dispelled your spell casting speed is increased by 10% for 6 seconds.",
+"Increases the critical strike damage bonus of your Lava Burst spell by an additional 12%, and when your Flame Shock is dispelled your spell casting speed is increased by 20% for 6 seconds",
+"Increases the critical strike damage bonus of your Lava Burst spell by an additional 24%, and when your Flame Shock is dispelled your spell casting speed is increased by 30% for 6 seconds"
 		];
 i++;
 
-//Storm, Earth and Fire - Elemental
-shaman_ranks[i] = [
-"Reduces the cooldown of your Chain Lightning spell by .5 sec, your Earth Shock's range is increased by 1 yards and the periodic damage done by your Flame Shock is increased by 10%.",
-"Reduces the cooldown of your Chain Lightning spell by 1 sec, your Earth Shock's range is increased by 2 yards and the periodic damage done by your Flame Shock is increased by 20%.",
-"Reduces the cooldown of your Chain Lightning spell by 1.5 sec, your Earth Shock's range is increased by 3 yards and the periodic damage done by your Flame Shock is increased by 30%.",
-"Reduces the cooldown of your Chain Lightning spell by 2 sec, your Earth Shock's range is increased by 4 yards and the periodic damage done by your Flame Shock is increased by 40%.",
-"Reduces the cooldown of your Chain Lightning spell by 2.5 sec, your Earth Shock's range is increased by 5 yards and the periodic damage done by your Flame Shock is increased by 50%.",
-		];
-i++;
+//Shamanism - Elemental
+shaman_ranks[i]=[
+"Your lightning Bolt and Chain lightning spells gain an additional 4% and your Lava Burst gains an additional 5% of your bonus damage effects.",
+"Your lightning Bolt and Chain lightning spells gain an additional 8% and your Lava Burst gains an additional 10% of your bonus damage effects.",
+"Your lightning Bolt and Chain lightning spells gain an additional 12% and your Lava Burst gains an additional 15% of your bonus damage effects.",
+"Your lightning Bolt and Chain lightning spells gain an additional 16% and your Lava Burst gains an additional 20% of your bonus damage effects.",
+"Your lightning Bolt and Chain lightning spells gain an additional 20% and your Lava Burst gains an additional 25% of your bonus damage effects."
+];i++;
 
 //Thunderstorm - Elemental
 shaman_ranks[i] = [
-	"<span style=text-align:left;float:left;>Instant</span><span style=text-align:right;float:right;>45 sec cooldown</span><br>You call down a bolt of lightning, energizing you and damaging nearby enemies within 10 yards. Restores 8% mana to you and deals 566 to 644 Nature damage to all nearby enemies, knocking them back 20 yards.<br><br>\
-		&nbsp;Talent Has Trainable shaman_rankss"
+	"<span style=text-align:left;float:left;>Instant</span><span style=text-align:right;float:right;>45 sec cooldown</span><br>\
+	You call down a bolt of lightning, energizing you and damaging nearby enemies within 10 yards. Restores 8% mana to you and deals 551 to 629 Nature damage to all nearby enemies, knocking them back 20 yards. This spell is usable while stunned."
 		];
 i++;
 
@@ -217,7 +210,6 @@ shaman_ranks[i] = [
 "Increases the effect of your Strength of Earth and Flametongue Totems by 15%."
 		];
 i++;
-
 
 //Earth's Grasp - Elemental
 shaman_ranks[i] = [
@@ -270,16 +262,12 @@ shaman_ranks[i] = [
 i++;
 
 //Elemental Weapons - Enhancement
-
 shaman_ranks[i] = [
 "Increases the damage caused by your Windfury Weapon effect by 13% increases the spell damage on your Flametongue Weapon by 10% and increases the bonus healing on your Earthliving Weapon by 10%.",
 "Increases the damage caused by your Windfury Weapon effect by 27% increases the spell damage on your Flametongue Weapon by 20% and increases the bonus healing on your Earthliving Weapon by 20%.",
 "Increases the damage caused by your Windfury Weapon effect by 40% increases the spell damage on your Flametongue Weapon by 30% and increases the bonus healing on your Earthliving Weapon by 30%."
 		];
 i++;
-
-
-
 
 //Shamanistic Focus - Enhancement
 shaman_ranks[i] = [
@@ -335,14 +323,11 @@ shaman_ranks[i] = [
 		];
 i++;
 
-
 //Unleashed Rage - Enhancement  - TALENT DIFFERENT - description
 shaman_ranks[i] = [
-"Causes your critical hits with melee attacks to increase all party and raid members' attack power by 2% if within 45 yards of the Shaman. Lasts 10 sec.",
-"Causes your critical hits with melee attacks to increase all party and raid members' attack power by 4% if within 45 yards of the Shaman. Lasts 10 sec.",
-"Causes your critical hits with melee attacks to increase all party and raid members' attack power by 6% if within 45 yards of the Shaman. Lasts 10 sec.",
-"Causes your critical hits with melee attacks to increase all party and raid members' attack power by 8% if within 45 yards of the Shaman. Lasts 10 sec.",
-"Causes your critical hits with melee attacks to increase all party and raid members' attack power by 10% if within 45 yards of the Shaman. Lasts 10 sec."
+"Increases your expertise by 3, and increases all party and raid members' attack power by 4% while within 100 yards of the Shaman.",
+"Increases your expertise by 6, and increases all party and raid members' attack power by 7% while within 100 yards of the Shaman.",
+"Increases your expertise by 9, and increases all party and raid members' attack power by 10% while within 100 yards of the Shaman."
 		];
 i++;
 
@@ -353,6 +338,16 @@ shaman_ranks[i]=[
 "Increases the damage you deal with all weapons by 10%."
 		];
 i++;
+
+// Frozen Power - Enhancement
+shaman_ranks[i]=[
+"Increases the damage done by your Lightning Bolt, Chain Lightning, Lava Lash and Shock spells by 5% \
+on targets afflicted by your Frostbrand Attack effect, and your Frost Shock has a 50% chance to root the target \
+in ice for 5 seconds when used on targets at or further than 15 yards from you.",
+"Increases the damage done by your Lightning Bolt, Chain Lightning, Lava Lash and Shock spells by 10% \
+on targets afflicted by your Frostbrand Attack effect, and your Frost Shock has a 100% chance to root the target \
+in ice for 5 seconds when used on targets at or further than 15 yards from you."
+];i++;
 
 //Dual Wield Specialization - Enhancement
 shaman_ranks[i]=[
@@ -370,15 +365,16 @@ i++;
 
 //Stormstrike - Enhancement - TALENT DIFFERENT - description
 shaman_ranks[i]=[
-		"<span style=text-align:left;float:left;>8% of base mana</span><span style=text-align:right;float:right;>Melee Range</span><br><span style=text-align:left;float:left;>Instant cast</span><span style=text-align:right;float:right;>10 sec cooldown</span><br><span style=text-align:left;float:left;>Requires Melee Weapon</span><BR>Instantly attack with both weapons. In addition, the next 2 sources of Nature damage dealt to the target from the Shaman are increased by 20%. Lasts 12 sec."
+		"<span style=text-align:left;float:left;>8% of base mana</span><span style=text-align:right;float:right;>Melee Range</span><br><span style=text-align:left;float:left;>Instant cast</span><span style=text-align:right;float:right;>8 sec cooldown</span><br><span style=text-align:left;float:left;>Requires Melee Weapon</span><BR>\
+		Instantly attack with both weapons. In addition, the next 4 sources of Nature damage dealt to the target from the Shaman are increased by 20%. Lasts 12 sec."
 		];
 i++;
 
-//Mental Quickness - Enhancement
-shaman_ranks[i]=[
-"Reduces the mana cost of your instant cast Shaman spells by 2% and increases your spell power by an amount equal to 10% of your attack power.",
-"Reduces the mana cost of your instant cast Shaman spells by 4% and increases your spell power by an amount equal to 20% of your attack power.",
-"Reduces the mana cost of your instant cast Shaman spells by 6% and increases your spell power by an amount equal to 30% of your attack power."
+//Static Shock - Enhancement
+shaman_ranks[i] = [
+"You have a 2% chance to hit your target with a Lightning Shield Orb charge when you do damage, and increases the number of charges of your Lightning Shield by 2.",
+"You have a 4% chance to hit your target with a Lightning Shield Orb charge when you do damage, and increases the number of charges of your Lightning Shield by 4.",
+"You have a 6% chance to hit your target with a Lightning Shield Orb charge when you do damage, and increases the number of charges of your Lightning Shield by 6."
 		];
 i++;
 
@@ -396,35 +392,36 @@ shaman_ranks[i]=[
 		];
 i++;
 
-//Static Shock - Enhancement
-shaman_ranks[i] = [
-"You have a 2% chance to hit your target with a Lightning Shield Orb charge when you do damage, and increases the number of charges of your Lightning Shield by 2.",
-"You have a 4% chance to hit your target with a Lightning Shield Orb charge when you do damage, and increases the number of charges of your Lightning Shield by 4.",
-"You have a 6% chance to hit your target with a Lightning Shield Orb charge when you do damage, and increases the number of charges of your Lightning Shield by 6."
+//Mental Quickness - Enhancement
+shaman_ranks[i]=[
+"Reduces the mana cost of your instant cast Shaman spells by 2% and increases your spell power by an amount equal to 10% of your attack power.",
+"Reduces the mana cost of your instant cast Shaman spells by 4% and increases your spell power by an amount equal to 20% of your attack power.",
+"Reduces the mana cost of your instant cast Shaman spells by 6% and increases your spell power by an amount equal to 30% of your attack power."
 		];
 i++;
 
 //Shamanistic Rage - Enhancement
 shaman_ranks[i]=[
-		"<span style=text-align:left;float:left;>Instant</span><span style=text-align:right;float:right;>2 min cooldown</span><br>Reduces all damage taken by 30% and gives your successful melee attacks a chance to regenerate mana equal to 30% of your attack power.  Lasts 15 sec."
+		"<span style=text-align:left;float:left;>Instant</span><span style=text-align:right;float:right;>1 min cooldown</span><br>Reduces all damage taken by 30% and gives your successful melee attacks a chance to regenerate mana equal to 30% of your attack power.  Lasts 15 sec."
 		];
 i++;
 
 //Earthen Power - Enhancement
 shaman_ranks[i] = [
-"Your Earthbind Totem has a 50% chance to also remove all snare effects from you and nearby friendly targets when it pulses.",
-"Your Earthbind Totem has a 100% chance to also remove all snare effects from you and nearby friendly targets when it pulses."
+"Your Earthbind Totem has a 50% chance to also remove all snare effects from you and nearby friendly targets when it pulses, \
+and nearby friendly targets, and your Earth Shock reduces enemy attack speed by an additional 5%.",
+"Your Earthbind Totem has a 100% chance to also remove all snare effects from you and nearby friendly targets when it pulses, \
+and nearby friendly targets, and your Earth Shock reduces enemy attack speed by an additional 10%."
 		];
 i++;
 
 //Maelstrom Weapon - Enhancement - TALENT DIFFERENT - chance of proc
 shaman_ranks[i] = [
 "When you deal damage with a melee weapon, you have a chance to reduce the cast time of your next Lightning Bolt, Chain Lightning, Lesser Healing Wave, Chain Heal or Healing Wave Spell by 20%. Stacks up to 5 times. Lasts 30 seconds.",
-"When you deal damage with a melee weapon, you have a chance (higher than shaman_ranks 1) to reduce the cast time of your next Lightning Bolt, Chain Lightning, Lesser Healing Wave, Chain Heal or Healing Wave Spell by 20%. Stacks up to 5 times. Lasts 30 seconds.",
-"When you deal damage with a melee weapon, you have a chance (higher than shaman_ranks 2) to reduce the cast time of your next Lightning Bolt, Chain Lightning, Lesser Healing Wave, Chain Heal or Healing Wave Spell by 20%. Stacks up to 5 times. Lasts 30 seconds.",
-"When you deal damage with a melee weapon, you have a chance (higher than shaman_ranks 3) to reduce the cast time of your next Lightning Bolt, Chain Lightning, Lesser Healing Wave, Chain Heal or Healing Wave Spell by 20%. Stacks up to 5 times. Lasts 30 seconds.",
-"When you deal damage with a melee weapon, you have a chance (higher than shaman_ranks 4) to reduce the cast time of your next Lightning Bolt, Chain Lightning, Lesser Healing Wave, Chain Heal or Healing Wave Spell by 20%. Stacks up to 5 times. Lasts 30 seconds."
-
+"When you deal damage with a melee weapon, you have a chance (higher rank 1) to reduce the cast time of your next Lightning Bolt, Chain Lightning, Lesser Healing Wave, Chain Heal or Healing Wave Spell by 20%. Stacks up to 5 times. Lasts 30 seconds.",
+"When you deal damage with a melee weapon, you have a chance (higher rank 2) to reduce the cast time of your next Lightning Bolt, Chain Lightning, Lesser Healing Wave, Chain Heal or Healing Wave Spell by 20%. Stacks up to 5 times. Lasts 30 seconds.",
+"When you deal damage with a melee weapon, you have a chance (higher rank 3) to reduce the cast time of your next Lightning Bolt, Chain Lightning, Lesser Healing Wave, Chain Heal or Healing Wave Spell by 20%. Stacks up to 5 times. Lasts 30 seconds.",
+"When you deal damage with a melee weapon, you have a chance (higher rank 4) to reduce the cast time of your next Lightning Bolt, Chain Lightning, Lesser Healing Wave, Chain Heal or Healing Wave Spell by 20%. Stacks up to 5 times. Lasts 30 seconds."
 		];
 i++;
 
@@ -433,7 +430,6 @@ shaman_ranks[i] = [
 	"<span style=text-align:left;float:left;>12% of base mana</span><span style=text-align:right;float:right;>30 yd range</span><br><span style=text-align:left;float:left;>Instant</span><span style=text-align:right;float:right;>3 min cooldown</span><br>Summons two Spirit Wolves under the command of the Shaman, lasting 45 sec."
 		];
 i++;
-
 
 //RESTORATION TREE------------------------------------------------------------------------------->
 //Improved Healing Wave - Restoration
@@ -459,16 +455,16 @@ i++;
 
 //Improved Reincarnation - Restoration
 shaman_ranks[i]=[
-"Reduces the cooldown of your Reincarnation spell by 10 min and increases the amount of health and mana you reincarnate with by an additional 10%.",
-"Reduces the cooldown of your Reincarnation spell by 20 min and increases the amount of health and mana you reincarnate with by an additional 20%."
+"Reduces the cooldown of your Reincarnation spell by 7 min and increases the amount of health and mana you reincarnate with by an additional 10%.",
+"Reduces the cooldown of your Reincarnation spell by 15 min and increases the amount of health and mana you reincarnate with by an additional 20%."
 		];
 i++;
 
-//Ancestral Healing - Restoration
+//Healing Grace - Restoration
 shaman_ranks[i]=[
-"Increases your target's armor value by 8% for 15 sec after getting a critical effect from one of your healing spells.",
-"Increases your target's armor value by 16% for 15 sec after getting a critical effect from one of your healing spells.",
-"Increases your target's armor value by 25% for 15 sec after getting a critical effect from one of your healing spells."
+"Reduces the threat generated by your healing spells by 5% and reduces the chance your spells will be dispelled by 10%.",
+"Reduces the threat generated by your healing spells by 10% and reduces the chance your spells will be dispelled by 20%.",
+"Reduces the threat generated by your healing spells by 15% and reduces the chance your spells will be dispelled by 30%."
 		];
 i++;
 
@@ -504,24 +500,21 @@ shaman_ranks[i]=[
 		];
 i++;
 
-//Healing Grace - Restoration
+//Ancestral Healing - Restoration
 shaman_ranks[i]=[
-"Reduces the threat generated by your healing spells by 5% and reduces the chance your spells will be dispelled by 10%.",
-"Reduces the threat generated by your healing spells by 10% and reduces the chance your spells will be dispelled by 20%.",
-"Reduces the threat generated by your healing spells by 15% and reduces the chance your spells will be dispelled by 30%."
+"Reduces the physical damage taken by 3% for 15 sec after getting a critical effect from one of your healing spells.",
+"Reduces the physical damage taken by 6% for 15 sec after getting a critical effect from one of your healing spells.",
+"Reduces the physical damage taken by 9% for 15 sec after getting a critical effect from one of your healing spells."
 		];
 i++;
 
-//Improved Mana Spring Totem - Restoration
+//Restorative Totems - Restoration
 shaman_ranks[i]=[
-"Increases the effect of your Mana Spring and Healing Stream Totems by 5%.",
-"Increases the effect of your Mana Spring and Healing Stream Totems by 10%.",
-"Increases the effect of your Mana Spring and Healing Stream Totems by 15%.",
-"Increases the effect of your Mana Spring and Healing Stream Totems by 20%.",
-"Increases the effect of your Mana Spring and Healing Stream Totems by 25%."
+"Increases the effect of your Mana Spring Totem by 7%, and increases the amount healed by your Healing Stream Totem by 15%.",
+"Increases the effect of your Mana Spring Totem by 12%, and increases the amount healed by your Healing Stream Totem by 30%.",
+"Increases the effect of your Mana Spring Totem by 20%, and increases the amount healed by your Healing Stream Totem by 45%."
 		];
 i++;
-
 
 //Tidal Mastery - Restoration
 shaman_ranks[i]=[
@@ -535,9 +528,9 @@ i++;
 
 //Healing Way - Restoration
 shaman_ranks[i]=[
-"Your Healing Wave spells have a 33% chance to increase the effect of subsequent Healing Wave spells on that target by 6% for 15 sec. This effect will stack up to 3 times.",
-"Your Healing Wave spells have a 66% chance to increase the effect of subsequent Healing Wave spells on that target by 6% for 15 sec. This effect will stack up to 3 times.",
-"Your Healing Wave spells have a 100% chance to increase the effect of subsequent Healing Wave spells on that target by 6% for 15 sec. This effect will stack up to 3 times."
+"Increases the amount healed by your Healing Wave spell by 8%.",
+"Increases the amount healed by your Healing Wave spell by 16%.",
+"Increases the amount healed by your Healing Wave spell by 25%."
 		];
 i++;
 
@@ -567,18 +560,18 @@ i++;
 
 //Nature's Guardian - Restoration
 shaman_ranks[i]=[
-"Whenever a damaging attack is taken that reduces you below 30% health, you have a 10% chance to heal 10% of your total health and reduce your threat level on that target. 8 second cooldown.",
-"Whenever a damaging attack is taken that reduces you below 30% health, you have a 20% chance to heal 10% of your total health and reduce your threat level on that target. 8 second cooldown.",
-"Whenever a damaging attack is taken that reduces you below 30% health, you have a 30% chance to heal 10% of your total health and reduce your threat level on that target. 8 second cooldown.",
-"Whenever a damaging attack is taken that reduces you below 30% health, you have a 40% chance to heal 10% of your total health and reduce your threat level on that target. 8 second cooldown.",
-"Whenever a damaging attack is taken that reduces you below 30% health, you have a 50% chance to heal 10% of your total health and reduce your threat level on that target. 8 second cooldown."
+"Whenever a damaging attack is taken that reduces you below 30% health, your maximum health is increased by 3% for 10 seconds and reduce your threat level on that target. 30 second cooldown.",
+"Whenever a damaging attack is taken that reduces you below 30% health, your maximum health is increased by 6% for 10 seconds and reduce your threat level on that target. 30 second cooldown.",
+"Whenever a damaging attack is taken that reduces you below 30% health, your maximum health is increased by 9% for 10 seconds and reduce your threat level on that target. 30 second cooldown.",
+"Whenever a damaging attack is taken that reduces you below 30% health, your maximum health is increased by 12% for 10 seconds and reduce your threat level on that target. 30 second cooldown.",
+"Whenever a damaging attack is taken that reduces you below 30% health, your maximum health is increased by 15% for 10 seconds and reduce your threat level on that target. 30 second cooldown."
 		];
 i++;
 
-
 //Mana Tide Totem - Restoration
 shaman_ranks[i]=[
-"3% of base mana<br><span style=text-align:left;float:left;>Instant cast</span><span style=text-align:right;float:right;>5 min cooldown</span><br>Tools: Water Totem<br>Summons a Mana Tide Totem with 5 health at the feet of the caster for 12 sec that restores 6% of total mana every 3 seconds to group members within 30 yards."
+"<span style=text-align:left;float:left;>Instant cast</span><span style=text-align:right;float:right;>5 min cooldown</span><br><span style=text-align:left;float:left;>Tools: Water Totem</span><br>\
+Summons a Mana Tide Totem with 10% of the caster's health at the feet of the caster for 12 seconds that restores 6% of total mana every 3 seconds to group members within 30 yards."
 		];
 i++;
 
@@ -602,7 +595,6 @@ shaman_ranks[i]=[
 		];
 i++;
 
-
 //Nature's Blessing - Restoration
 shaman_ranks[i]=[
 "Increases your healing by an amount equal to 5% of your Intellect.",
@@ -622,8 +614,9 @@ i++;
 
 //Earth Shield - Restoration
 shaman_ranks[i]=[
-"<span style=text-align:left;float:left;>15% of base mana</span><span style=text-align:right;float:right;>40 yd range</span><br>Instant Cast<br>Protects the target with an earthen shield, reducing casting or channeling time lost when damaged by 30% and causing attacks to heal the shielded target for 150. This effect can only occur once every few seconds. 6 charges. Lasts 10 min. Earth Shield can only be placed on one target at a time and only one Elemental Shield can be active on a target at a time.<br><br>\
-		&nbsp;Talent Has Trainable shaman_rankss"
+"<span style=text-align:left;float:left;>15% of base mana</span><span style=text-align:right;float:right;>40 yd range</span><br><span style=text-align:left;float:left;>Instant Cast</span><br>\
+Protects the target with an earthen shield, reducing casting or channeling time lost when damaged by 30% and causing attacks to heal the shielded target for 150. This effect can only occur once every few seconds. \
+6 charges. Lasts 10 minutes. Earth Shield can only be placed on one target at a time and only one Elemental Shield can be active on a target at a time."
 				];
 i++;
 
@@ -634,19 +627,20 @@ shaman_ranks[i]=[
 		];
 i++;
 
-//Tidal Waves - Restoration   - TALENT DIFFERENT - description TALENT CHANGED
+//Tidal Waves - Restoration
 shaman_ranks[i]=[
-"You have a 20% chance after you cast Chain Heal or Riptide to lower the cast time of your next 2 Lesser Healing Wave or Healing Wave spells by 30%. In addition, your Healing Wave gains an additional 4% of your bonus healing effects and your Lesser Healing Wave gains an additional 2% of your bonus healing effects.",
-"You have a 40% chance after you cast Chain Heal or Riptide to lower the cast time of your next 2 Lesser Healing Wave or Healing Wave spells by 30%. In addition, your Healing Wave gains an additional 8% of your bonus healing effects and your Lesser Healing Wave gains an additional 4% of your bonus healing effects.",
-"You have a 60% chance after you cast Chain Heal or Riptide to lower the cast time of your next 2 Lesser Healing Wave or Healing Wave spells by 30%. In addition, your Healing Wave gains an additional 12% of your bonus healing effects and your Lesser Healing Wave gains an additional 6% of your bonus healing effects.",
-"You have a 80% chance after you cast Chain Heal or Riptide to lower the cast time of your next 2 Lesser Healing Wave or Healing Wave spells by 30%. In addition, your Healing Wave gains an additional 16% of your bonus healing effects and your Lesser Healing Wave gains an additional 8% of your bonus healing effects.",
-"You have a 100% chance after you cast Chain Heal or Riptide to lower the cast time of your next 2 Lesser Healing Wave or Healing Wave spells by 30%. In addition, your Healing Wave gains an additional 20% of your bonus healing effects and your Lesser Healing Wave gains an additional 10% of your bonus healing effects."
+"When you cast Chain Heal or Riptide, you have a 20% chance to lower the cast time of your Healing Wave spell by 30% and increases the critical effect chance of your Lesser Healing Wave spell by 25%, until two such spells have been cast. In addition, your Healing Wave gains an additional 4% of your bonus healing effects and your Lesser Healing Wave gains an additional 2% of your bonus healing effects.",
+"When you cast Chain Heal or Riptide, you have a 40% chance to lower the cast time of your Healing Wave spell by 30% and increases the critical effect chance of your Lesser Healing Wave spell by 25%, until two such spells have been cast. In addition, your Healing Wave gains an additional 8% of your bonus healing effects and your Lesser Healing Wave gains an additional 4% of your bonus healing effects.",
+"When you cast Chain Heal or Riptide, you have a 60% chance to lower the cast time of your Healing Wave spell by 30% and increases the critical effect chance of your Lesser Healing Wave spell by 25%, until two such spells have been cast. In addition, your Healing Wave gains an additional 12% of your bonus healing effects and your Lesser Healing Wave gains an additional 6% of your bonus healing effects.",
+"When you cast Chain Heal or Riptide, you have a 80% chance to lower the cast time of your Healing Wave spell by 30% and increases the critical effect chance of your Lesser Healing Wave spell by 25%, until two such spells have been cast. In addition, your Healing Wave gains an additional 16% of your bonus healing effects and your Lesser Healing Wave gains an additional 8% of your bonus healing effects.",
+"When you cast Chain Heal or Riptide, you have a 100% chance to lower the cast time of your Healing Wave spell by 30% and increases the critical effect chance of your Lesser Healing Wave spell by 25%, until two such spells have been cast. In addition, your Healing Wave gains an additional 20% of your bonus healing effects and your Lesser Healing Wave gains an additional 10% of your bonus healing effects."
 		];
 i++;
 
 //Riptide - Restoration
 shaman_ranks[i]=[
-"<span style=text-align:left;float:left;>18% of base mana</span><span style=text-align:right;float:right;>40 yd range</span><br><span style=text-align:left;float:left;>Instant cast</span><span style=text-align:right;float:right;>6 sec cooldown</span><br>Heals a friendly target for 639 to 691 and another 500 over 15 sec. Your next Chain heal cast on that primary target within 15 sec will consume the healing over time effect and increase the amount of the Chain Heal by 25%."
+"<span style=text-align:left;float:left;>18% of base mana</span><span style=text-align:right;float:right;>40 yd range</span><br><span style=text-align:left;float:left;>Instant cast</span><span style=text-align:right;float:right;>6 sec cooldown</span><br>\
+Heals a friendly target for 639 to 691 and another 665 over 15 sec. Your next Chain heal cast on that primary target within 15 sec will consume the healing over time effect and increase the amount of the Chain Heal by 25%."
 				];
 i++;
 

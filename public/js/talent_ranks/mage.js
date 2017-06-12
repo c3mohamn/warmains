@@ -234,9 +234,9 @@ i++;
 
 
 
-//Arcane Barrage - Arcane TALENT DIFFERENT has trainable mage_rankss
+//Arcane Barrage - Arcane
 mage_ranks[i] = [
-		"<span style=text-align:left;float:left;>18% of base mana</span><span style=text-align:right;float:right;>30 yd range</span><br><span style=text-align:left;float:left;>Instant cast</span><span style=text-align:right;float:right;>3 sec cooldown</span><BR>Launches several missiles at the enemy target, causing 936 to 1144 Arcane damage.<br><br>"
+		"<span style=text-align:left;float:left;>18% of base mana</span><span style=text-align:right;float:right;>30 yd range</span><br><span style=text-align:left;float:left;>Instant cast</span><span style=text-align:right;float:right;>3 sec cooldown</span><br>Launches several missiles at the enemy target, causing 386 to 470 Arcane damage."
 		];
 i++;
 
@@ -427,7 +427,7 @@ mage_ranks[i] = [
 //Dragon's Breath - Fire TALENT DIFFERENT has trainable mage_rankss
 
 mage_ranks[i] = [
-		"<span style=text-align:left;float:left;>31% of base mana</span><BR><span style=text-align:left;float:left;>Instant cast</span><span style=text-align:right;float:right;>20 sec cooldown</span><br>Targets in a cone in front of the caster take 370 to 430 Fire damage and are Disoriented for 5 sec. Any direct damaging attack will revive targets. Turns off your attack when used.<br><br>"
+		"<span style=text-align:left;float:left;>31% of base mana</span><BR><span style=text-align:left;float:left;>Instant cast</span><span style=text-align:right;float:right;>20 sec cooldown</span><br>Targets in a cone in front of the caster take 370 to 430 Fire damage and are Disoriented for 5 sec. Any direct damaging attack will revive targets. Turns off your attack when used."
 		];
 i++;
 
@@ -452,7 +452,7 @@ i++;
 
 //Living Bomb - Fire TALENT DIFFERENT has trainable mage_rankss
 mage_ranks[i] = [
-		"100 yd range</span><br><br><span style=text-align:left;float:left;>Instant</span><BR>The target becomes a Living Bomb, taking 1380 Fire Damage over 12 sec. After 12 sec or when the spell is dispelled, the target explodes dealing 306 Fire damage to all enemies within 10 yards. This spell can only affect one target at a time.<br><br>"
+		"<span style=text-align:left;float:left;>22% of base mana</span><span style=text-align:right;float:right;>35 yd range</span><br><span style=text-align:left;float:left;>Instant cast</span><br>The target becomes a Living Bomb, taking 612 Fire damage over 12 seconds. After 12 seconds or when the spell is dispelled, the target explodes dealing 306 Fire damage to all enemies."
 		];
 i++;
 
@@ -653,7 +653,7 @@ i++;
 
 //Summon Water Elemental - Frost TALENT DIFFERENT
 mage_ranks[i]=[
-		"16% of base mana<br><span style=text-align:left;float:left;>Instant cast</span><span style=text-align:right;float:right;>3 min cooldown</span><br>Summon a Water Elemental to fight for the caster for 45 sec."
+		"<span style=text-align:left;float:left;>16% of base mana</span><br><span style=text-align:left;float:left;>Instant cast</span><span style=text-align:right;float:right;>3 min cooldown</span><br>Summon a Water Elemental to fight for the caster for 45 sec."
 		];
 i++;
 

@@ -48,10 +48,6 @@ paladin_ranks[i] = [
 		];
 i++;
 
-
-
-
-
 //Aura Mastery - Retribution
 paladin_ranks[i]=[
 		"Increases the radius of your Auras to 40 yards."
@@ -70,8 +66,8 @@ i++;
 
 //Improved Lay on Hands - Holy
 paladin_ranks[i] = [
-"Gives the target of your Lay on Hands spell a 25% bonus to their armor value from items for 15 sec. In addition, the cooldown for your Lay on Hands spell is reduced by 2 min.",
-"Gives the target of your Lay on Hands spell a 50% bonus to their armor value from items for 15 sec. In addition, the cooldown for your Lay on Hands spell is reduced by 4 min."
+"Grants the target of your Lay on Hands spell 10% reduced physical damage taken for 15 sec. In addition, the cooldown for your Lay on Hands spell is reduced by 2 min.",
+"Grants the target of your Lay on Hands spell 20% reduced physical damage taken for 15 sec. In addition, the cooldown for your Lay on Hands spell is reduced by 4 min."
 		];
 i++;
 
@@ -217,19 +213,13 @@ i++;
 
 // PROTECTION TREE--------------------------------------------------------------------------
 
-
-//Blessing of Kings - Retribution TALENT DIFFERENT
-paladin_ranks[i]=[
-		"<span style=text-align:left;float:left;>6% of base mana</span><span style=text-align:right;float:right;>30 yd range</span><br>Instant cast<br>Places a Blessing on the friendly target, increasing total stats by 2% for 10 min. Players may only have one Blessing on them per Paladin at any one time."
-		];
-i++;
-
-//Improved Blessing of Kings - Protection
+//Divinity - Protection
 paladin_ranks[i] = [
-"Increases the effectiveness of Blessing of Kings by an additional 2%.",
-"Increases the effectiveness of Blessing of Kings by an additional 4%.",
-"Increases the effectiveness of Blessing of Kings by an additional 6%.",
-"Increases the effectiveness of Blessing of Kings by an additional 8%."
+"Increases all healing done by you and all healing effects on you by 1%.",
+"Increases all healing done by you and all healing effects on you by 2%.",
+"Increases all healing done by you and all healing effects on you by 3%.",
+"Increases all healing done by you and all healing effects on you by 4%.",
+"Increases all healing done by you and all healing effects on you by 5%."
 		];
 i++;
 
@@ -243,7 +233,6 @@ paladin_ranks[i] = [
 		];
 i++;
 
-
 //Stoicism - Protection
 paladin_ranks[i] = [
 "Reduces the duration of all Stun effects by an additional 10% and reduces the chance your spells will be dispelled by an additional 10%.",
@@ -252,15 +241,12 @@ paladin_ranks[i] = [
 		];
 i++;
 
-
 //Guardian's Favor - Protection
 paladin_ranks[i] = [
 "Reduces the cooldown of your Hand of Protection by 60 sec and increases the duration of your Hand of Freedom by 2 sec.",
 "Reduces the cooldown of your Hand of Protection by 120 sec and increases the duration of your Hand of Freedom by 4 sec."
 		];
 i++;
-
-
 
 //Anticipation - Protection
 paladin_ranks[i] = [
@@ -272,7 +258,10 @@ paladin_ranks[i] = [
 		];
 i++;
 
-
+//Divine Sacrifice - Protection
+paladin_ranks[i] = [
+"<span style=text-align:left;float:left;>Instant</span><span style=text-align:right;float:right;>2 min cooldown</span><br>When Divine Sacrifice is activated, your party and raid members within 30 yards take 10% reduced damage for 6 seconds. In addition, increases the duration of your Sacred Shield by 50% and the amount absorbed by 10%."
+];i++;
 
 //Improved Righteous Fury - Protection
 paladin_ranks[i] = [
@@ -294,8 +283,8 @@ i++;
 
 //Divine Guardian - Protection
 paladin_ranks[i] = [
-"While Divine Shield is active 15% of all damage taken by party or raid members within 30 yards is redirected to the Paladin.",
-"While Divine Shield is active 30% of all damage taken by party or raid members within 30 yards is redirected to the Paladin."
+"When Divine Sacrifice is activated, your party and raid members within 30 yards take 10% reduced damage for 6 seconds. In addition, increases the duration of your Sacred Shield by 50% and the amount absorbed by 10%.",
+"When Divine Sacrifice is activated, your party and raid members within 30 yards take 20% reduced damage for 6 seconds. In addition, increases the duration of your Sacred Shield by 100% and the amount absorbed by 20%."
 		];
 i++;
 
@@ -303,8 +292,7 @@ i++;
 //Improved Hammer of Justice - Protection
 paladin_ranks[i] = [
 "Decreases the cooldown of your Hammer of Justice spell by 10 sec.",
-"Decreases the cooldown of your Hammer of Justice spell by 20 sec.",
-"Decreases the cooldown of your Hammer of Justice spell by 30 sec."
+"Decreases the cooldown of your Hammer of Justice spell by 20 sec."
 		];
 i++;
 
@@ -318,7 +306,7 @@ i++;
 
 //Blessing of Sanctuary - Protection TALENT DIFFERENT
 paladin_ranks[i] = [
-		"<span style=text-align:left;float:left;>7% of base mana</span><span style=text-align:right;float:right;>30 yd range</span><br>Instant cast<br>Places a Blessing on the friendly target, reducing damage taken from all sources by 3% for 10 min.  In addition, when the target blocks, parries, or dodges a melee attack the target will gain 10 rage, 20 runic power, or 2% of the maximum mana. Players may only have one Blessing on them per Paladin at any one time."
+		"<span style=text-align:left;float:left;>7% of base mana</span><span style=text-align:right;float:right;>30 yd range</span><br><span style=text-align:left;float:left;>Instant</span><br>Places a Blessing on the friendly target, reducing damage taken from all sources by 3% for 10 min.  In addition, when the target blocks, parries, or dodges a melee attack the target will gain 10 rage, 20 runic power, or 2% of the maximum mana. Players may only have one Blessing on them per Paladin at any one time."
 		];
 i++;
 
@@ -334,25 +322,28 @@ i++;
 
 //Sacred Duty - Protection
 paladin_ranks[i] = [
-		"Increases your total Stamina by 3%, reduces the cooldown of your Divine Shield spell by 30 sec and reduces the attack speed penalty by 50%.",
-		"Increases your total Stamina by 6%, reduces the cooldown of your Divine Shield spell by 60 sec and reduces the attack speed penalty by 100%."
+		"Increases your total Stamina by 2%, reduces the cooldown of your Divine Shield spell by 30 seconds.",
+		"Increases your total Stamina by 4%, reduces the cooldown of your Divine Shield spell by 60 seconds."
 		];
 i++;
 
 //One-Handed Weapon Specialization - Protection
 paladin_ranks[i]=[
-"Increases all damage you deal when a one-handed melee weapon is equipped by 2%.",
 "Increases all damage you deal when a one-handed melee weapon is equipped by 4%.",
-"Increases all damage you deal when a one-handed melee weapon is equipped by 6%.",
-"Increases all damage you deal when a one-handed melee weapon is equipped by 8%.",
+"Increases all damage you deal when a one-handed melee weapon is equipped by 7%.",
 "Increases all damage you deal when a one-handed melee weapon is equipped by 10%."
 			];
 i++;
 
+//Spiritual Attunement - Protection
+paladin_ranks[i]=[
+"A passive ability that gives the Paladin mana when healed by other friendly targets' spells. The amount of mana gained is equal to 5% of the amount healed.",
+"A passive ability that gives the Paladin mana when healed by other friendly targets' spells. The amount of mana gained is equal to 10% of the amount healed."
+];i++;
 
 //Holy Shield - Protection TALENT DIFFERENT has trainable paladin_rankss
 paladin_ranks[i] = [
-"10% of base mana<br><span style=text-align:left;float:left;>Instant cast</span><span style=text-align:right;float:right;>8 sec cooldown</span><br>Requires Shields<br>Increases chance to block by 30% for 10 sec and deals 211 Holy damage for each attack blocked while active. Each block expends a charge. 8 charges.<br><br>"
+"<span style=text-align:left;float:left;>10% of base mana</span><br><span style=text-align:left;float:left;>Instant cast</span><span style=text-align:right;float:right;>8 sec cooldown</span><br><span style=text-align:left;float:left;>Requires Shields</span><br>Increases chance to block by 30% for 10 sec and deals 211 Holy damage for each attack blocked while active. Each block expends a charge. 8 charges."
 		];
 i++;
 
@@ -405,16 +396,16 @@ i++;
 
 //Shield of the Templar - Protection TALENT CHANGED
 paladin_ranks[i]=[
-"Reduces all damage taken by 1% and increases the damage of your Holy Shield, Avenger's Shield and Shield of the Righteousness spells by 10%.",
-"Reduces all damage taken by 2% and increases the damage of your Holy Shield, Avenger's Shield and Shield of the Righteousness spells by 20%.",
-"Reduces all damage taken by 3% and increases the damage of your Holy Shield, Avenger's Shield and Shield of the Righteousness spells by 30%."
+"Reduces all damage taken by 1% and grants your Avenger's Shield a 33% chance to silence your targetsfor 3 seconds.",
+"Reduces all damage taken by 2% and grants your Avenger's Shield a 66% chance to silence your targetsfor 3 seconds.",
+"Reduces all damage taken by 3% and grants your Avenger's Shield a 100% chance to silence your targetsfor 3 seconds."
 			];
 i++;
 
 //Judgements of the Just - Holy
 paladin_ranks[i] = [
-"Your Judgement spells also reduce the melee attack speed of the target by 10%.",
-"Your Judgement spells also reduce the melee attack speed of the target by 20%."
+"Reduces the cooldown of your Hammer of Justice by 5 seconds, increases the duration of your Seal of Justice effect by 0.5 second and your Judgement spells also reduce the melee attack speed of the target by 10%.",
+"Reduces the cooldown of your Hammer of Justice by 10 seconds, increases the duration of your Seal of Justice effect by 1 second and your Judgement spells also reduce the melee attack speed of the target by 20%."
 		];
 i++;
 
@@ -473,8 +464,8 @@ i++;
 
 //Vindication - Retribution
 paladin_ranks[i]=[
-"Gives the Paladin's damaging attacks a chance to reduce the target's attributes by 10% for 15 sec.",
-"Gives the Paladin's damaging attacks a chance to reduce the target's attributes by 20% for 15 sec."
+"Gives the Paladin's damaging attacks a chance to reduce the target's attack power by 23 for 10 sec.",
+"Gives the Paladin's damaging attacks a chance to reduce the target's attack power by 46 for 10 sec."
 		];
 i++;
 
@@ -490,7 +481,7 @@ i++;
 
 //Seal of Command - Retribution TALENT DIFFERENT
 paladin_ranks[i]=[
-"14% of base mana<br/>Instant cast<br/>Gives the Paladin a chance to deal 62 to 64 additional Holy damage. Only one Seal can be active on the Paladin at any one time. Lasts 2 min.<br/><br/>	Unleasing this Seal's energy will judge an enemy, instantly causing 145 to 146 Holy damage. This attack will always be a critical strike if the target is stunned or incapacitated.<br><br>"
+"<span style=text-align:left;float:left;>14% of base mana</span><br/><span style=text-align:left;float:left;>Instant cast</span><br/>Gives the Paladin a chance to deal 62 to 64 additional Holy damage. Only one Seal can be active on the Paladin at any one time. Lasts 2 min.<br/><br/>	Unleasing this Seal's energy will judge an enemy, instantly causing 145 to 146 Holy damage. This attack will always be a critical strike if the target is stunned or incapacitated.<br><br>"
 		];
 i++;
 
@@ -510,13 +501,11 @@ i++;
 
 //Sanctified Seals - Retribution
 paladin_ranks[i]=[
-		"Increases your chance to critically hit with all spells and attacks by 1% and reduces the chance your Seals will be dispelled by 33%.",
-		"Increases your chance to critically hit with all spells and attacks by 2% and reduces the chance your Seals will be dispelled by 66%.",
-		"Increases your chance to critically hit with all spells and attacks by 3% and reduces the chance your Seals will be dispelled by 100%."
+		"Increases your chance to critically hit with all spells and attacks by 1% and increases the damage caused by Exorcism and Crusader Strike by 5%.",
+		"Increases your chance to critically hit with all spells and attacks by 2% and increases the damage caused by Exorcism and Crusader Strike by 10%.",
+		"Increases your chance to critically hit with all spells and attacks by 3% and increases the damage caused by Exorcism and Crusader Strike by 15%."
 		];
 i++;
-
-
 
 //Crusade - Retribution
 paladin_ranks[i]=[
@@ -537,15 +526,7 @@ i++;
 
 //Sanctified Retribution - Holy
 paladin_ranks[i] = [
-		"Damage caused by targets affected by Retribution Aura is increased by 2%."
-		];
-i++;
-
-
-//Divine Purpose - Retribution
-paladin_ranks[i]=[
-"Reduces your chance to be hit by spells and ranged attacks by 2% and gives your Hand of Freedom spell a 50% chance to remove any Stun effects on the target.",
-"Reduces your chance to be hit by spells and ranged attacks by 4% and gives your Hand of Freedom spell a 100% chance to remove any Stun effects on the target."
+"Increases the damage caused by Retribution Aura by 50% and all damage caused by friendly targets affected by any of your Auras is increased by 3%."
 		];
 i++;
 
@@ -557,17 +538,17 @@ paladin_ranks[i]=[
 		];
 i++;
 
-//Improved Retribution Aura - Retribution
+//Divine Purpose - Retribution
 paladin_ranks[i]=[
-"Increases the damage done by your Retribution Aura by 25%.",
-"Increases the damage done by your Retribution Aura by 50%."
+"Reduces your chance to be hit by spells and ranged attacks by 2% and gives your Hand of Freedom spell a 50% chance to remove any Stun effects on the target.",
+"Reduces your chance to be hit by spells and ranged attacks by 4% and gives your Hand of Freedom spell a 100% chance to remove any Stun effects on the target."
 		];
 i++;
 
 //The Art of War - Retribution
 paladin_ranks[i]=[
-"Increases the critical strike damage of your Judgement, Crusader Strike and Divine Storm abilities by 10% and when these abilities critically hit the cast time of your next Flash of Light is reduced by 0.75 sec.",
-"Increases the critical strike damage of your Judgement, Crusader Strike and Divine Storm abilities by 20% and when these abilities critically hit the cast time of your next Flash of Light becomes instant cast."
+"Increases the critical strike damage of your Judgement, Crusader Strike and Divine Storm abilities by 10% and when your melee attacks critically hit the cast time of your next Flash of Light is reduced by 0.75 sec.",
+"Increases the critical strike damage of your Judgement, Crusader Strike and Divine Storm abilities by 20% and when your melee attacks critically hit the cast time of your next Flash of Light becomes instant cast."
 		];
 i++;
 
@@ -577,27 +558,19 @@ paladin_ranks[i]=[
 		];
 i++;
 
-
 //Judgements of the Wise- Retribution
 paladin_ranks[i]=[
-"Your Judgement spells have a 33% chance to grant the Replenishment effect to up to 10 party or raid members mana regeneration equal to 0.25% of their maximum mana per second, and to immediately grant you 15% of your base mana.",
-"Your Judgement spells have a 66% chance to grant the Replenishment effect to up to 10 party or raid members mana regeneration equal to 0.25% of their maximum mana per second, and to immediately grant you 15% of your base mana.",
-"Your Judgement spells have a 100% chance to grant the Replenishment effect to up to 10 party or raid members mana regeneration equal to 0.25% of their maximum mana per second, and to immediately grant you 15% of your base mana."
+"Your Judgement spells have a 33% chance to grant the Replenishment effect to up to 10 party or raid members mana regeneration equal to 1% of their maximum mana per second, and to immediately grant you 25% of your base mana.",
+"Your Judgement spells have a 66% chance to grant the Replenishment effect to up to 10 party or raid members mana regeneration equal to 1% of their maximum mana per second, and to immediately grant you 25% of your base mana.",
+"Your Judgement spells have a 100% chance to grant the Replenishment effect to up to 10 party or raid members mana regeneration equal to 1% of their maximum mana per second, and to immediately grant you 25% of your base mana."
 		];
 i++;
 
-
-
-
-
-
 //Fanaticism - Retribution
 paladin_ranks[i]=[
-		"Increases the critical strike chance of all Judgements capable of a critical hit by 5% and reduces threat caused by all actions by 6% except when under the effects of Righteous Fury.",
-		"Increases the critical strike chance of all Judgements capable of a critical hit by 10% and reduces threat caused by all actions by 12% except when under the effects of Righteous Fury.",
-		"Increases the critical strike chance of all Judgements capable of a critical hit by 15% and reduces threat caused by all actions by 18% except when under the effects of Righteous Fury.",
-		"Increases the critical strike chance of all Judgements capable of a critical hit by 20% and reduces threat caused by all actions by 24% except when under the effects of Righteous Fury.",
-		"Increases the critical strike chance of all Judgements capable of a critical hit by 25% and reduces threat caused by all actions by 30% except when under the effects of Righteous Fury."
+"Increases the critical strike chance of all Judgements capable of a critical hit by 6% and reduces threat caused by all actions by 10% except when under the effects of Righteous Fury.",
+"Increases the critical strike chance of all Judgements capable of a critical hit by 12% and reduces threat caused by all actions by 20% except when under the effects of Righteous Fury.",
+"Increases the critical strike chance of all Judgements capable of a critical hit by 18% and reduces threat caused by all actions by 30% except when under the effects of Righteous Fury."
 		];
 i++;
 
@@ -618,7 +591,7 @@ i++;
 
 //Crusader Strike - Retribution TALENT DIFFERENT
 paladin_ranks[i]=[
-		"<span style=text-align:left;float:left;>8% of base mana</span><span style=text-align:right;float:right;>Melee Range</span><br><span style=text-align:left;float:left;>Instant cast</span><span style=text-align:right;float:right;>6 sec cooldown</span><br>Requires Melee Weapon<br>An instant strike that causes 110% weapon damage."
+"<span style=text-align:left;float:left;>5% of base mana</span><span style=text-align:right;float:right;>Melee Range</span><br><span style=text-align:left;float:left;>Instant cast</span><span style=text-align:right;float:right;>6 sec cooldown</span><br><span style=text-align:left;float:left;>Requires Melee Weapon</span><br>An instant strike that causes 110% weapon damage."
 		];
 i++;
 
@@ -630,24 +603,18 @@ paladin_ranks[i]=[
 		];
 i++;
 
-
-
-
 //Righteous Vengeance - Retribution TALENT CHANGED
 paladin_ranks[i]=[
-		"When your Judgement and Divine Storm spells deal a critical strike, your target will take 8% additional damage over 8 sec.",
-		"When your Judgement and Divine Storm spells deal a critical strike, your target will take 16% additional damage over 8 sec.",
-		"When your Judgement and Divine Storm spells deal a critical strike, your target will take 24% additional damage over 8 sec.",
-		"When your Judgement and Divine Storm spells deal a critical strike, your target will take 32% additional damage over 8 sec.",
-		"When your Judgement and Divine Storm spells deal a critical strike, your target will take 40% additional damage over 8 sec.",
+		"When your Judgement, Crusader Strike and Divine Storm spells deal a critical strike, your target will take 10% additional damage over 8 sec.",
+		"When your Judgement, Crusader Strike and Divine Storm spells deal a critical strike, your target will take 20% additional damage over 8 sec.",
+		"When your Judgement, Crusader Strike and Divine Storm spells deal a critical strike, your target will take 30% additional damage over 8 sec."
 		];
 i++;
 
 //Divine Storm - Retribution TALENT DIFFERENT
 paladin_ranks[i]=[
-		"<span style=text-align:left;float:left;>12% of base mana</span><span style=text-align:right;float:right;>Melee Range</span><br><span style=text-align:left;float:left;>Instant cast</span><span style=text-align:right;float:right;>10 sec cooldown</span><br>Requires Melee Weapon<br>An instant weapon attack that causes Holy damage to up to 4 enemies within 8 yards. The Divine Storm heals up to 3 party or raid members totalling 20% of the damage caused."
+		"<span style=text-align:left;float:left;>12% of base mana</span><br><span style=text-align:left;float:left;>Instant cast</span><span style=text-align:right;float:right;>10 sec cooldown</span><br><span style=text-align:left;float:left;>Requires Melee Weapon</span><br>An instant weapon attack that causes Holy damage to up to 4 enemies within 8 yards. The Divine Storm heals up to 3 party or raid members totalling 25% of the damage caused."
 		];
 i++;
 
 //Retribution Talents End^^
-jsLoaded=true;//needed for ajax script loading

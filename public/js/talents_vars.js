@@ -86,11 +86,11 @@ var all_talents = {
   },
   'paladin': {
     // holy tree
-    1:  {name:'Spiritual Focus', max_rank:5, col:1, row:0, tree:'left'},
-    2:  {name:'Seals of the Pure', max_rank:5, col:2, row:0, tree:'left'},
-    3:  {name:'Healing Light', max_rank:3, col:0, row:1, tree:'left'},
-    4:  {name:'Divine Intellect', max_rank:5, col:1, row:1, tree:'left'},
-    5:  {name:'Unyielding Faith', max_rank:2, col:2, row:1, tree:'left'},
+    0:  {name:'Spiritual Focus', max_rank:5, col:1, row:0, tree:'left'},
+    1:  {name:'Seals of the Pure', max_rank:5, col:2, row:0, tree:'left'},
+    2:  {name:'Healing Light', max_rank:3, col:0, row:1, tree:'left'},
+    3:  {name:'Divine Intellect', max_rank:5, col:1, row:1, tree:'left'},
+    4:  {name:'Unyielding Faith', max_rank:2, col:2, row:1, tree:'left'},
     5:  {name:'Aura Mastery', max_rank:1, col:0, row:2, tree:'left'},
     6:  {name:'Illumination', max_rank:5, col:1, row:2, tree:'left', allows:[12]},
     7:  {name:'Improved Lay on Hands', max_rank:2, col:2, row:2, tree:'left'},
