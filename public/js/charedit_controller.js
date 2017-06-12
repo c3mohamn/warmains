@@ -28,6 +28,8 @@ editApp.controller('editctrl', ['$scope', '$http', '$compile', function($scope, 
   $scope.talent_points = {};
   $scope.cur_talents = {};
   $scope.talent_tooltips = [];
+  $scope.major_glyphs = {};
+  $scope.minor_glyphs = {};
 
   //classes and corresponding specs for each class
   $scope.class_specs = {
@@ -781,6 +783,7 @@ editApp.controller('editctrl', ['$scope', '$http', '$compile', function($scope, 
           };
         }
         $scope.insert_talents();
+        load_class_glyphs($scope.character.class, $scope.major_glyphs, $scope.minor_glyphs);
     });
   });
 }]);

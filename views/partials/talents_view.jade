@@ -3,10 +3,38 @@ div(class='talents_view' ng-show="cur_view == 'talents'")
     h3(ng-style="class_color(character.class)")
       {{talent_points.remaining}} ({{talent_points.left.total}}/{{talent_points.center.total}}/{{talent_points.right.total}})
 
-  div(id='test13')
-
   div(class='talent_tree')
     include talent_tree_template.jade
+
+  div(class='glyphs_container')
+    h3 Glyphs
+
+    ul(class='list-inline')
+      li
+        h4 Major
+        ul(class='list-inline')
+          li: div(class='item_slot' id='major_glyph_1')
+          li: div(class='item_slot' id='major_glyph_2')
+          li: div(class='item_slot' id='major_glyph_3')
+      li
+        h5 Minor
+        ul(class='list-inline')
+          li: div(class='item_slot' id='minor_glyph_1')
+          li: div(class='item_slot' id='minor_glyph_2')
+          li: div(class='item_slot' id='minor_glyph_3')
+
+    div(class='glyphs')
+      table(class='table')
+        thead
+          tr
+            td
+            td Name
+            td Type
+        tbody
+          tr(ng-repeat="glyph in major_glyphs")
+            td 
+            td {{glyph.name}}
+            td {{glyph.type}}
 
   p(class='success-msg' ng-show="success_msg != ''") {{success_msg}}
   input(ng-if='permission' type="submit" value='Save Changes' ng-click='save_to_db()'

@@ -583,6 +583,29 @@ function add_percentages(stats) {
   }
 }
 
+/* Add major glyphs to majors, minor glyphs to minors and only glyphs of
+ * specified char_class.
+ */
+function load_class_glyphs(char_class, majors, minors) {
+  var classes = {
+    'warrior': 1, 'paladin': 2, 'hunter': 3, 'rogue': 4, 'priest': 5,
+    'death knight': 6, 'shaman': 7, 'mage': 8, 'warlock': 9, 'druid': 11
+  };
+
+  for (var glyph in g_glyphs) {
+    var cur_glyph = g_glyphs[glyph];
+
+    if (classes[char_class] == cur_glyph.classs) { // class glyph
+      if (cur_glyph.type == 1)  { // is major glyph
+        majors[glyph] = cur_glyph;
+        majors[glyph].type = 'Major';
+      } else if (cur_glyph.type == 2) { // is minor glyph
+        minors[glyph] = cur_glyph;
+        minors[glyph].type = 'Minor';
+      }
+    }
+  }
+}
 // return the sum of talent points spent in all the rows <= last_rows
 function sum_rows(last_row, all_rows) {
   var sum = 0,

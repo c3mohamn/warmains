@@ -1,7 +1,7 @@
 // Talents View styles
 .talents_view {
   animation: 1s fade_in;
-  min-width: 80%;
+  min-width: 70%;
   .talent_bg_container {
     border: solid;
     border-color: black;
@@ -71,6 +71,22 @@
     .talent_counter {
       visibility: hidden;
     }
+  }
+}
+
+.glyphs_container {
+  animation: 1s fade_in;
+  min-width: 80%;
+
+  .item_slot {
+    cursor: pointer;
+    background-image: url('/images/empty-slots/UI-EmptyBack.png');
+  }
+
+  .glyphs {
+    animation: .5s results_table_slide;
+    overflow: auto;
+    height: 250px;
   }
 }
 

@@ -190,9 +190,11 @@ html(ng-app='editApp' ng-cloak)
                 td(ng-class='key') {{val}}
 
     p(ng-show='!character') This character does not exist.
+
   include partials/footer.jade
   script(src='/js/charedit_helper_vars.js')
   script(src='/js/talents_vars.js')
+  script(src='/js/glyphs.js')
   script(src='/js/talent_ranks/deathknight.js')
   script(src='/js/talent_ranks/druid.js')
   script(src='/js/talent_ranks/hunter.js')
