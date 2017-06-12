@@ -1,7 +1,8 @@
 ----- 06/12/2017 ------
-------- v3.0.9 --------
+------- v3.1.0 --------
 
 - Implemented tooltips for talents
+- Updated tooltips to current patch
 
 ----- 06/11/2017 ------
 ------- v3.0.8 --------

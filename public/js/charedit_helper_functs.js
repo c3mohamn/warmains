@@ -570,11 +570,15 @@ function socket_matches(socket, gem) {
 function add_percentages(stats) {
   for (var stat in stats) {
     if (stat == 'HitRating') {
+      stats['SpellHitRating'] = stats[stat] + ' (' + (stats[stat] / 26.23).toFixed(2)
+      + '%)';
       stats[stat] = stats[stat] + ' (' + (stats[stat] / 32.78).toFixed(2) +
         '%)';
     } else if (stat == 'ArmorPenetrationRating') {
       stats[stat] = stats[stat] + ' (' + (stats[stat] / 13.99).toFixed(2) +
         '%)';
+    } else if (stat == 'ExpertiseRating') {
+      stats['Expertise'] = (stats[stat] / 7.696).toFixed(2);
     }
   }
 }

@@ -23,23 +23,23 @@ i++;
 warlock_ranks[i] = [
 "Increases the damage done by your Corruption by 2% and increases the critical strike chance of your Seed of Corruption by 1%.",
 "Increases the damage done by your Corruption by 4% and increases the critical strike chance of your Seed of Corruption by 2%.",
-"Increases the damage done by your Corruption by 12% and increases the critical strike chance of your Seed of Corruption by 3%.",
-"Increases the damage done by your Corruption by 16% and increases the critical strike chance of your Seed of Corruption by 4%.",
-"Increases the damage done by your Corruption by 20% and increases the critical strike chance of your Seed of Corruption by 5%."
+"Increases the damage done by your Corruption by 6% and increases the critical strike chance of your Seed of Corruption by 3%.",
+"Increases the damage done by your Corruption by 8% and increases the critical strike chance of your Seed of Corruption by 4%.",
+"Increases the damage done by your Corruption by 10% and increases the critical strike chance of your Seed of Corruption by 5%."
 		];
 i++;
 
-//Frailty - Affliction
+//Improved Curse of Weakness - Affliction
 warlock_ranks[i] = [
-"Increases the amount of attack power reduced by your Curse of Weakness by 10%, and reduces the amount of attack power granted by your Curse of Recklessness by 50%.",
-"Increases the amount of attack power reduced by your Curse of Weakness by 20%, and reduces the amount of attack power granted by your Curse of Recklessness by 100%."
+"Increases the amount of attack power reduced by your Curse of Weakness by 10%.",
+"Increases the amount of attack power reduced by your Curse of Weakness by 20%."
 		];
 i++;
 
 //Improved Drain Soul - Affliction
 warlock_ranks[i] = [
-"Returns 7% of your maximum mana if the target is killed by you while you drain its soul. In addition, your Affliction spells generate 5% less threat.",
-"Returns 15% of your maximum mana if the target is killed by you while you drain its soul. In addition, your Affliction spells generate 10% less threat."
+"Returns 7% of your maximum mana if the target is killed by you while you drain its soul. In addition, your Affliction spells generate 10% less threat.",
+"Returns 15% of your maximum mana if the target is killed by you while you drain its soul. In addition, your Affliction spells generate 20% less threat."
 		];
 i++;
 
@@ -52,8 +52,8 @@ i++;
 
 //Soul Siphon - Affliction
 warlock_ranks[i] = [
-"Increases the amount drained by your Drain Life and Drain Soul spells by an additional 2% for each Affliction effect on the target, up to a maximum of 24% additional effect.",
-"Increases the amount drained by your Drain Life and Drain Soul spells by an additional 4% for each Affliction effect on the target, up to a maximum of 60% additional effect."
+"Increases the amount drained by your Drain Life and Drain Soul spells by an additional 3% for each Affliction effect on the target, up to a maximum of 9% additional effect.",
+"Increases the amount drained by your Drain Life and Drain Soul spells by an additional 6% for each Affliction effect on the target, up to a maximum of 18% additional effect."
 		];
 i++;
 
@@ -64,7 +64,6 @@ warlock_ranks[i] = [
 		];
 i++;
 
-
 //Fel Concentration - Affliction
 warlock_ranks[i] = [
 "Reduces the pushback suffered from damaging attacks, while casting Drain Life, Drain Mana, Drain Soul, Unstable Affliction and Haunt by 23%.",
@@ -72,7 +71,6 @@ warlock_ranks[i] = [
 "Reduces the pushback suffered from damaging attacks, while casting Drain Life, Drain Mana, Drain Soul, Unstable Affliction and Haunt by 70%."
 		];
 i++;
-
 
 //Amplify Curse - Affliction
 warlock_ranks[i] = [
@@ -104,24 +102,25 @@ i++;
 
 //Shadow Embrace - Affliction
 warlock_ranks[i] = [
-"Your Shadow Bolt and Haunt spells apply the Shadow Embrace effect, increasing all periodic damage dealt to the target by you by 1%, and reduces all periodic healing done to the target by 3%. Lasts for 12 sec. Stacks up to 2 times.",
-"Your Shadow Bolt and Haunt spells apply the Shadow Embrace effect, increasing all periodic damage dealt to the target by you by 2%, and reduces all periodic healing done to the target by 6%. Lasts for 12 sec. Stacks up to 2 times.",
-"Your Shadow Bolt and Haunt spells apply the Shadow Embrace effect, increasing all periodic damage dealt to the target by you by 3%, and reduces all periodic healing done to the target by 9%. Lasts for 12 sec. Stacks up to 2 times.",
-"Your Shadow Bolt and Haunt spells apply the Shadow Embrace effect, increasing all periodic damage dealt to the target by you by 4%, and reduces all periodic healing done to the target by 12%. Lasts for 12 sec. Stacks up to 2 times.",
-"Your Shadow Bolt and Haunt spells apply the Shadow Embrace effect, increasing all periodic damage dealt to the target by you by 5%, and reduces all periodic healing done to the target by 15%. Lasts for 12 sec. Stacks up to 2 times."
+"Your Shadow Bolt and Haunt spells apply the Shadow Embrace effect, increasing all periodic damage dealt to the target by you by 1%, and reduces all periodic healing done to the target by 2%. Lasts for 12 sec. Stacks up to 3 times.",
+"Your Shadow Bolt and Haunt spells apply the Shadow Embrace effect, increasing all periodic damage dealt to the target by you by 2%, and reduces all periodic healing done to the target by 4%. Lasts for 12 sec. Stacks up to 3 times.",
+"Your Shadow Bolt and Haunt spells apply the Shadow Embrace effect, increasing all periodic damage dealt to the target by you by 3%, and reduces all periodic healing done to the target by 6%. Lasts for 12 sec. Stacks up to 3 times.",
+"Your Shadow Bolt and Haunt spells apply the Shadow Embrace effect, increasing all periodic damage dealt to the target by you by 4%, and reduces all periodic healing done to the target by 8%. Lasts for 12 sec. Stacks up to 3 times.",
+"Your Shadow Bolt and Haunt spells apply the Shadow Embrace effect, increasing all periodic damage dealt to the target by you by 5%, and reduces all periodic healing done to the target by 10%. Lasts for 12 sec. Stacks up to 3 times."
 		];
 i++;
 
 //Siphon Life - Affliction
 warlock_ranks[i] = [
-		"<span style=text-align:left;float:left;>16% of base mana</span><span style=text-align:right;float:right;>30 yd range</span><br>Instant cast<br>Transfers 81 health from the target to the caster every 3 sec. Lasts 30 sec.<br><br>\
-		&nbsp;Talent Has Trainable warlock_rankss"
+		"When you deal damage with your Corruption spell, you are instantly healed for % of the damage done. In addition, \
+		the damage done by your Corruption, Seed of Corruption and Unstable Affliction damage over time effects is increased by 5%."
 		];
 i++;
 
 //Curse of Exhaustion - Affliction
 warlock_ranks[i] = [
-		"<span style=text-align:left;float:left;>6% of base mana</span><span style=text-align:right;float:right;>30 yd range</span><br>Instant cast<br>Reduces the target's movement speed by 30% for 12 sec. Only one Curse per Warlock can be active on any one target."
+		"<span style=text-align:left;float:left;>6% of base mana</span><span style=text-align:right;float:right;>30 yd range</span><br><span style=text-align:left;float:left;>Instant cast</span><br>\
+		Reduces the target's movement speed by 30% for 12 sec. Only one Curse per Warlock can be active on any one target."
 		];
 i++;
 
@@ -134,19 +133,19 @@ i++;
 
 //Shadow Mastery - Affliction
 warlock_ranks[i] = [
-"Increases the damage dealt or life drained by your Shadow spells by 3%.",
-"Increases the damage dealt or life drained by your Shadow spells by 6%.",
-"Increases the damage dealt or life drained by your Shadow spells by 9%.",
-"Increases the damage dealt or life drained by your Shadow spells by 12%.",
-"Increases the damage dealt or life drained by your Shadow spells by 15%."
+"Increases the damage dealt or life drained by your Shadow spells and your Felhunter's shadow bite ability by 3%.",
+"Increases the damage dealt or life drained by your Shadow spells and your Felhunter's shadow bite ability by 6%.",
+"Increases the damage dealt or life drained by your Shadow spells and your Felhunter's shadow bite ability by 9%.",
+"Increases the damage dealt or life drained by your Shadow spells and your Felhunter's shadow bite ability by 12%.",
+"Increases the damage dealt or life drained by your Shadow spells and your Felhunter's shadow bite ability by 15%."
 		];
 i++;
 
 //ERADICATION - Affliction
 warlock_ranks[i]=[
-"Your Corruption ticks have a 4% chance to increase your spell casting speed by 20% for 12 sec. This effect cannot occur more often than once every 30 sec.",
-"Your Corruption ticks have a 7% chance to increase your spell casting speed by 20% for 12 sec. This effect cannot occur more often than once every 30 sec.",
-"Your Corruption ticks have a 10% chance to increase your spell casting speed by 20% for 12 sec. This effect cannot occur more often than once every 30 sec."
+"Your Corruption ticks have a 6% chance to increase your spell casting speed by 6% for 10 sec.",
+"Your Corruption ticks have a 6% chance to increase your spell casting speed by 12% for 10 sec.",
+"Your Corruption ticks have a 6% chance to increase your spell casting speed by 20% for 10 sec."
 			];
 i++;
 
@@ -163,8 +162,8 @@ i++;
 
 //Dark Pact - Affliction
 warlock_ranks[i] = [
-		"30 yd range<br>Instant<br>Drains 305 of your summoned demon's Mana, returning 100% to you.<br><br>\
-		&nbsp;Talent Has Trainable warlock_rankss"
+		"<span style=text-align:left;float:left;>100 yd range</span><br><span style=text-align:left;float:left;>Instant</span><br>\
+		Drains 305 of your summoned demon's Mana, returning 100% to you."
 		];
 i++;
 
@@ -177,9 +176,9 @@ i++;
 
 //Malediction - Affliction
 warlock_ranks[i] = [
-"Increases the damage bonus effect of your Curse of the Elements spell by an additional 1%, and increases your spell damage by 1%.",
-"Increases the damage bonus effect of your Curse of the Elements spell by an additional 2%, and increases your spell damage by 2%.",
-"Increases the damage bonus effect of your Curse of the Elements spell by an additional 3%, and increases your spell damage by 3%."
+"Increases your spell damage by 1%, and increases the periodic critical strike chance of your Corruption and Unstable Affliction spells by 3%.",
+"Increases your spell damage by 2%, and increases the periodic critical strike chance of your Corruption and Unstable Affliction spells by 6%.",
+"Increases your spell damage by 3%, and increases the periodic critical strike chance of your Corruption and Unstable Affliction spells by 9%."
 		];
 i++;
 
@@ -193,16 +192,15 @@ i++;
 
 //Unstable Affliction - Affliction
 warlock_ranks[i]=[
-		"<span style=text-align:left;float:left;>15% of base mana</span><span style=text-align:right;float:right;>30 yd range</span><br>1.5 sec cast<br>Shadow energy slowly destroys the target, causing 660 damage over 15 sec. In addition, if the Unstable Affliction is dispelled it will cause 990 damage to the dispeller and silence them for 5 sec.<br><br>\
-		&nbsp;Talent Has Trainable warlock_rankss"
+		"<span style=text-align:left;float:left;>15% of base mana</span><span style=text-align:right;float:right;>30 yd range</span><br><span style=text-align:left;float:left;>1.5 sec cast</span><br>\
+		Shadow energy slowly destroys the target, causing 550 damage over 15 sec. In addition, if the Unstable Affliction is dispelled it will cause 990 damage to the dispeller and silence them for 5 sec."
 			];
 i++;
 
 //Pandemic - Affliction
 warlock_ranks[i] = [
-"Each time you deal damage with Corruption or Unstable Affliction, you have a chance equal to your spell critical strike chance to deal 33% additional damage.",
-"Each time you deal damage with Corruption or Unstable Affliction, you have a chance equal to your spell critical strike chance to deal 66% additional damage.",
-"Each time you deal damage with Corruption or Unstable Affliction, you have a chance equal to your spell critical strike chance to deal 100% additional damage."
+"Grants the periodic damage from your Corruption and Unstable Affliction spells the ability to critically hit for 100% \
+increased damage, and increases the critical strikes damage bonus of your Haunt spell by 100%."
 		];
 i++;
 
@@ -219,7 +217,8 @@ i++;
 
 //HAUNT - Affliction
 warlock_ranks[i] = [
-"<span style=text-align:left;float:left;>12% of base mana</span><span style=text-align:right;float:right;>30 yd range</span><br><span style=text-align:left;float:left;>1.5 sec cast</span><span style=text-align:right;float:right;>8 sec cooldown</span><br> You send a ghostly soul into the target, dealing 645 to 753 Shadow damage and increasing all damage done by your damage-over-time effects on the target by 20% for 12 sec. When the Haunt spell ends or is dispelled, the soul returns to you, healing you for 100% of all damage done to the target."
+"<span style=text-align:left;float:left;>12% of base mana</span><span style=text-align:right;float:right;>30 yd range</span><br><span style=text-align:left;float:left;>1.5 sec cast</span><span style=text-align:right;float:right;>8 sec cooldown</span><br>\
+You send a ghostly soul into the target, dealing 405 to 473 Shadow damage and increasing all damage done by your damage-over-time effects on the target by 20% for 12 sec. When the Haunt spell ends or is dispelled, the soul returns to you, healing you for 100% of all damage done to the target."
 		];
 i++;
 
@@ -242,11 +241,16 @@ i++;
 
 //Demonic Embrace - Demonology
 warlock_ranks[i] = [
-"Increases your total Stamina by 2%.",
 "Increases your total Stamina by 4%.",
-"Increases your total Stamina by 6%.",
-"Increases your total Stamina by 8%.",
+"Increases your total Stamina by 7%.",
 "Increases your total Stamina by 10%."
+		];
+i++;
+
+//FEL SYNERGY - Demonology
+warlock_ranks[i]=[
+"You have a 50% chance to heal your pet for 15% of the amount of damage done by you.",
+"You have a 100% chance to heal your pet for 15% of the amount of damage done by you."
 		];
 i++;
 
@@ -276,21 +280,21 @@ i++;
 
 //Improved Succubus - Demonology
 warlock_ranks[i] = [
-"Reduces the cast time of your Succubus' Seduction by 33%, and increases the duration of your Succubus' Seduction and Lesser Invisibility spells by 10%.",
-"Reduces the cast time of your Succubus' Seduction by 66%, and increases the duration of your Succubus' Seduction and Lesser Invisibility spells by 20%.",
-"Reduces the cast time of your Succubus' Seduction by 100%, and increases the duration of your Succubus' Seduction and Lesser Invisibility spells by 30%."
+"Reduces the cast time of your Succubus' Seduction by 22%, and increases the duration of your Succubus' Seduction and Lesser Invisibility spells by 10%.",
+"Reduces the cast time of your Succubus' Seduction by 44%, and increases the duration of your Succubus' Seduction and Lesser Invisibility spells by 20%.",
+"Reduces the cast time of your Succubus' Seduction by 66%, and increases the duration of your Succubus' Seduction and Lesser Invisibility spells by 30%."
 		];
 i++;
 
 //Soul Link - Demonology
 warlock_ranks[i]=[
-		"<span style=text-align:left;float:left;>16% of base mana</span><span style=text-align:right;float:right;>100 yd range</span><br>Instant cast<br>When active, 20% of all damage taken by the caster is taken by your Imp, Voidwalker, Succubus, Felhunter, Felguard, or enslaved demon instead.  That damage cannot be prevented. Lasts as long as the demon is active and controlled."
+		"<span style=text-align:left;float:left;>16% of base mana</span><span style=text-align:right;float:right;>100 yd range</span><br><span style=text-align:left;float:left;>Instant cast</span><br>When active, 20% of all damage taken by the caster is taken by your Imp, Voidwalker, Succubus, Felhunter, Felguard, or enslaved demon instead.  That damage cannot be prevented. Lasts as long as the demon is active and controlled."
 		];
 i++;
 
 //Fel Domination - Demonology
 warlock_ranks[i] = [
-		"<span style=text-align:left;float:left;>Instant</span><span style=text-align:right;float:right;>15 min cooldown</span><br>Your next Imp, Voidwalker, Succubus, Felhunter or Felguard Summon spell has its casting time reduced by 5.5 sec and its Mana cost reduced by 50%."
+		"<span style=text-align:left;float:left;>Instant</span><span style=text-align:right;float:right;>3 min cooldown</span><br>Your next Imp, Voidwalker, Succubus, Felhunter or Felguard Summon spell has its casting time reduced by 5.5 sec and its Mana cost reduced by 50%."
 		];
 i++;
 
@@ -319,25 +323,16 @@ warlock_ranks[i] = [
 		];
 i++;
 
-
-//Demonic Sacrifice - Demonology
+//Mana Feed - Demonology
 warlock_ranks[i]=[
-		"100 yd range<br>Instant<br>When activated, sacrifices your summoned demon to grant you an effect that lasts 30 min. The effect is canceled if any Demon is summoned.<br><br>Imp: Increases your Fire damage by 10%.<br><br>Voidwalker: Restores 2% of total health every 4 sec.<br><br>Succubus: Increases your Shadow damage by 10%.<br><br>Felhunter: Restores 3% of total mana every 4 sec.<br><br>Felguard: Increases your Shadow and Fire damage by 7% and restores 2% of total mana every 4 sec."
-			];
+"When you gain mana from Drain Mana or Life Tap spells, your summoned demon gains 100% of the mana you gain."
+];
 i++;
 
 //Master Conjuror - Demonology
 warlock_ranks[i]=[
-"Increases the effects granted by your conjured Firestone and Spellstone by 15%.",
-"Increases the effects granted by your conjured Firestone and Spellstone by 30%."
-		];
-i++;
-
-//Mana Feed - Demonology
-warlock_ranks[i]=[
-"When you gain mana from Drain Mana or Life Tap spells, your summoned demon gains 33% of the mana you gain.",
-"When you gain mana from Drain Mana or Life Tap spells, your summoned demon gains 66% of the mana you gain.",
-"When you gain mana from Drain Mana or Life Tap spells, your summoned demon gains 100% of the mana you gain."
+"Increases the effects granted by your conjured Firestone and Spellstone by 150%.",
+"Increases the effects granted by your conjured Firestone and Spellstone by 300%."
 		];
 i++;
 
@@ -351,13 +346,23 @@ warlock_ranks[i]=[
 		];
 i++;
 
-//Improved Enslave Demon - Demonology
+//Molten Core - Demonology
+warlock_ranks[i]=[
+"Increases the duration of your Immolate by 3 seconds, and you have a 4% chance to gain the Molten Core effect when your Corruption deals damage. \
+The Molten Core effect empowers your next 3 Incinerate or Soul Fire spells cast within 15 seconds.<br><br>\
+Incinerate - Increases damage done by 6% and reduces cast time by 10%.<br><br>\
+Soul Fire - Increases damage done by 6% and increases critical strike chance by 5%.",
 
-warlock_ranks[i] = [
-"Reduces the Attack Speed and Casting Speed penalty of your Enslave Demon spell by 5% and reduces the resist chance by 5%.",
-"Reduces the Attack Speed and Casting Speed penalty of your Enslave Demon spell by 10% and reduces the resist chance by 10%."
-		];
-i++;
+"Increases the duration of your Immolate by 3 seconds, and you have a 8% chance to gain the Molten Core effect when your Corruption deals damage. \
+The Molten Core effect empowers your next 3 Incinerate or Soul Fire spells cast within 15 seconds.<br><br>\
+Incinerate - Increases damage done by 12% and reduces cast time by 20%.<br><br>\
+Soul Fire - Increases damage done by 12% and increases critical strike chance by 10%.",
+
+"Increases the duration of your Immolate by 3 seconds, and you have a 12% chance to gain the Molten Core effect when your Corruption deals damage. \
+The Molten Core effect empowers your next 3 Incinerate or Soul Fire spells cast within 15 seconds.<br><br>\
+Incinerate - Increases damage done by 18% and reduces cast time by 30%.<br><br>\
+Soul Fire - Increases damage done by 18% and increases critical strike chance by 15%."
+];i++;
 
 //Demonic Resilience - Demonology
 warlock_ranks[i]=[
@@ -369,10 +374,10 @@ i++;
 
 //Demonic EMPOWERMENT - Demonology - TALENT DIFFERENT - description durations
 warlock_ranks[i]=[
-"Grants the Warlock's summoned demon Empowerment.<br><br> Succubus - Instantly vanishes, causing the Succubus to go into an improved Invisibility state. The vanish effect removes all stuns, snares and movement imparing effects from the Succubus.<br><br> Voidwalker - Increases the Voidwalker's health by 20%, and it's threat generated from spells and attacks by 20% for 20 sec.<br><br> Imp - Increases the Imp's spell critical strike chance by 20% for 30 sec. <br><br> Felhunter - Dispels all magical effects from the Felhunter.<br/><br/> Fel Guard - Increases the Fel Guard's attack speed by 20% and breaks all stun, snare and movement impairing effects and makes your Fel Guard immune to them. Lasts 15 sec.<br><br>"
+"<span style=text-align:left;float:left;>6% of base mana</span><span style=text-align:right;float:right;>100 yard range</span><br><span style=text-align:left;float:left;>Instant cast</span><span style=text-align:right;float:right;>1 min cooldown</span><br>\
+Grants the Warlock's summoned demon Empowerment.<br><br> Succubus - Instantly vanishes, causing the Succubus to go into an improved Invisibility state. The vanish effect removes all stuns, snares and movement imparing effects from the Succubus.<br><br> Voidwalker - Increases the Voidwalker's health by 20%, and it's threat generated from spells and attacks by 20% for 20 sec.<br><br> Imp - Increases the Imp's spell critical strike chance by 20% for 30 sec. <br><br> Felhunter - Dispels all magical effects from the Felhunter.<br/><br/> Fel Guard - Increases the Fel Guard's attack speed by 20% and breaks all stun, snare and movement impairing effects and makes your Fel Guard immune to them. Lasts 15 sec.<br><br>"
 		];
 i++;
-
 
 //Demonic Knowledge - Demonology
 warlock_ranks[i]=[
@@ -381,7 +386,6 @@ warlock_ranks[i]=[
 "Increases your spell damage by an amount equal to 12% of the total of your active demon's Stamina plus Intellect."
 		];
 i++;
-
 
 //Demonic Tactics - Demonology
 warlock_ranks[i]=[
@@ -393,13 +397,11 @@ warlock_ranks[i]=[
 		];
 i++;
 
-
-//FEL SYNERGY - Demonology
+//Decimation - Demonology
 warlock_ranks[i]=[
-"Your Summoned Demons share an additional 5% of your Armor, Intellect and Stamina, and you have a 50% chance to heal your pet for 15% of the amount of damage done by you.",
-"Your Summoned Demons share an additional 10% of your Armor, Intellect and Stamina, and you have a 100% chance to heal your pet for 15% of the amount of damage done by you."
-		];
-i++;
+"When you Shadowbolt, Incinerate or Soul Fire a target that is at or below 35% health, the cast time of Soul Fire spell is reduced by 20% for 10 seconds. Soul Fires cast under the effect of Decimation cost no shard.",
+"Wehn you Shadowbolt, Incinerate or Soul Fire a target that is at or below 35% health, the cast time of Soul Fire spell is reduced by 40% for 10 seconds. Soul Fires cast under the effect of Decimation cost no shard."
+];i++;
 
 //Improved Demonic Tactics - Demonology
 warlock_ranks[i]=[
@@ -411,48 +413,46 @@ i++;
 
 //Summon Felguard - Demonology
 warlock_ranks[i]=[
-	"<span style=text-align:left;float:left;>80% of base Mana</span><BR><span style=text-align:left;float:left;>10 sec cast</span><br>Reagents: Soul Shard<BR>Summons a Felguard under the command of the Warlock."
+	"<span style=text-align:left;float:left;>80% of base Mana</span><BR><span style=text-align:left;float:left;>10 sec cast</span><br><span style=text-align:left;float:left;>Reagents: Soul Shard<span><br>Summons a Felguard under the command of the Warlock."
 		];
 i++;
 
 
-//Demonic Empathy - Demonology
+//Nemesis - Demonology
 warlock_ranks[i]=[
-"When you or your pet critically hits with a spell or ability, the other's damage done by their next 3 spells or abilities is increased by 1%. Lasts 15 sec.",
-"When you or your pet critically hits with a spell or ability, the other's damage done by their next 3 spells or abilities is increased by 2%. Lasts 15 sec.",
-"When you or your pet critically hits with a spell or ability, the other's damage done by their next 3 spells or abilities is increased by 3%. Lasts 15 sec."
-		];
+"Reduces the cooldown of your Demonic Empowerment, Metamorphosis, and Fel Domination spells by 10%.",
+"Reduces the cooldown of your Demonic Empowerment, Metamorphosis, and Fel Domination spells by 20%.",
+"Reduces the cooldown of your Demonic Empowerment, Metamorphosis, and Fel Domination spells by 30%."
+];
 i++;
 
 //Demonic Pact - Demonology - TALENT DIFFERENT - description changed
 warlock_ranks[i]=[
-"Your pet's criticals apply the Demonic Pact effect to your party or raid members. Demonic Pact increases spell power by 2% of your Spell Damage for 12 sec. Does not work on Enslaved demons.",
-"Your pet's criticals apply the Demonic Pact effect to your party or raid members. Demonic Pact increases spell power by 4% of your Spell Damage for 12 sec. Does not work on Enslaved demons.",
-"Your pet's criticals apply the Demonic Pact effect to your party or raid members. Demonic Pact increases spell power by 6% of your Spell Damage for 12 sec. Does not work on Enslaved demons.",
-"Your pet's criticals apply the Demonic Pact effect to your party or raid members. Demonic Pact increases spell power by 8% of your Spell Damage for 12 sec. Does not work on Enslaved demons.",
-"Your pet's criticals apply the Demonic Pact effect to your party or raid members. Demonic Pact increases spell power by 10% of your Spell Damage for 12 sec. Does not work on Enslaved demons."
-		];
+"Increases your spell damage by 2%, and your pet's criticals apply the Demonic Pact effect to your party or raid members. Demonic Pact increases spell power by 2% of your Spell Damage for 45 seconds. This effect has a 20 second cooldown. Does not work on enslaved demons.",
+"Increases your spell damage by 4%, and your pet's criticals apply the Demonic Pact effect to your party or raid members. Demonic Pact increases spell power by 4% of your Spell Damage for 45 seconds. This effect has a 20 second cooldown. Does not work on enslaved demons.",
+"Increases your spell damage by 6%, and your pet's criticals apply the Demonic Pact effect to your party or raid members. Demonic Pact increases spell power by 6% of your Spell Damage for 45 seconds. This effect has a 20 second cooldown. Does not work on enslaved demons.",
+"Increases your spell damage by 8%, and your pet's criticals apply the Demonic Pact effect to your party or raid members. Demonic Pact increases spell power by 8% of your Spell Damage for 45 seconds. This effect has a 20 second cooldown. Does not work on enslaved demons.",
+"Increases your spell damage by 10%, and your pet's criticals apply the Demonic Pact effect to your party or raid members. Demonic Pact increases spell power by 10% of your Spell Damage for 45 seconds. This effect has a 20 second cooldown. Does not work on enslaved demons."
+];
 i++;
 
 //Metamorphosis - Demonology
 warlock_ranks[i]=[
-"<span style=text-align:left;float:left;>Instant</span><br><br>You transform into a Demon for 30 sec. This form increases your armor by 600%, damage by 20%, reduces the chance you'll be critically hit by melee attacks by 6% and reduces the duration of stun and snare effects by 50%. You gain some unique demon abilities in addition to your normal abilities."
-		];
+"<span style=text-align:left;float:left;>Instant</span><br>\
+You transform into a Demon for 30 sec. This form increases your armor by 600%, damage by 20%, reduces the chance you'll be critically hit by melee attacks by 6% and reduces the duration of stun and snare effects by 50%. You gain some unique demon abilities in addition to your normal abilities."
+];
 i++;
-
-
-
 
 
 //DESTRUCTION ----------------------------------------------
 //Improved Shadow Bolt - Destruction
 warlock_ranks[i]=[
-"Your Shadow Bolt critical strikes increase Shadow damage dealt to the target by 2% until 4 non-periodic damage sources are applied. Effect lasts a maximum of 12 sec.",
-"Your Shadow Bolt critical strikes increase Shadow damage dealt to the target by 4% until 4 non-periodic damage sources are applied. Effect lasts a maximum of 12 sec.",
-"Your Shadow Bolt critical strikes increase Shadow damage dealt to the target by 6% until 4 non-periodic damage sources are applied. Effect lasts a maximum of 12 sec.",
-"Your Shadow Bolt critical strikes increase Shadow damage dealt to the target by 8% until 4 non-periodic damage sources are applied. Effect lasts a maximum of 12 sec.",
-"Your Shadow Bolt critical strikes increase Shadow damage dealt to the target by 10% until 4 non-periodic damage sources are applied. Effect lasts a maximum of 12 sec."
-		];
+"Increases the damage done by your Shadow Bolt spell by 2%, and your Shadow Bolt has a 20% chance to cause your target to be vulnerable to spell damage, increasing spell critical strike chance against that target by 5%. Effect lasts 30 seconds.",
+"Increases the damage done by your Shadow Bolt spell by 4%, and your Shadow Bolt has a 40% chance to cause your target to be vulnerable to spell damage, increasing spell critical strike chance against that target by 5%. Effect lasts 30 seconds.",
+"Increases the damage done by your Shadow Bolt spell by 6%, and your Shadow Bolt has a 60% chance to cause your target to be vulnerable to spell damage, increasing spell critical strike chance against that target by 5%. Effect lasts 30 seconds.",
+"Increases the damage done by your Shadow Bolt spell by 8%, and your Shadow Bolt has a 80% chance to cause your target to be vulnerable to spell damage, increasing spell critical strike chance against that target by 5%. Effect lasts 30 seconds.",
+"Increases the damage done by your Shadow Bolt spell by 10%, and your Shadow Bolt has a 100% chance to cause your target to be vulnerable to spell damage, increasing spell critical strike chance against that target by 5%. Effect lasts 30 seconds."
+];
 i++;
 
 //Bane - Destruction
@@ -465,34 +465,28 @@ warlock_ranks[i]=[
 		];
 i++;
 
-
 //Aftermath - Destruction
 warlock_ranks[i]=[
-"Gives your Destruction spells a 5% chance to daze the target for 5 sec.",
-"Gives your Destruction spells a 10% chance to daze the target for 5 sec."
-
-		];
+"Increases the periodic damage done by your Immolate by 3%, and your Conflagrate has a 50% chance to daze the target for 5 seconds.",
+"Increases the periodic damage done by your Immolate by 6%, and your Conflagrate has a 100% chance to daze the target for 5 seconds."
+];
 i++;
 
-//Molten Core - Destruction
+//Molten Skin - Destruction
 warlock_ranks[i]=[
-"Your Shadow spells and damage over time effects have a 5% chance to increase the damage of your Fire spells by 10% for 6 sec.",
-"Your Shadow spells and damage over time effects have a 10% chance to increase the damage of your Fire spells by 10% for 6 sec.",
-"Your Shadow spells and damage over time effects have a 15% chance to increase the damage of your Fire spells by 10% for 6 sec."
-		];
+"Reduces all damage taken by 2%.",
+"Reduces all damage taken by 4%.",
+"Reduces all damage taken by 6%."
+];
 i++;
 
 //Cataclysm - Destruction
 warlock_ranks[i]=[
-"Reduces the Mana cost of your Destruction spells by 1%, and increases the chance to hit with your Destruction spells by 1%.",
-"Reduces the Mana cost of your Destruction spells by 2%, and increases the chance to hit with your Destruction spells by 2%.",
-"Reduces the Mana cost of your Destruction spells by 3%, and increases the chance to hit with your Destruction spells by 3%."
+"Reduces the Mana cost of your Destruction spells by 4%",
+"Reduces the Mana cost of your Destruction spells by 7%.",
+"Reduces the Mana cost of your Destruction spells by 10%."
 		];
 i++;
-
-
-
-
 
 //Demonic Power - Destruction
 warlock_ranks[i]=[
@@ -503,30 +497,20 @@ i++;
 
 //Shadowburn - Destruction
 warlock_ranks[i]=[
-		"<span style=text-align:left;float:left;>105 Mana</span><span style=text-align:right;float:right;>20 yd range</span><br><span style=text-align:left;float:left;>Instant cast</span><span style=text-align:right;float:right;>15 sec cooldown</span><br>Reagents: Soul Shard<br>Instantly blasts the target for 91 to 104 Shadow damage. If the target dies within 5 secs of Shadowburn, and yields experience or honor, the caster gains a Soul Shard.<br><br>\
-		&nbsp;Trainable warlock_rankss Listed Below:<br>\
-		&nbsp;warlock_ranks 2: 130 Mana, 123-140 Damage<br>\
-		&nbsp;warlock_ranks 3: 190 Mana, 196-221 Damage<br>\
-		&nbsp;warlock_ranks 4: 245 Mana, 274-307 Damage<br>\
-		&nbsp;warlock_ranks 5: 305 Mana, 365-408 Damage<br>\
-		&nbsp;warlock_ranks 6: 365 Mana, 468-520 Damage<br>\
-		&nbsp;warlock_ranks 7: 435 Mana, 538-599 Damage<br>\
-		&nbsp;warlock_ranks 8: 515 Mana, 597-665 Damage"
+		"<span style=text-align:left;float:left;>20% of base mana</span><span style=text-align:right;float:right;>20 yd range</span><br><span style=text-align:left;float:left;>Instant cast</span><span style=text-align:right;float:right;>15 sec cooldown</span><br><span style=text-align:left;float:left;>Reagents: Soul Shard</span><br>\
+		Instantly blasts the target for 87 to 99 Shadow damage. If the target dies within 5 secs of Shadowburn, and yields experience or honor, the caster gains a Soul Shard."
 		];
 i++;
-
-
 
 //Ruin - Destruction
 warlock_ranks[i]=[
-"Increases the critical strike damage bonus of your Destruction spells by 20%.",
-"Increases the critical strike damage bonus of your Destruction spells by 40%.",
-"Increases the critical strike damage bonus of your Destruction spells by 60%.",
-"Increases the critical strike damage bonus of your Destruction spells by 80%.",
-"Increases the critical strike damage bonus of your Destruction spells by 100%."
+"Increases the critical strike damage bonus of your Destruction spells and your Imp's Firebolt spell by 20%.",
+"Increases the critical strike damage bonus of your Destruction spells and your Imp's Firebolt spell by 40%.",
+"Increases the critical strike damage bonus of your Destruction spells and your Imp's Firebolt spell by 60%.",
+"Increases the critical strike damage bonus of your Destruction spells and your Imp's Firebolt spell by 80%.",
+"Increases the critical strike damage bonus of your Destruction spells and your Imp's Firebolt spell by 100%."
 		];
 i++;
-
 
 //Intensity - Destruction
 warlock_ranks[i]=[
@@ -537,8 +521,8 @@ i++;
 
 //Destructive Reach - Destruction
 warlock_ranks[i]=[
-"Increases the range of your Destruction spells by 10% and reduces threat caused by Destruction spells by 5%.",
-"Increases the range of your Destruction spells by 20% and reduces threat caused by Destruction spells by 10%."
+"Increases the range of your Destruction spells by 10% and reduces threat caused by Destruction spells by 10%.",
+"Increases the range of your Destruction spells by 20% and reduces threat caused by Destruction spells by 20%."
 		];
 i++;
 
@@ -550,14 +534,13 @@ warlock_ranks[i]=[
 		];
 i++;
 
-
-//Pyroclasm - Destruction
+//Backlash - Destruction //New/Changed
 warlock_ranks[i]=[
-"Gives your Rain of Fire, Hellfire, Conflagrate and Soul Fire spells a 13% chance to stun the target for 3 sec.",
-"Gives your Rain of Fire, Hellfire, Conflagrate and Soul Fire spells a 26% chance to stun the target for 3 sec."
+"Increases your critical strike chance with spells by an additional 1% and gives you a 8% chance when hit by a physical attack to reduce the cast time of your next Shadow Bolt or Incinerate spell by 100%. This effect lasts 8 sec and will not occur more than once every 8 seconds.",
+"Increases your critical strike chance with spells by an additional 2% and gives you a 16% chance when hit by a physical attack to reduce the cast time of your next Shadow Bolt or Incinerate spell by 100%. This effect lasts 8 sec and will not occur more than once every 8 seconds.",
+"Increases your critical strike chance with spells by an additional 3% and gives you a 25% chance when hit by a physical attack to reduce the cast time of your next Shadow Bolt or Incinerate spell by 100%. This effect lasts 8 sec and will not occur more than once every 8 seconds."
 		];
 i++;
-
 
 //Improved Immolate - Destruction
 warlock_ranks[i]=[
@@ -567,20 +550,17 @@ warlock_ranks[i]=[
 		];
 i++;
 
-
-
 //Devastation - Destruction
 warlock_ranks[i]=[
 "Increases the critical strike chance of your Destruction spells by 5%."
 		];
 i++;
 
-
 //Nether Protection - Destruction
 warlock_ranks[i]=[
-"After being hit with a spell, you have a 10% chance to gain Nether Protection, reducing all damage by that spell school by 60% for 8 sec.",
-"After being hit with a spell, you have a 20% chance to gain Nether Protection, reducing all damage by that spell school by 60% for 8 sec.",
-"After being hit with a spell, you have a 30% chance to gain Nether Protection, reducing all damage by that spell school by 60% for 8 sec."
+"After being hit with a spell, you have a 10% chance to gain Nether Protection, reducing all damage by that spell school by 30% for 8 sec.",
+"After being hit with a spell, you have a 20% chance to gain Nether Protection, reducing all damage by that spell school by 30% for 8 sec.",
+"After being hit with a spell, you have a 30% chance to gain Nether Protection, reducing all damage by that spell school by 30% for 8 sec."
 		];
 i++;
 
@@ -594,18 +574,10 @@ warlock_ranks[i]=[
 		];
 i++;
 
-
-
 //Conflagrate - Destruction
 warlock_ranks[i]=[
-
-		"<span style=text-align:left;float:left;>165 Mana</span><span style=text-align:right;float:right;>30 yd range</span><br><span style=text-align:left;float:left;>Instant Cast</span><span style=text-align:right;float:right;>10 sec cooldown</span><br>Ignites a target that is already afflicted by your Immolate, dealing 249 to 316 Fire damage and consuming the Immolate spell.<br><br>\
-		&nbsp;Trainable warlock_rankss Listed Below:<br>\
-		&nbsp;warlock_ranks 2: 200 Mana, 326-407 Damage<br>\
-		&nbsp;warlock_ranks 3: 230 Mana, 395-491 Damage<br>\
-		&nbsp;warlock_ranks 4: 255 Mana, 455-566 Damage<br>\
-		&nbsp;warlock_ranks 5: 280 Mana, 521-648 Damage<br>\
-		&nbsp;warlock_ranks 6: 305 Mana, 579-721 Damage"
+		"<span style=text-align:left;float:left;>16% of base mana</span><span style=text-align:right;float:right;>30 yd range</span><br><span style=text-align:left;float:left;>Instant Cast</span><span style=text-align:right;float:right;>10 sec cooldown</span><br>\
+		Consumes an Immolate or Shadowflame effect on the enemy target to instantly deal damage equal to 60% of your Immolate or Shadowflame, and causes an additional 40% damage over 6 seconds."
 		];
 i++;
 
@@ -617,12 +589,12 @@ warlock_ranks[i]=[
 		];
 i++;
 
-//Backlash - Destruction //New/Changed
+//Pyroclasm - Destruction
 warlock_ranks[i]=[
-"Increases your critical strike chance with spells by an additional 1% and gives you a 8% chance when hit by a physical attack to reduce the cast time of your next Shadow Bolt or Incinerate spell by 100%. This effect lasts 8 sec and will not occur more than once every 8 seconds.",
-"Increases your critical strike chance with spells by an additional 2% and gives you a 16% chance when hit by a physical attack to reduce the cast time of your next Shadow Bolt or Incinerate spell by 100%. This effect lasts 8 sec and will not occur more than once every 8 seconds.",
-"Increases your critical strike chance with spells by an additional 3% and gives you a 25% chance when hit by a physical attack to reduce the cast time of your next Shadow Bolt or Incinerate spell by 100%. This effect lasts 8 sec and will not occur more than once every 8 seconds."
-		];
+"When you critically strike with Searing Pain or Conflagrate, your Fire and Shadow spell damage is increased by 2% for 10 seconds.",
+"When you critically strike with Searing Pain or Conflagrate, your Fire and Shadow spell damage is increased by 4% for 10 seconds.",
+"When you critically strike with Searing Pain or Conflagrate, your Fire and Shadow spell damage is increased by 6% for 10 seconds."
+];
 i++;
 
 //Shadow and Flame - Destruction
@@ -637,8 +609,8 @@ i++;
 
 //Improved Soul Leech - Destruction
 warlock_ranks[i]=[
-"Your Soul Leech effect also restores mana to you and your summoned demon equal to 1% of maximum mana.",
-"Your Soul Leech effect also restores mana to you and your summoned demon equal to 2% of maximum mana."
+"Your Soul Leech effect also restores mana to you and your summoned demon equal to 1% of maximum mana, and has a 50% chance to grant up to 10 party or raid members mana regeneration equal to 1% of maximum mana per 5 sec. Last for 15 seconds.",
+"Your Soul Leech effect also restores mana to you and your summoned demon equal to 2% of maximum mana, and has a 100% chance to grant up to 10 party or raid members mana regeneration equal to 1% of maximum mana per 5 sec. Last for 15 seconds."
 		];
 i++;
 
@@ -652,7 +624,7 @@ i++;
 
 //Shadowfury - Destruction
 warlock_ranks[i]=[
-		"<span style=text-align:left;float:left;>1383 Mana</span><span style=text-align:right;float:right;>36 yd range</span><br><span style=text-align:left;float:left;>Instant cast</span><span style=text-align:right;float:right;>20 sec cooldown</span><br>Shadowfury is unleashed, causing 357 to 422 Shadow damage and stunning all enemies within 8 yds for 3 sec.<br><br>\
+		"<span style=text-align:left;float:left;>27% of base mana</span><span style=text-align:right;float:right;>30 yd range</span><br><span style=text-align:left;float:left;>Instant cast</span><span style=text-align:right;float:right;>20 sec cooldown</span><br>Shadowfury is unleashed, causing 343 to 407 Shadow damage and stunning all enemies within 8 yds for 3 sec.<br><br>\
 		&nbsp;Trainable warlock_rankss Listed Below:<br>\
 		&nbsp;warlock_ranks 2: 545 Mana, 476-565 Damage<br>\
 		&nbsp;warlock_ranks 3: 710 Mana, 612-728 Damage<br>"
@@ -669,17 +641,18 @@ i++;
 
 //Fire and Brimstone - Destruction
 warlock_ranks[i]=[
-"Increases the damage of your Immolate spell by an amount equal to 3% of your spell power, and the critical strike chance of your Conflagrate spell is increased by 5% if the Immolate on the target has 5 or fewer seconds remaining.",
-"Increases the damage of your Immolate spell by an amount equal to 6% of your spell power, and the critical strike chance of your Conflagrate spell is increased by 10% if the Immolate on the target has 5 or fewer seconds remaining.",
-"Increases the damage of your Immolate spell by an amount equal to 9% of your spell power, and the critical strike chance of your Conflagrate spell is increased by 15% if the Immolate on the target has 5 or fewer seconds remaining.",
-"Increases the damage of your Immolate spell by an amount equal to 12% of your spell power, and the critical strike chance of your Conflagrate spell is increased by 20% if the Immolate on the target has 5 or fewer seconds remaining.",
-"Increases the damage of your Immolate spell by an amount equal to 15% of your spell power, and the critical strike chance of your Conflagrate spell is increased by 25% if the Immolate on the target has 5 or fewer seconds remaining."
-		];
+"Increases the damage done by your Incinerate and Chaos Bolt spells to targets afflicted by your Immolate by 2%, and the critical strike chance of your Conflagrate spell is increased by 5%.",
+"Increases the damage done by your Incinerate and Chaos Bolt spells to targets afflicted by your Immolate by 4%, and the critical strike chance of your Conflagrate spell is increased by 10%.",
+"Increases the damage done by your Incinerate and Chaos Bolt spells to targets afflicted by your Immolate by 6%, and the critical strike chance of your Conflagrate spell is increased by 15%.",
+"Increases the damage done by your Incinerate and Chaos Bolt spells to targets afflicted by your Immolate by 8%, and the critical strike chance of your Conflagrate spell is increased by 20%.",
+"Increases the damage done by your Incinerate and Chaos Bolt spells to targets afflicted by your Immolate by 10%, and the critical strike chance of your Conflagrate spell is increased by 25%."
+];
 i++;
 
 //Chaos Bolt - Destruction
 warlock_ranks[i]=[
-	"<span style=text-align:left;float:left;>336 Mana</span><span style=text-align:right;float:right;>36 yd range</span><br><span style=text-align:left;float:left;>1.5 sec cast</span><span style=text-align:right;float:right;>12 sec cooldown</span><BR> Sends a bolt of chaotic fire at the enemy, dealing 685 to 861 Chaos damage. Chaos Bolt cannot be resisted, and pierces through all absorption effects."
+	"<span style=text-align:left;float:left;>7% of base mana</span><span style=text-align:right;float:right;>30 yd range</span><br><span style=text-align:left;float:left;>2.5 sec cast</span><span style=text-align:right;float:right;>12 sec cooldown</span><BR>\
+	Sends a bolt of chaotic fire at the enemy, dealing 837 to 1061 Fire damage. Chaos Bolt cannot be resisted, and pierces through all absorption effects."
 		];
 i++;
 
