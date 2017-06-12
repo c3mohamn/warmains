@@ -164,25 +164,29 @@ i++;
 
 //Hysteria - Blood
 dk_ranks[i] = [
-"<span style=text-align:left;float:left;>1 Blood</span><span style=text-align:right;float:right;>30 yd range</span><br><span style=text-align:left;float:left;>Instant</span><span style=text-align:right;float:right;>2 min cooldown</span><br> Induces a friendly unit into a killing frenzy for 30 sec. The target is Enraged, which increases their physical damage by 20%, but causes them to suffer damage equal to 1% of their maximum health every second."
+"<span style=text-align:left;float:left;>1 Blood</span><span style=text-align:right;float:right;>30 yd range</span><br><span style=text-align:left;float:left;>Instant</span><span style=text-align:right;float:right;>3 min cooldown</span><br> Induces a friendly unit into a killing frenzy for 30 sec. The target is Enraged, which increases their physical damage by 20%, but causes them to suffer damage equal to 1% of their maximum health every second."
 		];
 i++;
 
-//Blood Aura - Blood
+//Improved Blood Presence - Blood
 dk_ranks[i] = [
-"All party or raid members within 45 yards of the Death Knight are healed by 1% of the damage they deal. Only damage dealt to targets that grant experience or honor can trigger this heal.",
-"All party or raid members within 45 yards of the Death Knight are healed by 2% of the damage they deal. Only damage dealt to targets that grant experience or honor can trigger this heal.",
+"While in Frost Presence or Unholy Presence, you retain 2% healing from Blood Presence, and healing done to you is increased by 5% in Blood presence.",
+"While in Frost Presence or Unholy Presence, you retain 4% healing from Blood Presence, and healing done to you is increased by 10% in Blood presence.",
 		];
 i++;
 
+// Improved Death Strike - Blood
+dk_ranks[i] = [
+"Increases the damage of your Death Strike by 15%, increases its critical strike chance by 3%, and increases the healing granted by 25%.",
+"Increases the damage of your Death Strike by 30%, increases its critical strike chance by 6%, and increases the healing granted by 50%."
+];
+i++;
 
 //SUDDEN DOOM - BLOOD
 dk_ranks[i] = [
-"Your Blood Strikes and Heart Strikes have a 4% chance to make your next Death Coil consume no runic power and critically hit if cast within 15 sec.",
-"Your Blood Strikes and Heart Strikes have a 8% chance to make your next Death Coil consume no runic power and critically hit if cast within 15 sec.",
-"Your Blood Strikes and Heart Strikes have a 12% chance to make your next Death Coil consume no runic power and critically hit if cast within 15 sec.",
-"Your Blood Strikes and Heart Strikes have a 16% chance to make your next Death Coil consume no runic power and critically hit if cast within 15 sec.",
-"Your Blood Strikes and Heart Strikes have a 20% chance to make your next Death Coil consume no runic power and critically hit if cast within 15 sec."
+"Your Blood Strikes and Heart Strikes have a 5% chance to launch a free Death Coil at your target.",
+"Your Blood Strikes and Heart Strikes have a 10% chance to launch a free Death Coil at your target.",
+"Your Blood Strikes and Heart Strikes have a 15% chance to launch a free Death Coil at your target."
 		];
 i++;
 
@@ -241,10 +245,10 @@ dk_ranks[i] = [
 i++;
 
 
-//GLACIER ROT - FROST
+//Runic Power Mastery- FROST
 dk_ranks[i]=[
-"Diseased enemies take 5% more damage from your Icy Touch, Howling Blast and Frost Strike spells.",
-"Diseased enemies take 10% more damage from your Icy Touch, Howling Blast and Frost Strike spells."
+"Increases your maximum Runic Power by 15.",
+"Increases your maximum Runic Power by 30."
 	];
 i++;
 
@@ -267,19 +271,19 @@ i++;
 
 //Black Ice - Frost
 dk_ranks[i] = [
+"Increases your Frost damage by 2%.",
+"Increases your Frost damage by 4%.",
 "Increases your Frost damage by 6%.",
-"Increases your Frost damage by 12%.",
-"Increases your Frost damage by 18%.",
-"Increases your Frost damage by 24%.",
-"Increases your Frost damage by 30%."
+"Increases your Frost damage by 8%.",
+"Increases your Frost damage by 10%."
 		];
 i++;
 
 //Nerves of Cold Steel - FROST
 dk_ranks[i] = [
-"Increases your chance to hit with a one-handed melee weapon by 1% and increases the damage done by your offhand weapon by 5%.",
-"Increases your chance to hit with a one-handed melee weapon by 2% and increases the damage done by your offhand weapon by 10%.",
-"Increases your chance to hit with a one-handed melee weapon by 3% and increases the damage done by your offhand weapon by 15%."
+"Increases your chance to hit with a one-handed melee weapon by 1% and increases the damage done by your offhand weapon by 8%.",
+"Increases your chance to hit with a one-handed melee weapon by 2% and increases the damage done by your offhand weapon by 16%.",
+"Increases your chance to hit with a one-handed melee weapon by 3% and increases the damage done by your offhand weapon by 25%."
 		];
 i++;
 
@@ -295,7 +299,7 @@ i++;
 
 //Lichborne - Frost
 dk_ranks[i] = [
-"<span style=text-align:left;float:left;>Instant<br></span><span style=text-align:right;float:right;>3 min cooldown</span><br>Draw upon unholy energy to become undead for 15 sec. While undead, you are immune to Charm, Fear and Sleep effects, and your horrifying visage causes melee attacks to have an additional 25% chance to miss you."
+"<span style=text-align:left;float:left;>Instant<br></span><span style=text-align:right;float:right;>2 min cooldown</span><br>Draw upon unholy energy to become undead for 15 sec. While undead, you are immune to Charm, Fear and Sleep effects, and your horrifying visage causes melee attacks to have an additional 25% chance to miss you."
 		];
 i++;
 
@@ -307,17 +311,6 @@ dk_ranks[i] = [
 		];
 i++;
 
-
-//RUNIC POWER MASTERY - FROST
-dk_ranks[i]=[
-"Increases your maximum Runic Power by 10.",
-"Increases your maximum Runic Power by 20.",
-"Increases your maximum Runic Power by 30."
-	];
-i++;
-
-
-
 //Killing Machine - Frost
 dk_ranks[i] = [
 "After landing a critical strike from an auto attack, there is a 10% chance your next Icy Touch, Howling Blast or Frost Strike will be a critical strike.",
@@ -328,7 +321,19 @@ dk_ranks[i] = [
 		];
 i++;
 
+//Chill of the Grave - Frost
+dk_ranks[i] = [
+"Your Chains of Ice, Howling Blast, Icy Touch and Obliterate generate 2.5 additional runic power.",
+"Your Chains of Ice, Howling Blast, Icy Touch and Obliterate generate 5 additional runic power. "
+		];
+i++;
 
+//Endless Winter - Frost
+dk_ranks[i] = [
+"Your strength is increased by 2% and the cost of your Mind Freeze is reduced to 10 Runic Power.",
+"Your strength is increased by 4% and your Mind Freeze no longer costs runic power."
+];
+i++;
 
 //Frigid Dreadplate - Frost
 dk_ranks[i]=[
@@ -338,11 +343,13 @@ dk_ranks[i]=[
 	];
 i++;
 
-//Chill of the Grave - Frost
+//Glacier Rot - Frost
 dk_ranks[i] = [
-"Your Chains of Ice, Howling Blast, Icy Touch and Obliterate generate 2.5 additional runic power.",
-"Your Chains of Ice, Howling Blast, Icy Touch and Obliterate generate 5 additional runic power. "
-		];
+"Diseased enemies take 7% more damage from your Icy Touch, Howling Blast and Frost Strike.",
+"Diseased enemies take 13% more damage from your Icy Touch, Howling Blast and Frost Strike.",
+"Diseased enemies take 20% more damage from your Icy Touch, Howling Blast and Frost Strike."
+
+];
 i++;
 
 //Deathchill - Frost
@@ -374,48 +381,41 @@ dk_ranks[i] = [
 		];
 i++;
 
-
-
-//ENDLESS WINTER - FROST
+//Chillblains - Frost
 dk_ranks[i] = [
-"Your Chains of Ice has a 50% chance to cause Frost Fever and the cost of your Mind Freeze is reduced to 10 runic power.",
-"Your Chains of Ice has a 100% chance to cause Frost Fever and the cost of your Mind Freeze is reduced to no runic power."
+"Victims of your Frost Fever disease are Chilled, Reducing movement speed by 15% for 10 seconds.",
+"Victims of your Frost Fever disease are Chilled, Reducing movement speed by 30% for 10 seconds.",
+"Victims of your Frost Fever disease are Chilled, Reducing movement speed by 50% for 10 seconds."
 ];
 i++;
 
-
-
-//Howling Blast - FROST
+//HUNGERING COLD - FROST
 dk_ranks[i] = [
-"<span style=text-align:left;float:left;>1 Unholy 1 Frost<br></span><span style=text-align:right;float:right;>25 yd range</span><br> <span style=text-align:left;float:left;>Instant<br></span><span style=text-align:right;float:right;>6 sec cooldown</span><br>Blast the target with a frigid wind dealing 99 to 107 Frost damage to all enemies within 10 yards. Deals double damage to targets infected with Frost Fever."
+"<span style=text-align:left;float:left;>60 Runic Power<br></span><br> <span style=text-align:left;float:left;>Instant<br></span><span style=text-align:right;float:right;>1 min cooldown</span><br>Purges the earth around the Death Knight of all heat. Enemies within 10 yards are trapped in ice, preventing them from performing any action for 10 sec and infecting them with Frost Fever. Enemies are considered Frozen, but any damage other than diseases will break the ice."
 		];
 i++;
 
-//FROST AURA - FROST
+//Improved Frost Presence - FROST
 dk_ranks[i] = [
-"All party or raid members within 45 yards of the Death Knight gain 40 spell resistance.",
-"All party or raid members within 45 yards of the Death Knight gain 80 spell resistance."
+"While in Blood Presence or Unholy Presence, you retain 4% stamina from Frost Presence, and damage done to you is decreased by an additional 1% in Frost Presence.",
+"While in Blood Presence or Unholy Presence, you retain 8% stamina from Frost Presence, and damage done to you is decreased by an additional 2% in Frost Presence."
 		];
 i++;
 
 
-//Chilbrains - Frost
+// Threat of Thassarian - Frost
 dk_ranks[i] = [
-"Victims of your Frost Fever disease are Chilled, reducing movement speed by 10% for 10 sec.",
-"Victims of your Frost Fever disease are Chilled, reducing movement speed by 20% for 10 sec.",
-"Victims of your Frost Fever disease are Chilled, reducing movement speed by 30% for 10 sec."
-		];
-i++;
-
+"When dual-wielding, your Death Strikes, Obliterates, Plague Strikes, Rune Strikes, Blood Strikes and Frost Strikes have a 30% chance to also deal damage with your offhand weapon.",
+"When dual-wielding, your Death Strikes, Obliterates, Plague Strikes, Rune Strikes, Blood Strikes and Frost Strikes have a 60% chance to also deal damage with your offhand weapon.",
+"When dual-wielding, your Death Strikes, Obliterates, Plague Strikes, Rune Strikes, Blood Strikes and Frost Strikes have a 100% chance to also deal damage with your offhand weapon."
+]; i++;
 
 
 //Blood of the North - FROST
 dk_ranks[i] = [
-"Increases Blood Strike damage by 3%. In addition, whenever you hit with a Blood Strike or Pestilence there is a 20% chance that the Blood Rune will become a Death Rune when it activates.",
-"Increases Blood Strike damage by 6%. In addition, whenever you hit with a Blood Strike or Pestilence there is a 40% chance that the Blood Rune will become a Death Rune when it activates.",
-"Increases Blood Strike damage by 9%. In addition, whenever you hit with a Blood Strike or Pestilence there is a 60% chance that the Blood Rune will become a Death Rune when it activates.",
-"Increases Blood Strike damage by 12%. In addition, whenever you hit with a Blood Strike or Pestilence there is a 80% chance that the Blood Rune will become a Death Rune when it activates.",
-"Increases Blood Strike damage by 15%. In addition, whenever you hit with a Blood Strike or Pestilence there is a 100% chance that the Blood Rune will become a Death Rune when it activates."
+"Increases Blood Strike and Frost Strike damage by 3%. In addition, whenever you hit with a Blood Strike or Pestilence there is a 30% chance that the Blood Rune will become a Death Rune when it activates.",
+"Increases Blood Strike and Frost Strike damage by 6%. In addition, whenever you hit with a Blood Strike or Pestilence there is a 60% chance that the Blood Rune will become a Death Rune when it activates.",
+"Increases Blood Strike and Frost Strike damage by 9%. In addition, whenever you hit with a Blood Strike or Pestilence there is a 100% chance that the Blood Rune will become a Death Rune when it activates."
 		];
 i++;
 
@@ -425,8 +425,6 @@ dk_ranks[i] = [
 "<span style=text-align:left;float:left;>1 Frost<br></span><br><span style=text-align:left;float:left;>Instant<br></span><span style=text-align:right;float:right;>1 min cooldown</span><br>Increases your armor by 25%, your total Strength by 10% and your Parry chance by 5% for 20 sec."
 		];
 i++;
-
-
 
 //Acclimation - Frost
 dk_ranks[i] = [
@@ -438,7 +436,7 @@ i++;
 
 //Frost Strike - Frost
 dk_ranks[i] = [
-"<span style=text-align:left;float:left;>40 Runic Power<br></span><span style=text-align:right;float:right;>Melee Range</span><br><span style=text-align:left;float:left;>Instant</span><br/><span style=text-align:left;float:left;>Requires Melee Weapon<br></span><br>Instantly strike the enemy, causing 60% weapon damage plus 52 as Frost damage. Can't be dodged, blocked, or parried."
+"<span style=text-align:left;float:left;>40 Runic Power<br></span><span style=text-align:right;float:right;>Melee Range</span><br><span style=text-align:left;float:left;>Instant</span><br/><span style=text-align:left;float:left;>Requires Melee Weapon<br></span><br>Instantly strike the enemy, causing 55% weapon damage plus 47.85 as Frost damage."
 		];
 i++;
 
@@ -452,17 +450,17 @@ i++;
 
 //Tundra Stalker - Frost
 dk_ranks[i] = [
-"Your spells and abilities deal 2% more damage to targets infected with Frost Fever. Also increases your expertise by 1.",
-"Your spells and abilities deal 4% more damage to targets infected with Frost Fever. Also increases your expertise by 2.",
-"Your spells and abilities deal 6% more damage to targets infected with Frost Fever. Also increases your expertise by 3.",
-"Your spells and abilities deal 8% more damage to targets infected with Frost Fever. Also increases your expertise by 4.",
-"Your spells and abilities deal 10% more damage to targets infected with Frost Fever. Also increases your expertise by 5. "
+"Your spells and abilities deal 3% more damage to targets infected with Frost Fever. Also increases your expertise by 1.",
+"Your spells and abilities deal 6% more damage to targets infected with Frost Fever. Also increases your expertise by 2.",
+"Your spells and abilities deal 9% more damage to targets infected with Frost Fever. Also increases your expertise by 3.",
+"Your spells and abilities deal 12% more damage to targets infected with Frost Fever. Also increases your expertise by 4.",
+"Your spells and abilities deal 15% more damage to targets infected with Frost Fever. Also increases your expertise by 5. "
 		];
 i++;
 
-//HUNGERING COLD - FROST
+//Howling Blast - FROST
 dk_ranks[i] = [
-"<span style=text-align:left;float:left;>60 Runic Power<br></span><br> <span style=text-align:left;float:left;>Instant<br></span><span style=text-align:right;float:right;>1 min cooldown</span><br>Purges the earth around the Death Knight of all heat. Enemies within 10 yards are trapped in ice, preventing them from performing any action for 10 sec and infecting them with Frost Fever. Enemies are considered Frozen, but any damage other than diseases will break the ice."
+"<span style=text-align:left;float:left;>1 Unholy 1 Frost<br></span><span style=text-align:right;float:right;>20 yd range</span><br> <span style=text-align:left;float:left;>Instant<br></span><span style=text-align:right;float:right;>8 sec cooldown</span><br>Blast the target with a frigid wind dealing 198 to 214 Frost damage to all enemies within 10 yards."
 		];
 i++;
 
@@ -475,14 +473,13 @@ dk_ranks[i]=[
 	];
 i++;
 
-//Morbidity - UNHOLY
-dk_ranks[i] = [
-"Increases the damage and healing of Death Coil by 5% and reduces the cooldown on Death and Decay by 5 sec.",
-"Increases the damage and healing of Death Coil by 10% and reduces the cooldown on Death and Decay by 10 sec.",
-"Increases the damage and healing of Death Coil by 15% and reduces the cooldown on Death and Decay by 15 sec."
-		];
+//VIRULENCE - UNHOLY
+dk_ranks[i]=[
+"Increases your chance to hit with your spells by 1% and reduces the chance that your spells and diseases you cause can be cured by 10%.",
+"Increases your chance to hit with your spells by 2% and reduces the chance that your spells and diseases you cause can be cured by 20%.",
+"Increases your chance to hit with your spells by 3% and reduces the chance that your spells and diseases you cause can be cured by 30%."
+	];
 i++;
-
 
 //Anticipation - UNHOLY
 dk_ranks[i]=[
@@ -501,16 +498,13 @@ dk_ranks[i]=[
 	];
 i++;
 
-//VIRULENCE - UNHOLY
-dk_ranks[i]=[
-"Increases your chance to hit with your spells by 1% and reduces the chance that your spells and diseases you cause can be cured by 10%.",
-"Increases your chance to hit with your spells by 2% and reduces the chance that your spells and diseases you cause can be cured by 20%.",
-"Increases your chance to hit with your spells by 3% and reduces the chance that your spells and diseases you cause can be cured by 30%."
-	];
+//Morbidity - UNHOLY
+dk_ranks[i] = [
+"Increases the damage and healing of Death Coil by 5% and reduces the cooldown on Death and Decay by 5 sec.",
+"Increases the damage and healing of Death Coil by 10% and reduces the cooldown on Death and Decay by 10 sec.",
+"Increases the damage and healing of Death Coil by 15% and reduces the cooldown on Death and Decay by 15 sec."
+		];
 i++;
-
-
-
 
 //Unholy Command - Unholy
 dk_ranks[i]=[
@@ -529,29 +523,27 @@ i++;
 
 //Outbreak - UNHOLY
 dk_ranks[i]=[
-"Increases the damage of Plague Strike, Pestilence and Blood Boil by 10%.",
-"Increases the damage of Plague Strike, Pestilence and Blood Boil by 20%.",
-"Increases the damage of Plague Strike, Pestilence and Blood Boil by 30%."
+"Increases the damage of Plague Strike, Pestilence and Blood Boil by 10% and Scourge Strike by 7%.",
+"Increases the damage of Plague Strike, Pestilence and Blood Boil by 20% and Scourge Strike by 13%.",
+"Increases the damage of Plague Strike, Pestilence and Blood Boil by 30% and Scourge Strike by 20%."
 	];
 i++;
 
 //Necrosis - Unholy
 dk_ranks[i]=[
-"Your auto attacks deal an additional 2% Shadow damage.",
 "Your auto attacks deal an additional 4% Shadow damage.",
-"Your auto attacks deal an additional 6% Shadow damage.",
 "Your auto attacks deal an additional 8% Shadow damage.",
-"Your auto attacks deal an additional 10% Shadow damage."
+"Your auto attacks deal an additional 12% Shadow damage.",
+"Your auto attacks deal an additional 16% Shadow damage.",
+"Your auto attacks deal an additional 20% Shadow damage."
 	];
 i++;
 
-//CORPSE EXPLOSION - UNHOLY
+//CORPSE EXPLOSION - UNHOLY TODO:
 dk_ranks[i] = [
-"<span style=text-align:left;float:left;>1 Unholy<br></span><span style=text-align:right;float:right;>20 yd range</span><br><span style=text-align:left;float:left;>Instant<br></span><br>Cause a corpse to explode for 216 Shadow damage to all enemies within 20 yards. Will use a nearby corpse if the target is not a corpse. Does not affect mechanical or elemental corpses."
+"<span style=text-align:left;float:left;>1 Unholy<br></span><span style=text-align:right;float:right;>30 yd range</span><br><span style=text-align:left;float:left;>Instant<br></span><br>Cause a corpse to explode for 166 Shadow damage to all enemies within 10 yards. Will use a nearby corpse if the target is not a corpse. Does not affect mechanical or elemental corpses."
 		];
 i++;
-
-
 
 //ON A PALE HORSE - UNHOLY
 dk_ranks[i]=[
@@ -560,25 +552,25 @@ dk_ranks[i]=[
 	];
 i++;
 
-//Blood-Caked Blade � Unholy
+//Blood-Caked Blade - Unholy
 dk_ranks[i] = [
-"Your auto attacks have a 10% chance to cause a Blood-Caked Strike, which hits for 25% weapon damage plus 13% for each of your diseases on the target.",
-"Your auto attacks have a 20% chance to cause a Blood-Caked Strike, which hits for 25% weapon damage plus 13% for each of your diseases on the target.",
-"Your auto attacks have a 30% chance to cause a Blood-Caked Strike, which hits for 25% weapon damage plus 13% for each of your diseases on the target."
+"Your auto attacks have a 10% chance to cause a Blood-Caked Strike, which hits for 25% weapon damage plus 12.5% for each of your diseases on the target.",
+"Your auto attacks have a 20% chance to cause a Blood-Caked Strike, which hits for 25% weapon damage plus 12.5% for each of your diseases on the target.",
+"Your auto attacks have a 30% chance to cause a Blood-Caked Strike, which hits for 25% weapon damage plus 12.5% for each of your diseases on the target."
 		];
 i++;
 
-//SHADOW OF DEATH - UNHOLY
+//Night of the Dead - UNHOLY
 dk_ranks[i] = [
-"Increases your total Strength and Stamina by 2%. In addition, whenever you die, you return to keep fighting as a Ghoul for 45 sec."
+"Reduces the cooldown on Raise Dead by 45 seconds and the cooldown on Army of the Dead by 2 minutes. Also reduces the damage your pet takes from creature area of effect attacks by 45%.",
+"Reduces the cooldown on Raise Dead by 90 seconds and the cooldown on Army of the Dead by 4 minutes. Also reduces the damage your pet takes from creature area of effect attacks by 90%."
 		];
 i++;
 
-//SUMMON GARGOYLE - UNHOLY
+// Unholy Blight -  UNHOLY
 dk_ranks[i] = [
-"<span style=text-align:left;float:left;>50 Runic Power<br></span><span style=text-align:right;float:right;>30 yd range</span><br> <span style=text-align:left;float:left;>Instant<br></span><span style=text-align:right;float:right;>3 min cooldown</span><br>A Gargoyle flies into the area and bombards the target with Nature damage modified by the Death Knight's attack power. Persists for 1 sec per 8 runic power up to 1 min."
-		];
-i++;
+	"Causes the victims of your Death Coil to be surrounded by a vile swarm of unholy insects, taking 10% of the damage done by the Death Coil over 10 seconds, and preventing any diseases on the victim from being dispelled."
+];i++;
 
 //IMPURITY - UNHOLY
 dk_ranks[i] = [
@@ -597,13 +589,18 @@ dk_ranks[i] = [
 		];
 i++;
 
+//Desecration - Unholy
+dk_ranks[i] = [
+"Your Plague Strikes and Scourge Strikes have a 25% chance to cause the Desecrated Ground effect. Targets in the area are slowed by 50% by the grasping arms of the deae while standing on the unholy ground. Lasts 20 sec.",
+"Your Plague Strikes and Scourge Strikes have a 50% chance to cause the Desecrated Ground effect. Targets in the area are slowed by 50% by the grasping arms of the dead while standing on the unholy ground. Lasts 20 sec."
+		];
+i++;
+
 //Magic Suppression - UNHOLY
 dk_ranks[i] = [
-"You take 1% less damage from all magic. In addition, your Anti-Magic Shell absorbs an additional 5% of spell damage.",
-"You take 2% less damage from all magic. In addition, your Anti-Magic Shell absorbs an additional 10% of spell damage.",
-"You take 3% less damage from all magic. In addition, your Anti-Magic Shell absorbs an additional 15% of spell damage.",
-"You take 4% less damage from all magic. In addition, your Anti-Magic Shell absorbs an additional 20% of spell damage.",
-"You take 5% less damage from all magic. In addition, your Anti-Magic Shell absorbs an additional 25% of spell damage.",
+"You take 1% less damage from all magic. In addition, your Anti-Magic Shell absorbs an additional 8% of spell damage.",
+"You take 2% less damage from all magic. In addition, your Anti-Magic Shell absorbs an additional 16% of spell damage.",
+"You take 3% less damage from all magic. In addition, your Anti-Magic Shell absorbs an additional 24% of spell damage."
 		];
 i++;
 
@@ -617,20 +614,18 @@ i++;
 
 //Master of Ghouls - Unholy
 dk_ranks[i]=[
-"The Ghoul summoned by your Raise Dead spell is considered a pet and is under your control. Unlike normal Death Knight Ghouls, your pet does not have a limited duration."
+"Reduces the cooldown of Raise Dead by 60 seoncds, and the Ghoul summoned by your Raise Dead spell is considered a pet under your control. Unlike normal Death Knight Ghouls, your pet does not have a limited duration."
 	];
 i++;
 
-//Desecration - Unholy
+//Desolation - Unholy
 dk_ranks[i] = [
-"Your Plague Strikes have a 20% chance to cause the Desecrated Ground effect. Targets in the area are slowed by 50% by the grasping arms of the dead while you cause 5% additional damage while standing on the unholy ground. Lasts 12 sec.",
-"Your Plague Strikes have a 40% chance to cause the Desecrated Ground effect. Targets in the area are slowed by 50% by the grasping arms of the dead while you cause 5% additional damage while standing on the unholy ground. Lasts 12 sec.",
-"Your Plague Strikes have a 60% chance to cause the Desecrated Ground effect. Targets in the area are slowed by 50% by the grasping arms of the dead while you cause 5% additional damage while standing on the unholy ground. Lasts 12 sec.",
-"Your Plague Strikes have a 80% chance to cause the Desecrated Ground effect. Targets in the area are slowed by 50% by the grasping arms of the dead while you cause 5% additional damage while standing on the unholy ground. Lasts 12 sec.",
-"Your Plague Strikes have a 100% chance to cause the Desecrated Ground effect. Targets in the area are slowed by 50% by the grasping arms of the dead while you cause 5% additional damage while standing on the unholy ground. Lasts 12 sec."
-		];
-i++;
-
+"Your Blood Strikes cause you to deal 1% additional damage with all attacks for the next 20 seconds.",
+"Your Blood Strikes cause you to deal 2% additional damage with all attacks for the next 20 seconds.",
+"Your Blood Strikes cause you to deal 3% additional damage with all attacks for the next 20 seconds.",
+"Your Blood Strikes cause you to deal 4% additional damage with all attacks for the next 20 seconds.",
+"Your Blood Strikes cause you to deal 5% additional damage with all attacks for the next 20 seconds."
+];i++;
 
 //Anti-Magic Zone - Unholy
 dk_ranks[i] = [
@@ -638,17 +633,16 @@ dk_ranks[i] = [
 		];
 i++;
 
-//UNHOLY AURA - UNHOLY
+//Improved Unholy Presence - UNHOLY
 dk_ranks[i] = [
-"All party or raid members within 45 yards of the Death Knight move 8% faster. This effect does not stack with other movement improving effects.",
-"All party or raid members within 45 yards of the Death Knight move 15% faster. This effect does not stack with other movement improving effects."
+"While in Blood Presence or Frost Presence, you retain 8% increased movement speed from Unholy Presence, and your runes finish their cooldowns 5% faster in Unholy Presence.",
+"While in Blood Presence or Frost Presence, you retain 15% increased movement speed from Unholy Presence, and your runes finish their cooldowns 10% faster in Unholy Presence."
 		];
 i++;
 
-//Night of the Dead - Unholy
+//Ghoul Frenzy - Unholy
 dk_ranks[i] = [
-"Your next 10 Plague Strikes and Scourge Strikes lower the cooldown of Raise Dead by 15 sec and Army of the Dead by 30 sec per strike.",
-"Your next 10 Plague Strikes and Scourge Strikes lower the cooldown of Raise Dead by 30 sec and Army of the Dead by 60 sec per strike."
+"<span style=text-align:left;float:left;>1 Unholy</span><span style=text-align:right;float:right;>45 yd range</span><br><span style=text-align:left;float:left;>Instant</span><span style=text-align:right;float:right;>10 sec cooldown</span><br><br>Grants your pet 25% haste for 30 seconds and heals it for 60% of its health over the duration."
 		];
 i++;
 
@@ -704,10 +698,10 @@ dk_ranks[i] = [
 		];
 i++;
 
-//Unholy Blight - Unholy
+//Gargoyle
 dk_ranks[i] = [
-"<span style=text-align:left;float:left;>60 Runic Power<br></span><br> <span style=text-align:left;float:left;>Instant<br></span><br>A vile swarm of unholy insects surrounds the Death Knight for a 10 yard radius. Enemies caught in the area take 21 Shadow damage per sec. Lasts 20 sec."
+"<span style=text-align:left;float:left;>60 runic power</span><span style=text-align:right;float:right;>30 yd range</span><br><span style=text-align:left;float:left;>Instant</span><span style=text-align:right;float:right;>3 min cooldown</span><br><br>A Gargoyle flies into the area and bombards the target with Nature damage modified by the Death Knight\'s attack power. Persists for 30 seconds."
 		];
-i++;
+
 
 //UNHOLY Talents End^^

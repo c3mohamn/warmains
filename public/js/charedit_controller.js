@@ -94,7 +94,7 @@ editApp.controller('editctrl', ['$scope', '$http', '$compile', function($scope, 
       $(talent_loc).attr('data-trigger', 'hover');
       $(talent_loc).attr('data-placement', 'bottom'); // TODO: make left/center/right
       $(talent_loc).attr('data-html', 'true');
-      $(talent_loc).attr('data-original-title', '{{display_talent_info(' + talent + ')}}');
+      $(talent_loc).attr('data-original-title', '{{talent_tooltip(' + talent + ')}}');
 
       // insert the talent counter for the given talent into the DOM
       $(talent_loc).html("<div class='talent_counter' ng-class=\"{'maxed_talent': is_talent_maxed("
@@ -144,8 +144,8 @@ editApp.controller('editctrl', ['$scope', '$http', '$compile', function($scope, 
       if (last_active_row < row) $scope.talent_points[tree].last_active_row = row;
       // update tooltip while still hovered over
       $('#talent_' + talent)
-      .attr('data-original-title', $scope.display_talent_info(talent))
-      .parent().find('.tooltip-inner').html($scope.display_talent_info(talent));
+      .attr('data-original-title', $scope.talent_tooltip(talent))
+      .parent().find('.tooltip-inner').html($scope.talent_tooltip(talent));
     }
   }
 
@@ -192,8 +192,8 @@ editApp.controller('editctrl', ['$scope', '$http', '$compile', function($scope, 
         $scope.talent_points[tree].last_active_row -= 1;
       // update tooltip while still hovered over
       $('#talent_' + talent)
-      .attr('data-original-title', $scope.display_talent_info(talent))
-      .parent().find('.tooltip-inner').html($scope.display_talent_info(talent));
+      .attr('data-original-title', $scope.talent_tooltip(talent))
+      .parent().find('.tooltip-inner').html($scope.talent_tooltip(talent));
     }
   }
 
@@ -215,8 +215,8 @@ editApp.controller('editctrl', ['$scope', '$http', '$compile', function($scope, 
     $scope.talent_points.right.row = {0:0, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0, 8:0, 9:0, 10:0};
   }
 
-  // gets talent info for given talent at whatever its current rank is
-  $scope.display_talent_info = function(talent) {
+  // gets talent tooltip for given talent at whatever its current rank is
+  $scope.talent_tooltip = function(talent) {
     var cur_rank = 0,
         talent_rank_info = '',
         talent_rank_info_next = '',
@@ -225,6 +225,7 @@ editApp.controller('editctrl', ['$scope', '$http', '$compile', function($scope, 
         talent_info = all_talents[$scope.character.class][talent],
         actual_cur_rank = 0;
 
+    // get the talent ranks for current class
     if (char_class == 'druid') rank = druid_ranks;
     else if (char_class == 'death knight') rank = dk_ranks;
     else if (char_class == 'mage') rank = mage_ranks;
@@ -236,20 +237,35 @@ editApp.controller('editctrl', ['$scope', '$http', '$compile', function($scope, 
     else if (char_class == 'warlock') rank = warlock_ranks;
     else if (char_class == 'warrior') rank = warrior_ranks;
 
-
+    // update the rank to that of current, compensating for the array indexes
+    // also store actual talent rank for tooltip info
     if ($scope.cur_talents[talent]) {
       cur_rank = $scope.cur_talents[talent] - 1;
       actual_cur_rank = cur_rank + 1;
     }
 
-
+    // get the tooltip info for the next rank if it exists.
     if (talent_info.max_rank - 1 > cur_rank) {
       talent_rank_info_next = rank[talent][cur_rank + 1];
     }
 
+    // get the talent info
     talent_rank_info = rank[talent][cur_rank];
 
-    return talent_info.name + '</br>' + actual_cur_rank + '/' + talent_info.max_rank + '</br></br>' + talent_rank_info;
+    // if we're maxed out in talent or it is a 0/1 talent
+    if (talent_rank_info_next == '') {
+      return "<span class='pull-left' style='color:red;font-size:14px'>" + talent_info.name + '</span>' +
+      '<span class=\'pull-right\' style=\'color:#DAA500;\'> Rank ' + actual_cur_rank + '/' +
+      talent_info.max_rank + '</span></br>' +
+      '</br>' + talent_rank_info;
+    }
+    // otherwise we post the info for the next rank as well
+    return "<span class='pull-left' style='color:red;font-size:14px'>" + talent_info.name + '</span>' +
+    '<span class=\'pull-right\' style=\'color:#DAA500;\'> Rank ' + actual_cur_rank + '/' +
+    talent_info.max_rank + '</span></br>' +
+    '</br>' + talent_rank_info +
+    '</br><span class=\'pull-left\' style=\'color:#DAA500;\'>Next Rank:</span></br>'
+    + talent_rank_info_next;
   }
 
   // returns url of image for talent
