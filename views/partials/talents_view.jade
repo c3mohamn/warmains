@@ -3,41 +3,83 @@ div(class='talents_view' ng-show="cur_view == 'talents'")
     h3(ng-style="class_color(character.class)")
       {{talent_points.remaining}} ({{talent_points.left.total}}/{{talent_points.center.total}}/{{talent_points.right.total}})
 
+    ul(class='list-inline' ng-if='permission')
+      li: h4(class='view_tab' id='reset_talents' ng-click='reset_talents()') Reset
+      li: h3(class='view_tab' id='save_talents' ng-click='save_to_db()') Save
+      li: h4(class='view_tab' id='help_talents'
+      data-toggle='tooltip' data-placement='right'
+      data-html='true'
+      data-title='Left Click over a talent to add a point. \
+      <br> Right Click over a talent to remove a point. \
+      <br><br> Make sure to <span style=\'color:rgba(44, 218, 0, 1)\'>save</span> \
+      before exiting the page.') Help
+
+    p(class='success-msg' ng-show="success_msg != ''") {{success_msg}}
+
   div(class='talent_tree')
     include talent_tree_template.jade
 
   div(class='glyphs_container')
     h3 Glyphs
+    ul(class='list-inline')
+      li: h3(ng-if='permission' class='view_tab' id='save_talents' ng-click='save_to_db()') Save
+      li: h4(ng-if='permission' class='view_tab' id='help_talents'
+    data-toggle='tooltip' data-trigger='click' data-placement='right'
+    data-html='true'
+    data-title='1. Select a Major or Minor Glyph slot by clicking on it. \
+    <br>2. Select a glyph from the table below to equip it.\
+    <br><br>That\'s it! If you are still lost, press ctrl-w.\
+    <br><br> Make sure to <span style=\'color:rgba(44, 218, 0, 1)\'>save</span> \
+    before exiting the page.') Help
 
     ul(class='list-inline')
-      li
+      li(class='major_glyphs')
         h4 Major
         ul(class='list-inline')
-          li: div(class='item_slot' id='major_glyph_1')
-          li: div(class='item_slot' id='major_glyph_2')
-          li: div(class='item_slot' id='major_glyph_3')
-      li
+          li(ng-click="cur_glyph_slot = 1; glyph_results = major_glyphs")
+            a(id='glyph_1_link')
+              div(ng-class="{'selected_slot': cur_glyph_slot == 1}"
+              class='item_slot' id='glyph_1_slot')
+          li(ng-click="cur_glyph_slot = 2; glyph_results = major_glyphs")
+            a(id='glyph_2_link')
+              div(ng-class="{'selected_slot': cur_glyph_slot == 2}"
+              class='item_slot' id='glyph_2_slot')
+          li(ng-click="cur_glyph_slot = 3; glyph_results = major_glyphs")
+            a(id='glyph_3_link')
+              div(ng-class="{'selected_slot': cur_glyph_slot == 3}"
+              class='item_slot' id='glyph_3_slot')
+      li(class='minor_glyphs')
         h5 Minor
         ul(class='list-inline')
-          li: div(class='item_slot' id='minor_glyph_1')
-          li: div(class='item_slot' id='minor_glyph_2')
-          li: div(class='item_slot' id='minor_glyph_3')
+          li(ng-click="cur_glyph_slot = 4; glyph_results = minor_glyphs")
+            a(id='glyph_4_link')
+              div(ng-class="{'selected_slot': cur_glyph_slot == 4}"
+              class='item_slot' id='glyph_4_slot')
+          li(ng-click="cur_glyph_slot = 5; glyph_results = minor_glyphs")
+            a(id='glyph_5_link')
+              div(ng-class="{'selected_slot': cur_glyph_slot == 5}"
+              class='item_slot' id='glyph_5_slot')
+          li(ng-click="cur_glyph_slot = 6; glyph_results = minor_glyphs")
+            a(id='glyph_6_link')
+              div(ng-class="{'selected_slot': cur_glyph_slot == 6}"
+              class='item_slot' id='glyph_6_slot')
 
-    div(class='glyphs')
+    p(class='success-msg' ng-show="success_msg != ''") {{success_msg}}
+    p(class='error-msg' ng-show="error_msg != ''") {{error_msg}}
+
+    div(class='glyphs' ng-if='permission')
       table(class='table')
         thead
           tr
             td
             td Name
             td Type
+            td Description
         tbody
-          tr(ng-repeat="glyph in major_glyphs")
-            td 
-            td {{glyph.name}}
-            td {{glyph.type}}
-
-  p(class='success-msg' ng-show="success_msg != ''") {{success_msg}}
-  input(ng-if='permission' type="submit" value='Save Changes' ng-click='save_to_db()'
-        class="save_item loginmodal-submit")
-  input(ng-if='permission' type="submit" value='Reset Talents' ng-click='reset_talents()'
-        class="save_item loginmodal-submit")
+          tr(ng-repeat="(key, val) in glyph_results" ng-click="equip_glyph(key)")
+            td
+             a(target="_blank" ng-href="http://db.warmane.com/wotlk/item={{key}}")
+              img(ng-src='http://wow.zamimg.com/images/wow/icons/large/{{val.IconPath}}.jpg')
+            td: h5 {{val.name}}
+            td: h6 {{val.type}}
+            td {{val.description}}

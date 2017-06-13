@@ -27,7 +27,7 @@ header.priest { background-image: url('/images/bg/class-bg/priest.jpg'); }
   margin-left: 45px;
 }
 .view_tab {
-  color: rgba(0,0,0,.4);
+  color: rgba(255,255,255,.4);
   padding: 10px;
   cursor: pointer;
   -webkit-touch-callout: none;
@@ -47,12 +47,14 @@ header.priest { background-image: url('/images/bg/class-bg/priest.jpg'); }
 .selected_view {
   color:white;
   transition: .3s;
+  text-decoration: underline;
 }
 
 .gear_view_tab {
+  border-radius: 4px;
   width: 100px;
-  background-color: rgba(0,0,0,.5);
-  box-shadow: 0px 0px 5px 1px rgba(0,0,0,.5);
+  background-color: rgba(255,255,255,.4);
+  box-shadow: -2px 2px 5px 1px rgba(255,255,255,.3);
   color:black;
   opacity: 1;
   transition: 0.5s;
@@ -132,6 +134,7 @@ header.priest { background-image: url('/images/bg/class-bg/priest.jpg'); }
 
 // Item Slot styles
 .item_slot {
+  border-radius: 5px;
   width: 55px;
   height: 55px;
   margin-bottom: 3px;

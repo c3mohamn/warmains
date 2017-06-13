@@ -20,7 +20,8 @@ $(document).ready(function(){
 
   // Disables item slot links from directing to another page
   // - makes it easier to select slots.
-  $('.char_panel a, #selected_link, #selected_gem_link').click(function() {
+  $('.char_panel a, #selected_link, #selected_gem_link, .glyphs, \
+  .major_glyphs, .minor_glyphs').click(function() {
     return false;
   });
 });

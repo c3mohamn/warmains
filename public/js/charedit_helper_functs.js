@@ -3,12 +3,12 @@
 //$.getScript('/js/talent_ranks/shaman.js');
 // initialize bootstrap tooltips
 $(document).ready(function(){
-    $('[data-toggle=tooltip]').hover(function(){
-        // on mouseenter
-        $(this).tooltip('show');
-    }, function(){
-        // on mouseleave
-        $(this).tooltip('hide');
+    //$('[data-toggle="tooltip"]').tooltip();
+
+    $('[data-toggle="tooltip"]').tooltip({
+        animated: 'fade',
+        placement: 'right',
+        trigger: 'click'
     });
 });
 
@@ -183,7 +183,6 @@ function compare_slot(slot, item, char) {
  * item: the selected item.
  */
 function set_slot_image(slot, item) {
-
   var item_path = 'item=';
   var spell_path = 'spell=';
   var Idpath = '';
@@ -596,6 +595,9 @@ function load_class_glyphs(char_class, majors, minors) {
     var cur_glyph = g_glyphs[glyph];
 
     if (classes[char_class] == cur_glyph.classs) { // class glyph
+      cur_glyph.IconPath = cur_glyph.icon.toLowerCase();
+      delete cur_glyph.icon;
+      cur_glyph.Id = glyph;
       if (cur_glyph.type == 1)  { // is major glyph
         majors[glyph] = cur_glyph;
         majors[glyph].type = 'Major';

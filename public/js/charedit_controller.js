@@ -20,16 +20,17 @@ editApp.controller('editctrl', ['$scope', '$http', '$compile', function($scope, 
   $scope.reverseSort = false;
   $scope.error_msg = '';
   $scope.success_msg = '';
-  $scope.Stats = {};
-  $scope.updated_Stats = {};
-  $scope.character = {};
-  // all multipliers for enchants/gems currently equipped TODO: calculate at end
-  $scope.multipliers = {};
-  $scope.talent_points = {};
-  $scope.cur_talents = {};
-  $scope.talent_tooltips = [];
-  $scope.major_glyphs = {};
-  $scope.minor_glyphs = {};
+  $scope.Stats = {}; // stores current stats for character
+  $scope.updated_Stats = {}; // stores the stats after updating with multipliers
+  $scope.character = {}; // stores all character information on load
+  $scope.multipliers = {}; // stores multipliers gained from gems/enchants
+  $scope.talent_points = {}; // stores additional talent point information
+  $scope.cur_talents = {}; // stores current talent points
+  $scope.cur_glyphs = {}; // stores currently equipped glyphs
+  $scope.major_glyphs = {}; // stores all major glyphs for current character's class
+  $scope.minor_glyphs = {}; // stores all minor glyphs for current character's class
+  $scope.glyph_results = {};
+  $scope.cur_glyph_slot = 0; // the currently selected glyph
 
   //classes and corresponding specs for each class
   $scope.class_specs = {
@@ -225,7 +226,8 @@ editApp.controller('editctrl', ['$scope', '$http', '$compile', function($scope, 
         char_class = $scope.character.class,
         rank = [],
         talent_info = all_talents[$scope.character.class][talent],
-        actual_cur_rank = 0;
+        actual_cur_rank = 0,
+        click_to_learn = '';
 
     // get the talent ranks for current class
     if (char_class == 'druid') rank = druid_ranks;
@@ -254,20 +256,24 @@ editApp.controller('editctrl', ['$scope', '$http', '$compile', function($scope, 
     // get the talent info
     talent_rank_info = rank[talent][cur_rank];
 
+    // if talent is active and have 0 talent points in it, add this line
+    if (!$scope.is_inactive(talent) && $scope.cur_talents[talent] == 0)
+      click_to_learn = "<br><span class='pull-left' style='color:#00FF44;'>Click to Learn</span>";
+
     // if we're maxed out in talent or it is a 0/1 talent or have no points in talent
     if (talent_rank_info_next == '' || actual_cur_rank == 0) {
-      return "<span class='pull-left' style='color:red;font-size:14px'>" + talent_info.name + '</span>' +
+      return "<span class='pull-left' style='color:#FF5500;font-size:14px'>" + talent_info.name + '</span>' +
       '<span class=\'pull-right\' style=\'color:#DAA500;\'> Rank ' + actual_cur_rank + '/' +
       talent_info.max_rank + '</span></br>' +
-      '</br>' + talent_rank_info;
+      '</br>' + talent_rank_info + click_to_learn;
     }
     // otherwise we post the info for the next rank as well
-    return "<span class='pull-left' style='color:red;font-size:14px'>" + talent_info.name + '</span>' +
+    return "<span class='pull-left' style='color:#FF5500;font-size:14px'>" + talent_info.name + '</span>' +
     '<span class=\'pull-right\' style=\'color:#DAA500;\'> Rank ' + actual_cur_rank + '/' +
     talent_info.max_rank + '</span></br>' +
     '</br>' + talent_rank_info +
     '</br><span class=\'pull-left\' style=\'color:#DAA500;\'>Next Rank:</span></br>'
-    + talent_rank_info_next;
+    + talent_rank_info_next + click_to_learn;
   }
 
   // returns url of image for talent
@@ -310,6 +316,39 @@ editApp.controller('editctrl', ['$scope', '$http', '$compile', function($scope, 
     return false;
   }
 
+  // Equips a glyph to the currently selected glyph slot.
+  $scope.equip_glyph = function(key) {
+    var cur_slot = $scope.cur_glyph_slot,
+        glyph = g_glyphs[key];
+    $scope.error_msg = '';
+    $scope.success_msg = '';
+
+    // check if glyph type and glyph slot match
+    if (glyph.type == 'Minor' && cur_slot < 4) {
+      $scope.error_msg = 'You cannot equip a Major Glyph there.';
+      return false;
+    }
+    if (glyph.type == 'Major' &&  cur_slot > 3) {
+      $scope.error_msg = 'You cannot equip a Minor Glyph there.';
+      return false;
+    }
+
+    // check if glyph is already equipped or not.
+    for (var key in char_glyphs) {
+      if (glyph == char_glyphs[key]) {
+        $scope.error_msg = 'That glyph is already equipped.';
+        return false;
+      }
+    }
+
+    if (cur_slot) {
+      $scope.success_msg = glyph.name + ' has been equipped!';
+      set_slot_image('glyph_' + cur_slot, glyph);
+      char_glyphs[cur_slot] = glyph;
+      //console.log(char_glyphs);
+    }
+  }
+
 
   /* Saves the current state of the character in db. */
   $scope.save_to_db = function() {
@@ -317,6 +356,7 @@ editApp.controller('editctrl', ['$scope', '$http', '$compile', function($scope, 
       char: char_items,
       gems: char_gems,
       enchants: char_enchants,
+      glyphs: char_glyphs,
       spec: $scope.character.spec,
       talents: $scope.cur_talents,
       points: $scope.talent_points,
@@ -782,8 +822,19 @@ editApp.controller('editctrl', ['$scope', '$http', '$compile', function($scope, 
             }
           };
         }
+        // populates the talent tree with talents from the character's class
         $scope.insert_talents();
+        // loades the glyphs for the glyphs for the current character's class
         load_class_glyphs($scope.character.class, $scope.major_glyphs, $scope.minor_glyphs);
+        // fetches the character's glyphs (if any)
+
+        if ($scope.character.glyphs) {
+          for (var key in $scope.character.glyphs) {
+            $scope.cur_glyph_slot = key;
+            $scope.equip_glyph($scope.character.glyphs[key].Id);
+            $scope.success_msg = '';
+          }
+        }
     });
   });
 }]);

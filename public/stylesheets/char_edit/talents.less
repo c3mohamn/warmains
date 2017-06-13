@@ -2,6 +2,23 @@
 .talents_view {
   animation: 1s fade_in;
   min-width: 70%;
+
+  #save_talents {
+    color: rgba(44, 218, 0, 1);
+  }
+  #save_talents:hover {
+    color: rgba(44, 218, 0, .5);
+  }
+  #reset_talents {
+    color: rgba(218, 72, 0, 1);
+  }
+  #reset_talents:hover {
+    color: rgba(218, 72, 0, .5);
+  }
+  #help_talents {
+    color: #00FF44;
+  }
+
   .talent_bg_container {
     border: solid;
     border-color: black;
@@ -83,15 +100,36 @@
     background-image: url('/images/empty-slots/UI-EmptyBack.png');
   }
 
+  .minor_glyphs {
+    .item_slot {
+      height: 40px;
+      width: 40px;
+      background-size: 40px 40px;
+    }
+  }
+
   .glyphs {
     animation: .5s results_table_slide;
     overflow: auto;
     height: 250px;
+    img {
+      height: 35px;
+      width: 35px;
+    }
+    tbody {
+      tr {
+        cursor: pointer;
+      }
+      tr:hover {
+        background-color: rgba(0, 255, 241, .3);
+      }
+    }
   }
 }
 
 // Ovverride Bootstrap talent_tooltips
 .tooltip-inner {
   max-width: 300px;
-  background-color: rgba(0,0,0,.8);
+  background-color: rgba(0,0,0,.9);
+  text-align: left;
 }

@@ -10,6 +10,7 @@ var CharSchema = mongoose.Schema({
     talents: {},
     points: {},
     professions: {},
+    glyphs: {},
     // items
     head: {item: Object, gems: Object, enchant: Object},
     neck: {item: Object, gems: Object, enchant: Object},
