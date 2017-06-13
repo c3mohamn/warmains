@@ -5,7 +5,7 @@ var router = express.Router();
 /* GET Profile page. */
 router.get('/:username', ensureAuthenticated, function(req, res, next) {
   res.render('profile', {
-    title: 'Profile',
+    title: 'Profile - ' + req.user.username,
     username: req.user.username
   });
 });

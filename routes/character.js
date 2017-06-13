@@ -70,6 +70,7 @@ router.post('/', function(req, res, next) {
 /* GET Character Edit page. */
 router.get('/profile/:username/:char', function(req, res) {
   res.render('char_edit', {
+    title: 'Warmains - ' + req.params.char,
     char: req.params.char,
     username: req.params.username
   });

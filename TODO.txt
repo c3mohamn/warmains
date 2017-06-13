@@ -10,10 +10,12 @@ List of things that could be worked on:
 
 *4. Char SPECS.
   - add arrows for the talents that are prequisites
-  - Add tooltips for spells
-    * UPDATE TOOLTIP DATA FOR WARLOCK AND WARRIOR
 
-5. DO GLYPHS!
+5. Racials
+
+6. Talent stats
+
+7. Save Character As (Export) for users that are logged in.
 
 Ideas:
 
