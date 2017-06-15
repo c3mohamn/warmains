@@ -57,8 +57,17 @@ var char_gems = {
   Trinket2: {socket1: null, socket2: null, socket3: null}
 }
 
+// Stores class talents for character and amount of points in each talent.
+var char_talents = {};
+
 // Store glyphs equipped by character.
 var char_glyphs = {};
+
+// Store professions of character
+var char_professions = {};
+
+// Stores the unmodified stats gained from items.
+var base_stats = {};
 
 // Stores the types of items each class can wield.
 var class_wield_type = {

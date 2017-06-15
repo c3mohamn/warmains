@@ -2,11 +2,12 @@ doctype html
 html(ng-app='editApp' ng-cloak)
 
   include partials/head.jade
-  link(rel='stylesheet', type="text/css" href='/stylesheets/char_edit/style.css')
-  link(rel='stylesheet', type'text/css' href='/stylesheets//char_edit/talents.css')
+  link(rel='stylesheet', type='text/css' href='/stylesheets/char_edit/style.css')
+  link(rel='stylesheet', type='text/css' href='/stylesheets//char_edit/talents.css')
+  link(rel='stylesheet', type='text/css' href='/stylesheets//char_edit/details.css')
   script(src="https://cdn.warmane.com/api/tooltip.js")
 
-  body(ng-controller='editctrl' ng-init="gear_view = 'stats'; cur_view='gearing'")
+  body(ng-controller='editCtrl' ng-init="gear_view = 'stats'; cur_view='gear'")
     -if(user && username == user.username)
       div(ng-init="permission = true")
     -else
@@ -18,7 +19,7 @@ html(ng-app='editApp' ng-cloak)
     header(ng-class="character.class")
       .header-content
         .header-content-inner
-          h1(id="homeHeading") {{character.name}}
+          h1 {{character.name}}
           hr
           img(ng-src='/images/spec-icons/{{character.class}}/{{character.spec}}.jpg')
           h3(ng-style="class_color(character.class)") {{character.class}}
@@ -26,46 +27,24 @@ html(ng-app='editApp' ng-cloak)
     div(class='container' ng-show='character')
 
       ul(class='list-inline' id='view_tabs')
-        li(ng-click="cur_view = 'gearing'")
+        li(ng-click="cur_view = 'gear'")
           h3(class='view_tab'
-          ng-class="{'selected_view': cur_view == 'gearing'}") Gear
+          ng-class="{'selected_view': cur_view == 'gear'}") Gear
 
         li(ng-click="cur_view = 'talents'")
           h3(class='view_tab'
           ng-class="{'selected_view': cur_view == 'talents'}") Talents
 
-        //li(ng-click="cur_view = 'professions'")
+        //li(ng-show='permission' ng-click="cur_view = 'details'")
           h3(class='view_tab'
-          ng-class="{'selected_view': cur_view == 'professions'}") Professions
+          ng-class="{'selected_view': cur_view == 'details'}") Details
 
-      include partials/talents_view.jade
+      include partials/char_edit/talents_view.jade
+      include partials/char_edit/details_view.jade
 
-      div(class="col-lg-6 col-md-6 col-sm-6 col-xs-12"  ng-show="cur_view=='gearing'")
+      div(class="col-lg-6 col-md-6 col-sm-6 col-xs-12"  ng-show="cur_view=='gear'")
         div(class='char_panel')
           .row
-            -if (user && username == user.username)
-              h4(ng-hide='character.spec' id='choose_spec_text') Choose a spec
-              ul(class='list-inline' id='choose_spec')
-                li(ng-click='character.spec = class_specs[character.class][0]')
-                  img(
-                  title='{{class_specs[character.class][0]}}'
-                  ng-class="(character.spec == class_specs[character.class][0]) ? 'selected_spec' : 'unselected_spec'"
-                  ng-src='/images/spec-icons/{{character.class}}/{{class_specs[character.class][0]}}.jpg'
-                  )
-                li(ng-click='character.spec = class_specs[character.class][1]')
-                  img(
-                  title='{{class_specs[character.class][1]}}'
-                  ng-class="(character.spec == class_specs[character.class][1]) ? 'selected_spec' : 'unselected_spec'"
-                  ng-src='/images/spec-icons/{{character.class}}/{{class_specs[character.class][1]}}.jpg'
-                  )
-                li(ng-click='character.spec = class_specs[character.class][2]')
-                  img(
-                  title='{{class_specs[character.class][2]}}'
-                  ng-class="(character.spec == class_specs[character.class][2]) ? 'selected_spec' : 'unselected_spec'"
-                  ng-src='/images/spec-icons/{{character.class}}/{{class_specs[character.class][2]}}.jpg'
-                  )
-
-
             ul(class='list-inline')
 
               li(class='pull-left' id='li_Head')
@@ -175,12 +154,11 @@ html(ng-app='editApp' ng-cloak)
 
       div(class="col-lg-6 col-md-6 col-sm-6 col-xs-12")
         -if(user && username == user.username)
-          include partials/gearing_view.jade
-          include partials/professions_view.jade
+          include partials/char_edit/gear_view.jade
 
       -if (user && username == user.username)
         div(class='clearfix visible sm')
-      div(class="col-lg-6 col-md-6 col-sm-6 col-xs-12" ng-show="cur_view == 'gearing'")
+      div(class="col-lg-6 col-md-6 col-sm-6 col-xs-12" ng-show="cur_view == 'gear'")
         div(class='stats_container')
           h3 Net Stats from items
           table(id='stats')
@@ -192,18 +170,19 @@ html(ng-app='editApp' ng-cloak)
     p(ng-show='!character') This character does not exist.
 
   include partials/footer.jade
-  script(src='/js/charedit_helper_vars.js')
-  script(src='/js/talents_vars.js')
-  script(src='/js/glyphs.js')
-  script(src='/js/talent_ranks/deathknight.js')
-  script(src='/js/talent_ranks/druid.js')
-  script(src='/js/talent_ranks/hunter.js')
-  script(src='/js/talent_ranks/mage.js')
-  script(src='/js/talent_ranks/paladin.js')
-  script(src='/js/talent_ranks/priest.js')
-  script(src='/js/talent_ranks/rogue.js')
-  script(src='/js/talent_ranks/shaman.js')
-  script(src='/js/talent_ranks/warlock.js')
-  script(src='/js/talent_ranks/warrior.js')
-  script(src='/js/charedit_helper_functs.js')
-  script(src='/js/charedit_controller.js')
+  script(src='/js/charEdit/vars.js')
+  script(src='/js/charEdit/talents_vars.js')
+  script(src='/js/charEdit/glyphs.js')
+  script(src='/js/charEdit/talent_tooltips/deathknight.js')
+  script(src='/js/charEdit/talent_tooltips/druid.js')
+  script(src='/js/charEdit/talent_tooltips/hunter.js')
+  script(src='/js/charEdit/talent_tooltips/mage.js')
+  script(src='/js/charEdit/talent_tooltips/paladin.js')
+  script(src='/js/charEdit/talent_tooltips/priest.js')
+  script(src='/js/charEdit/talent_tooltips/rogue.js')
+  script(src='/js/charEdit/talent_tooltips/shaman.js')
+  script(src='/js/charEdit/talent_tooltips/warlock.js')
+  script(src='/js/charEdit/talent_tooltips/warrior.js')
+  script(src='/js/charEdit/functs.js')
+  script(src='/js/charEdit/talent_functs.js')
+  script(src='/js/charEdit/controller.js')

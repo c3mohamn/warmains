@@ -1,0 +1,52 @@
+div(class='details_view' ng-show="cur_view == 'details'" ng-if='permission')
+  -if (user && username == user.username)
+    .choose_race
+      h4(ng-hide='character.race') Choose a race
+      ul(class='list-inline')
+        li
+    br
+    .choose_spec
+      h4(ng-hide='character.spec') Choose a spec
+      ul(class='list-inline')
+        li(ng-click='character.spec = class_specs[character.class][0]')
+          img(
+          data-toggle='tooltip' data-placement='bottom' data-html='true'
+          data-original-title="<span style='text-transform:capitalize;'>\
+          {{class_specs[character.class][0]}}"
+          ng-class="(character.spec == class_specs[character.class][0]) ? 'selected_spec' : 'unselected'"
+          ng-src='/images/spec-icons/{{character.class}}/{{class_specs[character.class][0]}}.jpg')
+        li(ng-click='character.spec = class_specs[character.class][1]')
+          img(
+          data-toggle='tooltip' data-placement='bottom' data-html='true'
+          data-original-title="<span style='text-transform:capitalize;'>\
+          {{class_specs[character.class][1]}}"
+          ng-class="(character.spec == class_specs[character.class][1]) ? 'selected_spec' : 'unselected'"
+          ng-src='/images/spec-icons/{{character.class}}/{{class_specs[character.class][1]}}.jpg')
+        li(ng-click='character.spec = class_specs[character.class][2]')
+          img(
+          data-toggle='tooltip' data-placement='bottom' data-html='true'
+          data-original-title="<span style='text-transform:capitalize;'>\
+          {{class_specs[character.class][2]}}"
+          ng-class="(character.spec == class_specs[character.class][2]) ? 'selected_spec' : 'unselected'"
+          ng-src='/images/spec-icons/{{character.class}}/{{class_specs[character.class][2]}}.jpg')
+
+    br
+    .choose_prof
+      h4 Choose your professions
+        ul(class='list-inline')
+          li(ng-click="add_prof('blacksmithing')")
+            img(
+            ng-class="has_prof('blacksmithing') ? 'selected_spec' : 'unselected'"
+            ng-src='/images/trade/blacksmithing.jpg')
+          li(ng-click="add_prof('enchanting')")
+            img(ng-src='/images/trade/enchanting.jpg')
+          li(ng-click="add_prof('engineering')")
+            img(ng-src='/images/trade/engineering.jpg')
+          li(ng-click="add_prof('inscription')")
+            img(ng-src='/images/trade/inscription.jpg')
+          li(ng-click="add_prof('jewelcrafting')")
+            img(ng-src='/images/trade/jewelcrafting.jpg')
+          li(ng-click="add_prof('leatherworking')")
+            img(ng-src='/images/trade/leatherworking.jpg')
+          li(ng-click="add_prof('tailoring')")
+            img(ng-src='/images/trade/tailoring.jpg')

@@ -1,7 +1,6 @@
 {
 	"items": [
 		{
-      "Requirements": "",
       "IconPath": "ability_warrior_victoryrush",
       "Id": "29186",
       "enchantId": "2999",
@@ -13,7 +12,6 @@
 			}
 		},
 		{
-      "Requirements": "",
       "IconPath": "ability_warrior_swordandboard",
       "Id": "44150",
       "enchantId": "3818",
@@ -25,7 +23,6 @@
 			}
 		},
 		{
-			"Requirements": "",
       "IconPath": "spell_holy_championsgrace",
       "Id": "28911",
       "enchantId": "2991",
@@ -37,7 +34,7 @@
 			}
 		},
 		{
-			"Requirements": "",
+
       "IconPath": "spell_holy_blessingofprotection",
       "Id": "28889",
       "enchantId": "2978",
@@ -49,7 +46,7 @@
 			}
 		},
 		{
-			"Requirements": "",
+
       "IconPath": "inv_misc_enchantedscroll",
       "Id": "44457",
       "enchantId": "1099",
@@ -60,7 +57,7 @@
 			}
 		},
 		{
-			"Requirements": "",
+
       "IconPath": "inv_misc_enchantedscroll",
       "Id": "38993",
       "enchantId": "3256",
@@ -71,7 +68,7 @@
 			}
 		},
 		{
-			"Requirements": "",
+
       "IconPath": "inv_misc_enchantedscroll",
       "Id": "39003",
       "enchantId": "3831",
@@ -82,7 +79,7 @@
 			}
 		},
 		{
-			"Requirements": "",
+
       "IconPath": "inv_misc_enchantedscroll",
       "Id": "39001",
       "enchantId": "3294",
@@ -93,7 +90,7 @@
 			}
 		},
 		{
-			"Requirements": "",
+
       "IconPath": "inv_misc_enchantedscroll",
       "Id": "38895",
       "enchantId": "2622",
@@ -104,7 +101,7 @@
 			}
 		},
 		{
-			"Requirements": "",
+
       "IconPath": "inv_misc_enchantedscroll",
       "Id": "39005",
       "enchantId": "3297",
@@ -115,7 +112,7 @@
 			}
 		},
 		{
-			"Requirements": "",
+
       "IconPath": "inv_misc_enchantedscroll",
       "Id": "44465",
       "enchantId": "3832",
@@ -130,7 +127,7 @@
 			}
 		},
 		{
-			"Requirements": "",
+
       "IconPath": "inv_misc_enchantedscroll",
       "Id": "38975",
       "enchantId": "3245",
@@ -141,7 +138,7 @@
 			}
 		},
 		{
-      "Requirements": "",
+
       "IconPath": "inv_misc_enchantedscroll",
       "Id": "39002",
       "enchantId": "1953",
@@ -152,7 +149,7 @@
 			}
 		},
 		{
-			"Requirements": "",
+
       "IconPath": "inv_misc_enchantedscroll",
       "Id": "38899",
       "enchantId": "2648",
@@ -163,7 +160,7 @@
 			}
 		},
 		{
-			"Requirements": "",
+
       "IconPath": "inv_misc_enchantedscroll",
       "Id": "38987",
       "enchantId": "2661",
@@ -178,7 +175,7 @@
 			}
 		},
 		{
-			"Requirements": "",
+
       "IconPath": "inv_misc_enchantedscroll",
       "Id": "38967",
       "enchantId": "3222",
@@ -189,7 +186,7 @@
 			}
 		},
 		{
-      "Requirements": "",
+
       "IconPath": "inv_misc_armorkit_32",
       "Id": "38373",
       "enchantId": "3822",
@@ -201,7 +198,7 @@
 			}
 		},
 		{
-      "Requirements": "",
+
       "IconPath": "inv_misc_enchantedscroll",
       "Id": "38943",
       "enchantId": "2939",
@@ -213,7 +210,7 @@
 			}
 		},
 		{
-      "Requirements": "",
+
       "IconPath": "inv_misc_enchantedscroll",
       "Id": "39006",
       "enchantId": "3232",
@@ -225,7 +222,7 @@
 			}
 		},
 		{
-      "Requirements": "",
+
       "IconPath": "inv_misc_enchantedscroll",
       "Id": "38976",
       "enchantId": "983",
@@ -236,7 +233,7 @@
 			}
 		},
 		{
-      "Requirements": "",
+
       "IconPath": "inv_misc_enchantedscroll",
       "Id": "",
       "enchantId": "1597",
@@ -247,7 +244,7 @@
 			}
 		},
 		{
-			"Requirements": "",
+
       "IconPath": "inv_misc_enchantedscroll",
       "Id": "38966",
       "enchantId": "1075",
@@ -258,7 +255,7 @@
 			}
 		},
 		{
-			"Requirements": "Enchanting",
+			"Requirements": "enchanting",
       "IconPath": "trade_engraving",
       "Id": "",
 			"SpellId": "27927",
@@ -274,7 +271,7 @@
 			}
 		},
 		{
-			"Requirements": "Enchanting",
+			"Requirements": "enchanting",
       "IconPath": "trade_engraving",
       "Id": "",
 			"SpellId": "59636",
@@ -286,7 +283,7 @@
 			}
 		},
 		{
-			"Requirements": "",
+
       "IconPath": "inv_misc_enchantedscroll",
       "Id": "38922",
       "enchantId": "2670",
@@ -297,7 +294,7 @@
 			}
 		},
 		{
-			"Requirements": "",
+
       "IconPath": "inv_misc_armorkit_30",
       "Id": "38376",
       "enchantId": "3330",
@@ -308,7 +305,7 @@
 			}
 		},
 		{
-			"Requirements": "",
+
       "IconPath": "inv_misc_armorkit_30",
       "Id": "38376",
       "enchantId": "3330",
@@ -319,7 +316,7 @@
 			}
 		},
 		{
-			"Requirements": "",
+
       "IconPath": "inv_misc_armorkit_30",
       "Id": "38376",
       "enchantId": "3330",
@@ -330,7 +327,7 @@
 			}
 		},
 		{
-			"Requirements": "",
+
       "IconPath": "inv_misc_armorkit_26",
       "Id": "25651",
       "enchantId": "2793",
@@ -341,7 +338,7 @@
 			}
 		},
 		{
-			"Requirements": "",
+
       "IconPath": "inv_misc_armorkit_26",
       "Id": "25651",
       "enchantId": "2793",
@@ -352,7 +349,7 @@
 			}
 		},
 		{
-			"Requirements": "",
+
       "IconPath": "inv_misc_armorkit_26",
       "Id": "25651",
       "enchantId": "2793",
@@ -363,7 +360,7 @@
 			}
 		},
 		{
-			"Requirements": "",
+
       "IconPath": "inv_misc_armorkit_08",
       "Id": "34207",
       "enchantId": "3260",
@@ -374,7 +371,7 @@
 			}
 		},
 		{
-			"Requirements": "",
+
       "IconPath": "inv_misc_enchantedscroll",
       "Id": "38942",
       "enchantId": "1441",
@@ -385,7 +382,7 @@
 			}
 		},
 		{
-			"Requirements": "",
+
       "IconPath": "inv_misc_gem_02",
       "Id": "18329",
       "enchantId": "2543",
@@ -396,7 +393,7 @@
 			}
 		},
 		{
-			"Requirements": "",
+
       "IconPath": "ability_druid_demoralizingroar",
       "Id": "29192",
       "enchantId": "3003",
@@ -408,7 +405,7 @@
 			}
 		},
 		{
-			"Requirements": "",
+
       "IconPath": "ability_warrior_rampage",
       "Id": "44149",
       "enchantId": "3817",
@@ -420,7 +417,7 @@
 			}
 		},
 		{
-			"Requirements": "",
+
       "IconPath": "ability_rogue_masterofsubtlety",
       "Id": "30846",
       "enchantId": "3096",
@@ -432,7 +429,7 @@
 			}
 		},
 		{
-			"Requirements": "",
+
       "IconPath": "spell_shadow_antishadow",
       "Id": "23549",
       "enchantId": "2716",
@@ -444,7 +441,7 @@
 			}
 		},
 		{
-			"Requirements": "",
+
       "IconPath": "spell_holy_sealofwrath",
       "Id": "19782",
       "enchantId": "2583",
@@ -457,7 +454,7 @@
 			}
 		},
 		{
-			"Requirements": "",
+
       "IconPath": "inv_misc_enchantedscroll",
       "Id": "38897",
       "enchantId": "2647",
@@ -468,7 +465,7 @@
 			}
 		},
 		{
-			"Requirements": "",
+
       "IconPath": "inv_misc_enchantedscroll",
       "Id": "38933",
       "enchantId": "684",
@@ -479,7 +476,7 @@
 			}
 		},
 		{
-			"Requirements": "",
+
       "IconPath": "inv_misc_enchantedscroll",
       "Id": "38851",
       "enchantId": "931",
@@ -490,7 +487,7 @@
 			}
 		},
 		{
-			"Requirements": "",
+
       "IconPath": "inv_misc_armorkit_33",
       "Id": "38374",
       "enchantId": "3823",
@@ -502,7 +499,7 @@
 			}
 		},
 		{
-			"Requirements": "",
+
       "IconPath": "inv_misc_enchantedscroll",
       "Id": "38986",
       "enchantId": "3826",
@@ -514,7 +511,7 @@
 			}
 		},
 		{
-			"Requirements": "Enchanting",
+			"Requirements": "enchanting",
       "IconPath": "trade_engraving",
       "Id": "",
 			"SpellId": "27920",
@@ -526,7 +523,7 @@
 			}
 		},
 		{
-			"Requirements": "Enchanting",
+			"Requirements": "enchanting",
       "IconPath": "trade_engraving",
       "Id": "",
 			"SpellId": "44645",
@@ -538,7 +535,7 @@
 			}
 		},
 		{
-			"Requirements": "",
+
       "IconPath": "inv_misc_enchantedscroll",
       "Id": "44463",
       "enchantId": "3827",
@@ -549,7 +546,7 @@
 			}
 		},
 		{
-			"Requirements": "",
+
       "IconPath": "inv_misc_enchantedscroll",
       "Id": "44815",
       "enchantId": "3845",
@@ -560,7 +557,7 @@
 			}
 		},
 		{
-			"Requirements": "",
+
       "IconPath": "inv_misc_enchantedscroll",
       "Id": "38954",
       "enchantId": "3231",
@@ -571,7 +568,7 @@
 			}
 		},
 		{
-			"Requirements": "",
+
       "IconPath": "inv_misc_enchantedscroll",
       "Id": "44458",
       "enchantId": "1603",
@@ -582,7 +579,7 @@
 			}
 		},
 		{
-			"Requirements": "",
+
       "IconPath": "inv_misc_enchantedscroll",
       "Id": "38951",
       "enchantId": "3231",
@@ -593,7 +590,7 @@
 			}
 		},
 		{
-			"Requirements": "",
+
       "IconPath": "inv_misc_enchantedscroll",
       "Id": "38995",
       "enchantId": "1103",
@@ -604,7 +601,7 @@
 			}
 		},
 		{
-			"Requirements": "",
+
       "IconPath": "inv_misc_enchantedscroll",
       "Id": "38920",
       "enchantId": "2668",
@@ -615,7 +612,7 @@
 			}
 		},
 		{
-			"Requirements": "",
+
       "IconPath": "inv_misc_enchantedscroll",
       "Id": "44466",
       "enchantId": "3833",
@@ -626,7 +623,7 @@
 			}
 		},
 		{
-			"Requirements": "",
+
       "IconPath": "inv_belt_18",
       "Id": "41976",
       "enchantId": "3731",
@@ -637,7 +634,7 @@
 			}
 		},
 		{
-			"Requirements": "",
+
       "IconPath": "spell_frost_chainsofice",
       "Id": "33185",
       "enchantId": "3223",
@@ -648,7 +645,7 @@
 			}
 		},
 		{
-			"Requirements": "",
+
       "IconPath": "ability_hunter_rapidregeneration",
       "Id": "44739",
       "enchantId": "3843",
@@ -659,7 +656,7 @@
 			}
 		},
 		{
-			"Requirements": "",
+
       "IconPath": "inv_misc_spyglass_02",
       "Id": "41167",
       "enchantId": "3608",
@@ -670,7 +667,7 @@
 			}
 		},
 		{
-			"Requirements": "",
+
       "IconPath": "inv_misc_spyglass_03",
       "Id": "41146",
       "enchantId": "3607",
@@ -681,7 +678,7 @@
 			}
 		},
 		{
-			"Requirements": "",
+
       "IconPath": "inv_misc_enchantedscroll",
       "Id": "38894",
       "enchantId": "2621",
@@ -692,7 +689,7 @@
 			}
 		},
 		{
-			"Requirements": "",
+
       "IconPath": "inv_misc_enchantedscroll",
       "Id": "39004",
       "enchantId": "3296",
@@ -704,7 +701,7 @@
 			}
 		},
 		{
-			"Requirements": "",
+
       "IconPath": "inv_misc_enchantedscroll",
       "Id": "38990",
       "enchantId": "3253",
@@ -716,7 +713,7 @@
 			}
 		},
 		{
-			"Requirements": "",
+
       "IconPath": "inv_misc_enchantedscroll",
       "Id": "44470",
       "enchantId": "2332",
@@ -727,7 +724,7 @@
 			}
 		},
 		{
-			"Requirements": "",
+
       "IconPath": "inv_misc_enchantedscroll",
       "Id": "38979",
       "enchantId": "3246",
@@ -738,7 +735,7 @@
 			}
 		},
 		{
-			"Requirements": "",
+
       "IconPath": "inv_misc_enchantedscroll",
       "Id": "",
       "enchantId": "3234",
@@ -749,7 +746,7 @@
 			}
 		},
 		{
-			"Requirements": "Enchanting",
+			"Requirements": "enchanting",
       "IconPath": "trade_engraving",
       "Id": "",
 			"SpellId": "44636",
@@ -761,7 +758,7 @@
 			}
 		},
 		{
-			"Requirements": "",
+
       "IconPath": "inv_misc_enchantedscroll",
       "Id": "44467",
       "enchantId": "3834",
@@ -772,7 +769,7 @@
 			}
 		},
 		{
-			"Requirements": "",
+
       "IconPath": "inv_misc_enchantedscroll",
       "Id": "",
       "enchantId": "3788",
@@ -784,7 +781,7 @@
 			}
 		},
 		{
-			"Requirements": "",
+
       "IconPath": "inv_misc_enchantedscroll",
       "Id": "",
       "enchantId": "2666",
@@ -795,7 +792,7 @@
 			}
 		},
 		{
-			"Requirements": "",
+
       "IconPath": "inv_misc_enchantedscroll",
       "Id": "38963",
       "enchantId": "3844",
@@ -806,7 +803,7 @@
 			}
 		},
 		{
-			"Requirements": "",
+
       "IconPath": "inv_misc_enchantedscroll",
       "Id": "38901",
       "enchantId": "2679",
@@ -817,7 +814,7 @@
 			}
 		},
 		{
-			"Requirements": "",
+
       "IconPath": "inv_misc_enchantedscroll",
       "Id": "38980",
       "enchantId": "1147",
@@ -828,7 +825,7 @@
 			}
 		},
 		{
-			"Requirements": "",
+
       "IconPath": "spell_nature_astralrecalgroup",
       "Id": "41602",
       "enchantId": "3719",
@@ -840,7 +837,7 @@
 			}
 		},
 		{
-			"Requirements": "",
+
       "IconPath": "spell_nature_astralrecalgroup",
       "Id": "41604",
       "enchantId": "3721",
@@ -852,7 +849,7 @@
 			}
 		},
 		{
-			"Requirements": "",
+
       "IconPath": "spell_nature_lightningoverload",
       "Id": "29191",
       "enchantId": "3002",
@@ -864,7 +861,7 @@
 			}
 		},
 		{
-			"Requirements": "",
+
       "IconPath": "spell_fire_masterofelements",
       "Id": "50368",
       "enchantId": "3820",
@@ -876,7 +873,7 @@
 			}
 		},
 		{
-			"Requirements": "",
+
       "IconPath": "spell_arcane_arcaneresilience",
       "Id": "44075",
       "enchantId": "3797",
@@ -888,7 +885,7 @@
 			}
 		},
 		{
-			"Requirements": "",
+
       "IconPath": "inv_misc_enchantedscroll",
       "Id": "38923",
       "enchantId": "2671",
@@ -900,7 +897,7 @@
 			}
 		},
 		{
-			"Requirements": "",
+
       "IconPath": "inv_misc_enchantedscroll",
       "Id": "38924",
       "enchantId": "2672",
@@ -912,7 +909,7 @@
 			}
 		},
 		{
-			"Requirements": "",
+
       "IconPath": "inv_misc_enchantedscroll",
       "Id": "38973",
       "enchantId": "3243",
@@ -923,7 +920,7 @@
 			}
 		},
 		{
-			"Requirements": "",
+
       "IconPath": "inv_misc_enchantedscroll",
       "Id": "38974",
       "enchantId": "3244",
@@ -935,7 +932,7 @@
 			}
 		},
 		{
-			"Requirements": "",
+
       "IconPath": "inv_misc_enchantedscroll",
       "Id": "38968",
       "enchantId": "1119",
@@ -946,7 +943,7 @@
 			}
 		},
 		{
-			"Requirements": "",
+
       "IconPath": "inv_misc_enchantedscroll",
       "Id": "38928",
       "enchantId": "1144",
@@ -957,7 +954,7 @@
 			}
 		},
 		{
-			"Requirements": "",
+
       "IconPath": "inv_misc_enchantedscroll",
       "Id": "38961",
       "enchantId": "1147",
@@ -968,7 +965,7 @@
 			}
 		},
 		{
-			"Requirements": "",
+
       "IconPath": "ability_warrior_shieldmastery",
       "Id": "50370",
       "enchantId": "3819",
@@ -980,7 +977,7 @@
 			}
 		},
 		{
-			"Requirements": "",
+
       "IconPath": "inv_misc_enchantedscroll",
       "Id": "38962",
       "enchantId": "2381",
@@ -991,7 +988,7 @@
 			}
 		},
 		{
-			"Requirements": "",
+
       "IconPath": "inv_misc_enchantedscroll",
       "Id": "38912",
       "enchantId": "3233",
@@ -1002,7 +999,7 @@
 			}
 		},
 		{
-			"Requirements": "",
+
       "IconPath": "inv_misc_enchantedscroll",
       "Id": "38985",
       "enchantId": "3249",
@@ -1013,7 +1010,7 @@
 			}
 		},
 		{
-			"Requirements": "",
+
       "IconPath": "inv_misc_enchantedscroll",
       "Id": "44455",
       "enchantId": "1128",
@@ -1024,7 +1021,7 @@
 			}
 		},
 		{
-			"Requirements": "",
+
       "IconPath": "inv_misc_enchantedscroll",
       "Id": "38978",
       "enchantId": "1951",
@@ -1035,7 +1032,7 @@
 			}
 		},
 		{
-			"Requirements": "",
+
       "IconPath": "ability_warrior_shieldmastery",
       "Id": "50372",
       "enchantId": "3842",
@@ -1047,7 +1044,7 @@
 			}
 		},
 		{
-			"Requirements": "",
+
       "IconPath": "ability_warrior_shieldmastery",
       "Id": "44069",
       "enchantId": "3795",
@@ -1059,7 +1056,7 @@
 			}
 		},
 		{
-			"Requirements": "",
+
       "IconPath": "spell_holy_powerinfusion",
       "Id": "44068",
       "enchantId": "3794",
@@ -1071,7 +1068,7 @@
 			}
 		},
 		{
-			"Requirements": "",
+
       "IconPath": "inv_misc_enchantedscroll",
       "Id": "46026",
       "enchantId": "3869",
@@ -1094,7 +1091,7 @@
 			}
 		},
 		{
-			"Requirements": "",
+
       "IconPath": "inv_misc_enchantedscroll",
       "Id": "44493",
       "enchantId": "3789",
@@ -1118,7 +1115,7 @@
 			}
 		},
 		{
-			"Requirements": "",
+
       "IconPath": "inv_misc_enchantedscroll",
       "Id": "43987",
       "enchantId": "3790",
@@ -1151,7 +1148,7 @@
 			}
 		},
 		{
-			"Requirements": "",
+
       "IconPath": "inv_misc_enchantedscroll",
       "Id": "38948",
       "enchantId": "3225",
@@ -1174,7 +1171,7 @@
 			}
 		},
 		{
-			"Requirements": "",
+
       "IconPath": "inv_misc_enchantedscroll",
       "Id": "38925",
       "enchantId": "2673",
@@ -1198,7 +1195,7 @@
 			}
 		},
 		{
-			"Requirements": "",
+
       "IconPath": "inv_misc_enchantedscroll",
       "Id": "46098",
       "enchantId": "3870",
@@ -1233,7 +1230,7 @@
 			}
 		},
 		{
-			"Requirements": "",
+
       "IconPath": "inv_misc_enchantedscroll",
       "Id": "38965",
       "enchantId": "3239",
@@ -1256,7 +1253,7 @@
 			}
 		},
 		{
-			"Requirements": "",
+
       "IconPath": "spell_shadow_antishadow",
       "Id": "29483",
       "enchantId": "2984",
@@ -1267,7 +1264,7 @@
 			}
 		},
 		{
-			"Requirements": "",
+
       "IconPath": "spell_shadow_antishadow",
       "Id": "29483",
       "enchantId": "2984",
@@ -1278,7 +1275,7 @@
 			}
 		},
 		{
-			"Requirements": "",
+
       "IconPath": "spell_shadow_antishadow",
       "Id": "29483",
       "enchantId": "2984",
@@ -1289,7 +1286,7 @@
 			}
 		},
 		{
-			"Requirements": "",
+
       "IconPath": "spell_shadow_antishadow",
       "Id": "29483",
       "enchantId": "2984",
@@ -1300,7 +1297,7 @@
 			}
 		},
 		{
-			"Requirements": "",
+
       "IconPath": "spell_fire_sealoffire",
       "Id": "29485",
       "enchantId": "2985",
@@ -1311,7 +1308,7 @@
 			}
 		},
 		{
-			"Requirements": "",
+
       "IconPath": "spell_fire_sealoffire",
       "Id": "29485",
       "enchantId": "2985",
@@ -1322,7 +1319,7 @@
 			}
 		},
 		{
-			"Requirements": "",
+
       "IconPath": "spell_fire_sealoffire",
       "Id": "29485",
       "enchantId": "2985",
@@ -1333,7 +1330,7 @@
 			}
 		},
 		{
-			"Requirements": "",
+
       "IconPath": "spell_fire_sealoffire",
       "Id": "29485",
       "enchantId": "2985",
@@ -1344,7 +1341,7 @@
 			}
 		},
 		{
-			"Requirements": "",
+
       "IconPath": "spell_frost_frostarmor02",
       "Id": "29486",
       "enchantId": "2987",
@@ -1355,7 +1352,7 @@
 			}
 		},
 		{
-			"Requirements": "",
+
       "IconPath": "spell_frost_frostarmor02",
       "Id": "29486",
       "enchantId": "2987",
@@ -1366,7 +1363,7 @@
 			}
 		},
 		{
-			"Requirements": "",
+
       "IconPath": "spell_frost_frostarmor02",
       "Id": "29486",
       "enchantId": "2987",
@@ -1377,7 +1374,7 @@
 			}
 		},
 		{
-			"Requirements": "",
+
       "IconPath": "spell_frost_frostarmor02",
       "Id": "29486",
       "enchantId": "2987",
@@ -1388,7 +1385,7 @@
 			}
 		},
 		{
-			"Requirements": "",
+
       "IconPath": "spell_nature_spiritarmor",
       "Id": "29487",
       "enchantId": "2988",
@@ -1399,7 +1396,7 @@
 			}
 		},
 		{
-			"Requirements": "",
+
       "IconPath": "spell_nature_spiritarmor",
       "Id": "29487",
       "enchantId": "2988",
@@ -1410,7 +1407,7 @@
 			}
 		},
 		{
-			"Requirements": "",
+
       "IconPath": "spell_nature_spiritarmor",
       "Id": "29487",
       "enchantId": "2988",
@@ -1421,7 +1418,7 @@
 			}
 		},
 		{
-			"Requirements": "",
+
       "IconPath": "spell_nature_spiritarmor",
       "Id": "29487",
       "enchantId": "2988",
@@ -1432,7 +1429,7 @@
 			}
 		},
 		{
-			"Requirements": "",
+
       "IconPath": "spell_shadow_sealofkings",
       "Id": "29488",
       "enchantId": "2989",
@@ -1443,7 +1440,7 @@
 			}
 		},
 		{
-			"Requirements": "",
+
       "IconPath": "spell_shadow_sealofkings",
       "Id": "29488",
       "enchantId": "2989",
@@ -1454,7 +1451,7 @@
 			}
 		},
 		{
-			"Requirements": "",
+
       "IconPath": "spell_shadow_sealofkings",
       "Id": "29488",
       "enchantId": "2989",
@@ -1465,7 +1462,7 @@
 			}
 		},
 		{
-			"Requirements": "",
+
       "IconPath": "spell_shadow_sealofkings",
       "Id": "29488",
       "enchantId": "2989",
@@ -1476,7 +1473,7 @@
 			}
 		},
 		{
-			"Requirements": "",
+
       "IconPath": "trade_brewpoison",
       "Id": "44138",
       "enchantId": "3813",
@@ -1488,7 +1485,7 @@
 			}
 		},
 		{
-			"Requirements": "",
+
       "IconPath": "ability_druid_eclipse",
       "Id": "44140",
       "enchantId": "3815",
@@ -1500,7 +1497,7 @@
 			}
 		},
 		{
-			"Requirements": "",
+
       "IconPath": "spell_fire_burnout",
       "Id": "44141",
       "enchantId": "3816",
@@ -1512,7 +1509,7 @@
 			}
 		},
 		{
-			"Requirements": "",
+
       "IconPath": "spell_frost_frozencore",
       "Id": "44137",
       "enchantId": "3812",
@@ -1524,7 +1521,7 @@
 			}
 		},
 		{
-			"Requirements": "",
+
       "IconPath": "ability_paladin_gaurdedbythelight",
       "Id": "44139",
       "enchantId": "3814",
@@ -1536,7 +1533,7 @@
 			}
 		},
 		{
-			"Requirements": "",
+
       "IconPath": "ability_warrior_shieldmastery",
       "Id": "29187",
       "enchantId": "2998",
@@ -1551,7 +1548,7 @@
 			}
 		},
 		{
-			"Requirements": "",
+
       "IconPath": "inv_misc_enchantedscroll",
       "Id": "38915",
       "enchantId": "2664",
@@ -1566,7 +1563,7 @@
 			}
 		},
 		{
-			"Requirements": "",
+
       "IconPath": "inv_misc_enchantedscroll",
       "Id": "38982",
       "enchantId": "1262",
@@ -1577,7 +1574,7 @@
 			}
 		},
 		{
-			"Requirements": "",
+
       "IconPath": "inv_misc_enchantedscroll",
       "Id": "",
       "enchantId": "1446",
@@ -1588,7 +1585,7 @@
 			}
 		},
 		{
-			"Requirements": "",
+
       "IconPath": "inv_misc_enchantedscroll",
       "Id": "38969",
       "enchantId": "1354",
@@ -1599,7 +1596,7 @@
 			}
 		},
 		{
-			"Requirements": "",
+
       "IconPath": "inv_misc_enchantedscroll",
       "Id": "38950",
       "enchantId": "3230",
@@ -1610,7 +1607,7 @@
 			}
 		},
 		{
-			"Requirements": "",
+
       "IconPath": "inv_misc_enchantedscroll",
       "Id": "38956",
       "enchantId": "1400",
@@ -1621,7 +1618,7 @@
 			}
 		},
 		{
-			"Requirements": "",
+
       "IconPath": "inv_misc_gem_03",
       "Id": "11644",
       "enchantId": "1505",
@@ -1632,7 +1629,7 @@
 			}
 		},
 		{
-			"Requirements": "",
+
       "IconPath": "inv_misc_enchantedscroll",
       "Id": "38945",
       "enchantId": "1071",
@@ -1643,7 +1640,7 @@
 			}
 		},
 		{
-			"Requirements": "",
+
       "IconPath": "inv_misc_enchantedscroll",
       "Id": "38906",
       "enchantId": "2655",
@@ -1654,7 +1651,7 @@
 			}
 		},
 		{
-			"Requirements": "",
+
       "IconPath": "inv_misc_enchantedscroll",
       "Id": "38904",
       "enchantId": "2653",
@@ -1665,7 +1662,7 @@
 			}
 		},
 		{
-			"Requirements": "",
+
       "IconPath": "inv_misc_enchantedscroll",
       "Id": "38954",
       "enchantId": "1952",
@@ -1676,7 +1673,7 @@
 			}
 		},
 		{
-			"Requirements": "",
+
       "IconPath": "inv_misc_enchantedscroll",
       "Id": "38949",
       "enchantId": "3229",
@@ -1687,7 +1684,7 @@
 			}
 		},
 		{
-			"Requirements": "",
+
       "IconPath": "inv_misc_spyglass_02",
       "Id": "18283",
       "enchantId": "2523",
@@ -1698,7 +1695,7 @@
 			}
 		},
 		{
-			"Requirements": "",
+
       "IconPath": "inv_axe_85",
       "Id": "44871",
       "enchantId": "3808",
@@ -1710,7 +1707,7 @@
 			}
 		},
 		{
-			"Requirements": "",
+
       "IconPath": "spell_arcane_teleportorgrimmar",
       "Id": "44872",
       "enchantId": "3809",
@@ -1722,7 +1719,7 @@
 			}
 		},
 		{
-			"Requirements": "",
+
       "IconPath": "spell_holy_divinepurpose",
       "Id": "44873",
       "enchantId": "3811",
@@ -1734,7 +1731,7 @@
 			}
 		},
 		{
-			"Requirements": "",
+
       "IconPath": "spell_nature_lightningoverload",
       "Id": "50338",
       "enchantId": "3810",
@@ -1746,7 +1743,7 @@
 			}
 		},
 		{
-			"Requirements": "Inscription",
+			"Requirements": "inscription",
       "IconPath": "inv_inscription_tradeskill01",
       "Id": "",
 			"SpellId": "61117",
@@ -1759,7 +1756,7 @@
 			}
 		},
 		{
-			"Requirements": "Inscription",
+			"Requirements": "inscription",
       "IconPath": "inv_inscription_tradeskill01",
       "Id": "",
 			"SpellId": "61118",
@@ -1772,7 +1769,7 @@
 			}
 		},
 		{
-			"Requirements": "Inscription",
+			"Requirements": "inscription",
       "IconPath": "inv_inscription_tradeskill01",
       "Id": "",
 			"SpellId": "61119",
@@ -1785,7 +1782,7 @@
 			}
 		},
 		{
-			"Requirements": "Inscription",
+			"Requirements": "inscription",
       "IconPath": "inv_inscription_tradeskill01",
       "Id": "",
 			"SpellId": "61120",
@@ -1798,7 +1795,7 @@
 			}
 		},
 		{
-			"Requirements": "Leatherworking",
+			"Requirements": "leatherworking",
       "IconPath": "trade_leatherworking",
       "Id": "",
 			"SpellId": "57683",
@@ -1810,7 +1807,7 @@
 			}
 		},
 		{
-			"Requirements": "Leatherworking",
+			"Requirements": "leatherworking",
       "IconPath": "trade_leatherworking",
       "Id": "",
 			"SpellId": "57690",
@@ -1822,7 +1819,7 @@
 			}
 		},
 		{
-			"Requirements": "Leatherworking",
+			"Requirements": "leatherworking",
       "IconPath": "trade_leatherworking",
       "Id": "",
 			"SpellId": "57691",
@@ -1834,7 +1831,7 @@
 			}
 		},
 		{
-			"Requirements": "Leatherworking",
+			"Requirements": "leatherworking",
       "IconPath": "trade_leatherworking",
       "Id": "",
 			"SpellId": "57692",
@@ -1846,7 +1843,7 @@
 			}
 		},
 		{
-			"Requirements": "Leatherworking",
+			"Requirements": "leatherworking",
       "IconPath": "trade_leatherworking",
       "Id": "",
 			"SpellId": "57694",
@@ -1858,7 +1855,7 @@
 			}
 		},
 		{
-			"Requirements": "Leatherworking",
+			"Requirements": "leatherworking",
       "IconPath": "trade_leatherworking",
       "Id": "",
 			"SpellId": "57696",
@@ -1870,7 +1867,7 @@
 			}
 		},
 		{
-			"Requirements": "Leatherworking",
+			"Requirements": "leatherworking",
       "IconPath": "trade_leatherworking",
       "Id": "",
 			"SpellId": "57699",
@@ -1882,7 +1879,7 @@
 			}
 		},
 		{
-			"Requirements": "Leatherworking",
+			"Requirements": "leatherworking",
       "IconPath": "trade_leatherworking",
       "Id": "",
 			"SpellId": "57701",
@@ -2027,7 +2024,7 @@
 			}
 		},
 		{
-			"Requirements": "Engineering",
+			"Requirements": "engineering",
       "IconPath": "trade_engineering",
       "Id": "",
 			"SpellId": "54999",
@@ -2051,7 +2048,7 @@
 			}
 		},
 		{
-			"Requirements": "Engineering",
+			"Requirements": "engineering",
       "IconPath": "trade_engineering",
       "Id": "",
 			"SpellId": "63770",
@@ -2063,7 +2060,7 @@
 			}
 		},
 		{
-			"Requirements": "Engineering",
+			"Requirements": "engineering",
       "IconPath": "trade_engineering",
       "Id": "",
 			"SpellId": "55016",
@@ -2088,7 +2085,7 @@
 			}
 		},
 		{
-			"Requirements": "Engineering",
+			"Requirements": "engineering",
       "IconPath": "trade_engineering",
       "Id": "",
 			"SpellId": "67839",
@@ -2100,7 +2097,7 @@
 			}
 		},
 		{
-			"Requirements": "Engineering",
+			"Requirements": "engineering",
       "IconPath": "trade_engineering",
       "Id": "",
 			"SpellId": "63765",
@@ -2112,7 +2109,7 @@
 			}
 		},
 		{
-			"Requirements": "Engineering",
+			"Requirements": "engineering",
       "IconPath": "trade_engineering",
       "Id": "",
 			"SpellId": "55002",
@@ -2124,7 +2121,7 @@
 			}
 		},
 		{
-			"Requirements": "Tailoring",
+			"Requirements": "tailoring",
       "IconPath": "inv_misc_thread_01",
       "Id": "",
 			"SpellId": "55642",
@@ -2149,7 +2146,7 @@
 			}
 		},
 		{
-			"Requirements": "Tailoring",
+			"Requirements": "tailoring",
       "IconPath": "inv_misc_thread_01",
       "Id": "",
 			"SpellId": "55777",
@@ -2173,7 +2170,7 @@
 			}
 		},
 		{
-			"Requirements": "Tailoring",
+			"Requirements": "tailoring",
       "IconPath": "inv_misc_thread_01",
       "Id": "",
 			"SpellId": "55769",
@@ -2197,7 +2194,6 @@
 			}
 		},
 		{
-			"Requirements": "",
       "IconPath": "inv_misc_enchantedscroll",
       "Id": "44947",
       "enchantId": "3850",
@@ -2208,7 +2204,7 @@
 			}
 		},
 		{
-			"Requirements": "",
+
       "IconPath": "inv_shield_19",
       "Id": "44936",
       "enchantId": "3849",
@@ -2219,7 +2215,6 @@
 			}
 		},
 		{
-			"Requirements": "",
       "IconPath": "inv_shoulder_61",
       "Id": "44957",
       "enchantId": "3852",
@@ -2231,7 +2226,7 @@
 			}
 		},
 		{
-			"Requirements": "",
+
       "IconPath": "inv_misc_enchantedscroll",
       "Id": "45056",
       "enchantId": "3854",
@@ -2242,7 +2237,7 @@
 			}
 		},
 		{
-			"Requirements": "Engineering",
+			"Requirements": "engineering",
       "IconPath": "trade_engineering",
       "Id": "",
 			"SpellId": "54998",

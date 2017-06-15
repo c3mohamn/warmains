@@ -17,7 +17,8 @@
 			"Name": "Solid Dragon's Eye",
 			"Id": "36767",
 			"Slot": "Blue",
-			"enchantId": "3293"
+			"enchantId": "3293",
+			"Requirements": "jewelcrafting"
 		},
 		{
 			"ItemLevel": "80",
@@ -104,7 +105,8 @@
 			"Name": "Sparkling Dragon's Eye",
 			"Id": "42145",
 			"Slot": "Blue",
-			"enchantId": "3735"
+			"enchantId": "3735",
+			"Requirements": "jewelcrafting"
 		},
 		{
 			"ItemLevel": "80",
@@ -123,7 +125,8 @@
 			"Name": "Lustrous Dragon's Eye",
 			"Id": "42146",
 			"Slot": "Blue",
-			"enchantId": "3736"
+			"enchantId": "3736",
+			"Requirements": "jewelcrafting"
 		},
 		{
 			"ItemLevel": "80",
@@ -142,7 +145,8 @@
 			"Name": "Stormy Dragon's Eye",
 			"Id": "42155",
 			"Slot": "Blue",
-			"enchantId": "3747"
+			"enchantId": "3747",
+			"Requirements": "jewelcrafting"
 		},
 		{
 			"ItemLevel": "80",
@@ -1133,7 +1137,8 @@
 			"Name": "Bright Dragon's Eye",
 			"Id": "36766",
 			"Slot": "Red",
-			"enchantId": "3292"
+			"enchantId": "3292",
+			"Requirements": "jewelcrafting"
 		},
 		{
 			"ItemLevel": "80",
@@ -1288,7 +1293,8 @@
 			"Name": "Bold Dragon's Eye",
 			"Id": "42142",
 			"Slot": "Red",
-			"enchantId": "3732"
+			"enchantId": "3732",
+			"Requirements": "jewelcrafting"
 		},
 		{
 			"ItemLevel": "80",
@@ -1307,7 +1313,8 @@
 			"Name": "Delicate Dragon's Eye",
 			"Id": "42143",
 			"Slot": "Red",
-			"enchantId": "3733"
+			"enchantId": "3733",
+			"Requirements": "jewelcrafting"
 		},
 		{
 			"ItemLevel": "80",
@@ -1326,7 +1333,8 @@
 			"Name": "Runed Dragon's Eye",
 			"Id": "42144",
 			"Slot": "Red",
-			"enchantId": "3734"
+			"enchantId": "3734",
+			"Requirements": "jewelcrafting"
 		},
 		{
 			"ItemLevel": "80",
@@ -1345,7 +1353,8 @@
 			"Name": "Subtle Dragon's Eye",
 			"Id": "42151",
 			"Slot": "Red",
-			"enchantId": "3740"
+			"enchantId": "3740",
+			"Requirements": "jewelcrafting"
 		},
 		{
 			"ItemLevel": "80",
@@ -1364,7 +1373,8 @@
 			"Name": "Flashing Dragon's Eye",
 			"Id": "42152",
 			"Slot": "Red",
-			"enchantId": "3741"
+			"enchantId": "3741",
+			"Requirements": "jewelcrafting"
 		},
 		{
 			"ItemLevel": "80",
@@ -1383,7 +1393,8 @@
 			"Name": "Fractured Dragon's Eye",
 			"Id": "42153",
 			"Slot": "Red",
-			"enchantId": "3745"
+			"enchantId": "3745",
+			"Requirements": "jewelcrafting"
 		},
 		{
 			"ItemLevel": "80",
@@ -1402,7 +1413,8 @@
 			"Name": "Precise Dragon's Eye",
 			"Id": "42154",
 			"Slot": "Red",
-			"enchantId": "3746"
+			"enchantId": "3746",
+			"Requirements": "jewelcrafting"
 		},
 		{
 			"ItemLevel": "80",
@@ -1523,7 +1535,8 @@
 			"Name": "Brilliant Dragon's Eye",
 			"Id": "42148",
 			"Slot": "Yellow",
-			"enchantId": "3737"
+			"enchantId": "3737",
+			"Requirements": "jewelcrafting"
 		},
 		{
 			"ItemLevel": "80",
@@ -1542,7 +1555,8 @@
 			"Name": "Smooth Dragon's Eye",
 			"Id": "42149",
 			"Slot": "Yellow",
-			"enchantId": "3738"
+			"enchantId": "3738",
+			"Requirements": "jewelcrafting"
 		},
 		{
 			"ItemLevel": "80",
@@ -1561,7 +1575,8 @@
 			"Name": "Quick Dragon's Eye",
 			"Id": "42150",
 			"Slot": "Yellow",
-			"enchantId": "3739"
+			"enchantId": "3739",
+			"Requirements": "jewelcrafting"
 		},
 		{
 			"ItemLevel": "80",
@@ -1580,7 +1595,8 @@
 			"Name": "Rigid Dragon's Eye",
 			"Id": "42156",
 			"Slot": "Yellow",
-			"enchantId": "3742"
+			"enchantId": "3742",
+			"Requirements": "jewelcrafting"
 		},
 		{
 			"ItemLevel": "80",
@@ -1599,7 +1615,8 @@
 			"Name": "Thick Dragon's Eye",
 			"Id": "42157",
 			"Slot": "Yellow",
-			"enchantId": "3743"
+			"enchantId": "3743",
+			"Requirements": "jewelcrafting"
 		},
 		{
 			"ItemLevel": "80",
@@ -1618,7 +1635,8 @@
 			"Name": "Mystic Dragon's Eye",
 			"Id": "42158",
 			"Slot": "Yellow",
-			"enchantId": "3744"
+			"enchantId": "3744",
+			"Requirements": "jewelcrafting"
 		},
 		{
 			"ItemLevel": "80",

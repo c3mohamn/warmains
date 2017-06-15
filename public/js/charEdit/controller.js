@@ -13,23 +13,20 @@ editApp.directive('ngRightClick', function($parse) {
     };
 });
 
-editApp.controller('editctrl', ['$scope', '$http', '$compile', function($scope, $http, $compile) {
+editApp.controller('editCtrl', ['$scope', '$http', '$compile', function($scope, $http, $compile) {
 
-  /* --------- Globals --------- */
+  /* --------- Variables --------- */
   $scope.orderByField = 'result_ilvl';
   $scope.reverseSort = false;
   $scope.error_msg = '';
   $scope.success_msg = '';
-  $scope.Stats = {}; // stores current stats for character
   $scope.updated_Stats = {}; // stores the stats after updating with multipliers
   $scope.character = {}; // stores all character information on load
   $scope.multipliers = {}; // stores multipliers gained from gems/enchants
   $scope.talent_points = {}; // stores additional talent point information
-  $scope.cur_talents = {}; // stores current talent points
-  $scope.cur_glyphs = {}; // stores currently equipped glyphs
   $scope.major_glyphs = {}; // stores all major glyphs for current character's class
   $scope.minor_glyphs = {}; // stores all minor glyphs for current character's class
-  $scope.glyph_results = {};
+  $scope.glyph_results = {}; // glyphs that will be displayed in table for user
   $scope.cur_glyph_slot = 0; // the currently selected glyph
 
   //classes and corresponding specs for each class
@@ -49,66 +46,40 @@ editApp.controller('editctrl', ['$scope', '$http', '$compile', function($scope, 
 
   /* --------- Functions --------- */
 
-  // --------- Talent Functions
+  // ------------ PROFESSION FUNCTIONS START ---------------
 
-  /* Inserts the talents and into the DOM using info from all_talents based
-   * on the class of the current character.
-   */
-  $scope.insert_talents = function() {
-    var talents = all_talents[$scope.character.class];
+  // Add prof to character's professions
+  $scope.add_prof = function(prof) {
 
-    // Insert the backgrounds for each talent tree
-    $('#tree-bg-left').attr('ng-style', "get_talent_img(0, 'background')");
-    $('#tree-bg-center').attr('ng-style', "get_talent_img(1, 'background')");
-    $('#tree-bg-right').attr('ng-style', "get_talent_img(2, 'background')");
+    // cannot add prof if we already have 2 professions
+    if (char_professions.length == 2)
+      return false;
 
-    /* looping through all the talents and inserting them into their respective
-     * locations in the talent tree. */
-    for (var talent in talents) {
-      var tree = talents[talent].tree,
-          talent_name = talents[talent].name;
-          row = talents[talent].row,
-          col = talents[talent].col;
+    // cannot add prof if we already have prof
+    if ($scope.has_prof(prof))
+      return false;
+    // TODO: make sure we remove profession perks when we remove profession
 
-      // index of the tree used to get the name of the talent tree using class_specs
-      var tree_index = 0;
-      if (tree == 'center') tree_index = 1;
-      if (tree == 'right') tree_index = 2;
-      //console.log(talent, talents[talent].tree, talents[talent].row, talents[talent].col);
+  }
 
-      // location of the talent in the DOM, determined by tree, row and col
-      talent_loc = '.tree_' + tree + ' .r' + row + ' ' + '.c' + col + ' div';
+  // Remove prof from character's professions
+  $scope.remove_prof = function(prof) {
 
-      // replace empty spot with a talent spot
-      $(talent_loc).removeClass('empty_talent_space');
-      $(talent_loc).addClass('talent');
-      $(talent_loc).attr('id', 'talent_' + talent);
+    if (!$scope.has_prof(prof))
+      return false;
+  }
 
-      // set background image of talent
-      $(talent_loc).attr('ng-style', "get_talent_img(" + tree_index + ", " + talent + ")");
+  // return true iff character has profession
+  $scope.has_prof = function(prof) {
 
-      // set angular attributes for adding and removing talent points
-      $(talent_loc).attr('ng-click', "add_point(" + talent + ")");
-      $(talent_loc).attr('ng-right-click', "remove_point(" + talent + ")");
-      $(talent_loc).attr('ng-class', "{'talent_inactive': is_inactive(" + talent + ")}");
+  }
+  // ------------ PROFESSION FUNCTIONS END ---------------
 
-      // add the tooltip
-      $(talent_loc).attr('data-toggle', 'tooltip');
-      $(talent_loc).attr('data-trigger', 'hover');
-      $(talent_loc).attr('data-placement', 'bottom'); // TODO: make left/center/right
-      $(talent_loc).attr('data-html', 'true');
-      $(talent_loc).attr('data-original-title', '{{talent_tooltip(' + talent + ')}}');
+  // ------------ TALENT FUNCTIONS START ---------------
 
-      // insert the talent counter for the given talent into the DOM
-      $(talent_loc).html("<div class='talent_counter' ng-class=\"{'maxed_talent': is_talent_maxed("
-      + talent + ")}\">{{cur_talents[" + talent + "]}}</div>");
-    }
-
-    // compile used to compile angular attributes
-    $compile($('.talent_tree'))($scope);
-    $("body").tooltip({
-      selector: '[data-toggle="tooltip"]'
-    });
+  // Returns the amount of points spent on talent
+  $scope.get_talent_count = function(talent) {
+    return char_talents[talent];
   }
 
   // add a talent point to the talent
@@ -117,39 +88,36 @@ editApp.controller('editctrl', ['$scope', '$http', '$compile', function($scope, 
         row = class_talents[talent].row,
         tree = class_talents[talent].tree,
         points_used = $scope.talent_points[tree].total,
-        last_active_row = $scope.talent_points[tree].last_active_row,
-        can_add = true;
+        last_active_row = $scope.talent_points[tree].last_active_row;
 
     if (!$scope.permission)
       return false;
 
     // only add points to rows that are enabled
     if (points_used < 5 * row)
-      can_add = false;
+      return false;
     // check if we have points remaining
     else if ($scope.talent_points.remaining <= 0)
-      can_add = false;
+      return false;
     // check if talent is not already maxed
-    else if ($scope.cur_talents[talent] >= class_talents[talent].max_rank)
-      can_add = false;
+    else if (char_talents[talent] >= class_talents[talent].max_rank)
+      return false;
     // make sure prequisite talents for current talent are fulfilled
     else if (class_talents[talent].requires) {
-      if ($scope.cur_talents[class_talents[talent].requires] != class_talents[class_talents[talent].requires].max_rank)
+      if (char_talents[class_talents[talent].requires] != class_talents[class_talents[talent].requires].max_rank)
         return false;
     }
 
-    if (can_add) {
-      // update talent point variables
-      $scope.cur_talents[talent] += 1;
-      $scope.talent_points[tree].row[row] += 1;
-      $scope.talent_points[tree].total += 1;
-      $scope.talent_points.remaining -= 1;
-      if (last_active_row < row) $scope.talent_points[tree].last_active_row = row;
-      // update tooltip while still hovered over
-      $('#talent_' + talent)
-      .attr('data-original-title', $scope.talent_tooltip(talent))
-      .parent().find('.tooltip-inner').html($scope.talent_tooltip(talent));
-    }
+    // update talent point variables
+    char_talents[talent] += 1;
+    $scope.talent_points[tree].row[row] += 1;
+    $scope.talent_points[tree].total += 1;
+    $scope.talent_points.remaining -= 1;
+    if (last_active_row < row) $scope.talent_points[tree].last_active_row = row;
+    // update tooltip while still hovered over
+    $('#talent_' + talent)
+    .attr('data-original-title', $scope.talent_tooltip(talent))
+    .parent().find('.tooltip-inner').html($scope.talent_tooltip(talent));
   }
 
   // remove a talent point from talent
@@ -158,20 +126,19 @@ editApp.controller('editctrl', ['$scope', '$http', '$compile', function($scope, 
         row = class_talents[talent].row,
         tree = class_talents[talent].tree,
         points_used = $scope.talent_points[tree].total,
-        last_active_row = $scope.talent_points[tree].last_active_row,
-        can_remove = true;
+        last_active_row = $scope.talent_points[tree].last_active_row;
 
     if (!$scope.permission)
       return false;
 
     // need to have points in there to remove it
-    if ($scope.cur_talents[talent] <= 0)
+    if (char_talents[talent] <= 0)
       return false;
 
     // check it talent is prequisite for any talents down the road we chose
     if (class_talents[talent].allows) {
       for (var i=0; i < class_talents[talent].allows.length; i+=1) {
-        if ($scope.cur_talents[class_talents[talent].allows[i]] > 0)
+        if (char_talents[class_talents[talent].allows[i]] > 0)
           return false;
       }
     }
@@ -186,25 +153,25 @@ editApp.controller('editctrl', ['$scope', '$http', '$compile', function($scope, 
       }
     }
 
-    if(can_remove) {
-      $scope.cur_talents[talent] -= 1;
-      $scope.talent_points[tree].row[row] -= 1;
-      $scope.talent_points[tree].total -= 1;
-      $scope.talent_points.remaining += 1;
-      if (row == last_active_row && $scope.talent_points[tree].row[row] == 0)
-        $scope.talent_points[tree].last_active_row -= 1;
-      // update tooltip while still hovered over
-      $('#talent_' + talent)
-      .attr('data-original-title', $scope.talent_tooltip(talent))
-      .parent().find('.tooltip-inner').html($scope.talent_tooltip(talent));
-    }
+    // update associated variables
+    char_talents[talent] -= 1;
+    $scope.talent_points[tree].row[row] -= 1;
+    $scope.talent_points[tree].total -= 1;
+    $scope.talent_points.remaining += 1;
+    if (row == last_active_row && $scope.talent_points[tree].row[row] == 0)
+      $scope.talent_points[tree].last_active_row -= 1;
+    // update tooltip while still hovered over
+    $('#talent_' + talent)
+    .attr('data-original-title', $scope.talent_tooltip(talent))
+    .parent().find('.tooltip-inner').html($scope.talent_tooltip(talent));
+
   }
 
-  // Reset Talents points
+  // Reset all Talents points to default
   $scope.reset_talents = function() {
     // Resetting all talent variables to initial values
-    for (var talent in $scope.cur_talents) {
-      $scope.cur_talents[talent] = 0;
+    for (var talent in char_talents) {
+      char_talents[talent] = 0;
     }
     $scope.talent_points.remaining = 71;
     $scope.talent_points.left.total = 0;
@@ -218,14 +185,14 @@ editApp.controller('editctrl', ['$scope', '$http', '$compile', function($scope, 
     $scope.talent_points.right.row = {0:0, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0, 8:0, 9:0, 10:0};
   }
 
-  // gets talent tooltip for given talent at whatever its current rank is
+  // gets tooltip for given talent at it's current rank
   $scope.talent_tooltip = function(talent) {
     var cur_rank = 0,
         talent_rank_info = '',
         talent_rank_info_next = '',
         char_class = $scope.character.class,
         rank = [],
-        talent_info = all_talents[$scope.character.class][talent],
+        talent_info = all_talents[char_class][talent],
         actual_cur_rank = 0,
         click_to_learn = '';
 
@@ -243,8 +210,8 @@ editApp.controller('editctrl', ['$scope', '$http', '$compile', function($scope, 
 
     // update the rank to that of current, compensating for the array indexes
     // also store actual talent rank for tooltip info
-    if ($scope.cur_talents[talent]) {
-      cur_rank = $scope.cur_talents[talent] - 1;
+    if (char_talents[talent]) {
+      cur_rank = char_talents[talent] - 1;
       actual_cur_rank = cur_rank + 1;
     }
 
@@ -257,7 +224,7 @@ editApp.controller('editctrl', ['$scope', '$http', '$compile', function($scope, 
     talent_rank_info = rank[talent][cur_rank];
 
     // if talent is active and have 0 talent points in it, add this line
-    if (!$scope.is_inactive(talent) && $scope.cur_talents[talent] == 0)
+    if (!$scope.is_inactive(talent) && char_talents[talent] == 0)
       click_to_learn = "<br><span class='pull-left' style='color:#00FF44;'>Click to Learn</span>";
 
     // if we're maxed out in talent or it is a 0/1 talent or have no points in talent
@@ -288,9 +255,8 @@ editApp.controller('editctrl', ['$scope', '$http', '$compile', function($scope, 
   $scope.is_talent_maxed = function(talent) {
     var class_talents = all_talents[$scope.character.class];
 
-    if ($scope.cur_talents[talent]) {
-      //console.log(talent, cur_talents[talent].rank, cur_talents[talent]);
-      return $scope.cur_talents[talent] == class_talents[talent].max_rank;
+    if (char_talents[talent]) {
+      return char_talents[talent] == class_talents[talent].max_rank;
     }
     return false;
   }
@@ -305,12 +271,12 @@ editApp.controller('editctrl', ['$scope', '$http', '$compile', function($scope, 
 
     if (points_used < row * 5)
       return true;
-    if (remaining_points == 0 && $scope.cur_talents[talent] == 0)
+    if (remaining_points == 0 && char_talents[talent] == 0)
       return true;
     // check if talent has a prequisite talent
     if (class_talents[talent].requires) {
       var required_tal = class_talents[talent].requires;
-      if ($scope.cur_talents[required_tal] != class_talents[required_tal].max_rank)
+      if (char_talents[required_tal] != class_talents[required_tal].max_rank)
         return true;
     }
     return false;
@@ -349,6 +315,7 @@ editApp.controller('editctrl', ['$scope', '$http', '$compile', function($scope, 
     }
   }
 
+  // ------------ TALENT FUNCTIONS END ---------------
 
   /* Saves the current state of the character in db. */
   $scope.save_to_db = function() {
@@ -357,8 +324,10 @@ editApp.controller('editctrl', ['$scope', '$http', '$compile', function($scope, 
       gems: char_gems,
       enchants: char_enchants,
       glyphs: char_glyphs,
+      talents: char_talents,
+      professions: char_professions,
       spec: $scope.character.spec,
-      talents: $scope.cur_talents,
+      race: $scope.character.race,
       points: $scope.talent_points,
       charname: $scope.character.name
     }).then(function successCallback(response) {
@@ -379,8 +348,10 @@ editApp.controller('editctrl', ['$scope', '$http', '$compile', function($scope, 
   /* Updates base Stats with any multipliers and active Socket Bonuses */
   function update_stats() {
 
+    //TODO: Will need to add stats gained from talents/glyphs as well
+
     // add any socketbonus to stats
-    $scope.updated_Stats = bonus_stats($scope.Stats);
+    $scope.updated_Stats = bonus_stats(base_stats);
 
     // update multipliers and stats based on multipliers
     $scope.multipliers.ench = ench_multipliers;
@@ -451,10 +422,10 @@ editApp.controller('editctrl', ['$scope', '$http', '$compile', function($scope, 
 
       // Show gem sockets and their respective colours here.
       // Inserts the gem sockets if they exist as an <li> element
-      if (char_items[slot].SocketColor3 || slot == 'Waist') {
-        var colour = 'Prismatic'; // For Eternal Belt Buckle Extra socket
+      if (char_items[slot].SocketColor3 || slot == 'Waist' || slot == 'Hands' || slot == 'Wrist') {
+        var colour = 'Prismatic'; // For Eternal Belt Buckle Extra socket && BS sockets
 
-        if (slot != 'Waist') colour = char_items[slot].SocketColor3;
+        if (slot != 'Waist' && slot != 'Hands' && slot != 'Wrist') colour = char_items[slot].SocketColor3;
         $scope.socket3 = colour;
 
         insert_gem_socket(slot, 3);
@@ -489,8 +460,6 @@ editApp.controller('editctrl', ['$scope', '$http', '$compile', function($scope, 
         else set_gem_bg('socket1', colour);
       };
 
-      // TODO: Show enchant as well
-      //if (char_enchants)
     } else toggle_sockets = 0;
 
     $scope.slot = slot;
@@ -533,7 +502,7 @@ editApp.controller('editctrl', ['$scope', '$http', '$compile', function($scope, 
             if (can_enchant(item, char_items[slot], $scope.character.class)) {
 
               // enchant item to slot, change tooltip, update stats
-              add_stats(char_enchants[slot], item, false, slot, $scope.Stats);
+              add_stats(char_enchants[slot], item, false, slot, base_stats);
               char_enchants[slot] = item;
               console.log(char_enchants[slot]);
               set_slot_rel(slot);
@@ -552,7 +521,7 @@ editApp.controller('editctrl', ['$scope', '$http', '$compile', function($scope, 
             if (can_gem(item, $scope[cur_socket])) {
 
               // Socket gem, equip in tooltip, and update stats
-              add_stats(char_gems[slot][cur_socket], item, false, slot, $scope.Stats);
+              add_stats(char_gems[slot][cur_socket], item, false, slot, base_stats);
               char_gems[slot][cur_socket] = item;
               set_slot_image(cur_socket, item);
               set_slot_rel(slot);
@@ -574,7 +543,7 @@ editApp.controller('editctrl', ['$scope', '$http', '$compile', function($scope, 
                 if (!is_unique($scope.slot, item)) {
 
                   // Equip item, change icon image and update stats
-                  add_stats(char_items[$scope.slot], item, true, slot, $scope.Stats);
+                  add_stats(char_items[$scope.slot], item, true, slot, base_stats);
                   char_items[$scope.slot] = item;
                   set_slot_image($scope.slot, item);
                   $scope.success_msg = item.Name + 'has been equipped!';
@@ -611,8 +580,7 @@ editApp.controller('editctrl', ['$scope', '$http', '$compile', function($scope, 
           // Remove enchant from tooltip, char_enchants and update stats
           $scope.success_msg = char_enchants[slot].Name + ' has been removed from '
           + slot + '.';
-          //TODO: update stats
-          remove_stats(char_enchants[slot], false, slot, $scope.Stats);
+          remove_stats(char_enchants[slot], false, slot, base_stats);
           char_enchants[slot] = null;
           set_slot_rel(slot);
 
@@ -629,7 +597,7 @@ editApp.controller('editctrl', ['$scope', '$http', '$compile', function($scope, 
            var gem = char_gems[slot][cur_socket];
            $scope.success_msg = gem.Name + ' has been unequipped from '
            + slot + '.';
-           remove_stats(gem, false, slot, $scope.Stats);
+           remove_stats(gem, false, slot, base_stats);
            char_gems[slot][cur_socket] = null;
            set_slot_rel(slot);
            set_gem_bg(cur_socket, $scope[cur_socket]);
@@ -644,7 +612,7 @@ editApp.controller('editctrl', ['$scope', '$http', '$compile', function($scope, 
           // Remove item from current slot & char_items, remove sockets, and
           // update stats.
           $scope.success_msg = char_items[slot].Name + ' has been unequipped.';
-          remove_stats(char_items[slot], true, slot, $scope.Stats);
+          remove_stats(char_items[slot], true, slot, base_stats);
           char_items[slot] = null;
           char_gems[slot].socket1 = null;
           char_gems[slot].socket2 = null;
@@ -760,27 +728,28 @@ editApp.controller('editctrl', ['$scope', '$http', '$compile', function($scope, 
           if ($scope.character[slot.toLowerCase()] &&
               $scope.character[slot.toLowerCase()].item) {
             var item = $scope.character[slot.toLowerCase()].item;
-            add_stats(null, item, false, slot, $scope.Stats);
+            add_stats(null, item, false, slot, base_stats);
             char_items[slot] = item;
             set_slot_image(slot, char_items[slot]);
 
+            // getting all the gems and enchants & their stats
             if ($scope.character[slot.toLowerCase()].gems) {
               var gems = $scope.character[slot.toLowerCase()].gems,
                   enchant = $scope.character[slot.toLowerCase()].enchant;
               if (gems.socket1) {
-                add_stats(null, gems.socket1, false, slot, $scope.Stats);
+                add_stats(null, gems.socket1, false, slot, base_stats);
                 char_gems[slot].socket1 = gems.socket1;
               }
               if (gems.socket2) {
-                add_stats(null, gems.socket2, false, slot, $scope.Stats);
+                add_stats(null, gems.socket2, false, slot, base_stats);
                 char_gems[slot].socket2 = gems.socket2;
               }
               if (gems.socket3) {
-                add_stats(null, gems.socket3, false, slot, $scope.Stats);
+                add_stats(null, gems.socket3, false, slot, base_stats);
                 char_gems[slot].socket3 = gems.socket3;
               }
               if (enchant) {
-                add_stats(null, enchant, false, slot, $scope.Stats);
+                add_stats(null, enchant, false, slot, base_stats);
                 char_enchants[slot] = enchant;
               }
 
@@ -792,13 +761,14 @@ editApp.controller('editctrl', ['$scope', '$http', '$compile', function($scope, 
 
         // talents
         if ($scope.character.talents) {
-          $scope.cur_talents = $scope.character.talents;
+          char_talents = $scope.character.talents;
         } else {
           // initialize talents
           for (var talent in all_talents[$scope.character.class]) {
-            $scope.cur_talents[talent] = 0;
+            char_talents[talent] = 0;
           }
         }
+        // talent tree information
         if ($scope.character.points) {
           $scope.talent_points = $scope.character.points;
         } else {
@@ -823,17 +793,25 @@ editApp.controller('editctrl', ['$scope', '$http', '$compile', function($scope, 
           };
         }
         // populates the talent tree with talents from the character's class
-        $scope.insert_talents();
+        insert_talents($scope.character.class);
+        // compile used to compile angular attributes
+        $compile($('.talent_tree'))($scope);
+
         // loades the glyphs for the glyphs for the current character's class
         load_class_glyphs($scope.character.class, $scope.major_glyphs, $scope.minor_glyphs);
-        // fetches the character's glyphs (if any)
 
+        // fetches the character's glyphs (if any)
         if ($scope.character.glyphs) {
           for (var key in $scope.character.glyphs) {
             $scope.cur_glyph_slot = key;
             $scope.equip_glyph($scope.character.glyphs[key].Id);
             $scope.success_msg = '';
           }
+        }
+
+        // gets character's professions (if any)
+        if ($scope.character.professions) {
+          char_professions = $scope.character.professions;
         }
     });
   });
