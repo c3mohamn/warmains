@@ -424,7 +424,6 @@ function add_stats(prev_item, new_item, has_enchants, slot, stats) {
   for (var key in new_stats) {
     if (not_special(key)) {
       // if a multiplier stat, add the list of multipliers
-      // TODO:
       if (key.indexOf('Multiplier') >= 0) {
         ench_multipliers[key] = new_stats[key];
       } else {

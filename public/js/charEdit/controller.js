@@ -380,7 +380,7 @@ editApp.controller('editCtrl', ['$scope', '$http', '$compile', function($scope, 
     if      (quality == 'Epic')         return {'color': 'purple'}
     else if (quality == 'Rare')         return {'color': 'blue'}
     else if (quality == 'Legendary')    return {'color': 'orange'}
-    else                                return {'color': 'black'}
+    else                                return {'color': 'white'}
   }
 
   /* Set the color of class name based on class in results table. */

@@ -164,15 +164,14 @@ header.priest { background-image: url('/images/bg/class-bg/priest.jpg'); }
       transition: .3s;
   }
   tbody {
-    color: black;
-    background-color: #D9D9D9;
+    color: white;
     tr {
       cursor: pointer;
     }
   }
   img {
-    height: 40px;
-    width: 40px;
+    height: 35px;
+    width: 35px;
   }
 }
 
@@ -195,52 +194,33 @@ header.priest { background-image: url('/images/bg/class-bg/priest.jpg'); }
 }
 
 // Equipping/Unequiping and save button styles
-.equip_item, .unequip_item, .save_item {
-  width: 150px;
-  padding: 10px;
-  border-style: solid;
-  border-width: 2px;
-  border-color: black;
-  margin-left: 10px;
-  margin-right: 10px;
-  margin-top: 10px;
-  background-color: white;
-  transition: .5s;
+
+#save_talents {
+  color: rgba(44, 218, 0, 1);
+}
+#save_talents:hover {
+  color: rgba(44, 218, 0, .5);
+}
+#reset_talents {
+  color: rgba(218, 72, 0, 1);
+}
+#reset_talents:hover {
+  color: rgba(218, 72, 0, .5);
+}
+#help_talents {
+  color: #00FF44;
+}
+#equip {
+  color: rgba(0, 232, 219, 1);
+}
+#equip:hover {
+  color: rgba(0, 232, 219, .5);
 }
 
-.unequip_item:hover {
-  border-style: solid;
-  border-width: 2px;
-  border-color: green;
-  background-color: rgb(224, 224, 224);
-  transition: .5s;
-}
-
-.equip_item:hover {
-  border-style: solid;
-  border-width: 2px;
-  border-color: red;
-  background-color: rgb(224, 224, 224);
-  transition: .5s;
-}
-
-.unequip_item {
-  color: red;
-}
-
-.equip_item {
-  color: green;
-}
-
-.save_item {
-  color: brown;
-}
-
-.save_item:hover {
-  border-style: solid;
-  border-width: 2px;
-  background-color: black;
-  transition: .5s;
+.list-group-item {
+  background-color: rgba(0,0,0,.1);
+  text-align: left;
+  border-width: 0px;
 }
 
 // Keyframe animations

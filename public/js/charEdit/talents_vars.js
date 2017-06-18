@@ -829,7 +829,7 @@ var all_talents = {
     // FROST tree
     28: {name:'Improved Icy Touch', max_rank:3, col:0, row:0, tree:'center', allows:[34]},
     29: {name:'Runic Power Mastery', max_rank:2, col:1, row:0, tree:'center'},
-    30: {name:'Toughness', max_rank:3, col:2, row:0, tree:'center'},
+    30: {name:'Toughness', max_rank:5, col:2, row:0, tree:'center'},
     31: {name:'Icy Reach', max_rank:2, col:1, row:1, tree:'center'},
     32: {name:'Black Icy', max_rank:5, col:2, row:1, tree:'center'},
     33: {name:'Nerves of Cold Steel', max_rank:3, col:3, row:1, tree:'center'},
