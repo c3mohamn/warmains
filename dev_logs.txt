@@ -1,3 +1,10 @@
+----- 06/19/2017 ------
+------- v3.1.2 --------
+
+- Stats look changed
+- set_slot replaced with a directive
+
+
 ----- 06/13/2017 ------
 ------- v3.1.1 --------
 

@@ -1,5 +1,5 @@
 div(class='gear_view' ng-show="cur_view == 'gear'")
-  ul(class='list-inline')
+  ul(class='list-inline' id='gear_view_tabs')
     li: input(type='submit' value='GEM'
               class="gear_view_tab loginmodal-submit"
               ng-click="gear_view = 'gems'; reset_table()"

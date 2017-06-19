@@ -1,0 +1,102 @@
+div(class='stats_container')
+  h3 Net Stats from items
+
+  table(class='table' id='stats')
+    tr
+      td
+        p Defensives
+        ul
+          li
+            span Armor:
+            span(class='stat_value') {{updated_Stats.Armor || 0}}
+          li
+            span Bonus Armor:
+            span(class='stat_value') {{updated_Stats.BonusArmor || 0}}
+          li
+            span Dodge Rating:
+            span(class='stat_value') {{updated_Stats.DodgeRating || 0}}
+          li
+            span Parry Rating:
+            span(class='stat_value') {{updated_Stats.ParryRating || 0}}
+          li
+            span Defense Rating:
+            span(class='stat_value') {{updated_Stats.DefenseRating || 0}}
+          li
+            span Resilience:
+            span(class='stat_value') {{updated_Stats.Resilience || 0}}
+      td
+        p Base Stats
+        ul
+          li
+            span Stamina:
+            span(class='stat_value') {{updated_Stats.Stamina || 0}}
+          li
+            span Strength:
+            span(class='stat_value') {{updated_Stats.Strength || 0}}
+          li
+            span Agility:
+            span(class='stat_value') {{updated_Stats.Agility || 0}}
+          li
+            span Intellect:
+            span(class='stat_value') {{updated_Stats.Intellect || 0}}
+          li
+            span Spirit:
+            span(class='stat_value') {{updated_Stats.Spirit || 0}}
+
+    tr
+      td
+        p Spell
+        ul
+          li
+            span Spell Power:
+            span(class='stat_value') {{updated_Stats.SpellPower || 0}}
+          li
+            span Haste:
+            span(class='stat_value') {{updated_Stats.HasteRating || 0}}
+          li
+            span Spell Pen:
+            span(class='stat_value') {{updated_Stats.SpellPenetration || 0}}
+          li
+            span Spell Hit:
+            span(class='stat_value') {{updated_Stats.SpellHitRating || 0}}
+          li
+            span Mp5:
+            span(class='stat_value') {{updated_Stats.Mp5 || 0}}
+      td
+        p Physical
+        ul
+          li
+            span Attack Power:
+            span(class='stat_value') {{updated_Stats.AttackPower || 0}}
+          li
+            span Expertise Rating
+            span(class='stat_value') {{updated_Stats.ExpertiseRating || 0}}
+          li
+            span Expertise
+            span(class='stat_value') {{updated_Stats.Expertise || 0}}
+          li
+            span ArP:
+            span(class='stat_value') {{updated_Stats.ArmorPenetrationRating || 0}}
+          li
+            span Hit Rating:
+            span(class='stat_value') {{updated_Stats.HitRating || 0}}
+
+    tr
+      td
+        p Resists
+        ul
+          li
+            span Arcane Resistance:
+            span(class='stat_value') {{updated_Stats.ArcaneResistance || 0}}
+          li
+            span Fire Resistance:
+            span(class='stat_value') {{updated_Stats.FireResistance || 0}}
+          li
+            span Nature Resistance:
+            span(class='stat_value') {{updated_Stats.NatureResistance || 0}}
+          li
+            span Frost Resistance:
+            span(class='stat_value') {{updated_Stats.FrostResistance || 0}}
+          li
+            span Shadow Resistance:
+            span(class='stat_value') {{updated_Stats.ShadowResistance || 0}}
