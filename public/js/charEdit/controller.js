@@ -1,18 +1,5 @@
 var editApp = angular.module("editApp", []);
 
-// ng-right-click directive
-editApp.directive('ngRightClick', function($parse) {
-    return function(scope, element, attrs) {
-        var fn = $parse(attrs.ngRightClick);
-        element.bind('contextmenu', function(event) {
-            scope.$apply(function() {
-                event.preventDefault();
-                fn(scope, {$event:event});
-            });
-        });
-    };
-});
-
 editApp.controller('editCtrl', ['$scope', '$http', '$compile', function($scope, $http, $compile) {
 
   /* --------- Variables --------- */
@@ -399,72 +386,6 @@ editApp.controller('editCtrl', ['$scope', '$http', '$compile', function($scope, 
     else                                    return {'color': 'black'};
   }
 
-  /* Sets the item slot to search for after clicking an empty item slot
-   * in the character panel.
-   *
-   * cur_slot: currently selected slot.
-   */
-  $scope.set_slot = function(slot) {
-    $scope.cur_socket = '';
-    $scope.socket1 = '';
-    $scope.socket2 = '';
-    $scope.socket3 = '';
-    remove_socket(3);
-    remove_socket(2);
-    remove_socket(1);
-
-    // reset toggle when clicking a new item slot
-    if ($scope.slot != slot)
-      toggle_sockets = 0;
-
-    if (char_items[slot] && toggle_sockets == 0) {
-      toggle_sockets = 1;
-
-      // Show gem sockets and their respective colours here.
-      // Inserts the gem sockets if they exist as an <li> element
-      if (char_items[slot].SocketColor3 || slot == 'Waist' || slot == 'Hands' || slot == 'Wrist') {
-        var colour = 'Prismatic'; // For Eternal Belt Buckle Extra socket && BS sockets
-
-        if (slot != 'Waist' && slot != 'Hands' && slot != 'Wrist') colour = char_items[slot].SocketColor3;
-        $scope.socket3 = colour;
-
-        insert_gem_socket(slot, 3);
-        $compile($("#socket3_slot"))($scope);
-
-        if (char_gems[slot].socket3)
-          set_slot_image('socket3', char_gems[slot].socket3)
-        else set_gem_bg('socket3', colour);
-      }
-
-      if (char_items[slot].SocketColor2) {
-        var colour = char_items[slot].SocketColor2;
-        $scope.socket2 = colour;
-
-        insert_gem_socket(slot, 2);
-        $compile($("#socket2_slot"))($scope);
-
-        if (char_gems[slot].socket2)
-          set_slot_image('socket2', char_gems[slot].socket2)
-        else set_gem_bg('socket2', colour);
-      }
-
-      if (char_items[slot].SocketColor1) {
-        var colour = char_items[slot].SocketColor1;
-        $scope.socket1 = colour;
-
-        insert_gem_socket(slot, 1);
-        $compile($("#socket1_slot"))($scope);
-
-        if (char_gems[slot].socket1)
-          set_slot_image('socket1', char_gems[slot].socket1)
-        else set_gem_bg('socket1', colour);
-      };
-
-    } else toggle_sockets = 0;
-
-    $scope.slot = slot;
-  }
-
   /* Equips an item to corresponding slot selected.
    *  - Check if an item is selected first.
    *  - Check if the selected item can be equipped in corresponding slot.
@@ -517,7 +438,9 @@ editApp.controller('editCtrl', ['$scope', '$http', '$compile', function($scope, 
     else if (gear_view == 'gems') {
       if (item && is_gem(item)) {
         if (slot) {
+          console.log(cur_socket);
           if (cur_socket) {
+            console.log(cur_socket);
             if (can_gem(item, $scope[cur_socket])) {
 
               // Socket gem, equip in tooltip, and update stats
@@ -600,6 +523,7 @@ editApp.controller('editCtrl', ['$scope', '$http', '$compile', function($scope, 
            remove_stats(gem, false, slot, base_stats);
            char_gems[slot][cur_socket] = null;
            set_slot_rel(slot);
+           console.log(cur_socket, $scope[cur_socket]);
            set_gem_bg(cur_socket, $scope[cur_socket]);
 
          } else { $scope.error_msg = error_msg_2; }

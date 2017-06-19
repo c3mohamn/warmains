@@ -29,6 +29,10 @@ function load_class_glyphs(char_class, major, minor) {
  * on the class of the current character.
  */
 function insert_talents(char_class) {
+
+  if (!char_class)
+    return false;
+  
   var talents = all_talents[char_class];
 
   // Insert the backgrounds for each talent tree

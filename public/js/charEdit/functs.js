@@ -275,7 +275,7 @@ function insert_gem_socket(slot, socket_num) {
   $('#socket' + socket_num + '_slot').hover(function() {
     $(this).css('cursor', 'pointer');
   });
-  // add class when selected
+  // add class to highlight socket when selected
   $('#socket' + socket_num + '_slot').attr('ng-class',
     "{'selected_slot': cur_socket == 'socket" + socket_num + "'}");
 }
