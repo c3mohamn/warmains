@@ -10,7 +10,7 @@ div(class='stats_container')
           data-toggle='tooltip' data-placement='right' data-html='true'
           data-original-title="\
           Armor {{stats.Armor - stats.BonusArmor}} +  \
-          <span style='color:#2EFE2E;'>{{stats.BonusArmor}}</span><br>\
+          <span style='color:#2EFE2E;'>{{stats.BonusArmor || 0}}</span><br>\
           <span style='color:#DAA500;font-size:11px;'> \
           Physical Damage Reduction (lvl 80) {{stats.ArmorPercentage80}}%<br>\
           Physical Damage Reduction (lvl 83) {{stats.ArmorPercentage83}}%\
