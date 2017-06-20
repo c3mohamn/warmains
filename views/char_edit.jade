@@ -35,7 +35,7 @@ html(ng-app='editApp' ng-cloak)
           h3(class='view_tab'
           ng-class="{'selected_view': cur_view == 'talents'}") Talents
 
-        //li(ng-show='permission' ng-click="cur_view = 'details'")
+        li(ng-show='permission' ng-click="cur_view = 'details'")
           h3(class='view_tab'
           ng-class="{'selected_view': cur_view == 'details'}") Details
 
@@ -165,7 +165,7 @@ html(ng-app='editApp' ng-cloak)
 
   include partials/footer.jade
   script(src='/js/charEdit/vars.js')
-  script(src='/js/charEdit/talents_vars.js')
+  script(src='/js/charEdit/vars_talents.js')
   script(src='/js/charEdit/glyphs.js')
   script(src='/js/charEdit/talent_tooltips/deathknight.js')
   script(src='/js/charEdit/talent_tooltips/druid.js')
@@ -178,6 +178,7 @@ html(ng-app='editApp' ng-cloak)
   script(src='/js/charEdit/talent_tooltips/warlock.js')
   script(src='/js/charEdit/talent_tooltips/warrior.js')
   script(src='/js/charEdit/functs.js')
-  script(src='/js/charEdit/talent_functs.js')
+  script(src='/js/charEdit/functs_talents.js')
+  script(src='/js/charEdit/functs_stats.js')
   script(src='/js/charEdit/controller.js')
   script(src='/js/charEdit/directives.js')

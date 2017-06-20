@@ -64,7 +64,7 @@ var char_talents = {};
 var char_glyphs = {};
 
 // Store professions of character
-var char_professions = {};
+var char_professions = {1: null, 2: null};
 
 // Stores the unmodified stats gained from items.
 var base_stats = {};
@@ -149,3 +149,4 @@ var selected_item = null;
 
 // used to toggle sockets when clicking slots in sequence
 var toggle_sockets = 0;
+var prev_slot = '';

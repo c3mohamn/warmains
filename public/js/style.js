@@ -4,6 +4,11 @@ $(document).ready(function(){
     $('body').removeClass('fade-out');
   });
 
+  // initialize bootstrap tooltips
+  $(document).ready(function(){
+      $('[data-toggle="tooltip"]').tooltip();
+  });
+
   // Logo hover styling
   $(".logo a").mouseover(function (){
       $("#logo-black").css("color", "brown");

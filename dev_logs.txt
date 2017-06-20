@@ -1,3 +1,11 @@
+----- 06/20/2017 ------
+------- v3.1.3 --------
+
+- can add profs/save profs now
+- bonusarmor added to regular armor stat
+- minor visual changes/internal improvements
+  - including new scrollbar!
+
 ----- 06/19/2017 ------
 ------- v3.1.2 --------
 

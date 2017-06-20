@@ -4,7 +4,7 @@ editApp.controller('editCtrl', ['$scope', '$http', '$compile', function($scope, 
 
   /* --------- Variables --------- */
   $scope.orderByField = 'result_ilvl';
-  $scope.reverseSort = false;
+  $scope.reverseSort = true;
   $scope.error_msg = '';
   $scope.success_msg = '';
   $scope.updated_Stats = {}; // stores the stats after updating with multipliers
@@ -30,37 +30,50 @@ editApp.controller('editCtrl', ['$scope', '$http', '$compile', function($scope, 
     'hunter': ['beastmastery', 'marksmanship', 'survival']
   }
 
+  // list of all available profs used to populate details>prof section
+  $scope.all_profs = [
+    'blacksmithing', 'enchanting', 'engineering', 'inscription', 'jewelcrafting'
+  , 'leatherworking', 'tailoring'];
+
+  // list of all races
+  $scope.all_races = [
+    'human', 'dwarf', 'nightelf', 'gnome', 'draenei',
+    'orc', 'undead', 'tauren', 'troll', 'bloodelf'
+  ];
 
   /* --------- Functions --------- */
+
+
 
   // ------------ PROFESSION FUNCTIONS START ---------------
 
   // Add prof to character's professions
-  $scope.add_prof = function(prof) {
+  $scope.add_prof = function(prof, num) {
+    var old_prof = prof;
+    // TODO: make sure we remove profession perks when we remove/change profession
+    //remove_perks(old_prof);
 
-    // cannot add prof if we already have 2 professions
-    if (char_professions.length == 2)
+    // make sure we cannot add the same prof twice
+    if ($scope.has_prof(prof, 1) || $scope.has_prof(prof, 2))
       return false;
-
-    // cannot add prof if we already have prof
-    if ($scope.has_prof(prof))
-      return false;
-    // TODO: make sure we remove profession perks when we remove profession
-
+    char_professions[num] = prof;
+    console.log(char_professions, 'after');
   }
 
-  // Remove prof from character's professions
-  $scope.remove_prof = function(prof) {
-
-    if (!$scope.has_prof(prof))
-      return false;
+  // Remove prof perks from character
+  function remove_perks(prof) {
+    return false;
   }
 
   // return true iff character has profession
-  $scope.has_prof = function(prof) {
-
+  $scope.has_prof = function(prof, num) {
+    if (char_professions[num] == prof)
+      return true;
+    return false;
   }
   // ------------ PROFESSION FUNCTIONS END ---------------
+
+
 
   // ------------ TALENT FUNCTIONS START ---------------
 
@@ -344,8 +357,8 @@ editApp.controller('editCtrl', ['$scope', '$http', '$compile', function($scope, 
     $scope.multipliers.ench = ench_multipliers;
     $scope.updated_Stats = multiply_stats($scope.multipliers.ench, $scope.updated_Stats);
 
-    // add percentages of arp and hit rating as well
-    add_percentages($scope.updated_Stats);
+    // alter stats by adding percentages / adding new stat
+    alter_stats($scope.updated_Stats);
   }
 
   /* Mark the clicked item in results table as the currently selected item.

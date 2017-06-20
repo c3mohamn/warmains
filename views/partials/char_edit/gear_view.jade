@@ -93,22 +93,22 @@ div(class='gear_view' ng-show="cur_view == 'gear'")
               td(ng-show="gear_view == 'enchants' || gear_view == 'gems'")
                 a(href='' ng-click="orderByField='Requirements';reverseSort=!reverseSort") Requirements
           tbody
-              tr(ng-repeat="item in items | orderBy:orderByField:reverseSort"
-                 ng-click='select_search_item(item)')
-                td
-                  a(target="_blank" ng-href="{{item.Id != '' ? 'http://db.warmane.com/wotlk/item='+item.Id : 'http://db.warmane.com/wotlk/spell='+item.SpellId}}")
-                    img(ng-src='http://wow.zamimg.com/images/wow' +
-                        '/icons/large/{{item.IconPath}}.jpg')
-                td(ng-style='item_quality(item.Quality)')
-                    {{item.Name}}
-                td(ng-style='class_color(item.RequiredClasses)'
-                   ng-if="gear_view == 'items'")
-                  {{item.RequiredClasses}}
-                td(ng-if="gear_view == 'items'") {{item.ItemLevel}}
-                td {{item.Slot}}
-                td(ng-if="gear_view == 'items'") {{item.Type}}
-                td(ng-if="gear_view == 'enchants' || gear_view == 'gems'"
-                style='text-transform:capitalize;') {{item.Requirements}}
+            tr(ng-repeat="item in items | orderBy:orderByField:reverseSort"
+               ng-click='select_search_item(item)')
+              td
+                a(target="_blank" ng-href="{{item.Id != '' ? 'http://db.warmane.com/wotlk/item='+item.Id : 'http://db.warmane.com/wotlk/spell='+item.SpellId}}")
+                  img(ng-src='http://wow.zamimg.com/images/wow' +
+                      '/icons/large/{{item.IconPath}}.jpg')
+              td(ng-style='item_quality(item.Quality)')
+                  {{item.Name}}
+              td(ng-style='class_color(item.RequiredClasses)'
+                 ng-if="gear_view == 'items'")
+                {{item.RequiredClasses}}
+              td(ng-if="gear_view == 'items'") {{item.ItemLevel}}
+              td {{item.Slot}}
+              td(ng-if="gear_view == 'items'") {{item.Type}}
+              td(ng-if="gear_view == 'enchants' || gear_view == 'gems'"
+              style='text-transform:capitalize;') {{item.Requirements}}
 
       ul(class='list-inline')
         li(ng-click='unequip_item()'): h4(class='view_tab' id='reset_talents') Unequip
