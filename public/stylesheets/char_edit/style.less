@@ -13,6 +13,10 @@ header.warrior { background-image: url('/images/bg/class-bg/warrior.jpg'); }
 header.warlock { background-image: url('/images/bg/class-bg/warlock.jpg'); }
 header.priest { background-image: url('/images/bg/class-bg/priest.jpg'); }
 
+img {
+  border-radius: 3px;
+}
+
 .view_tab {
   color: rgba(255,255,255,.4);
   padding: 10px;
@@ -188,16 +192,33 @@ header.priest { background-image: url('/images/bg/class-bg/priest.jpg'); }
   font-size: 12px;
   color: white;
   #stats {
+    // tooltip override
+    .tooltip-inner {
+      font-size: 14px;
+      border: solid;
+      border-radius: 3px;
+      border-width: 1px;
+      border-color: rgba(255,255,255,.5);
+    }
     ul {
       list-style-type: none;
       padding: 0;
       margin:  0;
       min-width: 150px;
       li {
+        cursor: default;
         text-align: left;
         .stat_value {
           text-align: right;
           float: right;
+        }
+      }
+      .has_tooltip {
+        cursor: pointer;
+      }
+      li:hover {
+        span {
+          color: #2EFE2E;
         }
       }
     }

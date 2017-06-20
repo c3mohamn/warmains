@@ -7,7 +7,7 @@ editApp.controller('editCtrl', ['$scope', '$http', '$compile', function($scope, 
   $scope.reverseSort = true;
   $scope.error_msg = '';
   $scope.success_msg = '';
-  $scope.updated_Stats = {}; // stores the stats after updating with multipliers
+  $scope.stats = {}; // stores the stats after updating with multipliers
   $scope.character = {}; // stores all character information on load
   $scope.multipliers = {}; // stores multipliers gained from gems/enchants
   $scope.talent_points = {}; // stores additional talent point information
@@ -37,15 +37,15 @@ editApp.controller('editCtrl', ['$scope', '$http', '$compile', function($scope, 
 
   // list of all races
   $scope.all_races = [
-    'human', 'dwarf', 'nightelf', 'gnome', 'draenei',
-    'orc', 'undead', 'tauren', 'troll', 'bloodelf'
+    'human', 'dwarf', 'night elf', 'gnome', 'draenei',
+    'orc', 'undead', 'tauren', 'troll', 'blood elf'
   ];
 
   /* --------- Functions --------- */
 
 
 
-  // ------------ PROFESSION FUNCTIONS START ---------------
+  // ------------ DETAILS FUNCTIONS START ---------------
 
   // Add prof to character's professions
   $scope.add_prof = function(prof, num) {
@@ -57,12 +57,19 @@ editApp.controller('editCtrl', ['$scope', '$http', '$compile', function($scope, 
     if ($scope.has_prof(prof, 1) || $scope.has_prof(prof, 2))
       return false;
     char_professions[num] = prof;
-    console.log(char_professions, 'after');
+    $scope.character.professions[num] = prof;
+    //console.log(char_professions, 'after');
   }
 
   // Remove prof perks from character
   function remove_perks(prof) {
+    //TODO
     return false;
+  }
+
+  // Add perks to character
+  function add_perks(prof) {
+    //TODO
   }
 
   // return true iff character has profession
@@ -71,7 +78,21 @@ editApp.controller('editCtrl', ['$scope', '$http', '$compile', function($scope, 
       return true;
     return false;
   }
-  // ------------ PROFESSION FUNCTIONS END ---------------
+
+  // Change character's race
+  $scope.change_race = function(race) {
+    $scope.error_msg = '';
+    $scope.success_msg = '';
+    // check if we can change to race first.
+    if (valid_race($scope.character.class, race)) {
+      $scope.character.race = race;
+      $scope.success_msg = 'Race changed to ' + race + '.';
+    } else {
+      $scope.error_msg = race + ' ' +  $scope.character.class + 's do not exist\
+      in wotlk.';
+    }
+  }
+  // ------------ DETAILS FUNCTIONS END ---------------
 
 
 
@@ -194,7 +215,13 @@ editApp.controller('editCtrl', ['$scope', '$http', '$compile', function($scope, 
         rank = [],
         talent_info = all_talents[char_class][talent],
         actual_cur_rank = 0,
-        click_to_learn = '';
+        click_to_learn = '',
+        talent_icon,
+        tree = all_talents[char_class][talent].tree,
+        tree_index = 0;
+
+    if (tree == 'center') tree_index = 1;
+    if (tree == 'right') tree_index = 2;
 
     // get the talent ranks for current class
     if (char_class == 'druid') rank = druid_ranks;
@@ -223,22 +250,28 @@ editApp.controller('editCtrl', ['$scope', '$http', '$compile', function($scope, 
     // get the talent info
     talent_rank_info = rank[talent][cur_rank];
 
+    // get talent icon
+    talent_icon = "<img class='pull-left' style='margin-left:-52px; \
+     margin-top:-3px;border-radius:5px;'\
+     src='/images/talents/" + char_class + '/' + $scope.class_specs[char_class][tree_index]
+     +  '/' + talent + ".jpg'></img>";
+
     // if talent is active and have 0 talent points in it, add this line
     if (!$scope.is_inactive(talent) && char_talents[talent] == 0)
       click_to_learn = "<br><span class='pull-left' style='color:#00FF44;'>Click to Learn</span>";
 
     // if we're maxed out in talent or it is a 0/1 talent or have no points in talent
     if (talent_rank_info_next == '' || actual_cur_rank == 0) {
-      return "<span class='pull-left' style='color:#FF5500;font-size:14px'>" + talent_info.name + '</span>' +
+      return talent_icon + "<span class='pull-left' style='color:#FF5500;font-size:14px'>" + talent_info.name + '</span>' +
       '<span class=\'pull-right\' style=\'color:#DAA500;\'> Rank ' + actual_cur_rank + '/' +
       talent_info.max_rank + '</span></br>' +
-      '</br>' + talent_rank_info + click_to_learn;
+      '</br><br>' + talent_rank_info + click_to_learn;
     }
     // otherwise we post the info for the next rank as well
-    return "<span class='pull-left' style='color:#FF5500;font-size:14px'>" + talent_info.name + '</span>' +
+    return talent_icon + "<span class='pull-left' style='color:#FF5500;font-size:14px'>" + talent_info.name + '</span>' +
     '<span class=\'pull-right\' style=\'color:#DAA500;\'> Rank ' + actual_cur_rank + '/' +
     talent_info.max_rank + '</span></br>' +
-    '</br>' + talent_rank_info +
+    '</br><br>' + talent_rank_info +
     '</br><span class=\'pull-left\' style=\'color:#DAA500;\'>Next Rank:</span></br>'
     + talent_rank_info_next + click_to_learn;
   }
@@ -351,14 +384,14 @@ editApp.controller('editCtrl', ['$scope', '$http', '$compile', function($scope, 
     //TODO: Will need to add stats gained from talents/glyphs as well
 
     // add any socketbonus to stats
-    $scope.updated_Stats = bonus_stats(base_stats);
+    $scope.stats = bonus_stats(base_stats);
 
     // update multipliers and stats based on multipliers
     $scope.multipliers.ench = ench_multipliers;
-    $scope.updated_Stats = multiply_stats($scope.multipliers.ench, $scope.updated_Stats);
+    $scope.stats = multiply_stats(ench_multipliers, $scope.stats);
 
     // alter stats by adding percentages / adding new stat
-    alter_stats($scope.updated_Stats);
+    alter_stats($scope.stats);
   }
 
   /* Mark the clicked item in results table as the currently selected item.
@@ -747,9 +780,10 @@ editApp.controller('editCtrl', ['$scope', '$http', '$compile', function($scope, 
         }
 
         // gets character's professions (if any)
-        if ($scope.character.professions) {
+        if ($scope.character.professions)
           char_professions = $scope.character.professions;
-        }
+        else
+          $scope.character.professions = char_professions;
     });
   });
 }]);

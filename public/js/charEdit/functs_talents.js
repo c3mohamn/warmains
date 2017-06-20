@@ -32,7 +32,7 @@ function insert_talents(char_class) {
 
   if (!char_class)
     return false;
-  
+
   var talents = all_talents[char_class];
 
   // Insert the backgrounds for each talent tree
@@ -46,12 +46,12 @@ function insert_talents(char_class) {
     var tree = talents[talent].tree,
         talent_name = talents[talent].name;
         row = talents[talent].row,
-        col = talents[talent].col;
+        col = talents[talent].col,
+        tree_index = 0;
 
     // index of the tree used to get the name of the talent tree using class_specs
-    var tree_index = 0;
     if (tree == 'center') tree_index = 1;
-    if (tree == 'right') tree_index = 2;
+    else if (tree == 'right') tree_index = 2;
     //console.log(talent, talents[talent].tree, talents[talent].row, talents[talent].col);
 
     // location of the talent in the DOM, determined by tree, row and col

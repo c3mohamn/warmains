@@ -346,3 +346,9 @@ function can_wield(item, char) {
   }
   return true;
 }
+
+/* Check if character of class can be race. */
+function valid_race(char_class, race) {
+  //console.log(class_to_race[char_class].indexOf(race) > -1);
+  return class_to_race[char_class].indexOf(race) > -1;
+}

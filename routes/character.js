@@ -142,7 +142,7 @@ router.post('/saveChar', function(req, res) {
       points_post = req.body.points,
       glyphs_post = req.body.glyphs,
       professions_post = req.body.professions,
-      spec = req.body.spec;
+      spec = req.body.spec,
       race = req.body.race;
 
   Char.findOne({username: user, name: charname},
@@ -165,6 +165,7 @@ router.post('/saveChar', function(req, res) {
         char_db.points = points_post;
         char_db.glyphs = glyphs_post;
         char_db.professions = professions_post;
+        char_db.race = race;
       }
       char_db.save(function(err) {
           if (err) throw err;

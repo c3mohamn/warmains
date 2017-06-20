@@ -26,6 +26,15 @@ html(ng-app='editApp' ng-cloak)
 
     div(class='container' ng-show='character')
 
+      div(class='char_details pull-left')
+        ul(class='list-inline')
+          li(ng-show='character.race')
+            img(ng-src='/images/race-icons/{{character.race}}.png' id='race')
+          li(ng-show='character.professions && character.professions[1]')
+            img(ng-src='/images/trade/{{character.professions[1]}}.jpg')
+          li(ng-show='character.professions && character.professions[2]')
+            img(ng-src='/images/trade/{{character.professions[2]}}.jpg')
+
       ul(class='list-inline' id='view_tabs')
         li(ng-click="cur_view = 'gear'")
           h3(class='view_tab'

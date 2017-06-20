@@ -1,0 +1,34 @@
+doctype html
+html
+    include partials/head.jade
+    body
+      <script>document.body.className += ' fade-out';</script>
+      include partials/navbar.jade
+      header
+        .header-content
+          .header-content-inner
+            h1 Feedback
+            hr
+            h3 Questions | Concerns | Comments | Bugs
+      .container
+        h4 Not implemented yet.
+
+
+        form(action='/feed' method='post')
+          h4 Name
+          input(disabled type="text" name="Name" maxlength=20)
+
+          h4 Feedback Type
+          select(disabled class="form-control" name="feedback_type")
+            option(selected) Comment
+            option Question
+            option Bug Report
+
+          h4 Description (Optional)
+          textarea(disabled class="form-control" rows=10  maxlength=500
+                   name="description")
+
+          h4(disabled) Submit
+
+      div(class="about-container")
+      include partials/footer.jade

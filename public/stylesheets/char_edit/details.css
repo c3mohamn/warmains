@@ -1,1 +1,1 @@
-.details_view .unselected{filter:grayscale(100%);transition:.5s}.details_view li img{height:40px;width:40px;box-shadow:-2px 2px 5px 2px #000}.details_view img:hover{filter:grayscale(0)}
+.details_view .unselected{filter:grayscale(100%);transition:.5s}.details_view li img{height:40px;width:40px;box-shadow:-2px 2px 5px 2px #000}.details_view img:hover{filter:grayscale(0)}.char_details img{border-radius:3px;width:35px;box-shadow:-2px 2px 5px 2px #000}.char_details #race{width:40px}

@@ -481,7 +481,8 @@ i++;
 
 //Seal of Command - Retribution TALENT DIFFERENT
 paladin_ranks[i]=[
-"<span style=text-align:left;float:left;>14% of base mana</span><br/><span style=text-align:left;float:left;>Instant cast</span><br/>Gives the Paladin a chance to deal 62 to 64 additional Holy damage. Only one Seal can be active on the Paladin at any one time. Lasts 2 min.<br/><br/>	Unleasing this Seal's energy will judge an enemy, instantly causing 145 to 146 Holy damage. This attack will always be a critical strike if the target is stunned or incapacitated.<br><br>"
+"<span style=text-align:left;float:left;>14% of base mana</span><br/><span style=text-align:left;float:left;>Instant cast</span><br/>\
+Gives the Paladin a chance to deal 62 to 64 additional Holy damage. Only one Seal can be active on the Paladin at any one time. Lasts 2 min.<br/><br/>	Unleasing this Seal's energy will judge an enemy, instantly causing 145 to 146 Holy damage. This attack will always be a critical strike if the target is stunned or incapacitated."
 		];
 i++;
 

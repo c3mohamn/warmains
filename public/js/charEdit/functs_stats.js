@@ -203,41 +203,58 @@ function socket_matches(socket, gem) {
   return false;
 }
 
-/* Adding percentages for certain stats (arp/hit rating).
- *
- */
+/* Add additional stats and percentages for certain stats (hit/arp/armor). */
 function alter_stats(stats) {
-  for (var stat in stats) {
 
-    // Add spell hit + percentages
-    if (stat == 'HitRating') {
-      stats['SpellHitRating'] = stats[stat] + ' (' + (stats[stat] / 26.23).toFixed(2)
-      + '%)';
-      stats[stat] = stats[stat] + ' (' + (stats[stat] / 32.78).toFixed(2) +
-        '%)';
-    }
-    // Add percentages for ARP
-    else if (stat == 'ArmorPenetrationRating') {
-      stats[stat] = stats[stat] + ' (' + (stats[stat] / 13.99).toFixed(2) +
-        '%)';
-    }
-    // Add Expertise with matching stat
-    else if (stat == 'ExpertiseRating') {
-      stats['Expertise'] = (stats[stat] / 7.696).toFixed(2);
-    }
-    // Add BonusArmor value to Armor value
-    else if (stat == 'BonusArmor') {
-      if (!stats.Armor)
-        stats.Armor = stats.BonusArmor;
-      else {
-        stats.Armor += stats.BonusArmor;
-      }
-    }
-    // Add spell Crit Rating as well
-    else if (stat == 'CritRating') {
-      stats[stat] = stats[stat] + ' (' + (stats[stat] / 45.91).toFixed(2)
-      + '%)';
-      stats['SpellCritRating'] = stats[stat];
-    }
+  // HitRating + SpellHitRating
+  if (stats['HitRating']) {
+    // adding spellhit
+    stats['SpellHitRating'] = stats['HitRating'];
+
+    // adding percentages for both
+    stats['HitRatingPercentage'] = (stats['HitRating'] / 32.78).toFixed(2);
+    stats['SpellHitRatingPercentage'] = (stats['SpellHitRating'] / 26.23).toFixed(2);
   }
+
+  // ArmorPenetrationRating
+  if (stats['ArmorPenetrationRating']) {
+    // adding percentage
+    stats['ArmorPenetrationRatingPercentage'] = (stats['ArmorPenetrationRating'] / 13.99).toFixed(2);
+  }
+
+  // ExpertiseRating + Expertise (note: these are different numbers)
+  if (stats['ExpertiseRating']) {
+    // adding expertise
+    stats['Expertise'] = (stats['ExpertiseRating'] / 7.696).toFixed(2);
+
+    // percentage
+    stats['ExpertisePercentage'] = (stats['Expertise'] / 4).toFixed(2);
+  }
+
+  // Armor + Bonus Armor
+  if (stats['Armor']) {
+    // Add BonusArmor to Armor
+    if (stats['BonusArmor'])
+      stats['Armor'] += stats['BonusArmor'];
+
+    // adding percentage, against level 80 & 83 monsters
+    stats['ArmorPercentage80'] = ((stats['Armor'] / (stats['Armor'] + 15232.5)) * 100).toFixed(2);
+    stats['ArmorPercentage83'] = ((stats['Armor'] / (stats['Armor'] + 16635)) * 100).toFixed(2);
+  }
+
+  // CritRating + SpellCritRating
+  if (stats['CritRating']) {
+    // Add SpellCritRating
+    stats['SpellCritRating'] = stats['CritRating'];
+
+    // add percentages
+    stats['CritRatingPercentage'] = (stats['CritRating'] / 45.91).toFixed(2) ;
+    stats['SpellCritRatingPercentage'] = stats['CritRatingPercentage'];
+  }
+
+  // Defense
+  stats['Defense'] = 400; // default value every char has
+  if (stats['DefenseRating'])
+    stats['Defense'] = (stats['Defense'] + (stats['DefenseRating'] / 5.03)).toFixed(0);
+  stats['DefensePercentage'] = ((stats['Defense'] - 400) / 25).toFixed(2);
 }

@@ -4,7 +4,7 @@ var Char = require('../models/char');
 
 /* GET Search page. */
 router.get('/', function(req, res, next) {
-  res.render('search', {title: 'Warmains'});
+  res.render('search', {title: 'Warmains - Search'});
 })
 
 /* Get all the users in the database. */

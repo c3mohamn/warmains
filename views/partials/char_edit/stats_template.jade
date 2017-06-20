@@ -6,39 +6,58 @@ div(class='stats_container')
       td
         p Defensives
         ul
-          li
+          li(class='has_tooltip'
+          data-toggle='tooltip' data-placement='right' data-html='true'
+          data-original-title="\
+          Armor {{stats.Armor - stats.BonusArmor}} +  \
+          <span style='color:#2EFE2E;'>{{stats.BonusArmor}}</span><br>\
+          <span style='color:#DAA500;font-size:11px;'> \
+          Physical Damage Reduction (lvl 80) {{stats.ArmorPercentage80}}%<br>\
+          Physical Damage Reduction (lvl 83) {{stats.ArmorPercentage83}}%\
+          </span>")
             span Armor
-            span(class='stat_value') {{updated_Stats.Armor || 0}}
+            span(class='stat_value') {{stats.Armor || 0}}
           li
             span Dodge Rating
-            span(class='stat_value') {{updated_Stats.DodgeRating || 0}}
+            span(class='stat_value') {{stats.DodgeRating || 0}}
           li
             span Parry Rating
-            span(class='stat_value') {{updated_Stats.ParryRating || 0}}
+            span(class='stat_value') {{stats.ParryRating || 0}}
           li
             span Defense Rating
-            span(class='stat_value') {{updated_Stats.DefenseRating || 0}}
+            span(class='stat_value') {{stats.DefenseRating || 0}}
+          li(class='has_tooltip'
+          data-toggle='tooltip' data-placement='right' data-html='true'
+          data-original-title="\
+          Defense 400 +  \
+          <span style='color:#2EFE2E;'>{{stats.Defense - 400}}</span><br>\
+          <span style='color:#DAA500;font-size:11px;'> \
+          Increases chance to Dodge, Block and Parry by {{stats.DefensePercentage}}%<br>\
+          Decreases chance to be hit and critically hit by {{stats.DefensePercentage}}%\
+          </span>")
+            span Defense
+            span(class='stat_value') {{stats.Defense || 400}}
           li
             span Resilience
-            span(class='stat_value') {{updated_Stats.Resilience || 0}}
+            span(class='stat_value') {{stats.Resilience || 0}}
       td
         p Base Stats
         ul
           li
             span Stamina
-            span(class='stat_value') {{updated_Stats.Stamina || 0}}
+            span(class='stat_value') {{stats.Stamina || 0}}
           li
             span Strength
-            span(class='stat_value') {{updated_Stats.Strength || 0}}
+            span(class='stat_value') {{stats.Strength || 0}}
           li
             span Agility
-            span(class='stat_value') {{updated_Stats.Agility || 0}}
+            span(class='stat_value') {{stats.Agility || 0}}
           li
             span Intellect
-            span(class='stat_value') {{updated_Stats.Intellect || 0}}
+            span(class='stat_value') {{stats.Intellect || 0}}
           li
             span Spirit
-            span(class='stat_value') {{updated_Stats.Spirit || 0}}
+            span(class='stat_value') {{stats.Spirit || 0}}
 
     tr
       td
@@ -46,43 +65,49 @@ div(class='stats_container')
         ul
           li
             span Spell Power
-            span(class='stat_value') {{updated_Stats.SpellPower || 0}}
+            span(class='stat_value') {{stats.SpellPower || 0}}
           li
             span Haste
-            span(class='stat_value') {{updated_Stats.HasteRating || 0}}
+            span(class='stat_value') {{stats.HasteRating || 0}}
           li
             span Spell Pen
-            span(class='stat_value') {{updated_Stats.SpellPenetration || 0}}
+            span(class='stat_value') {{stats.SpellPenetration || 0}}
           li
             span Mp5
-            span(class='stat_value') {{updated_Stats.Mp5 || 0}}
+            span(class='stat_value') {{stats.Mp5 || 0}}
           li
             span Spell Hit Rating
-            span(class='stat_value') {{updated_Stats.SpellHitRating || 0}}
+            span(class='stat_value') {{stats.SpellHitRating || 0}} ({{stats.SpellHitRatingPercentage}}%)
           li
             span Crit Rating
-            span(class='stat_value') {{updated_Stats.SpellCritRating || 0}}
+            span(class='stat_value') {{stats.SpellCritRating || 0}} ({{stats.SpellCritRatingPercentage}}%)
       td
         p Physical
         ul
           li
             span Attack Power
-            span(class='stat_value') {{updated_Stats.AttackPower || 0}}
+            span(class='stat_value') {{stats.AttackPower || 0}}
           li
             span Expertise Rating
-            span(class='stat_value') {{updated_Stats.ExpertiseRating || 0}}
-          li
+            span(class='stat_value') {{stats.ExpertiseRating || 0}}
+          li(class='has_tooltip'
+          data-toggle='tooltip' data-placement='left' data-html='true'
+          data-original-title="\
+          Expertise {{stats.Expertise || 0}}<br>\
+          <span style='color:#DAA500;font-size:11px;'> \
+          Reduces chance to be dodged or parried by {{stats.ExpertisePercentage || 0}}%\
+          </span>")
             span Expertise
-            span(class='stat_value') {{updated_Stats.Expertise || 0}}
+            span(class='stat_value') {{stats.Expertise || 0}}
           li
             span ArP
-            span(class='stat_value') {{updated_Stats.ArmorPenetrationRating || 0}}
+            span(class='stat_value') {{stats.ArmorPenetrationRating || 0}} ({{stats.ArmorPenetrationRatingPercentage}}%)
           li
             span Hit Rating
-            span(class='stat_value') {{updated_Stats.HitRating || 0}}
+            span(class='stat_value') {{stats.HitRating || 0}} ({{stats.HitRatingPercentage}}%)
           li
             span Crit Rating
-            span(class='stat_value') {{updated_Stats.CritRating || 0}}
+            span(class='stat_value') {{stats.CritRating || 0}} ({{stats.CritRatingPercentage}}%)
 
     tr
       td
@@ -90,16 +115,16 @@ div(class='stats_container')
         ul
           li
             span Arcane Resistance
-            span(class='stat_value') {{updated_Stats.ArcaneResistance || 0}}
+            span(class='stat_value') {{stats.ArcaneResistance || 0}}
           li
             span Fire Resistance
-            span(class='stat_value') {{updated_Stats.FireResistance || 0}}
+            span(class='stat_value') {{stats.FireResistance || 0}}
           li
             span Nature Resistance
-            span(class='stat_value') {{updated_Stats.NatureResistance || 0}}
+            span(class='stat_value') {{stats.NatureResistance || 0}}
           li
             span Frost Resistance
-            span(class='stat_value') {{updated_Stats.FrostResistance || 0}}
+            span(class='stat_value') {{stats.FrostResistance || 0}}
           li
             span Shadow Resistance
-            span(class='stat_value') {{updated_Stats.ShadowResistance || 0}}
+            span(class='stat_value') {{stats.ShadowResistance || 0}}

@@ -64,7 +64,7 @@ var char_talents = {};
 var char_glyphs = {};
 
 // Store professions of character
-var char_professions = {1: null, 2: null};
+var char_professions = {1: undefined, 2: undefined};
 
 // Stores the unmodified stats gained from items.
 var base_stats = {};
@@ -139,6 +139,28 @@ var multiplier_to_stat = {
   "ThreatIncreaseMultiplier": null,
   "BonusStrengthMultiplier": null,
   "BonusFrostDamageMultiplier": null
+}
+
+// classes and list of races they can be
+var class_to_race = {
+  'death knight': null, // can be all races
+  'druid': ['tauren', 'night elf'],
+  'hunter': ['dwarf', 'night elf', 'draenei', 'orc', 'tauren', 'troll', 'blood elf'],
+  'mage': ['human', 'gnome', 'undead', 'troll', 'blood elf'],
+  'paladin': ['human', 'dwarf', 'draenei', 'blood elf'],
+  'priest': ['human', 'dwarf', 'night elf', 'draenei', 'undead', 'troll', 'blood elf'],
+  'rogue': ['human', 'dwarf', 'night elf', 'gnome', 'orc', 'undead', 'troll', 'blood elf'],
+  'shaman': ['draenei', 'orc', 'tauren', 'troll'],
+  'warlock': ['human', 'gnome', 'orc', 'undead', 'blood elf'],
+  'warrior': ['human', 'dwarf', 'night elf', 'gnome', 'draenei', 'orc',
+              'undead', 'tauren', 'troll']
+}
+
+// All race's and their corresponding racials
+var racials = {
+  'human': null,
+  'bloodelf': null, // Magic Resistance, Arcane Torrent
+  'orc': 'Axe Specialization' // Command (pet damage), Hardiness, Blood Fury
 }
 
 // Stores the multipliers gained from enchants and gems
