@@ -353,7 +353,7 @@ editApp.controller('editCtrl', ['$scope', '$http', '$compile', function($scope, 
   /* Saves the current state of the character in db. */
   $scope.save_to_db = function() {
     $http.post('/character/saveChar', {
-      char: char_items,
+      items: char_items,
       gems: char_gems,
       enchants: char_enchants,
       glyphs: char_glyphs,
@@ -368,8 +368,46 @@ editApp.controller('editCtrl', ['$scope', '$http', '$compile', function($scope, 
       }, function errorCallback(response) {
         console.log(response);
       });
-      $scope.error_msg = '';
-      $scope.success_msg = 'Successfully saved.';
+    $scope.error_msg = '';
+    $scope.success_msg = 'Successfully saved.';
+  }
+
+  /* Exports a character and all it's info, saving it as a new character. */
+  $scope.save_as = function() {
+    $scope.error_msg = '';
+
+    // quick name checks.
+    if (!$scope.save_as_name) {
+      $scope.error_msg = 'Enter a name first.';
+      return false;
+    } else if ($scope.save_as_name.length < 2 || $scope.save_as_name.length > 12) {
+      $scope.error_msg = 'Name must be between 2 to 12 characters long.';
+      return false;
+    } else if (!/^[a-zA-Z]+$/.test($scope.save_as_name)) {
+      $scope.error_msg = 'Aplha characters only.';
+      return false;
+    }
+
+    $http.post('/character/saveCharAs', {
+      old_name: $scope.character.name,
+      old_user: $scope.character.username,
+      new_name: $scope.save_as_name,
+      class: $scope.character.class,
+      items: char_items,
+      gems: char_gems,
+      enchants: char_enchants,
+      glyphs: char_glyphs,
+      talents: char_talents,
+      professions: char_professions,
+      spec: $scope.character.spec,
+      race: $scope.character.race,
+      points: $scope.talent_points
+    }).then(function successCallback(response) {
+        console.log(response);
+      }, function errorCallback(response) {
+        console.log(response);
+      });
+    $scope.show_save_as = false;
   }
 
   /* Reset the results table (when switching view). */
@@ -510,6 +548,10 @@ editApp.controller('editCtrl', ['$scope', '$http', '$compile', function($scope, 
             if (can_wield(item, char)) {
               if (!dual_twohand(slot, char)) {
                 if (!is_unique($scope.slot, item)) {
+
+                  // unequip old item first if any
+                  if (char_items[$scope.slot])
+                    $scope.unequip_item();
 
                   // Equip item, change icon image and update stats
                   add_stats(char_items[$scope.slot], item, true, slot, base_stats);

@@ -16,8 +16,6 @@ List of things that could be worked on:
 
 6. Talent stats
 
-7. Save Character As (Export) for users that are logged in.
-
 Ideas:
 
 - GS

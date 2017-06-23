@@ -11,6 +11,7 @@ nav(id="mainNav" class="navbar navbar-default navbar-fixed-top")
 
     div(class="collapse navbar-collapse" id="bs-example-navbar-collapse-1")
       ul(class="nav navbar-nav navbar-right")
+        li: a(class='page-scroll' href='/changelog') Change Log
         li: a(class="page-scroll" href="/search") Search
         -if (!user)
           li: a(class="page-scroll" href="/users/login") Login
@@ -26,7 +27,7 @@ nav(id="mainNav" class="navbar navbar-default navbar-fixed-top")
                   li: a(class="page-scroll" href="/profile/" + user.username) PROFILE
                   li(role="separator" class="divider")
                   li: a(class="page-scroll" href="/users/logout") LOGOUT
-                  
+
 div(class="errors-container")
   -if(error_msg)
       p(class="error-msg") #{error_msg}

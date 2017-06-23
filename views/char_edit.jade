@@ -26,7 +26,7 @@ html(ng-app='editApp' ng-cloak)
 
     div(class='container' ng-show='character')
 
-      div(class='char_details pull-left')
+      div(class='char_details')
         ul(class='list-inline')
           li(ng-show='character.race')
             img(ng-src='/images/race-icons/{{character.race}}.png' id='race')
@@ -169,6 +169,16 @@ html(ng-app='editApp' ng-cloak)
         div(class='clearfix visible sm')
       div(class="col-lg-6 col-md-6 col-sm-6 col-xs-12" ng-show="cur_view == 'gear'")
         include partials/char_edit/stats_template.jade
+
+      p(class='error-msg' ng-show="error_msg != '' && show_save_as") {{error_msg}}
+      -if(user)
+        ul(class='list-inline' class='pull-right')
+          li: input(type='text' class='form-control' placeholder='Name'
+                ng-model='save_as_name' ng-show='show_save_as' value='Name')
+          li: button(type="submit" class="btn btn-danger"
+                     ng-click="save_as()" ng-show='show_save_as') Save
+          li: h3(style='cursor:pointer;color:red;'
+                ng-click='show_save_as = true') Export
 
     p(ng-show='!character') This character does not exist.
 
