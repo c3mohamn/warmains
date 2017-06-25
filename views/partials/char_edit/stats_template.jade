@@ -77,10 +77,10 @@ div(class='stats_container')
             span(class='stat_value') {{stats.Mp5 || 0}}
           li
             span Spell Hit Rating
-            span(class='stat_value') {{stats.SpellHitRating || 0}} ({{stats.SpellHitRatingPercentage}}%)
+            span(class='stat_value') {{stats.SpellHitRating || 0}} ({{stats.SpellHitRatingPercentage || 0}}%)
           li
             span Crit Rating
-            span(class='stat_value') {{stats.SpellCritRating || 0}} ({{stats.SpellCritRatingPercentage}}%)
+            span(class='stat_value') {{stats.SpellCritRating || 0}} ({{stats.SpellCritRatingPercentage || 0}}%)
       td
         p Physical
         ul
@@ -101,13 +101,13 @@ div(class='stats_container')
             span(class='stat_value') {{stats.Expertise || 0}}
           li
             span ArP
-            span(class='stat_value') {{stats.ArmorPenetrationRating || 0}} ({{stats.ArmorPenetrationRatingPercentage}}%)
+            span(class='stat_value') {{stats.ArmorPenetrationRating || 0}} ({{stats.ArmorPenetrationRatingPercentage || 0}}%)
           li
             span Hit Rating
-            span(class='stat_value') {{stats.HitRating || 0}} ({{stats.HitRatingPercentage}}%)
+            span(class='stat_value') {{stats.HitRating || 0}} ({{stats.HitRatingPercentage || 0}}%)
           li
             span Crit Rating
-            span(class='stat_value') {{stats.CritRating || 0}} ({{stats.CritRatingPercentage}}%)
+            span(class='stat_value') {{stats.CritRating || 0}} ({{stats.CritRatingPercentage || 0}}%)
 
     tr
       td
