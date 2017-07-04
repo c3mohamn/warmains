@@ -216,7 +216,7 @@ editApp.controller('editCtrl', ['$scope', '$http', '$compile', function($scope, 
         talent_info = all_talents[char_class][talent],
         actual_cur_rank = 0,
         click_to_learn = '',
-        talent_icon,
+        talent_icon = '',
         tree = all_talents[char_class][talent].tree,
         tree_index = 0;
 
@@ -253,7 +253,7 @@ editApp.controller('editCtrl', ['$scope', '$http', '$compile', function($scope, 
     // get talent icon
     talent_icon = "<img class='pull-left' style='margin-left:-52px; \
      margin-top:-3px;border-radius:5px;'\
-     src='/images/talents/" + char_class + '/' + $scope.class_specs[char_class][tree_index]
+     src='/images/talents/" + char_class.replace(/\s/g, '') + '/' + $scope.class_specs[char_class][tree_index]
      +  '/' + talent + ".jpg'></img>";
 
     // if talent is active and have 0 talent points in it, add this line

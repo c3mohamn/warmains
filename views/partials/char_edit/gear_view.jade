@@ -94,7 +94,7 @@ div(class='gear_view' ng-show="cur_view == 'gear'")
                 a(href='' ng-click="orderByField='Requirements';reverseSort=!reverseSort") Requirements
           tbody
             tr(ng-repeat="item in items | orderBy:orderByField:reverseSort"
-               ng-click='select_search_item(item)')
+               ng-click='select_search_item(item)' ng-right-click='select_search_item(item); equip_item()')
               td
                 a(target="_blank" ng-href="{{item.Id != '' ? 'http://db.warmane.com/wotlk/item='+item.Id : 'http://db.warmane.com/wotlk/spell='+item.SpellId}}")
                   img(ng-src='http://wow.zamimg.com/images/wow' +

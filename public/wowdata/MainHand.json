@@ -2089,43 +2089,6 @@
 			"Slot": "MainHand"
 		},
 		{
-			"ItemLevel": "245",
-			"DisplayId": "0",
-			"DisplaySlot": "0",
-			"IconPath": "inv_mace_99",
-			"Stats": {
-				"SpecialEffects": {
-					"SpecialEffect": {
-						"Trigger": "HealingSpellHit",
-						"Stats": {
-							"ShieldFromHealed": "0.15"
-						},
-						"Duration": "15",
-						"Cooldown": "45",
-						"Chance": "0.1",
-						"MaxStack": "1"
-					}
-				},
-				"SpecialEffectCount": "1",
-				"Stamina": "55",
-				"Intellect": "57",
-				"SpellPower": "621",
-				"CritRating": "50",
-				"HasteRating": "49"
-			},
-			"Quality": "Legendary",
-			"Type": "OneHandMace",
-			"Faction": "Neutral",
-			"MinDamage": "97",
-			"MaxDamage": "311",
-			"Speed": "1.8",
-			"Bind": "BoP",
-			"SocketBonus": "none",
-			"Name": "Val'anyr, Hammer of Ancient Kings",
-			"Id": "46017",
-			"Slot": "MainHand"
-		},
-		{
 			"ItemLevel": "251",
 			"DisplayId": "0",
 			"DisplaySlot": "0",
