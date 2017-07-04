@@ -257,4 +257,9 @@ function alter_stats(stats) {
   if (stats['DefenseRating'])
     stats['Defense'] = (stats['Defense'] + (stats['DefenseRating'] / 5.03)).toFixed(0);
   stats['DefensePercentage'] = ((stats['Defense'] - 400) / 25).toFixed(2);
+
+  // Dodge
+  if (stats['DodgeRating']) {
+    stats['Dodge'] = (stats['DodgeRating'] / 45.25).toFixed(2);
+  }
 }
