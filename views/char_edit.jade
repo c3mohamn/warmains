@@ -59,60 +59,70 @@ html(ng-app='editApp' ng-cloak)
               li(class='pull-left' id='li_Head')
                 a(href="" id='Head_link')
                   div(class='item_slot' id='Head_slot'
-                      ng-click="slot='Head'" show-gems slot='Head'
+                      ng-click="slot='Head'; finditems(search_val)" show-gems slot='Head'
+                      ng-right-click="slot='Head'; unequip_item()"
                       ng-class="{'selected_slot': slot == 'Head'}")
               li(class='pull-right' id='li_Hands')
                 a(href="" id='Hands_link')
                   div(class='item_slot' id='Hands_slot'
-                      ng-click="slot='Hands'" show-gems slot='Hands'
+                      ng-click="slot='Hands'; finditems(search_val)" show-gems slot='Hands'
+                      ng-right-click="slot='Hands'; unequip_item()"
                       ng-class="{'selected_slot': slot == 'Hands'}")
           .row
             ul(class='list-inline')
               li(class='pull-left' id='li_Neck')
                 a(href="" id='Neck_link')
                   div(class='item_slot' id='Neck_slot'
-                      ng-click="slot='Neck'" show-gems slot='Neck'
+                      ng-click="slot='Neck'; finditems(search_val)" show-gems slot='Neck'
+                      ng-right-click="slot='Neck'; unequip_item()"
                       ng-class="{'selected_slot': slot == 'Neck'}")
               li(class='pull-right' id='li_Waist')
                 a(href="" id='Waist_link')
                   div(class='item_slot' id='Waist_slot'
-                      ng-click="slot='Waist'" show-gems slot='Waist'
+                      ng-click="slot='Waist'; finditems(search_val)" show-gems slot='Waist'
+                      ng-right-click="slot='Waist'; unequip_item()"
                       ng-class="{'selected_slot': slot == 'Waist'}")
           .row
             ul(class='list-inline')
               li(class='pull-left' id='li_Shoulders')
                 a(href="" id='Shoulders_link')
                   div(class='item_slot' id='Shoulders_slot'
-                      ng-click="slot='Shoulders'" show-gems slot='Shoulders'
+                      ng-click="slot='Shoulders'; finditems(search_val)" show-gems slot='Shoulders'
+                      ng-right-click="slot='Shoulders'; unequip_item()"
                       ng-class="{'selected_slot': slot == 'Shoulders'}")
               li(class='pull-right' id='li_Legs')
                 a(href="" id='Legs_link')
                   div(class='item_slot' id='Legs_slot'
-                      ng-click="slot='Legs'" show-gems slot='Legs'
+                      ng-click="slot='Legs'; finditems(search_val)" show-gems slot='Legs'
+                      ng-right-click="slot='Legs'; unequip_item()"
                       ng-class="{'selected_slot': slot == 'Legs'}")
           .row
             ul(class='list-inline')
               li(class='pull-left' id='li_Back')
                 a(href="" id='Back_link')
                   div(class='item_slot' id='Back_slot'
-                      ng-click="slot='Back'" show-gems slot='Back'
+                      ng-click="slot='Back'; finditems(search_val)" show-gems slot='Back'
+                      ng-right-click="slot='Back'; unequip_item()"
                       ng-class="{'selected_slot': slot == 'Back'}")
               li(class='pull-right' id='li_Feet')
                 a(href="" id='Feet_link')
                   div(class='item_slot' id='Feet_slot'
-                      ng-click="slot='Feet'" show-gems slot='Feet'
+                      ng-click="slot='Feet'; finditems(search_val)" show-gems slot='Feet'
+                      ng-right-click="slot='Feet'; unequip_item()"
                       ng-class="{'selected_slot': slot == 'Feet'}")
           .row
             ul(class='list-inline')
               li(class='pull-left' id='li_Chest')
                 a(href="" id='Chest_link')
                   div(class='item_slot' id='Chest_slot'
-                      ng-click="slot='Chest'" show-gems slot='Chest'
+                      ng-click="slot='Chest'; finditems(search_val)" show-gems slot='Chest'
+                      ng-right-click="slot='Chest'; unequip_item()"
                       ng-class="{'selected_slot': slot == 'Chest'}")
               li(class='pull-right' id='li_Finger1')
                 a(href="" id='Finger1_link')
                   div(class='item_slot' id='Finger1_slot'
-                      ng-click="slot='Finger1'" show-gems slot='Finger1'
+                      ng-click="slot='Finger1'; finditems(search_val)" show-gems slot='Finger1'
+                      ng-right-click="slot='Finger1'; unequip_item()"
                       ng-class="{'selected_slot': slot == 'Finger1'}")
           .row
             ul(class='list-inline')
@@ -122,7 +132,8 @@ html(ng-app='editApp' ng-cloak)
               li(class='pull-right' id='li_Finger2')
                 a(href="" id='Finger2_link')
                   div(class='item_slot' id='Finger2_slot'
-                      ng-click="slot='Finger2'" show-gems slot='Finger2'
+                      ng-click="slot='Finger2'; finditems(search_val)" show-gems slot='Finger2'
+                      ng-right-click="slot='Finger2'; unequip_item()"
                       ng-class="{'selected_slot': slot == 'Finger2'}")
           .row
             ul(class='list-inline')
@@ -132,33 +143,39 @@ html(ng-app='editApp' ng-cloak)
               li(class='pull-right' id='li_Trinket1')
                 a(href="" id='Trinket1_link')
                   div(class='item_slot' id='Trinket1_slot'
-                      ng-click="slot='Trinket1'"
+                      ng-click="slot='Trinket1'; finditems(search_val)"
+                      ng-right-click="slot='Trinket1'; unequip_item()"
                       ng-class="{'selected_slot': slot == 'Trinket1'}")
           .row
             ul(class='list-inline')
               li(class='pull-left' id='li_Wrist')
                 a(href="" id='Wrist_link')
                   div(class='item_slot' id='Wrist_slot'
-                      ng-click="slot='Wrist'" show-gems slot='Wrist'
+                      ng-click="slot='Wrist'; finditems(search_val)" show-gems slot='Wrist'
+                      ng-right-click="slot='Wrist'; unequip_item()"
                       ng-class="{'selected_slot': slot == 'Wrist'}")
               li(class='pull-right' id='li_Trinket2')
                 a(href="" id='Trinket2_link')
                   div(class='item_slot' id='Trinket2_slot'
-                      ng-click="slot='Trinket2'"
+                      ng-click="slot='Trinket2'; finditems(search_val)"
+                      ng-right-click="slot='Trinket2'; unequip_item()"
                       ng-class="{'selected_slot': slot == 'Trinket2'}")
           .row
             ul(class='list-inline')
               li(id='li_MainHand'): a(href="" id='MainHand_link')
                 div(class='item_slot' id='MainHand_slot'
-                    ng-click="slot='MainHand'" show-gems slot='MainHand'
+                    ng-click="slot='MainHand'; finditems(search_val)" show-gems slot='MainHand'
+                    ng-right-click="slot='MainHand'; unequip_item()"
                     ng-class="{'selected_slot': slot == 'MainHand'}")
               li(id='li_OffHand'): a(href="" id='OffHand_link')
                 div(class='item_slot' id='OffHand_slot'
-                    ng-click="slot='OffHand'" show-gems slot='OffHand'
+                    ng-click="slot='OffHand'; finditems(search_val)" show-gems slot='OffHand'
+                    ng-right-click="slot='OffHand'; unequip_item()"
                     ng-class="{'selected_slot': slot == 'OffHand'}")
               li(id='li_Ranged'): a(href="" id='Ranged_link')
                 div(class='item_slot' id='Ranged_slot'
-                    ng-click="slot='Ranged'" show-gems slot='Ranged'
+                    ng-click="slot='Ranged'; finditems(search_val)" show-gems slot='Ranged'
+                    ng-right-click="slot='Ranged'; unequip_item()"
                     ng-class="{'selected_slot': slot == 'Ranged'}")
 
       div(class="col-lg-6 col-md-6 col-sm-6 col-xs-12")

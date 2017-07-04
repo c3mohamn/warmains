@@ -3,6 +3,9 @@
 
 - Right Click Items in Search Table to Equip!
 - Added item Bind in search.
+- Right Click Item in Char Panel to to Unequip
+- Left Click Item in Char Panel to Automatically Search for Items
+- Fixed Sigils For DKs
 
 ----- 06/23/2017 ------
 ------- v3.1.5 --------

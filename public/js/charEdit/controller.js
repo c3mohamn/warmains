@@ -661,6 +661,9 @@ editApp.controller('editCtrl', ['$scope', '$http', '$compile', function($scope, 
     var temp_slot = '';
     $scope.error_msg = ''; // reset error_msg
 
+    if (gear_view != 'items' && gear_view != 'gems' && gear_view != 'enchants')
+      return false;
+
     if (!slot && gear_view != 'gems' && gear_view != 'enchants')
       $scope.error_msg = 'Select a item slot before searching for items.';
     else if (!valid_number(min))

@@ -9,17 +9,20 @@ var user_name = url.pop();
 // Socket html code to be added to DOM when clicking on an item.
 var socket1_html =
 "<a id='socket1_link'> " +
-"<div class='item_slot' id='socket1_slot' ng-click=\"cur_socket='socket1'\"> " +
+"<div class='item_slot' id='socket1_slot' ng-click=\"cur_socket='socket1'\" " +
+"ng-right-click=\"cur_socket='socket1'; unequip_item()\"> " +
 "</div></a></li>";
 
 var socket2_html =
 "<a id='socket2_link'> " +
-"<div class='item_slot' id='socket2_slot' ng-click=\"cur_socket='socket2'\"> " +
+"<div class='item_slot' id='socket2_slot' ng-click=\"cur_socket='socket2'\" " +
+"ng-right-click=\"cur_socket='socket2'; unequip_item()\"> " +
 "</div></a></li>";
 
 var socket3_html =
 "<a id='socket3_link'> " +
-"<div class='item_slot' id='socket3_slot' ng-click=\"cur_socket='socket3'\"> " +
+"<div class='item_slot' id='socket3_slot' ng-click=\"cur_socket='socket3'\" " +
+"ng-right-click=\"cur_socket='socket3'; unequip_item()\"> " +
 "</div></a></li>";
 
 // Stores the items equipped for the current character
@@ -80,7 +83,7 @@ var class_wield_type = {
   deathknight: {
     armor: ['Cloth', 'Leather', 'Mail', 'Plate', 'None'],
     weapon: ['None', 'OneHandAxe', 'TwoHandAxe', 'OneHandSword',
-       'TwoHandSword', 'OneHandMace', 'TwoHandMace', 'Polearm']
+       'TwoHandSword', 'OneHandMace', 'TwoHandMace', 'Polearm', 'Sigil']
   },
   warrior: {
     armor: ['Cloth', 'Leather', 'Mail', 'Plate', 'None'],

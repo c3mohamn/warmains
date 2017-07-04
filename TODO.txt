@@ -16,10 +16,6 @@ List of things that could be worked on:
 
 6. Talent stats
 
-7. BoE Only Items for naked toons?
-
-8. Right Click to Equip
-
 Ideas:
 
 - GS
