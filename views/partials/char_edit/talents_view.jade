@@ -78,7 +78,7 @@ div(class='talents_view' ng-show="cur_view == 'talents'")
         tbody
           tr(ng-repeat="(key, val) in glyph_results" ng-click="equip_glyph(key)")
             td
-             a(target="_blank" ng-href="http://db.warmane.com/wotlk/item={{key}}")
+             a(target="_blank" ng-href="https://wowgaming.altervista.org/aowow?item={{key}}")
               img(ng-src='http://wow.zamimg.com/images/wow/icons/large/{{val.IconPath}}.jpg')
             td: h5 {{val.name}}
             td: h6 {{val.type}}

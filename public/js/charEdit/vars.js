@@ -6,6 +6,8 @@ url = url.split("/");
 var char_name = url.pop();
 var user_name = url.pop();
 
+var aowow_tooltips = { "colorlinks": true, "iconizelinks": true, "renamelinks": true };
+
 // Socket html code to be added to DOM when clicking on an item.
 var socket1_html =
 "<a id='socket1_link'> " +

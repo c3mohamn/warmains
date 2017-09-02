@@ -186,7 +186,7 @@ function set_slot_image(slot, item) {
     '.jpg)');
 
   // Add link for the tooltip of item
-  $('#' + slot + '_link').attr('href', 'http://db.warmane.com/wotlk/' + Idpath);
+  $('#' + slot + '_link').attr('href', 'https://wowgaming.altervista.org/aowow?' + Idpath);
   $('#' + slot + '_link').attr('target', '_blank');
 }
 
@@ -204,15 +204,20 @@ function set_slot_rel(slot) {
     ench = 0,
     sock1 = 0,
     sock2 = 0,
-    sock3 = 0;
-  if (char_gems[slot].socket1) sock1 = char_gems[slot].socket1.enchantId;
-  if (char_gems[slot].socket2) sock2 = char_gems[slot].socket2.enchantId;
-  if (char_gems[slot].socket3) sock3 = char_gems[slot].socket3.enchantId;
+    sock3 = 0,
+    ench_link = '';
+
+  if (char_gems[slot].socket1) sock1 = char_gems[slot].socket1.Id;
+  if (char_gems[slot].socket2) sock2 = char_gems[slot].socket2.Id;
+  if (char_gems[slot].socket3) sock3 = char_gems[slot].socket3.Id;
   if (char_enchants[slot]) ench = char_enchants[slot].enchantId;
   //console.log(ench, sock1, sock2, sock3);
 
-  $('#' + slot + '_link').attr('rel', 'item=' + item_id +
-    '&ench=' + ench + '&gems=' + sock1 + ':' + sock2 + ':' + sock3);
+  // build rel tooltip link
+  if (ench !== 0)
+    ench_link = '&ench=' + ench;
+
+  $('#' + slot + '_link').attr('rel', 'gems=' + sock1 + ':' + sock2 + ':' + sock3 + ench_link);
 }
 
 /* Removes the icon img in the given slot. */

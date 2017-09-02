@@ -5,7 +5,7 @@ html(ng-app='editApp' ng-cloak)
   link(rel='stylesheet', type='text/css' href='/stylesheets/char_edit/style.css')
   link(rel='stylesheet', type='text/css' href='/stylesheets//char_edit/talents.css')
   link(rel='stylesheet', type='text/css' href='/stylesheets//char_edit/details.css')
-  script(src="https://cdn.warmane.com/api/tooltip.js")
+  script(type="text/javascript" src="https://wowgaming.altervista.org/aowow/static/widgets/power.js")
 
   body(ng-controller='editCtrl' ng-init="gear_view = 'stats'; cur_view='gear'")
     -if(user && username == user.username)

@@ -98,7 +98,7 @@ div(class='gear_view' ng-show="cur_view == 'gear'")
             tr(ng-repeat="item in items | orderBy:orderByField:reverseSort"
                ng-click='select_search_item(item)' ng-right-click='select_search_item(item); equip_item()')
               td
-                a(target="_blank" ng-href="{{item.Id != '' ? 'http://db.warmane.com/wotlk/item='+item.Id : 'http://db.warmane.com/wotlk/spell='+item.SpellId}}")
+                a(target="_blank" ng-href="{{item.Id != '' ? 'https://wowgaming.altervista.org/aowow?item='+item.Id : 'https://wowgaming.altervista.org/aowow?spell='+item.SpellId}}")
                   img(ng-src='http://wow.zamimg.com/images/wow' +
                       '/icons/large/{{item.IconPath}}.jpg')
               td(ng-style='item_quality(item.Quality)')
