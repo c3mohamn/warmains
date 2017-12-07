@@ -19,6 +19,6 @@ There, I learned and am learning quite a bit.
 So, I decided to recreate my personal website, incorporating things that I learned. The repo for that is in Bitbucket, most likely private since I may actually deploy it.
 The website is http://warmain.herokuapp.com/#/home (no s in warmains).
 
-#Summary
+# Summary
 
 Stopped commiting to Repo because I recreated it.
