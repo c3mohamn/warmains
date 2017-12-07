@@ -21,4 +21,7 @@ The website is http://warmain.herokuapp.com/#/home (no s in warmains).
 
 # Summary
 
-Stopped commiting to Repo because I recreated it.
+Stopped commiting to this Repo because I recreated it.
+
+New website:
+[a link]http://warmain.herokuapp.com/#/home
