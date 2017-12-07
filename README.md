@@ -24,4 +24,4 @@ The website is http://warmain.herokuapp.com/#/home (no s in warmains).
 Stopped commiting to this Repo because I recreated it.
 
 New website:
-[a link]http://warmain.herokuapp.com/#/home
+http://warmain.herokuapp.com/#/home
