@@ -12,11 +12,7 @@ Having very little knowledge in making, deploying and maintaining a website, I b
 
 I consider this Repo my first iteration. It is built using NodeJs / MongoDb / AngularJs / Bootstrap / JQuery (I know don't judge me).
 
-Somehow, it helped my get my internship with a start up called Reportin (now Source).
-
-There, I learned and am learning quite a bit. 
-
-So, I decided to recreate my personal website, incorporating things that I learned. The repo for that is in Bitbucket, most likely private since I may actually deploy it.
+So, I decided to recreate this website from scratch, incorporating things that I have learned. The repo for that is in Bitbucket, most likely private since I may actually deploy it.
 The website is http://warmain.herokuapp.com/#/home (no s in warmains).
 
 # Summary
