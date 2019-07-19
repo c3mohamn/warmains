@@ -1,7 +1,9 @@
 # warmains
-First Iteration of Wow character planner website.
+First Iteration of Wow character planner website. Also the first website I ever created, so please ignore the node modules :D
 
 Newest version is: http://app-wm.herokuapp.com/
+
+![](https://imgur.com/fpO6Vwg.png)
 
 # About
 A couple years ago, a website called Chardev had closed down, and I was in search of a new Character Development website for World of Warcraft: Wrath of the Lich King.
